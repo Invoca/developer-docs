@@ -1,0 +1,306 @@
+@import url("theme.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+
+body {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+}
+
+img.logo {
+  width: 262px !important;
+  height: 97px !important;
+  padding: 0px !important;
+}
+
+img.info-img {
+  margin: 10px 0px 0px 0px;
+}
+
+p {
+  margin: 24px 0px 24px 0px;
+}
+
+h1 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36pt;
+  color: #D5D5D5;
+  padding-bottom: 60px;
+  padding-top: 5px;
+  line-height: 48px;
+}
+
+h2 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+  padding-top: 5px;
+}
+
+h3 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  color: white;
+  font-size: 18pt;
+  font-weight: 500;
+  padding: 10px 10px 10px 0;
+}
+
+hr {
+  border-top: 1px solid #5f5f5f;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.document {
+  color: #D5D5D5;
+}
+
+div.section h1 {
+  padding: inherit;
+}
+
+
+table {
+  border-spacing: 2px;
+  border-collapse: collapse;
+  border-color: grey;
+  padding: 8px;
+  width: 100%;
+  font-size: 10pt;
+}
+
+th {
+  background-color: #6A6A6A;
+  padding: 8px;
+  font-size: 10pt;
+  color: #E4E4E4;
+  border-color: #595959;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-right-width: 1px;
+  border-right-style: solid;
+  font-weight: bold;
+  text-align: left;
+}
+
+tr {
+  border-right: 1px solid #d5d5d5;
+  padding: 8px;
+  line-height: 1.42857143;
+}
+
+td {
+  padding: 8px;
+  border-right: 1px solid #d5d5d5;
+}
+
+tr:nth-child(even) {
+  color: #636060;
+  background-color: #efefef;
+}
+
+tr:nth-child(odd) {
+  color: #4A4A4A;
+  background-color: #FFF;
+}
+
+.multiline-table tbody:nth-child(2n) td {
+    background-color: #efefef;
+}
+
+.multiline-table tr {
+  color: #636060;
+  background-color: #FFF;
+}
+
+code.docutils {
+  background: #3F3F3F;
+  border: none;
+}
+
+code.docutils.literal {
+  background-color: #3F3F3F;
+  padding: 0px !important;
+}
+
+/* applied to <span> for one-liner preformatted text */
+.pre {
+  font-family: Consolas, monospace;
+  word-break: break-all;
+  word-wrap: break-word !important;
+  color: #FFFFFF;
+  background-color: #7FBC0D;
+  border-radius: 4px;
+  padding: 6px 4px 4px 4px !important;
+  font-size: 14px !important;
+}
+
+pre {
+  background-color: #F5F5F5;
+  padding: 5px;
+}
+
+/* applied to <pre> for multi-line preformatted text */
+.literal-block {
+  color: #FFFFFF;
+  background-color: #7FBC0D !important;
+  font-family: Consolas, monospace;
+  font-size: 14px !important;
+  border: none !important;
+  border-radius: 4px;
+  overflow-x: auto;
+  display: inline;
+  padding: 6px 4px 4px 4px !important;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  line-height: 25px;
+}
+
+/* applied to body, almost everyone lives in here! */
+.wy-body-for-nav {
+  background: #363636 none repeat scroll 0 0;
+}
+
+/*********************LEFT HAND NAV************************/
+/* search box */
+.wy-side-nav-search {
+  background-color: inherit;
+  margin-top: -20px !important;
+  margin-bottom: 10px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.wy-side-nav-search a {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 5px !important;
+  color: rgba(0, 0, 0, 0);
+}
+
+.wy-side-nav-search a:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
+/* nav menu side bar */
+.wy-nav-side {
+  background: #333 none repeat scroll 0 0;
+  height: 100%;
+  padding-bottom: 0;
+}
+
+/* menu scroll bar */
+.wy-side-scroll {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    background-color: #333;
+}
+
+.wy-menu-vertical a {
+  color: rgb(132, 188, 13);
+}
+
+/* make nav links green */
+.wy-menu-vertical li.current > a {
+  color: rgb(132, 188, 13);
+  background-color: rgb(48, 48, 48);
+}
+
+.wy-menu-vertical li.current {
+  background: #333 none repeat scroll 0 0;
+}
+
+.wy-menu-vertical li.current a {
+  border: 0px;
+}
+
+.wy-menu.wy-menu-vertical a {
+  background-color: #333;
+}
+
+a.reference.internal {
+  background-color: #333 !important;
+}
+
+/*********************RIGHT HAND CONTENT************************/
+/* wraps up .wy-nav-content and its subordinates */
+.wy-nav-content-wrap {
+  #background-color: #3F3F3F;
+  #color: #D5D5D5;
+}
+
+/* Content in middle (lives inside .wy-nav-content-wrap) */
+.wy-nav-content {
+  background-color: #3F3F3F;
+  max-width: 1200px;
+  //padding: 60px;
+}
+
+/* Links that live inside wy-nav-content don't change color */
+.wy-nav-content a {
+  color: #54C4EC;
+}
+
+.wy-nav-content a.reference.internal:visited {
+  color: #54C4EC;
+}
+
+.wy-nav-content a.reference.external:visited {
+  color: #54C4EC;
+}
+
+/* rst content lives inside wy-nav-content */
+.rst-content {
+  max-width: 1200px;
+}
+
+.rst-content code {
+  width: 80%;
+  padding: 2px;
+  border: 0px;
+  background-color: #F5F5F5;
+  font-size: .7em;
+  color: #555555;
+  margin: 0 0 10px;
+  word-break: break-all;
+  word-wrap: break-word;
+  border-radius: 4px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
+}
+
+/****** Elements we didn't ask for and don't want **************/
+/* fwd/back buttons */
+.rst-footer-buttons {
+  display: none;
+}
+
+/* "view source" link */
+.wy-breadcrumbs-aside {
+  display: none !important;
+}
+
+
+.wy-side-nav-search div.version {
+  display: none !important;
+}
+/*
+.wy-body-for-nav div.rst-versions {
+  display: none !important;
+}
+*/
+.fa-home:before, .icon-home:before {
+  display: none;
+}
