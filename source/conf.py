@@ -14,6 +14,9 @@
 
 import sys
 import os
+# append the current folder to the Python class path
+sys.path.append(os.getcwd())
+from doc_versions import *
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -48,20 +51,16 @@ master_doc = 'index'
 project = u'invoca'
 copyright = u'2014, invoca'
 
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-#
-# The short X.Y version.
-version = '2015-05-01'
-pnapi_version = '2013-07-01'
 # The full version, including alpha/beta/rc tags.
-release = '1.4.10'
+version = COMMON_VERSION
+release = COMMON_VERSION
 
+# Replace version symbols with actual version numbers
+# Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
   import re
-  source[0] = re.sub("@version", version, source[0])
-  source[0] = re.sub("@pnapi_version", pnapi_version, source[0])
+  source[0] = re.sub("@version", COMMON_VERSION, source[0])
+  source[0] = re.sub("@pnapi_version", PNAPI_VERSION, source[0])
 
 def setup(app):
   app.connect('source-read', source_handler)
