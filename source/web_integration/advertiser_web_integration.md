@@ -280,7 +280,7 @@ Simple Examples
 Default example of replacing multiple phone numbers on a page, with no additional options specified: ( 'YOUR_ID_HERE' represents where the unique advertiser ID is inserted.)
 </p>
 
-~~~
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -309,8 +309,7 @@ Default example of replacing multiple phone numbers on a page, with no additiona
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
@@ -318,7 +317,7 @@ Default example of replacing multiple phone numbers on a page, with no additiona
 Example with NumberToReplace options specified on the client side, replacing multiple phone numbers on a page:
 </p>
 
-~~~
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -348,8 +347,7 @@ Example with NumberToReplace options specified on the client side, replacing mul
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
@@ -362,7 +360,7 @@ Advanced Examples
 Example changing the phone number presentation using the NumberSelector option on the client side:
 </p>
 
-~~~
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -391,8 +389,7 @@ Example changing the phone number presentation using the NumberSelector option o
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
@@ -400,7 +397,7 @@ Example changing the phone number presentation using the NumberSelector option o
 Example website that has the default phone number embedded in an image:
 </p>
 
-~~~
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -431,15 +428,14 @@ Example website that has the default phone number embedded in an image:
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
 Example website that has no default phone number, and wants to show a call to action when a promo number is used:
 
-~~~
-<pre><code><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -469,8 +465,7 @@ Example website that has no default phone number, and wants to show a call to ac
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 \* For sites with dynamic numbers through a third party, the Invoca code can still swap promo numbers over the third party numbers by placing the span tags around the code: `<span class="promoNumber">INSERT THIRD PARTY CODE HERE</span>`
 
@@ -478,7 +473,7 @@ Example website that has no default phone number, and wants to show a call to ac
 
 Example using callbacks for custom behavior. (Note that adding tel links to numbers now happens automatically, so using a callback is no longer necessary!)
 
-~~~
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -520,8 +515,7 @@ Example using callbacks for custom behavior. (Note that adding tel links to numb
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
@@ -533,7 +527,7 @@ Capturing Additional Parameters with JavaScript</h3>
 You can capture additional RingPool parameters through client-side JavaScript using the poolParams option. In the following example, the visitor’s landing page timestamp is set to the poolParam “landingTime”.
 </p>
 
-~~~
+```html
 <script src="//js14.invoca.net/14/integration.js"></script>
 <script type="text/javascript">
   var d = new Date();
@@ -546,8 +540,7 @@ You can capture additional RingPool parameters through client-side JavaScript us
         poolParams : { landingTime : timeStamp }
     };
 </script>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
@@ -559,7 +552,7 @@ Displaying Different Numbers on Other Pages</h3>
 Typically a visitor is “cookied” at a domain level and therefore is served the same number as they visit various web-integrated pages on the same domain. Use the “cookieId” option to set a unique cookie on different pages of a website. This allows different numbers to be served to the same visitor, depending on the page they visit. This example demonstrates how to allocate a unique number for the same user on two different pages. Any page that uses cookieId: "A" displays one number, and any page that uses cookieId: "B" displays another. Note: The cookie names (e.g. A, B) can be a custom name of your choosing.
 </p>
 
-~~~
+```html
 <!-- Page 1: Cookie "A" -->
 <script src="//js14.invoca.net/14/integration.js"></script>
 <script type="text/javascript">
@@ -581,8 +574,7 @@ Typically a visitor is “cookied” at a domain level and therefore is served t
     cookieId: 'B'
   };
 </script>
-~~~
-{: .prettyprint .theme-github}
+```
 
 <br>
 
@@ -595,7 +587,7 @@ When online CTC is enabled, the default behavior is for the phone number on the 
 
 Example of customizing the "Call now" button when using online CTC.
 
-~~~
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -625,8 +617,7 @@ Example of customizing the "Call now" button when using online CTC.
     </script>
   </body>
 </html>
-~~~
-{: .prettyprint .theme-github}
+```
 
 
 That example results in a "Click Here to Call" link in the header, and when clicked would show the online CTC form.
@@ -645,7 +636,7 @@ The following is an example using Ruby on Rails as the web technology.  Regardle
 
   Server code (controller/action):
 
-<pre><code>
+```ruby
 class LandingPageController < ApplicationController
   RING_POOL_BY_REFERRER = { "google"   : [ 7, 8  ],
                             "facebook" : [ 7, 10 ],
@@ -664,13 +655,12 @@ class LandingPageController < ApplicationController
     ...
   end
 end
-</pre></code>
+```
 
 
 <br>
 
-<pre><code>
-"
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -700,8 +690,7 @@ end
     </script>
   </body>
 </html>
-"
-</pre><code>
+```
 
 Notice that there is only ever one installation of the Web Integration code, and the only thing that needs to be set up on the server side are the IDs of the RingPool and Campaign.
 
@@ -729,7 +718,7 @@ In the HTML, wrap your phone numbers in a span tag with the class “phone-numbe
 </p>
 
 
-~~~
+```html
 <!-- Omit http from path to ensure protocol is same as current request -->
 <script src="//js11.invoca.net/11/integration.js"></script>
 <script type="text/javascript">
@@ -761,8 +750,7 @@ In the HTML, wrap your phone numbers in a span tag with the class “phone-numbe
 
 </script>
 <!-- End Call Tracking Code -->
-~~~
-{: .prettyprint .theme-github}
+```
 
 
 <br>
