@@ -3,3 +3,4 @@ build/
 html/
 *venv
 .DS_Store
+*.pyc
