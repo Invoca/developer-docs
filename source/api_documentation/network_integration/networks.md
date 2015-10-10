@@ -23,7 +23,7 @@ Parameters
 </table>
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/network.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/network.json`
 
 ## GET Network and its Users
 GET `/<network_id>/network`
@@ -35,7 +35,7 @@ GET `/<network_id>/network`
 Read network and its users
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/network.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/network.json`
 
 Format: application/json
 
@@ -75,7 +75,7 @@ POST `/<network_id>/network`
 Create network users
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/network.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/network.json`
 
 Format: application/json
 
@@ -114,7 +114,7 @@ PUT `/<network_id>/network`
 Update a network and its user with invalid email address
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/network.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/network.json`
 
 Format: application/json
 
@@ -152,7 +152,7 @@ Response Body:
 Delete network users by putting an empty user hash
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/network.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/network.json`
 
 Format: application/json
 

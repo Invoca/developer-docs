@@ -59,8 +59,8 @@ release = COMMON_VERSION
 # Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
   import re
-  source[0] = re.sub("@version", COMMON_VERSION, source[0])
-  source[0] = re.sub("@pnapi_version", PNAPI_VERSION, source[0])
+  source[0] = re.sub("@@network_api_version", COMMON_VERSION, source[0])
+  source[0] = re.sub("@@pnapi_version", PNAPI_VERSION, source[0])
 
 def setup(app):
   app.connect('source-read', source_handler)

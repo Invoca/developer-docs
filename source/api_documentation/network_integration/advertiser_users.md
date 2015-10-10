@@ -8,7 +8,7 @@ for situations where it is inconvenient to send an array of all existing adverti
 
 Endpoint:
 
-    https://invoca.net/api/@version/&lt;network_id&gt;/advertisers/&lt;advertiser_id_from_network&gt;/users/&lt;user_id_from_network&gt;.json
+    https://invoca.net/api/@@network_api_version/&lt;network_id&gt;/advertisers/&lt;advertiser_id_from_network&gt;/users/&lt;user_id_from_network&gt;.json
 
 ## GET all Advertiser Users for Advertiser
 GET `/advertisers/<advertiser_id>/users`
@@ -19,7 +19,7 @@ GET `/advertisers/<advertiser_id>/users`
 Read all advertiser users for advertiser e0Fv6YEk
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/e0Fv6YEk/users.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/e0Fv6YEk/users.json`
 
 Format: application/json
 
@@ -49,7 +49,7 @@ GET `/advertisers/<advertiser_id>/users/<user_id>`
 Read a specific advertiser user
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/e0Fv6YEk/users/549494858585Dxlj2uCX0ijqXP4nAW.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/e0Fv6YEk/users/549494858585Dxlj2uCX0ijqXP4nAW.json`
 
 Format: application/json
 
@@ -78,7 +78,7 @@ POST `/advertisers/<advertiser_id>/users`
 Create an advertiser user
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/e0Fv6YEk/users.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/e0Fv6YEk/users.json`
 
 Request Body:
 <pre><code>{
@@ -107,7 +107,7 @@ DELETE `/advertisers/<advertiser_id>/users/<user_id>`
 Delete an advertiser user
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/e0Fv6YEk/users/549494858585Dxlj2uCX0ijqXP4nAW.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/e0Fv6YEk/users/549494858585Dxlj2uCX0ijqXP4nAW.json`
 
 Format: application/json
 

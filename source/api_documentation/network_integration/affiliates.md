@@ -25,7 +25,7 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
 </table>
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/affiliates/<affiliate_id_from_network>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/affiliates/<affiliate_id_from_network>.json`
 
 ## GET all Affiliates
 GET `/affiliates`
@@ -37,7 +37,7 @@ GET `/affiliates`
 Read all Affiliates for this network
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/affiliates.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/affiliates.json`
 
 Request Body:
 <pre><code>[
@@ -78,7 +78,7 @@ GET `/affiliates/<affiliate_id>`
 Read a specific affiliate
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/affiliates/222.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/affiliates/222.json`
 
 Response Body:
 <pre><code>{
@@ -118,7 +118,7 @@ DELETE `/affiliates/<affiliate_id>`
 Delete a single affiliate
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/affiliates/222.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/affiliates/222.json`
 
 
 Response Body:
@@ -135,7 +135,7 @@ POST `/affiliates/<affiliate_id>`
 Create an affiliate with users
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/affiliates/222.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/affiliates/222.json`
 
 Format: application/json
 
@@ -180,7 +180,7 @@ PUT `/affiliates/<affiliate_id>`
 Update a single affiliate
 
 Endpoint:
-`https://invoca.net/api/api/@version/<network_id>/affiliates/222.json`
+`https://invoca.net/api/api/@@network_api_version/<network_id>/affiliates/222.json`
 
 Request Body:
 <pre><code>{

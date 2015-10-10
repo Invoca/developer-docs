@@ -167,7 +167,7 @@ When you POST a promo number, we return the promo_number in the response body. T
 
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
 
 ## GET all Promo Numbers
 GET `/promo_numbers`
@@ -179,7 +179,7 @@ GET `/promo_numbers`
 Read all Advertiser Campaign Promo Numbers as an array
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers.json`
 
 Format: application/json
 
@@ -197,7 +197,7 @@ Response Body:
 Read all Affiliate Campaign Promo Numbers as an array
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers.json`
 
 Format: application/json
 
@@ -221,7 +221,7 @@ GET `/promo_numbers/<promo_number>`
 Read a specific Advertiser Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
 
 Format: application/json
 
@@ -239,7 +239,7 @@ Response Body:
 Read a specific Affiliate Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers/<promo_number>.json`
 
 Format: application/json
 
@@ -262,7 +262,7 @@ POST `/promo_numbers/<promo_number>`
 Create an Advertiser Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers.json`
 
 Format: application/json
 
@@ -286,7 +286,7 @@ Response Body:
 Create an Affiliate Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers.json`
 
 Format: application/json
 
@@ -316,7 +316,7 @@ PUT `/promo_numbers/<promo_number>`
 Update an Advertiser Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
 
 Format: application/json
 
@@ -337,7 +337,7 @@ Response Body:
 Update Affiliate Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers/<promo_number>.json`
 
 Format: application/json
 
@@ -364,7 +364,7 @@ DELETE `/promo_numbers/<promo_number>`
 Delete an Advertiser Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
 
 Format: application/json
 
@@ -379,7 +379,7 @@ Response Body:
 Delete an Affiliate Campaign Promo Number
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers/<promo_number>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/promo_numbers/<promo_number>.json`
 
 Format: application/json
 

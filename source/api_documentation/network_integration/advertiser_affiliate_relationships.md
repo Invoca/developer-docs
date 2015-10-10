@@ -17,7 +17,7 @@ Parameters for the relationships are shown below
 </table>
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/affiliates/<affiliate_id_from_network>.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/affiliates/<affiliate_id_from_network>.json`
 
 
 ## GET all Advertiser-Affiliate relationships
@@ -30,7 +30,7 @@ GET `/advertisers/<advertiser_id>/affiliates`
 Read all relationships for advertiser id from network 1
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/1/affiliates.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/1/affiliates.json`
 
 Format: application/json
 
@@ -59,7 +59,7 @@ GET `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 Read a single relationship
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/1/affiliates/222.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/1/affiliates/222.json`
 
 Format: application/json
 
@@ -82,7 +82,7 @@ POST `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 Create relationship between Advertiser id from network 1 and Affiliate id from network 222
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/1/affiliates/222.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/1/affiliates/222.json`
 
 Format: application/json
 
@@ -113,6 +113,6 @@ DELETE `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 Delete a relationship
 
 Endpoint:
-`https://invoca.net/api/@version/<network_id>/advertisers/1/affiliates/222.json`
+`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/1/affiliates/222.json`
 
 Response Code: 200

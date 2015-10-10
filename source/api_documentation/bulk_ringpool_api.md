@@ -17,7 +17,7 @@ Finally, also note that only the custom RingPool type is supported by the Bulk R
 Example API URL:
 </b>
 
-`POST ﻿https://pnapi.invoca.net/api/@pnapi_version/bulk.json`
+`POST ﻿https://pnapi.invoca.net/api/@@pnapi_version/bulk.json`
 
 
 ### Request Body
