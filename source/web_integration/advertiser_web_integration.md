@@ -7,39 +7,13 @@ Advertiser Web Integration is a platform feature that uses JavaScript to switch 
 When the advertiser and their marketing partners send online traffic to the advertiser's landing page, their tracking phone number appears on the page and attributes the marketing source for any resulting phone calls.
 
 Campaign promo numbers can be static or they can be dynamically generated using the RingPool API feature.
-<h3>
-Table of Contents
-</h3>
 
-* [Installation Instructions](/docs/web-integration/advertiser-web-integration#installation_instructions)
-* [Testing the Code](/docs/web-integration/advertiser-web-integration#testing_the_code)
-* [Troubleshooting](/docs/web-integration/advertiser-web-integration#troubleshooting)
-* [Web Integration Settings](/docs/web-integration/advertiser-web-integration#web_integration_settings)
-* [Server Side Integration](/docs/web-integration/advertiser-web-integration#server_side_integration)
-* [Client Side Integration & Parameters](/docs/web-integration/advertiser-web-integration#client_side_integration_and_parameters)
-* [Client Settings](/docs/web-integration/advertiser-web-integration#client_settings)
-* [Selector Information](/docs/web-integration/advertiser-web-integration#selector_information)
-* [Simple Examples](/docs/web-integration/advertiser-web-integration#simple_examples)
-  * [Default Usage with ID](/docs/web-integration/advertiser-web-integration#default_usage_with_id)
-  * [Using NumberToReplace](/docs/web-integration/advertiser-web-integration#using_numbertoreplace)
-* [Advanced Examples](/docs/web-integration/advertiser-web-integration#advanced_examples)
-  * [Changing Phone Number Presentation With NumberSelector option](/docs/web-integration/advertiser-web-integration#changing_phone_number)
-  * [Default Phone Number Embedded in an Image](/docs/web-integration/advertiser-web-integration#default_phone_number)
-  * [Capturing Additional Parameters with JavaScript](/docs/web-integration/advertiser-web-integration#capture_additional_parameters)
-  * [Displaying Different Numbers on Other Pages](/docs/web-integration/advertiser-web-integration#display_different_numbers)
-  * [Click-To-Call (CTC) Form](/docs/web-integration/advertiser-web-integration#click-to-call)
-  * [Elegantly Swap Phone Number with jQuery](/docs/web-integration/advertiser-web-integration#swap_number_jquery)
-
-<br>
-
-<h3 id="installation_instructions">
-﻿Installation Instructions﻿
-</h3>
+### Installation Instructions
 <hr>
 
 1. Before beginning, make sure your campaign has a landing page defined in the campaign wizard Creatives step.
 
-2. From the ﻿Advertiser Home Page,﻿ choose Tools gear, Web Integration.
+2. From the Advertiser Home Page, choose Tools gear, Web Integration.
 
    ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawi_1_zps2c984432.png&key=afea23f29e5a4f63bd166897e3dc72df)
 
@@ -54,9 +28,7 @@ Table of Contents
 
 <br>
 
-<h3 id="testing_the_code">
-Testing the code
-</h3>
+### Testing the code
 <hr>
 
 1. To test web integration inside the platform, from the Web Integration panel, click Integration Test. Select "Open Test".
@@ -89,9 +61,7 @@ Testing the code
 
 <br>
 
-<h3 id="troubleshooting">
-﻿Web Integration Troubleshooting
-</h3>
+### Web Integration Troubleshooting
 <hr>
 
 1. Check that the phone number is entered in the Web Integration, Settings tab and matches the phone number on your website.
@@ -102,18 +72,14 @@ Testing the code
 
 <br>
 
-<h3 id="web_integration_settings">
-Web Integration Settings
-</h3>
+### Web Integration Settings
 <hr>
 
 Web Integration settings can be set on the server or the client side (browser side). As an example, the NumberToReplace field can be set on the platform(server side) and in the JavaScript function(client side). A large majority of advertisers only need to configure the settings on the platform or server side. Including Web Integration settings on the client side should only be done if the Web Integration's behavior needs to be customized. The client side settings always takes precedence over the server side.
 
 <br>
 
-<h3 id="server_side_integration">
-Server Side Integration
-</h3>
+### Server Side Integration
 <hr>
 
 All of the server side settings are defined in the Web Integration, Settings tab.
@@ -130,9 +96,7 @@ To track and report on all general traffic, select "Track all calls".  Select th
 
 <br>
 
-<h3 id="client_side_integration_and_parameters">
-Client Side Integration & Parameters
-</h3>
+### Client Side Integration & Parameters
 <hr>
 
 The client side settings are listed in the table below.  Most installations do not require any client side changes.  To initialize the Web Integration code, pass the integration settings in a hash to the Invoca.advertiser_integration function.
@@ -228,9 +192,7 @@ The client side settings are listed in the table below.  Most installations do n
 
 <br>
 
-<h3 id="client_settings">
-Client Settings (Advanced)
-</h3>
+### Client Settings (Advanced)
 <hr>
 
 
@@ -244,9 +206,7 @@ There are two ways for the Web Integration code to know where to insert a tracki
 
 <br>
 
-<h3 id="selector_information">
-Selector information
-</h3>
+### Selector information
 <hr>
 
 All "selector" parameters are a comma separated list of IDs or classes, where IDs are prefixed with a "#" and classes are prefixed with a "." (similar to referencing a class or ID using jQuery or prototype).  Only a single class or single ID per selector is supported, no other jQuery selector syntax is supported.
@@ -271,14 +231,11 @@ All "selector" parameters are a comma separated list of IDs or classes, where ID
 
 <br>
 
-<h3 id="simple_examples">
-Simple Examples
-</h3>
+### Simple Examples
 <hr>
 
-<p id="default_usage_with_id">
+#### Default usage with id
 Default example of replacing multiple phone numbers on a page, with no additional options specified: ( 'YOUR_ID_HERE' represents where the unique advertiser ID is inserted.)
-</p>
 
 ~~~
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -314,9 +271,8 @@ Default example of replacing multiple phone numbers on a page, with no additiona
 
 <br>
 
-<p id="using_numbertoreplace">
+#### Using Number to Replace
 Example with NumberToReplace options specified on the client side, replacing multiple phone numbers on a page:
-</p>
 
 ~~~
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -353,9 +309,7 @@ Example with NumberToReplace options specified on the client side, replacing mul
 
 <br>
 
-<h3 id="advanced_examples">
-Advanced Examples
-</h3>
+### Advanced Examples
 <hr>
 
 <p id="numberselector">
@@ -525,8 +479,7 @@ Example using callbacks for custom behavior. (Note that adding tel links to numb
 
 <br>
 
-<h3 id="capture_additional_parameters">
-Capturing Additional Parameters with JavaScript</h3>
+### Capturing Additional Parameters with JavaScript
 <hr>
 
 <p>
@@ -551,8 +504,7 @@ You can capture additional RingPool parameters through client-side JavaScript us
 
 <br>
 
-<h3 id="display_different_numbers">
-Displaying Different Numbers on Other Pages</h3>
+### Displaying Different Numbers on Other Pages
 <hr>
 
 <p>
@@ -586,9 +538,7 @@ Typically a visitor is “cookied” at a domain level and therefore is served t
 
 <br>
 
-<h3 id="click-to-call">
-Online Click-To-Call (CTC) Form Settings
-</h3>
+### Online Click-To-Call (CTC) Form Settings
 <hr>
 
 When online CTC is enabled, the default behavior is for the phone number on the page to be replaced by a "Call now" button. When clicked, a lightbox window pops up over the page prompting the user to enter their phone number. The logo shown in the lightbox can be customized in the platform on the Customize Online Click-to-Call Form page accessed from Tools, Web Integration, Settings tab, Advanced Tracking Settings link.
@@ -707,9 +657,7 @@ Notice that there is only ever one installation of the Web Integration code, and
 
 <br>
 
-<h3 id="swap_number_jquery">
-  Elegantly Swap Phone Number with jQuery
-</h3>
+### Elegantly Swap Phone Number with jQuery
 <hr>
 
 <p>
@@ -766,9 +714,7 @@ In the HTML, wrap your phone numbers in a span tag with the class “phone-numbe
 
 
 <br>
-<h3>
-Developers Note  
-</h3>
+### Developers Note
 <hr>
 
 While testing the Web Integration code, especially advanced cases including RingPool or Campaign IDs, it is recommended that you set "debug: true".  If a RingPool ID is specified but is invalid, an error message is logged to the browser's JavaScript console stating that the RingPool ID is invalid (note that a working phone number may still be returned, it just will not be for the correct RingPool).  If both RingPool and Campaign ID are invalid, an error message is logged stating the Campaign ID is invalid.
