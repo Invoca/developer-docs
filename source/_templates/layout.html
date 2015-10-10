@@ -4,3 +4,10 @@
 
 {# Import the theme's layout. #}
 {% extends "!layout.html" %}
+
+{%- block extrahead %}
+<!-- http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
