@@ -15,6 +15,7 @@
 import sys
 import os
 import re
+from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
 from doc_versions import *
@@ -50,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'invoca'
-copyright = u'2014, invoca'
+copyright = u'{}, invoca'.format(datetime.now().year)
 
 # The full version, including alpha/beta/rc tags.
 version = COMMON_VERSION
