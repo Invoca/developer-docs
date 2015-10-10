@@ -29,7 +29,7 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
 </table>
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>.json`
 
 
 ## GET all Advertisers
@@ -42,7 +42,7 @@ GET `/advertisers`
 Read all advertisers for this network
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers.json`
 
 Format: application/json
 
@@ -88,7 +88,7 @@ GET `/advertisers/<advertiser_id>`
 Read a single advertiser
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/cFUyYnFHy.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHy.json`
 
 Format: application/json
 
@@ -145,7 +145,7 @@ DELETE `/advertisers/<advertiser_id>`
 Delete a single advertiser
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/cFUyYnFHy.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHy.json`
 
 Format: application/json
 
@@ -166,7 +166,7 @@ POST `/advertisers/<advertiser_id>`
 Create an advertiser with users
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/cFUyYnFHy.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHy.json`
 
 Format: application/json
 
@@ -220,7 +220,7 @@ PUT `/advertisers/<advertiser_id>`
 Update a user from advertiser
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/cFUyYnFHy.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHy.json`
 
 Format: application/json
 

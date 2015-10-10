@@ -14,6 +14,7 @@
 
 import sys
 import os
+import re
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
 from doc_versions import *
@@ -58,9 +59,8 @@ release = COMMON_VERSION
 # Replace version symbols with actual version numbers
 # Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
-  import re
-  source[0] = re.sub("@@network_api_version", COMMON_VERSION, source[0])
-  source[0] = re.sub("@@pnapi_version", PNAPI_VERSION, source[0])
+  for symbol_string, version_string in VERSIONS.iteritems():
+    source[0] = re.sub(symbol_string, version_string, source[0])
 
 def setup(app):
   app.connect('source-read', source_handler)

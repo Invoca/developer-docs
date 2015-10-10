@@ -6,7 +6,7 @@ Advertiser Campaigns can be managed using the Network API. In addition to create
 
 Note that the `<advertiser_id_from_network>` and `<advertiser_campaign_id_from_network>` are the network’s id for those objects, not Invoca’s.
 
-`/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
+`/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
 
 We support passing back current_terms and future_terms on campaigns. The current properties of the campaign are reflected in current_terms. All changes to the campaign are staged in future_terms. Once the campaign goes live, future_terms transition over to current_terms.
 
@@ -158,7 +158,7 @@ it is equivalent to this:
 
 Endpoint:
 
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
 
 
 ## GET all campaigns for an Advertiser
@@ -169,7 +169,7 @@ GET `/advertiser_campaigns`
 Read all campaigns for Advertiser 2 id from network
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/2/advertiser_campaigns.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns.json`
 
 Response Body:
 An array of campaigns are returned.
@@ -184,7 +184,7 @@ GET `/advertiser_campaigns/<advertiser_campaign_id>`
 Read Campaign 100 for Advertiser 2
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/2/advertiser_campaigns/100.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns/100.json`
 
 Response Body:
 <pre><code>{
@@ -487,15 +487,15 @@ POST `/advertiser_campaigns/<advertiser_campaign_id>`
 Example POST to non‐existing Advertiser Campaign fJauFbSEGHKw8ADEGv under Advertiser cFUyYnFHyiYA42TrpM in the Demo Network.
 
 POST
-`https://demo.invoca.net/api/@@network_api_version/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
+`https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 With an existing advertiser, the IVR tree may be updated independently of other attributes. Below is a curl command that only needs network API credentials, a network id and an advertiser id. This will create an advertiser campaign with id 445566. The campaign id may be changed freely.
 
 Endpoint:
-`https://demo.invoca.net/api/@@network_api_version/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
+`https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 <pre><code>curl­ -XPOST­ -H "Content­Type: application/json"­ -u 'login:pass'
-'https://vanity.invoca.net/api/@@network_api_version/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
+'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
 -d '
 {
   "hours": {
@@ -575,7 +575,7 @@ Endpoint:
 Create Campaign fJauFbSEGHKw8ADEGv for Advertiser cFUyYnFHyiYA42TrpM on network 1 (POST)
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 Request Body
 
@@ -704,7 +704,7 @@ Example IVR Tree updates:
 (1) Verify the callers location, then if on the West Coast (setup previously) forward to a call center, otherwise hang up after playing a prompt.
 
 <pre><code>curl­ -XPUT -H "Content­Type: application/json" -­u 'login:pass'
-'https://vanity.invoca.net/api/@@network_api_version/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
 -d '
 {"ivr_tree":
  {"root":
@@ -727,7 +727,7 @@ Example IVR Tree updates:
 (2) Present the options for multiple departments, if sales is selected check if office is open. If the office is open, forward the call, if not play a prompt and then hangup.
 
 <pre class="prettyprint theme-github"><code>curl -XPUT -H "Content­Type: application/json" -u 'login:pass'
-'https://vanity.invoca.net/api/@@network_api_version/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
 -d '
 {"ivr_tree":{
    "record_calls":true,
@@ -756,7 +756,7 @@ Example IVR Tree updates:
 (3) Offer an sms to see current offers and then connect to a call center.
 
 <pre class="prettyprint theme-github"><code>curl -XPUT -H "Content­Type: application/json" -u 'login:pass'
-'https://vanity.invoca.net/api/@@network_api_version/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
 -d '
 {"ivr_tree":{
    "record_calls":true,
@@ -790,7 +790,7 @@ GET `/advertiser_campaigns/<advertiser_campaign_id>/quick_stats`
 The full range of statistics for a campaign are available through the reporting UI. However, a quick set of overview statistics for a campaign are available through the API using the following endpoint.
 
 Endpoint:
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_>/quick_stats.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_>/quick_stats.json`
 
 Response Body:
 <pre class="prettyprint theme-github"><code>{
@@ -821,7 +821,7 @@ Advertiser campaigns can have their state controlled through this API. When a ca
 
 Use this request url format:
 
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json`
 
 ## Set Campaign State to Live (POST)
 
@@ -834,7 +834,7 @@ Advertiser campaigns can have their state controlled through this API. When a ca
 
 Use this request url format:
 
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json`
 
 ## Set Campaign State to Archived (GET)
 
@@ -845,7 +845,7 @@ GET `/advertiser_campaigns/<advertiser_campaign_id>/archive`
 
 If a campaign has previously been set to live, either through the API or through the UI, it can be archived, which effectively shuts it down. An archived campaign can be returned to live at a later time. To archive a campaign use this the following endpoint URL:
 
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/archive.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/archive.json`
 
 ## Set Campaign State to Archived (POST)
 
@@ -856,4 +856,4 @@ GET `/advertiser_campaigns/<advertiser_campaign_id>/archive`
 
 If a campaign has previously been set to live, either through the API or through the UI, it can be archived, which effectively shuts it down. An archived campaign can be returned to live at a later time. To archive a campaign use this the following endpoint URL:
 
-`https://invoca.net/api/@@network_api_version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/archive.json`
+`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/archive.json`
