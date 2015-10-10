@@ -8,26 +8,7 @@ With the publisher web integration code in place, you can dynamically display mu
 The following article assumes the web traffic is going to the publisher's landing page and provides instructions on how the publisher can integrate the landing page.
 
 
-### Table of Contents
-
-
-
-* [Installation Instructions](/docs/web-integration/publisher-web-integration#installation_instructions)
-* [Mobile Phone Experiences](/docs/web-integration/publisher-web-integration#mobile)
-* [Example 1: Dynamically Displaying One Promo Number](/docs/web-integration/publisher-web-integration#example_1)
-* [Example 2: Link to Advertiser Landing Page](/docs/web-integration/publisher-web-integration#example_2)
-* [Example 3: Link a Promo Number to Advertiser Landing Page](/docs/web-integration/publisher-web-integration#example_3)
-* [Example 4: Adding an image to your link](/docs/web-integration/publisher-web-integration#example_4)
-* [Example 5: Request a Mobile Click-to-Call Link](/docs/web-integration/publisher-web-integration#example_5)
-* [Example 6: Display Multiple Promo Numbers](/docs/web-integration/publisher-web-integration#example_6)
-* [Example 7: Dynamically Displaying a "tel:" Link](/docs/web-integration/publisher-web-integration#example_7)
-
-<br>
-
-<h3 id="installation_instructions">
-Installation instructions from a Publisher account
-</h3>
-<hr>
+### Installation instructions from a Publisher account
 
 1. Access the Publisher Web Integration Code from the Campaign's Summary tab.
 
@@ -68,9 +49,9 @@ Wrap an HTML element (e.g. a <span> tag) around each number with the following t
     Example:
 
     {: .prettyprint .theme-github}
-        ﻿<span class="ppc_integration ppc_id_x_y">
+        <span class="ppc_integration ppc_id_x_y">
 
-          ﻿<a href="http://yourlink.com" class="ppc_link">
+          <a href="http://yourlink.com" class="ppc_link">
 
             <span class="ppc_number"> YOUR NUMBER </span>
 
@@ -79,32 +60,28 @@ Wrap an HTML element (e.g. a <span> tag) around each number with the following t
         </span>
 
 
-﻿<br>
+<br>
 
-<h3 id="mobile">
-Mobile phone experience
-</h3>
+### Mobile phone experience
 <hr>
 
 By default, when your page is visited on a mobile phone browser, your promo numbers are wrapped in a tel link so that when clicked they launch the phone's dialer to place a call.  If you want to launch the dialer and also redirect in the background to the advertiser's landing page, see example 4 below.  If you just want to go to the advertiser's landing page on the click and not launch the dialer, see example 3 below.  
 
 To disable the default experience for mobile phones, add a ppc_no_tel class to your DOM element that specified the ppc_number.
 
-﻿﻿Example:
+Example:
 
 ~~~
-﻿<span class="ppc_integration ppc_id_xxx_yyy">
+<span class="ppc_integration ppc_id_xxx_yyy">
 
-  ﻿<span class="ppc_number ppc_no_tel"> YOUR NUMBER </span>
+  <span class="ppc_number ppc_no_tel"> YOUR NUMBER </span>
 
 </span>
 ~~~
 {: .prettyprint .theme-github}
 
 
-<h3 id="example_1">
-Example 1: Dynamically Displaying One Promo Number
-</h3>
+### Example 1: Dynamically Displaying One Promo Number
 <hr>
 
 This example maps a single number on to a landing page. The ppc_id_xxx_yyy is unique for each campaign and is found on the Campaign's Summary tab.
@@ -147,9 +124,7 @@ You will notice that the number on the webpage is not the same as the <span styl
 
 <br>
 
-<h3 id="example_2">
-Example 2: Link to Advertiser Landing Page
-</h3>
+### Example 2: Link to Advertiser Landing Page
 <hr>
 
 To insert a tracking link, simply include the additional line of code to example 1:
@@ -197,9 +172,7 @@ With the ppc_link class, the web integration code uses an Invoca link if one is 
 
 <br>
 
-<h3 id="example_3">
-Example 3: Link a Promo Number to advertiser landing page
-</h3>
+### Example 3: Link a Promo Number to advertiser landing page
 <hr>
 
 Building on Example 2, you can nest the ppc_number tag inside the ppc_link tag to make the phone number link to the landing page.  Note: if you want this behavior, you need to disable the default behavior of adding tel links to numbers.
@@ -244,9 +217,7 @@ The ppc_id_xxx_yyy is unique for each campaign and is found on the Campaign's Su
 
 <br>
 
-<h3 id="example_4">
-Example 4: Adding an image to your link
-</h3>
+### Example 4: Adding an image to your link
 <hr>
 
 ﻿This example will allow you to link an image of your choice to an advertiser's landing page.
@@ -271,9 +242,7 @@ The ppc_id_xxx_yyy is unique for each campaign and is found on the Campaign's Su
 
 <br>
 
-<h3 id="example_5">
-Example 5: Request a Mobile Click-to-Call Link
-</h3>
+### Example 5: Request a Mobile Click-to-Call Link
 <hr>
 
 You can enable links on smartphones to launch the dialer and also redirect to the advertiser landing page in the background.  Enabling this does not alter the user experience on a conventional desktop or tablet computer. You can put this behavior on the number or just a standard text link.
@@ -331,9 +300,7 @@ To make this change, add the ppc_mobile class next to the ppc_link class.
 
 <br>
 
-<h3 id="example_6">
-Example 6: Display Multiple Promo Numbers
-</h3>
+### Example 6: Display Multiple Promo Numbers
 <hr>
 
 This example shows how to dynamically display promo numbers for multiple campaigns on the same landing page. The different numbers do not have to belong to the same publisher which means users with multiple publisher accounts could use the same landing page for campaigns across different networks.
@@ -394,9 +361,7 @@ The image below is a screenshot of the webpage produced by HTML source code from
 
 <br>
 
-<h3 id="example_7">
-Example 7: Dynamically Displaying Tel: link
-</h3>
+### Example 7: Dynamically Displaying Tel: link
 <hr>
 
 This example demonstrates what an entire webpage could look like, so please note that you may already have jQuery embedded elsewhere on your site.
