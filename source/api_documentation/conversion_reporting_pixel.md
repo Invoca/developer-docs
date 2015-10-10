@@ -77,7 +77,7 @@ Update a conversion that was reported earlier:
 
 *Web pixel example*
 
-~~~
+```html
 <!DOCTYPE html>
 
 <html>
@@ -91,8 +91,7 @@ Update a conversion that was reported earlier:
     Your order has been placed.
   </body>
 </html>
-~~~
-{:.prettyprint .theme-github}
+```
 
 ### Old version (before December 2012)
 <hr>
@@ -104,9 +103,6 @@ This version is only supported for existing installations.  Conversions generate
 
 The following sales params are supported:
 
-* `amount` (sale amount)
-
-* `currency` (sale currency, defaults to USD)
-
-* `external_data` (string, shown in reports)
-{:.bullets}
+- `amount` (sale amount)
+- `currency` (sale currency, defaults to USD)
+- `external_data` (string, shown in reports)

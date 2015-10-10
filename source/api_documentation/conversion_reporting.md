@@ -104,14 +104,16 @@ Passed in standard HTML “application/form-url-encoded” format. Put quotes ar
 
 The HTTP status returned is 201 Created for a successful POST (or a 200 OK for a successful PUT), a 4xx code if one of the parameters is incorrect, or a 5xx code if a server error occurred.
 In the latter two error cases, a detailed error class and message are returned in XML in the body, for example:
-<pre><code>
+
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <Error>
     <Class>NotFound</Class>
     <Message>Couldn't find call around time 1262895406 from caller +1 8053825533
      </Message>
 </Error>
-</code></pre>
+```
+
 If &use_http_status=0 is given, the status is always returned as 200 Ok or 201 Created. This can be helpful in order to see the detailed error message in the body when working with HTTP libraries
 that just return the status code when there are errors without exposing the body.
 
@@ -172,29 +174,19 @@ The example below uses cURL to demonstrate a POST that updates a call.
 
 Output:
 
-<pre><code>
+```html
 < HTTP/1.1 201 Created
-
 < Date: Fri, 25 Jun 2010 18:22:45 GMT
-
 < Server: Mongrel 1.1.5
-
 < Status: 201
-
 < X-Runtime: 189
-
 < Cache-Control: no-cache
-
 < Content-Type: application/xml; charset=utf-8
-
 < Content-Length: 1
-
 < Set-Cookie: SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/
-
 < Via: 1.1 www.invoca.net
-
 < Vary: Accept-Encoding
-</code></pre>
+```
 
 ### Example Breakdown
 <hr>
