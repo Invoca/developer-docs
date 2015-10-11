@@ -34,8 +34,13 @@ from doc_versions import *
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
+# override list class so that the RTD templates will be appended, rather than prepended to the list
+class MyList(list):
+    def insert(self, index, value):
+        super(MyList, self).append(value)
+
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates', '/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/source/_templates/']
+templates_path = MyList(['_templates', '/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/source/_templates/'])
 
 # The suffix of source filenames.
 source_parsers = {
