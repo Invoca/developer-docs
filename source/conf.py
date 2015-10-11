@@ -35,7 +35,7 @@ from doc_versions import *
 # ones.
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['_templates', '/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/source/_templates/']
 
 # The suffix of source filenames.
 source_parsers = {
