@@ -6,7 +6,10 @@ GET  /advertiser_campaigns
 Read Campaign 100 for Advertiser 2
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns/100.json`
+
+Response Body:
 
 .. code-block:: json
    :linenos:

@@ -324,3 +324,11 @@ a.reference.internal {
 .fa-home:before, .icon-home:before {
   display: none;
 }
+
+.highlight-json .nt {
+  color: #d14;
+}
+
+.highlight-json .kc, .kd, .kn, .kp, .kr, .kt, .mf, .mh, .mi, .mo {
+  color: #445588;
+}
