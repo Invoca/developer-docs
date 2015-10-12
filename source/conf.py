@@ -128,7 +128,13 @@ else:
             'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css',
         ],
         'script_files': [
+            'https://media.readthedocs.org/javascript/jquery/jquery-2.0.3.min.js',
+            'https://media.readthedocs.org/javascript/jquery/jquery-migrate-1.2.1.min.js',
+            'https://media.readthedocs.org/javascript/underscore.js',
+            'https://media.readthedocs.org/javascript/doctools.js',
+            'https://media.readthedocs.org/javascript/readthedocs-doc-embed.js',
             'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js'
+            '_static/js/custom.js',
         ]
     }
 
