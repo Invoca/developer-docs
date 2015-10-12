@@ -240,7 +240,15 @@ cite  {
     background-color: #333;
 }
 
+a {
+  color: gray;
+}
+
 .wy-menu-vertical a {
+  color: rgb(132, 188, 13);
+}
+
+a:hover {
   color: rgb(132, 188, 13);
 }
 
@@ -252,6 +260,8 @@ cite  {
 
 .wy-menu-vertical li.current {
   background: #333 none repeat scroll 0 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .wy-menu-vertical li.current a {
@@ -262,8 +272,12 @@ cite  {
   background-color: #333;
 }
 
+ul.wy-breadcrumbs {
+  display: none;
+}
+
 a.reference.internal {
-  background-color: #333 !important;
+  background-color: transparent !important;
 }
 
 /*********************RIGHT HAND CONTENT************************/
@@ -282,11 +296,7 @@ a.reference.internal {
 
 /* Links that live inside wy-nav-content don't change color */
 .wy-nav-content a {
-  color: #54C4EC;
-}
 
-.wy-nav-content a.reference.internal:visited {
-  color: #54C4EC;
 }
 
 .wy-nav-content a.reference.external:visited {
