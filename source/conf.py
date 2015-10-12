@@ -114,32 +114,23 @@ pygments_style = 'sphinx'
 # Uncomment the following lines to build the docs locally using sphinx-build
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-additional_js = '''
-<!-- http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-'''
-
-html_context = {
-        'metatags': additional_js,
-    }
-
 if not on_rtd:  # only import and set the theme if we're building docs locally
   import sphinx_rtd_theme
   html_theme = 'sphinx_rtd_theme'
   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
   html_style = 'css/custom.css'
 else:
-    html_context.update({
+    html_context = {
         'css_files': [
             'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
             'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
             '_static/css/custom.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css',
+        ],
+        'script_files': [
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js'
         ]
-    })
-
-print html_context
+    }
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
