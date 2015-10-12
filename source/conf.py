@@ -133,7 +133,7 @@ else:
             'https://media.readthedocs.org/javascript/underscore.js',
             'https://media.readthedocs.org/javascript/doctools.js',
             'https://media.readthedocs.org/javascript/readthedocs-doc-embed.js',
-            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js'
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
             '_static/js/custom.js',
         ]
     }
