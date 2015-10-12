@@ -259,11 +259,7 @@ cite  {
 }
 
 .wy-menu.wy-menu-vertical a {
-  background-color: #333;
-}
-
-a.reference.internal {
-  background-color: #333;
+  background-color: #333 !important;
 }
 
 /*********************RIGHT HAND CONTENT************************/
