@@ -4,9 +4,9 @@ Network Integration
 These are the more in depth API articles
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   advertiser_campaigns
+   advertiser_campaigns/index
    advertiser_users
    advertisers
    affiliate_campaigns

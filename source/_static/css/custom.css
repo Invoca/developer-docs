@@ -165,6 +165,26 @@ pre {
   line-height: 25px;
 }
 
+cite  {
+  color: #FFFFFF;
+  background-color: #7FBC0D !important;
+  font-family: Consolas, monospace;
+  font-size: 14px !important;
+  border: none !important;
+  border-radius: 4px;
+  overflow-x: auto;
+  display: inline;
+  padding: 6px 4px 4px 4px !important;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  line-height: 25px;
+}
+
 /* applied to body, almost everyone lives in here! */
 .wy-body-for-nav {
   background: #363636 none repeat scroll 0 0;
