@@ -354,3 +354,43 @@ table.parameters .row-odd {
   background-color: white;
   color: #4A4A4A;
 }
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils {
+  border: 0;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr {
+  border: inherit;
+  background-color: #3F3F3F;
+  color: white;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr:hover {
+  background-color: #000;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr td {
+  border: inherit;
+  background-color: inherit;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils .rubric {
+  color: #84BC0D;
+  font-size: 29px;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr img.default {
+  display: block;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr img.hover {
+  display: none;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr:hover img.default {
+  display: none;
+}
+
+#welcome-to-the-invoca-developer-portal table.home-page.docutils tr:hover img.hover {
+  display: block;
+}
