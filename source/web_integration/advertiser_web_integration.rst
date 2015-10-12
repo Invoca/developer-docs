@@ -1,24 +1,32 @@
 Advertiser Web Integration
 ==========================
 
-<b>Please Note: </b> ﻿﻿This documentation references invoca.net in the Web Integration examples below. However, previous installations referencing ringrevenue.com are still valid.
+**Please Note:** This documentation references invoca.net in the Web Integration examples below. However, previous installations referencing ringrevenue.com are still valid.
 
 Advertiser Web Integration is a platform feature that uses JavaScript to switch the advertiser's phone number with a campaign's tracking phone number (promo number).
 When the advertiser and their marketing partners send online traffic to the advertiser's landing page, their tracking phone number appears on the page and attributes the marketing source for any resulting phone calls.
 
 Campaign promo numbers can be static or they can be dynamically generated using the RingPool API feature.
 
-### Installation Instructions
-<hr>
+Installation Instructions
+-------------------------
+
+-------------------------
+
 
 1. Before beginning, make sure your campaign has a landing page defined in the campaign wizard Creatives step.
 
 2. From the Advertiser Home Page, choose Tools gear, Web Integration.
 
-   ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawi_1_zps2c984432.png&key=afea23f29e5a4f63bd166897e3dc72df)
+.. raw:: html
+
+   <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawi_1_zps2c984432.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
 
 3. In the Web Integration, Settings tab, enter the phone number to replace on your website.
-   ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F55db321e-4b1a-402f-bebd-9f5404f08722_zpsf5d8f61e.png&key=afea23f29e5a4f63bd166897e3dc72df)
+
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F55db321e-4b1a-402f-bebd-9f5404f08722_zpsf5d8f61e.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
 
 4. Click Update.
 
@@ -26,24 +34,31 @@ Campaign promo numbers can be static or they can be dynamically generated using 
 
 6. Place the web integration code on your website (every page where you want to display the promo number) in the footer just above the </body> tag. This step only has to be done once.
 
-<br>
 
-### Testing the code
-<hr>
+Testing the code
+----------------
+
+----------------
 
 1. To test web integration inside the platform, from the Web Integration panel, click Integration Test. Select "Open Test".
 
-   ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic4_zps40233005.png&key=afea23f29e5a4f63bd166897e3dc72df)
+.. raw:: html
 
-   Click "Start Test".
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic4_zps40233005.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
 
-   If the test is successful, the results return a green checkmark.
+Click "Start Test".
 
-   ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic5_zps989a68ca.png&key=afea23f29e5a4f63bd166897e3dc72df)
+If the test is successful, the results return a green checkmark.
 
-   If the test is unsuccessful, the results return with a red exclamation. The web integration code is not installed properly or the landing page cannot be found. See Web Integration Troubleshooting below.
+.. raw:: html
 
-   ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fc5ffef1c-96d3-4eda-9f2c-ca081e4bf2c9_zps09e4809b.png&key=afea23f29e5a4f63bd166897e3dc72df)
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic5_zps989a68ca.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
+
+If the test is unsuccessful, the results return with a red exclamation. The web integration code is not installed properly or the landing page cannot be found. See Web Integration Troubleshooting below.
+
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fc5ffef1c-96d3-4eda-9f2c-ca081e4bf2c9_zps09e4809b.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
 
 2. To test web integration outside the platform, in a browser enter the landing page URL, or other web integrated page's URL, and append PPCPN=9999999999.
 
@@ -59,60 +74,109 @@ Campaign promo numbers can be static or they can be dynamically generated using 
 
    If test is unsuccessful, the number or numbers do not change to 999-999-9999. See Web Integration Troubleshooting below.
 
-<br>
 
-### Web Integration Troubleshooting
-<hr>
+Web Integration Troubleshooting
+-------------------------------
+
+-------------------------------
+
 
 1. Check that the phone number is entered in the Web Integration, Settings tab and matches the phone number on your website.
 
+
 2. If you display other phone numbers in addition to the number entered in Web Integration, Settings tab, make sure you are using additional client side Web Integration settings to accommodate multiple phone numbers. See below for examples.
+
 
 3. Check for syntax errors on the page, for example, missing commas or brackets.
 
-<br>
 
-### Web Integration Settings
-<hr>
+
+Web Integration Settings
+------------------------
+
+------------------------
+
 
 Web Integration settings can be set on the server or the client side (browser side). As an example, the NumberToReplace field can be set on the platform(server side) and in the JavaScript function(client side). A large majority of advertisers only need to configure the settings on the platform or server side. Including Web Integration settings on the client side should only be done if the Web Integration's behavior needs to be customized. The client side settings always takes precedence over the server side.
 
-<br>
 
-### Server Side Integration
-<hr>
+Server Side Integration
+-----------------------
+
+-----------------------
 
 All of the server side settings are defined in the Web Integration, Settings tab.
 
-![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic7_zps611d3969.png&key=afea23f29e5a4f63bd166897e3dc72df)
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic7_zps611d3969.png&key=afea23f29e5a4f63bd166897e3dc72df" />
 
 Click on "Advanced Tracking Settings" to view and configure advanced settings.
 
-![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic9_zps3c2de219.png&key=afea23f29e5a4f63bd166897e3dc72df)
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawic9_zps3c2de219.png&key=afea23f29e5a4f63bd166897e3dc72df" />
 
 Advertisers can have campaign traffic and general traffic going to the same integrated landing pages. The Web Integration code distinguishes between the two types of traffic and behaves accordingly. Campaign traffic arrives on the landing page by clicking on a link supplied by the Invoca platform. The link loads the promo number dynamically with the web integration code. General traffic arrives on the landing page without clicking on an Invoca platform link.
 
 To track and report on all general traffic, select "Track all calls".  Select the Campaign to track general traffic. Select or create the RingPool to use for general traffic and click Update.
 
-<br>
 
-### Client Side Integration & Parameters
-<hr>
+Client Side Integration & Parameters
+------------------------------------
+
+------------------------------------
 
 The client side settings are listed in the table below.  Most installations do not require any client side changes.  To initialize the Web Integration code, pass the integration settings in a hash to the Invoca.advertiser_integration function.
 
-~~~
+.. code-block:: ruby
+
   Invoca.advertiser_integration = {
     id : 'YOUR_ID_HERE'
   };
-~~~
-{: .prettyprint .theme-github}
 
-|---
-|Required parameters: |  |  |
-|-|-|-
-| id | String | Unique Advertiser ID. (Auto Populated in Tools, Web Integration, Get Code tab)
-{: .multiline-table}
+
+.. list-table::
+  :widths: 11 4 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Required parameters:
+    - &nbsp;
+    - &nbsp;
+
+  * - id
+    - String
+    - Unique Advertiser ID. (Auto Populated in Tools, Web Integration, Get Code tab)
+
+
+.. list-table::
+  :widths: 11 4 40
+  :header-rows: 1
+  :class: multiline-table
+
+  * - *Optional parameters:*
+    - 
+    - 
+
+  * - numberToReplace
+    - String
+    - Default: `''`
+
+      Note: This field can be specified on the server side on the Web Integration, Settings tab.
+
+      It is recommended to use this and not add this parameter to the Javascript.
+
+      The phone number on the page to replace with an Invoca promo number.
+
+      Prefix international numbers with '+' and separate the country code with a space. Other punctuation is ignored but can be used for readability.  The number is replaced in the same format as is used on the page.
+
+      Example values:
+
+      '805-555-5784', '+1 8055555784', '020 8905 1456', or '+44 020 8905 1456'
+
+
+
 
 |---
 |*Optional parameters:* |  |  |
@@ -120,7 +184,7 @@ The client side settings are listed in the table below.  Most installations do n
 |numberToReplace | String | Default: `''`
 | | | Note: This field can be specified on the server side on the Web Integration, Settings tab.
 | | | It is recommended to use this and not add this parameter to the Javascript.  
-| | | The phone number on the page to replace with an Invoca promo number.
+| | |
 | | | Prefix international numbers with '+' and separate the country code with a space. Other punctuation is ignored but can be used for readability.  The number is replaced in the same format as is used on the page.
 | | | Example values:
 | | | '805-555-5784', '+1 8055555784', '020 8905 1456', or '+44 020 8905 1456'

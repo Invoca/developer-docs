@@ -63,6 +63,14 @@ div.section h1 {
   padding: inherit;
 }
 
+p.first {
+  margin-top: 0 !important;
+}
+
+
+table.multiline-table td {
+  vertical-align: top !important;
+}
 
 table {
   border-spacing: 2px;
@@ -70,7 +78,6 @@ table {
   border-color: grey;
   padding: 8px;
   width: 100%;
-  font-size: 10pt;
 }
 
 th {
@@ -96,6 +103,11 @@ tr {
 td {
   padding: 8px;
   border-right: 1px solid #d5d5d5;
+  font-size: 10pt !important;
+}
+
+td p {
+  font-size: 10pt !important;
 }
 
 tr:nth-child(even) {
@@ -257,7 +269,7 @@ a.reference.internal {
 /*********************RIGHT HAND CONTENT************************/
 /* wraps up .wy-nav-content and its subordinates */
 .wy-nav-content-wrap {
-  #background-color: #3F3F3F;
+  background-color: #3F3F3F !important;
   #color: #D5D5D5;
 }
 

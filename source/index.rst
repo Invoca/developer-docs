@@ -12,7 +12,7 @@ Welcome to the Invoca Developer Portal
          :class: default
       .. image:: _static/icon-list-hover.png
          :class: hover
-         :target: basics
+         :target: basics/index.html
     - .. rubric:: Basics
 
       This section covers the several different fundamental areas of interacting with our APIs and web integration code.
@@ -21,7 +21,7 @@ Welcome to the Invoca Developer Portal
          :class: default
       .. image:: _static/icon-books-hover.png
          :class: hover
-         :target: api_documentation
+         :target: api_documentation/index.html
     - .. rubric:: API Documentation
 
       Get documentation for each of the APIs in Invoca's full suite and learn how to access oAuth compliant API tokens.
@@ -30,7 +30,7 @@ Welcome to the Invoca Developer Portal
          :class: default
       .. image:: _static/icon-gears-hover.png
          :class: hover
-         :target: web_integration
+         :target: web_integration/index.html
     - .. rubric:: Web Integration
 
       Invoca's web integration code will dynamically display a unique phone number for each source driving traffic to landing pages.

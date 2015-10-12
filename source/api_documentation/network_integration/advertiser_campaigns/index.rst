@@ -54,7 +54,14 @@ Node Parameters and Usage
 
   * - Connect
     - prompt
+
+      \*destination_phone_number
+
+      \*destination_country_code
+
     -
+
+      Forwards the call to a selected phone number after optionally reading a prompt.
 
 Endpoint
 --------
