@@ -15,7 +15,7 @@
 import sys
 import os
 import re
-import shutil
+import pickle
 from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
@@ -35,11 +35,20 @@ from doc_versions import *
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates', '_original_templates']
+# override list class so that the RTD templates will be appended, rather than prepended to the list
+templates_path = []
+class MyList(list):
+    def insert(self, index, value):
+        global templates_path
+        super(MyList, self).append(value)
+        templates_path = [x for x in self]
 
-# move the RTD template files to a folder so our templates will be found before theirs
-shutil.move('/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/', './_original_templates')
+# Add any paths that contain templates here, relative to this directory.
+templates_path = MyList(['_templates', '/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/source/_templates/'])
+print type(templates_path).__name__
+templates_path.insert(0, 'test')
+print type(templates_path).__name__
+#pickle.dump( templates_path, open( "save.p", "wb" ) )
 
 # The suffix of source filenames.
 source_parsers = {
