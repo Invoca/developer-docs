@@ -332,3 +332,25 @@ a.reference.internal {
 .highlight-json .kc, .kd, .kn, .kp, .kr, .kt, .mf, .mh, .mi, .mo {
   color: #445588;
 }
+table.parameters {
+  border: 0 !important;
+}
+
+table.parameters th {
+  background-color: #6A6A6A;
+  color: #E4E4E4;
+}
+
+table.parameters tbody td:last-child {
+  white-space: normal;
+}
+
+table.parameters .row-even {
+  background-color: #efefef;
+  color: #4A4A4A;
+}
+
+table.parameters .row-odd {
+  background-color: white;
+  color: #4A4A4A;
+}

@@ -14,6 +14,7 @@ You can set budgets on your campaign. There are two budget types, budget_cap_ale
 You are not allowed to delete campaigns.
 
 .. list-table::
+  :widths: 11 4 40
   :header-rows: 1
   :class: parameters
 
@@ -39,6 +40,7 @@ Node Parameters and Usage
 * => required parameter
 
 .. list-table::
+  :widths: 11 4 40
   :header-rows: 1
   :class: parameters
 
