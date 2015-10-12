@@ -68,18 +68,20 @@ Endpoint
 
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
 
-.. container:: http-method
+.. raw:: html
 
-   .. list-table::
-      :class: summary
-
-      * - GET
-        - :doc:`/advertiser_campaigns <./get_advertiser_campaigns>`
-        - all campaigns for an Advertiser
-
-      * - POST
-        - :doc:`/advertiser_campaigns <./get_advertiser_campaigns>`
-        - all campaigns for an Advertiser
+  <div class='endpoint-list'>
+    <a href="./get_advertiser_campaigns.html">
+      <div class='action'>GET</div>
+      <div class='path'>/advertiser_campaigns</div>
+      <div class='description'>all campaigns for an Advertiser</div>
+    </a>
+    <a href="./get_advertiser_campaigns.html">
+      <div class='action'>POST</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
+      <div class='description'>Update an Advertiser Campaign</div>
+    </a>
+  </div>
 
 .. toctree::
    :maxdepth: 2
