@@ -1,7 +1,6 @@
 Basics
 ======
-
-These are the more basic API articles
+The following API articles provide an understanding for high level API methodology across the different Invoca APIs.
 
 .. toctree::
    :maxdepth: 2
