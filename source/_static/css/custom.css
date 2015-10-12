@@ -367,6 +367,7 @@ table.parameters .row-odd {
 
 #welcome-to-the-invoca-developer-portal table.home-page.docutils tr:hover {
   background-color: #000;
+  cursor: pointer;
 }
 
 #welcome-to-the-invoca-developer-portal table.home-page.docutils tr td {
