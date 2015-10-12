@@ -15,6 +15,7 @@
 import sys
 import os
 import re
+import shutil
 from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
@@ -34,13 +35,11 @@ from doc_versions import *
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-# override list class so that the RTD templates will be appended, rather than prepended to the list
-class MyList(list):
-    def insert(self, index, value):
-        super(MyList, self).append(value)
-
 # Add any paths that contain templates here, relative to this directory.
-templates_path = MyList(['_templates', '/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/source/_templates/'])
+templates_path = ['_templates', '_original_templates']
+
+# move the RTD template files to a folder so our templates will be found before theirs
+shutil.move('/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/', './_original_templates')
 
 # The suffix of source filenames.
 source_parsers = {
