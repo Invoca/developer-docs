@@ -37,7 +37,7 @@ When creating an advertiser campaign, you need to provide some call flow logic t
 
 Node Parameters and Usage
 
-* => required parameter
+\* => required parameter
 
 .. list-table::
   :widths: 11 4 40
@@ -67,6 +67,10 @@ Endpoint
       :class: summary
 
       * - GET
+        - :doc:`/advertiser_campaigns <./get_advertiser_campaigns>`
+        - all campaigns for an Advertiser
+
+      * - POST
         - :doc:`/advertiser_campaigns <./get_advertiser_campaigns>`
         - all campaigns for an Advertiser
 
