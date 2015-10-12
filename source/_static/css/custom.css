@@ -8,8 +8,8 @@ body {
 }
 
 img.logo {
-  width: 232px !important;
-  height: 82px !important;
+  width: 262px !important;
+  height: 97px !important;
   padding: 0px !important;
 }
 
@@ -240,15 +240,7 @@ cite  {
     background-color: #333;
 }
 
-a {
-  color: gray;
-}
-
 .wy-menu-vertical a {
-  color: rgb(132, 188, 13);
-}
-
-a:hover {
   color: rgb(132, 188, 13);
 }
 
@@ -260,8 +252,6 @@ a:hover {
 
 .wy-menu-vertical li.current {
   background: #333 none repeat scroll 0 0;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .wy-menu-vertical li.current a {
@@ -272,12 +262,8 @@ a:hover {
   background-color: #333;
 }
 
-ul.wy-breadcrumbs {
-  display: none;
-}
-
 a.reference.internal {
-  background-color: transparent !important;
+  background-color: #333;
 }
 
 /*********************RIGHT HAND CONTENT************************/
@@ -296,7 +282,11 @@ a.reference.internal {
 
 /* Links that live inside wy-nav-content don't change color */
 .wy-nav-content a {
+  color: #54C4EC;
+}
 
+.wy-nav-content a.reference.internal:visited {
+  color: #54C4EC;
 }
 
 .wy-nav-content a.reference.external:visited {
@@ -321,6 +311,32 @@ a.reference.internal {
   border-radius: 4px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   white-space: pre-wrap;
+}
+
+/*********************API actions tables************************/
+/* might rename summary to something more action-specific */
+.rst-content table.docutils.summary {
+  border-color: #6A6A6A;
+}
+
+.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td {
+  background-color: #6A6A6A;
+  border-bottom: 4px solid #3f3f3f;
+  border-top: 4px solid #3f3f3f;
+  border-left: 1px solid #6a6a6a;
+  border-right: 1px solid #6a6a6a;
+}
+
+.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td a,
+.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td {
+  color: white;
+  background-color: #6A6A6A;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td:nth-child(1) {
+  color: #1DF0D0;
 }
 
 /****** Elements we didn't ask for and don't want **************/
