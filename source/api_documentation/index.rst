@@ -56,9 +56,7 @@ These are the more in depth API articles
             However, the strong breeze will bring
             down the temperatures.
 
-   .. highlight:: Ruby
-
-   .. code-block:: Ruby
+   .. code-block:: json
       :linenos:
 
       {
@@ -349,100 +347,4 @@ These are the more in depth API articles
             "name": "PostSeason Promotion 11 fJauFbSEGHKw8ADEGv",
             "max_promo_numbers": 10
           }
-        }</pre></code>
-
-
-      <hr>
-
-      ## Create an Advertiser Campaign
-      POST `/advertiser_campaigns/<advertiser_campaign_id>`
-
-      ### Examples
-      <hr>
-      Example POST to non‐existing Advertiser Campaign fJauFbSEGHKw8ADEGv under Advertiser cFUyYnFHyiYA42TrpM in the Demo Network.
-
-      POST
-      `https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
-
-      With an existing advertiser, the IVR tree may be updated independently of other attributes. Below is a curl command that only needs network API credentials, a network id and an advertiser id. This will create an advertiser campaign with id 445566. The campaign id may be changed freely.
-
-      Endpoint:
-      `https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
-
-      <pre><code>curl­ -XPOST­ -H "Content­Type: application/json"­ -u 'login:pass'
-      'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
-      -d '
-      {
-        "hours": {
-          "tuesday_close": 61200,
-          "wednesday_close": 61200,
-          "saturday_open": 28800,
-          "wednesday_closed": false,
-          "friday_open": 28800,
-          "thursday_close": 61200,
-          "thursday_closed": false,
-          "friday_close": 61200,
-          "monday_close": 61200,
-          "wednesday_open": 28800,
-          "sunday_open": 28800,
-          "thursday_open": 28800,
-          "friday_closed": false,
-          "monday_open": 28800,
-          "tuesday_closed": false,
-          "monday_closed": false,
-          "saturday_close": 61200,
-          "saturday_closed": false,
-          "sunday_close": 61200,
-          "sunday_closed": false,
-          "tuesday_open": 28800
-        },
-        "name": "NFLCampaign",
-        "timezone": "PacificTime(US&Canada)",
-        "description": "Augustpromotion tosellpost­seasonticketsathalf price.",
-        "ivr_tree": {
-          "root": {
-            "children": [
-            ],
-            "condition": "",
-            "node_type": "Connect",
-            "destination_phone_number": "8052844300",
-            "destination_country_code": "1"
-          },
-          "record_calls": true
-        },
-        "named_regions": [
-          {
-            "name": "WestCoast",
-            "regions": [
-              {
-                "value": "CA",
-                "region_type": "State"
-              },
-              {
-                "value": "OR",
-                "region_type": "State"
-              },
-              {
-                "value": "WA",
-                "region_type": "State"
-              }
-            ]
-          },
-          {
-            "name": "EastCoast",
-            "regions": [
-              {
-                "value": "NY",
-                "region_type": "State"
-              },
-              {
-                "value": "NJ",
-                "region_type": "State"
-              }
-            ]
-          }
-        ],
-        "operating_24_7": false,
-        "url": "http://www.nfltix.com/postseasonnow"
-      }
-      ' -v
+        }
