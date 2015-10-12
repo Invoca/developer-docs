@@ -35,20 +35,8 @@ from doc_versions import *
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-# override list class so that the RTD templates will be appended, rather than prepended to the list
-templates_path = []
-class MyList(list):
-    def insert(self, index, value):
-        global templates_path
-        super(MyList, self).append(value)
-        templates_path = [x for x in self]
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = MyList(['_templates', '/home/docs/checkouts/readthedocs.org/user_builds/invoca-developer-portal/checkouts/latest/source/_templates/'])
-print type(templates_path).__name__
-templates_path.insert(0, 'test')
-print type(templates_path).__name__
-#pickle.dump( templates_path, open( "save.p", "wb" ) )
+# these templates will only be used we building locally, they will be ignored by RTD
+templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_parsers = {
@@ -126,19 +114,32 @@ pygments_style = 'sphinx'
 # Uncomment the following lines to build the docs locally using sphinx-build
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
+additional_js = '''
+<!-- http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+'''
+
+html_context = {
+        'metatags': additional_js,
+    }
+
 if not on_rtd:  # only import and set the theme if we're building docs locally
   import sphinx_rtd_theme
   html_theme = 'sphinx_rtd_theme'
   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
   html_style = 'css/custom.css'
 else:
-    html_context = {
+    html_context.update({
         'css_files': [
             'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
             'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
             '_static/css/custom.css',
-        ],
-    }
+        ]
+    })
+
+print html_context
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
