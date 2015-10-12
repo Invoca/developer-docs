@@ -269,7 +269,7 @@ a.reference.internal {
 /*********************RIGHT HAND CONTENT************************/
 /* wraps up .wy-nav-content and its subordinates */
 .wy-nav-content-wrap {
-  #background-color: #3F3F3F;
+  background-color: #3F3F3F !important;
   #color: #D5D5D5;
 }
 
