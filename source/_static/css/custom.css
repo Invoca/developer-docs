@@ -323,8 +323,8 @@ a.reference.internal {
   background-color: #6A6A6A;
   border-bottom: 4px solid #3f3f3f;
   border-top: 4px solid #3f3f3f;
-  border-left: 0 solid #6a6a6a;
-  border-right: 0 solid #6a6a6a;
+  border-left: 1px solid #6a6a6a;
+  border-right: 1px solid #6a6a6a;
 }
 
 .rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td a,
