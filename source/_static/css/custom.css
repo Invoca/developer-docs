@@ -335,6 +335,10 @@ cite  {
   color: #15DBF6;
 }
 
+.toctree-l3 ul {
+  display: none !important;
+}
+
 .endpoint-list a div.put-action {
   width: 10%;
   color: #F8C204;
