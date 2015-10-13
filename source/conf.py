@@ -51,8 +51,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'invoca'
-copyright = u'{}, invoca'.format(datetime.now().year)
+project = u'Invoca'
+copyright = u'{}, Invoca'.format(datetime.now().year)
 
 # The full version, including alpha/beta/rc tags.
 version = COMMON_VERSION
