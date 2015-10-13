@@ -294,3 +294,12 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+rst_prolog = """
+.. raw:: html
+
+  <div style="text-align: right;" >
+    <a href="http://www.invoca.net/home">Return to the Invoca Platform</a>
+  </div>
+
+"""
