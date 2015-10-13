@@ -124,7 +124,6 @@ Endpoint
       <div class='description'>Get all campaigns for an Advertiser</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: get_advertiser_campaigns.rst
 
@@ -137,7 +136,6 @@ Endpoint
       <div class='description'>Get a campaign for an Advertiser</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: get_advertiser_campaign.rst
 
@@ -150,7 +148,6 @@ Endpoint
       <div class='description'>Create an Advertiser Campaign</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: post_advertiser_campaign.rst
 

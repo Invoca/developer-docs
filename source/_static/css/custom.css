@@ -316,7 +316,7 @@ cite  {
   font-size: 14px;
   background-color: #6A6A6A;
   padding: 15px;
-  margin: 5px 0;
+  margin: 5px 0 0 0;
 }
 
 .endpoint-list a div {
@@ -350,6 +350,39 @@ cite  {
 
 .endpoint-list a div.description {
   width: 30%;
+}
+
+.endpoint-long-description {
+  cursor: text;
+  padding: 25px;
+  background-color: #efefef;
+  color: #4A4A4A;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.endpoint-long-description .rubric {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  border-bottom: 1px solid black;
+  padding-bottom: 4px;
+}
+
+.endpoint-long-description .highlight-json tr:nth-child(n),
+.endpoint-long-description .highlight-bash tr:nth-child(n) {
+  background-color: #f5f5f5;
+}
+
+.endpoint-long-description .highlight-json td,
+.endpoint-long-description .highlight-bash td {
+  border-right: none;
 }
 
 /****** Elements we didn't ask for and don't want **************/
