@@ -122,10 +122,37 @@ Endpoint
 
 .. raw:: html
 
-  <div>
+  <div class='endpoint-list'>
+    <a href="./get_advertiser_campaign_go_live.html">
+      <div class='action'>GET</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live</div>
+      <div class='description'>Set Campaign State to Live</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'>
+
+.. include:: get_advertiser_campaign_go_live.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./get_advertiser_campaign_quick_stats.html">
+      <div class='action'>GET</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/quick_stats</div>
+      <div class='description'>Quick Stats</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'>
+
+.. include:: get_advertiser_campaign_quick_stats.rst
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
    get_advertiser_campaigns
+   get_advertiser_campaign
+   post_advertiser_campaign
+   put_advertiser_campaign
+   get_advertiser_campaign_quick_stats
+   get_advertiser_campaign_go_live
