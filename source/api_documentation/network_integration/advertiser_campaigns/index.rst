@@ -83,6 +83,10 @@ Endpoint
     </a>
   </div>
 
+.. container:: myclass
+
+  .. include:: get_advertiser_campaigns.rst
+
 .. toctree::
    :maxdepth: 2
    :hidden:
