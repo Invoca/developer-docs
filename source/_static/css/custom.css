@@ -346,6 +346,10 @@ cite  {
   display: none !important;
 }
 
+.wy-breadcrumbs {
+  display: none !important;
+}
+
 
 .wy-side-nav-search div.version {
   display: none !important;
