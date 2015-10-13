@@ -453,3 +453,9 @@ table.parameters .row-odd {
 #welcome-to-the-invoca-developer-portal table.home-page.docutils tr:hover img.hover {
   display: block;
 }
+
+/*********************FOR BOOTSTRAP INTERACTIONS************************/
+.collapsing,
+.collapse {
+  overflow: hidden;
+}
