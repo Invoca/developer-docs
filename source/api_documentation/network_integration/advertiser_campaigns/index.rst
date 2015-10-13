@@ -77,7 +77,7 @@ Endpoint
       <div class='description'>Get all campaigns for an Advertiser</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'>
+  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: get_advertiser_campaigns.rst
 
@@ -90,7 +90,7 @@ Endpoint
       <div class='description'>Get a campaign for an Advertiser</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'>
+  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: get_advertiser_campaign.rst
 
@@ -103,7 +103,7 @@ Endpoint
       <div class='description'>Create an Advertiser Campaign</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'>
+  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: post_advertiser_campaign.rst
 
@@ -116,22 +116,9 @@ Endpoint
       <div class='description'>Update an Advertiser Campaign</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'>
+  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: put_advertiser_campaign.rst
-
-.. raw:: html
-
-  <div class='endpoint-list'>
-    <a href="./get_advertiser_campaign_go_live.html">
-      <div class='action'>GET</div>
-      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live</div>
-      <div class='description'>Set Campaign State to Live</div>
-    </a>
-  </div>
-  <div class='MYCOLLAPSABLEDIV'>
-
-.. include:: get_advertiser_campaign_go_live.rst
 
 .. raw:: html
 
@@ -142,9 +129,65 @@ Endpoint
       <div class='description'>Quick Stats</div>
     </a>
   </div>
-  <div class='MYCOLLAPSABLEDIV'>
+  <div class='MYCOLLAPSABLEDIV'></div>
 
 .. include:: get_advertiser_campaign_quick_stats.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./get_advertiser_campaign_go_live.html">
+      <div class='action'>GET</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live</div>
+      <div class='description'>Set Campaign State to Live</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'></div>
+
+.. include:: get_advertiser_campaign_go_live.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./post_advertiser_campaign_go_live.html">
+      <div class='post-action'>POST</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live</div>
+      <div class='description'>Set Campaign State to Live</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'></div>
+
+.. include:: post_advertiser_campaign_go_live.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./get_advertiser_campaign_archive.html">
+      <div class='action'>GET</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive</div>
+      <div class='description'>Set Campaign State to Archived</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'></div>
+
+.. include:: get_advertiser_campaign_archive.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./post_advertiser_campaign_archive.html">
+      <div class='post-action'>POST</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive</div>
+      <div class='description'>Set Campaign State to Archived</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'></div>
+
+.. include:: post_advertiser_campaign_archive.rst
+
+.. raw:: html
+
+  <div>
 
 .. toctree::
    :maxdepth: 2
@@ -156,3 +199,6 @@ Endpoint
    put_advertiser_campaign
    get_advertiser_campaign_quick_stats
    get_advertiser_campaign_go_live
+   post_advertiser_campaign_go_live
+   get_advertiser_campaign_archive
+   post_advertiser_campaign_archive
