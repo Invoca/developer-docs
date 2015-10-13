@@ -98,7 +98,7 @@ Endpoint
 
   <div class='endpoint-list'>
     <a href="./post_advertiser_campaign.html">
-      <div class='action'>POST</div>
+      <div class='post-action'>POST</div>
       <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
       <div class='description'>Create an Advertiser Campaign</div>
     </a>
@@ -111,7 +111,7 @@ Endpoint
 
   <div class='endpoint-list'>
     <a href="./put_advertiser_campaign.html">
-      <div class='action'>PUT</div>
+      <div class='put-action'>PUT</div>
       <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
       <div class='description'>Update an Advertiser Campaign</div>
     </a>
