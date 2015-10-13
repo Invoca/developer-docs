@@ -118,7 +118,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
   import sphinx_rtd_theme
   html_theme = 'sphinx_rtd_theme'
   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-  html_style = 'css/custom.css'
+  html_context = {}
 else:
     html_context = {
         'css_files': [
@@ -142,6 +142,11 @@ else:
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {"nosidebar": True, "display_version": False, "logo_only": True}
+
+# It seems that ReadTheDocs ignores html_theme_options above, so here we are expanding the options directly into the context
+if on_rtd:
+  for key in html_theme_options:
+    html_context['theme_' + key] = html_theme_options[key]
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []

@@ -206,9 +206,7 @@ cite  {
 /* search box */
 .wy-side-nav-search {
   background-color: inherit;
-  margin-top: -20px !important;
   margin-bottom: 10px !important;
-  padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
 
@@ -216,7 +214,7 @@ cite  {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
   padding-top: 0px !important;
-  padding-bottom: 5px !important;
+  padding-bottom: 0px;
   color: rgba(0, 0, 0, 0);
 }
 
@@ -365,6 +363,9 @@ cite  {
   display: none !important;
 }
 
+div[role=navigation][aria-label~=breadcrumbs] {
+  display: none;
+}
 
 .wy-side-nav-search div.version {
   display: none !important;

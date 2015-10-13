@@ -1,7 +1,4 @@
 {# This template is only used when building locally #}
-{%- set theme_nosidebar = True %}
-{%- set theme_display_version = False %}
-{%- set theme_logo_only = True %}
 
 {# Import the theme's layout. #}
 {% extends "!layout.html" %}
@@ -10,5 +7,6 @@
 <!-- http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 1) }}">
 <script src="{{ pathto('_static/js/custom.js', 1) }}"></script>
 {% endblock %}
