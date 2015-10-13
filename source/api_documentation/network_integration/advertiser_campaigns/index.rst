@@ -74,7 +74,7 @@ Endpoint
     <a href="./get_advertiser_campaigns.html">
       <div class='action'>GET</div>
       <div class='path'>/advertiser_campaigns</div>
-      <div class='description'>all campaigns for an Advertiser</div>
+      <div class='description'>Get all campaigns for an Advertiser</div>
     </a>
   </div>
   <div class='MYCOLLAPSABLEDIV'>
@@ -83,17 +83,42 @@ Endpoint
 
 .. raw:: html
 
-  <div>
   <div class='endpoint-list'>
-    <a href="./get_advertiser_campaigns.html">
+    <a href="./get_advertiser_campaign.html">
+      <div class='action'>GET</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
+      <div class='description'>Get a campaign for an Advertiser</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'>
+
+.. include:: get_advertiser_campaign.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./post_advertiser_campaign.html">
       <div class='action'>POST</div>
+      <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
+      <div class='description'>Create an Advertiser Campaign</div>
+    </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'>
+
+.. include:: post_advertiser_campaign.rst
+
+.. raw:: html
+
+  <div class='endpoint-list'>
+    <a href="./put_advertiser_campaign.html">
+      <div class='action'>PUT</div>
       <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
       <div class='description'>Update an Advertiser Campaign</div>
     </a>
   </div>
   <div class='MYCOLLAPSABLEDIV'>
 
-.. include:: get_advertiser_campaigns.rst
+.. include:: put_advertiser_campaign.rst
 
 .. raw:: html
 
