@@ -76,16 +76,28 @@ Endpoint
       <div class='path'>/advertiser_campaigns</div>
       <div class='description'>all campaigns for an Advertiser</div>
     </a>
+  </div>
+  <div class='MYCOLLAPSABLEDIV'>
+
+.. include:: get_advertiser_campaigns.rst
+
+.. raw:: html
+
+  <div>
+  <div class='endpoint-list'>
     <a href="./get_advertiser_campaigns.html">
       <div class='action'>POST</div>
       <div class='path'>/advertiser_campaigns/&lt;advertiser_campaign_id&gt;</div>
       <div class='description'>Update an Advertiser Campaign</div>
     </a>
   </div>
+  <div class='MYCOLLAPSABLEDIV'>
 
-.. container:: myclass
+.. include:: get_advertiser_campaigns.rst
 
-  .. include:: get_advertiser_campaigns.rst
+.. raw:: html
+
+  <div>
 
 .. toctree::
    :maxdepth: 2
