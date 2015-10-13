@@ -310,29 +310,34 @@ cite  {
 }
 
 /*********************API actions tables************************/
-/* might rename summary to something more action-specific */
-.rst-content table.docutils.summary {
-  border-color: #6A6A6A;
-}
-
-.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td {
-  background-color: #6A6A6A;
-  border-bottom: 4px solid #3f3f3f;
-  border-top: 4px solid #3f3f3f;
-  border-left: 1px solid #6a6a6a;
-  border-right: 1px solid #6a6a6a;
-}
-
-.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td a,
-.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td {
+.endpoint-list a {
+  display: block;
+  border-radius: 4px;
   color: white;
-  background-color: #6A6A6A;
   font-weight: 500;
   font-size: 14px;
+  background-color: #6A6A6A;
+  padding: 15px;
+  margin: 5px 0;
 }
 
-.rst-content table.docutils.summary:not(.field-list) tr:nth-child(n) td:nth-child(1) {
+.endpoint-list a div {
+  display: inline-block;
+  word-wrap: break-word;
+  padding: 0 2px;
+}
+
+.endpoint-list a div.action {
+  width: 10%;
   color: #1DF0D0;
+}
+
+.endpoint-list a div.path {
+  width: 50%;
+}
+
+.endpoint-list a div.description {
+  width: 30%;
 }
 
 /****** Elements we didn't ask for and don't want **************/
