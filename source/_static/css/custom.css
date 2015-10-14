@@ -492,4 +492,12 @@ table.parameters .row-odd {
   display: block;
 }
 
+div.endpoint-list div.panel-heading {
+  padding: 0;
+}
+
+div.endpoint-list div.panel-body .container {
+  width: auto;
+}
+
 /*********************FOR BOOTSTRAP INTERACTIONS************************/

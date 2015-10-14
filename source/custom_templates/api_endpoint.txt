@@ -3,13 +3,13 @@
   <div class="panel-group">
     <div class="endpoint-list">
       <div class="panel-heading" id="headingOne">
-        <a class="collapsed" data-toggle="collapse" data-target="#one" aria-expanded="false" aria-controls="one">
+        <a class="collapsed" data-toggle="collapse" data-target="div.panel.collapse" aria-expanded="false" aria-controls="one">
           <div class=':verb:'>:verb:</div>
           <div class='path'>:path:</div>
           <div class='description'>:description:</div>
         </a>
       </div>
-      <div id="one" class="panel collapse" aria-labelledby="headingOne">
+      <div class="panel collapse" aria-labelledby="headingOne">
         <div class="panel-body">
 
 
