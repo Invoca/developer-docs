@@ -331,7 +331,7 @@ cite  {
   font-weight: 500;
   font-size: 14px;
   background-color: #6A6A6A;
-  padding: 15px;
+  padding: 14px;
   margin: 5px 0 0 0;
 }
 
@@ -363,6 +363,16 @@ cite  {
 .endpoint-list a div.PUT {
   width: 10%;
   color: #F8C204;
+}
+
+.endpoint-list a div:first-child:before {
+  font-size: 120%;
+  content: "▾";
+  margin-right: 15px;
+}
+
+.endpoint-list a.collapsed div:first-child:before {
+  content: "▸";
 }
 
 .endpoint-list a div.path {
@@ -487,10 +497,6 @@ table.parameters .row-odd {
   background-color: inherit;
 }
 
-div.panel-group {
-  margin-bottom: 0 !important
-}
-
 #welcome-to-the-invoca-developer-portal table.home-page.docutils .rubric {
   color: #84BC0D;
   font-size: 29px;
@@ -518,6 +524,14 @@ div.endpoint-list div.panel-heading {
 
 div.endpoint-list div.panel-body .container {
   width: auto;
+}
+
+.panel-group {
+  margin-bottom: 0;
+}
+
+.panel-body {
+  padding: 0;
 }
 
 /*********************FOR BOOTSTRAP INTERACTIONS************************/
