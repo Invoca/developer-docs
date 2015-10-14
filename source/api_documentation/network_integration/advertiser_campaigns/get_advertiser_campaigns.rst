@@ -1,14 +1,13 @@
-GET  /advertiser_campaigns
-""""""""""""""""""""""""""
+.. container:: endpoint-long-description
 
-.. rubric:: Examples
+  .. rubric:: Examples
 
-Read all campaigns for Advertiser 2 id from network
+  Read all campaigns for Advertiser 2 id from network
 
-Endpoint:
+  Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns.json`
+  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns.json`
 
-Response Body:
+  Response Body:
 
-An array of campaigns are returned.
+  An array of campaigns are returned.
