@@ -126,7 +126,8 @@ def build_api_endpoint_template(source):
 def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
-    source[0] = build_api_endpoint_template(source[0])
+
+  source[0] = build_api_endpoint_template(source[0])
 
 
 def setup(app):
