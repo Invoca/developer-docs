@@ -77,7 +77,7 @@ def source_handler(app, docname, source):
     template = open('source/custom_templates/api_endpoint.txt', 'r').read()
     for search, replacement in template_vars.iteritems():
       if re.search(search, template):
-        template = re.sub(search, replacement, template)
+        template = template.replace(search, replacement)
       else:
         raise Exception("Template does not have replacement key " + search)
     remaining_keys = re.search(r":[a-zA-Z_]+:", template)

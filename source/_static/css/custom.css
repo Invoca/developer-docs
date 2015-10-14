@@ -325,6 +325,11 @@ cite  {
   padding: 0 2px;
 }
 
+.endpoint-list a div.GET {
+  width: 10%;
+  color: #1DF0D0;
+}
+
 .endpoint-list a div.action {
   width: 10%;
   color: #1DF0D0;
