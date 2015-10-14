@@ -487,6 +487,10 @@ table.parameters .row-odd {
   background-color: inherit;
 }
 
+div.panel-group {
+  margin-bottom: 0 !important
+}
+
 #welcome-to-the-invoca-developer-portal table.home-page.docutils .rubric {
   color: #84BC0D;
   font-size: 29px;
