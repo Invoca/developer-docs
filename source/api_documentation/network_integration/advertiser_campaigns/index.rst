@@ -68,215 +68,59 @@ Endpoint
 
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
 
-.. raw:: html
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns
+   :description: Get all campaigns for an Advertiser
+   :page: get_advertiser_campaigns
 
-  <div class="panel-group">
-    <div class="endpoint-list">
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :description: Get a campaign for an Advertiser
+   :page: get_advertiser_campaign
 
-      <div class="panel-heading" id="headingOne">
-        <a class="collapsed" data-toggle="collapse" data-target="#one" aria-expanded="false" aria-controls="one">
-          <div class='action'>GET</div>
-          <div class='path'>/advertiser_campaigns</div>
-          <div class='description'>Get all campaigns for an Advertiser</div>
-        </a>
-      </div>
-      <div id="one" class="panel collapse" aria-labelledby="headingOne">
-        <div class="panel-body">
+.. api_endpoint::
+   :verb: POST
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :description: Create an Advertiser Campaign
+   :page: post_advertiser_campaign
 
-.. include:: get_advertiser_campaigns.rst
+.. api_endpoint::
+   :verb: PUT
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :description: Update an Advertiser Campaign
+   :page: put_advertiser_campaign
 
-.. raw:: html
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/quick_stats
+   :description: Quick Stats
+   :page: get_advertiser_campaign_quick_stats
 
-        </div>
-      </div>
-    </div>
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live
+   :description: Set Campaign State to Live
+   :page: get_advertiser_campaign_go_live
 
+.. api_endpoint::
+   :verb: POST
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live
+   :description: Set Campaign State to Live
+   :page: post_advertiser_campaign_go_live
 
-.. raw:: html
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive
+   :description: Set Campaign State to Archived
+   :page: get_advertiser_campaign_archive
 
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#two" aria-expanded="false" aria-controls="two">
-         <div class='action'>GET</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Get an Advertiser Campaign</div>
-       </a>
-     </div>
-     <div id="two" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: get_advertiser_campaign.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#three" aria-expanded="false" aria-controls="three">
-         <div class='action'>POST</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Create an Advertiser Campaign</div>
-       </a>
-     </div>
-     <div id="three" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: post_advertiser_campaign.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#four" aria-expanded="false" aria-controls="four">
-         <div class='action'>PUT</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Update an Advertiser Campaign</div>
-       </a>
-     </div>
-     <div id="four" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: put_advertiser_campaign.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#five" aria-expanded="false" aria-controls="five">
-         <div class='action'>GET</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Quick Stats</div>
-       </a>
-     </div>
-     <div id="five" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: get_advertiser_campaign_quick_stats.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#six" aria-expanded="false" aria-controls="six">
-         <div class='action'>GET</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Set Campaign State to Live</div>
-       </a>
-     </div>
-     <div id="six" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: get_advertiser_campaign_quick_stats.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#seven" aria-expanded="false" aria-controls="seven">
-         <div class='action'>POST</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Set Campaign State to Live</div>
-       </a>
-     </div>
-     <div id="seven" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: get_advertiser_campaign_quick_stats.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading" id="headingOne">
-       <a class="collapsed" data-toggle="collapse" data-target="#eight" aria-expanded="false" aria-controls="eight">
-         <div class='action'>GET</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Set Campaign State to Archived</div>
-       </a>
-     </div>
-     <div id="eight" class="panel collapse" aria-labelledby="headingOne">
-       <div class="panel-body">
-
-.. include:: get_advertiser_campaign_quick_stats.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
-
-.. raw:: html
-
- <div class="panel-group">
-   <div class="endpoint-list">
-
-     <div class="panel-heading">
-       <a class="collapsed" data-toggle="collapse" data-target="#nine" aria-expanded="false" aria-controls="nine">
-         <div class='action'>POST</div>
-         <div class='path'>/advertiser_campaigns</div>
-         <div class='description'>Set Campaign State to Archived</div>
-       </a>
-     </div>
-     <div id="eight" class="panel collapse">
-       <div class="panel-body">
-
-.. include:: get_advertiser_campaign_quick_stats.rst
-
-.. raw:: html
-
-       </div>
-     </div>
-   </div>
+.. api_endpoint::
+   :verb: POST
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive
+   :description: Set Campaign State to Archived
+   :page: post_advertiser_campaign_archive
 
 .. toctree::
    :maxdepth: 2
