@@ -31,7 +31,7 @@ make html
 1. Commit changes to master
 2. Create new branch with the API version number: 2015-09-25
 3. Login to ReadTheDocs.org (credentials in lastpass)
-4. Navtigate Admin > Versions (https://readthedocs.org/dashboard/invoca-developer-portal/versions)
+4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-portal/versions)
 5. Set your branch to Active
 6. Set your version to Private
 7. Save changes
@@ -46,7 +46,7 @@ make html
 * All files are ReStructuredText.
 
 ## Look & Feel 
-* Most of the structure of the site is provided by the ReadTheDocs Sphinx theme: https://github.com/snide/sphinx_rtd_theme
+* Most of the structure of the site is provided by the [ReadTheDocs Sphinx theme](https://github.com/snide/sphinx_rtd_theme)
 * The style sheet that modifies the RTD theme is here `source/_static/css/custom.css`
 * A JavaScript file that is included on every page is here: `source/_static/js/custom.js`
 * The styling of the home page is "special" and is defined here `source/_static/css/homepage.css`. It was copy/pasted from the legacy API portal and could be massively slimmed down/replaced.
