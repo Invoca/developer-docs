@@ -455,7 +455,3 @@ table.parameters .row-odd {
 }
 
 /*********************FOR BOOTSTRAP INTERACTIONS************************/
-.collapsing,
-.collapse {
-  overflow: hidden;
-}
