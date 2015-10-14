@@ -28,6 +28,9 @@ from doc_versions import *
 
 # -- General configuration ------------------------------------------------
 
+# is this file being executed on read the docs or locally?
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
@@ -58,6 +61,11 @@ copyright = u'{}, Invoca'.format(datetime.now().year)
 version = COMMON_VERSION
 release = COMMON_VERSION
 
+if on_rtd:
+  custom_template_path = './custom_templates/'
+else:
+  custom_template_path = './source/custom_templates/'
+
 """
 Replaces directives with the contents of a custom template. Substitutes
 values from the directive into the template.
@@ -87,7 +95,7 @@ def build_template(match, template_file_name):
     template_vars[key] = ' '.join(args)
 
   # open the template and find/replace the keys with the values
-  template = open('source/custom_templates/{}'.format(template_file_name), 'r').read()
+  template = open('{}{}'.format(custom_template_path, template_file_name), 'r').read()
   for search, replacement in template_vars.iteritems():
     if re.search(search, template):
       template = template.replace(search, replacement)
@@ -174,8 +182,6 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 
 # Uncomment the following lines to build the docs locally using sphinx-build
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
 if not on_rtd:  # only import and set the theme if we're building docs locally
   import sphinx_rtd_theme
   html_theme = 'sphinx_rtd_theme'
