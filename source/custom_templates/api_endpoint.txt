@@ -1,14 +1,25 @@
 .. raw:: html
 
-  <div class='endpoint-list'>
-    <a href="./:page:.html">
-      <div class=':verb:'>:verb:</div>
-      <div class='path'>:path:</div>
-      <div class='description'>:desc:</div>
-    </a>
-  </div>
-  <div class='MYCOLLAPSABLEDIV'></div>
+  <div class="panel-group">
+    <div class="endpoint-list">
+      <div class="panel-heading" id="headingOne">
+        <a class="collapsed" data-toggle="collapse" data-target="#one" aria-expanded="false" aria-controls="one">
+          <div class='action'>:verb:</div>
+          <div class='path'>:path:</div>
+          <div class='description'>:description:</div>
+        </a>
+      </div>
+      <div id="one" class="panel collapse" aria-labelledby="headingOne">
+        <div class="panel-body">
 
 
 .. include:: :page:.rst
 
+
+.. raw:: html
+
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
