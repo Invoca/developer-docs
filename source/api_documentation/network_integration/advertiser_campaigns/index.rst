@@ -278,7 +278,6 @@ Endpoint
      </div>
    </div>
 
-
 .. toctree::
    :maxdepth: 2
    :hidden:
