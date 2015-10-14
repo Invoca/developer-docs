@@ -1,16 +1,15 @@
 .. raw:: html
 
-  {% set collapse_element_id = ':verb:-' + ':description:'.lower().replace(' ', '-') %}
   <div class="panel-group">
     <div class="endpoint-list">
-      <div class="panel-heading" id>
-        <a class="collapsed" data-toggle="collapse" data-target="#{{ collapse_element_id }}" aria-expanded="false" aria-controls="{{ collapse_element_id }}">
+      <div class="panel-heading">
+        <a class="collapsed" data-toggle="collapse" data-target="#:page:" aria-expanded="false" aria-controls=":page:">
           <div class=':verb:'>:verb:</div>
           <div class='path'>:path:</div>
           <div class='description'>:description:</div>
         </a>
       </div>
-      <div id="{{ collapse_element_id }}" class="panel collapse">
+      <div id=":page:" class="panel collapse">
         <div class="panel-body">
 
 
