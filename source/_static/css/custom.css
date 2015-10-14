@@ -335,7 +335,7 @@ cite  {
   color: #1DF0D0;
 }
 
-.endpoint-list a div.post-action {
+.endpoint-list a div.POST {
   width: 10%;
   color: #15DBF6;
 }
@@ -344,7 +344,7 @@ cite  {
   display: none !important;
 }
 
-.endpoint-list a div.put-action {
+.endpoint-list a div.PUT {
   width: 10%;
   color: #F8C204;
 }

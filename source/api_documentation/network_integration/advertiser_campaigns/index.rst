@@ -69,11 +69,58 @@ Endpoint
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
 
 .. api_endpoint::
-  :verb: GET
-  :path: /advertiser_campaigns
-  :description: Get all campaigns for an Advertiser
-  :page: get_advertiser_campaigns
+   :verb: GET
+   :path: /advertiser_campaigns
+   :description: Get all campaigns for an Advertiser
+   :page: get_advertiser_campaigns
 
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :description: Get a campaign for an Advertiser
+   :page: get_advertiser_campaign
+
+.. api_endpoint::
+   :verb: POST
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :description: Create an Advertiser Campaign
+   :page: post_advertiser_campaign
+
+.. api_endpoint::
+   :verb: PUT
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :description: Update an Advertiser Campaign
+   :page: put_advertiser_campaign
+
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/quick_stats
+   :description: Quick Stats
+   :page: get_advertiser_campaign_quick_stats
+
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live
+   :description: Set Campaign State to Live
+   :page: get_advertiser_campaign_go_live
+
+.. api_endpoint::
+   :verb: POST
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live
+   :description: Set Campaign State to Live
+   :page: post_advertiser_campaign_go_live
+
+.. api_endpoint::
+   :verb: GET
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive
+   :description: Set Campaign State to Archived
+   :page: get_advertiser_campaign_archive
+
+.. api_endpoint::
+   :verb: POST
+   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive
+   :description: Set Campaign State to Archived
+   :page: post_advertiser_campaign_archive
 
 .. toctree::
    :maxdepth: 2
