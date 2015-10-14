@@ -23,12 +23,17 @@ The format of the API URL is in (2):
 The success response is an JSON document with a root element of Response that contains a
 single AccessToken element whose content is the access token:
 
-<table>
-<tr><th>Response JSON Element</th><th>Value</th></tr>
-<tr><td>AccessToken          </td><td>The access token</td></tr>
-</table>
+.. list-table::
+  :widths: 30 20
+  :header-rows: 1
+  :class: parameters
 
-<br>
+  * - Response JSON Element
+    - Value
+
+  * - AccessToken
+    - The access token
+
 
 Example URLs
 
@@ -36,46 +41,49 @@ Create access token for “sy@young.com” network user:
 
 POST
 
-    https://invoca.net/api/2014­-01-­01/<network_id>/network/sy%40young.com/create_access_token.json HTTP/1.1
+`https://invoca.net/api/2014­-01-­01/<network_id>/network/sy%40young.com/create_access_token.json HTTP/1.1`
 
 Response:
-<pre><code>{
-  "token": "bpD8HmLcCxzSiOX01v­4XbZr4_s",
-  "id": 1
-}
-</code></pre>
+
+.. code-block:: json
+
+  {
+    "token": "bpD8HmLcCxzSiOX01v­4XbZr4_s",
+    "id": 1
+  }
 
 Create access token for “sy@young.com” user in advertiser id 354:
 
 POST
 
-    https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json HTTP/1.1
+`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json HTTP/1.1`
 
 Response:
-<pre><code>{
-  "token": "bpD8HmLcCxzSiOX01v­4XbZr4_s",
-  "id": 1
-}
-</code></pre>
+
+.. code-block:: json
+
+  {
+    "token": "bpD8HmLcCxzSiOX01v­4XbZr4_s",
+    "id": 1
+  }
 
 Create access token for "sy@young.com" user in affiliate id 976:
 
 POST
 
-    https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/976/sy%40young.com/create_access_token.json HTTP/1.1
+`https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/976/sy%40young.com/create_access_token.json HTTP/1.1`
 
 Response:
-<pre><code>{
-  "token": "bpD8HmLcCxzSiOX01v­4XbZr4_s",
-  "id": 1
-}
-</code></pre>
 
-<br>
-<h3>
+.. code-block:: json
+
+  {
+    "token": "bpD8HmLcCxzSiOX01v­4XbZr4_s",
+    "id": 1
+  }
+
 On-The-Fly Authentication
-</h3>
-<hr>
+-------------------------
 
 
 The PPC Platform supports "On-The-Fly Authentication": if a user types in a URL, or clicks
@@ -85,13 +93,22 @@ URL.
 
 When using the API, all authentication is by the network on behalf of the replicated users.
 So in this case the PPC Platform redirects to a network authentication URL such as
-[http://www.network.com/loginwith](http://www.network.com/loginwith) with the following query parameters:
+http://www.network.com/loginwith with the following query parameters:
 
-<table>
-<tr><th>Query Parameter</th><th>Description</th></tr>
-<tr><td>destination    </td><td>The ultimate PPC Platform destination URL to redirect to once authentication has been established.</td></tr>
-<tr><td>type           </td><td>Either advertiseror affiliate, or empty if unknown.</td></tr>
-</table>
+.. list-table::
+  :widths: 10 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Query Parameter
+    - Description
+
+  * - destination
+    - The ultimate PPC Platform destination URL to redirect to once authentication has been established.
+
+  * - type
+    - Either advertiseror affiliate, or empty if unknown.
+
 
 For example:
 
@@ -110,11 +127,10 @@ appends this token to the destination URL and redirects there:
 
 `http://invoca.net/affiliates/1?access_token=9AC23B903F4`
 
-<br>
-<h3>
+
 Network Link to PPC
-</h3>
-<hr>
+-------------------
+-------------------
 
 
 The network platform offers a Marketing Automation hyperlink in the authenticated area
@@ -124,39 +140,37 @@ Platform:
 
 `http://www.network.com/login?destination=http%3A%2F%2F<network>.invoca.net%2Fhome`
 
-<br>
-<h3>
+
 PPC Link to Network
-</h3>
-<hr>
+-------------------
+-------------------
+
 
 The PPC platform offers a “Return from marketing automation” link that returns to an
 appropriate URL at the network. This URL must be provided by the network. For
 example:
 
-[http://www.network.com/home](http://www.network.com/home)
+http://www.network.com/home
 
-<br>
-<h3>
 CURL examples:
-</h3>
-<hr>
+--------------
+--------------
 
 
 Here are some basic examples on how to use the API using CURL.
 
 Create
 
-    curl -v ­XPOST -H "Content­Type: application/json" -u '<username>:<password>’ 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’
+`curl -v ­XPOST -H "Content­Type: application/json" -u '<username>:<password>’ 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’`
 
 Read
 
-    curl -v -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>'
+`curl -v -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>'`
 
 Update
 
-    curl­ -v -XPUT -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’
+`curl­ -v -XPUT -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’`
 
 Delete
 
-    curl -v -XDELETE -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>' -d '<valid JSON>’
+`curl -v -XDELETE -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>' -d '<valid JSON>’`
