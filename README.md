@@ -52,21 +52,6 @@ make html
 * The styling of the home page is "special" and is defined here `source/_static/css/homepage.css`. It was copy/pasted from the legacy API portal and could be massively slimmed down/replaced.
 * Graphics can be found here: `source/_static`
 
-## FAQ
-### Q: I made my changes, but they don't appear on developer.invoca.net.
-TBD
-
-### Q: I closed my terminal and now I can't build the docs anymore.
-Reactivate your Python virtual environment by executing the commands below. (Python equivalent to rbenv)
-```
-virtualenv venv
-source venv/bin/activate
-make clean && make html
-```
-
-### Q: I added/edited a table, but I don't see it in the built docs
-RST does not generate error message for most table errors. Instead, it silently fails. Check your table syntax and try again.
-
 ## ReStructuredText reference
 
 [general reference](http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html)
@@ -116,4 +101,18 @@ The sites does not look exactly the same when built locally and on ReadTheDocs. 
 
 There is a constant, `on_rtd`, in conf.py that can be used to alter the behavior of conf.py depending on build environment.
 
+## FAQ
+#### Q: I made my changes, but they don't appear on developer.invoca.net.
+TBD
+
+#### Q: I closed my terminal and now I can't build the docs anymore.
+Reactivate your Python virtual environment by executing the commands below. (Python equivalent to rbenv)
+```
+virtualenv venv
+source venv/bin/activate
+make clean && make html
+```
+
+#### Q: I added/edited a table, but I don't see it in the built docs
+RST does not generate error message for most table errors. Instead, it silently fails. Check your table syntax and try again.
 
