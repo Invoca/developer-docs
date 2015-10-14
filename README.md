@@ -54,7 +54,7 @@ make html
 
 ## ReStructuredText reference
 
-[general reference](http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html)
+[General ReStructuredText Reference](http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html)
 
 ### Common Constructions:
 
