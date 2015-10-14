@@ -319,6 +319,14 @@ cite  {
   margin: 5px 0 0 0;
 }
 
+.endpoint-list .panel-heading {
+  padding: 0px;
+}
+
+.endpoint-list .panel-body {
+  color: black;
+}
+
 .endpoint-list a div {
   display: inline-block;
   word-wrap: break-word;
