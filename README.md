@@ -40,11 +40,11 @@ Building a collapsable api_endpoint div
 
 ```
 .. api_endpoint::
-
   :path: /something/place
   :verb: GET
   :desc: some words and stuff
   :page: fake
+
 ```
 
 :path:, :verb:, and :desc: are simply put into the 3 elements of the collapsible div.  The :page: however is the file (relative path no extension),
@@ -59,4 +59,10 @@ in conf.py there is a line `if not on_rtd` this basically makes the defaults tha
 
 Certain configuration flags are ignored in production be careful any setting you change in conf.py persists on RTD
 
-Feel free to commit directly to master as this is a test project.
+## Branching Strategy
+
+Commit changes to master
+
+Merge into relavent version (usually newest date/version named branch)
+
+If new version branch login to readthedocs.org (creds in lastpass) and modify branch settings in Admin > Versions
