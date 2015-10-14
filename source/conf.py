@@ -80,7 +80,7 @@ Example directive:
 Example template:
 <div class=":verb:">:description</div>
 """
-def build_template(match, template_file_name):
+def build_template(app, match, template_file_name):
   lines = match.group().splitlines()
 
   # remove the directive line
@@ -105,20 +105,20 @@ def build_template(match, template_file_name):
   # raise error if we have extra or not enough keys
   remaining_keys = re.search(r":[a-zA-Z_]+:", template)
   if not remaining_keys:
-    return template
+    return app.builder.templates.render_string(template, {})
   else:
     raise Exception("Template has unreplaced key " + remaining_keys.group())
 
 
-def find_and_replace_templates(source, directive_name, template_file_name):
+def find_and_replace_templates(app, source, directive_name, template_file_name):
   return re.sub(
           re.compile("\.\. {}::$\n(^\s+:\w+:\s+.*$\n)+^$\n".format(directive_name), re.MULTILINE),
-          lambda match: build_template(match, template_file_name),
+          lambda match: build_template(app, match, template_file_name),
           source)
 
 
-def build_api_endpoint_template(source):
-  return find_and_replace_templates(source, "api_endpoint", "api_endpoint.txt")
+def build_api_endpoint_template(app, source):
+  return find_and_replace_templates(app, source, "api_endpoint", "api_endpoint.txt")
 
 
 # Replace version symbols with actual version numbers
@@ -126,7 +126,7 @@ def build_api_endpoint_template(source):
 def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
-    source[0] = build_api_endpoint_template(source[0])
+    source[0] = build_api_endpoint_template(app, source[0])
 
 
 def setup(app):
@@ -359,8 +359,6 @@ rst_prolog = """
   <div style="text-align: right;" >
     <a href="http://www.invoca.net/home">Return to the Invoca Platform</a>
   </div>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 """

@@ -1,10 +1,24 @@
-@import url("theme.css");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
 
 body {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
+  font-size: 18px;
+  background-color: #363636;
+  color: #D5D5D5;
+  letter-spacing: 0px;
+}
+
+a, a:visited {
+  color: #54C4EC;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #2a6496;
+  text-decoration: none;
 }
 
 img.logo {
@@ -18,7 +32,8 @@ img.info-img {
 }
 
 p {
-  margin: 24px 0px 24px 0px;
+  line-height: 27px;
+  margin: 0 0 10px;
 }
 
 h1 {
@@ -60,7 +75,10 @@ hr {
 }
 
 div.section h1 {
-  padding: inherit;
+  margin-top: 0;
+  padding-bottom: 30px;
+  padding-top: 0px;
+  line-height: 48px;
 }
 
 p.first {
@@ -222,6 +240,10 @@ cite  {
   color: rgba(0, 0, 0, 0);
 }
 
+.wy-side-nav-search form {
+  color: black;
+}
+
 /* nav menu side bar */
 .wy-nav-side {
   background: #333 none repeat scroll 0 0;
@@ -240,6 +262,14 @@ cite  {
 
 .wy-menu-vertical a {
   color: rgb(132, 188, 13);
+}
+
+.wy-menu-vertical a:hover {
+  color: #84BC0D;
+}
+
+.wy-menu-vertical li.current a:hover {
+  color: #84BC0D;
 }
 
 /* make nav links green */
@@ -264,27 +294,13 @@ cite  {
 /* wraps up .wy-nav-content and its subordinates */
 .wy-nav-content-wrap {
   background-color: #3F3F3F !important;
-  #color: #D5D5D5;
+  font-size: 12pt;
 }
 
 /* Content in middle (lives inside .wy-nav-content-wrap) */
 .wy-nav-content {
   background-color: #3F3F3F;
   max-width: 1200px;
-  //padding: 60px;
-}
-
-/* Links that live inside wy-nav-content don't change color */
-.wy-nav-content a {
-  color: #54C4EC;
-}
-
-.wy-nav-content a.reference.internal:visited {
-  color: #54C4EC;
-}
-
-.wy-nav-content a.reference.external:visited {
-  color: #54C4EC;
 }
 
 /* rst content lives inside wy-nav-content */
