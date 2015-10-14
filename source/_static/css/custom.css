@@ -458,6 +458,10 @@ table.parameters {
   border: 0 !important;
 }
 
+.wy-table-responsive table td {
+  white-space: normal !important;
+}
+
 table.parameters th {
   background-color: #6A6A6A;
   color: #E4E4E4;
