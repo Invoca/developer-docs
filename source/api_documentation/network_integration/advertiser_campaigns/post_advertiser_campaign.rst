@@ -15,7 +15,6 @@
   `https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
   .. code-block:: bash
-     :linenos:
 
      curl­ -XPOST­ -H "Content­Type: application/json"­ -u 'login:pass'
      'https://vanity.invoca.net/api/2015-05-01/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
@@ -108,7 +107,6 @@
   Request Body
 
   .. code-block:: json
-     :linenos:
 
      {
        "name": "PostSeason Promotion 11 fJauFbSEGHKw8ADEGv",

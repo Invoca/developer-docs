@@ -9,7 +9,6 @@
   1) Verify the callers location, then if on the West Coast (setup previously) forward to a call center, otherwise hang up after playing a prompt.
 
   .. code-block:: bash
-     :linenos:
 
       curl­ -XPUT -H "Content­Type: application/json" -­u 'login:pass'
       'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
@@ -34,7 +33,6 @@
   2) Present the options for multiple departments, if sales is selected check if office is open. If the office is open, forward the call, if not play a prompt and then hangup.
 
   .. code-block:: bash
-     :linenos:
 
      curl -XPUT -H "Content­Type: application/json" -u 'login:pass'
      'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
@@ -65,7 +63,6 @@
   3) Offer an sms to see current offers and then connect to a call center.
 
   .. code-block:: bash
-     :linenos:
 
      curl­ -XPUT -H "Content­Type: application/json"­ -u 'login:pass'
      'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \

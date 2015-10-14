@@ -11,7 +11,6 @@
   Response Body:
 
   .. code-block:: json
-     :linenos:
 
      {
        "stats": {
