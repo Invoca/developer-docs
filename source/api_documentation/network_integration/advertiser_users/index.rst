@@ -38,3 +38,4 @@ Endpoint:
    :path: /advertisers/&lt;advertiser_id&gt;/users/&lt;user_id&gt;
    :description: Delete an Advertiser User
    :page: delete_advertiser_user
+

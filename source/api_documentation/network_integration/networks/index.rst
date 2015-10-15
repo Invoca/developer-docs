@@ -59,175 +59,17 @@ Endpoint:
    :verb: GET
    :path: /&lt;network_id&gt;/network
    :description: Get Network and its Users
-   :page: empty
-
-GET Network and its Users
--------------------------
-
-GET `/<network_id>/network`
-
-
-Examples
-""""""""
-----
-
-Read network and its users
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
-
-Format: application/json
-
-Response Code: 200
-
-Response Body:
-
-.. code-block:: json
-
-  {
-    "name": "Invoca",
-    "users": [
-      {
-        "id_from_network": "549494858585cFUyYnFHyiYA42TrpM",
-        "email_address": "chris@nfltix.com",
-        "first_name": "Chris",
-        "last_name": "Dean",
-        "phone_number": "800‐437‐7950",
-        "role": "Manager"
-      },
-      {
-        "id_from_network": "694940505055cFUyYnFHyiYA42TrpM",
-        "email_address": "jim@nfltix.com",
-        "first_name": "Jim",
-        "last_name": "Williams",
-        "phone_number": "800‐437‐7950",
-        "role": "Observer"
-      }
-    ]
-  }
+   :page: get_network
 
 .. api_endpoint::
    :verb: POST
    :path: /&lt;network_id&gt;/network
    :description: Create Network Users
-   :page: empty
-
-Create Network Users (POST)
----------------------------
-
-POST `/<network_id>/network`
-
-
-Examples
-""""""""
-----
-
-Create network users
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
-
-Format: application/json
-
-Request Body:
-
-.. code-block:: json
-
-  {
-    "users": [
-      {
-        "id_from_network": "549494858585cFUyYnFHyiYA42TrpM",
-        "email_address": "chris@nfltix.com",
-        "first_name": "Chris",
-        "last_name": "Dean",
-        "phone_number": "8004377950",
-        "role": "Manager"
-      },
-      {
-        "id_from_network": "694940505055cFUyYnFHyiYA42TrpM",
-        "email_address": "jim@nfltix.com",
-        "first_name": "Jim",
-        "last_name": "Williams",
-        "phone_number": "8004377950",
-        "role": "Observer"
-      }
-    ]
-  }
-
-Response Code: 201
+   :page: create_users
 
 .. api_endpoint::
    :verb: PUT
    :path: /&lt;network_id&gt;/network
    :description: Update Network Users
-   :page: empty
+   :page: update_network
 
-Update Network Users (PUT)
---------------------------
-
-PUT `/<network_id>/network`
-
-
-Examples
-""""""""
-----
-
-Update a network and its user with invalid email address
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
-
-Format: application/json
-
-Request Body:
-
-.. code-block:: json
-
-  {
-    "users": [
-      {
-        "id_from_network": "549494858585cFUyYnFHyiYA42TrpM",
-        "email_address": "chris@",
-        "first_name": "Chris",
-        "last_name": "Dean",
-        "phone_number": "8004377950",
-        "role": "Manager"
-      }
-    ]
-  }
-
-Response Code: 403
-
-Response Body:
-
-.. code-block:: json
-
-  {
-    "errors": {
-      "users": [
-        {
-          "email_address": [
-            "is invalid"
-          ]
-        }
-      ]
-    }
-  }
-
-----
-
-Delete network users by putting an empty user hash
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
-
-Format: application/json
-
-Request Body:
-
-.. code-block:: json
-
-  {
-    "users": [
-    ]
-  }

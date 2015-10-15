@@ -78,102 +78,11 @@ Endpoint:
    :description: Get all Affiliates
    :page: get_affiliates
 
-GET all Affiliates
-------------------
-GET `/affiliates`
-
-
-Examples
-""""""""
-----
-
-Read all Affiliates for this network
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates.json`
-
-Request Body:
-
-.. code-block:: json
-
-  [
-    {
-      "id_from_network": "222",
-      "sites": [
-        {
-          "id_from_network": "33567",
-          "name": "http://www.surfoz.au"
-        },
-        {
-          "id_from_network": "44920",
-          "name": "http://www.blogspot.com/surfoz"
-        }
-      ],
-      "name": "Surf Oz Magazine",
-      "users": [
-        {
-          "email_address": "userx@invoca.com",
-          "id_from_network": "1231",
-          "first_name": "User",
-          "phone_number": "805‐708‐9876",
-          "last_name": "Affiliate",
-          "role": "Super"
-        }
-      ],
-      "status": "Approved"
-    }
-  ]
-
 .. api_endpoint::
    :verb: GET
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Get an Affiliate
    :page: get_affiliate
-
-GET an Affiliate
-----------------
-
-GET `/affiliates/<affiliate_id>`
-
-
-Examples
-""""""""
-----
-
-Read a specific affiliate
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/222.json`
-
-Response Body:
-
-.. code-block:: json
-
-  {
-    "id_from_network": "222",
-    "sites": [
-      {
-        "id_from_network": "33567",
-        "name": "http://www.surfoz.au"
-      },
-      {
-        "id_from_network": "44920",
-        "name": "http://www.blogspot.com/surfoz"
-      }
-    ],
-    "name": "Surf Oz Magazine",
-    "users": [
-      {
-        "email_address": "userx@invoca.com",
-        "id_from_network": "1231",
-        "first_name": "User",
-        "phone_number": "805‐708‐9876",
-        "last_name": "Affiliate",
-        "role": "Super"
-      }
-    ],
-    "status": "Approved"
-  }
 
 .. api_endpoint::
    :verb: DELETE
@@ -181,87 +90,11 @@ Response Body:
    :description: Delete an Affiliate
    :page: delete_affiliate
 
-DELETE An Affiliate
--------------------
-
-DELETE `/affiliates/<affiliate_id>`
-
-
-Examples
-""""""""
-----
-
-Delete a single affiliate
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/222.json`
-
-
-Response Body:
-
-.. code-block:: json
-
-  {
-  }
-
 .. api_endpoint::
    :verb: POST
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Create an Affiliate
    :page: post_affiliate
-
-Create an Affiliate (POST)
---------------------------
-
-POST `/affiliates/<affiliate_id>`
-
-
-Examples
-""""""""
-----
-
-Create an affiliate with users
-
-Endpoint:
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/222.json`
-
-Format: application/json
-
-Request Body:
-
-.. code-block:: json
-
-  {
-    "name": "Surf Oz Magazine",
-    "status": "Approved",
-    "users": [
-      {
-        "phone_number": "805‐708‐9876",
-        "id_from_network": 123,
-        "role": "Super",
-        "last_name": "Affiliate",
-        "first_name": "User",
-        "email_address": "userx@invoca.com"
-      }
-    ],
-    "sites": [
-      {
-        "id_from_network": 33567,
-        "name": "http://www.surfoz.au"
-      },
-      {
-        "id_from_network": 44920,
-        "name": "http://www.blogspot.com/surfoz"
-      }
-    ]
-  }
-
-Response Body:
-
-.. code-block:: json
-
-  {
-  }
 
 .. api_endpoint::
    :verb: PUT
@@ -269,25 +102,3 @@ Response Body:
    :description: Update an Affiliate
    :page: put_affiliate
 
-Update an Affiliate (PUT)
--------------------------
-
-PUT `/affiliates/<affiliate_id>`
-
-
-Examples
-""""""""
-----
-
-Update a single affiliate
-
-Endpoint:
-`https://invoca.net/api/api/@@NETWORK_API_VERSION/<network_id>/affiliates/222.json`
-
-Request Body:
-
-.. code-block:: json
-
-  {
-    "name": "Updated Surf Oz Magazine"
-  }

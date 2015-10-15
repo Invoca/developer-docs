@@ -60,3 +60,4 @@ Endpoint:
    :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
    :description: Delete an Advertiser-Affiliate relationship
    :page: delete_advertiser_affiliate
+
