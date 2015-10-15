@@ -60,13 +60,14 @@ The "private" documentation in RTD is not actually protected by a login. When a 
 
 ### Common Constructions:
 
-* Building a collapsable api_endpoint div
+* Building a collapsable api_endpoint div (The newline after args is NEEDED)
 ```
 .. api_endpoint::
   :path: /something/place
   :verb: GET
   :desc: some words and stuff
   :page: fake
+
 ```
 * Building a table
 ```
