@@ -1,6 +1,3 @@
-// fire the syntax highlighter
-hljs.initHighlightingOnLoad();
-
 window.onload =
     function () {
         $('#welcome-to-the-invoca-developer-portal table.home-page.docutils tr a img').each(function (index, element) {
