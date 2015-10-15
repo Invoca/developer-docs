@@ -3,7 +3,6 @@ Design Principles
 
 REST
 ----
-----
 
 
 All interfaces use REST_. This makes them easy to predict as they use HTTP and its existing
@@ -37,10 +36,8 @@ access these interfaces. Create and Update are idempotent operations.
     - DELETE
     - Object is deleted. If the object has already been deleted, does nothing.
 
-----
 
 Status Codes
-------------
 ------------
 
 HTTP Status codes are used to indicate success or failure. The set of status codes returned
@@ -74,7 +71,6 @@ by the Network Integration API are:
 
 Security
 --------
---------
 
 HTTPS is required for all API requests.
 
@@ -89,7 +85,6 @@ test an API URL simply by logging in to the platform first as a Network Role of 
 
 Using OAuth token to Access Invoca APIs
 ---------------------------------------
----------------------------------------
 
 
 Requests are authenticated using HTTPS basic authentication with an Invoca API Token, which can be created and managed on the Manage API Credentials page in the platform.
@@ -98,7 +93,6 @@ Requests are authenticated using HTTPS basic authentication with an Invoca API T
 
 
 Step by step guide using API token to access APIs
--------------------------------------------------
 -------------------------------------------------
 
 1. Obtain OAuth 2.0 credentials from the Manage API Credentials.
@@ -130,7 +124,6 @@ Example using Curl to make an API call with token-based authentication:
 
 Idempotency
 -----------
------------
 
 
 Most interfaces are designed to be idempotent, meaning that it is harmless to call them
@@ -139,7 +132,6 @@ and return the same result.
 
 Self‐Correction
 ---------------
----------------
 
 Most updates expect a complete copy of the object, making Update and Create
 interchangeable. This means that errors tend to be corrected over time. Campaign Terms
@@ -147,12 +139,10 @@ are an exception to this due to their complexity (see Advertiser Campaigns for m
 
 Versioning
 ----------
-----------
 
 The API version is given as a date in the path.
 
 Dedicated Subdomain
--------------------
 -------------------
 
 All APIs are accessed through the dedicated subdomain of invoca.net that is used for the
@@ -162,10 +152,9 @@ leadtrust.invoca.net. We recommend that, when making your API calls, you place y
 
 Request Parameter Format & Response Body Format
 -----------------------------------------------
------------------------------------------------
 
 Previous versions of the API accepted form‐encoded style parameters in the request and used
 XML as the output format. As of @@NETWORK_API_VERSION, all new feature development has switched to
 JSON format for both request and response. Previous XML functionality will continue to be
 supported via the 2013‐03‐22 version of the API (please contact
-mailto:questions@invoca.com for more information on previous versions).
+questions@invoca.com for more information on previous versions).

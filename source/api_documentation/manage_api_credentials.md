@@ -6,7 +6,6 @@ API (the Network Integration API is available to Network super users only).
 
 
 ### Create An API Token
-<hr>
 
 To create an API token:
 
@@ -21,18 +20,16 @@ Note: It is recommended to provide a description that identifies the intended AP
 
 
 ### Delete an API Token
-<hr>
 
 To delete or remove an API token from your organization:
 
 1.   From any page, choose the Tools gear, ﻿API Credentials.
      * <img src="https://invoca.uservoice.com/assets/74025540/gear-icon.png" class="info-img" />
-     
+
 2.   On the Manage Credentials page, click the delete icon associated with the API token to delete it.
 
 
 ### API Guidelines
-<hr>
 
 * Users should generate their own API tokens. Tokens should be treated like passwords and not be emailed or transmitted over other insecure mediums, nor should they be stored in a source code repository.
 

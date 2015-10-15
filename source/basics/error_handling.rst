@@ -3,7 +3,6 @@ Error Handling
 
 AdvertiserCampaign RingPools
 ----------------------------
-----------------------------
 
 
 Not found – 404:
@@ -22,7 +21,6 @@ Not found – 404:
 
 Affiliate Campaign RingPools
 ----------------------------
-----------------------------
 
 
 Not found – 404:
@@ -40,7 +38,6 @@ Not found – 404:
 
 
 Common RingPool errors:
------------------------
 -----------------------
 
 Validation failed – 403 – Body contains a json with validation errors for each field:

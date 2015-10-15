@@ -53,6 +53,9 @@ h2 {
   font-weight: 500;
   line-height: 1.1;
   padding-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #5f5f5f;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -459,7 +462,7 @@ div[role=navigation][aria-label~=breadcrumbs] {
 .highlight-json .kc, .kd, .kn, .kp, .kr, .kt, .mf, .mh, .mi, .mo {
   color: #445588;
 }
-table.parameters {
+table.parameters, table.multiline-table {
   border: 0 !important;
 }
 

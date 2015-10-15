@@ -4,7 +4,6 @@ Conversion Reporting Email
 Conversion events can be reported using an email message with an attached CSV file.
 
 ### To report conversions using email
-<hr>
 
 Verify that you have received the Conversion Reporting credentials email from support, including your Upload Email Address and Conversion Reporting ID.
 
@@ -15,14 +14,12 @@ For "Publisher Promotion" or Fixed Price "Bundled" Campaigns, view Conversion Re
 Note or copy the Upload Email Address.
 
 ### Conversion Report Message Format:
-<hr>
 
 Conversion Reporting sent via email must be in a CSV (comma-separated values) file format with the sale reporting parameters as the column headers and each sale transaction on a single row. Attach the CSV file to an empty message and send it to the Upload Email Address.
 
 Two example files are shown at the bottom of this article. Feel free to contact your Program Manager or [questions@invoca.com](mailto:questions@invoca.com) for a skeleton file that suits your needs. Removing un-used columns reduces mistakes, so trim the skeleton file to include only the parameters you need.
 
 ### For Call Based Conversions
-<hr>
 
 Only one parameter is absolutely required: the start time of the call. Any entry missing the start time of the call causes an error and is not processed. Including the calling phone number is also recommended.
 
@@ -39,21 +36,18 @@ Only one parameter is absolutely required: the start time of the call. Any entry
 For more information on possible parameters and how the matching call is found, see [Conversion Reporting API](/docs/rest/conversion-reporting).
 
 ### For Web Based Conversions
-<hr>
 
 The affiliate or publisher ID and advertiser campaign ID are required.
 
 For more information on possible parameters and how the matching call is found, see ﻿[Conversion Reporting API](/docs/rest/conversion-reporting).
 
 ### Reply Message
-<hr>
 
 Conversion Reporting emails are processed on a nightly basis and a reply message is sent once the task is completed. The reply message includes the number of conversions processed, the number of conversions that did not match up with a transaction and the number of errors. For each error encountered, the row number, the content of that row and the error it caused is returned. Please note that only up to 10 errors per batch are allowed before processing is stopped.
 
 ![](https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F06c39c20-348a-4fc8-ac8c-36affc228fbe_zps626d230e.jpg&key=afea23f29e5a4f63bd166897e3dc72df)
 
 ### Examples:
-<hr>
 
 1. Conversions reported include the call Start Time in Human Readable Time Format, the Calling Phone Number and the Reason Code.
 
@@ -66,7 +60,6 @@ Conversion Reporting emails are processed on a nightly basis and a reply message
 
 
 ### Idempotency:
-<hr>
 
 Sales are considered unique using a combination of start_time_t + SKU_list + reason code. Reported conversions duplicate keys (same call, sku list, reason code) behave as follows:
 

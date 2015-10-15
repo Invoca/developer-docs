@@ -130,7 +130,6 @@ appends this token to the destination URL and redirects there:
 
 Network Link to PPC
 -------------------
--------------------
 
 
 The network platform offers a Marketing Automation hyperlink in the authenticated area
@@ -143,7 +142,6 @@ Platform:
 
 PPC Link to Network
 -------------------
--------------------
 
 
 The PPC platform offers a “Return from marketing automation” link that returns to an
@@ -153,7 +151,6 @@ example:
 http://www.network.com/home
 
 CURL examples:
---------------
 --------------
 
 

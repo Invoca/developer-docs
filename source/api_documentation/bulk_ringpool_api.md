@@ -4,7 +4,6 @@ Bulk Ringpool API
 Before using the Bulk RingPool API, contact [questions@invoca.com](mailto:questions@invoca.com) to enable the Bulk RingPool API feature. It is recommended that before you enable the feature on your production platform, testing occurs on a demo or test platform.
 
 ### Overview
-<hr>
 
 The Bulk RingPool API is designed to efficiently handle a high volume of requests per second. A persistent connection is strongly recommended.
 
@@ -21,7 +20,6 @@ Example API URL:
 
 
 ### Request Body
-<hr>
 
 The JSON POST body of the request has a top level key "request" which maps to an array of hashes, where each hash contains a RingPool API URL. The array must contain at least one entry. The requests follow a similar format to the RingPool API, which can be found here.
 
@@ -46,7 +44,6 @@ Below is an example of the JSON request body:
 
 
 ### Response Body
-<hr>
 
 The response format is in <b>JSON</b>.
 
@@ -65,7 +62,6 @@ Note the last response above has `"overflow":true`.  This indicates that the num
 Additionally, Bulk API responses return the total server processing (this does not include transit) time for the request in the header under the key “processing-time”, and is reported in milliseconds.
 
 ### Errors
-<hr>
 
 The Bulk RingPool API clearly identifies errors when a request can not be processed. For example, when the parameters are incorrect, an error response will be returned for that row in the response as shown below:
 

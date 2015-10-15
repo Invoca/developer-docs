@@ -10,7 +10,6 @@ Additionally, Advertiser Direct campaigns using the Conversion Reporting API wit
 Before using the Conversion Reporting API, request credentials from [questions@invoca.com](mailto:questions@invoca.com)
 
 ### Client API Wrappers
-<hr>
 
 The following working examples with wrapper code to integrate in Ruby, Java, PHP or .NET are available:
 
@@ -20,7 +19,6 @@ The following working examples with wrapper code to integrate in Ruby, Java, PHP
 *    [.NET](https://github.com/Invoca/call_center_api-dotnet)
 
 ### POST (or PUT) to a URL
-<hr>
 
 Send call results to Invoca servers in the form of an HTTP POST. cURL is recommended because it is simple and preinstalled on most machines.
 The extended example later in this document breaks down each part of a cURL POST.
@@ -36,12 +34,10 @@ For “Publisher Promotion” or Fixed Price “Bundled” campaigns, the Conver
 Remember to check the HTTP status code returned for error checking. This helps greatly when debugging.
 
 ### Parameters
-<hr>
 
 Passed in standard HTML “application/form-url-encoded” format. Put quotes around all parameter values being passed in the API call.
 
 ### Report a sale/conversion on a call
-<hr>
 
 *    Required
 *    `start_time_t:` 10 digit start time of the call in UTC seconds since 1/1/70, also known as Unix time_t. The start time does not have to be exact since clocks will not be perfectly synchronized.
@@ -55,7 +51,6 @@ Passed in standard HTML “application/form-url-encoded” format. Put quotes ar
 *    `use_http_status:` 1 or blank will use HTTP status corresponding to success/failure. If set to 0, the HTTP status will always be 200 OK and the actual status and error message will be in the response body. See the Status section below.
 
 ### Report a new web conversion
-<hr>
 
 *    Required
 *    `web_conversion:` Set to “1” to indicate a conversion that is not tied to a call (default is 0).
@@ -66,7 +61,6 @@ Passed in standard HTML “application/form-url-encoded” format. Put quotes ar
 *    `use_http_status:` 1 or blank will use HTTP status corresponding to success/failure. If set to 0, the HTTP status will always be 200 OK and the actual status and error message will be in the response body. See the Status section below.
 
 ### Add to an existing web conversion
-<hr>
 
 *    Required
 *    `web_conversion:` Set to “1” to indicate a conversion that is not tied to a call (default is 0).
@@ -75,7 +69,6 @@ Passed in standard HTML “application/form-url-encoded” format. Put quotes ar
 *    `use_http_status:` 1 or blank will use HTTP status corresponding to success/failure. If set to 0, the HTTP status will always be 200 OK and the actual status and error message will be in the response body. See the Status section below.
 
 ### Shared parameters for sales and web conversions
-<hr>
 
 *    Optional (for Tracking Sales)
 *    `reason_code:` the conversion event specified in the payout conditions in the campaign. This code is free form and left to the advertiser to decide.
@@ -100,7 +93,6 @@ Passed in standard HTML “application/form-url-encoded” format. Put quotes ar
 *    `opt_in_SMS:` 1 if authorized to send SMS reply or 0 or empty if not.
 
 ### Status
-<hr>
 
 The HTTP status returned is 201 Created for a successful POST (or a 200 OK for a successful PUT), a 4xx code if one of the parameters is incorrect, or a 5xx code if a server error occurred.
 In the latter two error cases, a detailed error class and message are returned in XML in the body, for example:
@@ -118,17 +110,14 @@ If &use_http_status=0 is given, the status is always returned as 200 Ok or 201 C
 that just return the status code when there are errors without exposing the body.
 
 ### Security
-<hr>
 
 All posts must use HTTPS BASIC authentication and use pre-assigned usernames and passwords. Contact [questions@invoca](mailto:questions@invoca.com) to request Conversion Reporting API credentials.
 
 ### High availability
-<hr>
 
 The initial POST should choose randomly (or alternately) between api0.invoca.net and api1.invoca.net. If a POST fails for any reason, retry the POST on the other one.
 
 ### Idempotency
-<hr>
 
 Sales are considered unique using a combination of start_time_t + SKU_list + reason code. POSTs with duplicate keys (same call, sku list, reason code) behave as follows:
 
@@ -138,12 +127,10 @@ Sales are considered unique using a combination of start_time_t + SKU_list + rea
 POSTs with unique keys always create new conversion transactions.
 
 ### Frequency
-<hr>
 
 Updates can be sent at any frequency from once a minute to once a day. Customers prefer to get their data as fast as possible, so the best practice is to get as close to once a minute as practical.
 
 ### Example
-<hr>
 
 The example below uses cURL to demonstrate a POST that updates a call.
 
@@ -189,7 +176,6 @@ Output:
 ```
 
 ### Example Breakdown
-<hr>
 
 This is a description of some of the parameters in the previous cURL example.
 
@@ -221,7 +207,6 @@ This is a description of some of the parameters in the previous cURL example.
 *    sku_list and quantity_list are closely related. The quantity_list must appear in the same order as the sku_list. For this example, the sku DVD has a quantity value of 2 while cleaner is 1.
 
 ### Search Algorithm to Find Matching Call
-<hr>
 
 We look for an exact match for calls associated with the call center, using these parameters, if given:
 
