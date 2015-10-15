@@ -140,7 +140,7 @@ Endpoint:
    :verb: GET
    :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
    :description: Get all Affiliate Campaigns
-   :page: empty
+   :page: get_affiliate_affiliate_campaigns
 
 GET all Affiliate Campaigns
 ---------------------------
@@ -161,7 +161,7 @@ Endpoint:
    :verb: GET
    :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
    :description: Get an Affiliate Campaign
-   :page: empty
+   :page: get_affiliate_affiliate_campaign
 
 GET an Affiliate Campaign
 -------------------------
@@ -249,7 +249,7 @@ Response Body:
    :verb: POST
    :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
    :description: Create an Affiliate Campaign
-   :page: empty
+   :page: post_affiliate_affiliate_campaigns
 
 Create an Affiliate Campaign (POST)
 -----------------------------------
@@ -315,7 +315,7 @@ Response Body:
    :verb: PUT
    :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
    :description: Update an Affiliate Campaign
-   :page: empty
+   :page: put_affiliate_affiliate_campaign
 
 Update an Affiliate Campaign (PUT)
 ----------------------------------
@@ -346,7 +346,7 @@ Request Body:
    :verb: DELETE
    :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
    :description: Delete an Affiliate Campaign
-   :page: empty
+   :page: delete_affiliate_affiliate_campaign
 
 DELETE An Affiliate Campaign
 ----------------------------

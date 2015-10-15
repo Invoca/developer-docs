@@ -35,7 +35,7 @@ Endpoint:
    :verb: GET
    :path: /advertisers/&lt;advertiser_id&gt;/affiliates
    :description: Get all Advertiser-Affiliate relationships
-   :page: empty
+   :page: get_advertiser_affiliates
 
 GET all Advertiser-Affiliate relationships
 ------------------------------------------
@@ -75,7 +75,7 @@ Response Body:
    :verb: GET
    :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
    :description: Get an Advertiser-Affiliate relationship
-   :page: empty
+   :page: get_advertiser_affiliate
 
 GET an Advertiser-Affiliate relationship
 ----------------------------------------
@@ -109,7 +109,7 @@ Response Body:
    :verb: POST
    :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
    :description: Create an Advertiser-Affiliate relationship
-   :page: empty
+   :page: post_advertiser_affiliate
 
 Create an Advertiser-Affiliate relationship (POST)
 --------------------------------------------------
@@ -149,7 +149,7 @@ Response Body:
    :verb: PUT
    :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
    :description: Update an Advertiser-Affiliate relationship
-   :page: empty
+   :page: put_advertiser_affiliate
 
 Update an Advertiser-Affiliate relationship (PUT)
 -------------------------------------------------
@@ -162,7 +162,7 @@ Update an Advertiser-Affiliate relationship
    :verb: DELETE
    :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
    :description: Delete an Advertiser-Affiliate relationship
-   :page: empty
+   :page: delete_advertiser_affiliate
 
 DELETE An Advertiser-Affiliate relationship
 -------------------------------------------

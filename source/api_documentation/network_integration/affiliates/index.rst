@@ -76,7 +76,7 @@ Endpoint:
    :verb: GET
    :path: /affiliates
    :description: Get all Affiliates
-   :page: empty
+   :page: get_affiliates
 
 GET all Affiliates
 ------------------
@@ -128,7 +128,7 @@ Request Body:
    :verb: GET
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Get an Affiliate
-   :page: empty
+   :page: get_affiliate
 
 GET an Affiliate
 ----------------
@@ -179,7 +179,7 @@ Response Body:
    :verb: DELETE
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Delete an Affiliate
-   :page: empty
+   :page: delete_affiliate
 
 DELETE An Affiliate
 -------------------
@@ -208,7 +208,7 @@ Response Body:
    :verb: POST
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Create an Affiliate
-   :page: empty
+   :page: post_affiliate
 
 Create an Affiliate (POST)
 --------------------------
@@ -267,7 +267,7 @@ Response Body:
    :verb: PUT
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Update an Affiliate
-   :page: empty
+   :page: put_affiliate
 
 Update an Affiliate (PUT)
 -------------------------

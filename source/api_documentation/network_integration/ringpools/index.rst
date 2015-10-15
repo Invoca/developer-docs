@@ -72,7 +72,7 @@ Endpoint:
    :verb: GET
    :path: /ring_pools
    :description: Get all RingPools
-   :page: empty
+   :page: get_ring_pools
 
 GET all RingPools
 -----------------
@@ -164,7 +164,7 @@ Response Body:
    :verb: GET
    :path: /ring_pools/&lt;ring_pool_id&gt;
    :description: Get a RingPool
-   :page: empty
+   :page: get_ring_pool
 
 GET a RingPool
 --------------
@@ -256,7 +256,7 @@ Response Body:
    :verb: POST
    :path: /ring_pools/&lt;ring_pool_id&gt;
    :description: Create a RingPool
-   :page: empty
+   :page: post_ring_pools
 
 Create a RingPool (POST)
 ------------------------
@@ -358,7 +358,7 @@ Response Body:
    :verb: PUT
    :path: /ring_pools/&lt;ring_pool_id&gt;
    :description: Update a RingPool
-   :page: empty
+   :page: put_ring_pool
 
 Update a RingPool (PUT)
 -----------------------
@@ -460,7 +460,7 @@ Response Body:
    :verb: DELETE
    :path: /ring_pools/&lt;ring_pool_id&gt;
    :description: Delete a RingPool
-   :page: empty
+   :page: delete_ring_pool
 
 DELETE A RingPool
 -----------------

@@ -91,7 +91,7 @@ Endpoint:
    :verb: GET
    :path: /advertisers
    :description: Get all Advertisers
-   :page: empty
+   :page: get_advertisers
 
 GET all Advertisers
 -------------------
@@ -147,7 +147,7 @@ Response Body:
    :verb: GET
    :path: /advertisers/&lt;advertiser_id&gt;
    :description: Get an Advertiser
-   :page: empty
+   :page: get_advertiser
 
 GET an Advertiser
 -----------------
@@ -214,7 +214,7 @@ Response Body:
    :verb: DELETE
    :path: /advertisers/&lt;advertiser_id&gt;
    :description: Delete an Advertiser
-   :page: empty
+   :page: delete_advertiser
 
 DELETE An Advertiser
 --------------------
@@ -245,7 +245,7 @@ Response Body:
    :verb: POST
    :path: /advertisers/&lt;advertiser_id&gt;
    :description: Create an Advertiser
-   :page: empty
+   :page: post_advertiser
 
 Create an Advertiser (POST)
 ---------------------------
@@ -309,7 +309,7 @@ Response Body:
    :verb: PUT
    :path: /advertisers/&lt;advertiser_id&gt;
    :description: Update an Advertiser
-   :page: empty
+   :page: put_advertiser
 
 Update an Advertiser (PUT)
 --------------------------

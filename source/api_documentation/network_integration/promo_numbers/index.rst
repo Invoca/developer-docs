@@ -88,7 +88,7 @@ Endpoint:
    :verb: GET
    :path: /promo_numbers
    :description: Get all Promo Numbers
-   :page: empty
+   :page: get_promo_numbers
 
 GET all Promo Numbers
 ---------------------
@@ -144,7 +144,7 @@ Response Body:
    :verb: GET
    :path: /promo_numbers/&lt;promo_number&lt;
    :description: Read a Promo Number
-   :page: empty
+   :page: get_promo_number
 
 GET a Promo Number
 ------------------
@@ -200,7 +200,7 @@ Response Body:
    :verb: POST
    :path: /promo_numbers/&lt;promo_number&lt;
    :description: Create an Advertiser/Affiliate Promo Number
-   :page: empty
+   :page: post_promo_numbers
 
 Create an Advertiser/Affiliate Promo Number (POST)
 --------------------------------------------------
@@ -274,7 +274,7 @@ Response Body:
    :verb: PUT
    :path: /promo_numbers/&lt;promo_number&lt;
    :description: Update a Campaign Promo Number
-   :page: empty
+   :page: put_promo_number
 
 Update a Campaign Promo Number (PUT)
 ------------------------------------
@@ -342,7 +342,7 @@ Response Body:
    :verb: DELETE
    :path: /promo_numbers/&lt;promo_number&lt;
    :description: Delete a Campaign Promo Number
-   :page: empty
+   :page: delete_promo_number
 
 DELETE A Campaign Promo Number
 ------------------------------
