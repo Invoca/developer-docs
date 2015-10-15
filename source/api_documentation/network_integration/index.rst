@@ -24,11 +24,11 @@ The API uses the following terms and their aliases:
    :maxdepth: 1
 
    advertiser_campaigns/index
-   advertiser_users
-   advertisers
-   affiliate_campaigns
-   affiliates
-   advertiser_affiliate_relationships
-   networks
-   promo_numbers
-   ringpools
+   advertiser_users/index
+   advertisers/index
+   affiliate_campaigns/index
+   affiliates/index
+   advertiser_affiliate_relationships/index
+   networks/index
+   promo_numbers/index
+   ringpools/index
