@@ -93,12 +93,20 @@ My Heading
 which content will be pulled from and inserted into the collapsed section.
 
 ## Custom Templates
-reStructuredText does not support any templating, so we added our own. The templates can contain rst content, but should NOT contain an rst extension, otherwise they will be visible on the live site. Templates can contain substitution variables that will be replaced when the template is instantiated.
+reStructuredText does not support any templating, so we added our own.
 
 ### How to Add a Template
 1. Create your template at a ".txt" file in the custom_templates folder.
 2. Add a call to find_and_replace_templates to the source_handler method in conf.py.
 3. Call your template using a directive in an rst file.
+
+### Limitations
+* The templates can contain rst content, but should NOT contain an rst extension, otherwise they will be visible on the live site.
+* Templates cannot contain other templates.
+* Templates can contain substitution variables that will be replaced when the template is instantiated.
+* Substitution values CAN contain other rst directives
+* Substitution values are limited to a single line of text
+* Syntatic errors in the template directive will likely lead to a silent faliure and the raw directive will be shown in the docs
 
 ### Example
 #### Template
@@ -109,8 +117,7 @@ This template is in a file called "example.txt"
   <div class="sample">This is my amazing :value:</div>
 ```
 
-####
-conf.py change
+#### conf.py Change
 ```
 def source_handler(app, docname, source):
   find_and_replace_templates(app, source, "example_directive", "example.txt")
@@ -122,15 +129,15 @@ This directive will render the example template file shown above.
 Here is the rendered template:
 
 .. example_directive::
-  :value: test
+  :value: this has been substituted
 ```
 
 #### Output
-This is the output that woudl be generated:
+This is the output that would be generated:
 ```
 <p>Here is the rendered template:</p>
 
-<div class="sample">This is my amazing test</div>
+<div class="sample">This is my amazing this has been substituted</div>
 ```
 
 ## Differences between local and ReadTheDocs.org
