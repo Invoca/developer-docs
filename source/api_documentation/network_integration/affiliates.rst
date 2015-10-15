@@ -69,7 +69,14 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
 
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/<affiliate_id_from_network>.json`
+
+.. api_endpoint::
+   :verb: GET
+   :path: /affiliates
+   :description: Get all Affiliates
+   :page: empty
 
 GET all Affiliates
 ------------------
@@ -117,6 +124,12 @@ Request Body:
     }
   ]
 
+.. api_endpoint::
+   :verb: GET
+   :path: /affiliates/&lt;affiliate_id&gt;
+   :description: Get an Affiliate
+   :page: empty
+
 GET an Affiliate
 ----------------
 
@@ -162,6 +175,11 @@ Response Body:
     "status": "Approved"
   }
 
+.. api_endpoint::
+   :verb: DELETE
+   :path: /affiliates/&lt;affiliate_id&gt;
+   :description: Delete an Affiliate
+   :page: empty
 
 DELETE An Affiliate
 -------------------
@@ -185,6 +203,12 @@ Response Body:
 
   {
   }
+
+.. api_endpoint::
+   :verb: POST
+   :path: /affiliates/&lt;affiliate_id&gt;
+   :description: Create an Affiliate
+   :page: empty
 
 Create an Affiliate (POST)
 --------------------------
@@ -239,6 +263,11 @@ Response Body:
   {
   }
 
+.. api_endpoint::
+   :verb: PUT
+   :path: /affiliates/&lt;affiliate_id&gt;
+   :description: Update an Affiliate
+   :page: empty
 
 Update an Affiliate (PUT)
 -------------------------

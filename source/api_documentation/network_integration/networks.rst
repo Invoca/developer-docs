@@ -52,7 +52,14 @@ Parameters
     
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
+
+.. api_endpoint::
+   :verb: GET
+   :path: /&lt;network_id&gt;/network
+   :description: Get Network and its Users
+   :page: empty
 
 GET Network and its Users
 -------------------------
@@ -99,6 +106,11 @@ Response Body:
     ]
   }
 
+.. api_endpoint::
+   :verb: POST
+   :path: /&lt;network_id&gt;/network
+   :description: Create Network Users
+   :page: empty
 
 Create Network Users (POST)
 ---------------------------
@@ -144,6 +156,11 @@ Request Body:
 
 Response Code: 201
 
+.. api_endpoint::
+   :verb: PUT
+   :path: /&lt;network_id&gt;/network
+   :description: Update Network Users
+   :page: empty
 
 Update Network Users (PUT)
 --------------------------

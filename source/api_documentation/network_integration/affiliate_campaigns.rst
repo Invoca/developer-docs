@@ -133,7 +133,14 @@ Relationship properties are shown below
 
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/<affiliate_campaign_id_from_network>.json`
+
+.. api_endpoint::
+   :verb: GET
+   :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
+   :description: Get all Affiliate Campaigns
+   :page: empty
 
 GET all Affiliate Campaigns
 ---------------------------
@@ -150,6 +157,11 @@ Get all Affiliate Campaigns
 Endpoint:
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates.json`
 
+.. api_endpoint::
+   :verb: GET
+   :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
+   :description: Get an Affiliate Campaign
+   :page: empty
 
 GET an Affiliate Campaign
 -------------------------
@@ -233,6 +245,11 @@ Response Body:
     "affiliate_id_from_network": "976"
   }
 
+.. api_endpoint::
+   :verb: POST
+   :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
+   :description: Create an Affiliate Campaign
+   :page: empty
 
 Create an Affiliate Campaign (POST)
 -----------------------------------
@@ -294,6 +311,11 @@ Response Body:
     "status": "Applied"
   }
 
+.. api_endpoint::
+   :verb: PUT
+   :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
+   :description: Update an Affiliate Campaign
+   :page: empty
 
 Update an Affiliate Campaign (PUT)
 ----------------------------------
@@ -320,6 +342,11 @@ Request Body:
     "status": "Approved"
   }
 
+.. api_endpoint::
+   :verb: DELETE
+   :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
+   :description: Delete an Affiliate Campaign
+   :page: empty
 
 DELETE An Affiliate Campaign
 ----------------------------

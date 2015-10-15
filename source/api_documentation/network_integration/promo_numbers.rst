@@ -81,7 +81,14 @@ When you POST a promo number, we return the promo_number in the response body. T
 
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
+
+.. api_endpoint::
+   :verb: GET
+   :path: /promo_numbers
+   :description: Get all Promo Numbers
+   :page: empty
 
 GET all Promo Numbers
 ---------------------
@@ -133,6 +140,11 @@ Response Body:
     "promo_number": "8001234567"
   }
 
+.. api_endpoint::
+   :verb: GET
+   :path: /promo_numbers/&lt;promo_number&lt;
+   :description: Read a Promo Number
+   :page: empty
 
 GET a Promo Number
 ------------------
@@ -183,6 +195,12 @@ Response Body:
     "description": "Halloween Promo Number 1",
     "promo_number": "8001234567"
   }
+
+.. api_endpoint::
+   :verb: POST
+   :path: /promo_numbers/&lt;promo_number&lt;
+   :description: Create an Advertiser/Affiliate Promo Number
+   :page: empty
 
 Create an Advertiser/Affiliate Promo Number (POST)
 --------------------------------------------------
@@ -252,6 +270,11 @@ Response Body:
     "description": "Halloween Promo Number 1"
   }
 
+.. api_endpoint::
+   :verb: PUT
+   :path: /promo_numbers/&lt;promo_number&lt;
+   :description: Update a Campaign Promo Number
+   :page: empty
 
 Update a Campaign Promo Number (PUT)
 ------------------------------------
@@ -315,6 +338,11 @@ Response Body:
   {
   }
 
+.. api_endpoint::
+   :verb: DELETE
+   :path: /promo_numbers/&lt;promo_number&lt;
+   :description: Delete a Campaign Promo Number
+   :page: empty
 
 DELETE A Campaign Promo Number
 ------------------------------

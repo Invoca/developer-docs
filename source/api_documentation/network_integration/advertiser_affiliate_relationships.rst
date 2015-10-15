@@ -28,8 +28,14 @@ Parameters for the relationships are shown below
     - Status of the advertiser ‐ affiliate relationship.
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/affiliates/<affiliate_id_from_network>.json`
 
+.. api_endpoint::
+   :verb: GET
+   :path: /advertisers/&lt;advertiser_id&gt;/affiliates
+   :description: Get all Advertiser-Affiliate relationships
+   :page: empty
 
 GET all Advertiser-Affiliate relationships
 ------------------------------------------
@@ -65,6 +71,12 @@ Response Body:
      }
    ]
 
+.. api_endpoint::
+   :verb: GET
+   :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
+   :description: Get an Advertiser-Affiliate relationship
+   :page: empty
+
 GET an Advertiser-Affiliate relationship
 ----------------------------------------
 
@@ -92,6 +104,12 @@ Response Body:
      "status": "Approved",
      "affiliate_id_from_network": "222"
    }
+
+.. api_endpoint::
+   :verb: POST
+   :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
+   :description: Create an Advertiser-Affiliate relationship
+   :page: empty
 
 Create an Advertiser-Affiliate relationship (POST)
 --------------------------------------------------
@@ -127,6 +145,11 @@ Response Body:
    {
    }
 
+.. api_endpoint::
+   :verb: PUT
+   :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
+   :description: Update an Advertiser-Affiliate relationship
+   :page: empty
 
 Update an Advertiser-Affiliate relationship (PUT)
 -------------------------------------------------
@@ -134,6 +157,12 @@ Update an Advertiser-Affiliate relationship (PUT)
 PUT `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 
 Update an Advertiser-Affiliate relationship
+
+.. api_endpoint::
+   :verb: DELETE
+   :path: /advertisers/&lt;advertiser_id&gt;/affiliates/&lt;affiliate_id&gt;
+   :description: Delete an Advertiser-Affiliate relationship
+   :page: empty
 
 DELETE An Advertiser-Affiliate relationship
 -------------------------------------------

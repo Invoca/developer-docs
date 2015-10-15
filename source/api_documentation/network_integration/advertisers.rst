@@ -84,8 +84,14 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     - This user’s role in this organization. (A user may hace different roles in different organizations)
 
 Endpoint:
+
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>.json`
 
+.. api_endpoint::
+   :verb: GET
+   :path: /advertisers
+   :description: Get all Advertisers
+   :page: empty
 
 GET all Advertisers
 -------------------
@@ -137,6 +143,11 @@ Response Body:
      }
    ]
 
+.. api_endpoint::
+   :verb: GET
+   :path: /advertisers/&lt;advertiser_id&gt;
+   :description: Get an Advertiser
+   :page: empty
 
 GET an Advertiser
 -----------------
@@ -199,6 +210,11 @@ Response Body:
      "oauth_refresh_token": "7464644784457575757494930303"
    }
 
+.. api_endpoint::
+   :verb: DELETE
+   :path: /advertisers/&lt;advertiser_id&gt;
+   :description: Delete an Advertiser
+   :page: empty
 
 DELETE An Advertiser
 --------------------
@@ -224,6 +240,12 @@ Response Body:
 
    {
    }
+
+.. api_endpoint::
+   :verb: POST
+   :path: /advertisers/&lt;advertiser_id&gt;
+   :description: Create an Advertiser
+   :page: empty
 
 Create an Advertiser (POST)
 ---------------------------
@@ -283,6 +305,11 @@ Response Body:
      ]
    }
 
+.. api_endpoint::
+   :verb: PUT
+   :path: /advertisers/&lt;advertiser_id&gt;
+   :description: Update an Advertiser
+   :page: empty
 
 Update an Advertiser (PUT)
 --------------------------

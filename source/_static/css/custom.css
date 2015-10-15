@@ -365,6 +365,11 @@ cite  {
   color: #F8C204;
 }
 
+.endpoint-list a div.DELETE {
+  width: 10%;
+  color: #FF9E52;
+}
+
 .endpoint-list a div:first-child:before {
   font-size: 120%;
   content: "▾";
