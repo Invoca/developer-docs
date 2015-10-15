@@ -1,4 +1,5 @@
-# Invoca's API developer portal
+# Developer Portal
+The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 
 ## Getting Started
 1. Clone this repo
@@ -25,9 +26,7 @@ make html
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Visit http://developers.invoca.net to check your changes
 
-
 ## Making a new version:
-
 1. Commit changes to master
 2. Create new branch with the API version number: 2015-09-25
 3. Login to ReadTheDocs.org (credentials in lastpass)
@@ -39,6 +38,9 @@ make html
 9. Return to the Admin > Version page
 10. Set your version to Public
 11. Save changes, the new version is now visible to all users
+
+## Private Documentation
+The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
 
 ## Documentation Structure
 * The home page of the site is source/index.rst
@@ -52,9 +54,9 @@ make html
 * The styling of the home page is "special" and is defined here `source/_static/css/homepage.css`. It was copy/pasted from the legacy API portal and could be massively slimmed down/replaced.
 * Graphics can be found here: `source/_static`
 
-## ReStructuredText reference
+## reStructuredText reference
 
-[General ReStructuredText Reference](http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html)
+[General reStructuredText Reference](http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html)
 
 ### Common Constructions:
 
@@ -90,6 +92,46 @@ My Heading
 :path:, :verb:, and :desc: are simply put into the 3 elements of the collapsible div.  The :page: however is the file (relative path no extension),
 which content will be pulled from and inserted into the collapsed section.
 
+## Custom Templates
+reStructuredText does not support any templating, so we added our own. The templates can contain rst content, but should NOT contain an rst extension, otherwise they will be visible on the live site. Templates can contain substitution variables that will be replaced when the template is instantiated.
+
+### How to Add a Template
+1. Create your template at a ".txt" file in the custom_templates folder.
+2. Add a call to find_and_replace_templates to the source_handler method in conf.py.
+3. Call your template using a directive in an rst file.
+
+### Example
+#### Template
+This template is in a file called "example.txt"
+```
+.. raw:: html
+
+  <div class="sample">This is my amazing :value:</div>
+```
+
+####
+conf.py change
+```
+def source_handler(app, docname, source):
+  find_and_replace_templates(app, source, "example_directive", "example.txt")
+```
+
+#### Directive
+This directive will render the example template file shown above.
+```
+Here is the rendered template:
+
+.. example_directive::
+  :value: test
+```
+
+#### Output
+This is the output that woudl be generated:
+```
+<p>Here is the rendered template:</p>
+
+<div class="sample">This is my amazing test</div>
+```
 
 ## Differences between local and ReadTheDocs.org
 
