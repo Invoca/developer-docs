@@ -1,7 +1,7 @@
 Advertiser Affiliate Relationships
 ==================================
 
-* * *
+----
 
 Changes to the Relationship between Advertiser and Affiliate on the network platform are replicated to the Invoca platform using this API.
 The operations on Advertiser‐Affiliate Relationships are similar to Network, in that the interface is fully idempotent, and the create and update commands will act as “create or update”.
@@ -10,22 +10,36 @@ Relationship status is set individually but reading is available for one or all 
 
 Parameters for the relationships are shown below
 
-<table>
-  <tr><th>Property</th><th>Type</th><th>Value</th></tr>
-  <tr><td>affiliate_id_from_network</td><td>string</td><td>The network id for the affiliate. (read only)</td></tr>
-  <tr><td>status</td><td>One of: Pending, Approved, Suspended, Declined, Deactivated</td><td>Status of the advertiser ‐ affiliate relationship.</td></tr>
-</table>
+.. list-table::
+  :widths: 11 34 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Property
+    - Type
+    - Value
+
+  * - affiliate_id_from_network
+    - string
+    - The network id for the affiliate. (read only)
+
+  * - status
+    - One of: Pending, Approved, Suspended, Declined, Deactivated
+    - Status of the advertiser ‐ affiliate relationship.
 
 Endpoint:
 `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/affiliates/<affiliate_id_from_network>.json`
 
 
-## GET all Advertiser-Affiliate relationships
+GET all Advertiser-Affiliate relationships
+------------------------------------------
+
 GET `/advertisers/<advertiser_id>/affiliates`
 
 
-### Examples
-<hr>
+Examples
+""""""""
+----
 
 Read all relationships for advertiser id from network 1
 
@@ -37,24 +51,29 @@ Format: application/json
 Response Code: 200
 
 Response Body:
-<pre><code>[
-  {
-    "status": "Approved",
-    "affiliate_id_from_network": "222"
-  },
-  {
-    "status": "Approved",
-    "affiliate_id_from_network": "34518"
-  }
-]</pre></code>
 
+.. code-block:: json
 
-## GET an Advertiser-Affiliate relationship
+   [
+     {
+       "status": "Approved",
+       "affiliate_id_from_network": "222"
+     },
+     {
+       "status": "Approved",
+       "affiliate_id_from_network": "34518"
+     }
+   ]
+
+GET an Advertiser-Affiliate relationship
+----------------------------------------
+
 GET `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 
 
-### Examples
-<hr>
+Examples
+""""""""
+----
 
 Read a single relationship
 
@@ -66,18 +85,23 @@ Format: application/json
 Response Code: 200
 
 Response Body:
-<pre><code>{
-  "status": "Approved",
-  "affiliate_id_from_network": "222"
-}</pre></code>
 
+.. code-block:: json
 
-## Create an Advertiser-Affiliate relationship (POST)
+   {
+     "status": "Approved",
+     "affiliate_id_from_network": "222"
+   }
+
+Create an Advertiser-Affiliate relationship (POST)
+--------------------------------------------------
+
 POST `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 
 
-### Examples
-<hr>
+Examples
+""""""""
+----
 
 Create relationship between Advertiser id from network 1 and Affiliate id from network 222
 
@@ -87,28 +111,39 @@ Endpoint:
 Format: application/json
 
 Request Body:
-<pre><code>{
-  "status": "Approved"
-}</pre></code>
+
+.. code-block:: json
+
+   {
+     "status": "Approved"
+   }
 
 Response Code: 201
 
 Response Body:
-<pre><code>{
-}</pre></code>
+
+.. code-block:: json
+
+   {
+   }
 
 
-## Update an Advertiser-Affiliate relationship (PUT)
+Update an Advertiser-Affiliate relationship (PUT)
+-------------------------------------------------
+
 PUT `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 
 Update an Advertiser-Affiliate relationship
 
-## DELETE An Advertiser-Affiliate relationship
+DELETE An Advertiser-Affiliate relationship
+-------------------------------------------
+
 DELETE `/advertisers/<advertiser_id>/affiliates/<affiliate_id>`
 
 
-### Examples
-<hr>
+Examples
+""""""""
+----
 
 Delete a relationship
 
