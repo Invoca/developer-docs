@@ -263,6 +263,11 @@ cite  {
     background-color: #333;
 }
 
+.wy-menu-vertical {
+  /* set position as soon as possible to avoid flicker when boostrap.css is loaded and sets this value */
+  position: fixed;
+}
+
 .wy-menu-vertical a {
   color: rgb(132, 188, 13);
 }
