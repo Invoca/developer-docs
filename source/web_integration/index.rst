@@ -1,5 +1,5 @@
 Web Integration
-==============
+===============
 
 Web Integration dynamically displays a unique phone number for each source driving traffic to landing pages, both for publishers and advertisers.
 
