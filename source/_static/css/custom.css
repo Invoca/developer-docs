@@ -293,6 +293,50 @@ cite  {
   background-color: #333 !important;
 }
 
+.wy-menu-vertical .toctree-l1 {
+  margin: 20px 0;
+}
+
+.wy-menu-vertical .toctree-l1 > a {
+  font-weight: 500;
+  font-size: 110%;
+  color: #9B9B9B !important;
+  margin: 10px 0;
+}
+
+.wy-menu-vertical .toctree-l1.current > a {
+  color: white !important;
+}
+
+.wy-menu-vertical .toctree-l1 > a:hover {
+  color: white !important;
+}
+
+.wy-menu-vertical .toctree-l1 > a .toctree-expand {
+  position: relative;
+  left: -34px;
+}
+
+.wy-menu-vertical .toctree-l1 > a:before {
+  background-image: url('../../_static/icon-list.png');
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  content: "";
+  display: inline-block;
+  background-repeat: no-repeat;
+  float: left;
+  margin-right: 10px;
+}
+
+.wy-menu-vertical .toctree-l1:nth-child(2) > a:before {
+  background-image: url('../../_static/icon-books.png');
+}
+
+.wy-menu-vertical .toctree-l1:nth-child(3) > a:before {
+  background-image: url('../../_static/icon-gears.png');
+}
+
 /*********************RIGHT HAND CONTENT************************/
 /* wraps up .wy-nav-content and its subordinates */
 .wy-nav-content-wrap {
@@ -324,6 +368,10 @@ cite  {
   border-radius: 4px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   white-space: pre-wrap;
+}
+
+.rst-content .section ol li p:last-child {
+  margin-bottom: 12px;
 }
 
 /*********************API actions tables************************/
