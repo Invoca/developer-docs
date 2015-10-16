@@ -21,7 +21,7 @@ a:focus {
   text-decoration: none;
 }
 
-blockquote {
+.rst-content blockquote {
   border-left: none !important;
 }
 
