@@ -7,6 +7,7 @@
   Please note - The Network Integration API only provides the ability to create an affiliate campaign with status “Applied”. If the Advertiser Campaign is set to “Approve All”, the campaign will automatically transition to “Approved”.
 
   Endpoint:
+
   `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/354/advertiser_campaigns/12/affiliates/975/affiliate_campaigns.json`
 
   Format: application/json
@@ -25,6 +26,7 @@
   Not Found - 404
 
   Endpoint:
+
   `https://invoca.net/api/api/@@NETWORK_API_VERSION/<network_id>/advertisers/354/advertiser_campaigns/13/affiliates/976/affiliate_campaigns.json`
 
   Format: application/json

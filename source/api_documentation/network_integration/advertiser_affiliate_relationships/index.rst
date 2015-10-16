@@ -61,3 +61,12 @@ Endpoint:
    :description: Delete an Advertiser-Affiliate relationship
    :page: delete_advertiser_affiliate
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   get_advertiser_affiliates
+   get_advertiser_affiliate
+   post_advertiser_affiliate
+   put_advertiser_affiliate
+   delete_advertiser_affiliate

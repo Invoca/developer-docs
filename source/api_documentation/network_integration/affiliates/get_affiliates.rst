@@ -5,6 +5,7 @@
   Read all Affiliates for this network
 
   Endpoint:
+
   `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates.json`
 
   Request Body:

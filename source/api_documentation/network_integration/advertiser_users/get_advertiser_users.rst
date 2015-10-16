@@ -5,6 +5,7 @@
   Read all advertiser users for advertiser e0Fv6YEk
 
   Endpoint:
+
   `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/e0Fv6YEk/users.json`
 
   Format: application/json

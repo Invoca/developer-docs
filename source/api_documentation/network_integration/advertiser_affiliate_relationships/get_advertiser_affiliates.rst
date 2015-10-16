@@ -5,6 +5,7 @@
   Read all relationships for advertiser id from network 1
 
   Endpoint:
+
   `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/1/affiliates.json`
 
   Format: application/json

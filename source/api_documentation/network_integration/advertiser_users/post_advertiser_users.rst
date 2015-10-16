@@ -5,6 +5,7 @@
   Create an advertiser user
 
   Endpoint:
+
   `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/e0Fv6YEk/users.json`
 
   Request Body:

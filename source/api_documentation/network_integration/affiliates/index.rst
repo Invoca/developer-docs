@@ -102,3 +102,12 @@ Endpoint:
    :description: Update an Affiliate
    :page: put_affiliate
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   get_affiliates
+   get_affiliate
+   delete_affiliate
+   post_affiliate
+   put_affiliate

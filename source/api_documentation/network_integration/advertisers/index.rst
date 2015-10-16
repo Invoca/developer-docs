@@ -106,8 +106,23 @@ Endpoint:
    :page: delete_advertiser
 
 .. api_endpoint::
+   :verb: POST
+   :path: /advertisers/&lt;advertiser_id&gt;
+   :description: Create an Advertiser
+   :page: post_advertiser
+
+.. api_endpoint::
    :verb: PUT
    :path: /advertisers/&lt;advertiser_id&gt;
    :description: Update an Advertiser
    :page: put_advertiser
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   get_advertisers
+   get_advertiser
+   delete_advertiser
+   post_advertiser
+   put_advertiser

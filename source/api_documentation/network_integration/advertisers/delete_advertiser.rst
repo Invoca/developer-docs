@@ -5,6 +5,7 @@
   Delete a single advertiser
 
   Endpoint:
+
   `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHy.json`
 
   Format: application/json

@@ -39,3 +39,12 @@ Endpoint:
    :description: Delete an Advertiser User
    :page: delete_advertiser_user
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   get_advertiser_users
+   get_advertiser_user
+   post_advertiser_users
+   put_advertiser_user
+   delete_advertiser_user

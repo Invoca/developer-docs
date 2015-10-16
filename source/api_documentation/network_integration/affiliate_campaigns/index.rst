@@ -166,4 +166,12 @@ Endpoint:
    :description: Delete an Affiliate Campaign
    :page: delete_affiliate_affiliate_campaign
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
 
+   get_affiliate_affiliate_campaigns
+   get_affiliate_affiliate_campaign
+   post_affiliate_affiliate_campaigns
+   put_affiliate_affiliate_campaign
+   delete_affiliate_affiliate_campaign

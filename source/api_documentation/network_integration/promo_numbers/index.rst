@@ -92,25 +92,34 @@ Endpoint:
 
 .. api_endpoint::
    :verb: GET
-   :path: /promo_numbers/&lt;promo_number&lt;
+   :path: /promo_numbers/&lt;promo_number&gt;
    :description: Read a Promo Number
    :page: get_promo_number
 
 .. api_endpoint::
    :verb: POST
-   :path: /promo_numbers/&lt;promo_number&lt;
+   :path: /promo_numbers/&lt;promo_number&gt;
    :description: Create an Advertiser/Affiliate Promo Number
    :page: post_promo_numbers
 
 .. api_endpoint::
    :verb: PUT
-   :path: /promo_numbers/&lt;promo_number&lt;
+   :path: /promo_numbers/&lt;promo_number&gt;
    :description: Update a Campaign Promo Number
    :page: put_promo_number
 
 .. api_endpoint::
    :verb: DELETE
-   :path: /promo_numbers/&lt;promo_number&lt;
+   :path: /promo_numbers/&lt;promo_number&gt;
    :description: Delete a Campaign Promo Number
    :page: delete_promo_number
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   get_promo_numbers
+   get_promo_number
+   post_promo_numbers
+   put_promo_number
+   delete_promo_number

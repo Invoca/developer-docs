@@ -65,11 +65,18 @@ Endpoint:
    :verb: POST
    :path: /&lt;network_id&gt;/network
    :description: Create Network Users
-   :page: create_users
+   :page: post_network_users
 
 .. api_endpoint::
    :verb: PUT
    :path: /&lt;network_id&gt;/network
    :description: Update Network Users
-   :page: update_network
+   :page: put_network_user
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   get_network
+   post_network_users
+   put_network_user
