@@ -21,6 +21,10 @@ a:focus {
   text-decoration: none;
 }
 
+blockquote {
+  border-left: none !important;
+}
+
 img.logo {
   width: 232px !important;
   height: 82px !important;
