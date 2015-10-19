@@ -275,4 +275,4 @@ Please note that the Conversion Reporting API is idempotent (if you repost sales
 Endpoint:
 """""""""
 
-`https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml`
+``https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml``

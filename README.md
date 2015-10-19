@@ -166,3 +166,7 @@ make clean && make html
 #### Q: I added/edited a table, but I don't see it in the built docs
 RST does not generate error message for most table errors. Instead, it silently fails. Check your table syntax and try again.
 
+#### Q: The build is hanging and never completing
+RST makes links that look like this `` `click here <https://example.com>`_ `` so if you put in a link like this `` `https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml` `` It kind of freaks out and never finishes building.
+If you have a backtick block with a `<soomething` in the link you should encase it in double backticks.
+
