@@ -6,7 +6,7 @@ for situations where it is inconvenient to send an array of all existing adverti
 
 Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/users/<user_id_from_network>.json`
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/users/<user_id_from_network>.json``
 
 .. api_endpoint::
    :verb: GET

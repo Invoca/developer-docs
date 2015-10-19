@@ -69,7 +69,7 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
 
 Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/<affiliate_id_from_network>.json`
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/<affiliate_id_from_network>.json``
 
 .. api_endpoint::
    :verb: GET

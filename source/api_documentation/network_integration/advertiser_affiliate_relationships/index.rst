@@ -27,7 +27,7 @@ Parameters for the relationships are shown below
 
 Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/affiliates/<affiliate_id_from_network>.json`
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/affiliates/<affiliate_id_from_network>.json``
 
 .. api_endpoint::
    :verb: GET

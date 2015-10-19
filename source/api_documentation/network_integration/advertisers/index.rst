@@ -84,7 +84,7 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
 
 Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>.json`
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>.json``
 
 .. api_endpoint::
    :verb: GET

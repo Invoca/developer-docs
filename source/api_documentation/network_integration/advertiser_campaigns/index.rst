@@ -5,7 +5,7 @@ Advertiser Campaigns can be managed using the Network API. In addition to create
 
 Note that the `<advertiser_id_from_network>` and `<advertiser_campaign_id_from_network>` are the network’s id for those objects, not Invoca’s.
 
-`/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
+``/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``
 
 We support passing back current_terms and future_terms on campaigns. The current properties of the campaign are reflected in current_terms. All changes to the campaign are staged in future_terms. Once the campaign goes live, future_terms transition over to current_terms.
 
@@ -409,17 +409,17 @@ Example Conditions
 
 Note that **and** is higher precedence than **or**. So if you use both in a condition like this:
 
-`mobile or in_region and during_hours`
+``mobile or in_region and during_hours``
 
 it is equivalent to this:
 
-`mobile or (in_region and during_hours)`
+``mobile or (in_region and during_hours)``
 
 
 Endpoint
 --------
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``
 
 .. api_endpoint::
    :verb: GET
