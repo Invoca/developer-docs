@@ -6,7 +6,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json``
 
   Format: application/json
 
@@ -52,7 +52,7 @@
   Delete network users by putting an empty user hash
 
   Endpoint:
-  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json``
 
   Format: application/json
 

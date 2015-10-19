@@ -6,7 +6,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes.json`
+  ``https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes.json``
 
   Request Body
 
@@ -58,7 +58,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes.json`
+  ``https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes.json``
 
   Request Body
 

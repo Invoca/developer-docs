@@ -107,7 +107,7 @@ Used to create the fields of a call outcome.
 
 Endpoint:
 
-`https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes`
+``https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes``
 
 .. api_endpoint::
   :verb: POST

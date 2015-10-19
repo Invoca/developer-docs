@@ -6,7 +6,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns.json`
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/2/advertiser_campaigns.json``
 
   Response Body:
 

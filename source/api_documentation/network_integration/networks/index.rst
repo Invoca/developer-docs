@@ -52,7 +52,7 @@ Parameters
 
 Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json``
 
 .. api_endpoint::
    :verb: GET

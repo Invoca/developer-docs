@@ -14,11 +14,11 @@ The network authenticates an organization by doing the following:
 
 The format of the API URL is in (2):
 
-`https://invoca.net/api/2014-­01-­01/<network_id>/network/<email>/create_access_token.json`
+``https://invoca.net/api/2014-­01-­01/<network_id>/network/<email>/create_access_token.json``
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/<advertiser_id_from_network>/<email>/create_access_token.json`
+``https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/<advertiser_id_from_network>/<email>/create_access_token.json``
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/<affiliate_id_from_network>/<email>/create_access_token.json`
+``https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/<affiliate_id_from_network>/<email>/create_access_token.json``
 
 The success response is an JSON document with a root element of Response that contains a
 single AccessToken element whose content is the access token:
@@ -41,7 +41,7 @@ Create access token for “sy@young.com” network user:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/network/sy%40young.com/create_access_token.json HTTP/1.1`
+``https://invoca.net/api/2014­-01-­01/<network_id>/network/sy%40young.com/create_access_token.json HTTP/1.1``
 
 Response:
 
@@ -56,7 +56,7 @@ Create access token for “sy@young.com” user in advertiser id 354:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json HTTP/1.1`
+``https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json HTTP/1.1``
 
 Response:
 
@@ -71,7 +71,7 @@ Create access token for "sy@young.com" user in affiliate id 976:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/976/sy%40young.com/create_access_token.json HTTP/1.1`
+``https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/976/sy%40young.com/create_access_token.json HTTP/1.1``
 
 Response:
 
@@ -112,7 +112,7 @@ http://www.network.com/loginwith with the following query parameters:
 
 For example:
 
-`http://www.network.com/login?destination=http%3A%2F%2Finvoca.net%2Faffiliates%2F1&type=advertiser`
+``http://www.network.com/login?destination=http%3A%2F%2Finvoca.net%2Faffiliates%2F1&type=advertiser``
 
 The network authenticates the user either by using existing session credentials or by
 prompting for login credentials. It generates an access token using a server‐to‐server
@@ -120,12 +120,12 @@ POST:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json`
+``https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json``
 
 The returned value is an access token, for example 9AC23B903F4. The network then
 appends this token to the destination URL and redirects there:
 
-`http://invoca.net/affiliates/1?access_token=9AC23B903F4`
+``http://invoca.net/affiliates/1?access_token=9AC23B903F4``
 
 
 Network Link to PPC
@@ -137,7 +137,7 @@ for Advertisers and Affiliates. The link uses the same landing page as On-The-Fl
 authentication does to seamlessly log the user into the Invoca Marketing Automation
 Platform:
 
-`http://www.network.com/login?destination=http%3A%2F%2F<network>.invoca.net%2Fhome`
+``http://www.network.com/login?destination=http%3A%2F%2F<network>.invoca.net%2Fhome``
 
 
 PPC Link to Network

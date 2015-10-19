@@ -6,7 +6,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json``
 
   Format: application/json
 
@@ -53,7 +53,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json`
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/network.json``
 
   Format: application/json
 

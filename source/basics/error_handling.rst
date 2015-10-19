@@ -7,7 +7,7 @@ AdvertiserCampaign RingPools
 
 Not found – 404:
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/ring_pools/123.json`
+``https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/ring_pools/123.json``
 
 .. code-block:: json
 
@@ -25,7 +25,7 @@ Affiliate Campaign RingPools
 
 Not found – 404:
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json`
+``https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json``
 
 .. code-block:: json
 

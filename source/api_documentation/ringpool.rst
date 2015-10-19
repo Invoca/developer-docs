@@ -5,7 +5,7 @@ The RingPool API allocates a dynamic, trackable promo phone number from a RingPo
 
 Example API URL:
 
-`https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&site=<VALUE1>&location=<VALUE2>`
+``https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&site=<VALUE1>&location=<VALUE2>``
 
 <NETWORK>.invoca.net is the vanity URL for your platform. Note that your platform may exist on invoca.net or ringrevenue.com, and both are supported.
 
@@ -15,7 +15,7 @@ Example API URL:
 
 The parameter names should match those chosen in the RingPool wizard, or you can use generic parameter names “param1”, “param2”, etc. Here is the same API URL with the generic parameter names:
 
-`https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>`
+``https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``
 
 **Note:** To access the campaign RingPool’s API URL navigate to the Campaign Summary’s RingPool tab and click “get api url” under Actions.
 
@@ -58,7 +58,7 @@ The response can be in any of these formats: **xml**, **json** or **csv**. To ch
 
 As an advertiser, you can allocate promo numbers from your RingPool on behalf of your affiliates in order to credit them for calls. Just include an affiliate id in the query string of the API URL. Note that the parameter name depends on your network and the value must match what is set on the affiliate account. Here is an example URL for tracking affiliate 5567 on a network that calls the affiliate id a pid:
 
-`https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&pid=5567&sid=adwords`
+``https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&pid=5567&sid=adwords``
 
 Errors
 ------
@@ -147,4 +147,4 @@ The API supports the following parameters:
 
 Endpoint:
 
-`https://invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>`
+``https://invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``

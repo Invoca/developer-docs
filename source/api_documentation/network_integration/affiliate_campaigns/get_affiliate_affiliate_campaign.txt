@@ -6,7 +6,7 @@
 
   Endpoint:
 
-  `https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/354/advertiser_campaigns/12/affiliates/976/affiliate_campaigns.json`
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/354/advertiser_campaigns/12/affiliates/976/affiliate_campaigns.json``
 
   Format: application/json
 
