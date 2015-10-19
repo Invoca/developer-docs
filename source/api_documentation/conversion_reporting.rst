@@ -5,7 +5,7 @@ The Conversion Reporting API (formerly referred to as the “Call Center” or �
 Reporting order information through the API allows advertisers to compensate publishers for sales that convert over the phone (or on the web).
 Additionally, Advertiser Direct campaigns using the Conversion Reporting API with search campaigns can report back revenue generated for each phone call so that search bids can be optimized.
 
-Before using the Conversion Reporting API, request credentials from [questions@invoca.com](mailto:questions@invoca.com)
+Before using the Conversion Reporting API, request credentials from questions@invoca.com
 
 Client API Wrappers
 -------------------
@@ -158,7 +158,7 @@ that just return the status code when there are errors without exposing the body
 Security
 --------
 
-All posts must use HTTPS BASIC authentication and use pre-assigned usernames and passwords. Contact [questions@invoca](mailto:questions@invoca.com) to request Conversion Reporting API credentials.
+All posts must use HTTPS BASIC authentication and use pre-assigned usernames and passwords. Contact questions@invoca to request Conversion Reporting API credentials.
 
 High availability
 -----------------

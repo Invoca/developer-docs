@@ -45,7 +45,7 @@ For Web Based Conversions
 
 The affiliate or publisher ID and advertiser campaign ID are required.
 
-For more information on possible parameters and how the matching call is found, see ﻿[Conversion Reporting API](/docs/rest/conversion-reporting).
+For more information on possible parameters and how the matching call is found, see `Conversion Reporting API <conversion_reporting.html>`_.
 
 Reply Message
 -------------
