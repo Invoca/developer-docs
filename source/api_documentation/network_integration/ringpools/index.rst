@@ -1,6 +1,5 @@
 Ringpools
 =========
-----
 
 Advertiser Campaign and Affiliate Campaign RingPools
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,12 +97,3 @@ Endpoint:
    :description: Delete a RingPool
    :page: delete_ring_pool
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_ring_pools
-   get_ring_pool
-   post_ring_pools
-   put_ring_pool
-   delete_ring_pool

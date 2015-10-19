@@ -45,7 +45,9 @@
     {
     }
 
-  ----
+  .. raw:: html
+
+    <hr>
 
   Create an Affiliate Campaign RingPool
 

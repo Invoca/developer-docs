@@ -49,7 +49,10 @@
       }
     }
 
-  ------
+  .. raw:: html
+
+    <hr>
+
 
   Example using **start_time_t**, all optional search fields, and all call outcome fields:
 

@@ -1,6 +1,5 @@
 Promo Numbers
 =============
-----
 
 Advertiser Campaign and Affiliate Campaign Promo Numbers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -18,11 +17,11 @@ When you POST a promo number, we return the promo_number in the response body. T
   * - Property
     - Type
     - Value
-  
+
   * - description
     - string (required)
     - Arbitrary description
-  
+
   * - media_type
     - string (required)
     - one of:
@@ -114,12 +113,3 @@ Endpoint:
    :description: Delete a Campaign Promo Number
    :page: delete_promo_number
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_promo_numbers
-   get_promo_number
-   post_promo_numbers
-   put_promo_number
-   delete_promo_number

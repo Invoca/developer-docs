@@ -1,6 +1,5 @@
 Advertiser Users
 ================
-----
 
 For convenience, the API provides an interface for performing operations on specific advertiser users. This is useful
 for situations where it is inconvenient to send an array of all existing advertiser users.
@@ -39,12 +38,3 @@ Endpoint:
    :description: Delete an Advertiser User
    :page: delete_advertiser_user
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_advertiser_users
-   get_advertiser_user
-   post_advertiser_users
-   put_advertiser_user
-   delete_advertiser_user

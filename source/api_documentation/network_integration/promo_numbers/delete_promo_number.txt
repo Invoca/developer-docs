@@ -2,7 +2,7 @@
 
   .. rubric:: Examples
 
-  Read a specific Advertiser Campaign Promo Number
+  Delete an Advertiser Campaign Promo Number
 
   Endpoint:
 
@@ -17,14 +17,13 @@
   .. code-block:: json
 
     {
-      "media_type": "Online: Display",
-      "description": "Halloween Promo Number 1",
-      "promo_number": "8001234567"
     }
 
-  ----
+  .. raw:: html
 
-  Read a specific Affiliate Campaign Promo Number
+    <hr>
+
+  Delete an Affiliate Campaign Promo Number
 
   Endpoint:
 
@@ -39,7 +38,4 @@
   .. code-block:: json
 
     {
-      "media_type": "Online: Display",
-      "description": "Halloween Promo Number 1",
-      "promo_number": "8001234567"
     }

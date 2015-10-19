@@ -262,7 +262,6 @@ This is a description of some of the parameters in the previous cURL example.
 
 Search Algorithm to Find Matching Call
 --------------------------------------
---------------------------------------
 
 We look for an exact match for calls associated with the call center, using these parameters, if given:
 

@@ -1,6 +1,5 @@
 Networks
 ========
-----
 
 Network users are replicated to and retrieved from the Invoca Marketing Automation Platform using this API.
 
@@ -21,35 +20,35 @@ Parameters
   * - name
     - string
     - Network name (read only).
-    
+
   * - users
     - json array of hashes
     - 0 or more users for the network. User attributes are listed below.
-    
+
   * - id_from_network
     - string
     - The network’s id for this User.
-    
+
   * - email_address
     - string in RFC 2822 addr_spec format
     - The user’s email address. Unique for this user. (mandatory field)
-    
+
   * - first_name
     - string
     - The user’s first name.
-    
+
   * - last_name
     - string
     - The user’s last name.
-    
+
   * - phone_number
     - string in ITU E.164 format or 10-digit US form (no punctuation)
     - The user’s phone number.
-    
+
   * - role
     - One of: Super (default), Manager, Member, Observer, Reporting
     - The user’s role within the network.
-    
+
 
 Endpoint:
 
@@ -73,10 +72,3 @@ Endpoint:
    :description: Update Network Users
    :page: put_network_user
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_network
-   post_network_users
-   put_network_user

@@ -19,7 +19,9 @@
     {
     }
 
-  ----
+  .. raw:: html
+
+    <hr>
 
   Delete an Affiliate Campaign RingPool
 

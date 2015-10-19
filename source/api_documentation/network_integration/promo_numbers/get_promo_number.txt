@@ -2,7 +2,7 @@
 
   .. rubric:: Examples
 
-  Update an Advertiser Campaign Promo Number
+  Read a specific Advertiser Campaign Promo Number
 
   Endpoint:
 
@@ -10,15 +10,6 @@
 
   Format: application/json
 
-  Request Body:
-
-  .. code-block:: json
-
-    {
-      "description": "Halloween Promo Number 1 Updated",
-      "media_type": "Online: Display"
-    }
-
   Response Code: 200
 
   Response Body:
@@ -26,11 +17,16 @@
   .. code-block:: json
 
     {
+      "media_type": "Online: Display",
+      "description": "Halloween Promo Number 1",
+      "promo_number": "8001234567"
     }
 
-  ----
+  .. raw:: html
 
-  Update Affiliate Campaign Promo Number
+    <hr>
+
+  Read a specific Affiliate Campaign Promo Number
 
   Endpoint:
 
@@ -38,15 +34,6 @@
 
   Format: application/json
 
-  Request Body:
-
-  .. code-block:: json
-
-    {
-      "description": "Halloween Promo Number 1 Updated",
-      "media_type": "Online: Display"
-    }
-
   Response Code: 200
 
   Response Body:
@@ -54,4 +41,7 @@
   .. code-block:: json
 
     {
+      "media_type": "Online: Display",
+      "description": "Halloween Promo Number 1",
+      "promo_number": "8001234567"
     }

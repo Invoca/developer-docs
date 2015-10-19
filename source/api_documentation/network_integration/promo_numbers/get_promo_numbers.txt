@@ -22,7 +22,9 @@
       "promo_number": "8001234567"
     }
 
-  ----
+  .. raw:: html
+
+    <hr>
 
   Read all Affiliate Campaign Promo Numbers as an array
 

@@ -1,8 +1,6 @@
 Advertiser Affiliate Relationships
 ==================================
 
-----
-
 Changes to the Relationship between Advertiser and Affiliate on the network platform are replicated to the Invoca platform using this API.
 The operations on Advertiser‐Affiliate Relationships are similar to Network, in that the interface is fully idempotent, and the create and update commands will act as “create or update”.
 
@@ -61,12 +59,3 @@ Endpoint:
    :description: Delete an Advertiser-Affiliate relationship
    :page: delete_advertiser_affiliate
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_advertiser_affiliates
-   get_advertiser_affiliate
-   post_advertiser_affiliate
-   put_advertiser_affiliate
-   delete_advertiser_affiliate

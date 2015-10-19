@@ -1,6 +1,5 @@
 Affiliates
 ==========
-----
 
 The operations on Affiliate are similar to Network, in that the interface is fully idempotent,
 and the create and update commands both expect the full set of affiliate sites and users each time.
@@ -102,12 +101,3 @@ Endpoint:
    :description: Update an Affiliate
    :page: put_affiliate
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_affiliates
-   get_affiliate
-   delete_affiliate
-   post_affiliate
-   put_affiliate

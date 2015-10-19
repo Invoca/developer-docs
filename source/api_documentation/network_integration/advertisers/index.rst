@@ -1,6 +1,5 @@
 Advertisers
 ===========
-----
 
 The operations on Advertiser are similar to Network, in that the interface is fully idempotent,
 and the create and update commands both expect the full set of advertiser sites and users each time.
@@ -117,12 +116,3 @@ Endpoint:
    :description: Update an Advertiser
    :page: put_advertiser
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_advertisers
-   get_advertiser
-   delete_advertiser
-   post_advertiser
-   put_advertiser

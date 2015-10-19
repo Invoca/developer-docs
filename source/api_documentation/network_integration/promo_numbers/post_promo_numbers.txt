@@ -31,7 +31,9 @@
       "description": "Halloween Promo Number 1"
     }
 
-  ----
+  .. raw:: html
+
+    <hr>
 
   Create an Affiliate Campaign Promo Number
 

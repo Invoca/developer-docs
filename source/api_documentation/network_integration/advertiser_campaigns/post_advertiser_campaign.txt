@@ -95,8 +95,9 @@
      }
      ' -v
 
+  .. raw:: html
 
-  ------------
+      <hr>
 
   Create Campaign fJauFbSEGHKw8ADEGv for Advertiser cFUyYnFHyiYA42TrpM on network 1 (POST)
 

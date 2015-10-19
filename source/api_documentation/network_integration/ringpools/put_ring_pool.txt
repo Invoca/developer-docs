@@ -45,7 +45,9 @@
     {
     }
 
-  ----
+  .. raw:: html
+
+    <hr>
 
   Update an Affiliate Campaign RingPool
 

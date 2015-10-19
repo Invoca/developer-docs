@@ -475,16 +475,3 @@ Endpoint
    :description: Set Campaign State to Archived
    :page: post_advertiser_campaign_archive
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   get_advertiser_campaigns
-   get_advertiser_campaign
-   post_advertiser_campaign
-   put_advertiser_campaign
-   get_advertiser_campaign_quick_stats
-   get_advertiser_campaign_go_live
-   post_advertiser_campaign_go_live
-   get_advertiser_campaign_archive
-   post_advertiser_campaign_archive

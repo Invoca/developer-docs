@@ -51,7 +51,7 @@ The response can be in any of these formats: **xml**, **json** or **csv**. To ch
 
 **csv**
 
-.. code-block:: csv
+.. code-block:: text
 
   PromoNumberFormatted,PromoNumber,TrackingUrl
   888-390-6665,8883906665, https://invoca.net/c/1/14-11-109?us=http%3A%2F%2Fwww2.invoca.net%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665

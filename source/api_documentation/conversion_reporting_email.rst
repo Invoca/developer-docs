@@ -10,7 +10,9 @@ Verify that you have received the Conversion Reporting credentials email from su
 
 For "Publisher Promotion" or Fixed Price "Bundled" Campaigns, view Conversion Reporting credentials in the Campaign Summary tab, Integration section.
 
-.. image:: https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr6_zpsbc607ab1.png&key=afea23f29e5a4f63bd166897e3dc72df
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr6_zpsbc607ab1.png&key=afea23f29e5a4f63bd166897e3dc72df">
 
 Note or copy the Upload Email Address.
 
@@ -50,19 +52,25 @@ Reply Message
 
 Conversion Reporting emails are processed on a nightly basis and a reply message is sent once the task is completed. The reply message includes the number of conversions processed, the number of conversions that did not match up with a transaction and the number of errors. For each error encountered, the row number, the content of that row and the error it caused is returned. Please note that only up to 10 errors per batch are allowed before processing is stopped.
 
-.. image:: https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F06c39c20-348a-4fc8-ac8c-36affc228fbe_zps626d230e.jpg&key=afea23f29e5a4f63bd166897e3dc72df
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F06c39c20-348a-4fc8-ac8c-36affc228fbe_zps626d230e.jpg&key=afea23f29e5a4f63bd166897e3dc72df">
 
 Examples:
 ---------
 
 1. Conversions reported include the call Start Time in Human Readable Time Format, the Calling Phone Number and the Reason Code.
 
-   .. image:: https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr_email3_zps689c6b82.jpg&key=afea23f29e5a4f63bd166897e3dc72df
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr_email3_zps689c6b82.jpg&key=afea23f29e5a4f63bd166897e3dc72df">
 
 
 2. Conversions reported include the call Start Time in Unix Time Format, the calling phone number and the Sku List.
 
-   .. image:: https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr_email2_zpsf3b62472.jpg&key=afea23f29e5a4f63bd166897e3dc72df
+.. raw:: html
+
+  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr_email2_zpsf3b62472.jpg&key=afea23f29e5a4f63bd166897e3dc72df">
 
 
 Idempotency:

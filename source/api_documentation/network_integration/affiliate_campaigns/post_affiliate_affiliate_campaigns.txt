@@ -21,7 +21,9 @@
       "affiliate_campaign_id_from_network": "2234"
     }
 
-  ----
+  .. raw:: html
+
+    <hr>
 
   Not Found - 404
 

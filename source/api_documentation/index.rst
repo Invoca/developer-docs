@@ -42,7 +42,6 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    :maxdepth: 2
    :hidden:
 
-   api_overview
    manage_api_credentials
    network_integration/index
    conversion_reporting
