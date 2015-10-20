@@ -43,7 +43,7 @@ The API takes the following optional query parameters:
     - Transaction_id to start retrieving after. This should be the last value retrieved previously. Default (or empty string) means start at the oldest.
 
   * - column_separator=
-    - [.csv format only] Separator between columns. Default is , for comma-separated values. (Can be set to any other separator like | for pipe-separated values or %09 for tab-separated values.)
+    - [.csv format only] Separator between columns. Default is , for comma-separated values. (Can be set to any other separator like \| for pipe-separated values or %09 for tab-separated values.)
 
   * - row_separator=
     -  [.csv format only] Separator between lines. Defaults to %0A for \n (line feed). Use %0D%0A for \r\n (carriage return + line feed).
@@ -57,7 +57,7 @@ The API takes the following optional query parameters:
 In order to ensure that all transactions are returned when using the from= and to= date query parameters,
 you should store the last transaction id you have downloaded and pass it as the start_after_transaction_id to the next request.
 Typical usage on the polling interval is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
-Please note, the “to” and “from” date range parameters are both necessary, providing only one or the other will not filter the results.
+Please note, the "to" and "from" date range parameters are both necessary, providing only one or the other will not filter the results.
 
 Example:
 
@@ -195,11 +195,11 @@ The data returned has the following fields:
 
   * - calling_phone_number
     - Caller ID
-    - Caller ID. Formatted as 12 characters like “866-555-1234”.
+    - Caller ID. Formatted as 12 characters like "866-555-1234".
 
   * - mobile
     - Phone Type
-    - “Landline” or “Mobile” or empty string if type is unknown.
+    - "Landline" or "Mobile" or empty string if type is unknown.
 
   * - duration
     - Total Duration (HH:MM:SS)
@@ -351,7 +351,7 @@ The data returned has the following fields:
 
   * - dynamic_number_pool_referrer_search_type
     - Search Type
-    - [Number pooling links only] “Paid” or “Organic”.
+    - [Number pooling links only] "Paid" or "Organic".
 
   * - dynamic_number_pool_pool_type
     - Pool Type
@@ -383,7 +383,7 @@ The data returned has the following fields:
 
   * - complete_call_id
     - Call Record ID
-    - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the “-“.
+    - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
   * - transfer_from_type
     - Transfer Type
