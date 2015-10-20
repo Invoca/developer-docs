@@ -59,3 +59,18 @@ you should store the last transaction id you have downloaded and pass it as the 
 Typical usage on the polling interval is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
 Please note, the “to” and “from” date range parameters are both necessary, providing only one or the other will not filter the results.
 
+Example:
+
+Send request 1:
+
+``https://yourcompany.invoca.net/api/@@PNAPI_VERSION/networks/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
+
+returns 500 rows, grab the last transaction_id (in this example 500) and send request 2:
+
+``https://yourcompany.invoca.net/api/@@PNAPI_VERSION/networks/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
+
+then repeat as necessary to get all call records within date range.
+
+Response
+--------
+
