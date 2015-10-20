@@ -43,6 +43,7 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    :hidden:
 
    manage_api_credentials
+   network_integration/index
    conversion_reporting
    conversion_reporting_pixel
    conversion_reporting_email
