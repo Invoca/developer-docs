@@ -480,6 +480,83 @@ The data returned has the following fields:
     - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '\*', 'x', and ','.
 
 
+.. list-table::
+  :widths: 30 8 40
+  :header-rows: 1
+  :class: parameters
+
+  * - advertiser_payin_localized
+    - Earned
+    - Amount paid in by media channel.
+
+  * - affiliate_payout_localized
+    - Paid
+    - Amount paid out to the publisher.
+
+  * - margin_localized
+    - Margin
+    - Difference between advertiser_payin_localized and affiliate_payout_localized.
+
+  * - matching_advertiser_payin_policies
+    - Matching Media Channel Payin Policies
+    - List of media channel policies that matched (base, bonus1, bonus2, etc.) to determine the media channel payin, separated by +. For example,base+bonus1+bonus3. Note that if there was any media channel payin, this field guaranteed to start with base.
+
+  * - matching_affiliate_payout_policies
+    - Matching Publisher Payout Policies
+    - List of publisher policies that matched (base, bonus1, bonus2, etc.) to determine the publisher payout, separated by +. For example,base+bonus2. Note that if there was any publisher payout, this field guaranteed to start with base.
+
+  * - payout_conditions
+    - Payout Conditions
+    - “Base condition with { highlighting } around the term(s) that disqualified publisher payout. For example: duration > 1 min and {in_region}”.
+
+  * - payin_conditions
+    - Payin Conditions
+    - “Base condition with { highlighting } around the term(s) that disqualified media channel payin. For example: duration > 1 min and {in_region}”.
+
+  * - recording
+    - Recording
+    - URL to the call recording, if available.
+
+  * - Display Name (Data Append)
+    -
+    -
+
+  * - First Name (Data Append)
+    -
+    -
+
+  * - Last Name (Data Append)
+    -
+    -
+
+  * - Age Range (Data Append)
+    -
+    -
+
+  * - Address Type (Data Append)
+    -
+    -
+
+  * - Street Address (Data Append)
+    -
+    -
+
+  * - City (Data Append)
+    -
+    -
+
+  * - State (Data Append)
+    -
+    -
+
+  * - Zip (Data Append)
+    -
+    -
+
+  * - Country (Data Append)
+    -
+    -
+
 Example
 -------
 
