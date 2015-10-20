@@ -10,6 +10,28 @@ If an existing transaction is corrected, the correction will appear as a new tra
 through the corrects_transaction_id field. When you receive a correction, replace the original transaction's
 attributes with the new attributes from the correction.
 
+URL
+---
+
+The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported
+
+.. list-table::
+  :widths: 8 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Format
+    - Description and URL
+
+  * - csv
+    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.csv``
+
+  * - xml
+    - Returns an XML document with an array of Transaction elements. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.xml``
+
+  * - json
+    - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.json``
+
 Authentication
 --------------
 
