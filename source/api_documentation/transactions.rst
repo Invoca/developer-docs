@@ -7,7 +7,7 @@ The API is designed to be polled at any interval over 5 minutes. You should stor
 in order to pass it as the start_after_transaction_id with the next request. Typical usage on the polling interval
 is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
 If an existing transaction is corrected, the correction will appear as a new transaction that refers to the original
-through the corrects_transaction_id field. When you receive a correction, replace the original transaction’s
+through the corrects_transaction_id field. When you receive a correction, replace the original transaction's
 attributes with the new attributes from the correction.
 
 Authentication
@@ -31,10 +31,10 @@ The API takes the following optional query parameters:
     - Description
 
   * - from=
-    - Starting date in user’s time zone, in format YYYY-MM-DD. Example: 2011-06-01. Inclusive.
+    - Starting date in user's time zone, in format YYYY-MM-DD. Example: 2011-06-01. Inclusive.
 
   * - to=
-    - Ending date in user’s time zone, in format YYYY-MM-DD. Example: 2011-06-07. Inclusive.
+    - Ending date in user's time zone, in format YYYY-MM-DD. Example: 2011-06-07. Inclusive.
 
   * - limit=
     -  Max number of transactions to return at a time. Defaults to 1000. Limited to at most 4000.
@@ -87,11 +87,11 @@ The data returned has the following fields:
 
   * - transaction_id
     - Transaction ID
-    - Globally unique identifier for this transaction. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the “-“. This is the Primary Key of the results.
+    - Globally unique identifier for this transaction. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-". This is the Primary Key of the results.
 
   * - corrects_transaction_id
     - Corrects Call
-    - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the “-“.
+    - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
   * - transaction_type
     - Type
@@ -99,7 +99,7 @@ The data returned has the following fields:
 
   * - original_order_id
     - Order ID
-    - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the “-“.
+    - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
   * - advertiser_id
     - Media Channel ID (Invoca ID)
@@ -139,15 +139,15 @@ The data returned has the following fields:
 
   * - affiliate_commissions_ranking
     - Media Outlet Commissions Ranking
-    - Network ranking of media outlet’s commissions (0 to 5, and -1 being ‘new’). Blank if no media outlet.
+    - Network ranking of media outlet's commissions (0 to 5, and -1 being 'new'). Blank if no media outlet.
 
   * - affiliate_call_volume_ranking
     - Media Outlet Volume Ranking
-    - Network ranking of media outlet’s call volume (0 to 5, and -1 being ‘new’). Blank if no media outlet.
+    - Network ranking of media outlet's call volume (0 to 5, and -1 being 'new'). Blank if no media outlet.
 
   * - affiliate_conversion_rate_ranking
     - Media Outlet Conversion Rate Ranking
-    - Network ranking of media outlet’s conversion rate (0 to 5, and -1 being ‘new’). Blank if no media outlet.
+    - Network ranking of media outlet's conversion rate (0 to 5, and -1 being 'new'). Blank if no media outlet.
 
   * - media_type
     - Media Type
@@ -355,7 +355,7 @@ The data returned has the following fields:
 
   * - dynamic_number_pool_pool_type
     - Pool Type
-    - [Number pooling links only] The type of pool: “Search”, “SearchKeyword” or “Custom”.
+    - [Number pooling links only] The type of pool: "Search", "SearchKeyword" or "Custom".
 
   * - dynamic_number_pool_id
     - Pool ID
@@ -363,7 +363,7 @@ The data returned has the following fields:
 
   * - start_time_local
     - Call Start Time
-    - Start of the call in the API user’s time zone, followed by offset from GMT.
+    - Start of the call in the API user's time zone, followed by offset from GMT.
 
   * - start_time_xml
     - Call Start Time (XML formatted)
@@ -375,7 +375,7 @@ The data returned has the following fields:
 
   * - corrected_at
     - Corrected At
-    - [Correction only] Date and time the transaction was corrected, in user’s time zone, followed by offset from GMT.
+    - [Correction only] Date and time the transaction was corrected, in user's time zone, followed by offset from GMT.
 
   * - opt_in_SMS
     - Opt In Sms
@@ -403,39 +403,39 @@ The data returned has the following fields:
 
   * - name
     - Name (Reported)
-    - [Call center integration only] Customer’s full name as given to the call center.
+    - [Call center integration only] Customer's full name as given to the call center.
 
   * - address1
     - Address (Reported)
-    - [Call center integration only] Customer’s street address as given to the call center (first line).
+    - [Call center integration only] Customer's street address as given to the call center (first line).
 
   * - address2
     - Address 2 (Reported)
-    - [Call center integration only] Customer’s street address as given to the call center (second line).
+    - [Call center integration only] Customer's street address as given to the call center (second line).
 
   * - order_city
     - City (Reported)
-    - [Call center integration only] Customer’s city as given to the call center.
+    - [Call center integration only] Customer's city as given to the call center.
 
   * - state_or_province
     - State or Province (Reported)
-    - [Call center integration only] Customer’s state or province as given to the call center.
+    - [Call center integration only] Customer's state or province as given to the call center.
 
   * - zip_code
     - Zip Code (Reported)
-    - [Call center integration only] Customer’s zip code as given to the call center.
+    - [Call center integration only] Customer's zip code as given to the call center.
 
   * - country
     - Country (Reported)
-    - [Call center integration only] Customer’s country as given to the call center.
+    - [Call center integration only] Customer's country as given to the call center.
 
   * - home_phone_number
     - Home Phone (Reported)
-    - [Call center integration only] Customer’s home phone number as given to the call center.
+    - [Call center integration only] Customer's home phone number as given to the call center.
 
   * - cell_phone_number
     - Cell Phone (Reported)
-    - [Call center integration only] Customer’s cell phone number as given to the call center.
+    - [Call center integration only] Customer's cell phone number as given to the call center.
 
   * - sku_list
     - SKU List
@@ -455,7 +455,7 @@ The data returned has the following fields:
 
   * - destination_phone_number
     - Destination Phone Number
-    - The phone 
+    - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '\*', 'x', and ','.
 
 
 .. list-table::
@@ -491,11 +491,11 @@ The data returned has the following fields:
 
   * - payout_conditions
     - Payout Conditions
-    - “Base condition with { highlighting } around the term(s) that disqualified publisher payout. For example: duration > 1 min and {in_region}”.
+    - "Base condition with { highlighting } around the term(s) that disqualified publisher payout. For example: duration > 1 min and {in_region}".
 
   * - payin_conditions
     - Payin Conditions
-    - “Base condition with { highlighting } around the term(s) that disqualified media channel payin. For example: duration > 1 min and {in_region}”.
+    - "Base condition with { highlighting } around the term(s) that disqualified media channel payin. For example: duration > 1 min and {in_region}".
 
   * - recording
     - Recording
