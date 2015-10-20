@@ -38,17 +38,3 @@ The RingPool wizard includes a section showing the correct API URL for your orga
   <img src="https://lh6.googleusercontent.com/bPAQy29TdQ_Pljxyv5gh520cLnWHWNWUXyU8_GrN52yLNOdkKlWZPzFLCOKgdE-IejM3XDdJGZyJtQ8EMprqwUSImYfuffWuXMGQAYAFzEbMOxt7Ggtp59Q96AOf6a3BeQ"  class="info-img" width="544px;" height="191px;" style="border-style: none;" alt="RP_API.png" />
 
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   manage_api_credentials
-   network_integration/index
-   conversion_reporting
-   conversion_reporting_pixel
-   conversion_reporting_email
-   transactions
-   ringpool
-   bulk_ringpool_api
-   call_outcomes_api/index
-
