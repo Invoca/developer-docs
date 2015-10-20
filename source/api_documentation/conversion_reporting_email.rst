@@ -38,14 +38,14 @@ Only one parameter is absolutely required: the start time of the call. Any entry
 
    If you are using the start_time parameter, contact us to set the time zone of your sale reporting at questions@invoca.com.
 
-For more information on possible parameters and how the matching call is found, see `Conversion Reporting API <conversion_reporting.html>`_.
+For more information on possible parameters and how the matching call is found, see :doc:`conversion_reporting`.
 
 For Web Based Conversions
 -------------------------
 
 The affiliate or publisher ID and advertiser campaign ID are required.
 
-For more information on possible parameters and how the matching call is found, see `Conversion Reporting API <conversion_reporting.html>`_.
+For more information on possible parameters and how the matching call is found, see :doc:`conversion_reporting`.
 
 Reply Message
 -------------
