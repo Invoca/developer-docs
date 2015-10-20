@@ -48,3 +48,4 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    conversion_reporting_email
    ringpool
    bulk_ringpool_api
+   call_outcomes_api/index
