@@ -453,3 +453,8 @@ The data returned has the following fields:
     - Call Center Call Id
     - [Call center integration only] The unique identifier assigned to the call by the call center.
 
+  * - destination_phone_number
+    - Destination Phone Number
+    - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '\*', 'x', and ','.
+
+
