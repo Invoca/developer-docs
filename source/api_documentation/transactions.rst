@@ -485,6 +485,12 @@ The data returned has the following fields:
   :header-rows: 1
   :class: parameters
 
+  * - | Potentially Extra Params
+
+      | (Network Attribute Flags)
+    -
+    -
+
   * - advertiser_payin_localized
     - Earned
     - Amount paid in by media channel.
