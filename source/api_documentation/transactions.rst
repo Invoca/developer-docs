@@ -10,28 +10,6 @@ If an existing transaction is corrected, the correction will appear as a new tra
 through the corrects_transaction_id field. When you receive a correction, replace the original transaction’s
 attributes with the new attributes from the correction.
 
-URL
----
-
-The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported
-
-.. list-table::
-  :widths: 8 40
-  :header-rows: 1
-  :class: parameters
-
-  * - Format
-    - Description and URL
-
-  * - csv
-    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.csv``
-
-  * - xml
-    - Returns an XML document with an array of Transaction elements. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.xml``
-
-  * - json
-    - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.json``
-
 Authentication
 --------------
 
@@ -563,28 +541,3 @@ The data returned has the following fields:
     -
     -
 
-Example
--------
-
-For example, if you have this OAuth API token:
-
-.. list-table::
-  :widths: 1
-  :header-rows: 1
-  :class: parameters
-
-  * - OAuth API token
-
-  * - YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU’
-
-Here is an example using curl to get the next 20 transactions that occurred after transaction id C624DA2C-CF3367C3:
-
-.. code-block:: bash
-
-  curl -k "https://mynetwork.invoca.net//networks/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU"
-
-The -k option asks curl to not bother checking the SSL certificate authority chain as that requires extra configuration.
-
-Endpoint:
-
-``https://invoca.net/api/@@PNAPI_VERSION/<account_type>/transactions/``
