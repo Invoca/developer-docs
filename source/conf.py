@@ -42,10 +42,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_parsers = {
-      '.md': 'recommonmark.parser.CommonMarkParser',
-}
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -124,10 +121,10 @@ def build_api_endpoint_template(source):
 # Replace version symbols with actual version numbers
 # Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
+  source[0] = build_api_endpoint_template(source[0])
+
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
-
-  source[0] = build_api_endpoint_template(source[0])
 
 
 def setup(app):
