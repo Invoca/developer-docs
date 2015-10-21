@@ -187,6 +187,66 @@ The data returned has the following fields:
     - Promo Number ID
     - The Promo Number ID from the network.
 
+  * - signal_1_value
+    -
+    -
+
+  * - ...
+    -
+    -
+
+  * - signal_10_value
+    -
+    -
+
+  * - dynamic_number_pool_referrer_param11
+    -
+    -
+
+  * - dynamic_number_pool_referrer_param11_name
+    -
+    -
+
+  * - dynamic_number_pool_referrer_param11_value
+    -
+    -
+
+  * - ...
+    -
+    -
+
+  * - dynamic_number_pool_referrer_param25
+    -
+    -
+
+  * - dynamic_number_pool_referrer_param25_name
+    -
+    -
+
+  * - dynamic_number_pool_referrer_param25_value
+    -
+    -
+
+  * - carrier_data_append
+    -
+    -
+
+  * - line_type_data_append
+    -
+    -
+
+  * - is_prepaid_data_append
+    -
+    -
+
+  * - do_not_call_data_append
+    -
+    -
+
+  * - gender
+    -
+    -
+
   * - call_result_description_detail
     - Call Result
     - Status of the transaction.
