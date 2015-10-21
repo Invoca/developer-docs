@@ -199,54 +199,6 @@ The data returned has the following fields:
     -
     -
 
-  * - dynamic_number_pool_referrer_param11
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param11_name
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param11_value
-    -
-    -
-
-  * - ...
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param25
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param25_name
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param25_value
-    -
-    -
-
-  * - carrier_data_append
-    -
-    -
-
-  * - line_type_data_append
-    -
-    -
-
-  * - is_prepaid_data_append
-    -
-    -
-
-  * - do_not_call_data_append
-    -
-    -
-
-  * - gender
-    -
-    -
-
   * - call_result_description_detail
     - Call Result
     - Status of the transaction.
@@ -583,45 +535,85 @@ The data returned has the following fields:
     - Recording
     - URL to the call recording, if available.
 
-  * - Display Name (Data Append)
+  * - dynamic_number_pool_referrer_param11_value
+    - Pool Param 11 Value
+    - [Number pooling links only] The value for parameter 11.
+
+  * - dynamic_number_pool_referrer_param11_name
+    - Pool Param 11 Name
+    - [Number pooling links only] The name for parameter 11.
+
+  * - ...
     -
     -
 
-  * - First Name (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param25_value
+    - Pool Param 25 Value
+    - [Number pooling links only] The value for parameter 25.
 
-  * - Last Name (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param25_name
+    - Pool Param 25 Name
+    - [Number pooling links only] The name for parameter 25.
 
-  * - Age Range (Data Append)
-    -
-    -
+  * - display_name_data_append
+    - Display Name (Data Append)
+    - Data from caller demographics lookup
 
-  * - Address Type (Data Append)
-    -
-    -
+  * - first_name_data_append
+    - First Name (Data Append)
+    - Data from caller demographics lookup
 
-  * - Street Address (Data Append)
-    -
-    -
+  * - last_name_data_append
+    - Last Name (Data Append)
+    - Data from caller demographics lookup
 
-  * - City (Data Append)
-    -
-    -
+  * - age_range_data_append
+    - Age Range (Data Append)
+    - Data from caller demographics lookup
 
-  * - State (Data Append)
-    -
-    -
+  * - address_type_data_append
+    - Address Type (Data Append)
+    - Data from caller demographics lookup
 
-  * - Zip (Data Append)
-    -
-    -
+  * - address_full_street_data_append
+    - Street Address (Data Append)
+    - Data from caller demographics lookup
 
-  * - Country (Data Append)
-    -
-    -
+  * - address_city_data_append
+    - City (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_state_data_append
+    - State (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_zip_data_append
+    - Zip (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_country_data_append
+    - Country (Data Append)
+    - Data from caller demographics lookup
+
+  * - carrier_data_append
+    - Carrier (Data Append)
+    - Data from caller demographics lookup
+
+  * - line_type_data_append
+    - Line Type (Data Append)
+    - Data from caller demographics lookup
+
+  * - is_prepaid_data_append
+    - Is Prepaid (Data Append)
+    - Data from caller demographics lookup
+
+  * - do_not_call_data_append
+    - Do Not Call (Data Append)
+    - Data from caller demographics lookup
+
+  * - gender_data_append
+    - Gender (Data Append)
+    - Data from caller demographics lookup
 
 Example
 -------
