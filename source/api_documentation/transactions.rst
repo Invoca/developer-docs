@@ -24,13 +24,13 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
     - Description and URL
 
   * - csv
-    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.csv``
+    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERESION/networks/transactions/33.csv``
 
   * - xml
-    - Returns an XML document with an array of Transaction elements. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.xml``
+    - Returns an XML document with an array of Transaction elements. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERESION/networks/transactions/33.xml``
 
   * - json
-    - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@PNAPI_VERSION/networks/transactions/33.json``
+    - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERESION/networks/transactions/33.json``
 
 Authentication
 --------------
@@ -85,11 +85,11 @@ Example:
 
 Send request 1:
 
-``https://yourcompany.invoca.net/api/@@PNAPI_VERSION/networks/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
+``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERESION/networks/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
 
 returns 500 rows, grab the last transaction_id (in this example 500) and send request 2:
 
-``https://yourcompany.invoca.net/api/@@PNAPI_VERSION/networks/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
+``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERESION/networks/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
 
 then repeat as necessary to get all call records within date range.
 
@@ -196,54 +196,6 @@ The data returned has the following fields:
     -
 
   * - signal_10_value
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param11
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param11_name
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param11_value
-    -
-    -
-
-  * - ...
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param25
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param25_name
-    -
-    -
-
-  * - dynamic_number_pool_referrer_param25_value
-    -
-    -
-
-  * - carrier_data_append
-    -
-    -
-
-  * - line_type_data_append
-    -
-    -
-
-  * - is_prepaid_data_append
-    -
-    -
-
-  * - do_not_call_data_append
-    -
-    -
-
-  * - gender
     -
     -
 
@@ -583,45 +535,185 @@ The data returned has the following fields:
     - Recording
     - URL to the call recording, if available.
 
-  * - Display Name (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param11_value
+    - Pool Param 11 Value
+    - [Number pooling links only] The value for parameter 11.
 
-  * - First Name (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param11_name
+    - Pool Param 11 Name
+    - [Number pooling links only] The name for parameter 11.
 
-  * - Last Name (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param12_value
+    - Pool Param 12 Value
+    - [Number pooling links only] The value for parameter 12.
 
-  * - Age Range (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param12_name
+    - Pool Param 12 Name
+    - [Number pooling links only] The name for parameter 12.
 
-  * - Address Type (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param13_value
+    - Pool Param 13 Value
+    - [Number pooling links only] The value for parameter 13.
 
-  * - Street Address (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param13_name
+    - Pool Param 13 Name
+    - [Number pooling links only] The name for parameter 13.
 
-  * - City (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param14_value
+    - Pool Param 14 Value
+    - [Number pooling links only] The value for parameter 14.
 
-  * - State (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param14_name
+    - Pool Param 14 Name
+    - [Number pooling links only] The name for parameter 14.
 
-  * - Zip (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param15_value
+    - Pool Param 15 Value
+    - [Number pooling links only] The value for parameter 15.
 
-  * - Country (Data Append)
-    -
-    -
+  * - dynamic_number_pool_referrer_param15_name
+    - Pool Param 15 Name
+    - [Number pooling links only] The name for parameter 15.
+
+  * - dynamic_number_pool_referrer_param16_value
+    - Pool Param 16 Value
+    - [Number pooling links only] The value for parameter 16.
+
+  * - dynamic_number_pool_referrer_param16_name
+    - Pool Param 16 Name
+    - [Number pooling links only] The name for parameter 16.
+
+  * - dynamic_number_pool_referrer_param17_value
+    - Pool Param 17 Value
+    - [Number pooling links only] The value for parameter 17.
+
+  * - dynamic_number_pool_referrer_param17_name
+    - Pool Param 17 Name
+    - [Number pooling links only] The name for parameter 17.
+
+  * - dynamic_number_pool_referrer_param18_value
+    - Pool Param 18 Value
+    - [Number pooling links only] The value for parameter 18.
+
+  * - dynamic_number_pool_referrer_param18_name
+    - Pool Param 18 Name
+    - [Number pooling links only] The name for parameter 18.
+
+  * - dynamic_number_pool_referrer_param19_value
+    - Pool Param 19 Value
+    - [Number pooling links only] The value for parameter 19.
+
+  * - dynamic_number_pool_referrer_param19_name
+    - Pool Param 19 Name
+    - [Number pooling links only] The name for parameter 19.
+
+  * - dynamic_number_pool_referrer_param20_value
+    - Pool Param 20 Value
+    - [Number pooling links only] The value for parameter 20.
+
+  * - dynamic_number_pool_referrer_param20_name
+    - Pool Param 20 Name
+    - [Number pooling links only] The name for parameter 20.
+
+  * - dynamic_number_pool_referrer_param21_value
+    - Pool Param 21 Value
+    - [Number pooling links only] The value for parameter 21.
+
+  * - dynamic_number_pool_referrer_param21_name
+    - Pool Param 21 Name
+    - [Number pooling links only] The name for parameter 21.
+
+  * - dynamic_number_pool_referrer_param22_value
+    - Pool Param 22 Value
+    - [Number pooling links only] The value for parameter 22.
+
+  * - dynamic_number_pool_referrer_param22_name
+    - Pool Param 22 Name
+    - [Number pooling links only] The name for parameter 22.
+
+  * - dynamic_number_pool_referrer_param23_value
+    - Pool Param 23 Value
+    - [Number pooling links only] The value for parameter 23.
+
+  * - dynamic_number_pool_referrer_param23_name
+    - Pool Param 23 Name
+    - [Number pooling links only] The name for parameter 23.
+
+  * - dynamic_number_pool_referrer_param24_value
+    - Pool Param 24 Value
+    - [Number pooling links only] The value for parameter 24.
+
+  * - dynamic_number_pool_referrer_param24_name
+    - Pool Param 24 Name
+    - [Number pooling links only] The name for parameter 24.
+
+  * - dynamic_number_pool_referrer_param25_value
+    - Pool Param 25 Value
+    - [Number pooling links only] The value for parameter 25.
+
+  * - dynamic_number_pool_referrer_param25_name
+    - Pool Param 25 Name
+    - [Number pooling links only] The name for parameter 25.
+
+  * - display_name_data_append
+    - Display Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - first_name_data_append
+    - First Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - last_name_data_append
+    - Last Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - age_range_data_append
+    - Age Range (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_type_data_append
+    - Address Type (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_full_street_data_append
+    - Street Address (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_city_data_append
+    - City (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_state_data_append
+    - State (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_zip_data_append
+    - Zip (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_country_data_append
+    - Country (Data Append)
+    - Data from caller demographics lookup
+
+  * - carrier_data_append
+    - Carrier (Data Append)
+    - Data from caller demographics lookup
+
+  * - line_type_data_append
+    - Line Type (Data Append)
+    - Data from caller demographics lookup
+
+  * - is_prepaid_data_append
+    - Is Prepaid (Data Append)
+    - Data from caller demographics lookup
+
+  * - do_not_call_data_append
+    - Do Not Call (Data Append)
+    - Data from caller demographics lookup
+
+  * - gender_data_append
+    - Gender (Data Append)
+    - Data from caller demographics lookup
 
 Example
 -------
@@ -647,4 +739,4 @@ The -k option asks curl to not bother checking the SSL certificate authority cha
 
 Endpoint:
 
-``https://invoca.net/api/@@PNAPI_VERSION/<account_type>/transactions/``
+``https://invoca.net/api/@@TRANSACTION_API_VERESION/<account_type>/transactions/``
