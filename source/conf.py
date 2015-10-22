@@ -115,7 +115,7 @@ def find_and_replace_templates(source, directive_name, template_file_name):
 
 
 def build_api_endpoint_template(source):
-  return find_and_replace_templates(source, "api_endpoint", "api_endpoint.txt")
+  return find_and_replace_templates(source, "api_endpoint", "api_endpoint.rst")
 
 
 # Replace version symbols with actual version numbers
