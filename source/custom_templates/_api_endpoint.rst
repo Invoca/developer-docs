@@ -13,7 +13,7 @@
         <div class="panel-body">
 
 
-.. include:: _:page:.rst
+.. include:: __:page:
 
 
 .. raw:: html

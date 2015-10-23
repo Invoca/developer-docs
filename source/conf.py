@@ -60,8 +60,10 @@ release = COMMON_VERSION
 
 if on_rtd:
   custom_template_path = './custom_templates/'
+  source_path = './'
 else:
   custom_template_path = './source/custom_templates/'
+  source_path = './source/'
 
 """
 Replaces directives with the contents of a custom template. Substitutes
@@ -126,8 +128,18 @@ def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
+def build_partials(app, env, docnames):
+  for docname in env.found_docs:
+    if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
+      print docname
+      partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
+      for symbol_string, version_string in VERSIONS.iteritems():
+        partial = re.sub(symbol_string, version_string, partial)
+      new_docname = re.sub('/_', '/__', docname)
+      open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
 def setup(app):
+  app.connect('env-before-read-docs', build_partials)
   app.connect('source-read', source_handler)
   app.add_javascript('js/custom.js')
   app.add_javascript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
@@ -146,9 +158,7 @@ def setup(app):
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = [
-  '**/_*',
-]
+exclude_patterns = []
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
