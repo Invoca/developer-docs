@@ -115,7 +115,7 @@ def find_and_replace_templates(source, directive_name, template_file_name):
 
 
 def build_api_endpoint_template(source):
-  return find_and_replace_templates(source, "api_endpoint", "api_endpoint.rst")
+  return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.rst")
 
 
 # Replace version symbols with actual version numbers
@@ -146,7 +146,9 @@ def setup(app):
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = [
+  '**/_*',
+]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
