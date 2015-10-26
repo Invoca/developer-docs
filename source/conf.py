@@ -42,10 +42,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_parsers = {
-      '.md': 'recommonmark.parser.CommonMarkParser',
-}
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -63,8 +60,10 @@ release = COMMON_VERSION
 
 if on_rtd:
   custom_template_path = './custom_templates/'
+  source_path = './'
 else:
   custom_template_path = './source/custom_templates/'
+  source_path = './source/'
 
 """
 Replaces directives with the contents of a custom template. Substitutes
@@ -118,19 +117,29 @@ def find_and_replace_templates(source, directive_name, template_file_name):
 
 
 def build_api_endpoint_template(source):
-  return find_and_replace_templates(source, "api_endpoint", "api_endpoint.txt")
+  return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.rst")
 
 
 # Replace version symbols with actual version numbers
 # Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
+  source[0] = build_api_endpoint_template(source[0])
+
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
-  source[0] = build_api_endpoint_template(source[0])
-
+def build_partials(app, env, docnames):
+  for docname in env.found_docs:
+    if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
+      print docname
+      partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
+      for symbol_string, version_string in VERSIONS.iteritems():
+        partial = re.sub(symbol_string, version_string, partial)
+      new_docname = re.sub('/_', '/__', docname)
+      open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
 def setup(app):
+  app.connect('env-before-read-docs', build_partials)
   app.connect('source-read', source_handler)
   app.add_javascript('js/custom.js')
   app.add_javascript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

@@ -13,7 +13,7 @@
         <div class="panel-body">
 
 
-.. include:: :page:.txt
+.. include:: __:page:
 
 
 .. raw:: html
