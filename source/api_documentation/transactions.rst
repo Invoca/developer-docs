@@ -733,7 +733,7 @@ Here is an example using curl to get the next 20 transactions that occurred afte
 
 .. code-block:: bash
 
-  curl -k "https://mynetwork.invoca.net//networks/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU"
+  curl -k "https://mynetwork.invoca.net/networks/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU"
 
 The -k option asks curl to not bother checking the SSL certificate authority chain as that requires extra configuration.
 
