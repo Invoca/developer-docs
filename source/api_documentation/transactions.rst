@@ -191,7 +191,35 @@ The data returned has the following fields:
     -
     -
 
-  * - ...
+  * - signal_2_value
+    -
+    -
+
+  * - signal_3_value
+    -
+    -
+
+  * - signal_4_value
+    -
+    -
+
+  * - signal_5_value
+    -
+    -
+
+  * - signal_6_value
+    -
+    -
+
+  * - signal_7_value
+    -
+    -
+
+  * - signal_8_value
+    -
+    -
+
+  * - signal_9_value
     -
     -
 
