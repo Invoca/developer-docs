@@ -187,46 +187,6 @@ The data returned has the following fields:
     - Promo Number ID
     - The Promo Number ID from the network.
 
-  * - signal_1_value
-    - Signal: Credit Card
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_2_value
-    - Signal: Competitors
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_3_value
-    - Signal: Rack Server
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_4_value
-    - Signal: Blade Server
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_5_value
-    - Signal: Power Play
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_6_value
-    - Signal: Amazon
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_7_value
-    - Signal: 7
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_8_value
-    - Signal: Telecom Competitors
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_9_value
-    - Signal: 9
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_10_value
-    - Signal: 10
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
   * - call_result_description_detail
     - Call Result
     - Status of the transaction.
@@ -562,6 +522,46 @@ The data returned has the following fields:
   * - recording
     - Recording
     - URL to the call recording, if available.
+
+  * - signal_1_value
+    - Signal: Credit Card
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_2_value
+    - Signal: Competitors
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_3_value
+    - Signal: Rack Server
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_4_value
+    - Signal: Blade Server
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_5_value
+    - Signal: Power Play
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_6_value
+    - Signal: Amazon
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_7_value
+    - Signal: 7
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_8_value
+    - Signal: Telecom Competitors
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_9_value
+    - Signal: 9
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_10_value
+    - Signal: 10
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
 
   * - dynamic_number_pool_referrer_param11_value
     - Pool Param 11 Value
