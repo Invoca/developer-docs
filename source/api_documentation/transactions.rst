@@ -485,9 +485,7 @@ The data returned has the following fields:
   :header-rows: 1
   :class: parameters
 
-  * - | Potentially Extra Params
-
-      | (Network Attribute Flags)
+  * - Potentially Extra Params
     -
     -
 
