@@ -11,7 +11,7 @@
   .. code-block:: bash
 
       curl­ -XPUT -H "Content­Type: application/json" -­u 'login:pass'
-      'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+      'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
       -d '
       {"ivr_tree":
        {"root":
@@ -35,7 +35,7 @@
   .. code-block:: bash
 
      curl -XPUT -H "Content­Type: application/json" -u 'login:pass'
-     'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+     'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
      -d '
      {"ivr_tree":{
         "record_calls":true,
@@ -65,7 +65,7 @@
   .. code-block:: bash
 
      curl­ -XPUT -H "Content­Type: application/json"­ -u 'login:pass'
-     'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+     'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
      -d '
      {"ivr_tree":
       {"root":
