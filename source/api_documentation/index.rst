@@ -18,13 +18,6 @@ allocates a dynamic, trackable promo phone number from a RingPool.
 allocates a dynamic, trackable promo phone number from a RingPool (designed to handle a high volume of requests per second).
 
 
-The following table identifies the APIs available by account type and role:
-
-.. raw:: html
-
-  <img src="https://invoca.uservoice.com/assets/74048204/API%20Graphic.png"  class="info-img" style="font-family: sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal;" />
-
-
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
 The Conversion Reporting API is accessible using credentials provided by Invoca. Contact questions@invoca.com to request Conversion Reporting API credentials.

@@ -97,7 +97,7 @@ Endpoint:
 
 .. api_endpoint::
    :verb: POST
-   :path: /promo_numbers/&lt;promo_number&gt;
+   :path: /promo_numbers.json
    :description: Create an Advertiser/Affiliate Promo Number
    :page: post_promo_numbers
 
