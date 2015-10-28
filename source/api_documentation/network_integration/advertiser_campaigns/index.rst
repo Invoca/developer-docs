@@ -40,7 +40,7 @@ You are not allowed to delete campaigns.
 
   * - timezone
     - string
-    - Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.
+    - Supported Time Zones: http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
 
   * - operating_24_7
     - boolean
