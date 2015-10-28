@@ -148,3 +148,187 @@ The API supports the following parameters:
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``
+
+Local RingPool API
+------------------
+
+Local RingPool Creation
+"""""""""""""""""""""""
+
+The API provides the ability to create RingPools with additional information that specifies them as being ‘Local’ RingPools. These Local RingPools use local numbers that are determined by the parameters passed in by the user of the API. If a local phone number cannot be found the pool fills those slots (max_pool_size) with toll free numbers instead. When you POST with the correct parameters the Local RingPool is created and the allocation of local numbers happens later (approx. 10 minutes). This capability is JSON-only.
+
+POST
+~~~~
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertiser/<advertiser_id_from_network>/advertiser_campaign/<advertiser_campaign_id_from_network>/ring_pools/<desired_id_from_network>.json``
+
+Content Type: application/json
+
+.. list-table::
+  :widths: 11 8 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Property
+    - Type
+    - Value
+
+  * - name
+    - string
+    - Arbitrary string. Names the RingPool.
+
+  * - pool_type
+    - string (Required)
+    - One of:
+
+      Search,
+
+      SearchKeyword,
+
+      Custom,
+
+      CustomWithSearchTracking,
+
+      ReferallDomain,
+
+      ReferallDomainWithSearchTracking
+
+  * - destination_type
+    - string (Required)
+    - For affiliate campaign, one of:
+
+      Advertiser,
+
+      Affiliate,
+
+      API
+
+
+      For advertiser campaign, one of:
+
+      Advertiser,
+
+      API
+
+  * - destination_url
+    - url
+    - like, https://www.invoca.com
+
+  * - affiliate_id
+    - string (optional)
+    - if specified, an affiliate campaign will be the target, o.w. advertiser campaign is the target
+
+  * - lifetime_seconds
+    - integer
+    - The guaranteed minimum time that the number will be allocated for this RingPool
+
+  * - max_pool_size
+    - integer
+    - The maximum amount of phone numbers to be allotted at one time
+
+  * - param1
+    - string
+    - Dynamic number pools have attributes named param1 through param10 for custom use by the user
+
+  * - preferred
+    - boolean
+    - true or false.  Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specifiy which pool to use.
+
+  * - test_click_url
+    - string
+    - RingPool tracking link.
+
+  * - sample_api_url
+    - string
+    - RingPool API endpoint.
+
+  * - is_first_preference
+    - boolean
+    - Designates the preferred RingPool to be used for general traffic.
+
+  * - local_center
+    - hash
+    - Requires one of the following
+
+      Latitude & Longitude required together
+
+      A filled field determines the center to start looking for local numbers at.
+
+      **“tn_prefix”**: can be either npa or npa or npa-nxx
+
+      **“zipcode”**: a valid zipcode
+
+      **“latitude”**: a valid latitude
+
+      **“longitude”**: a valid longitude
+
+  * - tn_prefix_whitelist
+    - array of strings
+    - an array of stringified limiters on the boundaries of where to look for local numbers given as npa or npa nxx pairs (ex. [“805”, “805612”])
+
+Response Code: 200
+
+**Request Body**
+
+.. code-block:: json
+
+  {
+   "param1": "gclid",
+   "pool_type": "Custom",
+   "preferred": "true",
+   "name": "India DNP",
+   "destination_url": "https://www.invoca.com",
+   "tracking_url": "https://www.invoca.com",
+   "max_pool_size": "3",
+   "destination_type": "Advertiser",
+   "local_center": {“latitude”: 45, “longitude”: 45},
+   "tn_prefix_whitelist": ["455"]}
+  }
+
+**Response Body**
+
+.. code-block:: json
+
+  {}
+
+Error Handling
+""""""""""""""
+
+Forbidden – 403:
+
+POST
+~~~~
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertiser/<advertiser_id_from_network>/advertiser_campaign/<advertiser_campaign_id_from_network>/ring_pools/<desired_id_from_network>.json``
+
+Content Type: application/json
+
+Response Code: 403
+
+**Request Body**
+
+.. code-block:: json
+
+  {
+    "param1": "gclid",
+    "pool_type": "Custom",
+    "preferred": "true",
+    "name": "India DNP",
+    "destination_url": "https://www.invoca.com",
+    "tracking_url": "https://www.invoca.com",
+    "max_pool_size": "3",
+    "destination_type": "Advertiser",
+    "local_center": {“bad_key”: “”},
+    "tn_prefix_whitelist": ["455"]}
+  }
+
+**Response Body**
+
+.. code-block:: json
+
+  {
+    "errors": {
+         "class": "RecordInvalid”,
+       "invalid_data": "Invalid Key in Local Center."
+    }
+  }
