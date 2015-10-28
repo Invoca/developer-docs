@@ -31,4 +31,5 @@ The API uses the following terms and their aliases:
    advertiser_affiliate_relationships/index
    networks/index
    promo_numbers/index
+   prompt_recordings/index
    ringpools/index
