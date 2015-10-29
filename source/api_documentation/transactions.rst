@@ -485,7 +485,7 @@ The data returned has the following fields:
   :header-rows: 1
   :class: parameters
 
-  * - Optional Parameters Based On Feature Usage
+  * - Optional Fields Based On Feature Usage
     -
     -
 
