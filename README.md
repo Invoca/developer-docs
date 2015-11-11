@@ -1,6 +1,32 @@
 # Developer Portal
 The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 
+## Getting Started with Github Desktop
+Things you will need:
+1. github desktop https://desktop.github.com/
+2. textwrangler http://www.barebones.com/products/textwrangler/download.html
+
+Setup:
+1. setup github desktop with your github login credentials
+2. click "Clone in Desktop" on the right of this page
+
+Work flow:
+1. create a new branch in github desktop
+2. edit the file you wish to change (probably something like developer-docs/source/some_file.rst)
+3. save file
+4. verify changes in github desktop
+5. make a commit including a brief description of the change
+6. click sync/publish in the top right of github desktop to push changes
+7. after push this page should prompt you to create a pull request, do that
+8. go to readthedocs.org login with credentials in lastpass
+9. once logged in and in developer-docs project go to admin > versions and click the active box on your branch and set it to "private"
+10. click builds and wait for your changes to be built
+11. Click view docs, then click on bottom left tab to select your branch
+12. verify changes and get a review of pull request
+13. if you need to make more changes you can edit files and save them
+14. make another commit with message and sync changes
+15. wait for build and go back to 12
+
 ## Getting Started
 1. Clone this repo
 2. Run the following commands:
