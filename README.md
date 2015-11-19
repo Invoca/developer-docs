@@ -1,5 +1,7 @@
 # Developer Portal
-The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
+The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language. Two IMPORTANT things to note:
+1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
+2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
 
 ## Getting Started
 1. Clone this repo
@@ -16,7 +18,7 @@ make html
 4. To view the documentation, open the file in a browser:
 `build/html/index.html`
 
-## Making changes to an existing version:
+## Making changes to an existing version and making them public:
 1. Check out the branch for the version you want to edit
 2. Edit one or more .rst files
 3. Rebuild the docs with this command:
@@ -25,6 +27,21 @@ make html
 5. Commit your changes and push to GitHub
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Visit http://developers.invoca.net to check your changes
+
+## Making changes to an existing version and keeping them private:
+1. Create a new branch off of the version branch you want to edit, name it however you want
+2. Edit one or more .rst files
+3. Rebuild the docs with this command:
+`make clean && make html`
+4. Check your changes locally by opening `build/html/index.html`
+5. Commit your changes and push to GitHub
+6. ReadTheDocs will automatically pickup your changes and recompile the site
+7. Login to ReadTheDocs.org (credentials in lastpass)
+8. Visit http://developers.invoca.net
+9. Click on the "latest" link in the lower left, your new branch should appear in the list of version
+10. Click on your branch name to view and you should be able to check the changes you made
+11. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch
+12. ReadTheDocs will automatically pickup your changes and recompile the site
 
 ## Making a new version:
 1. Commit changes to master
