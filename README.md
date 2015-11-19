@@ -1,5 +1,8 @@
 # Developer Portal
-The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language. Two IMPORTANT things to note:
+The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language.
+
+Two IMPORTANT things to note:
+
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
 
