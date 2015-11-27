@@ -179,6 +179,13 @@
                "total_amount": 0.0,
                "time_zone": "Pacific Time (US & Canada)"
              },
+             "concurrent_call_cap_alert": {
+               "budget_amount": 50.0,
+               "budget_currency": "USD",
+               "reset_period": "Ongoing",
+               "start_at": "2014-04-17T00:00:00-07:00",
+               "time_zone": "Pacific Time (US & Canada)"
+             },
              "budget_cap_alert": {
                "budget_amount": 100.0,
                "budget_currency": "USD",
