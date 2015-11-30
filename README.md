@@ -40,11 +40,13 @@ make html
 5. Commit your changes and push to GitHub
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Login to ReadTheDocs.org (credentials in lastpass)
-8. Visit http://developers.invoca.net
-9. Click on the "latest" link in the lower left, your new branch should appear in the list of version
-10. Click on your branch name to view and you should be able to check the changes you made
-11. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch
-12. ReadTheDocs will automatically pickup your changes and recompile the site
+8. Click on the Versions button and then the Edit button next to your branch
+9. Click on the Active checkbox and set the Privacy Level to Private
+10. Visit http://developers.invoca.net
+11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
+12. Click on your branch name to view and you should be able to check the changes you made
+13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch
+14. ReadTheDocs will automatically pickup your changes and recompile the site
 
 ## Making a new version:
 1. Commit changes to master
