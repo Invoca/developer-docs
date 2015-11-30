@@ -35,7 +35,8 @@
     # 200 OK
     {
       "call_outcome": {
-        "transaction_id": "00000000-0000000A",
+        "transaction_id": "00000000-0000000B",
+        "corrects_transaction_id": "00000000-0000000A",
         "outcome_name": "sale",
         "partner_unique_id": "1",
         "description": "Updated description and sale amount",
