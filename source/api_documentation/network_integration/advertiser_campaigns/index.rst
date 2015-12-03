@@ -240,6 +240,8 @@ Node Parameters and Usage
 
       \*destination_country_code
 
+      \*destination_extension
+
     -
 
       Forwards the call to a selected phone number after optionally reading a prompt.
@@ -320,6 +322,10 @@ Parameter Details
   * - destination_phone_number
     - String
     - The phone number to forward the caller to.
+
+  * - destination_extension
+    - String
+    - Extension keypresses on the destination number. Commas indicate pause (e.g. 1,,,234 means a keypress of "1" is executed followed by a 3 second pause and an extension keypress of "234").
 
   * - prompt
     - String
