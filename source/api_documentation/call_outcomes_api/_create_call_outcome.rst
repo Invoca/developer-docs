@@ -36,6 +36,7 @@
     {
       "call_outcome": {
         "transaction_id": "00000000-0000000A",
+        "corrects_transaction_id": null,
         "outcome_name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",
@@ -93,6 +94,7 @@
     {
       "call_outcome": {
         "transaction_id": "00000000-0000000A",
+        "corrects_transaction_id": null,
         "outcome_name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",

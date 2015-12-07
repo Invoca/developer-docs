@@ -237,6 +237,7 @@ Example of creating two call outcomes (on a single call) then updating one
     {
       "call_outcome": {
         "transaction_id": "00000000-0000000A",
+        "corrects_transaction_id": null,
         "outcome_name": "Quote",
         "partner_unique_id": "1",
         "description": "Honda Accord 2015",
@@ -274,6 +275,7 @@ Example of creating two call outcomes (on a single call) then updating one
     {
       "call_outcome": {
         "transaction_id": "00000000-0000000B",
+        "corrects_transaction_id": null,
         "outcome_name": "Quote",
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015",
@@ -311,6 +313,7 @@ Example of creating two call outcomes (on a single call) then updating one
   {
     "call_outcome": {
       "transaction_id": "00000000-0000000C",
+      "corrects_transaction_id": "00000000-0000000A",
       "outcome_name": "Quote",
       "partner_unique_id": "1",
       "description": "Honda Civic 2012",
