@@ -13,7 +13,7 @@
         <div class="panel-body">
 
 
-.. include:: __:page:
+.. include:: _:page:.tmp
 
 
 .. raw:: html
@@ -22,4 +22,3 @@
       </div>
     </div>
   </div>
-

@@ -135,7 +135,7 @@ def build_partials(app, env, docnames):
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
       for symbol_string, version_string in VERSIONS.iteritems():
         partial = re.sub(symbol_string, version_string, partial)
-      new_docname = re.sub('/_', '/__', docname)
+      new_docname = docname + '.tmp'
       open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
 def setup(app):
