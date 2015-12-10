@@ -9,7 +9,7 @@ Note that the `<advertiser_id_from_network>` and `<advertiser_campaign_id_from_n
 
 We support passing back current_terms and future_terms on campaigns. The current properties of the campaign are reflected in current_terms. All changes to the campaign are staged in future_terms. Once the campaign goes live, future_terms transition over to current_terms.
 
-You can set budgets on your campaign. There are two budget types, budget_cap_alert which is based on commissions, and call_cap_alert, which is based on the number of calls. These budget activities are only applicable for AffiliateEnabled campaigns (Known in the platform as a “Publisher Promotion” Campaign Type.)
+You can set budgets on your campaign. There are three budget types, budget_cap_alert which is based on commissions, call_cap_alert, which is based on the number of calls in a given period, and concurrent_call_cap_alert, which is based on the number of simultaneous calls. These budget activities are only applicable for AffiliateEnabled campaigns (Known in the platform as a “Publisher Promotion” Campaign Type.)
 
 You are not allowed to delete campaigns.
 
@@ -209,6 +209,14 @@ You are not allowed to delete campaigns.
   * - max_promo_numbers
     - integer
     - Maximum Promo Numbers.
+
+  * - **concurrent_call_cap_alert**
+    -
+    -
+
+  * - budget_amount
+    - decimal (required)
+    - Budget Amount.
 
 
 Advertiser Campaign IVRs
