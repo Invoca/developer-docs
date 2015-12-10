@@ -171,7 +171,7 @@
              "range": "€7.00 per call"
            },
            "budget_activities": {
-             "call_cap_alert": {
+             "periodic_call_cap_alert": {
                "budget_amount": 200.0,
                "budget_currency": "USD",
                "reset_period": "Ongoing",
