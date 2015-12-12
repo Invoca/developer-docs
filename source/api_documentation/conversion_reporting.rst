@@ -28,7 +28,7 @@ The extended example later in this document breaks down each part of a cURL POST
 
 Here is an example of a URL POST:
 
-``https://api0.invoca.net/api/@@PNAPI_VERSION/calls/23.xml``
+``https://api0.invoca.net/api/@@CONVERSION_API_VERSION/calls/23.xml``
 
 where “" is the API version and "23" is the Conversion Reporting ID (previously known as Call Center ID) for your account on the platform.
 
@@ -188,7 +188,7 @@ The example below uses cURL to demonstrate a POST that updates a call.
 .. code-block:: bash
 
   curl -u 'example@callcenter.api:secretPW'` \
-  'https://api0.invoca.net/api/@@PNAPI_VERSION/calls/23.xml' -k -v \` \
+  'https://api0.invoca.net/api/@@CONVERSION_API_VERSION/calls/23.xml' -k -v \` \
   -d reference_id='2935812450'             \
   -d start_time_t='1273589993'             \
   -d duration_in_seconds=300               \
@@ -236,7 +236,7 @@ This is a description of some of the parameters in the previous cURL example.
     `curl -u 'example@callcenter.api:secretPW'`
     If using cURL, this is how credentials are passed. The username is 'example\@callcenter.api' and the password is ‘secretPW’. The two strings need to be separated with a colon character.
 
-    `'https://api0.invoca.net/api/@@PNAPI_VERSION/calls/23.xml' -k -v`
+    `'https://api0.invoca.net/api/@@CONVERSION_API_VERSION/calls/23.xml' -k -v`
     The URL where the call result is sent. The API version is “2010-04-22” and the unique Conversion Reporting ID is “23”.
 
     `-d reference_id='2935812450'`
@@ -275,4 +275,4 @@ Please note that the Conversion Reporting API is idempotent (if you repost sales
 Endpoint:
 """""""""
 
-``https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml``
+``https://invoca.net/api/@@CONVERSION_API_VERSION/calls/<converstion_reporting_id>.xml``
