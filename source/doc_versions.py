@@ -1,5 +1,5 @@
 # The API version strings to display in the documentation
-COMMON_VERSION = '2015-09-30'
+COMMON_VERSION = '2015-12-10'
 
 VERSIONS = {
     '@@PNAPI_VERSION': '2013-07-01',
