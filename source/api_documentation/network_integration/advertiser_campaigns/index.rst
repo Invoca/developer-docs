@@ -42,6 +42,11 @@ You are not allowed to delete campaigns.
     - string
     - Supported Time Zones: http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
 
+  * - campaign_language
+    - string
+    - Supported Campaign Languages: “English", "French", "Spanish".
+
+
   * - operating_24_7
     - boolean
     -

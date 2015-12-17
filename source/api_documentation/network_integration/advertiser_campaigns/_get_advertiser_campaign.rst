@@ -22,6 +22,7 @@
            "operating_24_7": false,
            "go_live_date": null,
            "default_creative_id_from_network": "222",
+           "campaign_language": "English",
            "advertiser_payin": {
              "min": 7,
              "currency": "EUR",
@@ -155,6 +156,7 @@
            "operating_24_7": false,
            "go_live_date": null,
            "default_creative_id_from_network": "123",
+           "campaign_language": "English",
            "advertiser_payin": {
              "min": 7,
              "currency": "EUR",

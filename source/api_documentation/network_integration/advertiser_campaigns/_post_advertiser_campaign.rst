@@ -46,6 +46,7 @@
        "name": "NFLCampaign",
        "timezone": "PacificTime(US&Canada)",
        "description": "Augustpromotion tosellpost­seasonticketsathalf price.",
+       "campaign_language": "English",
        "ivr_tree": {
          "root": {
            "children": [
