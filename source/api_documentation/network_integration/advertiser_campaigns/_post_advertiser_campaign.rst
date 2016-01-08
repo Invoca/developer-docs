@@ -44,7 +44,7 @@
          "tuesday_open": 28800
        },
        "name": "NFLCampaign",
-       "timezone": "PacificTime(US&Canada)",
+       "timezone": "PacificTime(US & Canada)",
        "description": "Augustpromotion tosellpost­seasonticketsathalf price.",
        "campaign_language": "English",
        "ivr_tree": {
