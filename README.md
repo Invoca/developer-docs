@@ -1,10 +1,11 @@
 # Developer Portal
 The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language.
 
-Two IMPORTANT things to note:
+IMPORTANT things to note:
 
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
+3. A branch on git maps to a version on read-the-docs. To create a new version (branch) and have it displayed as default, you must go into read the docs admin and point "default" to the new branch. At that point, the old default will become an older version, so *do not* delete old branches of the form YYYY-MM-DD.
 
 ## Getting Started
 1. Clone this repo
@@ -49,17 +50,21 @@ make html
 14. ReadTheDocs will automatically pickup your changes and recompile the site
 
 ## Making a new version:
-1. Commit changes to master
-2. Create new branch with the API version number: 2015-09-25
+1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-20, so name your new branch '2016-01-01')
+`git checkout -b 2016-01-01 2015-12-10`
+2. Make your changes, commit, and push
 3. Login to ReadTheDocs.org (credentials in lastpass)
-4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-portal/versions)
+4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
 5. Set your branch to Active
 6. Set your version to Private
-7. Save changes
-8. Check the changes you made on the live site (they will only be visible to logged in users, or users who have the direct URL)
-9. Return to the Admin > Version page
-10. Set your version to Public
-11. Save changes, the new version is now visible to all users
+7. Click "Submit" to save changes
+8. Build your project by going to the [Project Overview](https://readthedocs.org/projects/invoca-developer-docs/), selecting your branch (version) from the "Build a version" dropdown, and click "Build." 
+You will then be taken to the [Builds page] (https://readthedocs.org/projects/invoca-developer-docs/builds/). Check the status of your build. It should go from "Triggered > Building > Installing > Passed" if all goes well. 
+9. Check the changes you made on the [live site](developers.invoca.net) (they will only be visible to logged in users so far). Navigate to your new version using the menu in the bottom left. 
+10. Return to the [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
+11. Find your version in the list (e.g. 2016-01-01), set it Public.
+12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
+13. Save changes, the new version is now default and visible to all users, the previous version is also maintained.
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
