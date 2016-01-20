@@ -6,6 +6,7 @@ IMPORTANT things to note:
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
 3. A branch on git maps to a version on read-the-docs. To create a new version (branch) and have it displayed as default, you must go into read the docs admin and point "default" to the new branch. At that point, the old default will become an older version, so *do not* delete old branches of the form YYYY-MM-DD.
+4. The master branch is not necessarily the most current, but try to keep it current by creating a pull request for any changes you make and merging them into master. If you are making a new version *do not* delete your branch after merging into master.
 
 ## Getting Started
 1. Clone this repo
@@ -65,6 +66,7 @@ You will then be taken to the [Builds page] (https://readthedocs.org/projects/in
 11. Find your version in the list (e.g. 2016-01-01), set it Public.
 12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
 13. Save changes, the new version is now default and visible to all users, the previous version is also maintained.
+14. In order to keep the master branch up to date, merge your branch into master once you are complete but *do not* delete your branch as it will disappear from read the docs.
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
