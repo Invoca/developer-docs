@@ -1,10 +1,12 @@
 # The API version strings to display in the documentation
-COMMON_VERSION = '2015-12-09'
+# COMMON_VERSION is the latest version of any one API, and is considered the overall API version
+COMMON_VERSION = '2015-12-10'
 
 VERSIONS = {
-    '@@PNAPI_VERSION': '2013-07-01',
-    '@@NETWORK_API_VERSION': COMMON_VERSION,
-    '@@CONVERSION_API_VERSION': COMMON_VERSION,
-    '@@TRANSACTION_API_VERSION': '2015-12-10',
-    '@@CALL_OUTCOME_VERSION': '2015-08-17',
+	'@@NETWORK_API_VERSION':     '2015-12-09',
+	'@@CONVERSION_API_VERSION':  '2015-05-01',
+	'@@TRANSACTION_API_VERSION': '2015-12-10',
+	'@@RINGPOOL_API_VERSION':    '2015-12-09',
+	'@@PNAPI_VERSION':           '2013-07-01',
+	'@@CALL_OUTCOME_VERSION':    '2015-08-17',
 }
