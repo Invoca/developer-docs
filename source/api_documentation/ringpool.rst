@@ -5,7 +5,7 @@ The RingPool API allocates a dynamic, trackable promo phone number from a RingPo
 
 Example API URL:
 
-``https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&site=<VALUE1>&location=<VALUE2>``
+``https://<NETWORK>.invoca.net/api/@@RINGPOOL_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&site=<VALUE1>&location=<VALUE2>``
 
 <NETWORK>.invoca.net is the vanity URL for your platform. Note that your platform may exist on invoca.net or ringrevenue.com, and both are supported.
 
@@ -15,7 +15,7 @@ Example API URL:
 
 The parameter names should match those chosen in the RingPool wizard, or you can use generic parameter names “param1”, “param2”, etc. Here is the same API URL with the generic parameter names:
 
-``https://<NETWORK>.invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``
+``https://<NETWORK>.invoca.net/api/@@RINGPOOL_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``
 
 **Note:** To access the campaign RingPool’s API URL navigate to the Campaign Summary’s RingPool tab and click “get api url” under Actions.
 
@@ -147,5 +147,5 @@ The API supports the following parameters:
 
 Endpoint:
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``
+``https://invoca.net/api/@@RINGPOOL_API_VERSION/ring_pools/16/allocate_number.xml?ring_pool_key=<KEY>&param1=<VALUE1>&param2=<VALUE2>``
 
