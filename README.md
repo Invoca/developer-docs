@@ -65,8 +65,8 @@ You will then be taken to the [Builds page] (https://readthedocs.org/projects/in
 10. Return to the [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
 11. Find your version in the list (e.g. 2016-01-01), set it Public.
 12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
-13. Save changes, the new version is now default and visible to all users, the previous version is also maintained.
-14. In order to keep the master branch up to date, merge your branch into master once you are complete but **do not** delete your branch as it will disappear from read the docs.
+13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
+14. Back in github, set the default branch of this repo to your new branch. 
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
