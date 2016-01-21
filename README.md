@@ -6,7 +6,7 @@ IMPORTANT things to note:
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
 3. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default, you must go into read the docs admin and point "default" to the new branch. At that point, the old default will become an older version, so **do not** delete old branches of the form YYYY-MM-DD.
-4. The master branch is not necessarily the most current, but try to keep it current by creating a pull request for any changes you make and merging them into master. If you are making a new version **do not** delete your branch after merging into master.
+4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version).
 
 ## Getting Started
 1. Clone this repo
