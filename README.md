@@ -66,7 +66,7 @@ You will then be taken to the [Builds page] (https://readthedocs.org/projects/in
 11. Find your version in the list (e.g. 2016-01-01), set it Public.
 12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
 13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
-14. Back in github, set the default branch of this repo to your new branch. 
+14. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
