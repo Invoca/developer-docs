@@ -117,7 +117,7 @@ The data returned has the following fields:
 
   * - transaction_type
     - Type
-    - The type of transaction - Call, Sale or Web Conversion.
+    - The type of transaction - Call, Reported Conversion or Outcome.
 
   * - original_order_id
     - Order ID
