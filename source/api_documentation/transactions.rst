@@ -415,6 +415,30 @@ The data returned has the following fields:
     - Notes
     - Free-form notations on transaction.
 
+  * - call_outcome_outcome_name
+    - Outcome Name
+    - The name describing the outcome event.
+
+  * - call_outcome_description
+    - Call Outcome Description
+    - Free form text for providing additional details about the outcome.
+
+  * - call_outcome_partner_unique_id
+    - Call Outcome Partner ID
+    - Unique identifier, to distinguish between updating an existing outcome (for example correcting a sale that was reported) versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
+
+  * - call_outcome_occurred_at
+    - Call Outcome Occurred At
+    - 10 digit time that the outcome occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
+
+  * - call_outcome_source
+    - Call Outcome Source
+    - The source of the call outcome.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
+
+  * - call_outcome_value
+    - Call Outcome Value
+    - True or false as to whether the outcome was met or not.
+
   * - reason_code
     - Reason Code
     - [Call center integration only] Call center-specific status code giving the disposition of the call.
@@ -469,7 +493,7 @@ The data returned has the following fields:
 
   * - sale_amount
     - Sale Amount
-    - [Call center integration only] Total order amount (not including shipping) as reported by the call center.
+    - [Call center and Call Outcomes integrations] Total order amount (not including shipping) as reported by the call center or as a call outcome.
 
   * - call_center_call_id
     - Call Center Call Id
