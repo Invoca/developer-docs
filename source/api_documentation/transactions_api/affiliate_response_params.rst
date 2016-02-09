@@ -47,30 +47,6 @@
     - Media Channel Campaign
     - Name of the campaign.
 
-  * - affiliate_id
-    - Media Outlet ID (Invoca ID)
-    - The Invoca identifier of the media outlet.
-
-  * - affiliate_id_from_network
-    - Media Outlet ID
-    - Media Outlet ID from the network as set on the Invoca media outlet.
-
-  * - affiliate_name
-    - Media Outlet
-    - Name of the media outlet.
-
-  * - affiliate_commissions_ranking
-    - Media Outlet Commissions Ranking
-    - Network ranking of media outlet's commissions (0 to 5, and -1 being 'new'). Blank if no media outlet.
-
-  * - affiliate_call_volume_ranking
-    - Media Outlet Volume Ranking
-    - Network ranking of media outlet's call volume (0 to 5, and -1 being 'new'). Blank if no media outlet.
-
-  * - affiliate_conversion_rate_ranking
-    - Media Outlet Conversion Rate Ranking
-    - Network ranking of media outlet's conversion rate (0 to 5, and -1 being 'new'). Blank if no media outlet.
-
   * - media_type
     - Media Type
     - Media type of the transaction source.
@@ -78,6 +54,10 @@
   * - call_source_description
     - Source
     - Source of the transaction.
+
+  * - syndicated_ident
+    - TODO
+    - TODO
 
   * - promo_line_description
     - Promo Number Description
@@ -91,13 +71,17 @@
     - Call Result
     - Status of the transaction.
 
-  * - call_fee_localized
-    - Fees
-    - Telecommunications fee associated with transaction.
+  * - affiliate_payout_localized
+    - Paid
+    - Amount paid out to the publisher.
 
-  * - advertiser_call_fee_localized
-    - Media Channel Fees
-    - Media Channel Telecommunications fee associated with transaction.
+  * - matching_advertiser_payin_policies
+    - Matching Media Channel Payin Policies
+    - List of media channel policies that matched (base, bonus1, bonus2, etc.) to determine the media channel payin, separated by +. For example,base+bonus1+bonus3. Note that if there was any media channel payin, this field guaranteed to start with base.
+
+  * - payout_conditions
+    - Payout Conditions
+    - “Base condition with { highlighting } around the term(s) that disqualified publisher payout. For example: duration > 1 min and {in_region}”.
 
   * - city
     - City
@@ -110,14 +94,6 @@
   * - qualified_regions
     - Qualified Regions
     - The list of regions that that the caller matched.
-
-  * - repeat_calling_phone_number
-    - Repeat Caller
-    - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
-
-  * - calling_phone_number
-    - Caller ID
-    - Caller ID. Formatted as 12 characters like "866-555-1234".
 
   * - mobile
     - Phone Type
@@ -210,67 +186,3 @@
   * - call_outcome_value
     - Call Outcome value
     - True or false as to whether the outcome was met or not.
-
-  * - reason_code
-    - Reason Code
-    - [Call center integration only] Call center-specific status code giving the disposition of the call.
-
-  * - email_address
-    - Email Address (Reported)
-    - [Call center integration only] Email address as given to the call center.
-
-  * - name
-    - Name (Reported)
-    - [Call center integration only] Customer's full name as given to the call center.
-
-  * - address1
-    - Address (Reported)
-    - [Call center integration only] Customer's street address as given to the call center (first line).
-
-  * - address2
-    - Address 2 (Reported)
-    - [Call center integration only] Customer's street address as given to the call center (second line).
-
-  * - order_city
-    - City (Reported)
-    - [Call center integration only] Customer's city as given to the call center.
-
-  * - state_or_province
-    - State or Province (Reported)
-    - [Call center integration only] Customer's state or province as given to the call center.
-
-  * - zip_code
-    - Zip Code (Reported)
-    - [Call center integration only] Customer's zip code as given to the call center.
-
-  * - country
-    - Country (Reported)
-    - [Call center integration only] Customer's country as given to the call center.
-
-  * - home_phone_number
-    - Home Phone (Reported)
-    - [Call center integration only] Customer's home phone number as given to the call center.
-
-  * - cell_phone_number
-    - Cell Phone (Reported)
-    - [Call center integration only] Customer's cell phone number as given to the call center.
-
-  * - sku_list
-    - SKU List
-    - [Call center integration only] Comma-separated list of order SKUs as reported by the call center.
-
-  * - quantity_list
-    - Quantity List
-    - [Call center integration only] Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
-
-  * - sale_amount
-    - Sale Amount
-    - [Call center and Call Outcomes integrations] Total order amount (not including shipping) as reported by the call center or as a call outcome.
-
-  * - call_center_call_id
-    - Call Center Call Id
-    - [Call center integration only] The unique identifier assigned to the call by the call center.
-
-  * - destination_phone_number
-    - Destination Phone Number
-    - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: ‘-‘, ‘#’, ‘*’, ‘x’, and ‘,’.

@@ -23,18 +23,6 @@
     - Order ID
     - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
-  * - advertiser_id
-    - Media Channel ID (Invoca ID)
-    - The Invoca identifier of the media channel.
-
-  * - advertiser_id_from_network
-    - Media Channel ID
-    - Media Channel ID from the network as set on the Invoca media channel.
-
-  * - advertiser_name
-    - Media Channel
-    - Name of the media channel.
-
   * - advertiser_campaign_id
     - Media Channel Campaign ID (Invoca ID)
     - The Invoca identifier of the campaign.
@@ -54,10 +42,6 @@
   * - affiliate_id_from_network
     - Media Outlet ID
     - Media Outlet ID from the network as set on the Invoca media outlet.
-
-  * - affiliate_name
-    - Media Outlet
-    - Name of the media outlet.
 
   * - affiliate_commissions_ranking
     - Media Outlet Commissions Ranking
@@ -79,7 +63,7 @@
     - Source
     - Source of the transaction.
 
-  * - promo_line_description
+  * - advertiser_promo_line_description
     - Promo Number Description
     - Additional details about the transaction source.
 
@@ -87,17 +71,9 @@
     - Promo Number ID
     - The Promo Number ID from the network.
 
-  * - call_result_description_detail
+  * - call_result_description_detail_managed_advertiser
     - Call Result
     - Status of the transaction.
-
-  * - call_fee_localized
-    - Fees
-    - Telecommunications fee associated with transaction.
-
-  * - advertiser_call_fee_localized
-    - Media Channel Fees
-    - Media Channel Telecommunications fee associated with transaction.
 
   * - city
     - City
@@ -265,7 +241,7 @@
 
   * - sale_amount
     - Sale Amount
-    - [Call center and Call Outcomes integrations] Total order amount (not including shipping) as reported by the call center or as a call outcome.
+    - [Call center integration only] Total order amount (not including shipping) as reported by the call center.
 
   * - call_center_call_id
     - Call Center Call Id
