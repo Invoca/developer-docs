@@ -3,3 +3,5 @@
 .. include:: :org_type:_response_params.rst
 
 .. include:: optional_fields.txt
+
+.. include:: _:org_type:_user_example.tmp
