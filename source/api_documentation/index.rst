@@ -3,7 +3,7 @@ API Documentation
 
 The platform provides the following APIs:
 
-:doc:`transactions`  - provides read-only access to call transaction data.
+:doc:`transactions_api/index`  - provides read-only access to call transaction data.
 
 :doc:`network_integration/index` -
 supports the replication and synchronization of advertiser, publisher and campaign data between partner platforms.
