@@ -20,6 +20,7 @@ from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
 from doc_versions import *
+from org_types import *
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -120,7 +121,9 @@ def build_api_endpoint_template(source):
   return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.rst")
 
 def build_tx_api_page(source):
-  return find_and_replace_templates(source, "tx_api_page", "_tx_api_page.txt")
+  for org_docname in ORG_TYPE_DOCNAMES:
+    source = find_and_replace_templates(source, org_docname + "_tx_api_page", "_tx_api_page.txt")
+  return source
 
 # Replace version symbols with actual version numbers
 # Version numbers are defined in doc_versions.py
@@ -134,12 +137,22 @@ def source_handler(app, docname, source):
 def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
-      print docname
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
       for symbol_string, version_string in VERSIONS.iteritems():
         partial = re.sub(symbol_string, version_string, partial)
-      new_docname = docname + '.tmp'
-      open('{}{}'.format(source_path, new_docname), 'w').write(partial)
+        
+      # Replace @@ORG_TYPE with strings in org_types.py (this generates 3 files)
+      for symbol_string, org_type_list in ORG_TYPES.iteritems():
+        if re.search(symbol_string, partial):
+          for org_type, org_docname in zip(org_type_list, ORG_TYPE_DOCNAMES):
+            partial_for_org = re.sub(symbol_string, org_type, partial)
+            new_docname = os.path.join(os.path.dirname(docname), "_" + org_docname + os.path.basename(docname) + ".tmp")
+            print "BUILDING PARTIAL FOR ORG: " + new_docname
+            open('{}{}'.format(source_path, new_docname), 'w').write(partial_for_org)
+        else:
+          new_docname = docname + '.tmp'
+          print "BUILDING PARTIAL: " + new_docname
+          open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
 def setup(app):
   app.connect('env-before-read-docs', build_partials)
