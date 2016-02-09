@@ -119,11 +119,14 @@ def find_and_replace_templates(source, directive_name, template_file_name):
 def build_api_endpoint_template(source):
   return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.rst")
 
+def build_tx_api_page(source):
+  return find_and_replace_templates(source, "tx_api_page", "_tx_api_page.txt")
 
 # Replace version symbols with actual version numbers
 # Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
   source[0] = build_api_endpoint_template(source[0])
+  source[0] = build_tx_api_page(source[0])
 
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
