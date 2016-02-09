@@ -19,6 +19,8 @@ import pickle
 from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
+
+# Invoca py files
 from doc_versions import *
 from org_types import *
 
@@ -29,7 +31,7 @@ from org_types import *
 
 # -- General configuration ------------------------------------------------
 
-# is this file being executed on read the docs or locally?
+# Determine if this file being executed on read the docs or locally
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -68,14 +70,15 @@ else:
 
 """
 Replaces directives with the contents of a custom template. Substitutes
-values from the directive into the template.
+values passed to the directive into the template.
 
-Example directive:
+Example directive (NOTE: there are 2 new lines at the end!):
 .. api_endpoint::
   :verb: GET
   :path: /advertiser_campaigns
   :description: Get all campaigns for an Advertiser
   :page: get_advertiser_campaigns
+
 
 Example template:
 <div class=":verb:">:description</div>
@@ -83,10 +86,10 @@ Example template:
 def build_template(match, template_file_name):
   lines = match.group().splitlines()
 
-  # remove the directive line
+  # remove the directive line (e.g. ".. api_endpoint::" as shown above)
   lines.pop(0)
 
-  # extract the replacement keys and values
+  # extract the replacement keys and values (e.g. ":verb: GET")
   template_vars = {}
   for line in lines:
     if not line.strip(): continue
@@ -109,14 +112,15 @@ def build_template(match, template_file_name):
   else:
     raise Exception("Template has unreplaced key " + remaining_keys.group())
 
-
+# Use regex to find all directives (matching structure of "Example directive" above)
+# in the current file's source
 def find_and_replace_templates(source, directive_name, template_file_name):
   return re.sub(
           re.compile("^ *\.\. {}::$\n(^\s+:\w+:\s+.*$\n)+^$\n".format(directive_name), re.MULTILINE),
           lambda match: build_template(match, template_file_name),
           source)
 
-
+#Callback function
 def build_api_endpoint_template(source):
   return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.txt")
 
@@ -125,22 +129,27 @@ def build_tx_api_templates(source):
     source = find_and_replace_templates(source, org_docname + "_tx_api_page", "_tx_api_page.txt")
   return source
 
-# Replace version symbols with actual version numbers
-# Version numbers are defined in doc_versions.py
 def source_handler(app, docname, source):
+  # Build templates located in custom_templates dir
   source[0] = build_api_endpoint_template(source[0])
   source[0] = build_tx_api_templates(source[0])
 
+  # Replace @@API_VERSION in templates with strings from doc_versions.py
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
+  # TODO: Add code here to Replace @@ORG_TYPE in templates with strings from org_types.py
+
+
+# Replace occurences of @@ variables in partials (.rst files beginning w/ an underscore)
 def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
+      # Replace @@API_VERSION with strings in doc_versions.py
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
       for symbol_string, version_string in VERSIONS.iteritems():
         partial = re.sub(symbol_string, version_string, partial)
-        
+
       # Replace @@ORG_TYPE with strings in org_types.py (this generates 3 files)
       for symbol_string, org_type_list in ORG_TYPES.iteritems():
         if re.search(symbol_string, partial):
@@ -154,6 +163,7 @@ def build_partials(app, env, docnames):
           print "BUILDING PARTIAL: " + new_docname
           open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
+# Entry point
 def setup(app):
   app.connect('env-before-read-docs', build_partials)
   app.connect('source-read', source_handler)
@@ -206,8 +216,9 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-# Uncomment the following lines to build the docs locally using sphinx-build
-if not on_rtd:  # only import and set the theme if we're building docs locally
+# When building locally, the theme is not automatically imported
+# When we're not on read the docs, we have to import it and set the theme manually.
+if not on_rtd:
   import sphinx_rtd_theme
   html_theme = 'sphinx_rtd_theme'
   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
@@ -219,7 +230,8 @@ html_context = {}
 # documentation.
 html_theme_options = {"nosidebar": True, "display_version": False, "logo_only": True}
 
-# It seems that ReadTheDocs ignores html_theme_options above, so here we are expanding the options directly into the context
+# It seems that ReadTheDocs ignores html_theme_options above,
+# so here we are expanding the options directly into the context
 if on_rtd:
   for key in html_theme_options:
     html_context['theme_' + key] = html_theme_options[key]
