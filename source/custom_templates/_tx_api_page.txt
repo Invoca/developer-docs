@@ -1,1 +1,3 @@
 .. include:: _:page:.tmp
+
+:org_type:
