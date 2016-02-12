@@ -103,14 +103,14 @@ def build_template(match, template_file_name):
     if re.search(search, template):
       template = template.replace(search, replacement)
     else:
-      raise Exception("Template does not have replacement key " + search)
+      raise Exception("Template: [" + template + "] does not have replacement key " + search)
 
   # raise error if we have extra or not enough keys
   remaining_keys = re.search(r":[a-zA-Z_]+:", template)
   if not remaining_keys:
     return template
   else:
-    raise Exception("Template has unreplaced key " + remaining_keys.group())
+    raise Exception("Template: [" + template + "] has and  unreplaced key " + remaining_keys.group())
 
 # Use regex to find all directives (matching structure of "Example directive" above)
 # in the current file's source
@@ -145,6 +145,7 @@ def source_handler(app, docname, source):
 def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
+      
       # Replace @@API_VERSION with strings in doc_versions.py
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
       for symbol_string, version_string in VERSIONS.iteritems():
@@ -152,13 +153,14 @@ def build_partials(app, env, docnames):
 
       # Replace @@ORG_TYPE with strings in org_types.py (this generates 3 files)
       for symbol_string, org_type_list in ORG_TYPES.iteritems():
-        if re.search(symbol_string, partial):
+        if re.search(symbol_string, partial): # found a match
+          # iterrate over 2 array simultaneous 
           for org_type, org_docname in zip(org_type_list, ORG_TYPE_DOCNAMES):
             partial_for_org = re.sub(symbol_string, org_type, partial)
             new_docname = os.path.join(os.path.dirname(docname), "_" + org_docname + os.path.basename(docname) + ".tmp")
             print "BUILDING PARTIAL FOR ORG: " + new_docname
             open('{}{}'.format(source_path, new_docname), 'w').write(partial_for_org)
-        else:
+        else: #not an org_type partial
           new_docname = docname + '.tmp'
           print "BUILDING PARTIAL: " + new_docname
           open('{}{}'.format(source_path, new_docname), 'w').write(partial)
