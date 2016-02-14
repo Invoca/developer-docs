@@ -120,7 +120,6 @@ def find_and_replace_templates(source, directive_name, template_file_name):
           lambda match: build_template(match, template_file_name),
           source)
 
-#Callback function
 def build_api_endpoint_template(source):
   return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.txt")
 
@@ -129,8 +128,9 @@ def build_tx_api_templates(source):
     source = find_and_replace_templates(source, org_docname + "_tx_api_page", "_tx_api_page.txt")
   return source
 
+# Callback function: Runs upon completion of "source-read" event
 def source_handler(app, docname, source):
-  # Build templates located in custom_templates dir
+  # Build templates in custom_templates/ 
   source[0] = build_api_endpoint_template(source[0])
   source[0] = build_tx_api_templates(source[0])
 
@@ -138,10 +138,10 @@ def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
-  # TODO: Add code here to Replace @@ORG_TYPE in templates with strings from org_types.py
+  # TODO: If needed Add code here to Replace @@ORG_TYPE in templates with strings from org_types.py
 
 
-# Replace occurences of @@ variables in partials (.rst files beginning w/ an underscore)
+# Replace all occurences of @@ variables in partials (.rst files beginning w/ an underscore)
 def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
@@ -165,7 +165,8 @@ def build_partials(app, env, docnames):
           print "BUILDING PARTIAL: " + new_docname
           open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
-# Entry point
+
+# ENTRY POINT to build script
 def setup(app):
   app.connect('env-before-read-docs', build_partials)
   app.connect('source-read', source_handler)
