@@ -10,7 +10,7 @@ IMPORTANT things to note:
  you must go into read the docs admin and point "default" to the new branch. At that point, 
  the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
 4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version).
-5. Beware pitfalls. There are many. Dig into the shinx source code if need be. 
+5. Beware pitfalls. There are many. Dig into the sphinx source code if need be. 
 6. Any Major changes involving a change to the toctree hierarchy  must be reviewed by MikeW, Spencer, or NickB.
 
 ## Getting Started
@@ -159,9 +159,9 @@ def source_handler(app, docname, source):
 ```
 
 #### Directive
-One of the harder parts of getting read the docs to work. Be ware of white space 
+One of the harder parts of getting read the docs to work. Beware of white space 
 and trailing new lines. A home-made directive like shown below *must* have 
-two new lines after it (which comments counting as well). 
+two new lines after it (with comments counting as well). 
 This directive will render the example template file shown above.
 If a directive is last on the page, it must too have 2 newlines to work. Your 
 build will succeed locally but fail on RTDs due to an "unkonwn error" that is unhelpful.
