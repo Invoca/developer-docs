@@ -1,11 +1,12 @@
-  .. list-table::
+
+.. list-table::
   :widths: 30 8 40
   :header-rows: 1
   :class: parameters
 
-  * - Optional Fields Based On Feature Usage
-    -
-    -
+  * - Optional Fields Based
+    - May vary based on organization type, optional feature subscription
+    - or User type 
 
   * - advertiser_payin_localized
     - Earned
@@ -390,3 +391,4 @@
   * - aku_list
     - Sku List
     - [Call center and Call Outcomes integrations] Total order amount (not including shipping) as reported by the call center or as a call outcome.
+
