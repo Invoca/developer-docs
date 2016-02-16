@@ -5,8 +5,8 @@
   :class: parameters
 
   * - Optional Fields Based
-    - May vary based on organization type, optional feature subscription
-    - or User type 
+    -
+    -
 
   * - advertiser_payin_localized
     - Earned
