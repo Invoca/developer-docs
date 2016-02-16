@@ -134,11 +134,23 @@
   * - complete_call_id
     - Call Record ID
     - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
-  
+      
   * - transfer_from_type
-    - Transfer Type
-    - Where the call came from.
+    - Call Record ID
+    - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+
+  * - notes
+    - Notes
+    - Free form notations on the transcript
+
+  * - reason_code
+    - Reason Code
+    - [Call center integration only] Call center-specific status code giving the disposition of the call.
 
   * - virtual_line_id
     - Promo Number ID
     - The Promo Number ID from the network.
+
+  * - verified_zip 
+    - Verified Zip Code
+    - Zip Code entered by callers when prompted during call treatment  
