@@ -5,4 +5,4 @@
 .. include:: optional_fields.txt
 
 
-.. include:: _:org_type:_user_example.tmp
+.. include:: _:org_type:_example.tmp

@@ -48,6 +48,10 @@ help:
 
 clean:
 	rm -rf $(BUILDDIR)/*
+
+souji:
+	find . -name "*.pyc" -type f -delete
+	find . -name "*.tmp" -type f -delete
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
