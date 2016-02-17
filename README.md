@@ -1,12 +1,17 @@
 # Developer Portal
-The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language.
+
+The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language, and built using the [Sphinx Document Generator](http://www.sphinx-doc.org/en/stable/index.html). If you need to make any changes to conf.py please review the [Sphinx Dev Guide](http://www.sphinx-doc.org/en/stable/devguide.html)
 
 IMPORTANT things to note:
 
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
-2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
-3. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default, you must go into read the docs admin and point "default" to the new branch. At that point, the old default will become an older version, so **do not** delete old branches of the form YYYY-MM-DD.
+2. The method of adding comments to API controllers is officially deprecated.
+3. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
+ you must go into read the docs admin and point "default" to the new branch. At that point, 
+ the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
 4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version).
+5. Beware pitfalls. There are many. Dig into the sphinx source code if need be. 
+6. Any Major changes involving a change to the toctree hierarchy  must be reviewed by MikeW, Spencer, or NickB.
 
 ## Getting Started
 1. Clone this repo
@@ -89,7 +94,7 @@ The "private" documentation in RTD is not actually protected by a login. When a 
 
 ### Common Constructions:
 
-* Building a collapsable api_endpoint div (The newline after args is NEEDED)
+* Building a collapsable api_endpoint div (T)
 ```
 .. api_endpoint::
   :path: /something/place
@@ -154,7 +159,12 @@ def source_handler(app, docname, source):
 ```
 
 #### Directive
+One of the harder parts of getting read the docs to work. Beware of white space 
+and trailing new lines. A home-made directive like shown below *must* have 
+two new lines after it (with comments counting as well). 
 This directive will render the example template file shown above.
+If a directive is last on the page, it must too have 2 newlines to work. Your 
+build will succeed locally but fail on RTDs due to an "unkonwn error" that is unhelpful.
 ```
 Here is the rendered template:
 
@@ -193,9 +203,13 @@ make clean && make html
 ```
 
 #### Q: I added/edited a table, but I don't see it in the built docs
-RST does not generate error message for most table errors. Instead, it silently fails. Check your table syntax and try again.
+RST does not generate error message for most table errors. Instead, it silently fails. 
+If you've seen this error a million times, maybe try a git bisect / cherry pick method
+to hone in on the syntax (more than likely table indentation or lack of 2 new lines after a directive)
+Spencer's error: https://readthedocs.org/projects/invoca-developer-docs/builds/3716026/
+
 
 #### Q: The build is hanging and never completing
 RST makes links that look like this `` `click here <https://example.com>`_ `` so if you put in a link like this `` `https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml` `` It kind of freaks out and never finishes building.
-If you have a backtick block with a `<soomething` in the link you should encase it in double backticks.
+If you have a backtick block with a `<something` in the link you should encase it in double backticks.
 
