@@ -97,6 +97,12 @@ Used to create the fields of a call outcome.
 
     `value:` True or false as to whether the outcome was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false).
 
+    `custom_paramter_1` Custom parameter. Up to 255 character string.
+
+    `custom_paramter_2` Custom parameter. Up to 255 character string.
+
+    `custom_paramter_3` Custom parameter. Up to 255 character string.
+
 ------
 
 **Additional Parameters**
@@ -281,7 +287,10 @@ Example of creating two call outcomes (on a single call) then updating one
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015",
         "occurred_at_time_t": "1440607800",
-        "value": "true"
+        "value": "true",
+        "custom_parameter_1": "",
+        "custom_parameter_2": "",
+        "custom_parameter_3": ""
       },
       "call": {
         "transaction_id": "00000000-00000001",
@@ -319,7 +328,10 @@ Example of creating two call outcomes (on a single call) then updating one
       "partner_unique_id": "1",
       "description": "Honda Civic 2012",
       "occurred_at_time_t": "1440607999",
-      "value": "true"
+      "value": "true",
+      "custom_parameter_1": "",
+      "custom_parameter_2": "",
+      "custom_parameter_3": ""
     },
     "call": {
       "transaction_id": "00000000-00000001",
