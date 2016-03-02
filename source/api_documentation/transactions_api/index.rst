@@ -1,4 +1,4 @@
-.. include:: ../../custom_templates/css_include.txt
+.. include:: custom_templates/css_include.txt
 
 Transactions API
 ================
