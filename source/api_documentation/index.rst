@@ -1,3 +1,5 @@
+.. include:: ../custom_templates/css_include.txt
+
 API Documentation
 =================
 
