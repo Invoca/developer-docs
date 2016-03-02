@@ -247,8 +247,8 @@ html_theme_options = {"nosidebar": True, "display_version": False, "logo_only": 
 
 # It seems that ReadTheDocs ignores html_theme_options above,
 # so here we are expanding the options directly into the context
-if on_rtd:
-  for key in html_theme_options:
+#if on_rtd:
+ for key in html_theme_options:
     html_context['theme_' + key] = html_theme_options[key]
 
 # Add any paths that contain custom themes here, relative to this directory.
