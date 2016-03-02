@@ -142,24 +142,6 @@ def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
-'''
-  if re.search(u"@@CSS_PATH", source[0]):
-    print "################################ REPLACING CSS in " + docname + " #########################"
-
-    prefix = ""
-    path_parts = docname.split("/")
-    depth = len(path_parts) - 1
-
-    while depth > 0:
-      prefix += "../"
-      depth -= 1
-    
-    path = prefix + css_path
-    print path
-
-    #source[0] = re.sub("@@CSS_PATH", path, source[0])
-'''
-
 # In the case of partials which have enumerable replacements like { Network, Advertiser, Affiliate }
 # three copies of the .tmp file must be made, using each respective enumerable as its replacement text
 # The resulting files will look like _networks_something_page.tmp, ... _affiliates_something_page.tmp 
@@ -427,7 +409,7 @@ rst_prolog = """
 .. raw:: html
 
   <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="http://developers.invoca.net/en/2016-01-25/_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
 
   <div style="text-align: right;" >
