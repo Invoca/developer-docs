@@ -233,10 +233,10 @@ pygments_style = 'sphinx'
 
 # When building locally, the theme is not automatically imported
 # When we're not on read the docs, we have to import it and set the theme manually.
-#if not on_rtd:
-import sphinx_rtd_theme
-html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+if not on_rtd:
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 html_context = {}
 
@@ -247,8 +247,8 @@ html_theme_options = {"nosidebar": True, "display_version": False, "logo_only": 
 
 # It seems that ReadTheDocs ignores html_theme_options above,
 # so here we are expanding the options directly into the context
-#if on_rtd:
- for key in html_theme_options:
+if on_rtd:
+  for key in html_theme_options:
     html_context['theme_' + key] = html_theme_options[key]
 
 # Add any paths that contain custom themes here, relative to this directory.
