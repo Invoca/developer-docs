@@ -3,6 +3,11 @@
 .. raw:: html
 
     <!-- This is a total hack, I copied the minified CSS from the old site-->
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
     <link rel="stylesheet" href="_static/css/homepage.css">
 
 
