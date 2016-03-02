@@ -64,9 +64,11 @@ release = COMMON_VERSION
 if on_rtd:
   custom_template_path = './custom_templates/'
   source_path = './'
+  css_path = './_static/css/'
 else:
   custom_template_path = './source/custom_templates/'
   source_path = './source/'
+  css_path = './source/_static/css/'
 
 """
 def build_template(): 
@@ -141,6 +143,16 @@ def source_handler(app, docname, source):
   # Replace @@API_VERSION in templates with strings from doc_versions.py
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
+
+  if source[0].find("@@CSS_PATH"):
+    prefix = ""
+    path_parts = docname.split("/")
+    depth = len(path_parts) - 1
+    while depth > 0:
+      prefix += "../"
+      depth -= 1
+      path = prefix + css_path[2:]
+      source[0] = source[0].replace("@@CSS_PATH", path)
 
 # In the case of partials which have enumerable replacements like { Network, Advertiser, Affiliate }
 # three copies of the .tmp file must be made, using each respective enumerable as its replacement text
