@@ -1,6 +1,10 @@
-.. invoca documentation
+.. raw:: html
 
-.. include:: custom_templates/css_include.txt
+  <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  <link rel="stylesheet" href="@@CSS_PATH/custom.css" type="text/css" />
+  <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+
+.. invoca documentation
 
 .. raw:: html
 

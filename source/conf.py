@@ -64,11 +64,9 @@ release = COMMON_VERSION
 if on_rtd:
   custom_template_path = './custom_templates/'
   source_path = './'
-  css_path = './_static/css/'
 else:
   custom_template_path = './source/custom_templates/'
   source_path = './source/'
-  css_path = './source/_static/css/'
 
 """
 def build_template(): 
@@ -144,15 +142,23 @@ def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
-  if source[0].find("@@CSS_PATH"):
+'''
+  if re.search(u"@@CSS_PATH", source[0]):
+    print "################################ REPLACING CSS in " + docname + " #########################"
+
     prefix = ""
     path_parts = docname.split("/")
     depth = len(path_parts) - 1
+
     while depth > 0:
       prefix += "../"
       depth -= 1
-      path = prefix + css_path[2:]
-      source[0] = source[0].replace("@@CSS_PATH", path)
+    
+    path = prefix + css_path
+    print path
+
+    #source[0] = re.sub("@@CSS_PATH", path, source[0])
+'''
 
 # In the case of partials which have enumerable replacements like { Network, Advertiser, Affiliate }
 # three copies of the .tmp file must be made, using each respective enumerable as its replacement text
@@ -419,6 +425,10 @@ rst_prolog = """
 
 .. title:: Invoca Developer Portal
 .. raw:: html
+
+  <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
 
   <div style="text-align: right;" >
     <a href="http://www.invoca.net/home">Return to the Invoca Platform</a>
