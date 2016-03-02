@@ -128,6 +128,7 @@ def build_tx_api_templates(source):
   for org_docname in ORG_TYPES_FOR_FILES:
     source = find_and_replace_templates(source, org_docname + "_tx_api_page", "_tx_api_page.txt")
   return source
+
 # ==================
 # Callback function: 
 # ================== 
@@ -141,9 +142,8 @@ def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
-
-# In the case of partials which have enumeratable replacements like { Network, Advertiser, Affiliate }
-# three copies of the .tmp file must be made, using each respective enumeratable as its replacement text
+# In the case of partials which have enumerable replacements like { Network, Advertiser, Affiliate }
+# three copies of the .tmp file must be made, using each respective enumerable as its replacement text
 # The resulting files will look like _networks_something_page.tmp, ... _affiliates_something_page.tmp 
 # Typically there will be corresponding files _something_page.rst in the API directory you're working in
 # as well as a file in custom_templates/ named _something_page.txt. (See api_endpoint and tx_api_page for reference)
