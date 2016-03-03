@@ -409,7 +409,7 @@ rst_prolog = """
 .. raw:: html
 
   <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
-  <link rel="stylesheet" href="developers.invoca.net/en/""" + version +  """/_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="http://developers.invoca.net/en/""" + version +  """/_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
 
   <div style="text-align: right;" >
