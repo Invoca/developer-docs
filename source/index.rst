@@ -2,7 +2,7 @@
 
 .. raw:: html
 
-    <!-- This is a total hack, I copied the minified CSS from the old site!-->
+    <!-- This is a total hack, I copied the minified CSS from the old site-->
     <link rel="stylesheet" href="_static/css/homepage.css">
     <style>
     .panel .index {
