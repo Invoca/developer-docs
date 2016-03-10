@@ -18,7 +18,7 @@
 
   * - transaction_type
     - Type
-    - The type of transaction - Call, Reported Conversion or Outcome.
+    - The type of transaction - Call, Reported Conversion or Signal.
 
   * - original_order_id
     - Order ID
