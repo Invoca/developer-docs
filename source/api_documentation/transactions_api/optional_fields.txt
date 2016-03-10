@@ -388,7 +388,7 @@
     - Gender (Data Append)
     - Data from caller demographics lookup
   
-  * - aku_list
+  * - sku_list
     - Sku List
     - [Call center and Call Outcomes integrations] Total order amount (not including shipping) as reported by the call center or as a call outcome.
 
