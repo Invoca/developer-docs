@@ -16,9 +16,12 @@ import sys
 import os
 import re
 import pickle
+import types
 from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
+
+# Invoca py files
 from doc_versions import *
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -28,7 +31,7 @@ from doc_versions import *
 
 # -- General configuration ------------------------------------------------
 
-# is this file being executed on read the docs or locally?
+# Determine if this file being executed on read the docs or locally
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -66,15 +69,17 @@ else:
   source_path = './source/'
 
 """
+def build_template():
 Replaces directives with the contents of a custom template. Substitutes
-values from the directive into the template.
+values passed to the directive into the template.
 
-Example directive:
+Example directive (NOTE: there are 2 new lines at the end!):
 .. api_endpoint::
   :verb: GET
   :path: /advertiser_campaigns
   :description: Get all campaigns for an Advertiser
   :page: get_advertiser_campaigns
+
 
 Example template:
 <div class=":verb:">:description</div>
@@ -82,10 +87,10 @@ Example template:
 def build_template(match, template_file_name):
   lines = match.group().splitlines()
 
-  # remove the directive line
+  # remove the directive line (e.g. ".. api_endpoint::" as shown above)
   lines.pop(0)
 
-  # extract the replacement keys and values
+  # extract the replacement keys and values (e.g. ":verb: GET")
   template_vars = {}
   for line in lines:
     if not line.strip(): continue
@@ -99,26 +104,25 @@ def build_template(match, template_file_name):
     if re.search(search, template):
       template = template.replace(search, replacement)
     else:
-      raise Exception("Template does not have replacement key " + search)
+      raise Exception("Template: [" + template + "] does not have replacement key " + search)
 
   # raise error if we have extra or not enough keys
   remaining_keys = re.search(r":[a-zA-Z_]+:", template)
   if not remaining_keys:
     return template
   else:
-    raise Exception("Template has unreplaced key " + remaining_keys.group())
+    raise Exception("Template: [" + template + "] has and  unreplaced key " + remaining_keys.group())
 
-
+# Use regex to find all directives (matching structure of "Example directive" above)
+# in the current file's source
 def find_and_replace_templates(source, directive_name, template_file_name):
   return re.sub(
           re.compile("^ *\.\. {}::$\n(^\s+:\w+:\s+.*$\n)+^$\n".format(directive_name), re.MULTILINE),
           lambda match: build_template(match, template_file_name),
           source)
 
-
 def build_api_endpoint_template(source):
-  return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.rst")
-
+  return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.txt")
 
 # Replace version symbols with actual version numbers
 # Version numbers are defined in doc_versions.py
@@ -131,18 +135,67 @@ def source_handler(app, docname, source):
 def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
-      print docname
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
       for symbol_string, version_string in VERSIONS.iteritems():
         partial = re.sub(symbol_string, version_string, partial)
-      new_docname = docname + '.tmp'
-      open('{}{}'.format(source_path, new_docname), 'w').write(partial)
+        new_docname = docname + '.tmp'
+        open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
+INVOCA_CSS = '''<link rel="stylesheet" href="{0}css/sphinx_rtd_theme.css" type="text/css" />
+                <link rel="stylesheet" href="//invoca-developer-docs.readthedocs.org/en/{1}/_static/css/custom.css" type="text/css" />
+                <link rel="stylesheet" href="{0}css/readthedocs-doc-embed.css" type="text/css" />'''
+
+def update_body(app, pagename, templatename, context, doctree):
+  if app.builder.name in ['readthedocssinglehtmllocalmedia', 'readthedocs', 'readthedocsdirhtml']:
+    # check if we have patched it already, if so, don't bother
+    if hasattr(app.builder.templates, 'render') and \
+       hasattr(app.builder.templates.render, '_patched') and \
+       not hasattr(app.builder.templates.render, '_invoca_patched'):
+
+      print('Installing monkey patch to get our CSS in the proper location')
+
+      # Janky monkey patch of template rendering to add our content
+      old_render = app.builder.templates.render
+
+      def invoca_rtd_render(self, template, render_context):
+        """
+        Add our CSS after the RTD CSS
+        """
+        # call original render function
+        content = old_render(template, render_context)
+
+        # find our insertion point in the HTML
+        end_body = content.lower().find('</head>')
+
+        # Insert our content at the end of the head.
+        if end_body != -1:
+          content = \
+            content[:end_body] + \
+            INVOCA_CSS.format(render_context['MEDIA_URL'], render_context['current_version'].lower()) + \
+            content[end_body:]
+        else:
+          app.debug("File doesn't look like HTML. Skipping Invoca content addition")
+
+        return content
+
+      # we have to set two patched flags because RTD ALSO monkey patches this method
+      invoca_rtd_render._patched = True
+      invoca_rtd_render._invoca_patched = True
+      app.builder.templates.render = types.MethodType(invoca_rtd_render,
+                                                      app.builder.templates)
+
+# ===========================
+# ENTRY POINT to build script
+# ===========================
 def setup(app):
   app.connect('env-before-read-docs', build_partials)
   app.connect('source-read', source_handler)
+  app.connect('html-page-context', update_body)
   app.add_javascript('js/custom.js')
   app.add_javascript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+  # This CSS is added BEFORE the RTD CSS, so it doesn't allow us to override their CSS
+  # We re-add our CSS AFTER the RTD CSS using the update_body method. We have left this
+  # in place here so the CSS will load when you build and view locally instead of on RTD
   app.add_stylesheet('css/custom.css')
 
 
@@ -190,8 +243,9 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-# Uncomment the following lines to build the docs locally using sphinx-build
-if not on_rtd:  # only import and set the theme if we're building docs locally
+# When building locally, the theme is not automatically imported
+# When we're not on read the docs, we have to import it and set the theme manually.
+if not on_rtd:
   import sphinx_rtd_theme
   html_theme = 'sphinx_rtd_theme'
   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
@@ -203,7 +257,8 @@ html_context = {}
 # documentation.
 html_theme_options = {"nosidebar": True, "display_version": False, "logo_only": True}
 
-# It seems that ReadTheDocs ignores html_theme_options above, so here we are expanding the options directly into the context
+# It seems that ReadTheDocs ignores html_theme_options above,
+# so here we are expanding the options directly into the context
 if on_rtd:
   for key in html_theme_options:
     html_context['theme_' + key] = html_theme_options[key]
