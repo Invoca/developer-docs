@@ -42,43 +42,43 @@
 
   * - signal_1_value
     - Voice Signal: Credit Card
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_2_value
     - Voice Signal: Competitors
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_3_value
     - Voice Signal: Rack Server
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_4_value
     - Voice Signal: Blade Server
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_5_value
     - Voice Signal: Power Play
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_6_value
     - Voice Signal: Amazon
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_7_value
     - Voice Signal: 7
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_8_value
     - Voice Signal: Telecom Competitors
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_9_value
     - Voice Signal: 9
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_10_value
     - Voice Signal: 10
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - dynamic_number_pool_referrer_search_engine
     - Traffic Source
@@ -414,5 +414,5 @@
 
   * - signal_value
     - Signal Value
-    - True or false as to whether the signal was met or not.
+    - True or false as to whether or not the signal was met and null if it is not a signal transaction.
 
