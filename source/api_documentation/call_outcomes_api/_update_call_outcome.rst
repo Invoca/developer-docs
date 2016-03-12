@@ -42,7 +42,10 @@
         "description": "Updated description and sale amount",
         "occurred_at_time_t": "1440607313",
         "sale_amount": "200.0",
-        "value": "true"
+        "value": "true",
+        "custom_parameter_1": "",
+        "custom_parameter_2": "",
+        "custom_parameter_3": ""
       },
       "call": {
         "transaction_id": "00000000-00000001",
@@ -52,4 +55,3 @@
 
   Note: It’s necessary to use the **transaction_id** of the transaction (call leg) that the call outcome was originally reported on.
   The **outcome_name** and **partner_unique_id** must also match the call outcome being updated.
-
