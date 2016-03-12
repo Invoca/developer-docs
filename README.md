@@ -58,7 +58,7 @@ make html
 ## Making a new version:
 1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-01, so name your new branch '2016-01-01')
 `git checkout -b 2016-01-01 2015-12-10`
-2. Make your changes, commit, and push
+2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
 3. Login to ReadTheDocs.org (credentials in lastpass)
 4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
 5. Set your branch to Active
