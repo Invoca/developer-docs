@@ -127,6 +127,21 @@ Endpoint:
   :description: Update a signal
   :page: update_signal
 
+Endpoint:
+
+``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/<transaction_id>/signals``
+
+.. api_endpoint::
+  :verb: POST
+  :path: /transactions/<transaction_id>/signals
+  :description: Create a signal
+  :page: create_signal2
+
+.. api_endpoint::
+  :verb: PUT
+  :path: /transactions/<transaction_id>/signals
+  :description: Update a signal
+  :page: update_signal2
 
 Example POST Request Using cURL
 -------------------------------
