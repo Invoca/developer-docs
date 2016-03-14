@@ -2,11 +2,11 @@
 
   .. rubric:: Examples
 
-  Example using **transaction_id** (of the call to associate the call outcome to) and providing all call outcome fields:
+  Example using **transaction_id** (of the call to associate the signal to) and providing all signal fields:
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes.json``
+  ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals.json``
 
   Request Body
 
@@ -17,8 +17,8 @@
       "search": {
         "transaction_id": "00000000-00000001"
       },
-      "call_outcome": {
-        "outcome_name": "sale",
+      "signal": {
+        "name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
@@ -37,10 +37,10 @@
 
     # 201 Created
     {
-      "call_outcome": {
+      "signal": {
         "transaction_id": "00000000-0000000A",
         "corrects_transaction_id": null,
-        "outcome_name": "sale",
+        "name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
@@ -61,11 +61,11 @@
     <hr>
 
 
-  Example using **start_time_t**, all optional search fields, and all call outcome fields:
+  Example using **start_time_t**, all optional search fields, and all signal fields:
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes.json``
+  ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals.json``
 
   Request Body
 
@@ -81,8 +81,8 @@
         "advertiser_campaign_id_from_network": "2",
         "network_id": "3"
       },
-      "call_outcome": {
-        "outcome_name": "sale",
+      "signal": {
+        "name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
@@ -98,10 +98,10 @@
 
     # 201 Created
     {
-      "call_outcome": {
+      "signal": {
         "transaction_id": "00000000-0000000A",
         "corrects_transaction_id": null,
-        "outcome_name": "sale",
+        "name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
