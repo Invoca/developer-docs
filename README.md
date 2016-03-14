@@ -9,7 +9,7 @@ IMPORTANT things to note:
 3. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
  you must go into read the docs admin and point "default" to the new branch. At that point, 
  the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
-4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version).
+4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, RTD, and you **MUST** update doc_versions.py to reflect the new changes. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION` If this still doesn't make sense, Spencer will be more than happy to whiteboard it for you.
 5. Beware pitfalls. There are many. Dig into the sphinx source code if need be. 
 6. Any Major changes involving a change to the toctree hierarchy  must be reviewed by MikeW, Spencer, or NickB.
 
@@ -58,7 +58,7 @@ make html
 ## Making a new version:
 1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-01, so name your new branch '2016-01-01')
 `git checkout -b 2016-01-01 2015-12-10`
-2. Make your changes, commit, and push
+2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
 3. Login to ReadTheDocs.org (credentials in lastpass)
 4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
 5. Set your branch to Active

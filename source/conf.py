@@ -16,6 +16,7 @@ import sys
 import os
 import re
 import pickle
+import types
 from datetime import datetime
 # append the current folder to the Python class path
 sys.path.append(os.getcwd())
@@ -69,7 +70,7 @@ else:
   source_path = './source/'
 
 """
-def build_template(): 
+def build_template():
 Replaces directives with the contents of a custom template. Substitutes
 values passed to the directive into the template.
 
@@ -130,11 +131,11 @@ def build_tx_api_templates(source):
   return source
 
 # ==================
-# Callback function: 
-# ================== 
+# Callback function:
+# ==================
 # Runs upon completion of "source-read" event. Substitutes :my_var" variables in custom templates
 def source_handler(app, docname, source):
-  # Build templates in custom_templates/ 
+  # Build templates in custom_templates/
   source[0] = build_api_endpoint_template(source[0])
   source[0] = build_tx_api_templates(source[0])
 
@@ -142,17 +143,19 @@ def source_handler(app, docname, source):
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
+
 # In the case of partials which have enumerable replacements like { Network, Advertiser, Affiliate }
 # three copies of the .tmp file must be made, using each respective enumerable as its replacement text
 # The resulting files will look like _networks_something_page.tmp, ... _affiliates_something_page.tmp 
+
 # Typically there will be corresponding files _something_page.rst in the API directory you're working in
 # as well as a file in custom_templates/ named _something_page.txt. (See api_endpoint and tx_api_page for reference)
 def build_partials_for_orgs(tmp_files):
   for tmp_file in tmp_files:
-    partial = open(tmp_file, 'r').read()    
+    partial = open(tmp_file, 'r').read()
     for (symbol_string, org_type_list), (symbol_string2, org_type_list2) in zip(ORG_TYPES_PLURAL.iteritems(), ORG_TYPES_SINGULAR.iteritems()):
       for org_type, org_type2, org_type_for_file, in zip(org_type_list, org_type_list2, ORG_TYPES_FOR_FILES):
-        new_partial = re.sub(symbol_string, org_type, partial) 
+        new_partial = re.sub(symbol_string, org_type, partial)
         new_partial = re.sub(symbol_string2, org_type2, new_partial)
         if partial != new_partial:
           new_file_name = os.path.join(os.path.dirname(tmp_file), "_" + org_type_for_file + os.path.basename(tmp_file))
@@ -175,6 +178,48 @@ def build_partials(app, env, docnames):
 
   build_partials_for_orgs(tmp_files)
 
+INVOCA_CSS = '''<link rel="stylesheet" href="{0}css/sphinx_rtd_theme.css" type="text/css" />
+                <link rel="stylesheet" href="//invoca-developer-docs.readthedocs.org/en/{1}/_static/css/custom.css" type="text/css" />
+                <link rel="stylesheet" href="{0}css/readthedocs-doc-embed.css" type="text/css" />'''
+
+def update_body(app, pagename, templatename, context, doctree):
+  if app.builder.name in ['readthedocssinglehtmllocalmedia', 'readthedocs', 'readthedocsdirhtml']:
+    # check if we have patched it already, if so, don't bother
+    if hasattr(app.builder.templates, 'render') and \
+       hasattr(app.builder.templates.render, '_patched') and \
+       not hasattr(app.builder.templates.render, '_invoca_patched'):
+
+      print('Installing monkey patch to get our CSS in the proper location')
+
+      # Janky monkey patch of template rendering to add our content
+      old_render = app.builder.templates.render
+
+      def invoca_rtd_render(self, template, render_context):
+        """
+        Add our CSS after the RTD CSS
+        """
+        # call original render function
+        content = old_render(template, render_context)
+
+        # find our insertion point in the HTML
+        end_body = content.lower().find('</head>')
+
+        # Insert our content at the end of the head.
+        if end_body != -1:
+          content = \
+            content[:end_body] + \
+            INVOCA_CSS.format(render_context['MEDIA_URL'], render_context['current_version'].lower()) + \
+            content[end_body:]
+        else:
+          app.debug("File doesn't look like HTML. Skipping Invoca content addition")
+
+        return content
+
+      # we have to set two patched flags because RTD ALSO monkey patches this method
+      invoca_rtd_render._patched = True
+      invoca_rtd_render._invoca_patched = True
+      app.builder.templates.render = types.MethodType(invoca_rtd_render,
+                                                      app.builder.templates)
 
 # ===========================
 # ENTRY POINT to build script
@@ -182,10 +227,14 @@ def build_partials(app, env, docnames):
 def setup(app):
   app.connect('env-before-read-docs', build_partials)
   app.connect('source-read', source_handler)
+  app.connect('html-page-context', update_body)
   app.add_javascript('js/custom.js')
   app.add_javascript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
-  #app.add_stylesheet('css/custom.css')
 
+  # This CSS is added BEFORE the RTD CSS, so it doesn't allow us to override their CSS
+  # We re-add our CSS AFTER the RTD CSS using the update_body method. We have left this
+  # in place here so the CSS will load when you build and view locally instead of on RTD
+  app.add_stylesheet('css/custom.css')
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -408,10 +457,7 @@ rst_prolog = """
 .. title:: Invoca Developer Portal
 .. raw:: html
 
-  <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
-  <link rel="stylesheet" href="http://developers.invoca.net/en/""" + version+  """/_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
-
+  </style>
   <div style="text-align: right;" >
     <a href="http://www.invoca.net/home">Return to the Invoca Platform</a>
   </div>

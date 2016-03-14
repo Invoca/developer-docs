@@ -23,7 +23,10 @@
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
         "sale_amount": "100.00",
-        "value": "true"
+        "value": "true",
+        "custom_parameter_1": "12345",
+        "custom_parameter_2": "",
+        "custom_parameter_3": ""
       },
       "oauth_token": <YOUR OAUTH TOKEN>
     }
@@ -42,7 +45,10 @@
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
         "sale_amount": "100.0",
-        "value": "true"
+        "value": "true",
+        "custom_parameter_1": "12345",
+        "custom_parameter_2": "",
+        "custom_parameter_3": ""
       },
       "call": {
         "transaction_id": "00000000-00000001",
@@ -107,4 +113,3 @@
         "start_time_t": "1435993200"
       }
     }
-
