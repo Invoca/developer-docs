@@ -1,4 +1,5 @@
 
+
 ..  list-table::
     :widths: 30 8 40
     :header-rows: 1
@@ -28,45 +29,45 @@
     - @@Advertiser Campaign
     - Name of the campaign.
 
-  * - advertiser_id
-    - @@Advertiser ID (Invoca ID)
-    - The Invoca identifier of the @@advertiser
+  * - advertiser_payin_localized
+    - Payout
+    - Amount paid in by @@advertiser
 
-  * - advertiser_id_from_network
-    - @@Advertiser ID
-    - @@Advertiser ID from the network as set on the Invoca @@advertiser.
+  * - advertiser_promo_line_description
+    - Promo Number Description
+    - Additional details about the transaction source
 
-  * - advertiser_name
-    - @@Advertiser
-    - Name of the @@advertiser.
+  * - affiliate_call_volume_ranking
+    - @@Affiliate Volume Ranking
+    - Network ranking of @@affiliate's call volume (0 to 5, and -1 being 'new'). Blank if no @@affiliate.
 
-  * - affiliate_payout_localized
-    - Earnings
-    - Amount paid out to the @@affiliate
+  * - affiliate_campaign_id_from_network
+    - @@Affiliate Campaign ID
+    - The Campaign ID from the network as set on the @@affiliate campaign.
 
-  * - bundled_destination_ids
-    - Bundled Destination Ids
-    - 
+  * - affiliate_commissions_ranking
+    - @@Affiliate Commissions Ranking
+    - Network ranking of @@affiliate's commissions (0 to 5, and -1 being 'new'). Blank if no @@affiliate.
 
-  * - bundled_destination_ids_from_network
-    - Bundled Destination Ids From Network
-    - 
+  * - affiliate_conversion_rate_ranking
+    - @@Affiliate Conversion Rate Ranking
+    - Network ranking of @@affiliate's conversion rate (0 to 5, and -1 being 'new'). Blank if no @@affiliate.
+
+  * - affiliate_id
+    - @@Affiliate ID (Invoca ID)
+    - The Invoca identifier of the @@affiliate
+
+  * - affiliate_id_from_network
+    - @@Affiliate ID
+    - @@Affiliate ID from the network as set on the Invoca @@affiliate.
+
+  * - affiliate_name
+    - @@Affiliate
+    - Name of the @@affiliate
 
   * - call_center_call_id
     - Call Center Call Id
     - [Call center integration only] &nbsp;The unique identifier assigned to the call by the call center
-
-  * - call_outcome_custom_parameter_1
-    - Call Outcome Custom Param 1
-    - 
-
-  * - call_outcome_custom_parameter_2
-    - Call Outcome Custom Param 2
-    - 
-
-  * - call_outcome_custom_parameter_3
-    - Call Outcome Custom Param 3
-    - 
 
   * - call_outcome_description
     - Call Outcome Description
@@ -92,7 +93,7 @@
     - Call Outcome Value
     - Whether the outcome was met, 1 = outcome met, 0 = outcome not met (defaults to 1).
 
-  * - call_result_description_detail
+  * - call_result_description_detail_managed_advertiser
     - Call Result
     - Status of the transaction
 
@@ -131,6 +132,10 @@
   * - country
     - Country (Reported)
     - [Call center integration only] &nbsp;Customer's country as given to the call center.
+
+  * - destination_phone_number
+    - Destination Phone Number
+    - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '*', 'x', and ','. '
 
   * - duration
     - Total Duration (HH:MM:SS)
@@ -428,10 +433,6 @@
     - Email Address (Reported)
     - [Call center integration only] &nbsp;Email address as given to the call center.
 
-  * - external_data
-    - External Data
-    - Additional data associated with the transaction
-
   * - home_phone_number
     - Home Phone (Reported)
     - [Call center integration only] &nbsp;Customer's home phone number as given to the call center.
@@ -460,9 +461,9 @@
     - Keypresses
     - List of unique keynames that were pressed during the call
 
-  * - matching_affiliate_payout_policies
-    - Matching @@Affiliate Payout Policies
-    - List of @@affiliate policies that matched (<span class="code">base, bonus1, bonus2</span>, etc.) to determine the @@affiliate payout, separated by <span class="code">+</span>. For example, <span class="code">base+bonus2</span>. Note that if there was any @@affiliate payout, this field guaranteed to start with <span class="code">base</span>.
+  * - matching_advertiser_payin_policies
+    - Matching @@Advertiser Payin Policies
+    - List of @@advertiser policies that matched (<span class="code">base, bonus1, bonus2</span>, etc.) to determine the @@advertiser payin, separated by <span class="code">+</span>. For example, <span class="code">base+bonus1+bonus3</span>. Note that if there was any @@advertiser payin, this field guaranteed to start with <span class="code">base</span>.
 
   * - media_type
     - Media Type
@@ -479,5 +480,137 @@
   * - notes
     - Notes
     - Free-form notations on transaction
+
+  * - opt_in_SMS
+    - Opt In Sms
+    - Whether the caller opted in to receive an SMS promotion.
+
+  * - order_city
+    - City (Reported)
+    - [Call center integration only] &nbsp;Customer's city as given to the call center.
+
+  * - original_order_id
+    - Order ID
+    - [Sales reporting only] &nbsp;Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+
+  * - payin_conditions
+    - Payout Conditions
+    - Base condition with { highlighting } around the term(s) that disqualified @@advertiser payin. For example:<br /><span class="code">duration > 1 min and {in_region}</span>
+
+  * - qualified_regions
+    - Qualified Regions
+    - The list of regions that that the caller matched
+
+  * - quantity_list
+    - Quantity List
+    - [Call center integration only] &nbsp;Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
+
+  * - reason_code
+    - Reason Code
+    - [Call center integration only] &nbsp;Call center-specific status code giving the disposition of the call.
+
+  * - recording
+    - Recording
+    - URL to the call recording, if available
+
+  * - region
+    - Region
+    - Region (state, province or country) where transaction originated
+
+  * - repeat_calling_phone_number
+    - Repeat Caller
+    - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
+
+  * - sale_amount
+    - Sale Amount
+    - [Call center integration only] &nbsp;Total order amount (not including shipping) as reported by the call center.
+
+  * - signal_10_value
+    - Signal: 10
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_1_value
+    - Signal: Pepsi slot 1
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_2_value
+    - Signal: Pepsi slot 2
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_3_value
+    - Signal: Pepsi slot 3
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_4_value
+    - Signal: 4
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_5_value
+    - Signal: 5
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_6_value
+    - Signal: 6
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_7_value
+    - Signal: 7
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_8_value
+    - Signal: 8
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_9_value
+    - Signal: 9
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - sku_list
+    - SKU List
+    - [Call center integration only] &nbsp;Comma-separated list of order SKUs as reported by the call center.
+
+  * - start_time_local
+    - Call Start Time
+    - Start of the call in the API user's time zone, followed by offset from GMT.
+
+  * - start_time_utc
+    - Call Start Time (UTC timestamp)
+    - Start of the call in milliseconds since Jan 1, 1970. Divide by 1000 to get Unix epoch time.
+
+  * - start_time_xml
+    - Call Start Time (XML formatted)
+    - Start of the call in Soap XML formatted time.
+
+  * - state_or_province
+    - State or Province (Reported)
+    - [Call center integration only] &nbsp;Customer's state or province as given to the call center.
+
+  * - syndicated_ident
+    - Syndicated ID
+    - The syndicated id for this call.  Uniquely identifies syndication sources for a campaign.
+
+  * - transaction_id
+    - Transaction ID
+    - Globally unique identifier for this transaction. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-". This is the Primary Key of the results.
+
+  * - transaction_type
+    - Type
+    - The type of transaction - Call or Reported Conversion.
+
+  * - transfer_from_type
+    - Transfer Type
+    - Where the call came from
+
+  * - verified_zip
+    - Verified Zip Code
+    - Zip Code entered by callers when prompted during call treatment
+
+  * - virtual_line_id
+    - Promo Number ID
+    - The Promo Number ID from the network
+
+  * - zip_code
+    - Zip Code (Reported)
+    - [Call center integration only] &nbsp;Customer's zip code as given to the call center.
 
 

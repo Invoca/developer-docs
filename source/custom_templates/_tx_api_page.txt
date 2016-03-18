@@ -1,8 +1,5 @@
 .. include:: _:page:.tmp
 
-.. include:: common_response_params.rst
-
-.. include:: optional_fields.txt
-
+.. include _:org_type:_param_table.rst
 
 .. include:: _:org_type:_example.tmp
