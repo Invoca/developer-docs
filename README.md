@@ -1,10 +1,18 @@
 # Developer Portal
-The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language.
 
-Two IMPORTANT things to note:
+The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language, and built using the [Sphinx Document Generator](http://www.sphinx-doc.org/en/stable/index.html). If you need to make any changes to conf.py please review the [Sphinx Dev Guide](http://www.sphinx-doc.org/en/stable/devguide.html)
+
+IMPORTANT things to note:
 
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
-2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
+2. The method of adding comments to API controllers is officially deprecated.
+3. General branching stratagy: Always branch off of the most recent live branch. The most recent live branch is subject to change at any time so be sure you're up to date and resolve any conflicts. If you are contributing to a new overall version (e.g. 2029-09-16) but do not own that branch, be sure to communicate with the owner about individual API versions.
+4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
+ you must go into read the docs admin and point "default" to the new branch. At that point, 
+ the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
+5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, RTD, and you **MUST** update doc_versions.py to reflect the new changes. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION` If this still doesn't make sense, Spencer will be more than happy to whiteboard it for you.
+6. Beware pitfalls. There are many! Dig into the sphinx source code if need be. 
+7. Any Major changes involving a change to the toctree hierarchy  must be reviewed by MikeW, Spencer, or NickB.
 
 ## Getting Started
 1. Clone this repo
@@ -49,17 +57,22 @@ make html
 14. ReadTheDocs will automatically pickup your changes and recompile the site
 
 ## Making a new version:
-1. Commit changes to master
-2. Create new branch with the API version number: 2015-09-25
+1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-01, so name your new branch '2016-01-01')
+`git checkout -b 2016-01-01 2015-12-10`
+2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
 3. Login to ReadTheDocs.org (credentials in lastpass)
-4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-portal/versions)
+4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
 5. Set your branch to Active
 6. Set your version to Private
-7. Save changes
-8. Check the changes you made on the live site (they will only be visible to logged in users, or users who have the direct URL)
-9. Return to the Admin > Version page
-10. Set your version to Public
-11. Save changes, the new version is now visible to all users
+7. Click "Submit" to save changes
+8. Build your project by going to the [Project Overview](https://readthedocs.org/projects/invoca-developer-docs/), selecting your branch (version) from the "Build a version" dropdown, and click "Build." 
+You will then be taken to the [Builds page] (https://readthedocs.org/projects/invoca-developer-docs/builds/). Check the status of your build. It should go from "Triggered > Building > Installing > Passed" if all goes well. 
+9. Check the changes you made on the [live site](developers.invoca.net) (they will only be visible to logged in users so far). Navigate to your new version using the menu in the bottom left. 
+10. Return to the [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
+11. Find your version in the list (e.g. 2016-01-01), set it Public.
+12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
+13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
+14. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
@@ -82,7 +95,7 @@ The "private" documentation in RTD is not actually protected by a login. When a 
 
 ### Common Constructions:
 
-* Building a collapsable api_endpoint div (The newline after args is NEEDED)
+* Building a collapsable api_endpoint div (T)
 ```
 .. api_endpoint::
   :path: /something/place
@@ -147,7 +160,12 @@ def source_handler(app, docname, source):
 ```
 
 #### Directive
+One of the harder parts of getting read the docs to work. Beware of white space 
+and trailing new lines. A home-made directive like shown below *must* have 
+two new lines after it (with comments counting as well). 
 This directive will render the example template file shown above.
+If a directive is last on the page, it must too have 2 newlines to work. Your 
+build will succeed locally but fail on RTDs due to an "unkonwn error" that is unhelpful.
 ```
 Here is the rendered template:
 
@@ -186,9 +204,13 @@ make clean && make html
 ```
 
 #### Q: I added/edited a table, but I don't see it in the built docs
-RST does not generate error message for most table errors. Instead, it silently fails. Check your table syntax and try again.
+RST does not generate error message for most table errors. Instead, it silently fails. 
+If you've seen this error a million times, maybe try a git bisect / cherry pick method
+to hone in on the syntax (more than likely table indentation or lack of 2 new lines after a directive)
+Spencer's error: https://readthedocs.org/projects/invoca-developer-docs/builds/3716026/
+
 
 #### Q: The build is hanging and never completing
 RST makes links that look like this `` `click here <https://example.com>`_ `` so if you put in a link like this `` `https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml` `` It kind of freaks out and never finishes building.
-If you have a backtick block with a `<soomething` in the link you should encase it in double backticks.
+If you have a backtick block with a `<something` in the link you should encase it in double backticks.
 

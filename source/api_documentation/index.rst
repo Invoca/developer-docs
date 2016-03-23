@@ -3,7 +3,7 @@ API Documentation
 
 The platform provides the following APIs:
 
-:doc:`transactions`  - provides read-only access to call transaction data.
+:doc:`transactions_api/index`  - provides read-only access to call transaction data.
 
 :doc:`network_integration/index` -
 supports the replication and synchronization of advertiser, publisher and campaign data between partner platforms.
@@ -40,7 +40,7 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    conversion_reporting
    conversion_reporting_pixel
    conversion_reporting_email
-   transactions
+   transactions_api/index
    ringpool
    bulk_ringpool_api
    call_outcomes_api/index
