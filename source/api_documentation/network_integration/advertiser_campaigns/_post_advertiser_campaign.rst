@@ -6,18 +6,18 @@
 
   POST
 
-  ``https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json``
+  ``https://demo.invoca.net/api/@@NETWORK_API_VERSION/123/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json``
 
   With an existing advertiser, the IVR tree may be updated independently of other attributes. Below is a curl command that only needs network API credentials, a network id and an advertiser id. This will create an advertiser campaign with id 445566. The campaign id may be changed freely.
 
   Endpoint:
 
-  ``https://demo.invoca.net/api/@@NETWORK_API_VERSION/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json``
+  ``https://demo.invoca.net/api/@@NETWORK_API_VERSION/123/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json``
 
   .. code-block:: bash
 
      curl­ -XPOST­ -H "Content­Type: application/json"­ -u 'login:pass'
-     'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
+     'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/123/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
      -d '
      {
        "hours": {
@@ -44,7 +44,7 @@
          "tuesday_open": 28800
        },
        "name": "NFLCampaign",
-       "timezone": "PacificTime(US & Canada)",
+       "timezone": "Pacific Time (US & Canada)",
        "description": "Augustpromotion tosellpost­seasonticketsathalf price.",
        "campaign_language": "English",
        "ivr_tree": {

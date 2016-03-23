@@ -3,7 +3,7 @@ Manage API Credentials
 
 Invoca's self-serve API token access is OAuth-compliant. Accessing APIs using the API token enables customers to access and in some cases modify information through a third-party app or APIs without the risk of compromising security. It also ensures that secure, sensitive customer-related information is not exposed to the third-party app.
 
-Currently, users can generate API credentials for the :doc:`Transactions API <transactions>` and :doc:`Network Integration API <network_integration/index>` (the Network Integration API is available to Network users only).
+Currently, users can generate API credentials for the :doc:`Transactions API <transactions_api/index>` and :doc:`Network Integration API <network_integration/index>` (the Network Integration API is available to Network users only).
 
 
 Create an API Token
