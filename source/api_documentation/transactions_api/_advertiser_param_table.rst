@@ -1,9 +1,8 @@
 
-
 ..  list-table::
-    :widths: 30 8 40
-    :header-rows: 1
-    :class: parameters
+  :widths: 30 8 40
+  :header-rows: 1
+  :class: parameters
 
   * - Field
     - Name in Reports
@@ -11,63 +10,79 @@
 
   * - address1
     - Address (Reported)
-    - [Call center integration only] &nbsp;Customer's street address as given to the call center (first line).
+    - [Call center integration only] Customer's street address as given to the call center (first line).
 
   * - address2
     - Address 2 (Reported)
-    - [Call center integration only] &nbsp;Customer's street address as given to the call center (second line).
+    - [Call center integration only] Customer's street address as given to the call center (second line).
+
+  * - advertiser_call_fee_localized
+    - Fees
+    - Advertiser Telecommunications fee associated with transaction
 
   * - advertiser_campaign_id
-    - @@Advertiser Campaign ID (Invoca ID)
+    - Advertiser Campaign ID (Invoca ID)
     - The Invoca identifier of the campaign.
 
   * - advertiser_campaign_id_from_network
-    - @@Advertiser Campaign ID
-    - The Campaign ID from the network as set on the @@advertiser campaign.
+    - Advertiser Campaign ID
+    - The Campaign ID from the network as set on the advertiser campaign.
 
   * - advertiser_campaign_name
-    - @@Advertiser Campaign
+    - Advertiser Campaign
     - Name of the campaign.
 
   * - advertiser_payin_localized
-    - Payout
-    - Amount paid in by @@advertiser
-
-  * - advertiser_promo_line_description
-    - Promo Number Description
-    - Additional details about the transaction source
+    - Earned
+    - Amount paid in by advertiser
 
   * - affiliate_call_volume_ranking
-    - @@Affiliate Volume Ranking
-    - Network ranking of @@affiliate's call volume (0 to 5, and -1 being 'new'). Blank if no @@affiliate.
+    - Affiliate Volume Ranking
+    - Network ranking of affiliate's call volume (0 to 5, and -1 being 'new'). Blank if no affiliate.
 
   * - affiliate_campaign_id_from_network
-    - @@Affiliate Campaign ID
-    - The Campaign ID from the network as set on the @@affiliate campaign.
+    - Affiliate Campaign ID
+    - The Campaign ID from the network as set on the affiliate campaign.
 
   * - affiliate_commissions_ranking
-    - @@Affiliate Commissions Ranking
-    - Network ranking of @@affiliate's commissions (0 to 5, and -1 being 'new'). Blank if no @@affiliate.
+    - Affiliate Commissions Ranking
+    - Network ranking of affiliate's commissions (0 to 5, and -1 being 'new'). Blank if no affiliate.
 
   * - affiliate_conversion_rate_ranking
-    - @@Affiliate Conversion Rate Ranking
-    - Network ranking of @@affiliate's conversion rate (0 to 5, and -1 being 'new'). Blank if no @@affiliate.
+    - Affiliate Conversion Rate Ranking
+    - Network ranking of affiliate's conversion rate (0 to 5, and -1 being 'new'). Blank if no affiliate.
 
   * - affiliate_id
-    - @@Affiliate ID (Invoca ID)
-    - The Invoca identifier of the @@affiliate
+    - Affiliate ID (Invoca ID)
+    - The Invoca identifier of the affiliate
 
   * - affiliate_id_from_network
-    - @@Affiliate ID
-    - @@Affiliate ID from the network as set on the Invoca @@affiliate.
+    - Affiliate ID
+    - Affiliate ID from the network as set on the Invoca affiliate.
 
-  * - affiliate_name
-    - @@Affiliate
-    - Name of the @@affiliate
+  * - bundled_destination_ids
+    - Bundled Destination Ids
+    - 
+
+  * - bundled_destination_ids_from_network
+    - Bundled Destination Ids From Network
+    - 
 
   * - call_center_call_id
     - Call Center Call Id
-    - [Call center integration only] &nbsp;The unique identifier assigned to the call by the call center
+    - [Call center integration only] The unique identifier assigned to the call by the call center
+
+  * - call_outcome_custom_parameter_1
+    - Call Outcome Custom Param 1
+    - 
+
+  * - call_outcome_custom_parameter_2
+    - Call Outcome Custom Param 2
+    - 
+
+  * - call_outcome_custom_parameter_3
+    - Call Outcome Custom Param 3
+    - 
 
   * - call_outcome_description
     - Call Outcome Description
@@ -107,7 +122,7 @@
 
   * - cell_phone_number
     - Cell Phone (Reported)
-    - [Call center integration only] &nbsp;Customer's cell phone number as given to the call center.
+    - [Call center integration only] Customer's cell phone number as given to the call center.
 
   * - city
     - City
@@ -123,15 +138,15 @@
 
   * - corrected_at
     - Corrected At
-    - [Correction only] &nbsp;Date and time the transaction was corrected, in user's time zone, followed by offset from GMT.
+    - [Correction only] Date and time the transaction was corrected, in user's time zone, followed by offset from GMT.
 
   * - corrects_transaction_id
     - Corrects Call
-    - [Correction only] &nbsp;Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+    - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
   * - country
     - Country (Reported)
-    - [Call center integration only] &nbsp;Customer's country as given to the call center.
+    - [Call center integration only] Customer's country as given to the call center.
 
   * - destination_phone_number
     - Destination Phone Number
@@ -143,11 +158,11 @@
 
   * - dynamic_number_pool_id
     - Pool ID
-    - [Number pooling links only] &nbsp;The ID of the pool.
+    - [Number pooling links only] The ID of the pool.
 
   * - dynamic_number_pool_pool_type
     - Pool Type
-    - [Number pooling links only] &nbsp;The type of pool: "Search", "SearchKeyword" or "Custom"
+    - [Number pooling links only] The type of pool: "Search", "SearchKeyword" or "Custom"
 
   * - dynamic_number_pool_referrer_ad
     - AdWords Ad
@@ -167,243 +182,243 @@
 
   * - dynamic_number_pool_referrer_param1
     - Dynamic Number Pool Referrer Param1 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 1, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 1, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param10
     - Dynamic Number Pool Referrer Param10 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 10, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 10, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param10_name
     - Pool Param 10 Name
-    - [Number pooling links only] &nbsp;The name for parameter 10
+    - [Number pooling links only] The name for parameter 10
 
   * - dynamic_number_pool_referrer_param10_value
     - Pool Param 10 Value
-    - [Number pooling links only] &nbsp;The value for parameter 10
+    - [Number pooling links only] The value for parameter 10
 
   * - dynamic_number_pool_referrer_param11_name
     - Pool Param 11 Name
-    - [Number pooling links only] &nbsp;The name for parameter 11
+    - [Number pooling links only] The name for parameter 11
 
   * - dynamic_number_pool_referrer_param11_value
     - Pool Param 11 Value
-    - [Number pooling links only] &nbsp;The value for parameter 11
+    - [Number pooling links only] The value for parameter 11
 
   * - dynamic_number_pool_referrer_param12_name
     - Pool Param 12 Name
-    - [Number pooling links only] &nbsp;The name for parameter 12
+    - [Number pooling links only] The name for parameter 12
 
   * - dynamic_number_pool_referrer_param12_value
     - Pool Param 12 Value
-    - [Number pooling links only] &nbsp;The value for parameter 12
+    - [Number pooling links only] The value for parameter 12
 
   * - dynamic_number_pool_referrer_param13_name
     - Pool Param 13 Name
-    - [Number pooling links only] &nbsp;The name for parameter 13
+    - [Number pooling links only] The name for parameter 13
 
   * - dynamic_number_pool_referrer_param13_value
     - Pool Param 13 Value
-    - [Number pooling links only] &nbsp;The value for parameter 13
+    - [Number pooling links only] The value for parameter 13
 
   * - dynamic_number_pool_referrer_param14_name
     - Pool Param 14 Name
-    - [Number pooling links only] &nbsp;The name for parameter 14
+    - [Number pooling links only] The name for parameter 14
 
   * - dynamic_number_pool_referrer_param14_value
     - Pool Param 14 Value
-    - [Number pooling links only] &nbsp;The value for parameter 14
+    - [Number pooling links only] The value for parameter 14
 
   * - dynamic_number_pool_referrer_param15_name
     - Pool Param 15 Name
-    - [Number pooling links only] &nbsp;The name for parameter 15
+    - [Number pooling links only] The name for parameter 15
 
   * - dynamic_number_pool_referrer_param15_value
     - Pool Param 15 Value
-    - [Number pooling links only] &nbsp;The value for parameter 15
+    - [Number pooling links only] The value for parameter 15
 
   * - dynamic_number_pool_referrer_param16_name
     - Pool Param 16 Name
-    - [Number pooling links only] &nbsp;The name for parameter 16
+    - [Number pooling links only] The name for parameter 16
 
   * - dynamic_number_pool_referrer_param16_value
     - Pool Param 16 Value
-    - [Number pooling links only] &nbsp;The value for parameter 16
+    - [Number pooling links only] The value for parameter 16
 
   * - dynamic_number_pool_referrer_param17_name
     - Pool Param 17 Name
-    - [Number pooling links only] &nbsp;The name for parameter 17
+    - [Number pooling links only] The name for parameter 17
 
   * - dynamic_number_pool_referrer_param17_value
     - Pool Param 17 Value
-    - [Number pooling links only] &nbsp;The value for parameter 17
+    - [Number pooling links only] The value for parameter 17
 
   * - dynamic_number_pool_referrer_param18_name
     - Pool Param 18 Name
-    - [Number pooling links only] &nbsp;The name for parameter 18
+    - [Number pooling links only] The name for parameter 18
 
   * - dynamic_number_pool_referrer_param18_value
     - Pool Param 18 Value
-    - [Number pooling links only] &nbsp;The value for parameter 18
+    - [Number pooling links only] The value for parameter 18
 
   * - dynamic_number_pool_referrer_param19_name
     - Pool Param 19 Name
-    - [Number pooling links only] &nbsp;The name for parameter 19
+    - [Number pooling links only] The name for parameter 19
 
   * - dynamic_number_pool_referrer_param19_value
     - Pool Param 19 Value
-    - [Number pooling links only] &nbsp;The value for parameter 19
+    - [Number pooling links only] The value for parameter 19
 
   * - dynamic_number_pool_referrer_param1_name
     - Pool Param 1 Name
-    - [Number pooling links only] &nbsp;The name for parameter 1
+    - [Number pooling links only] The name for parameter 1
 
   * - dynamic_number_pool_referrer_param1_value
     - Pool Param 1 Value
-    - [Number pooling links only] &nbsp;The value for parameter 1
+    - [Number pooling links only] The value for parameter 1
 
   * - dynamic_number_pool_referrer_param2
     - Dynamic Number Pool Referrer Param2 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 2, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 2, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param20_name
     - Pool Param 20 Name
-    - [Number pooling links only] &nbsp;The name for parameter 20
+    - [Number pooling links only] The name for parameter 20
 
   * - dynamic_number_pool_referrer_param20_value
     - Pool Param 20 Value
-    - [Number pooling links only] &nbsp;The value for parameter 20
+    - [Number pooling links only] The value for parameter 20
 
   * - dynamic_number_pool_referrer_param21_name
     - Pool Param 21 Name
-    - [Number pooling links only] &nbsp;The name for parameter 21
+    - [Number pooling links only] The name for parameter 21
 
   * - dynamic_number_pool_referrer_param21_value
     - Pool Param 21 Value
-    - [Number pooling links only] &nbsp;The value for parameter 21
+    - [Number pooling links only] The value for parameter 21
 
   * - dynamic_number_pool_referrer_param22_name
     - Pool Param 22 Name
-    - [Number pooling links only] &nbsp;The name for parameter 22
+    - [Number pooling links only] The name for parameter 22
 
   * - dynamic_number_pool_referrer_param22_value
     - Pool Param 22 Value
-    - [Number pooling links only] &nbsp;The value for parameter 22
+    - [Number pooling links only] The value for parameter 22
 
   * - dynamic_number_pool_referrer_param23_name
     - Pool Param 23 Name
-    - [Number pooling links only] &nbsp;The name for parameter 23
+    - [Number pooling links only] The name for parameter 23
 
   * - dynamic_number_pool_referrer_param23_value
     - Pool Param 23 Value
-    - [Number pooling links only] &nbsp;The value for parameter 23
+    - [Number pooling links only] The value for parameter 23
 
   * - dynamic_number_pool_referrer_param24_name
     - Pool Param 24 Name
-    - [Number pooling links only] &nbsp;The name for parameter 24
+    - [Number pooling links only] The name for parameter 24
 
   * - dynamic_number_pool_referrer_param24_value
     - Pool Param 24 Value
-    - [Number pooling links only] &nbsp;The value for parameter 24
+    - [Number pooling links only] The value for parameter 24
 
   * - dynamic_number_pool_referrer_param25_name
     - Pool Param 25 Name
-    - [Number pooling links only] &nbsp;The name for parameter 25
+    - [Number pooling links only] The name for parameter 25
 
   * - dynamic_number_pool_referrer_param25_value
     - Pool Param 25 Value
-    - [Number pooling links only] &nbsp;The value for parameter 25
+    - [Number pooling links only] The value for parameter 25
 
   * - dynamic_number_pool_referrer_param2_name
     - Pool Param 2 Name
-    - [Number pooling links only] &nbsp;The name for parameter 2
+    - [Number pooling links only] The name for parameter 2
 
   * - dynamic_number_pool_referrer_param2_value
     - Pool Param 2 Value
-    - [Number pooling links only] &nbsp;The value for parameter 2
+    - [Number pooling links only] The value for parameter 2
 
   * - dynamic_number_pool_referrer_param3
     - Dynamic Number Pool Referrer Param3 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 3, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 3, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param3_name
     - Pool Param 3 Name
-    - [Number pooling links only] &nbsp;The name for parameter 3
+    - [Number pooling links only] The name for parameter 3
 
   * - dynamic_number_pool_referrer_param3_value
     - Pool Param 3 Value
-    - [Number pooling links only] &nbsp;The value for parameter 3
+    - [Number pooling links only] The value for parameter 3
 
   * - dynamic_number_pool_referrer_param4
     - Dynamic Number Pool Referrer Param4 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 4, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 4, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param4_name
     - Pool Param 4 Name
-    - [Number pooling links only] &nbsp;The name for parameter 4
+    - [Number pooling links only] The name for parameter 4
 
   * - dynamic_number_pool_referrer_param4_value
     - Pool Param 4 Value
-    - [Number pooling links only] &nbsp;The value for parameter 4
+    - [Number pooling links only] The value for parameter 4
 
   * - dynamic_number_pool_referrer_param5
     - Dynamic Number Pool Referrer Param5 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 5, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 5, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param5_name
     - Pool Param 5 Name
-    - [Number pooling links only] &nbsp;The name for parameter 5
+    - [Number pooling links only] The name for parameter 5
 
   * - dynamic_number_pool_referrer_param5_value
     - Pool Param 5 Value
-    - [Number pooling links only] &nbsp;The value for parameter 5
+    - [Number pooling links only] The value for parameter 5
 
   * - dynamic_number_pool_referrer_param6
     - Dynamic Number Pool Referrer Param6 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 6, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 6, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param6_name
     - Pool Param 6 Name
-    - [Number pooling links only] &nbsp;The name for parameter 6
+    - [Number pooling links only] The name for parameter 6
 
   * - dynamic_number_pool_referrer_param6_value
     - Pool Param 6 Value
-    - [Number pooling links only] &nbsp;The value for parameter 6
+    - [Number pooling links only] The value for parameter 6
 
   * - dynamic_number_pool_referrer_param7
     - Dynamic Number Pool Referrer Param7 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 7, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 7, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param7_name
     - Pool Param 7 Name
-    - [Number pooling links only] &nbsp;The name for parameter 7
+    - [Number pooling links only] The name for parameter 7
 
   * - dynamic_number_pool_referrer_param7_value
     - Pool Param 7 Value
-    - [Number pooling links only] &nbsp;The value for parameter 7
+    - [Number pooling links only] The value for parameter 7
 
   * - dynamic_number_pool_referrer_param8
     - Dynamic Number Pool Referrer Param8 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 8, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 8, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param8_name
     - Pool Param 8 Name
-    - [Number pooling links only] &nbsp;The name for parameter 8
+    - [Number pooling links only] The name for parameter 8
 
   * - dynamic_number_pool_referrer_param8_value
     - Pool Param 8 Value
-    - [Number pooling links only] &nbsp;The value for parameter 8
+    - [Number pooling links only] The value for parameter 8
 
   * - dynamic_number_pool_referrer_param9
     - Dynamic Number Pool Referrer Param9 Value
-    - [Number pooling links only] &nbsp;name=value for parameter 9, url escaped. Example: name%3Dvalue
+    - [Number pooling links only] name=value for parameter 9, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param9_name
     - Pool Param 9 Name
-    - [Number pooling links only] &nbsp;The name for parameter 9
+    - [Number pooling links only] The name for parameter 9
 
   * - dynamic_number_pool_referrer_param9_value
     - Pool Param 9 Value
-    - [Number pooling links only] &nbsp;The value for parameter 9
+    - [Number pooling links only] The value for parameter 9
 
   * - dynamic_number_pool_referrer_referrer_campaign
     - AdWords Campaign
@@ -415,11 +430,11 @@
 
   * - dynamic_number_pool_referrer_search_engine
     - Traffic Source
-    - [Number pooling links only] &nbsp;Search engine used.
+    - [Number pooling links only] Search engine used.
 
   * - dynamic_number_pool_referrer_search_keywords
     - Keywords
-    - [Number pooling links only] &nbsp;Search keywords used
+    - [Number pooling links only] Search keywords used
 
   * - dynamic_number_pool_referrer_search_keywords_id
     - AdWords Keywords ID
@@ -427,15 +442,19 @@
 
   * - dynamic_number_pool_referrer_search_type
     - Search Type
-    - [Number pooling links only] &nbsp;"Paid" or "Organic".
+    - [Number pooling links only] "Paid" or "Organic".
 
   * - email_address
     - Email Address (Reported)
-    - [Call center integration only] &nbsp;Email address as given to the call center.
+    - [Call center integration only] Email address as given to the call center.
+
+  * - external_data
+    - External Data
+    - Additional data associated with the transaction
 
   * - home_phone_number
     - Home Phone (Reported)
-    - [Call center integration only] &nbsp;Customer's home phone number as given to the call center.
+    - [Call center integration only] Customer's home phone number as given to the call center.
 
   * - ivr_duration
     - IVR Duration (HH:MM:SS)
@@ -461,9 +480,13 @@
     - Keypresses
     - List of unique keynames that were pressed during the call
 
+  * - margin_localized
+    - Margin
+    - Difference between advertiser_payin_localized and affiliate_payout_localized
+
   * - matching_advertiser_payin_policies
-    - Matching @@Advertiser Payin Policies
-    - List of @@advertiser policies that matched (<span class="code">base, bonus1, bonus2</span>, etc.) to determine the @@advertiser payin, separated by <span class="code">+</span>. For example, <span class="code">base+bonus1+bonus3</span>. Note that if there was any @@advertiser payin, this field guaranteed to start with <span class="code">base</span>.
+    - Matching Advertiser Payin Policies
+    - List of advertiser policies that matched (base, bonus1, bonus2, etc.) to determine the advertiser payin, separated by +. For example, base+bonus1+bonus3. Note that if there was any advertiser payin, this field guaranteed to start with base.
 
   * - media_type
     - Media Type
@@ -475,7 +498,7 @@
 
   * - name
     - Name (Reported)
-    - [Call center integration only] &nbsp;Customer's full name as given to the call center.
+    - [Call center integration only] Customer's full name as given to the call center.
 
   * - notes
     - Notes
@@ -487,15 +510,19 @@
 
   * - order_city
     - City (Reported)
-    - [Call center integration only] &nbsp;Customer's city as given to the call center.
+    - [Call center integration only] Customer's city as given to the call center.
 
   * - original_order_id
     - Order ID
-    - [Sales reporting only] &nbsp;Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+    - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
   * - payin_conditions
-    - Payout Conditions
-    - Base condition with { highlighting } around the term(s) that disqualified @@advertiser payin. For example:<br /><span class="code">duration > 1 min and {in_region}</span>
+    - Payin Conditions
+    - Base condition with { highlighting } around the term(s) that disqualified advertiser payin. For example: duration > 1 min and {in_region}
+
+  * - promo_line_description
+    - Promo Number Description
+    - Additional details about the transaction source
 
   * - qualified_regions
     - Qualified Regions
@@ -503,11 +530,11 @@
 
   * - quantity_list
     - Quantity List
-    - [Call center integration only] &nbsp;Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
+    - [Call center integration only] Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
 
   * - reason_code
     - Reason Code
-    - [Call center integration only] &nbsp;Call center-specific status code giving the disposition of the call.
+    - [Call center integration only] Call center-specific status code giving the disposition of the call.
 
   * - recording
     - Recording
@@ -523,7 +550,7 @@
 
   * - sale_amount
     - Sale Amount
-    - [Call center integration only] &nbsp;Total order amount (not including shipping) as reported by the call center.
+    - [Call center integration only] Total order amount (not including shipping) as reported by the call center.
 
   * - signal_10_value
     - Signal: 10
@@ -567,7 +594,7 @@
 
   * - sku_list
     - SKU List
-    - [Call center integration only] &nbsp;Comma-separated list of order SKUs as reported by the call center.
+    - [Call center integration only] Comma-separated list of order SKUs as reported by the call center.
 
   * - start_time_local
     - Call Start Time
@@ -583,7 +610,7 @@
 
   * - state_or_province
     - State or Province (Reported)
-    - [Call center integration only] &nbsp;Customer's state or province as given to the call center.
+    - [Call center integration only] Customer's state or province as given to the call center.
 
   * - syndicated_ident
     - Syndicated ID
@@ -611,6 +638,6 @@
 
   * - zip_code
     - Zip Code (Reported)
-    - [Call center integration only] &nbsp;Customer's zip code as given to the call center.
+    - [Call center integration only] Customer's zip code as given to the call center.
 
 
