@@ -2,4 +2,8 @@
 
 .. include:: _:org_type:_param_table.rst
 
+The following fields are optional based on your account type:
+
+.. include:: _:org_type:_optional_param_table.rst
+
 .. include:: _:org_type:_example.tmp
