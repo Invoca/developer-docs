@@ -8,14 +8,6 @@
     - Name in Reports
     - Description
 
-  * - address1
-    - Address (Reported)
-    - [Call center integration only] Customer's street address as given to the call center (first line).
-
-  * - address2
-    - Address 2 (Reported)
-    - [Call center integration only] Customer's street address as given to the call center (second line).
-
   * - advertiser_call_fee_localized
     - Advertiser Fees
     - Advertiser Telecommunications fee associated with transaction
@@ -76,10 +68,6 @@
     - Paid
     - Amount paid out to the affiliate
 
-  * - call_center_call_id
-    - Call Center Call Id
-    - [Call center integration only] The unique identifier assigned to the call by the call center
-
   * - call_fee_localized
     - Fees
     - Telecommunications fee associated with transaction
@@ -95,10 +83,6 @@
   * - calling_phone_number
     - Caller ID
     - Caller ID. Formatted as 12 characters like "866-555-1234"
-
-  * - cell_phone_number
-    - Cell Phone (Reported)
-    - [Call center integration only] Customer's cell phone number as given to the call center.
 
   * - city
     - City
@@ -120,10 +104,6 @@
     - Corrects Call
     - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
 
-  * - country
-    - Country (Reported)
-    - [Call center integration only] Customer's country as given to the call center.
-
   * - destination_phone_number
     - Destination Phone Number
     - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '*', 'x', and ','. '
@@ -131,14 +111,6 @@
   * - duration
     - Total Duration (HH:MM:SS)
     - Duration of the call in seconds. Includes any time spent in an IVR tree before transferring to the call center.
-
-  * - email_address
-    - Email Address (Reported)
-    - [Call center integration only] Email address as given to the call center.
-
-  * - home_phone_number
-    - Home Phone (Reported)
-    - [Call center integration only] Customer's home phone number as given to the call center.
 
   * - ivr_duration
     - IVR Duration (HH:MM:SS)
@@ -184,10 +156,6 @@
     - Phone Type
     - "Landline" or "Mobile" or empty string if type is unknown
 
-  * - name
-    - Name (Reported)
-    - [Call center integration only] Customer's full name as given to the call center.
-
   * - notes
     - Notes
     - Free-form notations on transaction
@@ -195,10 +163,6 @@
   * - opt_in_SMS
     - Opt In Sms
     - Whether the caller opted in to receive an SMS promotion.
-
-  * - order_city
-    - City (Reported)
-    - [Call center integration only] Customer's city as given to the call center.
 
   * - original_order_id
     - Order ID
@@ -216,14 +180,6 @@
     - Qualified Regions
     - The list of regions that that the caller matched
 
-  * - quantity_list
-    - Quantity List
-    - [Call center integration only] Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
-
-  * - reason_code
-    - Reason Code
-    - [Call center integration only] Call center-specific status code giving the disposition of the call.
-
   * - recording
     - Recording
     - URL to the call recording, if available
@@ -236,54 +192,6 @@
     - Repeat Caller
     - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
 
-  * - sale_amount
-    - Sale Amount
-    - [Call center integration only] Total order amount (not including shipping) as reported by the call center.
-
-  * - signal_1_value
-    - Signal: Invoca slot 1
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_2_value
-    - Signal: Invoca slot 2
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_3_value
-    - Signal: Invoca slot 3
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_4_value
-    - Signal: Invoca slot 4
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_5_value
-    - Signal: Invoca slot 5
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_6_value
-    - Signal: Invoca slot 6
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_7_value
-    - Signal: Invoca slot 7
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_8_value
-    - Signal: Invoca slot 8
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_9_value
-    - Signal: Invoca slot 9
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - signal_10_value
-    - Signal: Invoca slot 10
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
-  * - sku_list
-    - SKU List
-    - [Call center integration only] Comma-separated list of order SKUs as reported by the call center.
-
   * - start_time_local
     - Call Start Time
     - Start of the call in the API user's time zone, followed by offset from GMT.
@@ -295,10 +203,6 @@
   * - start_time_xml
     - Call Start Time (XML formatted)
     - Start of the call in Soap XML formatted time.
-
-  * - state_or_province
-    - State or Province (Reported)
-    - [Call center integration only] Customer's state or province as given to the call center.
 
   * - transaction_id
     - Transaction ID
@@ -319,9 +223,5 @@
   * - virtual_line_id
     - Promo Number ID
     - The Promo Number ID from the network
-
-  * - zip_code
-    - Zip Code (Reported)
-    - [Call center integration only] Customer's zip code as given to the call center.
 
 

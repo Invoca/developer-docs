@@ -26,10 +26,6 @@ Additional Feature Parameters
     - Bundled Destination Ids From Network
     - 
 
-  * - call_center_call_id
-    - Call Center Call Id
-    - [Call center integration only] The unique identifier assigned to the call by the call center
-
   * - call_outcome_custom_parameter_1
     - Call Outcome Custom Param 1
     - 
@@ -73,5 +69,9 @@ Additional Feature Parameters
   * - margin_localized
     - Margin
     - Difference between advertiser_payin_localized and affiliate_payout_localized
+
+  * - promo_line_description
+    - Promo Number Description
+    - Additional details about the transaction source
 
 

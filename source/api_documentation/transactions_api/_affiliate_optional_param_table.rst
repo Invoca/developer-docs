@@ -10,14 +10,6 @@ Additional Feature Parameters
     - Name in Reports
     - Description
 
-  * - address1
-    - Address (Reported)
-    - [Call center integration only] Customer's street address as given to the call center (first line).
-
-  * - address2
-    - Address 2 (Reported)
-    - [Call center integration only] Customer's street address as given to the call center (second line).
-
   * - bundled_destination_ids
     - Bundled Destination Ids
     - 
@@ -25,10 +17,6 @@ Additional Feature Parameters
   * - bundled_destination_ids_from_network
     - Bundled Destination Ids From Network
     - 
-
-  * - call_center_call_id
-    - Call Center Call Id
-    - [Call center integration only] The unique identifier assigned to the call by the call center
 
   * - call_outcome_outcome_name_2
     - Outcome Name
@@ -38,41 +26,9 @@ Additional Feature Parameters
     - Caller ID
     - Caller ID. Formatted as 12 characters like "866-555-1234"
 
-  * - cell_phone_number
-    - Cell Phone (Reported)
-    - [Call center integration only] Customer's cell phone number as given to the call center.
-
-  * - country
-    - Country (Reported)
-    - [Call center integration only] Customer's country as given to the call center.
-
-  * - email_address
-    - Email Address (Reported)
-    - [Call center integration only] Email address as given to the call center.
-
   * - external_data
     - External Data
     - Additional data associated with the transaction
-
-  * - home_phone_number
-    - Home Phone (Reported)
-    - [Call center integration only] Customer's home phone number as given to the call center.
-
-  * - name
-    - Name (Reported)
-    - [Call center integration only] Customer's full name as given to the call center.
-
-  * - order_city
-    - City (Reported)
-    - [Call center integration only] Customer's city as given to the call center.
-
-  * - quantity_list
-    - Quantity List
-    - [Call center integration only] Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
-
-  * - reason_code
-    - Reason Code
-    - [Call center integration only] Call center-specific status code giving the disposition of the call.
 
   * - recording
     - Recording
@@ -81,21 +37,5 @@ Additional Feature Parameters
   * - repeat_calling_phone_number
     - Repeat Caller
     - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
-
-  * - sale_amount
-    - Sale Amount
-    - [Call center integration only] Total order amount (not including shipping) as reported by the call center.
-
-  * - sku_list
-    - SKU List
-    - [Call center integration only] Comma-separated list of order SKUs as reported by the call center.
-
-  * - state_or_province
-    - State or Province (Reported)
-    - [Call center integration only] Customer's state or province as given to the call center.
-
-  * - zip_code
-    - Zip Code (Reported)
-    - [Call center integration only] Customer's zip code as given to the call center.
 
 
