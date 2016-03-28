@@ -2,7 +2,16 @@
 
 .. include:: _:org_type:_param_table.rst
 
+Optional Parameters
+-------------------
+
 The following fields are optional based on your account type:
+
+.. include:: dnpr_param_table.rst
+
+.. include:: _:org_type:_call_center_integration_param_table.rst
+
+.. include:: _:org_type:_signal_param_table.rst
 
 .. include:: _:org_type:_optional_param_table.rst
 

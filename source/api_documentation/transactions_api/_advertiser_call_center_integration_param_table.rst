@@ -1,5 +1,5 @@
-Additional Feature Parameters
------------------------------
+Call Center Integration Parameters
+----------------------------------
 
 ..  list-table::
   :widths: 30 8 40
@@ -18,26 +18,6 @@ Additional Feature Parameters
     - Address 2 (Reported)
     - [Call center integration only] Customer's street address as given to the call center (second line).
 
-  * - bundled_destination_ids
-    - Bundled Destination Ids
-    - 
-
-  * - bundled_destination_ids_from_network
-    - Bundled Destination Ids From Network
-    - 
-
-  * - call_center_call_id
-    - Call Center Call Id
-    - [Call center integration only] The unique identifier assigned to the call by the call center
-
-  * - call_outcome_outcome_name_2
-    - Outcome Name
-    - 
-
-  * - calling_phone_number
-    - Caller ID
-    - Caller ID. Formatted as 12 characters like "866-555-1234"
-
   * - cell_phone_number
     - Cell Phone (Reported)
     - [Call center integration only] Customer's cell phone number as given to the call center.
@@ -49,10 +29,6 @@ Additional Feature Parameters
   * - email_address
     - Email Address (Reported)
     - [Call center integration only] Email address as given to the call center.
-
-  * - external_data
-    - External Data
-    - Additional data associated with the transaction
 
   * - home_phone_number
     - Home Phone (Reported)
@@ -66,6 +42,10 @@ Additional Feature Parameters
     - City (Reported)
     - [Call center integration only] Customer's city as given to the call center.
 
+  * - promo_line_description
+    - Promo Number Description
+    - Additional details about the transaction source
+
   * - quantity_list
     - Quantity List
     - [Call center integration only] Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
@@ -73,14 +53,6 @@ Additional Feature Parameters
   * - reason_code
     - Reason Code
     - [Call center integration only] Call center-specific status code giving the disposition of the call.
-
-  * - recording
-    - Recording
-    - URL to the call recording, if available
-
-  * - repeat_calling_phone_number
-    - Repeat Caller
-    - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
 
   * - sale_amount
     - Sale Amount

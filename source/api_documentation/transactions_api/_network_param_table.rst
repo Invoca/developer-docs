@@ -240,10 +240,6 @@
     - Sale Amount
     - [Call center integration only] Total order amount (not including shipping) as reported by the call center.
 
-  * - signal_10_value
-    - Signal: Invoca slot 10
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
-
   * - signal_1_value
     - Signal: Invoca slot 1
     - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
@@ -278,6 +274,10 @@
 
   * - signal_9_value
     - Signal: Invoca slot 9
+    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+
+  * - signal_10_value
+    - Signal: Invoca slot 10
     - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
 
   * - sku_list
