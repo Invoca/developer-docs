@@ -53,7 +53,7 @@
       "local_center": {
         "tn_prefix": "805"
       },
-      "tn_prefix_whitelist" => ["805"]
+      "tn_prefix_whitelist": ["805"]
     }
 
   Response Code: 201
