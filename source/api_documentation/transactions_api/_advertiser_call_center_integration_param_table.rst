@@ -42,10 +42,6 @@ Call Center Integration Parameters
     - City (Reported)
     - [Call center integration only] Customer's city as given to the call center.
 
-  * - promo_line_description
-    - Promo Number Description
-    - Additional details about the transaction source
-
   * - quantity_list
     - Quantity List
     - [Call center integration only] Comma-separated list of order quantities as reported by the call center. Each quantity in the list matches the sku_list entry in that same position.
