@@ -89,7 +89,7 @@
       "media_type": "Online: Display",
       "local_center": {
         "city": "Santa Barbara",
-        "state": "California"
+        "state": "CA"
       }
     }
 
