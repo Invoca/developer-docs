@@ -1,5 +1,3 @@
-Additional Feature Parameters
------------------------------
 
 ..  list-table::
   :widths: 30 8 40
@@ -20,23 +18,23 @@ Additional Feature Parameters
 
   * - bundled_destination_ids
     - Bundled Destination Ids
-    - 
+    - A list of possible destinations for real time routing.
 
   * - bundled_destination_ids_from_network
     - Bundled Destination Ids From Network
-    - 
+    - A list of possible destinations for real time routing.
 
   * - call_outcome_custom_parameter_1
     - Call Outcome Custom Param 1
-    - 
+    - Up to 255 character string.
 
   * - call_outcome_custom_parameter_2
     - Call Outcome Custom Param 2
-    - 
+    - Up to 255 character string.
 
   * - call_outcome_custom_parameter_3
     - Call Outcome Custom Param 3
-    - 
+    - Up to 255 character string.
 
   * - call_outcome_description
     - Call Outcome Description

@@ -50,7 +50,7 @@
 
   * - complete_call_id
     - Call Record ID
-    - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+    - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
   * - connect_duration
     - Connected Duration (HH:MM:SS)
@@ -62,7 +62,7 @@
 
   * - corrects_transaction_id
     - Corrects Call
-    - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+    - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
   * - duration
     - Total Duration (HH:MM:SS)
@@ -102,7 +102,7 @@
 
   * - mobile
     - Phone Type
-    - "Landline" or "Mobile" or empty string if type is unknown
+    - Landline or Mobile or empty string if type is unknown
 
   * - notes
     - Notes
@@ -114,7 +114,7 @@
 
   * - original_order_id
     - Order ID
-    - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-".
+    - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
   * - payout_conditions
     - Payout Conditions
@@ -150,7 +150,7 @@
 
   * - transaction_id
     - Transaction ID
-    - Globally unique identifier for this transaction. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the "-". This is the Primary Key of the results.
+    - Globally unique identifier for this transaction. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -. This is the Primary Key of the results.
 
   * - transaction_type
     - Type

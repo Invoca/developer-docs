@@ -1,5 +1,3 @@
-Additional Feature Parameters
------------------------------
 
 ..  list-table::
   :widths: 30 8 40
@@ -12,19 +10,19 @@ Additional Feature Parameters
 
   * - bundled_destination_ids
     - Bundled Destination Ids
-    - 
+    - A list of possible destinations for real time routing.
 
   * - bundled_destination_ids_from_network
     - Bundled Destination Ids From Network
-    - 
+    - A list of possible destinations for real time routing.
 
-  * - call_outcome_outcome_name_2
+  * - call_outcome_outcome_name
     - Outcome Name
-    - 
+    - The name describing the outcome event.
 
   * - calling_phone_number
     - Caller ID
-    - Caller ID. Formatted as 12 characters like "866-555-1234"
+    - Caller ID. Formatted as 12 characters like 866-555-1234
 
   * - external_data
     - External Data
