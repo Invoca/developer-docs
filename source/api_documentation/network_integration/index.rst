@@ -33,4 +33,5 @@ The API uses the following terms and their aliases:
    promo_numbers/index
    prompt_recordings/index
    whisper_prompts/index
+   custom_challenge_prompts/index
    ringpools/index
