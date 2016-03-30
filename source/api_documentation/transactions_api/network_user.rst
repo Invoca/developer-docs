@@ -5,7 +5,7 @@ Network / Brand
 URL
 ---
 
-The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported, where 33 is the advertiser id.
+The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported, where 33 is the network id.
 
 .. list-table::
   :widths: 8 40
