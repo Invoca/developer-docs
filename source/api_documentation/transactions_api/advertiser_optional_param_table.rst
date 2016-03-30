@@ -18,11 +18,11 @@
 
   * - bundled_destination_ids
     - Bundled Destination Ids
-    - A list of possible destinations for real time routing.
+    - A list of possible destination ids, as defined by Invoca, for real time routing.
 
   * - bundled_destination_ids_from_network
     - Bundled Destination Ids From Network
-    - A list of possible destinations for real time routing.
+    - A list of possible destination ids, as defined by your network, for real time routing.
 
   * - call_outcome_custom_parameter_1
     - Call Outcome Custom Param 1

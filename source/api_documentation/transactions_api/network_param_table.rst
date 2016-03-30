@@ -170,11 +170,11 @@
 
   * - payin_conditions
     - Payin Conditions
-    - Base condition with { highlighting } around the term(s) that disqualified advertiser payin. For example: duration > 1 min and {in_region}
+    - Base condition with highlighting around the term(s) that disqualified advertiser payin. For example: duration > 1 min and in_region
 
   * - payout_conditions
     - Payout Conditions
-    - Base condition with { highlighting } around the term(s) that disqualified affiliate payout. For example: duration > 1 min and {in_region}
+    - Base condition with highlighting around the term(s) that disqualified affiliate payout. For example: duration > 1 min and in_region
 
   * - qualified_regions
     - Qualified Regions

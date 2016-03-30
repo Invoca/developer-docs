@@ -1,6 +1,5 @@
---------------------
-RingPool  Parameters
---------------------
+RingPool Parameters
+*******************
 
 ..  list-table::
   :widths: 30 8 40
@@ -8,7 +7,7 @@ RingPool  Parameters
   :class: parameters
 
   * - Field
-    - Pool Param X
+    - Name
     - Description
 
   * - dynamic_number_pool_id
@@ -19,24 +18,8 @@ RingPool  Parameters
     - Pool Type
     - The type of pool: Search, SearchKeyword or Custom
 
-  * - dynamic_number_pool_referrer_ad
-    - AdWords Ad
-    - AdWords Ad Headline copy, provided by Google
-
-  * - dynamic_number_pool_referrer_ad_group
-    - AdWords Ad Group
-    - AdWords Ad Group name, provided by Google
-
-  * - dynamic_number_pool_referrer_ad_group_id
-    - AdWords Ad Group ID
-    - AdWords Ad Group ID, provided by Google
-
-  * - dynamic_number_pool_referrer_ad_id
-    - AdWords Ad ID
-    - AdWords Ad ID, provided by Google
-
   * - dynamic_number_pool_referrer_param1
-    - Dynamic Number Pool Referrer Param1 Value
+    - Pool Param 1
     - name=value for parameter 1, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param1_name
@@ -48,7 +31,7 @@ RingPool  Parameters
     - The value for parameter 1
 
   * - dynamic_number_pool_referrer_param2
-    - Dynamic Number Pool Referrer Param2 Value
+    - Pool Param 2
     - name=value for parameter 2, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param2_name
@@ -60,7 +43,7 @@ RingPool  Parameters
     - The value for parameter 2
 
   * - dynamic_number_pool_referrer_param3
-    - Dynamic Number Pool Referrer Param3 Value
+    - Pool Param 3
     - name=value for parameter 3, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param3_name
@@ -72,7 +55,7 @@ RingPool  Parameters
     - The value for parameter 3
 
   * - dynamic_number_pool_referrer_param4
-    - Dynamic Number Pool Referrer Param4 Value
+    - Pool Param 4
     - name=value for parameter 4, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param4_name
@@ -84,7 +67,7 @@ RingPool  Parameters
     - The value for parameter 4
 
   * - dynamic_number_pool_referrer_param5
-    - Dynamic Number Pool Referrer Param5 Value
+    - Pool Param 5
     - name=value for parameter 5, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param5_name
@@ -96,7 +79,7 @@ RingPool  Parameters
     - The value for parameter 5
 
   * - dynamic_number_pool_referrer_param6
-    - Dynamic Number Pool Referrer Param6 Value
+    - Pool Param 6
     - name=value for parameter 6, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param6_name
@@ -108,7 +91,7 @@ RingPool  Parameters
     - The value for parameter 6
 
   * - dynamic_number_pool_referrer_param7
-    - Dynamic Number Pool Referrer Param7 Value
+    - Pool Param 7
     - name=value for parameter 7, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param7_name
@@ -120,7 +103,7 @@ RingPool  Parameters
     - The value for parameter 7
 
   * - dynamic_number_pool_referrer_param8
-    - Dynamic Number Pool Referrer Param8 Value
+    - Pool Param 8
     - name=value for parameter 8, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param8_name
@@ -132,7 +115,7 @@ RingPool  Parameters
     - The value for parameter 8
 
   * - dynamic_number_pool_referrer_param9
-    - Dynamic Number Pool Referrer Param9 Value
+    - Pool Param 9
     - name=value for parameter 9, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param9_name
@@ -144,7 +127,7 @@ RingPool  Parameters
     - The value for parameter 9
 
   * - dynamic_number_pool_referrer_param10
-    - Dynamic Number Pool Referrer Param10 Value
+    - Pool Param 10
     - name=value for parameter 10, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param10_name
@@ -275,14 +258,6 @@ RingPool  Parameters
     - Pool Param 25 Value
     - The value for parameter 25
 
-  * - dynamic_number_pool_referrer_referrer_campaign
-    - AdWords Campaign
-    - AdWords Campaign name, provided by Google
-
-  * - dynamic_number_pool_referrer_referrer_campaign_id
-    - AdWords Campaign ID
-    - AdWords Campaign ID, provided by Google
-
   * - dynamic_number_pool_referrer_search_engine
     - Traffic Source
     - Search engine used.
@@ -290,10 +265,6 @@ RingPool  Parameters
   * - dynamic_number_pool_referrer_search_keywords
     - Keywords
     - Search keywords used
-
-  * - dynamic_number_pool_referrer_search_keywords_id
-    - AdWords Keywords ID
-    - AdWords Keyword ID, provided by Google
 
   * - dynamic_number_pool_referrer_search_type
     - Search Type
