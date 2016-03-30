@@ -1,9 +1,9 @@
-Call Outcomes API
+Signal API
 =================
 
-The Call Outcomes API is used to report outcomes that occur on a specific call (transaction).
+The Signal API is used to report signals that occur on a specific call (transaction).
 
-Outcomes may be anything an organization would like to track such as sales, quotes, etc.
+Signals may be anything an organization would like to track such as sales, quotes, etc.
 
 Response Codes
 --------------
@@ -20,10 +20,10 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
     - Meaning
 
   * - 200 OK
-    - An existing call outcome was found and updated
+    - An existing signal was found and updated
 
   * - 201 Created
-    - A new call outcome was created
+    - A new signal was created
 
   * - 401 Not Authorized
     - Invalid or missing oauth token
@@ -41,7 +41,7 @@ Passed in “application/json” format.
 
 **Search Parameters**
 
-Used to find the call associated with the outcome.
+Used to find the call associated with the signal.
 
     **Required**
 
@@ -67,35 +67,35 @@ Used to find the call associated with the outcome.
 
 -----
 
-**Call Outcome Parameters**
+**Signal Parameters**
 
-Used to create the fields of a call outcome.
+Used to create the fields of a signal.
 
     **Required**
 
-    `outcome_name:` The name describing the outcome event. For reporting a sale happened on a call, “Sale” is recommended.
+    `name:` The name describing the signal event. For reporting a sale happened on a call, “Sale” is recommended.
     Other examples include “Free Trial”, “2yr Subscription”, “Cancellation.”
     This can be used elsewhere in the system and should be a small list of values meaningful to your organization.
-    Names are matched case-insensitively, but we will preserve and use the casing of the first time the outcome name is reported.
+    Names are matched case-insensitively, but we will preserve and use the casing of the first time the signal name is reported.
 
     **Optional**
 
-    `partner_unique_id:` Unique identifier, to distinguish between updating an existing outcome (for example correcting a sale that was reported)
+    `partner_unique_id:` Unique identifier, to distinguish between updating an existing signal (for example correcting a sale that was reported)
     versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
-    Note: this ID only needs to be unique within the given transaction and **outcome_name**, so it can be as simple as “1”, “2”… or
+    Note: this ID only needs to be unique within the given transaction and **name**, so it can be as simple as “1”, “2”… or
     it can be a globally unique ID if desired. Defaults to empty string if not passed.
 
-    `description:` Free form text for providing additional details about the outcome (for example: a sales order ID or a specific product being purchased or inquired about).
+    `description:` Free form text for providing additional details about the signal (for example: a sales order ID or a specific product being purchased or inquired about).
 
-    `occurred_at_time_t:` 10 digit time that the outcome occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
-    This allows batching of outcome results at a later time and still capture the exact time the outcome event happened. Defaults to the time of the API request if not provided.
+    `occurred_at_time_t:` 10 digit time that the signal occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
+    This allows batching of signal results at a later time and still capture the exact time the signal event happened. Defaults to the time of the API request if not provided.
 
     `sale_amount:` Money with up to 2 decimal places (period separated).
-    Assumed to be in the same currency as the organization that owns the outcome being reported.
+    Assumed to be in the same currency as the organization that owns the signal being reported.
     Defaults to null if not passed. (Recommended to omit parameter if no sale occurred, instead of passing 0).
     Do not include formatting such as currency symbol or separators (i.e. commas).
 
-    `value:` True or false as to whether the outcome was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false).
+    `value:` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false).
 
     `custom_paramter_1` Custom parameter. Up to 255 character string.
 
@@ -113,20 +113,35 @@ Used to create the fields of a call outcome.
 
 Endpoint:
 
-``https://invoca.net/api/@@CALL_OUTCOME_VERSION/call_outcomes``
+``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals``
 
 .. api_endpoint::
   :verb: POST
-  :path: /call_outcomes
-  :description: Create a call outcome
-  :page: create_call_outcome
+  :path: /transactions/signals
+  :description: Create a signal
+  :page: create_signal
 
 .. api_endpoint::
   :verb: PUT
-  :path: /call_outcomes
-  :description: Update a call outcome
-  :page: update_call_outcome
+  :path: /transactions/signals
+  :description: Update a signal
+  :page: update_signal
 
+Endpoint:
+
+``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/<transaction_id>/signals``
+
+.. api_endpoint::
+  :verb: POST
+  :path: /transactions/<transaction_id>/signals
+  :description: Create a signal
+  :page: create_signal2
+
+.. api_endpoint::
+  :verb: PUT
+  :path: /transactions/<transaction_id>/signals
+  :description: Update a signal
+  :page: update_signal2
 
 Example POST Request Using cURL
 -------------------------------
@@ -135,12 +150,12 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"call_outcome": {"outcome_name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time_t": "1440607313","sale_amount": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/call_outcomes.json
+  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signal": {"name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time_t": "1440607313","sale_amount": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
 
 Errors
 ------
 
-The Call Outcomes API clearly identifies errors when a request cannot be processed.
+The Signal API clearly identifies errors when a request cannot be processed.
 
 **Validation Errors**
 
@@ -176,7 +191,7 @@ If no record is found for the search parameters that are passed in the request a
 
 **Permission Errors**
 
-If you do not have access to the Call Outcomes API, the following error will be returned with a 403 response code.
+If you do not have access to the Signal API, the following error will be returned with a 403 response code.
 
 .. code-block:: json
 
@@ -208,18 +223,18 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
 Updates and Idempotency
 -----------------------
 
-Call Outcomes are considered unique by a combination of **outcome_name** and **partner_unique_id**.
-For example, if you make two requests with the same **outcome_name** and **partner_unique_id**, the other params in the second request will update the original call outcome’s fields
+Signal are considered unique by a combination of **name** and **partner_unique_id**.
+For example, if you make two requests with the same **name** and **partner_unique_id**, the other params in the second request will update the original signal’s fields
 
-Therefore, if you make two requests with the same params, the call outcome will not be updated nor will a new one be made. It is safe then to re-post API requests without fear of duplicate data.
+Therefore, if you make two requests with the same params, the signal will not be updated nor will a new one be made. It is safe then to re-post API requests without fear of duplicate data.
 
-If you change the **partner_unique_id**, a second call outcome of the same name will be associated with the transaction.
+If you change the **partner_unique_id**, a second signal of the same name will be associated with the transaction.
 
 -----
 
-Example of creating two call outcomes (on a single call) then updating one
+Example of creating two signals (on a single call) then updating one
 
-**Initial request** (creates first outcome):
+**Initial request** (creates first signal):
 
 .. code-block:: json
 
@@ -228,8 +243,8 @@ Example of creating two call outcomes (on a single call) then updating one
       "search": {
         "transaction_id": "00000000-00000001"
       },
-      "call_outcome": {
-        "outcome_name": "Quote",
+      "signal": {
+        "name": "Quote",
         "partner_unique_id": "1",
         "description": "Honda Accord 2015"
       },
@@ -242,10 +257,10 @@ Example of creating two call outcomes (on a single call) then updating one
 
     # 201 Created
     {
-      "call_outcome": {
+      "signal": {
         "transaction_id": "00000000-0000000A",
         "corrects_transaction_id": null,
-        "outcome_name": "Quote",
+        "name": "Quote",
         "partner_unique_id": "1",
         "description": "Honda Accord 2015",
         "occurred_at_time_t": "1440607999",
@@ -257,7 +272,7 @@ Example of creating two call outcomes (on a single call) then updating one
       }
     }
 
-**Second request** (creates another call outcome):
+**Second request** (creates another signal):
 
 .. code-block:: json
 
@@ -266,8 +281,8 @@ Example of creating two call outcomes (on a single call) then updating one
       "search": {
         "transaction_id": "00000000-00000001"
       },
-      "call_outcome": {
-        "outcome_name": "Quote",
+      "signal": {
+        "name": "Quote",
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015"
       },
@@ -280,10 +295,10 @@ Example of creating two call outcomes (on a single call) then updating one
 
     # 201 Created
     {
-      "call_outcome": {
+      "signal": {
         "transaction_id": "00000000-0000000B",
         "corrects_transaction_id": null,
-        "outcome_name": "Quote",
+        "name": "Quote",
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015",
         "occurred_at_time_t": "1440607800",
@@ -307,8 +322,8 @@ Example of creating two call outcomes (on a single call) then updating one
       "search": {
         "transaction_id": "00000000-00000001"
       },
-      "call_outcome": {
-        "outcome_name": "Quote",
+      "signal": {
+        "name": "Quote",
         "partner_unique_id": "1",
         "description": "Honda Civic 2012"
       },
@@ -321,10 +336,10 @@ Example of creating two call outcomes (on a single call) then updating one
 
   # 200 OK
   {
-    "call_outcome": {
+    "signal": {
       "transaction_id": "00000000-0000000C",
       "corrects_transaction_id": "00000000-0000000A",
-      "outcome_name": "Quote",
+      "name": "Quote",
       "partner_unique_id": "1",
       "description": "Honda Civic 2012",
       "occurred_at_time_t": "1440607999",
@@ -339,5 +354,5 @@ Example of creating two call outcomes (on a single call) then updating one
     }
   }
 
-Note: even though this third request was an update to the first and will appear in reports as updating the first call outcome, a new call outcome transaction ID is returned.
-This is because a correction has been made to the first call outcome, and this new transaction ID is what will appear in webhooks and the Transactions API.
+Note: even though this third request was an update to the first and will appear in reports as updating the first signal, a new signal transaction ID is returned.
+This is because a correction has been made to the first signal, and this new transaction ID is what will appear in webhooks and the Transactions API.
