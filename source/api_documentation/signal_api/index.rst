@@ -133,13 +133,13 @@ Endpoint:
 
 .. api_endpoint::
   :verb: POST
-  :path: /transactions/<transaction_id>/signals
+  :path: /transactions/&lttransaction_id&gt/signals
   :description: Create a signal
   :page: create_signal2
 
 .. api_endpoint::
   :verb: PUT
-  :path: /transactions/<transaction_id>/signals
+  :path: /transactions/&lttransaction_id&gt/signals
   :description: Update a signal
   :page: update_signal2
 
