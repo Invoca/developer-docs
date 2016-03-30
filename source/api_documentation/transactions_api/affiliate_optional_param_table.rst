@@ -16,9 +16,9 @@
     - Bundled Destination Ids From Network
     - A list of possible destinations for real time routing.
 
-  * - call_outcome_outcome_name
-    - Outcome Name
-    - The name describing the outcome event.
+  * - signal_name
+    - Signal Name
+    - The name describing the signal event.
 
   * - calling_phone_number
     - Caller ID

@@ -55,6 +55,8 @@ The following fields are optional based on your account type:
 
 .. include:: signal_param_table.rst
 
+.. include:: voice_signal_param_table.rst
+
 .. include:: demographics_param_table.rst
 
 Additional Feature Parameters

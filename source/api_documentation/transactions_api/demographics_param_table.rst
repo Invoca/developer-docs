@@ -37,3 +37,37 @@ Enhanced Caller Profile Parameters
   * - age_range_data_append
     - Age Range (Data Append)
     - Data from caller demographics lookup
+
+  * - carrier_data_append
+    - Carrier (Data Append)
+    - Data from caller demographics lookup
+
+  * - display_name_data_append
+    - Display Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - do_not_call_data_append
+    - Do Not Call (Data Append)
+    - Data from caller demographics lookup
+
+  * - first_name_data_append
+    - First Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - gender_data_append
+    - Gender (Data Append)
+    - Data from caller demographics lookup
+
+  * - is_prepaid_data_append
+    - Is Prepaid (Data Append)
+    - Data from caller demographics lookup
+
+  * - last_name_data_append
+    - Last Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - line_type_data_append
+    - Line Type (Data Append)
+    - Data from caller demographics lookup
+
+

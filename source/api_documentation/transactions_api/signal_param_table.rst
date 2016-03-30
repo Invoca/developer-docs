@@ -1,53 +1,44 @@
-Voice Signal Parameters
-***********************
+Signal Parameters
+*****************
 
 ..  list-table::
   :widths: 30 8 40
   :header-rows: 1
   :class: parameters
 
-  * - Field
-    - Name in Reports
-    - Description
+  * - signal_name
+    - Signal Name
+    - The name describing the signal event.
 
-  * - signal_1_value
-    - Voice Signal: Credit Card
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_description
+    - Signal Description
+    - Free form text for providing additional details about the signal.
 
-  * - signal_2_value
-    - Voice Signal: Competitors
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_partner_unique_id
+    - Signal Partner ID
+    - Unique identifier, to distinguish between updating an existing signal (for example correcting a sale that was reported) versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
 
-  * - signal_3_value
-    - Voice Signal: Rack Server
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_occurred_at
+    - Signal Occurred At
+    - 10 digit time that the signal occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
 
-  * - signal_4_value
-    - Voice Signal: Blade Server
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_source
+    - Signal Source
+    - The source of the signal.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
 
-  * - signal_5_value
-    - Voice Signal: Power Play
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_value
+    - Signal Value
+    - True or false as to whether or not the signal was met and null if it is not a signal transaction.
 
-  * - signal_6_value
-    - Voice Signal: Amazon
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_custom_parameter_1
+    - Signal Custom Param 1
+    - Up to 255 character string.
 
-  * - signal_7_value
-    - Voice Signal: 7
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+  * - signal_custom_parameter_2
+    - Signal Custom Param 2
+    - Up to 255 character string.
 
-  * - signal_8_value
-    - Voice Signal: Telecom Competitors
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
-
-  * - signal_9_value
-    - Voice Signal: 9
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
-
-  * - signal_10_value
-    - Voice Signal: 10
-    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
-
+  * - signal_custom_parameter_3
+    - Signal Custom Param 3
+    - Up to 255 character string.
 
