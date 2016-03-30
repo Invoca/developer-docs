@@ -1,0 +1,431 @@
+
+.. list-table::
+  :widths: 30 8 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Optional Fields Based
+    -
+    -
+
+  * - advertiser_payin_localized
+    - Earned
+    - Amount paid in by media channel.
+
+  * - affiliate_payout_localized
+    - Paid
+    - Amount paid out to the publisher.
+
+  * - margin_localized
+    - Margin
+    - Difference between advertiser_payin_localized and affiliate_payout_localized.
+
+  * - matching_advertiser_payin_policies
+    - Matching Media Channel Payin Policies
+    - List of media channel policies that matched (base, bonus1, bonus2, etc.) to determine the media channel payin, separated by +. For example,base+bonus1+bonus3. Note that if there was any media channel payin, this field guaranteed to start with base.
+
+  * - matching_affiliate_payout_policies
+    - Matching Publisher Payout Policies
+    - List of publisher policies that matched (base, bonus1, bonus2, etc.) to determine the publisher payout, separated by +. For example,base+bonus2. Note that if there was any publisher payout, this field guaranteed to start with base.
+
+  * - payout_conditions
+    - Payout Conditions
+    - “Base condition with { highlighting } around the term(s) that disqualified publisher payout. For example: duration > 1 min and {in_region}”.
+
+  * - payin_conditions
+    - Payin Conditions
+    - “Base condition with { highlighting } around the term(s) that disqualified media channel payin. For example: duration > 1 min and {in_region}”.
+
+  * - recording
+    - Recording
+    - URL to the call recording, if available.
+
+  * - signal_1_value
+    - Voice Signal: Credit Card
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_2_value
+    - Voice Signal: Competitors
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_3_value
+    - Voice Signal: Rack Server
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_4_value
+    - Voice Signal: Blade Server
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_5_value
+    - Voice Signal: Power Play
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_6_value
+    - Voice Signal: Amazon
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_7_value
+    - Voice Signal: 7
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_8_value
+    - Voice Signal: Telecom Competitors
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_9_value
+    - Voice Signal: 9
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - signal_10_value
+    - Voice Signal: 10
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
+
+  * - dynamic_number_pool_referrer_search_engine
+    - Traffic Source
+    - [Number pooling links only] Search engine used.
+
+  * - dynamic_number_pool_referrer_search_keywords
+    - Keywords
+    - [Adwords only] Search keywords used
+
+  * - dynamic_number_pool_referrer_search_keywords_id
+    - AdWords Keywords ID
+    - [Adwords only] AdWords Keyword ID, provided by Google.
+
+  * - dynamic_number_pool_referrer_ad
+    - AdWords Ad
+    - [Adwords only] AdWords Ad Headline copy, provided by Google.
+
+  * - dynamic_number_pool_referrer_ad_id
+    - AdWords Ad ID
+    - [Adwords only] AdWords Ad ID, provided by Google.
+
+  * - dynamic_number_pool_referrer_ad_group
+    - AdWords Ad Group
+    - [Adwords only] AdWords Ad Group name, provided by Google.
+
+  * - dynamic_number_pool_referrer_ad_group_id
+    - AdWords Ad Group ID
+    - [Adwords only] AdWords Ad Group ID, provided by Google.
+
+  * - dynamic_number_pool_referrer_referrer_campaign
+    - AdWords Campaign
+    - [Adwords only] AdWords Campaign name, provided by Google.
+
+  * - dynamic_number_pool_referrer_referrer_campaign_id
+    - AdWords Campaign ID
+    - [Adwords only] AdWords Campaign ID, provided by Google.
+
+  * - dynamic_number_pool_referrer_param1_name
+    - Pool Param 1 Name
+    - [Number pooling links only] The name for parameter 1.
+
+  * - dynamic_number_pool_referrer_param1_value
+    - Pool Param 1 Value
+    - [Number pooling links only] The value for parameter 1.
+
+  * - dynamic_number_pool_referrer_param2_name
+    - Pool Param 2 Name
+    - [Number pooling links only] The name for parameter 2.
+
+  * - dynamic_number_pool_referrer_param2_value
+    - Pool Param 2 Value
+    - [Number pooling links only] The value for parameter 2.
+
+  * - dynamic_number_pool_referrer_param3_name
+    - Pool Param 3 Name
+    - [Number pooling links only] The name for parameter 3.
+
+  * - dynamic_number_pool_referrer_param3_value
+    - Pool Param 3 Value
+    - [Number pooling links only] The value for parameter 3.
+
+  * - dynamic_number_pool_referrer_param4_name
+    - Pool Param 4 Name
+    - [Number pooling links only] The name for parameter 4.
+
+  * - dynamic_number_pool_referrer_param4_value
+    - Pool Param 4 Value
+    - [Number pooling links only] The value for parameter 4.
+
+  * - dynamic_number_pool_referrer_param5_name
+    - Pool Param 5 Name
+    - [Number pooling links only] The name for parameter 5.
+
+  * - dynamic_number_pool_referrer_param5_value
+    - Pool Param 5 Value
+    - [Number pooling links only] The value for parameter 5.
+
+  * - dynamic_number_pool_referrer_param6_name
+    - Pool Param 6 Name
+    - [Number pooling links only] The name for parameter 6.
+
+  * - dynamic_number_pool_referrer_param6_value
+    - Pool Param 6 Value
+    - [Number pooling links only] The value for parameter 6.
+
+  * - dynamic_number_pool_referrer_param7_name
+    - Pool Param 7 Name
+    - [Number pooling links only] The name for parameter 7.
+
+  * - dynamic_number_pool_referrer_param7_value
+    - Pool Param 7 Value
+    - [Number pooling links only] The value for parameter 7.
+
+  * - dynamic_number_pool_referrer_param8_name
+    - Pool Param 8 Name
+    - [Number pooling links only] The name for parameter 8.
+
+  * - dynamic_number_pool_referrer_param8_value
+    - Pool Param 8 Value
+    - [Number pooling links only] The value for parameter 8.
+
+  * - dynamic_number_pool_referrer_param9_name
+    - Pool Param 9 Name
+    - [Number pooling links only] The name for parameter 9.
+
+  * - dynamic_number_pool_referrer_param9_value
+    - Pool Param 9 Value
+    - [Number pooling links only] The value for parameter 9.
+
+  * - dynamic_number_pool_referrer_param10_name
+    - Pool Param 10 Name
+    - [Number pooling links only] The name for parameter 10.
+
+  * - dynamic_number_pool_referrer_param10_value
+    - Pool Param 10 Value
+    - [Number pooling links only] The value for parameter 10.
+
+  * - dynamic_number_pool_referrer_search_type
+    - Search Type
+    - [Number pooling links only] "Paid" or "Organic".
+
+  * - dynamic_number_pool_pool_type
+    - Pool Type
+    - [Number pooling links only] The type of pool: "Search", "SearchKeyword" or "Custom".
+
+  * - dynamic_number_pool_id
+    - Pool ID
+    - [Number pooling links only] The ID of the pool.
+
+  * - dynamic_number_pool_referrer_param11_value
+    - Pool Param 11 Value
+    - [Number pooling links only] The value for parameter 11.
+
+  * - dynamic_number_pool_referrer_param11_name
+    - Pool Param 11 Name
+    - [Number pooling links only] The name for parameter 11.
+
+  * - dynamic_number_pool_referrer_param12_value
+    - Pool Param 12 Value
+    - [Number pooling links only] The value for parameter 12.
+
+  * - dynamic_number_pool_referrer_param12_name
+    - Pool Param 12 Name
+    - [Number pooling links only] The name for parameter 12.
+
+  * - dynamic_number_pool_referrer_param13_value
+    - Pool Param 13 Value
+    - [Number pooling links only] The value for parameter 13.
+
+  * - dynamic_number_pool_referrer_param13_name
+    - Pool Param 13 Name
+    - [Number pooling links only] The name for parameter 13.
+
+  * - dynamic_number_pool_referrer_param14_value
+    - Pool Param 14 Value
+    - [Number pooling links only] The value for parameter 14.
+
+  * - dynamic_number_pool_referrer_param14_name
+    - Pool Param 14 Name
+    - [Number pooling links only] The name for parameter 14.
+
+  * - dynamic_number_pool_referrer_param15_value
+    - Pool Param 15 Value
+    - [Number pooling links only] The value for parameter 15.
+
+  * - dynamic_number_pool_referrer_param15_name
+    - Pool Param 15 Name
+    - [Number pooling links only] The name for parameter 15.
+
+  * - dynamic_number_pool_referrer_param16_value
+    - Pool Param 16 Value
+    - [Number pooling links only] The value for parameter 16.
+
+  * - dynamic_number_pool_referrer_param16_name
+    - Pool Param 16 Name
+    - [Number pooling links only] The name for parameter 16.
+
+  * - dynamic_number_pool_referrer_param17_value
+    - Pool Param 17 Value
+    - [Number pooling links only] The value for parameter 17.
+
+  * - dynamic_number_pool_referrer_param17_name
+    - Pool Param 17 Name
+    - [Number pooling links only] The name for parameter 17.
+
+  * - dynamic_number_pool_referrer_param18_value
+    - Pool Param 18 Value
+    - [Number pooling links only] The value for parameter 18.
+
+  * - dynamic_number_pool_referrer_param18_name
+    - Pool Param 18 Name
+    - [Number pooling links only] The name for parameter 18.
+
+  * - dynamic_number_pool_referrer_param19_value
+    - Pool Param 19 Value
+    - [Number pooling links only] The value for parameter 19.
+
+  * - dynamic_number_pool_referrer_param19_name
+    - Pool Param 19 Name
+    - [Number pooling links only] The name for parameter 19.
+
+  * - dynamic_number_pool_referrer_param20_value
+    - Pool Param 20 Value
+    - [Number pooling links only] The value for parameter 20.
+
+  * - dynamic_number_pool_referrer_param20_name
+    - Pool Param 20 Name
+    - [Number pooling links only] The name for parameter 20.
+
+  * - dynamic_number_pool_referrer_param21_value
+    - Pool Param 21 Value
+    - [Number pooling links only] The value for parameter 21.
+
+  * - dynamic_number_pool_referrer_param21_name
+    - Pool Param 21 Name
+    - [Number pooling links only] The name for parameter 21.
+
+  * - dynamic_number_pool_referrer_param22_value
+    - Pool Param 22 Value
+    - [Number pooling links only] The value for parameter 22.
+
+  * - dynamic_number_pool_referrer_param22_name
+    - Pool Param 22 Name
+    - [Number pooling links only] The name for parameter 22.
+
+  * - dynamic_number_pool_referrer_param23_value
+    - Pool Param 23 Value
+    - [Number pooling links only] The value for parameter 23.
+
+  * - dynamic_number_pool_referrer_param23_name
+    - Pool Param 23 Name
+    - [Number pooling links only] The name for parameter 23.
+
+  * - dynamic_number_pool_referrer_param24_value
+    - Pool Param 24 Value
+    - [Number pooling links only] The value for parameter 24.
+
+  * - dynamic_number_pool_referrer_param24_name
+    - Pool Param 24 Name
+    - [Number pooling links only] The name for parameter 24.
+
+  * - dynamic_number_pool_referrer_param25_value
+    - Pool Param 25 Value
+    - [Number pooling links only] The value for parameter 25.
+
+  * - dynamic_number_pool_referrer_param25_name
+    - Pool Param 25 Name
+    - [Number pooling links only] The name for parameter 25.
+
+  * - display_name_data_append
+    - Display Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - first_name_data_append
+    - First Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - last_name_data_append
+    - Last Name (Data Append)
+    - Data from caller demographics lookup
+
+  * - age_range_data_append
+    - Age Range (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_type_data_append
+    - Address Type (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_full_street_data_append
+    - Street Address (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_city_data_append
+    - City (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_state_data_append
+    - State (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_zip_data_append
+    - Zip (Data Append)
+    - Data from caller demographics lookup
+
+  * - address_country_data_append
+    - Country (Data Append)
+    - Data from caller demographics lookup
+
+  * - carrier_data_append
+    - Carrier (Data Append)
+    - Data from caller demographics lookup
+
+  * - line_type_data_append
+    - Line Type (Data Append)
+    - Data from caller demographics lookup
+
+  * - is_prepaid_data_append
+    - Is Prepaid (Data Append)
+    - Data from caller demographics lookup
+
+  * - do_not_call_data_append
+    - Do Not Call (Data Append)
+    - Data from caller demographics lookup
+
+  * - gender_data_append
+    - Gender (Data Append)
+    - Data from caller demographics lookup
+
+  * - sku_list
+    - Sku List
+    - [Call center and Signal integrations] Total order amount (not including shipping) as reported by the call center or signal description.
+
+  * - signal_name
+    - Signal Name
+    - The name describing the signal event.
+
+  * - signal_description
+    - Signal Description
+    - Free form text for providing additional details about the signal.
+
+  * - signal_partner_unique_id
+    - Signal Partner ID
+    - Unique identifier, to distinguish between updating an existing signal (for example correcting a sale that was reported) versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
+
+  * - signal_occurred_at
+    - Signal Occurred At
+    - 10 digit time that the signal occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
+
+  * - signal_source
+    - Signal Source
+    - The source of the signal.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
+
+  * - signal_value
+    - Signal Value
+    - True or false as to whether or not the signal was met and null if it is not a signal transaction.
+
+  * - signal_custom_parameter_1
+    - Signal Custom Param 1
+    - Up to 255 character string.
+
+  * - signal_custom_parameter_2
+    - Signal Custom Param 2
+    - Up to 255 character string.
+
+  * - signal_custom_parameter_3
+    - Signal Custom Param 3
+    - Up to 255 character string.
+
+

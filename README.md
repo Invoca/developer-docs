@@ -6,12 +6,13 @@ IMPORTANT things to note:
 
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. The method of adding comments to API controllers is officially deprecated.
-3. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
+3. General branching stratagy: Always branch off of the most recent live branch. The most recent live branch is subject to change at any time so be sure you're up to date and resolve any conflicts. If you are contributing to a new overall version (e.g. 2029-09-16) but do not own that branch, be sure to communicate with the owner about individual API versions.
+4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
  you must go into read the docs admin and point "default" to the new branch. At that point, 
  the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
-4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, RTD, and you **MUST** update doc_versions.py to reflect the new changes. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION` If this still doesn't make sense, Spencer will be more than happy to whiteboard it for you.
-5. Beware pitfalls. There are many. Dig into the sphinx source code if need be. 
-6. Any Major changes involving a change to the toctree hierarchy  must be reviewed by MikeW, Spencer, or NickB.
+5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, RTD, and you **MUST** update doc_versions.py to reflect the new changes. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION` If this still doesn't make sense, Spencer will be more than happy to whiteboard it for you.
+6. Beware pitfalls. There are many! Dig into the sphinx source code if need be. 
+7. Any Major changes involving a change to the toctree hierarchy  must be reviewed by MikeW, Spencer, or NickB.
 
 ## Getting Started
 1. Clone this repo

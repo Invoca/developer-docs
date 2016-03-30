@@ -182,7 +182,7 @@
 
   * - transaction_type
     - Type
-    - The type of transaction - Call or Reported Conversion.
+    - The type of transaction - Call, Reported Conversion or Signal.
 
   * - transfer_from_type
     - Transfer Type
