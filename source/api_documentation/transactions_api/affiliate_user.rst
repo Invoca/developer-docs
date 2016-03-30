@@ -42,8 +42,6 @@ The data returned has the following fields:
 
 .. include:: affiliate_param_table.rst
 
-.. include:: conversion_reporting_param_table.rst
-
 Optional Parameters
 -------------------
 

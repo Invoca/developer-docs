@@ -49,6 +49,8 @@ The following fields are optional based on your account type:
 
 .. include:: dnpr_param_table.rst
 
+.. include:: adwords_param_table.rst
+
 .. include:: conversion_reporting_param_table.rst
 
 .. include:: signal_param_table.rst

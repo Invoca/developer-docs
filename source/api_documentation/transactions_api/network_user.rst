@@ -16,7 +16,7 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
     - Description and URL
 
   * - csv
-    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/advertisers/transactions/33.csv``
+    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/networks/transactions/33.csv``
 
   * - xml
     - Returns an XML document with an array of Transaction elements. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/networks/transactions/33.xml``

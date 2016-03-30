@@ -7,7 +7,7 @@ RingPool Parameters
   :class: parameters
 
   * - Field
-    - Name
+    - Name in Reports
     - Description
 
   * - dynamic_number_pool_id
