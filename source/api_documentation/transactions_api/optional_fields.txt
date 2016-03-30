@@ -41,44 +41,44 @@
     - URL to the call recording, if available.
 
   * - signal_1_value
-    - Signal: Credit Card
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Credit Card
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_2_value
-    - Signal: Competitors
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Competitors
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_3_value
-    - Signal: Rack Server
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Rack Server
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_4_value
-    - Signal: Blade Server
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Blade Server
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_5_value
-    - Signal: Power Play
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Power Play
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_6_value
-    - Signal: Amazon
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Amazon
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_7_value
-    - Signal: 7
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: 7
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_8_value
-    - Signal: Telecom Competitors
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: Telecom Competitors
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_9_value
-    - Signal: 9
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: 9
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_10_value
-    - Signal: 10
-    - Signals are configurable metrics that are tracked across calls, configured with rules about when the Signal is met (1 if Signal is met, 0 if Signal was applied to the call but not met, null if Signal was not applied to call)
+    - Voice Signal: 10
+    - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - dynamic_number_pool_referrer_search_engine
     - Traffic Source
@@ -390,42 +390,42 @@
 
   * - sku_list
     - Sku List
-    - [Call center and Call Outcomes integrations] Total order amount (not including shipping) as reported by the call center or as a call outcome.
+    - [Call center and Signal integrations] Total order amount (not including shipping) as reported by the call center or signal description.
 
-  * - call_outcome_outcome_name
-    - Outcome Name
-    - The name describing the outcome event.
+  * - signal_name
+    - Signal Name
+    - The name describing the signal event.
 
-  * - call_outcome_description
-    - Call Outcome Description
-    - Free form text for providing additional details about the outcome.
+  * - signal_description
+    - Signal Description
+    - Free form text for providing additional details about the signal.
 
-  * - call_outcome_partner_unique_id
-    - Call Outcome Partner ID
-    - Unique identifier, to distinguish between updating an existing outcome (for example correcting a sale that was reported) versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
+  * - signal_partner_unique_id
+    - Signal Partner ID
+    - Unique identifier, to distinguish between updating an existing signal (for example correcting a sale that was reported) versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
 
-  * - call_outcome_occurred_at
-    - Call Outcome Occurred At
-    - 10 digit time that the outcome occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
+  * - signal_occurred_at
+    - Signal Occurred At
+    - 10 digit time that the signal occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
 
-  * - call_outcome_source
-    - Call Outcome Source
-    - The source of the call outcome.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
+  * - signal_source
+    - Signal Source
+    - The source of the signal.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
 
-  * - call_outcome_value
-    - Call Outcome Value
-    - True or false as to whether the outcome was met or not.
+  * - signal_value
+    - Signal Value
+    - True or false as to whether or not the signal was met and null if it is not a signal transaction.
 
-  * - call_outcome_custom_parameter_1
-    - Call Outcome Custom Paramter
+  * - signal_custom_parameter_1
+    - Signal Custom Param 1
     - Up to 255 character string.
 
-  * - call_outcome_custom_parameter_2
-    - Call Outcome Custom Paramter
+  * - signal_custom_parameter_2
+    - Signal Custom Param 2
     - Up to 255 character string.
 
-  * - call_outcome_custom_parameter_3
-    - Call Outcome Custom Paramter
+  * - signal_custom_parameter_3
+    - Signal Custom Param 3
     - Up to 255 character string.
 
 
