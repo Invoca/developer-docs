@@ -78,6 +78,26 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       “Offline: Other”
 
+  * - local_center
+    - hash
+    - Requires one of the following
+
+      City & State required together
+
+      A filled field determines the center to start looking for local numbers at.
+
+      **“tn_prefix”**: can be either npa or npa or npa-nxx
+
+      **“zipcode”**: a valid zipcode
+
+      **“city”**: a valid city
+
+      **“state”**: a valid state
+
+  * - tn_prefix_whitelist
+    - array of strings
+    - an array of stringified limiters on the boundaries of where to look for local numbers given as npa or npa nxx pairs (ex. [“805”, “805612”])
+
 
 Endpoint:
 
@@ -112,4 +132,3 @@ Endpoint:
    :path: /promo_numbers/&lt;promo_number&gt;
    :description: Delete a Campaign Promo Number
    :page: delete_promo_number
-
