@@ -7,7 +7,7 @@ AdWords Parameters
   :class: parameters
 
   * - Field
-    - Pool Param X
+    - Name in Reports
     - Description
 
   * - dynamic_number_pool_referrer_ad
