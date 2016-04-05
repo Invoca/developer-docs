@@ -8,21 +8,9 @@
     - Name in Reports
     - Description
 
-  * - bundled_destination_ids
-    - Bundled Destination Ids
-    - A list of possible destinations for real time routing.
-
-  * - bundled_destination_ids_from_network
-    - Bundled Destination Ids From Network
-    - A list of possible destinations for real time routing.
-
   * - signal_name
     - Signal Name
     - The name describing the signal event.
-
-  * - calling_phone_number
-    - Caller ID
-    - Caller ID. Formatted as 12 characters like 866-555-1234
 
   * - external_data
     - External Data
@@ -31,6 +19,10 @@
   * - recording
     - Recording
     - URL to the call recording, if available
+
+  * - calling_phone_number
+    - Caller ID
+    - Caller ID. Formatted as 12 characters like 866-555-1234
 
   * - repeat_calling_phone_number
     - Repeat Caller

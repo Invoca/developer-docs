@@ -18,10 +18,6 @@ RingPool Parameters
     - Pool Type
     - The type of pool: Search, SearchKeyword or Custom
 
-  * - dynamic_number_pool_referrer_param1
-    - Pool Param 1
-    - name=value for parameter 1, url escaped. Example: name%3Dvalue
-
   * - dynamic_number_pool_referrer_param1_name
     - Pool Param 1 Name
     - The name for parameter 1
@@ -29,10 +25,6 @@ RingPool Parameters
   * - dynamic_number_pool_referrer_param1_value
     - Pool Param 1 Value
     - The value for parameter 1
-
-  * - dynamic_number_pool_referrer_param2
-    - Pool Param 2
-    - name=value for parameter 2, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param2_name
     - Pool Param 2 Name
@@ -42,10 +34,6 @@ RingPool Parameters
     - Pool Param 2 Value
     - The value for parameter 2
 
-  * - dynamic_number_pool_referrer_param3
-    - Pool Param 3
-    - name=value for parameter 3, url escaped. Example: name%3Dvalue
-
   * - dynamic_number_pool_referrer_param3_name
     - Pool Param 3 Name
     - The name for parameter 3
@@ -53,10 +41,6 @@ RingPool Parameters
   * - dynamic_number_pool_referrer_param3_value
     - Pool Param 3 Value
     - The value for parameter 3
-
-  * - dynamic_number_pool_referrer_param4
-    - Pool Param 4
-    - name=value for parameter 4, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param4_name
     - Pool Param 4 Name
@@ -66,10 +50,6 @@ RingPool Parameters
     - Pool Param 4 Value
     - The value for parameter 4
 
-  * - dynamic_number_pool_referrer_param5
-    - Pool Param 5
-    - name=value for parameter 5, url escaped. Example: name%3Dvalue
-
   * - dynamic_number_pool_referrer_param5_name
     - Pool Param 5 Name
     - The name for parameter 5
@@ -77,10 +57,6 @@ RingPool Parameters
   * - dynamic_number_pool_referrer_param5_value
     - Pool Param 5 Value
     - The value for parameter 5
-
-  * - dynamic_number_pool_referrer_param6
-    - Pool Param 6
-    - name=value for parameter 6, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param6_name
     - Pool Param 6 Name
@@ -90,10 +66,6 @@ RingPool Parameters
     - Pool Param 6 Value
     - The value for parameter 6
 
-  * - dynamic_number_pool_referrer_param7
-    - Pool Param 7
-    - name=value for parameter 7, url escaped. Example: name%3Dvalue
-
   * - dynamic_number_pool_referrer_param7_name
     - Pool Param 7 Name
     - The name for parameter 7
@@ -101,10 +73,6 @@ RingPool Parameters
   * - dynamic_number_pool_referrer_param7_value
     - Pool Param 7 Value
     - The value for parameter 7
-
-  * - dynamic_number_pool_referrer_param8
-    - Pool Param 8
-    - name=value for parameter 8, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param8_name
     - Pool Param 8 Name
@@ -114,10 +82,6 @@ RingPool Parameters
     - Pool Param 8 Value
     - The value for parameter 8
 
-  * - dynamic_number_pool_referrer_param9
-    - Pool Param 9
-    - name=value for parameter 9, url escaped. Example: name%3Dvalue
-
   * - dynamic_number_pool_referrer_param9_name
     - Pool Param 9 Name
     - The name for parameter 9
@@ -125,10 +89,6 @@ RingPool Parameters
   * - dynamic_number_pool_referrer_param9_value
     - Pool Param 9 Value
     - The value for parameter 9
-
-  * - dynamic_number_pool_referrer_param10
-    - Pool Param 10
-    - name=value for parameter 10, url escaped. Example: name%3Dvalue
 
   * - dynamic_number_pool_referrer_param10_name
     - Pool Param 10 Name
