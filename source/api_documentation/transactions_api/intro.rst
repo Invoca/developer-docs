@@ -1,25 +1,3 @@
-URL
----
-
-The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported, where 33 is the @@ORG_TYPE_SINGULAR id.
-
-.. list-table::
-  :widths: 8 40
-  :header-rows: 1
-  :class: parameters
-
-  * - Format
-    - Description and URL
-
-  * - csv
-    - Comma-Separated Values, or really Anything-Separated Values (see column_separator= below). Returns an optional header row followed by one row for each transaction, with delimited values for each row. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/@@ORG_TYPE_PLURAL/transactions/33.csv``
-
-  * - xml
-    - Returns an XML document with an array of Transaction elements. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/@@ORG_TYPE_PLURAL/transactions/33.xml``
-
-  * - json
-    - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/@@ORG_TYPE_PLURAL/transactions/33.json``
-
 Authentication
 --------------
 
@@ -72,15 +50,4 @@ Example:
 
 Send request 1:
 
-``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/@@ORG_TYPE_PLURAL/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
 
-returns 500 rows, grab the last transaction_id (in this example 500) and send request 2:
-
-``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/@@ORG_TYPE_PLURAL/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
-
-then repeat as necessary to get all call records within date range.
-
-Response
---------
-
-The data returned has the following fields:
