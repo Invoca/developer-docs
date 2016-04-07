@@ -87,7 +87,7 @@ Example template:
 def build_template(match, template_file_name):
   lines = match.group().splitlines()
 
-  # remove the directive line (e.g. ".. api_endpoint::" as shown above)
+  # remove the directive line (e.g. ".. api_endpoint::" shown above)
   lines.pop(0)
 
   # extract the replacement keys and values (e.g. ":verb: GET")
@@ -124,14 +124,17 @@ def find_and_replace_templates(source, directive_name, template_file_name):
 def build_api_endpoint_template(source):
   return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.txt")
 
-# Replace version symbols with actual version numbers
-# Version numbers are defined in doc_versions.py
+# ==================
+# Callback function:
+# ==================
+# Runs upon completion of "source-read" event. Substitutes :my_var" variables in custom templates
 def source_handler(app, docname, source):
   source[0] = build_api_endpoint_template(source[0])
 
   for symbol_string, version_string in VERSIONS.iteritems():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
+# Replace all occurences of @@ variables in partials (.rst files beginning w/ an underscore)
 def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
@@ -140,6 +143,7 @@ def build_partials(app, env, docnames):
         partial = re.sub(symbol_string, version_string, partial)
         new_docname = docname + '.tmp'
         open('{}{}'.format(source_path, new_docname), 'w').write(partial)
+
 
 INVOCA_CSS = '''<link rel="stylesheet" href="{0}css/sphinx_rtd_theme.css" type="text/css" />
                 <link rel="stylesheet" href="//invoca-developer-docs.readthedocs.org/en/{1}/_static/css/custom.css" type="text/css" />
