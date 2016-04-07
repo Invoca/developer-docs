@@ -163,9 +163,10 @@ The Signal API clearly identifies errors when a request cannot be processed.
 
 If invalid parameters are passed an error will be returned with a 403 response code. For example, if a **transaction_id** or **start_time_t** are not passed in the request, the following error will be returned.
 
+Response (403 Forbidden):
+
 .. code-block:: json
 
-  # 403 Forbidden
   {
     "errors": {
       "class": "RecordInvalid",
@@ -179,9 +180,10 @@ If invalid parameters are passed an error will be returned with a 403 response c
 
 If no record is found for the search parameters that are passed in the request an error will be returned with a 404 response code. For example, if a call cannot be found for the search parameters passed, the following error will be returned.
 
+Response (404 Not Found):
+
 .. code-block:: json
 
-    # 404 Not Found
     {
       "errors": {
         "class": "RecordNotFound",
@@ -195,9 +197,10 @@ If no record is found for the search parameters that are passed in the request a
 
 If you do not have access to the Signal API, the following error will be returned with a 403 response code.
 
+Response (403 Forbidden):
+
 .. code-block:: json
 
-    # 403 Forbidden
     {
       "errors": {
         "class": "UnauthorizedOperation",
@@ -212,9 +215,10 @@ If you do not have access to the Signal API, the following error will be returne
 If you do not have access to the **advertiser_id_from_network**, **advertiser_campaign_id_from_network**, or the **network_id** an error will be returned with a 403 response code.
 For example, if you pass an **advertiser_id_from_network** that you do not have access to, the following error will be returned.
 
+Response (403 Forbidden):
+
 .. code-block:: json
 
-    # 403 Forbidden
     {
       "errors": {
         "class": "UnauthorizedAdvertiser",
@@ -236,11 +240,10 @@ If you change the **partner_unique_id**, a second signal of the same name will b
 
 Example of creating two signals (on a single call) then updating one
 
-**Initial request** (creates first signal):
+**HTTP POST Parameters** - first request (creates first signal):
 
 .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -250,14 +253,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "1",
         "description": "Honda Accord 2015"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
-**Response:**
+**Response (201 Created):**
 
 .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000A",
@@ -274,11 +276,10 @@ Example of creating two signals (on a single call) then updating one
       }
     }
 
-**Second request** (creates another signal):
+**HTTP POST Parameters** - second request (creates another signal):
 
 .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -288,14 +289,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
-**Response:**
+**Response (201 Created):**
 
 .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000B",
@@ -315,11 +315,10 @@ Example of creating two signals (on a single call) then updating one
       }
     }
 
-**Third request** (updates first request):
+**HTTP POST Parameters** - third request (updates first request):
 
 .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -329,14 +328,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "1",
         "description": "Honda Civic 2012"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
-**Response:**
+**Response (200 OK):**
 
 .. code-block:: json
 
-  # 200 OK
   {
     "signal": {
       "transaction_id": "00000000-0000000C",
