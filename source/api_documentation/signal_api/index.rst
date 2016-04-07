@@ -121,6 +121,7 @@ Endpoint:
   :description: Update a signal
   :page: update_signal
 
+
 Example POST Request Using cURL
 -------------------------------
 
@@ -328,3 +329,4 @@ Example of creating two signals (on a single call) then updating one
 
 Note: even though this third request was an update to the first and will appear in reports as updating the first signal, a new transaction ID is returned.
 This is because a correction has been made to the first signal, and this new transaction ID is what will appear in webhooks and the Transactions API.
+
