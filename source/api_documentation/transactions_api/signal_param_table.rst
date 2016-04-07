@@ -30,15 +30,4 @@ Signal Parameters
     - Signal Value
     - True or false as to whether or not the signal was met and null if it is not a signal transaction.
 
-  * - signal_custom_parameter_1
-    - Signal Custom Param 1
-    - Up to 255 character string.
-
-  * - signal_custom_parameter_2
-    - Signal Custom Param 2
-    - Up to 255 character string.
-
-  * - signal_custom_parameter_3
-    - Signal Custom Param 3
-    - Up to 255 character string.
 
