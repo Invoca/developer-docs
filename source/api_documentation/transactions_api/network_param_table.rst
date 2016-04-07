@@ -216,10 +216,6 @@
     - Transfer Type
     - Where the call came from
 
-  * - verified_zip
-    - Verified Zip Code
-    - Zip Code entered by callers when prompted during call treatment
-
   * - virtual_line_id
     - Promo Number ID
     - The Promo Number ID from the network
