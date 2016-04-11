@@ -49,7 +49,7 @@ Used to find the call associated with the signal.
 
     or
 
-    `start_time_t:` 10 digit start time of the call in UTC seconds since 1/1/70, also known as Unix time_t. UTC milliseconds since 1/1/70 (which is the default in Javascript) are also supported, i.e. a 13 digit start time. The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided)
+    `start_time_t:` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
 
     Note: If using **start_time_t** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
 
@@ -87,8 +87,7 @@ Used to create the fields of a signal.
 
     `description:` Free form text for providing additional details about the signal (for example: a sales order ID or a specific product being purchased or inquired about).
 
-    `occurred_at_time_t:` 10 digit time that the signal occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
-    This allows batching of signal results at a later time and still capture the exact time the signal event happened. Defaults to the time of the API request if not provided.
+    `occurred_at_time_t:` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
 
     `sale_amount:` Money with up to 2 decimal places (period separated).
     Assumed to be in the same currency as the organization that owns the signal being reported.
@@ -143,6 +142,42 @@ Endpoint:
   :path: /transactions/&lttransaction_id&gt/signals
   :description: Update a signal
   :page: update_signal2
+
+Timestamp Formats
+-------------------------------
+
+The following formats are supported for both `start_time_t` and `occurred_at_time_t`.
+
+All examples below correspond to a date time of **11 April 2016** at **1 PM Pacific Time**.
+
+
+**Epoch:** 10 digit timestamp in UTC seconds since 1/1/70, also known as Unix time_t. UTC milliseconds since 1/1/70 (which is the default in Javascript) are also supported, i.e. a 13 digit start time.
+
+    Example (10 digits): **1460404800**
+
+    Example (13 digits): **1460404800000**
+
+**ISO 8601:** Timestamp with +/- UTC offset or Z to indicate time is in UTC.
+
+    Format: **YYYY/MM/DDTHH:MM:SS.sss+hh:mm**
+
+    Example (UTC offset of +3 hours): **2016/04/11T23:00:00.000+03:00**
+
+    Example (UTC offset of -7 hours): **2016/04/11T13:00:00.000-07:00**
+
+    Example (UTC): **2016/04/11T20:00:00.000Z**
+
+**Compressed:** 17 digit timestamp always parsed in Pacific time.
+
+    Format: **YYYYMMDDHHMMSSsss**
+
+    Example: **20160411130000000**
+
+**Standard:** Timestamp parsed in the timezone of the **oauth token**'s associated network.
+
+    Format: **YYYY/MM/DD HH:MM:SS.sss AM/PM**
+
+    Example: **2016/04/11 13:00:00.000 PM**
 
 
 Example POST Request Using cURL
