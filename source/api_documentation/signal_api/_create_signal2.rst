@@ -8,11 +8,10 @@
 
   ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/00000000-00000001/signals.json``
 
-  Request Body
+  Request Body:
 
   .. code-block:: json
 
-    # HTTP POST
     {
       "signal": {
         "name": "sale",
@@ -25,14 +24,15 @@
         "custom_parameter_2": "",
         "custom_parameter_3": ""
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
-  Response Body
+  Response Code: 201
+
+  Response Body:
 
   .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000A",
