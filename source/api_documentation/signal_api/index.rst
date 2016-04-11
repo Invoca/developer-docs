@@ -157,7 +157,13 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     Example (13 digits): **1460404800000**
 
-**ISO 8601:** Timestamp with +/- UTC offset or Z to indicate time is in UTC.
+**Compressed:** 17 digit timestamp always parsed in Pacific time.
+
+    Format: **YYYYMMDDHHMMSSsss**
+
+    Example: **20160411130000000**
+
+**ISO 8601:** Timestamp with +/- UTC offset or Z to indicate time is in UTC. Milliseconds are optional.
 
     Format: **YYYY/MM/DDTHH:MM:SS.sss+hh:mm**
 
@@ -167,17 +173,15 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     Example (UTC): **2016/04/11T20:00:00.000Z**
 
-**Compressed:** 17 digit timestamp always parsed in Pacific time.
+    Example (without milliseconds): **2016/04/11T13:00:00-07:00**
 
-    Format: **YYYYMMDDHHMMSSsss**
-
-    Example: **20160411130000000**
-
-**Standard:** Timestamp parsed in the timezone of the **oauth token**'s associated network.
+**Excel Compatible:** Timestamp parsed in the timezone of the **oauth token**'s associated network. Milliseconds are optional.
 
     Format: **YYYY/MM/DD HH:MM:SS.sss AM/PM**
 
-    Example: **2016/04/11 13:00:00.000 PM**
+    Example (with milliseconds): **2016/04/11 13:00:00.000 PM**
+
+    Example (without milliseconds): **2016/04/11 13:00:00 PM**
 
 
 Example POST Request Using cURL
