@@ -96,11 +96,11 @@ Used to create the fields of a signal.
 
     `value:` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false).
 
-    `custom_paramter_1` Custom parameter. Up to 255 character string.
+    `custom_parameter_1` Custom parameter. Up to 255 character string.
 
-    `custom_paramter_2` Custom parameter. Up to 255 character string.
+    `custom_parameter_2` Custom parameter. Up to 255 character string.
 
-    `custom_paramter_3` Custom parameter. Up to 255 character string.
+    `custom_parameter_3` Custom parameter. Up to 255 character string.
 
 ------
 
@@ -173,15 +173,15 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     Example (UTC): **2016/04/11T20:00:00.000Z**
 
-    Example (without milliseconds): **2016/04/11T13:00:00-07:00**
+    Example (no milliseconds): **2016/04/11T13:00:00-07:00**
 
 **Excel Compatible:** Timestamp parsed in the timezone of the **oauth token**'s associated network. Milliseconds are optional.
 
     Format: **YYYY/MM/DD HH:MM:SS.sss AM/PM**
 
-    Example (with milliseconds): **2016/04/11 13:00:00.000 PM**
+    Example: **2016/04/11 13:00:00.000 PM**
 
-    Example (without milliseconds): **2016/04/11 13:00:00 PM**
+    Example (no milliseconds): **2016/04/11 13:00:00 PM**
 
 
 Example POST Request Using cURL
