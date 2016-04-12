@@ -6,16 +6,13 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals.json``
+  ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/00000000-00000001/signals.json``
 
   Request Body:
 
   .. code-block:: json
 
     {
-      "search": {
-        "transaction_id": "00000000-00000001"
-      },
       "signal": {
         "name": "sale",
         "partner_unique_id": "1",
