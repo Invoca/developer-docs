@@ -120,6 +120,46 @@ Endpoint:
   :description: Update a signal
   :page: update_signal
 
+Timestamp Formats
+-------------------------------
+
+The following formats are supported for both `start_time_t` and `occurred_at_time_t`.
+
+All examples below correspond to a date time of **11 April 2016** at **1 PM Pacific Time**.
+
+
+**Epoch:** 10 digit timestamp in UTC seconds since 1/1/70, also known as Unix time_t. UTC milliseconds since 1/1/70 (which is the default in Javascript) are also supported, i.e. a 13 digit start time.
+
+    Example (10 digits): **1460404800**
+
+    Example (13 digits): **1460404800000**
+
+**Compressed:** 17 digit timestamp always parsed in Pacific time.
+
+    Format: **YYYYMMDDHHMMSSsss**
+
+    Example: **20160411130000000**
+
+**ISO 8601:** Timestamp with +/- UTC offset or Z to indicate time is in UTC. Milliseconds are optional.
+
+    Format: **YYYY/MM/DDTHH:MM:SS.sss+hh:mm**
+
+    Example (UTC offset of +3 hours): **2016/04/11T23:00:00.000+03:00**
+
+    Example (UTC offset of -7 hours): **2016/04/11T13:00:00.000-07:00**
+
+    Example (UTC): **2016/04/11T20:00:00.000Z**
+
+    Example (no milliseconds): **2016/04/11T13:00:00-07:00**
+
+**Excel Compatible:** Timestamp parsed in the timezone of the **oauth token**'s associated network. Milliseconds are optional.
+
+    Format: **YYYY/MM/DD HH:MM:SS.sss AM/PM**
+
+    Example: **2016/04/11 13:00:00.000 PM**
+
+    Example (no milliseconds): **2016/04/11 13:00:00 PM**
+
 
 Example POST Request Using cURL
 -------------------------------
