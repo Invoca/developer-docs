@@ -39,7 +39,7 @@ Voice Signal Parameters
     - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_8_value
-    - Voice Signal: Telecom Competitors
+    - Voice Signal: Competitors
     - Voice Signals are configurable metrics that are tracked across calls, configured with rules about when the Voice Signal is met (1 if Voice Signal is met, 0 if Voice Signal was applied to the call but not met, null if Voice Signal was not applied to call)
 
   * - signal_9_value
