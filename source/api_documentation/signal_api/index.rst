@@ -143,6 +143,7 @@ Endpoint:
   :description: Update a signal
   :page: update_signal2
 
+
 Timestamp Formats
 -------------------------------
 
@@ -182,6 +183,9 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
     Example: **2016/04/11 13:00:00.000 PM**
 
     Example (no milliseconds): **2016/04/11 13:00:00 PM**
+
+    **Note:** The file upload user interface includes a timezone dropdown feature, which allows users to select which timezone this format is parsed in.
+
 
 
 Example POST Request Using cURL
