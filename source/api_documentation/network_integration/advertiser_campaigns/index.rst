@@ -55,13 +55,13 @@ You are not allowed to delete campaigns.
     -
     -
 
-  * - currency
-    - string
-    - USD, GBP, EUR.
-
   * - **policies**
     -
     -
+
+  * - currency
+    - string
+    - USD, GBP, EUR.
 
   * - amount
     - decimal
@@ -79,13 +79,13 @@ You are not allowed to delete campaigns.
     -
     -
 
-  * - currency
-    - string
-    - Supported Currencies: ‐ USD, GBP, EUR.
-
   * - **policies**
     -
     -
+
+  * - currency
+    - string
+    - Supported Currencies: ‐ USD, GBP, EUR.
 
   * - amount
     - integer
@@ -505,4 +505,3 @@ Endpoint
    :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/unarchive
    :description: Unarchive a Campaign
    :page: post_advertiser_campaign_unarchive
-

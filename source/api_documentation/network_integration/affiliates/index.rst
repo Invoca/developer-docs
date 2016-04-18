@@ -32,7 +32,7 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
 
   * - id_from_network
     - string
-    - the site id (PID).
+    - The site id (PID).
 
   * - name
     - string
@@ -64,7 +64,7 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
 
   * - role
     - One of: Super (default), Manager, Member, Observer
-    - This user’s role in this organization. (A user mayhave different roles indifferent organizations)
+    - This user’s role in this organization. (A user may have different roles in different organizations)
 
 
 Endpoint:
@@ -100,4 +100,3 @@ Endpoint:
    :path: /affiliates/&lt;affiliate_id&gt;
    :description: Update an Affiliate
    :page: put_affiliate
-
