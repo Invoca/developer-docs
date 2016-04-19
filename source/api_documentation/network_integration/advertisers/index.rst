@@ -32,25 +32,25 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
 
   * - web_integration_phone_number
     - string
-    - 
+    -
 
-  * - default_creative_if_from_network
+  * - default_creative_id_from_network
     - integer
-    - 
+    -
 
-  * - sites
+  * - **sites**
     - json array of hashes
     - 1 or more pairs of id_from_network [and name].
 
   * - id_from_network
-    - integer site_if (PID)
+    - integer site_id (PID)
     - The site_id (PID). At least one is required. The first becomes the default.
 
   * - name
     - string
-    - The site name that matches side_id.
+    - The site name that matches site_id.
 
-  * - users
+  * - **users**
     - json array of hashes
     - 0 or more users for the organization. Each must have first 5 fields below.
 
@@ -80,7 +80,7 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
 
   * - role
     - One of: Super (default), Manager, Member, Observer
-    - This user’s role in this organization. (A user may hace different roles in different organizations)
+    - This user’s role in this organization. (A user may have different roles in different organizations)
 
 Endpoint:
 
@@ -115,4 +115,3 @@ Endpoint:
    :path: /advertisers/&lt;advertiser_id&gt;
    :description: Update an Advertiser
    :page: put_advertiser
-
