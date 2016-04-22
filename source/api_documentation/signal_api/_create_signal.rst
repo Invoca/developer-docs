@@ -1,3 +1,5 @@
+:orphan:
+
 .. container:: endpoint-long-description
 
   .. rubric:: Examples
@@ -12,7 +14,6 @@
 
   .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -25,14 +26,13 @@
         "sale_amount": "100.00",
         "value": "true"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
   Response Body
 
   .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000A",
@@ -65,7 +65,6 @@
 
   .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "start_time_t": "1440607313",
@@ -83,14 +82,13 @@
         "sale_amount": "100.00",
         "value": "true"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
   Response Body:
 
   .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000A",
