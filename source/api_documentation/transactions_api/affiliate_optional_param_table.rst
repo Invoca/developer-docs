@@ -28,4 +28,8 @@
     - Repeat Caller
     - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
 
+  * - real_time_response
+    - Real Time Routing Response
+    - Response information returned to Invoca when using the real-time routing webhook.
+
 

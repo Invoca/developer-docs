@@ -24,4 +24,8 @@
     - Promo Number Description
     - Additional details about the transaction source
 
+  * - real_time_response
+    - Real Time Routing Response
+    - Response information returned to Invoca when using the real-time routing webhook.
+
 
