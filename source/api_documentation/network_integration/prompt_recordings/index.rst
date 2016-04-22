@@ -42,18 +42,18 @@ Response
     "name": "Invoca",
     "users": [],
     "prompt_recordings": [
-        {
-            "id_from_network": "a1b2",
-            "prompt_text": "Thank you. Your call is being connected.",
-            "prompt_url": "http://example.com/recording.wav",
-            "prompt_received": "2015-08-02 08:49:28 -0700"
-        },
-        {
-            "id_from_network": "pr_342",
-            "prompt_text": "This prompt is on order",
-            "prompt_url": "http://example.com/recording_order.wav",
-            "prompt_received": null
-        }
+      {
+        "id_from_network": "a1b2",
+        "prompt_text": "Thank you. Your call is being connected.",
+        "prompt_url": "http://example.com/recording.wav",
+        "prompt_received": "2015-08-02 08:49:28 -0700"
+      },
+      {
+        "id_from_network": "pr_342",
+        "prompt_text": "This prompt is on order",
+        "prompt_url": "http://example.com/recording_order.wav",
+        "prompt_received": null
+      }
     ]
   }
 
@@ -77,12 +77,12 @@ Response
     "sites": [],
     "users": [],
     "prompt_recordings": [
-        {
-            "id_from_network": "rec736",
-            "prompt_text": "Thank you for calling.",
-            "prompt_url": "http://example.com/recording.wav",
-            "prompt_received": "2015-08-02 08:49:28 -0700"
-        }
+      {
+        "id_from_network": "rec736",
+        "prompt_text": "Thank you for calling.",
+        "prompt_url": "http://example.com/recording.wav",
+        "prompt_received": "2015-08-02 08:49:28 -0700"
+      }
     ]
   }
 
@@ -104,14 +104,14 @@ Request Body
 
   {
     "ivr_tree": {
-            "record_calls": false,
-            "root": {
-                "node_type": "Connect",
-                "destination_phone_number": "8056173768",
-                "destination_country_code": "",
-                "prompt_id_from_network": "rec34"
-            }
+      "record_calls": false,
+      "root": {
+        "node_type": "Connect",
+        "destination_phone_number": "8056173768",
+        "destination_country_code": "",
+        "prompt_id_from_network": "rec34"
       }
+    }
   }
 
 **Example: list the prompts by retrieving the advertiser campaign**
@@ -128,7 +128,6 @@ Response
     "name": "Selling Shoes",
     "status": "Activated",
     "future_terms": {
-      ...
       "ivr_tree": {
         "record_calls": false,
         "root": {
@@ -143,6 +142,9 @@ Response
       }
     }
   }
+
+**NOTE:** complete params response not shown
+
 
 **Example: remove prompt recording from a campaign**
 
@@ -159,11 +161,11 @@ Request Body
   {
     "ivr_tree": {
       "record_calls": false,
-        "root": {
-          "node_type": "Connect",
-          "destination_phone_number": "8056173768",
-          "destination_country_code": "",
-          "prompt_id_from_network": ""
-        }
+      "root": {
+        "node_type": "Connect",
+        "destination_phone_number": "8056173768",
+        "destination_country_code": "",
+        "prompt_id_from_network": ""
+      }
     }
   }

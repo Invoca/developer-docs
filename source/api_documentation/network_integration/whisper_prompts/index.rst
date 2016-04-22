@@ -21,14 +21,14 @@ Request Body
 
   {
     "ivr_tree": {
-            "record_calls": false,
-            "whisper_prompt_text": "How are you today?",
-            "root": {
-                "node_type": "Connect",
-                "destination_phone_number": "8056173768",
-                "destination_country_code": ""
-            }
+      "record_calls": false,
+      "whisper_prompt_text": "How are you today?",
+      "root": {
+        "node_type": "Connect",
+        "destination_phone_number": "8056173768",
+        "destination_country_code": ""
       }
+    }
   }
 
 Assign prompt recording as whisper prompt
@@ -46,14 +46,14 @@ Request Body
 
   {
     "ivr_tree": {
-            "record_calls": false,
-            "whisper_prompt_id_from_network": "rec34",
-            "root": {
-                "node_type": "Connect",
-                "destination_phone_number": "8056173768",
-                "destination_country_code": ""
-            }
+      "record_calls": false,
+      "whisper_prompt_id_from_network": "rec34",
+      "root": {
+        "node_type": "Connect",
+        "destination_phone_number": "8056173768",
+        "destination_country_code": ""
       }
+    }
   }
 
 Retrieve whisper prompt for a campaign
@@ -73,7 +73,6 @@ Response
     "name": "Selling Shoes",
     "status": "Activated",
     "future_terms": {
-      ...
       "ivr_tree": {
         "record_calls": false,
         "whisper_prompt_text": "How are you today?",
@@ -86,3 +85,6 @@ Response
       }
     }
   }
+
+**NOTE:** complete params response not shown
+
