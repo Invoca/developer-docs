@@ -146,7 +146,6 @@ def build_partials(app, env, docnames):
       for symbol_string, version_string in VERSIONS.iteritems():
         partial = re.sub(symbol_string, version_string, partial)
         new_docname = docname + '.tmp'
-        print "BUILDING PARTIAL: " + new_docname
         tmp_files.append('{}{}'.format(source_path, new_docname))
         open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 

@@ -214,19 +214,19 @@ The example below uses cURL to demonstrate a POST that updates a call.
 
 Output:
 
-.. code-block:: html
+.. code-block:: http
 
-  < HTTP/1.1 201 Created
-  < Date: Fri, 25 Jun 2010 18:22:45 GMT
-  < Server: Mongrel 1.1.5
-  < Status: 201
-  < X-Runtime: 189
-  < Cache-Control: no-cache
-  < Content-Type: application/xml; charset=utf-8
-  < Content-Length: 1
-  < Set-Cookie: SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/
-  < Via: 1.1 www.invoca.net
-  < Vary: Accept-Encoding
+  HTTP/1.1 201 Created
+  Date: Fri, 25 Jun 2010 18:22:45 GMT
+  Server: Mongrel 1.1.5
+  Status: 201
+  X-Runtime: 189
+  Cache-Control: no-cache
+  Content-Type: application/xml; charset=utf-8
+  Content-Length: 1
+  Set-Cookie: SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/
+  Via: 1.1 www.invoca.net
+  Vary: Accept-Encoding
 
 Example Breakdown
 -----------------
