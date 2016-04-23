@@ -1,3 +1,5 @@
+:orphan:
+
 .. container:: endpoint-long-description
 
   .. rubric:: Examples
@@ -9,10 +11,10 @@
   ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals.json``
 
   Request Body
+  # HTTP PUT
 
   .. code-block:: json
 
-    # HTTP PUT
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -23,16 +25,16 @@
         "description": "Updated description and sale amount",
         "sale_amount": "200.00"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
   Response Body:
 
   When an update occurs, a 200 status code is returned, otherwise the response body looks the same as a create.
+  # 200 OK
 
   .. code-block:: json
 
-    # 200 OK
     {
       "signal": {
         "transaction_id": "00000000-0000000B",

@@ -184,7 +184,6 @@ If invalid parameters are passed an error will be returned with a 403 response c
 
 .. code-block:: json
 
-  # 403 Forbidden
   {
     "errors": {
       "class": "RecordInvalid",
@@ -200,7 +199,6 @@ If no record is found for the search parameters that are passed in the request a
 
 .. code-block:: json
 
-    # 404 Not Found
     {
       "errors": {
         "class": "RecordNotFound",
@@ -216,7 +214,6 @@ If you do not have access to the Signal API, the following error will be returne
 
 .. code-block:: json
 
-    # 403 Forbidden
     {
       "errors": {
         "class": "UnauthorizedOperation",
@@ -233,7 +230,6 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
 
 .. code-block:: json
 
-    # 403 Forbidden
     {
       "errors": {
         "class": "UnauthorizedAdvertiser",
@@ -259,7 +255,6 @@ Example of creating two signals (on a single call) then updating one
 
 .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -269,14 +264,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "1",
         "description": "Honda Accord 2015"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
 **Response:**
 
 .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000A",
@@ -297,7 +291,6 @@ Example of creating two signals (on a single call) then updating one
 
 .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -307,14 +300,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
 **Response:**
 
 .. code-block:: json
 
-    # 201 Created
     {
       "signal": {
         "transaction_id": "00000000-0000000B",
@@ -335,7 +327,6 @@ Example of creating two signals (on a single call) then updating one
 
 .. code-block:: json
 
-    # HTTP POST
     {
       "search": {
         "transaction_id": "00000000-00000001"
@@ -345,14 +336,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "1",
         "description": "Honda Civic 2012"
       },
-      "oauth_token": <YOUR OAUTH TOKEN>
+      "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
 **Response:**
 
 .. code-block:: json
 
-  # 200 OK
   {
     "signal": {
       "transaction_id": "00000000-0000000C",
@@ -369,5 +359,5 @@ Example of creating two signals (on a single call) then updating one
     }
   }
 
-Note: even though this third request was an update to the first and will appear in reports as updating the first signal, a new transaction ID is returned.
+**Note:** even though this third request was an update to the first and will appear in reports as updating the first signal, a new transaction ID is returned.
 This is because a correction has been made to the first signal, and this new transaction ID is what will appear in webhooks and the Transactions API.
