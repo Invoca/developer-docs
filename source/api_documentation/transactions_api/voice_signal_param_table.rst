@@ -1,3 +1,5 @@
+:orphan:
+
 Voice Signal Parameters
 ***********************
 

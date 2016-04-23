@@ -1,3 +1,4 @@
+:orphan:
 
 ..  list-table::
   :widths: 30 8 40

@@ -73,7 +73,6 @@ Response
     "name": "Selling Shoes",
     "status": "Activated",
     "future_terms": {
-      ...
       "ivr_tree": {
         "record_calls": false,
         "custom_challenge_prompt_text": "Thank you for calling.",
