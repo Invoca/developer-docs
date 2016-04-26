@@ -4,7 +4,7 @@ Authentication
 --------------
 
 The API uses OAuth Authentication to authenticate that access is allowed. Pass the OAuth Token like any other query parameter, however, please note that the OAuth token is a required parameter.
-OAuth Tokens may be generated from the Manage API Credentials page. You must be a super user to get an OAuth Token and use the API.
+OAuth Tokens may be generated from the Manage API Credentials page.
 
 Query Parameters
 ----------------
@@ -51,5 +51,3 @@ Please note, the "to" and "from" date range parameters are both necessary, provi
 Example:
 
 Send request 1:
-
-
