@@ -6,8 +6,10 @@ Web Integration dynamically displays a unique phone number for each source drivi
 See the following technical documentation for details on how to setup Web Integration:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
 
+   pnapi_web_integration
+   toolkit_library
    advertiser_web_integration
    publisher_web_integration
 
