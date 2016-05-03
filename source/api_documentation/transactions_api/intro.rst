@@ -51,3 +51,5 @@ Please note, the "to" and "from" date range parameters are both necessary, provi
 Example:
 
 Send request 1:
+
+
