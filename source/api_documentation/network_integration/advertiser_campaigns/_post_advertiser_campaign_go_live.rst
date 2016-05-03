@@ -10,3 +10,13 @@
   Use this request url format:
 
   ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json``
+
+  .. code-block:: bash
+
+     curl­ -XPOST­ -H "Content­Type: application/json"­ -u 'login:pass'
+     'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/123/advertisers/advertiser_id/advertiser_campaigns/445566/go_live.json' \
+     -d '
+     {
+       "timeout": 10
+     }
+     ' -v

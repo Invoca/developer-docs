@@ -223,6 +223,9 @@ You are not allowed to delete campaigns.
     - decimal (required)
     - Budget Amount.
 
+  * - timeout
+    - integer
+    - Seconds to wait for the campaign to go live. Between 2 and 60.
 
 Advertiser Campaign IVRs
 ------------------------
