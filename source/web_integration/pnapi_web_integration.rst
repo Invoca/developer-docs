@@ -1,5 +1,5 @@
-PNAPI Web Integration
-=====================
+SolutionsJS Web Integration
+===========================
 
 Installation Instructions
 -------------------------
@@ -121,6 +121,12 @@ Client Side Parameters
 
   * - cookieDays
     - Int
+    - Default: `1`
+
+      Number of days for cache TTL.
+
+  * - onComplete
+    - Function
     - Default: `1`
 
       Number of days for cache TTL.
