@@ -214,19 +214,19 @@ The example below uses cURL to demonstrate a POST that updates a call.
 
 Output:
 
-.. code-block:: html
+.. code-block:: http
 
-  < HTTP/1.1 201 Created
-  < Date: Fri, 25 Jun 2010 18:22:45 GMT
-  < Server: Mongrel 1.1.5
-  < Status: 201
-  < X-Runtime: 189
-  < Cache-Control: no-cache
-  < Content-Type: application/xml; charset=utf-8
-  < Content-Length: 1
-  < Set-Cookie: SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/
-  < Via: 1.1 www.invoca.net
-  < Vary: Accept-Encoding
+  HTTP/1.1 201 Created
+  Date: Fri, 25 Jun 2010 18:22:45 GMT
+  Server: Mongrel 1.1.5
+  Status: 201
+  X-Runtime: 189
+  Cache-Control: no-cache
+  Content-Type: application/xml; charset=utf-8
+  Content-Length: 1
+  Set-Cookie: SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/
+  Via: 1.1 www.invoca.net
+  Vary: Accept-Encoding
 
 Example Breakdown
 -----------------
@@ -237,7 +237,7 @@ This is a description of some of the parameters in the previous cURL example.
     If using cURL, this is how credentials are passed. The username is 'example\@callcenter.api' and the password is ‘secretPW’. The two strings need to be separated with a colon character.
 
     `'https://api0.invoca.net/api/@@CONVERSION_API_VERSION/calls/23.xml' -k -v`
-    The URL where the call result is sent. The API version is “2016-01-25” and the unique Conversion Reporting ID is “23”.
+    The URL where the call result is sent. The API version is “@@CONVERSION_API_VERSION” and the unique Conversion Reporting ID is “23”.
 
     `-d reference_id='2935812450'`
     This ID (if provided) needs to be unique for each call within a call center, and is the handle for future updates on this call or conversion.

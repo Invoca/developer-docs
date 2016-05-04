@@ -55,13 +55,13 @@ You are not allowed to delete campaigns.
     -
     -
 
-  * - currency
-    - string
-    - USD, GBP, EUR.
-
   * - **policies**
     -
     -
+
+  * - currency
+    - string
+    - USD, GBP, EUR.
 
   * - amount
     - decimal
@@ -79,13 +79,13 @@ You are not allowed to delete campaigns.
     -
     -
 
-  * - currency
-    - string
-    - Supported Currencies: ‐ USD, GBP, EUR.
-
   * - **policies**
     -
     -
+
+  * - currency
+    - string
+    - Supported Currencies: ‐ USD, GBP, EUR.
 
   * - amount
     - integer
@@ -223,6 +223,9 @@ You are not allowed to delete campaigns.
     - decimal (required)
     - Budget Amount.
 
+  * - timeout
+    - integer
+    - Seconds to wait for the campaign to go live. Between 2 and 60.
 
 Advertiser Campaign IVRs
 ------------------------
@@ -505,4 +508,3 @@ Endpoint
    :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/unarchive
    :description: Unarchive a Campaign
    :page: post_advertiser_campaign_unarchive
-

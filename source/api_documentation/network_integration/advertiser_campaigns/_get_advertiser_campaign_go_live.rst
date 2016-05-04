@@ -1,3 +1,5 @@
+:orphan:
+
 .. container:: endpoint-long-description
 
   .. rubric:: Examples
@@ -7,4 +9,4 @@
 
   Use this request url format:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json?timeout=<timeout>``
