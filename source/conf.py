@@ -117,7 +117,7 @@ def build_template(match, template_file_name):
 # in the current file's source
 def find_and_replace_templates(source, directive_name, template_file_name):
   return re.sub(
-          re.compile("^ *\.\. {}::$\n(^\s+:\w+:\s+.*$\n)+^$\n".format(directive_name), re.MULTILINE),
+          re.compile("^ *\.\. {}::$\n(^\s+:\w+:\s+.*$\n)+^$(?:\n)?".format(directive_name), re.MULTILINE),
           lambda match: build_template(match, template_file_name),
           source)
 
