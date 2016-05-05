@@ -20,7 +20,7 @@ Install this generalized code just above the closing ``</body>`` tag of your web
 
 Update ``networkId`` and ``numberSelector`` to match your Invoca Network and current web page settings.
 
-**Note:** 
+**Note:**
 
 You may find your ``networkId`` pre-populated in sample code available in the Invoca platform:
 
@@ -37,21 +37,23 @@ Identifying a Campaign
 ----------------------
 There are three methods to identify an Invoca Campaign on your web page, which follow an order of precedence.
 
-1. **campaignIdOverrideParam**
-  Specify a query string parameter's name, the value of which will be used as the Invoca Campaign ID for all phone numbers in a given session.
+1. **campaignIdOverrideParam**:
+Specify a query string parameter's name, the value of which will be used as the Invoca Campaign ID for all phone numbers in a given session.
 
-2. **data-invoca-campaign-id**
-  When no override is passed, a user may assign individual Invoca Campaign IDs to a specific phone number's HTML element using the ``data-invoca-campaign-id`` attribute.
+2. **data-invoca-campaign-id**:
+When no override is passed, a user may assign individual Invoca Campaign IDs to a specific phone number's HTML element using the ``data-invoca-campaign-id`` attribute.
 
-3. **defaultCampaignId**
-  With no override, a ``defaultCampaignId`` can be passed to the ``Invoca.PNAPI.integration`` settings and will fill in the gaps wherever no ``data-invoca-campaign-id`` is found. If there are no data attributes or overrides, this value will apply to all phone numbers on the page.
+3. **defaultCampaignId**:
+With no override, a ``defaultCampaignId`` can be passed to the ``Invoca.PNAPI.integration`` settings and will fill in the gaps wherever no ``data-invoca-campaign-id`` is found. If there are no data attributes or overrides, this value will apply to all phone numbers on the page.
 
-  Additionally, the ``defaultCampaignId`` can be assigned dynamically with JavaScript based upon the page's environment and variables. 
+Additionally, the ``defaultCampaignId`` can be assigned dynamically with JavaScript based upon the page's environment and variables.
 
 
 Client Side Parameters
 ----------------------
 *Note:* Any parameter value can be populated with a JavaScript variable.
+
+
 
 .. list-table::
   :widths: 11 4 40
@@ -59,8 +61,8 @@ Client Side Parameters
   :class: parameters
 
   * - Required parameters:
-    - 
-    - 
+    -
+    -
 
   * - networkId
     - String
@@ -69,6 +71,7 @@ Client Side Parameters
   * - numberSelector
     - String
     - CSS selector for phone number HTML elements
+  
 
 .. list-table::
   :widths: 11 4 40
@@ -89,7 +92,7 @@ Client Side Parameters
     - Hash
     - Default: `{}`
 
-      Set of JavaScript parameters to be captured where the key name should be RingPool parameter name. 
+      Set of JavaScript parameters to be captured where the key name should be RingPool parameter name.
       These values are updated every subsequent visit.
 
   * - savePoolParams
@@ -136,7 +139,8 @@ Client Side Parameters
     - Default: `false`
 
       When true, will display debug logs in the developer console.
-
+  
+  
 
 Examples
 --------
@@ -169,7 +173,7 @@ http://www.example-page.com?utm_source=google
 
 **RESULT**
 
-The caller is assigned and delivered to the "google" campaign in Invoca for any phone number found on the page with ``data-invoca-campaign-id``'s and the ``defaultCampaignId`` being overriden. 
+The caller is assigned and delivered to the "google" campaign in Invoca for any phone number found on the page with ``data-invoca-campaign-id``'s and the ``defaultCampaignId`` being overriden.
 
 
 
@@ -190,7 +194,7 @@ http://www.example-page.com?utm_source=google
     Call customer service at: <span class='number' data-invoca-campaign-id='customer-service'>855-555-5555</span>
     Call sales at: <span class='number' data-invoca-campaign-id='sales'>855-555-4444</span>
   </div>
-  
+
   <!-- Begin Invoca Integration -->
   <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
   <script type="text/javascript">
@@ -223,7 +227,7 @@ When no campaignIdOverride or data-invoca-campaign-id are found, the default cam
     Call sales at: <span class='number'>855-555-4444</span>
     Interested in a demo? Call now! <span class='number'>855-555-4444</span>
   </div>
-  
+
   <!-- Begin Invoca Integration -->
   <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
   <script type="text/javascript">
@@ -256,17 +260,17 @@ Allows variables from JavaScript to be associated with a call.
   <!-- Begin Invoca Integration -->
   <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
   <script type="text/javascript">
-  
+
     var invocaParams = {
       currentPage: window.location.href
     };
-  
+
     Invoca.PNAPI.integration({
       networkId: YOUR_NETWORK_ID,
       numberSelector: ".YOUR_NUMBER_SELECTOR",
       poolParams: invocaParams
     });
-  
+
   </script>
   <!-- End Invoca Integration -->
 
@@ -302,13 +306,13 @@ http://www.example-page.com?ref=test
   <!-- Begin Invoca Integration -->
   <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
   <script type="text/javascript">
-  
+
     Invoca.PNAPI.integration({
       networkId: YOUR_NETWORK_ID,
       numberSelector: ".YOUR_NUMBER_SELECTOR",
       requiredParams: {gclid: "*"}
     });
-  
+
   </script>
   <!-- End Invoca Integration -->
 
@@ -324,15 +328,15 @@ When URL #2 is visited, the Invoca web integration will not run.
 Migrating from an older version
 -------------------------------
 If you are migrating from SolutionsJS 1.2 or below, please refer to the following guide.
-
+  
 1. Update your namespaces
-  - Change ``Solutions.PNAPI.integration`` to ``Invoca.PNAPI.integration``
-  - Change any Toolkit functions, like ``Solutions.PNAPI.readUrl`` to ``Invoca.Tools.readUrl``
+- Change ``Solutions.PNAPI.integration`` to ``Invoca.PNAPI.integration``
+- Change any Toolkit functions, like ``Solutions.PNAPI.readUrl`` to ``Invoca.Tools.readUrl``
 
    `More on the Solutions Toolkit <toolkit_library.html>`_
 
 2. Update your data attributes
-  - Change ``data-invoca`` to ``data-invoca-campaign-id``
+- Change ``data-invoca`` to ``data-invoca-campaign-id``
 
 3. Update your integration scripts from this:
 
@@ -340,11 +344,13 @@ If you are migrating from SolutionsJS 1.2 or below, please refer to the followin
   
   <script type="text/javascript" src="//pnapi0.invoca.net/0/pnapi_integration.js"></script>
   <script type="text/javascript" src="//cdn.invoca.solutions/js/solutions-1.2.min.js">
-
-to just this:
-
-.. code-block:: html
   
+
+
+to just this:    
+  
+.. code-block:: html
+
   <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
 
 
