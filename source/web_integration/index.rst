@@ -8,6 +8,8 @@ See the following technical documentation for details on how to setup Web Integr
 .. toctree::
    :maxdepth: 2
 
+   pnapi_web_integration
+   toolkit_library
    advertiser_web_integration
    publisher_web_integration
 
