@@ -54,7 +54,7 @@
     - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
   * - connect_duration
-    - Connected Duration (HH:MM:SS)
+    - Connected Duration
     - Duration in seconds that the call that was connected to the call center.
 
   * - corrected_at
@@ -66,11 +66,11 @@
     - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
   * - duration
-    - Total Duration (HH:MM:SS)
+    - Total Duration
     - Duration of the call in seconds. Includes any time spent in an IVR tree before transferring to the call center.
 
   * - ivr_duration
-    - IVR Duration (HH:MM:SS)
+    - IVR Duration
     - Duration in seconds that the call spent in the IVR tree.
 
   * - keypress_1
