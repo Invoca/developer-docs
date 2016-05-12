@@ -2,7 +2,7 @@
 
 The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language, and built using the [Sphinx Document Generator](http://www.sphinx-doc.org/en/stable/index.html). If you need to make any changes to conf.py please review the [Sphinx Dev Guide](http://www.sphinx-doc.org/en/stable/devguide.html)
 
-IMPORTANT things to note:
+**IMPORTANT things to note:**
 
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. The method of adding comments to API controllers is officially deprecated.
@@ -10,7 +10,7 @@ IMPORTANT things to note:
 4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
  you must go into read the docs admin and point "default" to the new branch. At that point, 
  the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
-5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, RTD, and you **MUST** update doc_versions.py to reflect the new changes. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION` If this still doesn't make sense, Spencer is happy to explain.
+5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, as well as change the branch to which "latest" points in RTD admin, Finally, you **MUST** update doc_versions.py to reflect the new changes of your new version. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION` If this still doesn't make sense, Spencer is happy to explain.
 6. Be cautious of errors you see when building. The line number on some error messages is misleading. In particular, directives not followed by 2 new lines may cause silent or misleading errors. Some warnings are meaningless, while not recommended you can dig into the Sphinx source and suppress them. 
 7. Any Major changes must be reviewed by MikeW, Spencer, or NickB.
 8. If you have added documentation to the latest version but also need to add it retroactively to past versions, be mindful of things like recently renamed files that might not be totally obvious in pull requests / cherry-picks.
