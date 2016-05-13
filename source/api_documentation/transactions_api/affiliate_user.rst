@@ -25,7 +25,7 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
     - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.json``
 
 
-.. include:: intro.rst
+.. include:: _intro.rst
 
 ``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
 
@@ -40,21 +40,21 @@ Response
 
 The data returned has the following fields:
 
-.. include:: affiliate_param_table.rst
+.. include:: _affiliate_param_table.rst
 
 Optional Parameters
 -------------------
 
 The following fields are optional based on your account type:
 
-.. include:: dnpr_param_table.rst
+.. include:: _dnpr_param_table.rst
 
 Additional Feature Parameters
 *****************************
 
-.. include:: affiliate_optional_param_table.rst
+.. include:: _affiliate_optional_param_table.rst
 
-.. include:: example.rst
+.. include:: _example.rst
 
 .. code-block:: bash
 
