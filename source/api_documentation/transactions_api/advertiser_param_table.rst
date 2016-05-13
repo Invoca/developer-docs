@@ -74,7 +74,7 @@
     - Globally unique identifier for the call this transaction is part of. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
   * - connect_duration
-    - Connected Duration (HH:MM:SS)
+    - Connected Duration
     - Duration in seconds that the call that was connected to the call center.
 
   * - corrected_at
@@ -90,11 +90,11 @@
     - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '*', 'x', and ','. '
 
   * - duration
-    - Total Duration (HH:MM:SS)
+    - Total Duration
     - Duration of the call in seconds. Includes any time spent in an IVR tree before transferring to the call center.
 
   * - ivr_duration
-    - IVR Duration (HH:MM:SS)
+    - IVR Duration
     - Duration in seconds that the call spent in the IVR tree.
 
   * - keypress_1
