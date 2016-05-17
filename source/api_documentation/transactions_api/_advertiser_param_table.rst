@@ -1,4 +1,4 @@
-:orphan:
+
 
 ..  list-table::
   :widths: 30 8 40
@@ -21,29 +21,49 @@
     - Advertiser Campaign
     - Name of the campaign.
 
-  * - advertiser_id
-    - Advertiser ID (Invoca ID)
-    - The Invoca identifier of the advertiser
+  * - advertiser_payin_localized
+    - Earned
+    - Amount paid in by advertiser
 
-  * - advertiser_id_from_network
-    - Advertiser ID
-    - Advertiser ID from the network as set on the Invoca advertiser.
+  * - advertiser_promo_line_description
+    - Promo Number Description
+    - Additional details about the transaction source
 
-  * - advertiser_name
-    - Advertiser
-    - Name of the advertiser.
+  * - affiliate_call_volume_ranking
+    - Affiliate Volume Ranking
+    - Network ranking of affiliate's call volume (0 to 5, and -1 being 'new'). Blank if no affiliate.
 
-  * - affiliate_payout_localized
-    - Earnings
-    - Amount paid out to the affiliate
+  * - affiliate_commissions_ranking
+    - Affiliate Commissions Ranking
+    - Network ranking of affiliate's commissions (0 to 5, and -1 being 'new'). Blank if no affiliate.
 
-  * - call_result_description_detail
+  * - affiliate_conversion_rate_ranking
+    - Affiliate Conversion Rate Ranking
+    - Network ranking of affiliate's conversion rate (0 to 5, and -1 being 'new'). Blank if no affiliate.
+
+  * - affiliate_id
+    - Affiliate ID (Invoca ID)
+    - The Invoca identifier of the affiliate
+
+  * - affiliate_id_from_network
+    - Affiliate ID
+    - Affiliate ID from the network as set on the Invoca affiliate.
+
+  * - affiliate_name
+    - Affiliate
+    - Name of the affiliate
+
+  * - call_result_description_detail_managed_advertiser
     - Call Result
     - Status of the transaction
 
   * - call_source_description
     - Source
     - Source of the transaction
+
+  * - calling_phone_number
+    - Caller ID
+    - Caller ID. Formatted as 12 characters like 866-555-1234
 
   * - city
     - City
@@ -64,6 +84,10 @@
   * - corrects_transaction_id
     - Corrects Call
     - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
+
+  * - destination_phone_number
+    - Destination Phone Number
+    - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '*', 'x', and ','. '
 
   * - duration
     - Total Duration (HH:MM:SS)
@@ -93,9 +117,9 @@
     - Keypresses
     - List of unique keynames that were pressed during the call
 
-  * - matching_affiliate_payout_policies
-    - Matching Affiliate Payout Policies
-    - List of affiliate policies that matched (base, bonus1, bonus2, etc.) to determine the affiliate payout, separated by +. For example, base+bonus2. Note that if there was any affiliate payout, this field guaranteed to start with base.
+  * - matching_advertiser_payin_policies
+    - Matching Advertiser Payin Policies
+    - List of advertiser policies that matched (base, bonus1, bonus2, etc.) to determine the advertiser payin, separated by +. For example, base+bonus1+bonus3. Note that if there was any advertiser payin, this field guaranteed to start with base.
 
   * - media_type
     - Media Type
@@ -117,21 +141,25 @@
     - Order ID
     - [Sales reporting only] Id of the original transaction that this row is in reference to. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
-  * - payout_conditions
-    - Payout Conditions
-    - Base condition with { highlighting } around the term(s) that disqualified affiliate payout. For example: duration > 1 min and {in_region}
-
-  * - promo_line_description
-    - Promo Number Description
-    - Additional details about the transaction source
+  * - payin_conditions
+    - Payin Conditions
+    - Base condition with highlighting around the term(s) that disqualified advertiser payin. For example: duration > 1 min and in_region
 
   * - qualified_regions
     - Qualified Regions
     - The list of regions that that the caller matched
 
+  * - recording
+    - Recording
+    - URL to the call recording, if available
+
   * - region
     - Region
     - Region (state, province or country) where transaction originated
+
+  * - repeat_calling_phone_number
+    - Repeat Caller
+    - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller ids.
 
   * - start_time_local
     - Call Start Time

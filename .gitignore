@@ -6,3 +6,4 @@ html/
 *.pyc
 *.swp
 *.tmp
+src/

@@ -17,7 +17,7 @@ sudo pip install virtualenv
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.pip
-make html
+bash html
 ```
 3. Browse to the local html files in build/
 4. To view the documentation, open the file in a browser:
@@ -27,7 +27,7 @@ make html
 1. Check out the branch for the version you want to edit
 2. Edit one or more .rst files
 3. Rebuild the docs with this command:
-`make clean && make html`
+`bash html`
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub
 6. ReadTheDocs will automatically pickup your changes and recompile the site
@@ -37,7 +37,7 @@ make html
 1. Create a new branch off of the version branch you want to edit, name it however you want
 2. Edit one or more .rst files
 3. Rebuild the docs with this command:
-`make clean && make html`
+`bash html`
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub
 6. ReadTheDocs will automatically pickup your changes and recompile the site
@@ -189,7 +189,7 @@ Reactivate your Python virtual environment by executing the commands below. (Pyt
 ```
 virtualenv venv
 source venv/bin/activate
-make clean && make html
+bash html
 ```
 
 #### Q: I added/edited a table, but I don't see it in the built docs
