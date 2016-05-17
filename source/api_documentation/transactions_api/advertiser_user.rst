@@ -25,7 +25,7 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
     - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/advertisers/transactions/33.json``
 
 
-.. include:: intro.rst
+.. include:: _intro.rst
 
 ``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/advertisers/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
 
@@ -40,29 +40,29 @@ Response
 
 The data returned has the following fields:
 
-.. include:: advertiser_param_table.rst
+.. include:: _advertiser_param_table.rst
 
 Optional Parameters
 -------------------
 
 The following fields are optional based on your account type:
 
-.. include:: dnpr_param_table.rst
+.. include:: _dnpr_param_table.rst
 
-.. include:: adwords_param_table.rst
+.. include:: _adwords_param_table.rst
 
-.. include:: conversion_reporting_param_table.rst
+.. include:: _conversion_reporting_param_table.rst
 
-.. include:: signal_param_table.rst
+.. include:: _signal_param_table.rst
 
-.. include:: voice_signal_param_table.rst
+.. include:: _voice_signal_param_table.rst
 
 Additional Feature Parameters
 *****************************
 
-.. include:: advertiser_optional_param_table.rst
+.. include:: _advertiser_optional_param_table.rst
 
-.. include:: example.rst
+.. include:: _example.rst
 
 .. code-block:: bash
 

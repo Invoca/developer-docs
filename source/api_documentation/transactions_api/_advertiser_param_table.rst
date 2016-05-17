@@ -1,4 +1,4 @@
-:orphan:
+
 
 ..  list-table::
   :widths: 30 8 40
@@ -8,10 +8,6 @@
   * - Field
     - Name in Reports
     - Description
-
-  * - advertiser_call_fee_localized
-    - Advertiser Fees
-    - Advertiser Telecommunications fee associated with transaction
 
   * - advertiser_campaign_id
     - Advertiser Campaign ID (Invoca ID)
@@ -25,21 +21,13 @@
     - Advertiser Campaign
     - Name of the campaign.
 
-  * - advertiser_id
-    - Advertiser ID (Invoca ID)
-    - The Invoca identifier of the advertiser
-
-  * - advertiser_id_from_network
-    - Advertiser ID
-    - Advertiser ID from the network as set on the Invoca advertiser.
-
-  * - advertiser_name
-    - Advertiser
-    - Name of the advertiser.
-
   * - advertiser_payin_localized
     - Earned
     - Amount paid in by advertiser
+
+  * - advertiser_promo_line_description
+    - Promo Number Description
+    - Additional details about the transaction source
 
   * - affiliate_call_volume_ranking
     - Affiliate Volume Ranking
@@ -65,15 +53,7 @@
     - Affiliate
     - Name of the affiliate
 
-  * - affiliate_payout_localized
-    - Paid
-    - Amount paid out to the affiliate
-
-  * - call_fee_localized
-    - Fees
-    - Telecommunications fee associated with transaction
-
-  * - call_result_description_detail
+  * - call_result_description_detail_managed_advertiser
     - Call Result
     - Status of the transaction
 
@@ -137,17 +117,9 @@
     - Keypresses
     - List of unique keynames that were pressed during the call
 
-  * - margin_localized
-    - Margin
-    - Difference between advertiser_payin_localized and affiliate_payout_localized
-
   * - matching_advertiser_payin_policies
     - Matching Advertiser Payin Policies
     - List of advertiser policies that matched (base, bonus1, bonus2, etc.) to determine the advertiser payin, separated by +. For example, base+bonus1+bonus3. Note that if there was any advertiser payin, this field guaranteed to start with base.
-
-  * - matching_affiliate_payout_policies
-    - Matching Affiliate Payout Policies
-    - List of affiliate policies that matched (base, bonus1, bonus2, etc.) to determine the affiliate payout, separated by +. For example, base+bonus2. Note that if there was any affiliate payout, this field guaranteed to start with base.
 
   * - media_type
     - Media Type
@@ -172,10 +144,6 @@
   * - payin_conditions
     - Payin Conditions
     - Base condition with highlighting around the term(s) that disqualified advertiser payin. For example: duration > 1 min and in_region
-
-  * - payout_conditions
-    - Payout Conditions
-    - Base condition with highlighting around the term(s) that disqualified affiliate payout. For example: duration > 1 min and in_region
 
   * - qualified_regions
     - Qualified Regions
@@ -204,6 +172,10 @@
   * - start_time_xml
     - Call Start Time (XML formatted)
     - Start of the call in Soap XML formatted time.
+
+  * - syndicated_ident
+    - Syndicated ID
+    - The syndicated id for this call.  Uniquely identifies syndication sources for a campaign.
 
   * - transaction_id
     - Transaction ID
