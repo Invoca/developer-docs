@@ -36,7 +36,7 @@ bash html
 3. Rebuild the docs with this command:
 `bash html`
 4. Check your changes locally by opening `build/html/index.html`
-5. Commit your changes and push to GitHub
+5. Commit your changes and push to GitHub (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Visit http://developers.invoca.net to check your changes
 
@@ -54,7 +54,7 @@ bash html
 10. Visit http://developers.invoca.net
 11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
 12. Click on your branch name to view and you should be able to check the changes you made
-13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch
+13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch. (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
 14. ReadTheDocs will automatically pickup your changes and recompile the site
 
 ## Making a new version:
@@ -74,6 +74,7 @@ You will then be taken to the [Builds page] (https://readthedocs.org/projects/in
 12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
 13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
 14. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
+15. Limit pushing to the branch to members of the Developer Docs Administrators group in [Settings > Branches](https://github.com/Invoca/developer-docs/settings/branches)
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
