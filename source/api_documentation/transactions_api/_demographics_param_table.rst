@@ -72,4 +72,47 @@ Enhanced Caller Profile Parameters
     - Line Type (Data Append)
     - Data from caller demographics lookup
 
+  * - primary_email_address_data_append
+    - Primary Email Address (Data Append)
+    - Data from caller demographics lookup
+
+  * - linked_email_addresses_data_append
+    - Linked Email Addresses (Data Append)
+    - Data from caller demographics lookup
+
+  * - household_income_data_append
+    - Household Income (Data Append)
+    - Data from caller demographics lookup
+
+  * - marital_status_data_append
+    - Marital Status (Data Append)
+    - Data from caller demographics lookup
+
+  * - home_owner_status_data_append
+    - Home Owner Status (Data Append)
+    - Data from caller demographics lookup
+
+  * - home_market_value_data_append
+    - Home Market Value (Data Append)
+    - Data from caller demographics lookup
+
+  * - length_of_residence_years_data_append
+    - Length of Residence in Years (Data Append)
+    - Data from caller demographics lookup
+
+  * - occupation_data_append
+    - Occupation (Data Append)
+    - Data from caller demographics lookup
+
+  * - education_data_append
+    - Education (Data Append)
+    - Data from caller demographics lookup
+
+  * - has_children_data_append
+    - Has Children (Data Append)
+    - Data from caller demographics lookup
+
+  * - high_net_worth_data_append
+    - High Net Worth (Data Append)
+    - Data from caller demographics lookup
 
