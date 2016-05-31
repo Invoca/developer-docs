@@ -63,7 +63,7 @@ bash html
 2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
 3. Login to ReadTheDocs.org (credentials in lastpass)
 4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
-5. Set your branch to Active
+5. Set your branch to Active in the Admin settings (This will trigger a build)
 6. Set your version to Private
 7. Click "Submit" to save changes
 8. Build your project by going to the [Project Overview](https://readthedocs.org/projects/invoca-developer-docs/), selecting your branch (version) from the "Build a version" dropdown, and click "Build." 
