@@ -228,6 +228,10 @@ RingPool Parameters
     - Keywords
     - Search keywords used
 
+  * - dynamic_number_pool_referrer_keyword_match_type
+    - Keyword Match Type
+    - The match type for the Keyword
+
   * - dynamic_number_pool_referrer_search_type
     - Search Type
     - Paid or Organic.
