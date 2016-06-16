@@ -40,3 +40,6 @@ AdWords Parameters
     - AdWords Keywords ID
     - AdWords Keyword ID, provided by Google
 
+  * - dynamic_number_pool_referrer_keyword_match_type
+    - AdWords Keyword Match Type
+    - The match type for the Keyword
