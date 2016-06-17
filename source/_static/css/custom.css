@@ -269,7 +269,7 @@ cite  {
 
 .wy-menu-vertical {
   /* set position as soon as possible to avoid flicker when boostrap.css is loaded and sets this value */
-  position: fixed;
+  position: relative;
 }
 
 .wy-menu-vertical a {
