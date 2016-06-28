@@ -508,3 +508,70 @@ Endpoint
    :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/unarchive
    :description: Unarchive a Campaign
    :page: post_advertiser_campaign_unarchive
+
+
+Error Handling
+--------------
+
+Forbidden – 403:
+
+PUT/POST
+""""""""
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertiser/<advertiser_id_from_network>/advertiser_campaign/<advertiser_campaign_id_from_network>/advertiser_campaigns/<advertiser_campaign_id>.json``
+
+Content Type: application/json
+
+Response Code: 403
+
+**Request Body**
+
+.. code-block:: json
+
+  {
+    "node_type":"Menu",
+    "prompt":"Prompt text",
+    "prompt_id_from_network":"",
+    "prompt_url":null,
+    "prompt_recieved":null,
+    "children": [
+      {
+        "node_type":"Menu",
+        "prompt":"",
+        "prompt_id_from_network":"",
+        "prompt_url":null,
+        "prompt_recieved":null,
+        "children": [
+          {
+            "node_type":"EndCall",
+            "prompt":"",
+            "prompt_id_from_network":"",
+            "prompt_url":null,
+            "prompt_recieved":null
+          }
+        ]
+      }
+    ]
+  }
+
+**Response Body**
+
+.. code-block:: json
+
+  {
+    "error": {
+      "ivr_tree": {
+        "children": [
+          {
+            "0": {
+              "prompt": [
+                "cannot be empty"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+
+The number in error message represents the index of the child node in the tree, or in other words, it is the keypress of the node containing the error minus one.
