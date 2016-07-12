@@ -14,12 +14,16 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     - Type
     - Value
 
+  * - id
+    - integer (read-only)
+    - The internal Invoca id for this Advertiser.
+
   * - id_from_network
-    - string (Required)
-    - The network id for this Advertiser. Unique within network.
+    - string (required)
+    - The network id for this Advertiser. Unique within network. Not required when auto-generation is enabled at network level.
 
   * - name
-    - string (Required)
+    - string (required)
     - The name of the Advertiser. Unique within network.
 
   * - oauth_refresh_token
@@ -37,6 +41,10 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
   * - default_creative_id_from_network
     - integer
     -
+
+  * - object_url
+    - string (read-only)
+    - URL for reaching the advertiser in the UI
 
   * - **sites**
     - json array of hashes
@@ -106,7 +114,7 @@ Endpoint:
 
 .. api_endpoint::
    :verb: POST
-   :path: /advertisers/&lt;advertiser_id&gt;
+   :path: /advertisers
    :description: Create an Advertiser
    :page: post_advertiser
 

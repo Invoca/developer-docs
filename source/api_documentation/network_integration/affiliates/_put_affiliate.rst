@@ -17,3 +17,7 @@
     {
       "name": "Updated Surf Oz Magazine"
     }
+
+  Response Body:
+
+  Same as a GET response, includes all the affiliate properties.

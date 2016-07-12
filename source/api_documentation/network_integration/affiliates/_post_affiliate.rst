@@ -8,7 +8,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates/222.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/affiliates.json``
 
   Format: application/json
 
@@ -19,6 +19,7 @@
     {
       "name": "Surf Oz Magazine",
       "status": "Approved",
+      "id_from_network": "222",
       "users": [
         {
           "phone_number": "805‐708‐9876",
@@ -43,8 +44,4 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
-
+  Same as a GET response, includes all the affiliate properties.
