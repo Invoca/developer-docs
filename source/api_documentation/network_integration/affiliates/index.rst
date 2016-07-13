@@ -32,7 +32,7 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
 
   * - object_url
     - string (read-only)
-    - URL for reaching the affiliate in the UI
+    - URL for reaching the affiliate in the UI.
 
   * - **sites**
     - json array of hashes

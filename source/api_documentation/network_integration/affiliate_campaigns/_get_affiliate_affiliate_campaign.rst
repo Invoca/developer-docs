@@ -73,6 +73,8 @@
         }
       },
       "status": "Approved_NotActive",
-      "affiliate_campaign_id_from_network": "11",
-      "affiliate_id_from_network": "976"
+      "id": 1,
+      "id_from_network": "11",
+      "affiliate_id_from_network": "976",
+      "object_url": "https://invoca.net/p_campaigns/terms/19/11"
     }

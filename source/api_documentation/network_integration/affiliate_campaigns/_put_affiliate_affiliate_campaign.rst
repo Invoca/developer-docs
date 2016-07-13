@@ -20,3 +20,6 @@
       "status": "Approved"
     }
 
+  Response Body:
+
+  Same as a GET response, includes all the affiliate campaign properties.

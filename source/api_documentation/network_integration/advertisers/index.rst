@@ -44,7 +44,7 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
 
   * - object_url
     - string (read-only)
-    - URL for reaching the advertiser in the UI
+    - URL for reaching the advertiser in the UI.
 
   * - **sites**
     - json array of hashes

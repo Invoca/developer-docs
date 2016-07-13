@@ -19,9 +19,12 @@
   .. code-block:: json
 
     {
+      "id": 21,
+      "id_from_network": "4531",
       "media_type": "Online: Display",
       "description": "Halloween Promo Number 1",
-      "promo_number": "8001234567"
+      "promo_number": "8001234567",
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/11"
     }
 
   .. raw:: html
@@ -43,7 +46,10 @@
   .. code-block:: json
 
     {
+      "id": 21,
+      "id_from_network": "4531",
       "media_type": "Online: Display",
       "description": "Halloween Promo Number 1",
-      "promo_number": "8001234567"
+      "promo_number": "8001234567",
+      "object_url": "https://invoca.net/p_campaigns/promo_numbers/14/11"
     }

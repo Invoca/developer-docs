@@ -18,6 +18,14 @@ When you POST a promo number, we return the promo_number in the response body. T
     - Type
     - Value
 
+  * - id
+    - integer (read-only)
+    - The internal Invoca id of the promo number.
+
+  * - id_from_network
+    - string
+    - Network specific id of the promo number.
+
   * - description
     - string (required)
     - Arbitrary description
@@ -77,6 +85,10 @@ When you POST a promo number, we return the promo_number in the response body. T
       “Offline: TV”
 
       “Offline: Other”
+
+  * - object_url
+    - string (read-only)
+    - URL for reaching the promo number in the UI.
 
   * - local_center
     - hash

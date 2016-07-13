@@ -48,7 +48,7 @@ You are not allowed to delete campaigns.
 
   * - object_url
     - string (read-only)
-    - URL for reaching the advertiser campaign in the UI
+    - URL for reaching the advertiser campaign in the UI.
 
   * - timezone
     - string

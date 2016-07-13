@@ -28,9 +28,12 @@
   .. code-block:: json
 
     {
+      "id": 12,
+      "id_from_network": "12",
       "media_type": "Online: Display",
       "promo_number": "8777657743",
-      "description": "Halloween Promo Number 1"
+      "description": "Halloween Promo Number 1",
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12"
     }
 
   .. raw:: html
@@ -65,9 +68,12 @@
   .. code-block:: json
 
     {
+      "id": 12,
+      "id_from_network": "12",
       "media_type": "Online: Display",
       "promo_number": "8057657743",
-      "description": "Halloween Promo Number 1"
+      "description": "Halloween Promo Number 1",
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12"
     }
 
   .. raw:: html
@@ -102,9 +108,12 @@
   .. code-block:: json
 
     {
+      "id": 12,
+      "id_from_network": "12",
       "media_type": "Online: Display",
       "promo_number": "8057657743",
-      "description": "Halloween Promo Number 1"
+      "description": "Halloween Promo Number 1",
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12"
     }
 
   .. raw:: html
@@ -135,7 +144,10 @@
   .. code-block:: json
 
     {
+      "id": 12,
+      "id_from_network": "12",
       "media_type": "Online: Display",
       "promo_number": "8777657743",
-      "description": "Halloween Promo Number 1"
+      "description": "Halloween Promo Number 1",
+      "object_url": "https://invoca.net/p_campaigns/promo_numbers/14/11"
     }
