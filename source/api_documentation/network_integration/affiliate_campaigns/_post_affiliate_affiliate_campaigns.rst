@@ -20,8 +20,12 @@
 
     {
       "status": "Applied",
-      "affiliate_campaign_id_from_network": "2234"
+      "id_from_network": "2234"
     }
+
+  Response Body:
+
+  Same as a GET response, includes all the affiliate campaign properties.
 
   .. raw:: html
 

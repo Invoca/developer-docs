@@ -25,10 +25,7 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
+  Same as a GET response, includes all the promo number properties.
 
   .. raw:: html
 
@@ -55,7 +52,4 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
+  Same as a GET response, includes all the promo number properties.

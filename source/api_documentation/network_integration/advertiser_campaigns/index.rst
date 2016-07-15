@@ -22,6 +22,14 @@ You are not allowed to delete campaigns.
     - Type
     - Value
 
+  * - id
+    - integer (read-only)
+    - The internal Invoca id for this Advertiser Campaign.
+
+  * - id_from_network
+    - string
+    - The network object_id for this Advertiser Campaign. Unique within network. Not required when auto-generation is enabled at network level.
+
   * - name
     - string
     - Campaign name.
@@ -37,6 +45,10 @@ You are not allowed to delete campaigns.
   * - url
     - string
     - Click URL Template.
+
+  * - object_url
+    - string (read-only)
+    - URL for reaching the advertiser campaign in the UI.
 
   * - timezone
     - string
@@ -210,10 +222,6 @@ You are not allowed to delete campaigns.
   * - default_creative_id_from_network
     - integer
     - Default Creative ID.
-
-  * - max_promo_numbers
-    - integer
-    - Maximum Promo Numbers.
 
   * - **concurrent_call_cap_alert**
     -
@@ -457,7 +465,7 @@ Endpoint
 
 .. api_endpoint::
    :verb: POST
-   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :path: /advertiser_campaigns
    :description: Create an Advertiser Campaign
    :page: post_advertiser_campaign
 

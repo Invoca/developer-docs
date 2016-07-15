@@ -22,7 +22,11 @@ Relationship properties are shown below
     - string (read and write)
     - One of: Applied, Approved, Suspended, Declined.
 
-  * - affiliate_campaign_id_from_network
+  * - id
+    - integer (read-only)
+    - The internal Invoca id of the affiliate campaign.
+
+  * - id_from_network
     - string (read and write)
     - Network specific id of the affiliate campaign.
 
@@ -30,13 +34,17 @@ Relationship properties are shown below
     - integer (read only)
     - Promo number limit.
 
+  * - object_url
+    - string (read-only)
+    - URL for reaching the affiliate campaign in the UI.
+
   * - current_terms
     - (read only)
-    - 
+    -
 
   * - **advertiser_payin**
-    - 
-    - 
+    -
+    -
 
   * - max
     - decimal
@@ -59,8 +67,8 @@ Relationship properties are shown below
     - Formatted string including min and max payin values.
 
   * - **policies**
-    - 
-    - 
+    -
+    -
 
   * - amount
     - decimal
@@ -87,8 +95,8 @@ Relationship properties are shown below
     - Interactive Voice Response tree.
 
   * - **affiliate_payout**
-    - 
-    - 
+    -
+    -
 
   * - max
     - decimal
@@ -111,8 +119,8 @@ Relationship properties are shown below
     - Formatted string including min and max payin values policies.
 
   * - **policies**
-    - 
-    - 
+    -
+    -
 
   * - amount
     - decimal
@@ -133,11 +141,11 @@ Relationship properties are shown below
 
 Endpoint:
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/<affiliate_campaign_id_from_network>.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns.json``
 
 .. api_endpoint::
    :verb: GET
-   :path: /affiliates/&lt;affiliate_id&gt;/affiliate_campaigns
+   :path: /affiliate_campaigns
    :description: Get all Affiliate Campaigns
    :page: get_affiliate_affiliate_campaigns
 

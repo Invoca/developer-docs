@@ -15,6 +15,11 @@
   .. code-block:: json
 
      {
+         "id": 11,
+         "id_from_network": "100",
+         "name": "PostSeason Promotion 11 fJauFbSEGHKw8ADEGv",
+         "status": "Entry",
+         "object_url": "https://invoca.net/a_campaigns/terms/11",
          "current_terms": {
            "description": "August promotion to sell post-season tickets at half price.",
            "timezone": "Pacific Time (US & Canada)",
@@ -306,9 +311,6 @@
                  "name": "East Coast"
                }
              ]
-           },
-           "status": "Entry",
-           "name": "PostSeason Promotion 11 fJauFbSEGHKw8ADEGv",
-           "max_promo_numbers": 10
+           }
          }
        }

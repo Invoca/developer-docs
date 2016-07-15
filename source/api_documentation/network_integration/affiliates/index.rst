@@ -14,9 +14,13 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
     - Type
     - Value
 
+  * - id
+    - integer (read-only)
+    - The internal Invoca id for this Affiliate.
+
   * - id_from_network
     - string
-    - The network object_id for this Affiliate. Unique within network.
+    - The network object_id for this Affiliate. Unique within network. Not required when auto-generation is enabled at network level.
 
   * - name
     - string
@@ -25,6 +29,10 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
   * - status
     - string (one of): Applied, Approved (default), Declined, Suspended, Archived
     - Approval status for this affiliate.
+
+  * - object_url
+    - string (read-only)
+    - URL for reaching the affiliate in the UI.
 
   * - **sites**
     - json array of hashes
@@ -91,7 +99,7 @@ Endpoint:
 
 .. api_endpoint::
    :verb: POST
-   :path: /affiliates/&lt;affiliate_id&gt;
+   :path: /affiliates
    :description: Create an Affiliate
    :page: post_affiliate
 

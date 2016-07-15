@@ -41,3 +41,6 @@
        ]
      }
 
+  Response Body:
+
+  Same as a GET response, includes all the advertiser properties.
