@@ -135,7 +135,7 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     Example (13 digits): **1460404800000**
 
-**Compressed:** 17 digit timestamp always parsed in Pacific time.
+**Compressed:** 17 digit timestamp always parsed in UTC.
 
     Format: **YYYYMMDDHHMMSSsss**
 
@@ -163,7 +163,6 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     **Note:** The file upload user interface includes a timezone dropdown feature, which allows users to select which timezone this format is parsed in. Use the following to format Excel date cells: **yyyy/mm/dd hh:mm:ss.000 AM/PM**.
 
-    
 Example POST Request Using cURL
 -------------------------------
 
