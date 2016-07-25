@@ -163,7 +163,6 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     **Note:** The file upload user interface includes a timezone dropdown feature, which allows users to select which timezone this format is parsed in. Use the following to format Excel date cells: **yyyy/mm/dd hh:mm:ss.000 AM/PM**.
 
-
 Example POST Request Using cURL
 -------------------------------
 
