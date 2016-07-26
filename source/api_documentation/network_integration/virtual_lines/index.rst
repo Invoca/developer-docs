@@ -20,57 +20,91 @@ Request Parameters
 
 Passed in “application/json” format.
 
-**Search Parameters**
+.. list-table::
+  :widths: 11 34 40
+  :header-rows: 1
+  :class: parameters
 
-Used to filter the virtual lines.
+  * - Property
+    - Type
+    - Value
 
-    **Required**
+  * - Search Parameters
+    -
+    - Used to filter the virtual lines.
 
-    `network_id:` ID of the network.
+  * - **Required (one of)**
+    -
+    -
 
-    or
+  * - network_id
+    - string
+    - ID of the network.
 
-    `advertiser_id:` ID of the advertiser
+  * - advertiser_id
+    - string
+    - ID of the advertiser.
 
-    **Optional**
+  * - **Optional**
+    -
+    -
 
-    `status`: The status of the virtual line. Allowed values: *all*, *applied*, *approved*, *declined*, *suspended*, *expired*, *blocked*.
+  * - status
+    - string
+    - The status of the virtual line. Allowed values: *all*, *applied*, *approved*, *declined*, *suspended*, *expired*, *blocked*.
 
-    `advertiser_campaign_id:` The ID of the advertiser campaign.
+  * - advertiser_campaign_id
+    - string
+    - The ID of the advertiser campaign.
 
-    `advertiser:` The ID of the advertiser.
 
-    `affiliate:` The ID of the affiliate.
+  * - advertiser
+    - string
+    - The ID of the advertiser.
 
-**Pagination Parameters**
+  * - affiliate
+    - string
+    - The ID of the affiliate.
 
-    `limit:` The number of records to be returned.
+  * - **Pagination Parameters**
+    -
+    -
 
-    `offset:` The offset from the first result to start from.
+  * - limit
+    - string
+    - The number of records to be returned.
 
-**Sorting Parameters**
+  * - offset
+    - string
+    - The offset from the first result to start from.
 
-    `sort_dir:` The direction of sorting. Allowed values: *asc*, *desc*.
+  * - **Sorting Parameters**
+    -
+    -
 
-    `sort_by:` The name of the field to sort by.
+  * - sort_dir
+    - string
+    - The direction of sorting. Allowed values: *asc*, *desc*.
 
-    Allowed values:
+  * - sort_by
+    - string
+    - one of:
 
-      `status:` The top level status of the virtual line. It is taken as default sort field.
+      "status": The top level status of the virtual line. It is taken as default sort field.
 
-      `virtual_line_name:` The name of the virtual line, usually a promo number.
+      "virtual_line_name": The name of the virtual line, usually a promo number.
 
-      `description:` The description of the virtual line.
+      "description": The description of the virtual line.
 
-      `media_type:` The name of the virtual line's media type.
+      "media_type": The name of the virtual line's media type.
 
-      `advertiser_campaign_name:` The name of the advertiser campaign.
+      "advertiser_campaign_name": The name of the advertiser campaign.
 
-      `advertiser_name:` The name of the advertiser.
+      "advertiser_name": The name of the advertiser.
 
-      `affiliate_name:` The name of the affiliate.
+      "affiliate_name": The name of the affiliate.
 
-      `customized_at`: The type of the entity on which the call pricing is set at.
+      "customized_at": The type of the entity on which the call pricing is set at.
 
 
 .. api_endpoint::
