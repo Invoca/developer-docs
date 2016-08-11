@@ -311,13 +311,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "1",
         "description": "Honda Accord 2015",
         "occurred_at_time_t": "1440607999",
-        "occurred_at_time": "1440607999",
+        "occurred_at_time": "01/01/2016 08:34 PM UTC",
         "value": "true"
       },
       "call": {
         "transaction_id": "00000000-00000001",
         "start_time_t": "1435993200",
-        "call_start_time": "1435993200"
+        "call_start_time": "01/01/2016 08:34 PM UTC"
       }
     }
 
@@ -349,7 +349,7 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015",
         "occurred_at_time_t": "1440607800",
-        "occurred_at_time": "1440607800",
+        "occurred_at_time": "01/01/2016 08:34 PM UTC",
         "value": "true",
         "custom_parameter_1": "",
         "custom_parameter_2": "",
@@ -358,7 +358,7 @@ Example of creating two signals (on a single call) then updating one
       "call": {
         "transaction_id": "00000000-00000001",
         "start_time_t": "1435993200",
-        "call_start_time": "1435993200"
+        "call_start_time": "01/01/2016 08:34 PM UTC"
       }
     }
 
@@ -390,7 +390,7 @@ Example of creating two signals (on a single call) then updating one
       "partner_unique_id": "1",
       "description": "Honda Civic 2012",
       "occurred_at_time_t": "1440607999",
-      "occurred_at_time": "1440607999",
+      "occurred_at_time": "01/01/2016 08:34 PM UTC",
       "value": "true",
       "custom_parameter_1": "",
       "custom_parameter_2": "",
@@ -399,7 +399,7 @@ Example of creating two signals (on a single call) then updating one
     "call": {
       "transaction_id": "00000000-00000001",
       "start_time_t": "1435993200",
-      "call_start_time": "1435993200"
+      "call_start_time": "01/01/2016 08:34 PM UTC"
     }
   }
 
