@@ -213,7 +213,7 @@ If invalid parameters are passed an error will be returned with a 403 response c
   {
     "errors": {
       "class": "RecordInvalid",
-      "invalid_data": "Validation failed: transaction_id or start_time_t must be present"
+      "invalid_data": "Validation failed: transaction_id or call_start_time must be present"
     }
   }
 
