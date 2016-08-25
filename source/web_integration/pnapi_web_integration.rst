@@ -103,7 +103,8 @@ Client Side Parameters
     - Default `false`
 
       Strips out any special characters and uses found destination phone number's digits as campaign ID.
-      Warning! Requires Invoca campaign with explicit ID for each number. 
+      
+      **Warning! Requires Invoca campaign with explicit ID for each number.**
 
 
 .. list-table::
