@@ -17,6 +17,7 @@
   .. code-block:: json
 
     {
+      "id_from_network": "12",
       "param1": "updated",
       "param2": "test",
       "param3": "param3",
@@ -42,10 +43,7 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
+  Same as a GET response, includes all the RingPool properties.
 
   .. raw:: html
 
@@ -64,6 +62,7 @@
   .. code-block:: json
 
     {
+      "id_from_network": "12",
       "param1": "updated",
       "param2": "test",
       "param3": "param3",
@@ -89,7 +88,4 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
+  Same as a GET response, includes all the RingPool properties.

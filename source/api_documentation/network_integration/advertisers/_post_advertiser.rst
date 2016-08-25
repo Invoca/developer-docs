@@ -8,16 +8,17 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/cFUyYnFHy.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers.json``
 
   Format: application/json
 
-  Response Body:
+  Request Body:
 
   .. code-block:: json
 
      {
        "name": "NFL Tickets Exchange",
+       "id_from_network": "cFUyYnFHy",
        "oauth_refresh_token": "7464644784457575757494930303",
        "approval_status": "Approved",
        "web_integration_phone_number": "8004377950",
@@ -53,3 +54,7 @@
          }
        ]
      }
+
+  Response Body:
+
+  Same as a GET response, includes all the advertiser properties.

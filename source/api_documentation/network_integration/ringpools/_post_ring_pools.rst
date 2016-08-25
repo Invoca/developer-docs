@@ -8,7 +8,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools.json``
 
   Format: application/json
 
@@ -17,6 +17,7 @@
   .. code-block:: json
 
     {
+      "id_from_network": "12",
       "param1": "q",
       "param2": "test",
       "param3": "param3",
@@ -42,10 +43,7 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
+  Same as a GET response, includes all the RingPool properties.
 
   .. raw:: html
 
@@ -55,7 +53,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/ring_pools/<ring_pool_id_from_network>.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/affiliates/<affiliate_id_from_network>/affiliate_campaigns/ring_pools.json``
 
   Format: application/json
 
@@ -64,6 +62,7 @@
   .. code-block:: json
 
     {
+      "id_from_network": "12",
       "param1": "q",
       "param2": "test",
       "param3": "param3",
@@ -89,7 +88,4 @@
 
   Response Body:
 
-  .. code-block:: json
-
-    {
-    }
+  Same as a GET response, includes all the RingPool properties.

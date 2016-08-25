@@ -4,8 +4,6 @@
 
   .. rubric:: Examples
 
-  Assuming you used the curl command to create the campaign with id 445566, the following commands will update that campaign to have a new IVR tree.
-
   Example IVR Tree updates:
 
   1) Verify the callers location, then if on the West Coast (setup previously) forward to a call center, otherwise hang up after playing a prompt.
@@ -83,3 +81,6 @@
             "destination_country_code":"1"}]
         },
         "record_calls":true}}' -v
+
+
+  Each of the above requests will have a response body similar to a GET request, including all the advertiser campaign properties.

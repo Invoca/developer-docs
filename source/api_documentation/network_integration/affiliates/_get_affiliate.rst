@@ -15,7 +15,9 @@
   .. code-block:: json
 
     {
+      "id": 19,
       "id_from_network": "222",
+      "object_url": "https://invoca.net/ps/19/dashboards/ui",
       "sites": [
         {
           "id_from_network": "33567",

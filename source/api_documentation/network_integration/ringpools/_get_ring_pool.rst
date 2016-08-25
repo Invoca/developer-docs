@@ -18,9 +18,11 @@
 
     {
       "id": "value",
+      "id_from_network": "5432",
       "pool_type": "value",
       "is_first_preference": true,
       "destination_url": "",
+      "object_url": "https://invoca.net/a_campaigns/ring_pools/11",
       "preferred": true,
       "sample_api_url": "value",
       "destination_type": "value",
@@ -60,9 +62,11 @@
 
     {
       "id": "value",
+      "id_from_network": "5432",
       "pool_type": "value",
       "is_first_preference": true,
       "destination_url": "",
+      "object_url": "https://invoca.net/p_campaigns/ring_pools/19/11",
       "preferred": true,
       "sample_api_url": "value",
       "destination_type": "value",

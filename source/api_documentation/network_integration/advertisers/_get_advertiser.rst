@@ -19,9 +19,11 @@
   .. code-block:: json
 
      {
+       "id": 43838,
        "id_from_network": "cFUyYnFHy",
        "web_integration_phone_number": "8004377950",
        "approval_status": "Approved",
+       "object_url": "https://invoca.net/as/43838/dashboards/ui",
        "sites": [
          {
            "id_from_network": "315",

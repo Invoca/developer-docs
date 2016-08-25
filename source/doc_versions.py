@@ -1,12 +1,12 @@
 # The API version strings to display in the documentation
 # COMMON_VERSION is the latest version of any one API, and is considered the overall API version
-COMMON_VERSION = '2016-06-12'
+COMMON_VERSION = '2016-08-01'
 
 VERSIONS = {
-    '@@NETWORK_API_VERSION':     '2016-05-01',
+    '@@NETWORK_API_VERSION':     '2016-07-01',
     '@@CONVERSION_API_VERSION':  '2014-04-15',
     '@@TRANSACTION_API_VERSION': '2016-06-12',
     '@@RINGPOOL_API_VERSION':    '2015-12-09',
     '@@PNAPI_VERSION':           '2013-07-01',
-    '@@SIGNAL_API_VERSION':      '2016-02-01'
+    '@@SIGNAL_API_VERSION':      '2016-08-01'
 }

@@ -22,6 +22,14 @@ You are not allowed to delete campaigns.
     - Type
     - Value
 
+  * - id
+    - integer (read-only)
+    - The internal Invoca id for this Advertiser Campaign.
+
+  * - id_from_network
+    - string
+    - The network object_id for this Advertiser Campaign. Unique within network. Not required when auto-generation is enabled at network level.
+
   * - name
     - string
     - Campaign name.
@@ -37,6 +45,10 @@ You are not allowed to delete campaigns.
   * - url
     - string
     - Click URL Template.
+
+  * - object_url
+    - string (read-only)
+    - URL for reaching the advertiser campaign in the UI.
 
   * - timezone
     - string
@@ -210,10 +222,6 @@ You are not allowed to delete campaigns.
   * - default_creative_id_from_network
     - integer
     - Default Creative ID.
-
-  * - max_promo_numbers
-    - integer
-    - Maximum Promo Numbers.
 
   * - **concurrent_call_cap_alert**
     -
@@ -457,7 +465,7 @@ Endpoint
 
 .. api_endpoint::
    :verb: POST
-   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;
+   :path: /advertiser_campaigns
    :description: Create an Advertiser Campaign
    :page: post_advertiser_campaign
 
@@ -508,3 +516,70 @@ Endpoint
    :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/unarchive
    :description: Unarchive a Campaign
    :page: post_advertiser_campaign_unarchive
+
+
+Error Handling
+--------------
+
+Forbidden – 403:
+
+PUT/POST
+""""""""
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertiser/<advertiser_id_from_network>/advertiser_campaign/<advertiser_campaign_id_from_network>/advertiser_campaigns/<advertiser_campaign_id>.json``
+
+Content Type: application/json
+
+Response Code: 403
+
+**Request Body**
+
+.. code-block:: json
+
+  {
+    "node_type":"Menu",
+    "prompt":"Prompt text",
+    "prompt_id_from_network":"",
+    "prompt_url":null,
+    "prompt_recieved":null,
+    "children": [
+      {
+        "node_type":"Menu",
+        "prompt":"",
+        "prompt_id_from_network":"",
+        "prompt_url":null,
+        "prompt_recieved":null,
+        "children": [
+          {
+            "node_type":"EndCall",
+            "prompt":"",
+            "prompt_id_from_network":"",
+            "prompt_url":null,
+            "prompt_recieved":null
+          }
+        ]
+      }
+    ]
+  }
+
+**Response Body**
+
+.. code-block:: json
+
+  {
+    "error": {
+      "ivr_tree": {
+        "children": [
+          {
+            "0": {
+              "prompt": [
+                "cannot be empty"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+
+The number in error message represents the index of the child node in the tree, or in other words, it is the keypress of the node containing the error minus one.
