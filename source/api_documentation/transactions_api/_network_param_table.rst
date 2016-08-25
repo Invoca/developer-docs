@@ -221,6 +221,10 @@
     - Verified Zip Code
     - Zip Code entered by callers when prompted during call treatment
 
+  * - hangup_cause
+    - End of Call Reason
+    - Who ended the call along with how it was ended
+
   * - virtual_line_id
     - Promo Number ID
     - The Promo Number ID from the network
