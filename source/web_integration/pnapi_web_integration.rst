@@ -29,9 +29,11 @@ You may find your ``networkId`` pre-populated in sample code available in the In
 
 Requirements
 ------------
-1. Invoca Web Integration code installed on page.
-2. Phone numbers on webpage tagged with a shared numberSelector class (Accepts multiple slectors).
-3. An Invoca Campaign ID to associate with each number on the page (Or a Campaign ID Override).
+1. Network is PNAPI enabled.
+2. RingPools are type: "Custom".
+3. Invoca Web Integration code installed on page.
+4. Phone numbers on webpage tagged with a shared numberSelector class (Accepts multiple slectors).
+5. An Invoca Campaign ID to associate with each number on the page (Or a Campaign ID Override).
 
 Identifying a Campaign
 ----------------------
@@ -68,10 +70,38 @@ Client Side Parameters
     - String
     - Invoca Network ID
 
+
+
+.. list-table::
+  :widths: 11 4 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Required: One of the following
+    -
+    -
+
   * - numberSelector
     - String
     - CSS selector for phone number HTML elements
-  
+      Accepts one or many like so `".invocaNumber, .phoneNumber"`
+
+  * - numberToReplace
+    - String or Hash
+    - Default: `null`
+
+      Specify which number(s) to replace. Can accept one or many like so: `"888-999-1010, 777-888-9999"`.
+      Optionally accepts a hash with the number as a key name, and campaignId as it's value like so:
+      
+      `{ "888-999-1010": 'campaignIdHere' }`
+
+  * - destinationAsId
+    - Bool
+    - Default `false`
+
+      Strips out any special characters and uses found destination phone number's digits as campaign ID.
+      Warning! Requires Invoca campaign with explicit ID for each number. 
+
 
 .. list-table::
   :widths: 11 4 40
@@ -95,11 +125,11 @@ Client Side Parameters
       Set of JavaScript parameters to be captured where the key name should be RingPool parameter name.
       These values are updated every subsequent visit.
 
-  * - savePoolParams
+  * - updatePoolParams
     - Bool
-    - Default: `false`
+    - Default: `true`
 
-      When true, the integration code will not update `poolParams` on subsequent page visits.
+      When `false`, the integration code will not update `poolParams` on subsequent page visits.
 
   * - requiredParams
     - Hash
@@ -130,9 +160,11 @@ Client Side Parameters
 
   * - onComplete
     - Function
-    - Default: `1`
+    - Default: `null`
 
-      Number of days for cache TTL.
+      Name of a function to call when Invoca has finished running. Note: Do not call the function, simply pass reference. 
+
+      For example: `functionName` not `functionName()`.
 
   * - debugMode
     - Boolean
@@ -160,7 +192,7 @@ http://www.example-page.com?utm_source=google
 .. code-block:: html
 
   <!-- Begin Invoca Integration -->
-  <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
+  <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
   <script type="text/javascript">
     Invoca.PNAPI.integration({
       networkId: YOUR_NETWORK_ID,
@@ -196,7 +228,7 @@ http://www.example-page.com?utm_source=google
   </div>
 
   <!-- Begin Invoca Integration -->
-  <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
+  <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
   <script type="text/javascript">
     Invoca.PNAPI.integration({
       networkId: YOUR_NETWORK_ID,
@@ -229,7 +261,7 @@ When no campaignIdOverride or data-invoca-campaign-id are found, the default cam
   </div>
 
   <!-- Begin Invoca Integration -->
-  <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
+  <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
   <script type="text/javascript">
     Invoca.PNAPI.integration({
       networkId: YOUR_NETWORK_ID,
@@ -258,7 +290,7 @@ Allows variables from JavaScript to be associated with a call.
 .. code-block:: html
 
   <!-- Begin Invoca Integration -->
-  <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
+  <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
   <script type="text/javascript">
 
     var invocaParams = {
@@ -304,7 +336,7 @@ http://www.example-page.com?ref=test
 .. code-block:: html
 
   <!-- Begin Invoca Integration -->
-  <script type="text/javascript" src="//cdn.invoca.solutions/js/pnapi_integration-2.0.0.min.js"></script>
+  <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
   <script type="text/javascript">
 
     Invoca.PNAPI.integration({
