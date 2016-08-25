@@ -42,10 +42,13 @@ There are three methods to identify an Invoca Campaign on your web page, which f
 1. **campaignIdOverrideParam**:
 Specify a query string parameter's name, the value of which will be used as the Invoca Campaign ID for all phone numbers in a given session.
 
-2. **data-invoca-campaign-id**:
+2. **destinationAsId**:
+When true, the phone number's digits (special characters stripped) from the `numberSelector` will be used as the Campaign ID.
+
+3. **data-invoca-campaign-id**:
 When no override is passed, a user may assign individual Invoca Campaign IDs to a specific phone number's HTML element using the ``data-invoca-campaign-id`` attribute.
 
-3. **defaultCampaignId**:
+4. **defaultCampaignId**:
 With no override, a ``defaultCampaignId`` can be passed to the ``Invoca.PNAPI.integration`` settings and will fill in the gaps wherever no ``data-invoca-campaign-id`` is found. If there are no data attributes or overrides, this value will apply to all phone numbers on the page.
 
 Additionally, the ``defaultCampaignId`` can be assigned dynamically with JavaScript based upon the page's environment and variables.
@@ -92,7 +95,7 @@ Client Side Parameters
 
       Specify which number(s) to replace. Can accept one or many like so: `"888-999-1010, 777-888-9999"`.
       Optionally accepts a hash with the number as a key name, and campaignId as it's value like so:
-      
+
       `{ "888-999-1010": 'campaignIdHere' }`
 
   * - destinationAsId
