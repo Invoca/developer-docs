@@ -19,7 +19,7 @@
         "name": "sale",
         "partner_unique_id": "1",
         "description": "1 year contract",
-        "occurred_at_time": "1440607313",
+        "occurred_at_time_t": "1440607313",
         "sale_amount": "100.00",
         "value": "true",
         "custom_parameter_1": "12345",
@@ -43,7 +43,6 @@
         "partner_unique_id": "1",
         "description": "1 year contract",
         "occurred_at_time_t": "1440607313",
-        "occurred_at_time": "2015-08-26T16:41:53Z",
         "sale_amount": "100.0",
         "value": "true",
         "custom_parameter_1": "12345",
@@ -52,8 +51,6 @@
       },
       "call": {
         "transaction_id": "00000000-00000001",
-        "start_time_t": "1435993200",
-        "call_start_time": "2015-07-04T07:00:00Z"
+        "start_time_t": "1435993200"
       }
     }
-

@@ -40,7 +40,6 @@
         "partner_unique_id": "1",
         "description": "Updated description and sale amount",
         "occurred_at_time_t": "1440607313",
-        "occurred_at_time": "2015-08-26T16:41:53Z",
         "sale_amount": "200.0",
         "value": "true",
         "custom_parameter_1": "",
@@ -49,8 +48,7 @@
       },
       "call": {
         "transaction_id": "00000000-00000001",
-        "start_time_t": "1435993200",
-        "call_start_time": "2015-07-04T07:00:00Z"
+        "start_time_t": "1435993200"
       }
     }
 
