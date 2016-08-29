@@ -57,4 +57,3 @@
 
   Note: It’s necessary to use the **transaction_id** of the transaction (call leg) that the signal was originally reported on.
   The **name** and **partner_unique_id** must also match the signal being updated.
-  
