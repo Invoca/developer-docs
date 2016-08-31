@@ -49,9 +49,9 @@ Used to find the call associated with the signal.
 
     or
 
-    `start_time_t:` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
+    `call_start_time:` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
 
-    Note: If using **start_time_t** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
+    Note: If using **call_start_time** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
 
     **Optional**
 
@@ -87,7 +87,7 @@ Used to create the fields of a signal.
 
     `description:` Free form text for providing additional details about the signal (for example: a sales order ID or a specific product being purchased or inquired about).
 
-    `occurred_at_time_t:` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
+    `occurred_at_time:` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
 
     `sale_amount:` Money with up to 2 decimal places (period separated).
     Assumed to be in the same currency as the organization that owns the signal being reported.
@@ -147,7 +147,7 @@ Endpoint:
 Timestamp Formats
 -------------------------------
 
-The following formats are supported for both `start_time_t` and `occurred_at_time_t`.
+The following formats are supported for both `call_start_time` and `occurred_at_time`.
 
 All examples below correspond to a date time of **11 April 2016** at **1 PM Pacific Time**.
 
@@ -195,7 +195,7 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signal": {"name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time_t": "1440607313","sale_amount": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
+  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signal": {"name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time": "1440607313","sale_amount": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
 
 Errors
 ------
@@ -204,7 +204,7 @@ The Signal API clearly identifies errors when a request cannot be processed.
 
 **Validation Errors**
 
-If invalid parameters are passed an error will be returned with a 403 response code. For example, if a **transaction_id** or **start_time_t** are not passed in the request, the following error will be returned.
+If invalid parameters are passed an error will be returned with a 403 response code. For example, if a **transaction_id** or **call_start_time** are not passed in the request, the following error will be returned.
 
 **Response (403 Forbidden):**
 
@@ -213,7 +213,7 @@ If invalid parameters are passed an error will be returned with a 403 response c
   {
     "errors": {
       "class": "RecordInvalid",
-      "invalid_data": "Validation failed: transaction_id or start_time_t must be present"
+      "invalid_data": "Validation failed: transaction_id or call_start_time must be present"
     }
   }
 
@@ -311,11 +311,13 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "1",
         "description": "Honda Accord 2015",
         "occurred_at_time_t": "1440607999",
+        "occurred_at_time": "2015-08-26T16:53:19Z",
         "value": "true"
       },
       "call": {
         "transaction_id": "00000000-00000001",
-        "start_time_t": "1435993200"
+        "start_time_t": "1435993200",
+        "call_start_time": "2015-07-04T07:00:00Z"
       }
     }
 
@@ -347,6 +349,7 @@ Example of creating two signals (on a single call) then updating one
         "partner_unique_id": "2",
         "description": "Toyota Camry 2015",
         "occurred_at_time_t": "1440607800",
+        "occurred_at_time": "2015-08-26T16:50:00Z",
         "value": "true",
         "custom_parameter_1": "",
         "custom_parameter_2": "",
@@ -354,7 +357,8 @@ Example of creating two signals (on a single call) then updating one
       },
       "call": {
         "transaction_id": "00000000-00000001",
-        "start_time_t": "1435993200"
+        "start_time_t": "1435993200",
+        "call_start_time": "2015-07-04T07:00:00Z"
       }
     }
 
@@ -386,6 +390,7 @@ Example of creating two signals (on a single call) then updating one
       "partner_unique_id": "1",
       "description": "Honda Civic 2012",
       "occurred_at_time_t": "1440607999",
+      "occurred_at_time": "2015-08-26T16:53:19Z",
       "value": "true",
       "custom_parameter_1": "",
       "custom_parameter_2": "",
@@ -393,7 +398,8 @@ Example of creating two signals (on a single call) then updating one
     },
     "call": {
       "transaction_id": "00000000-00000001",
-      "start_time_t": "1435993200"
+      "start_time_t": "1435993200",
+      "call_start_time": "2015-07-04T07:00:00Z"
     }
   }
 
