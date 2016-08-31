@@ -32,7 +32,6 @@ The API uses the following terms and their aliases:
    networks/index
    promo_numbers/index
    prompt_recordings/index
-   virtual_lines/index
    whisper_prompts/index
    custom_challenge_prompts/index
    ringpools/index
