@@ -445,6 +445,38 @@ it is equivalent to this:
 
 ``mobile or (in_region and during_hours)``
 
+Caller ID options can also be configured by optionally including a ``caller_id`` object inside ``ivr_tree``:
+
+.. list-table::
+  :widths: 10 20 20 30
+  :header-rows: 1
+  :class: parameters
+
+  * - Setting
+    - Mask
+    - Example
+    - Details
+
+  * - "original"
+    - None
+    - { setting: "original" }
+    - Display caller's caller id to call center agent. (Default)
+
+  * - "promo"
+    - None
+    - { setting: "promo" }
+    - Display affiliate promo number to call center agent. (Only if forwarding to a local number.)
+
+  * - "specific"
+    - String containing phone number
+    - { setting: "specific", mask: "800-555-5555" }
+    - Display a specific caller ID number.
+
+  * - "partial"
+    - String containing mask format
+    - { setting: "partial", mask: "800-555-XXXX" }
+    - Display caller's caller ID with digits replaced.
+
 
 Endpoint
 --------
