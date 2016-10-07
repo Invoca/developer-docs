@@ -29,7 +29,6 @@
       "param9": "param9",
       "param10": "param10",
       "pool_type": "SearchKeyword",
-      "api_key": "1234567890",
       "preferred": true,
       "name": "Invoca Example RingPool",
       "destination_url": "https://www.invoca.com",
