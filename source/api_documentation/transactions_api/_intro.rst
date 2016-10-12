@@ -31,6 +31,15 @@ The API takes the following optional query parameters:
   * - start_after_transaction_id=
     - Transaction_id to start retrieving after. This should be the last value retrieved previously. Default (or empty string) means start at the oldest.
 
+  * - include_custom_columns=
+    - 1 to include Custom Data Fields in the response. Default is 0.
+
+  * - include_columns=
+    - A comma separated list of columns you only want to see in the response.
+
+  * - exclude_columns=
+    - A comma separated list of the columns you want to remove from the response.
+
   * - column_separator=
     - [.csv format only] Separator between columns. Default is , for comma-separated values. (Can be set to any other separator like \| for pipe-separated values or %09 for tab-separated values.)
 
@@ -47,6 +56,10 @@ In order to ensure that all transactions are returned when using the from= and t
 you should store the last transaction id you have downloaded and pass it as the start_after_transaction_id to the next request.
 Typical usage on the polling interval is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
 Please note, the "to" and "from" date range parameters are both necessary, providing only one or the other will not filter the results.
+
+For including/excluding columns we provide two helpful constants. $invoca_custom_columns represents the complete list of your Custom Data Fields.
+$invoca_default_columns represents the default set of columns provided by the Transactions API. Either constant can be used in the include_columns,
+or exclude_columns options.
 
 Example:
 

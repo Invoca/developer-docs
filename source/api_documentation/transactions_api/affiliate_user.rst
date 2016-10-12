@@ -27,11 +27,13 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
 
 .. include:: _intro.rst
 
-``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&from=2015-03-26&to=2015-03-27``
+Custom Data Fields are not available to affiliates at this point in time.
 
-returns 500 rows, grab the last transaction_id (in this example 500) and send request 2:
+``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&exclude_columns=caller_id&from=2015-03-26&to=2015-03-27``
 
-``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
+returns 500 rows excluding the caller_id, grab the last transaction_id (in this example 500) and send request 2:
+
+``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&exclude_columns=caller_id&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
 
 then repeat as necessary to get all call records within date range.
 
