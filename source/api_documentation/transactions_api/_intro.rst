@@ -35,10 +35,10 @@ The API takes the following optional query parameters:
     - 1 to include Custom Data Fields in the response. Default is 0.
 
   * - include_columns=
-    - A comma separated list of columns you only want to see in the response.
+    - comma-separated list of field names to be returned in the response for each transaction (if not specified, all available fields for the account will be returned, minus any columns in exclude_columns)
 
   * - exclude_columns=
-    - A comma separated list of the columns you want to remove from the response.
+    - comma-separated list of field names to be excluded in the response for each transaction
 
   * - column_separator=
     - [.csv format only] Separator between columns. Default is , for comma-separated values. (Can be set to any other separator like \| for pipe-separated values or %09 for tab-separated values.)
