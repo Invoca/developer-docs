@@ -57,9 +57,9 @@ you should store the last transaction id you have downloaded and pass it as the 
 Typical usage on the polling interval is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
 Please note, the "to" and "from" date range parameters are both necessary, providing only one or the other will not filter the results.
 
-For including/excluding columns we provide two helpful constants. $invoca_custom_columns represents the complete list of your Custom Data Fields.
-$invoca_default_columns represents the default set of columns provided by the Transactions API. Either constant can be used in the include_columns,
-or exclude_columns options.
+For including/excluding columns we provide two helpful constants. $invoca_custom_columns is a dynamic constant that represents the current list of your Custom Data Fields.
+$invoca_default_columns represents the default set of columns provided by the Transactions API for your requested version. Either constant can be used in the include_columns,
+or exclude_columns options. (Note: If the list of custom columns were to change they will be included in an API call using the $invoca_custom_columns dynamic constant, they are not separated by version.)
 
 Example:
 
