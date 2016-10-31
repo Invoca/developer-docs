@@ -173,6 +173,14 @@
     - Call Start Time (XML formatted)
     - Start of the call in Soap XML formatted time.
 
+  * - start_time_network_timezone
+    - Call Start Time Network Timezone
+    - Start of the call in the networks's time zone, followed by offset from GMT.
+
+  * - start_time_network_timezone_xml
+    - Call Start Time Network Timezone (XML formatted)
+    - Start of the call in the network's time zone in Soap XML formatted time.
+
   * - syndicated_ident
     - Syndicated ID
     - The syndicated id for this call.  Uniquely identifies syndication sources for a campaign.
@@ -196,5 +204,3 @@
   * - virtual_line_id
     - Promo Number ID
     - The Promo Number ID from the network
-
-
