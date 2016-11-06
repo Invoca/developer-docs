@@ -31,9 +31,6 @@ The API takes the following optional query parameters:
   * - start_after_transaction_id=
     - Transaction_id to start retrieving after. This should be the last value retrieved previously. Default (or empty string) means start at the oldest.
 
-  * - include_custom_columns=
-    - 1 to include Custom Data Fields in the response. Default is 0.
-
   * - include_columns=
     - comma-separated list of field names to be returned in the response for each transaction (if not specified, all available fields for the account will be returned, minus any columns in exclude_columns)
 
@@ -57,12 +54,10 @@ you should store the last transaction id you have downloaded and pass it as the 
 Typical usage on the polling interval is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
 Please note, the "to" and "from" date range parameters are both necessary, providing only one or the other will not filter the results.
 
-For including/excluding columns we provide two helpful constants. $invoca_custom_columns is a dynamic constant that represents the current list of your Custom Data Fields.
-$invoca_default_columns represents the default set of columns provided by the Transactions API for your requested version. Either constant can be used in the include_columns,
-or exclude_columns options. (Note: If the list of custom columns were to change they will be included in an API call using the $invoca_custom_columns dynamic constant, they are not separated by version.)
+We provide two helpful constants that can be used in the include_columns and exclude_columns options:
 
-Example:
+    `$invoca_custom_columns` a dynamic constant that represents the current list of your Custom Data Fields. Note: If the list of custom columns changes, those changes will be included in future API calls that use "include_columns=$invoca_custom_columns", independent of the API version.
 
-Send request 1:
+    `$invoca_default_columns` represents the default set of columns provided by the Transactions API for your requested version
 
 

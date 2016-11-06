@@ -27,15 +27,6 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
 
 .. include:: _intro.rst
 
-Custom Data Fields are not available to affiliates at this point in time.
-
-``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>&exclude_columns=caller_id&from=2015-03-26&to=2015-03-27``
-
-returns 500 rows excluding the caller_id, grab the last transaction_id (in this example 500) and send request 2:
-
-``https://yourcompany.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/706.csv?limit=500&oauth_token=<YOUR_OAUTH_TOKEN>U&exclude_columns=caller_id&from=2015-03-26&to=2015-03-27&start_after_transaction_id=500``
-
-then repeat as necessary to get all call records within date range.
 
 Response
 --------
@@ -58,12 +49,28 @@ Additional Feature Parameters
 
 .. include:: _example.rst
 
+
+Example 1: Get the next 20 transactions that occurred after transaction id C624DA2C-CF3367C3:
+
 .. code-block:: bash
 
-  curl -k "https://mynetwork.invoca.net/affiliates/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU"
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFH'
 
-The -k option asks curl to not bother checking the SSL certificate authority chain as that requires extra configuration.
+
+Example 2: Get 50 rows from a specific time period with only the transaction_id and duration columns:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&include_columns=transaction_id,duration&from=2015-03-26&to=2015-03-27&oauth_token=YbcFH'
+
+
+Example 3: Get 50 rows that exclude a few columns such as city and region:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&exclude_columns=city,region&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFH'
+
 
 Endpoint:
 
-``https://invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/``
+``https://invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/<affiliate_id>.<format>``

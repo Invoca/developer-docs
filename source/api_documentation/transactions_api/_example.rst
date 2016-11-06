@@ -1,9 +1,9 @@
 
 
-Example
--------
+Examples
+--------
 
-For example, if you have this OAuth API token:
+These examples use CURL, and are using the following fake OAuth API token:
 
 .. list-table::
   :widths: 1
@@ -12,7 +12,7 @@ For example, if you have this OAuth API token:
 
   * - OAuth API token
 
-  * - YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU
+  * - YbcFH
 
-Here is an example using curl to get the next 20 transactions that occurred after transaction id C624DA2C-CF3367C3:
+Note: the -k option asks curl to not bother checking the SSL certificate authority chain as that requires extra configuration.
 
