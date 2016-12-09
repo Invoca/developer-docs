@@ -39,7 +39,10 @@
           "id_from_network": 44920,
           "name": "http://www.blogspot.com/surfoz"
         }
-      ]
+      ],
+      "customer_data": {
+        "channel": "Offline lead"
+      }
     }
 
   Response Body:

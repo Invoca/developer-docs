@@ -76,5 +76,20 @@
       "id": 1,
       "id_from_network": "11",
       "affiliate_id_from_network": "976",
-      "object_url": "https://invoca.net/p_campaigns/terms/19/11"
+      "object_url": "https://invoca.net/p_campaigns/terms/19/11",
+      "customer_data": {
+        "channel": "Online lead"
+      },
+      "customer_data_dictionary": {
+        "fields": [
+          {
+            "created_at": "2016-12-01 12:00:00 -0800",
+            "friendly_name": "Channel",
+            "partner_name": "channel",
+            "field_values": [],
+            "data_type": "category",
+            "default_data_mapping": null
+          }
+        ]
+      }
     }

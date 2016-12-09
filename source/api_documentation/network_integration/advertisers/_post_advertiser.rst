@@ -52,7 +52,10 @@
            "id_from_network": "996",
            "name": "996.blog.com"
          }
-       ]
+       ],
+       "customer_data": {
+         "channel": "Offline lead"
+       }
      }
 
   Response Body:

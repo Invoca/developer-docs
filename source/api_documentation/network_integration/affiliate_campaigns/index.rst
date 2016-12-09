@@ -138,6 +138,67 @@ Relationship properties are shown below
     - string
     - Condition options used to determine the base or bonus payout (eg. “duration >= 1 min 30 sec”).
 
+Customer Data
+'''''''''''''
+Affiliate campaigns may have Customer Data fields applied to them, which will be applied to calls originating through the affiliate campaign.
+To apply customer data values to an affiliate campaign, the top level parameter ``customer_data`` should be assigned a hash with each pair's key corresponding to a partner name.
+The value of the pair should be the value to be applied.
+
+For the following example, we would apply the value "Offline newspaper" to the customer data field "channel".
+
+.. code-block:: json
+
+  {
+    "customer_data": {
+      "channel": "Offline newspaper"
+    }
+  }
+
+
+Customer Data Dictionary
+''''''''''''''''''''''''
+The Customer Data Dictionary is a list of all of the fields that can be applied to the affiliate campaign.
+The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an affiliate campaign under the field name ``customer_data_dictionary``.
+The dictionary is read only and will be ignored in any create or update requests.
+
+.. list-table::
+  :widths: 11 8 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Field Value
+    - Type
+    - Value
+
+  * - created_at
+    - date
+    - Date of creation for the particular field.
+
+  * - friendly_name
+    - string
+    - The applied friendly name, used for display purposes.
+
+  * - partner_name
+    - string
+    - The applied partner name, used for reference in APIs.
+
+  * - field_values
+    - array
+    - Pre-configured values that users may choose from. These values are recommendations. The field may have other values applied.
+
+  * - data_type
+    - string
+    - One of:
+
+      * category
+
+      * text_field
+
+      * text_field_long
+
+  * - default_data_mapping
+    - string
+    - The dynamic Invoca value that will be automatically applied to calls through the affiliate campaign. E.g. Transaction ID, Destination Phone Number, etc.
 
 Endpoint:
 
