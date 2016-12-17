@@ -21,7 +21,7 @@
     {
       "status": "Applied",
       "id_from_network": "2234",
-      "customer_data": {
+      "custom_data": {
         "channel": "Offline lead"
       }
     }

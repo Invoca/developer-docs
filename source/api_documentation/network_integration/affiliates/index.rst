@@ -75,27 +75,27 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
     - This user’s role in this organization. (A user may have different roles in different organizations)
 
 
-Customer Data
+Custom data
 '''''''''''''
-Affiliates may have Customer Data fields applied to them, which will be applied to calls originating through the affiliate.
-To apply customer data values to an affiliate, the top level parameter ``customer_data`` should be assigned a hash with each pair's key corresponding to a partner name.
+Affiliates may have Custom data fields applied to them, which will be applied to calls originating through the affiliate.
+To apply custom data values to an affiliate, the top level parameter ``custom_data`` should be assigned a hash with each pair's key corresponding to a partner name.
 The value of the pair should be the value to be applied.
 
-For the following example, we would apply the value "Offline newspaper" to the customer data field "channel".
+For the following example, we would apply the value "Offline newspaper" to the custom data field "channel".
 
 .. code-block:: json
 
   {
-    "customer_data": {
+    "custom_data": {
       "channel": "Offline newspaper"
     }
   }
 
 
-Customer Data Dictionary
+Custom data Dictionary
 ''''''''''''''''''''''''
-The Customer Data Dictionary is a list of all of the fields that can be applied to the affiliate.
-The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an affiliate under the field name ``customer_data_dictionary``.
+The Custom data Dictionary is a list of all of the fields that can be applied to the affiliate.
+The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an affiliate under the field name ``custom_data_dictionary``.
 The dictionary is read only and will be ignored in any create or update requests.
 
 .. list-table::

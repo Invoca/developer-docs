@@ -138,27 +138,27 @@ Relationship properties are shown below
     - string
     - Condition options used to determine the base or bonus payout (eg. “duration >= 1 min 30 sec”).
 
-Customer Data
+Custom data
 '''''''''''''
-Affiliate campaigns may have Customer Data fields applied to them, which will be applied to calls originating through the affiliate campaign.
-To apply customer data values to an affiliate campaign, the top level parameter ``customer_data`` should be assigned a hash with each pair's key corresponding to a partner name.
+Affiliate campaigns may have Custom data fields applied to them, which will be applied to calls originating through the affiliate campaign.
+To apply custom data values to an affiliate campaign, the top level parameter ``custom_data`` should be assigned a hash with each pair's key corresponding to a partner name.
 The value of the pair should be the value to be applied.
 
-For the following example, we would apply the value "Offline newspaper" to the customer data field "channel".
+For the following example, we would apply the value "Offline newspaper" to the custom data field "channel".
 
 .. code-block:: json
 
   {
-    "customer_data": {
+    "custom_data": {
       "channel": "Offline newspaper"
     }
   }
 
 
-Customer Data Dictionary
+Custom data Dictionary
 ''''''''''''''''''''''''
-The Customer Data Dictionary is a list of all of the fields that can be applied to the affiliate campaign.
-The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an affiliate campaign under the field name ``customer_data_dictionary``.
+The Custom data Dictionary is a list of all of the fields that can be applied to the affiliate campaign.
+The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an affiliate campaign under the field name ``custom_data_dictionary``.
 The dictionary is read only and will be ignored in any create or update requests.
 
 .. list-table::

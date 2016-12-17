@@ -125,7 +125,7 @@
            ]
          }
        },
-       "customer_data": {
+       "custom_data": {
          "channel": "Offline leads"
        }
      }

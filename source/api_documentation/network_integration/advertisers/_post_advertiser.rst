@@ -53,7 +53,7 @@
            "name": "996.blog.com"
          }
        ],
-       "customer_data": {
+       "custom_data": {
          "channel": "Offline lead"
        }
      }

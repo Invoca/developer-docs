@@ -34,10 +34,10 @@
       "promo_number": "8777657743",
       "description": "Halloween Promo Number 1",
       "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
-      "customer_data": {
+      "custom_data": {
         "channel": "Online lead"
       },
-      "customer_data_dictionary": {
+      "custom_data_dictionary": {
         "fields": [
           {
             "created_at": "2016-12-01 12:00:00 -0800",
@@ -89,10 +89,10 @@
       "promo_number": "8057657743",
       "description": "Halloween Promo Number 1",
       "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
-      "customer_data": {
+      "custom_data": {
         "channel": "Online lead"
       },
-      "customer_data_dictionary": {
+      "custom_data_dictionary": {
         "fields": [
           {
             "created_at": "2016-12-01 12:00:00 -0800",
@@ -144,10 +144,10 @@
       "promo_number": "8057657743",
       "description": "Halloween Promo Number 1",
       "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
-      "customer_data": {
+      "custom_data": {
         "channel": "Online lead"
       },
-      "customer_data_dictionary": {
+      "custom_data_dictionary": {
         "fields": [
           {
             "created_at": "2016-12-01 12:00:00 -0800",
@@ -195,10 +195,10 @@
       "promo_number": "8777657743",
       "description": "Halloween Promo Number 1",
       "object_url": "https://invoca.net/p_campaigns/promo_numbers/14/11",
-      "customer_data": {
+      "custom_data": {
         "channel": "Online lead"
       },
-      "customer_data_dictionary": {
+      "custom_data_dictionary": {
         "fields": [
           {
             "created_at": "2016-12-01 12:00:00 -0800",

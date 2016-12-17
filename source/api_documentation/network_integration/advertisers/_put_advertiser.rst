@@ -39,7 +39,7 @@
            "name": "315.blog.com"
          }
        ],
-       "customer_data": {
+       "custom_data": {
          "channel": "Offline lead"
        }
      }

@@ -313,10 +313,10 @@
              ]
            }
          },
-         "customer_data": {
+         "custom_data": {
            "channel": "Online lead"
          },
-         "customer_data_dictionary": {
+         "custom_data_dictionary": {
            "fields": [
              {
                "created_at": "2016-12-01 12:00:00 -0800",

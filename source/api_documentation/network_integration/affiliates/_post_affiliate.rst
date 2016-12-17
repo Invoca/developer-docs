@@ -40,7 +40,7 @@
           "name": "http://www.blogspot.com/surfoz"
         }
       ],
-      "customer_data": {
+      "custom_data": {
         "channel": "Offline lead"
       }
     }
