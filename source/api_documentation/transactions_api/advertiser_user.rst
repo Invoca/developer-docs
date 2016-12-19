@@ -55,6 +55,8 @@ Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>
 
 .. include:: _voice_signal_param_table.rst
 
+.. include:: _demographics_param_table.rst
+
 Additional Feature Parameters
 *****************************
 
