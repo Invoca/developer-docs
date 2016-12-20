@@ -1,0 +1,23 @@
+.. raw:: html
+
+  <div class="panel-group">
+    <div class="endpoint-list">
+      <div class="panel-heading">
+        <a class="collapsed" data-toggle="collapse" data-target="#:page:" aria-expanded="false" aria-controls=":page:">
+          <div class='GET'>Example</div>
+          <div class='path'>:name:</div>
+        </a>
+      </div>
+      <div id=":page:" class="panel collapse">
+        <div class="panel-body">
+
+
+.. include:: _:page:.tmp
+
+
+.. raw:: html
+
+        </div>
+      </div>
+    </div>
+  </div>
