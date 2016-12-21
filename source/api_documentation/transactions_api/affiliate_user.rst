@@ -31,14 +31,10 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
 Response
 --------
 
-The data returned has the following fields:
+General Parameters
+******************
 
 .. include:: _affiliate_param_table.rst
-
-Optional Parameters
--------------------
-
-The following fields are optional based on your account type:
 
 .. include:: _dnpr_param_table.rst
 
