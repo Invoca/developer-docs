@@ -42,6 +42,11 @@ General Parameters
 
 .. include:: _conversion_reporting_param_table.rst
 
+Custom Data Parameters
+**********************
+
+Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the custom data parameters specific to your account. Please note that the Partner (API) Name will represent the field name returned by the Transactions API. Any custom data fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field.
+
 .. include:: _signal_param_table.rst
 
 .. include:: _demographics_param_table.rst
