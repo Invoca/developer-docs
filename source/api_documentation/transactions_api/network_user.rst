@@ -66,7 +66,7 @@ Example 1: Get the next 20 transactions that occurred after transaction id C624D
   curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/networks/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFH'
 
 
-Example 2: Get 50 rows from a specific time period with only the transaction_id and all custom data columns:
+Example 2: Get 50 rows from a specific time period with only the transaction_id and all Custom Data columns:
 
 .. code-block:: bash
 

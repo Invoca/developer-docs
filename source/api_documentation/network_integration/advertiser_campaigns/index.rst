@@ -477,13 +477,13 @@ Caller ID options can also be configured by optionally including a ``caller_id``
     - { setting: "partial", mask: "800-555-XXXX" }
     - Display caller's caller ID with digits replaced.
 
-Custom data
+Custom Data
 '''''''''''''
-Advertiser campaigns may have Custom data fields applied to them, which will be applied to calls originating through the advertiser campaign.
-To apply custom data values to an advertiser campaign, the top level parameter ``custom_data`` should be assigned a hash with each pair's key corresponding to a partner name.
+Advertiser campaigns may have Custom Data Fields applied to them, which will be applied to calls originating through the advertiser campaign.
+To apply Custom Data Values to an advertiser campaign, the top level parameter ``custom_data`` should be assigned a hash with each pair's key corresponding to a partner name.
 The value of the pair should be the value to be applied.
 
-For the following example, we would apply the value "Offline newspaper" to the custom data field "channel".
+For the following example, we would apply the value "Offline newspaper" to the Custom Data Field "channel".
 
 .. code-block:: json
 
@@ -494,9 +494,9 @@ For the following example, we would apply the value "Offline newspaper" to the c
   }
 
 
-Custom data Dictionary
+Custom Data Dictionary
 ''''''''''''''''''''''''
-The Custom data Dictionary is a list of all of the fields that can be applied to the advertiser campaign.
+The Custom Data Dictionary is a list of all of the fields that can be applied to the advertiser campaign.
 The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an advertiser campaign under the field name ``custom_data_dictionary``.
 The dictionary is read only and will be ignored in any create or update requests.
 
