@@ -21,7 +21,6 @@
          "first_name": "Chris",
          "last_name": "Dean",
          "contact_phone_number": "8055555555",
-         "oauth_refresh_token": "556588585858585858585858858",
          "role": "Manager"
        }
      }
