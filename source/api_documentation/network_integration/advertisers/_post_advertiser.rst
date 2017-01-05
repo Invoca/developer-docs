@@ -14,8 +14,7 @@
 
   ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>.json``
 
-  If you prefer the ``/advertisers.json`` endpoint but receive an error, please contact questions@invoca.com.
-  Your network will need to be enabled to auto-generate ids from network.
+  If you prefer the ``/advertisers.json`` endpoint but receive an error, your network will need to be enabled to auto-generate ids from network.
 
   If you prefer the ``/advertisers/<advertiser_id_from_network>.json`` endpoint, you can also include an id from network in the json body.
   However, note that the body's id from network will take precedence over the endpoint's.
