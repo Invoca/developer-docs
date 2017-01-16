@@ -44,7 +44,22 @@
            }
          ],
          "default_creative_id_from_network": "222",
-         "oauth_refresh_token": "7464644784457575757494930303"
+         "oauth_refresh_token": "7464644784457575757494930303",
+         "custom_data": {
+           "channel": "Online lead"
+         },
+         "custom_data_dictionary": {
+           "fields": [
+             {
+               "created_at": "2016-12-01 12:00:00 -0800",
+               "friendly_name": "Channel",
+               "partner_name": "channel",
+               "field_values": [],
+               "data_type": "category",
+               "default_data_mapping": null
+             }
+           ]
+         }
        }
      ]
 

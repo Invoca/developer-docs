@@ -36,7 +36,10 @@
            "id_from_network": "315",
            "name": "315.blog.com"
          }
-       ]
+       ],
+       "custom_data": {
+         "channel": "Offline lead"
+       }
      }
 
   Response Body:

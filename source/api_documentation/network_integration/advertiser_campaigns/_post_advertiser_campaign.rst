@@ -124,6 +124,9 @@
              }
            ]
          }
+       },
+       "custom_data": {
+         "channel": "Offline leads"
        }
      }
 

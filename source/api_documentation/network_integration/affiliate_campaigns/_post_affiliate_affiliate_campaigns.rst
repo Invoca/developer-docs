@@ -20,7 +20,10 @@
 
     {
       "status": "Applied",
-      "id_from_network": "2234"
+      "id_from_network": "2234",
+      "custom_data": {
+        "channel": "Offline lead"
+      }
     }
 
   Response Body:

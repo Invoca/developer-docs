@@ -33,7 +33,22 @@
       "media_type": "Online: Display",
       "promo_number": "8777657743",
       "description": "Halloween Promo Number 1",
-      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12"
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
+      "custom_data": {
+        "channel": "Online lead"
+      },
+      "custom_data_dictionary": {
+        "fields": [
+          {
+            "created_at": "2016-12-01 12:00:00 -0800",
+            "friendly_name": "Channel",
+            "partner_name": "channel",
+            "field_values": [],
+            "data_type": "category",
+            "default_data_mapping": null
+          }
+        ]
+      }
     }
 
   .. raw:: html
@@ -73,7 +88,22 @@
       "media_type": "Online: Display",
       "promo_number": "8057657743",
       "description": "Halloween Promo Number 1",
-      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12"
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
+      "custom_data": {
+        "channel": "Online lead"
+      },
+      "custom_data_dictionary": {
+        "fields": [
+          {
+            "created_at": "2016-12-01 12:00:00 -0800",
+            "friendly_name": "Channel",
+            "partner_name": "channel",
+            "field_values": [],
+            "data_type": "category",
+            "default_data_mapping": null
+          }
+        ]
+      }
     }
 
   .. raw:: html
@@ -113,7 +143,22 @@
       "media_type": "Online: Display",
       "promo_number": "8057657743",
       "description": "Halloween Promo Number 1",
-      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12"
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
+      "custom_data": {
+        "channel": "Online lead"
+      },
+      "custom_data_dictionary": {
+        "fields": [
+          {
+            "created_at": "2016-12-01 12:00:00 -0800",
+            "friendly_name": "Channel",
+            "partner_name": "channel",
+            "field_values": [],
+            "data_type": "category",
+            "default_data_mapping": null
+          }
+        ]
+      }
     }
 
   .. raw:: html
@@ -149,5 +194,20 @@
       "media_type": "Online: Display",
       "promo_number": "8777657743",
       "description": "Halloween Promo Number 1",
-      "object_url": "https://invoca.net/p_campaigns/promo_numbers/14/11"
+      "object_url": "https://invoca.net/p_campaigns/promo_numbers/14/11",
+      "custom_data": {
+        "channel": "Online lead"
+      },
+      "custom_data_dictionary": {
+        "fields": [
+          {
+            "created_at": "2016-12-01 12:00:00 -0800",
+            "friendly_name": "Channel",
+            "partner_name": "channel",
+            "field_values": [],
+            "data_type": "category",
+            "default_data_mapping": null
+          }
+        ]
+      }
     }

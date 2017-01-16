@@ -477,9 +477,70 @@ Caller ID options can also be configured by optionally including a ``caller_id``
     - { setting: "partial", mask: "800-555-XXXX" }
     - Display caller's caller ID with digits replaced.
 
+Custom Data
+'''''''''''''
+Advertiser campaigns may have Custom Data Fields applied to them, which will be applied to calls originating through the advertiser campaign.
+To apply Custom Data Values to an advertiser campaign, the top level parameter ``custom_data`` should be assigned a hash with each pair's key corresponding to a partner name.
+The value of the pair should be the value to be applied.
 
-Endpoint
---------
+For the following example, we would apply the value "Offline newspaper" to the Custom Data Field "channel".
+
+.. code-block:: json
+
+  {
+    "custom_data": {
+      "channel": "Offline newspaper"
+    }
+  }
+
+
+Custom Data Dictionary
+''''''''''''''''''''''''
+The Custom Data Dictionary is a list of all of the fields that can be applied to the advertiser campaign.
+The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an advertiser campaign under the field name ``custom_data_dictionary``.
+The dictionary is read only and will be ignored in any create or update requests.
+
+.. list-table::
+  :widths: 11 8 40
+  :header-rows: 1
+  :class: parameters
+
+  * - Field Value
+    - Type
+    - Value
+
+  * - created_at
+    - date
+    - Date of creation for the particular field.
+
+  * - friendly_name
+    - string
+    - The applied friendly name, used for display purposes.
+
+  * - partner_name
+    - string
+    - The applied partner name, used for reference in APIs.
+
+  * - field_values
+    - array
+    - Pre-configured values that users may choose from. These values are recommendations. The field may have other values applied.
+
+  * - data_type
+    - string
+    - One of:
+
+      * category
+
+      * text_field
+
+      * text_field_long
+
+  * - default_data_mapping
+    - string
+    - The dynamic Invoca value that will be automatically applied to calls through the advertiser campaign. E.g. Transaction ID, Destination Phone Number, etc.
+
+
+Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``
 
@@ -556,7 +617,7 @@ Error Handling
 Forbidden – 403:
 
 PUT/POST
-""""""""
+''''''''
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertiser/<advertiser_id_from_network>/advertiser_campaign/<advertiser_campaign_id_from_network>/advertiser_campaigns/<advertiser_campaign_id>.json``
 
