@@ -6,9 +6,19 @@
 
   Create an advertiser with users
 
-  Endpoint:
+  Endpoints:
 
   ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers.json``
+
+  or...
+
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>.json``
+
+  Use the ``/advertisers.json`` endpoint if you want to specify the ID in the post body, or allow the ID to be auto generated.
+  Note: Your account can be configured to automatically generate IDs in a format you specify. Contact questions\@invoca.com for more information.
+
+  Use the ``/advertisers/<advertiser_id_from_network>.json`` endpoint if you want to specify the ID in the URL.
+  Note: If you specify the ID in the URL and the body, the body's id will take precedence over the URL.
 
   Format: application/json
 
@@ -19,7 +29,6 @@
      {
        "name": "NFL Tickets Exchange",
        "id_from_network": "cFUyYnFHy",
-       "oauth_refresh_token": "7464644784457575757494930303",
        "approval_status": "Approved",
        "web_integration_phone_number": "8004377950",
        "default_creative_id_from_network": "222",
@@ -30,7 +39,6 @@
            "first_name": "Chris",
            "last_name": "Dean",
            "contact_phone_number": "8055555555",
-           "oauth_refresh_token": "556588585858585858585858858",
            "role": "Manager"
          },
          {
@@ -39,7 +47,6 @@
            "first_name": "Jim",
            "last_name": "Williams",
            "contact_phone_number": "2135555555",
-           "oauth_refresh_token": "4222424241628298228222",
            "role": "Observer"
          }
        ],
