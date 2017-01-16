@@ -158,7 +158,7 @@ that just return the status code when there are errors without exposing the body
 Security
 --------
 
-All posts must use HTTPS BASIC authentication and use pre-assigned usernames and passwords. Contact questions@invoca to request Conversion Reporting API credentials.
+All posts must use HTTPS BASIC authentication and use pre-assigned usernames and passwords. Contact questions@invoca.com to request Conversion Reporting API credentials.
 
 High availability
 -----------------

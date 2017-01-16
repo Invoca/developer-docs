@@ -26,10 +26,6 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     - string (required)
     - The name of the Advertiser. Unique within network.
 
-  * - oauth_refresh_token
-    - string
-    - For internal use only.
-
   * - approval_status
     - string (one of): Applied, Approved (default), Declined, Suspended, Archived
     - Approval status for this advertiser.
@@ -81,10 +77,6 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
   * - contact_phone_number
     - string in ITU E.164 format or 10-digit US form (no punctuation)
     - The user’s phone number.
-
-  * - oauth_refresh_token
-    - string
-    - Not used. Reserved.
 
   * - role
     - One of: Super (default), Manager, Member, Observer
@@ -165,13 +157,13 @@ Endpoint:
 
 .. api_endpoint::
    :verb: GET
-   :path: /advertisers/&lt;advertiser_id&gt;
+   :path: /advertisers/&lt;advertiser_id_from_network&gt;
    :description: Get an Advertiser
    :page: get_advertiser
 
 .. api_endpoint::
    :verb: DELETE
-   :path: /advertisers/&lt;advertiser_id&gt;
+   :path: /advertisers/&lt;advertiser_id_from_network&gt;
    :description: Delete an Advertiser
    :page: delete_advertiser
 
@@ -183,6 +175,6 @@ Endpoint:
 
 .. api_endpoint::
    :verb: PUT
-   :path: /advertisers/&lt;advertiser_id&gt;
+   :path: /advertisers/&lt;advertiser_id_from_network&gt;
    :description: Update an Advertiser
    :page: put_advertiser
