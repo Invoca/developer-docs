@@ -24,6 +24,7 @@
         "description": "1 year contract",
         "occurred_at_time": "1440607313",
         "sale_amount": "100.00",
+        "revenue": "100.00",
         "value": "true",
         "custom_parameter_1": "12345",
         "custom_parameter_2": "",
@@ -48,6 +49,7 @@
         "occurred_at_time_t": "1440607313",
         "occurred_at_time": "2015-08-26T16:41:53Z",
         "sale_amount": "100.0",
+        "revenue": "100.0",
         "value": "true",
         "custom_parameter_1": "12345",
         "custom_parameter_2": "",
@@ -90,6 +92,7 @@
         "description": "1 year contract",
         "occurred_at_time": "1440607313",
         "sale_amount": "100.00",
+        "revenue": "100.00",
         "value": "true"
       },
       "oauth_token": "<YOUR OAUTH TOKEN>"
@@ -111,6 +114,7 @@
         "occurred_at_time_t": "1440607313",
         "occurred_at_time": "2015-08-26T16:41:53Z",
         "sale_amount": "100.0",
+        "revenue": "100.0",
         "value": "true"
       },
       "call": {

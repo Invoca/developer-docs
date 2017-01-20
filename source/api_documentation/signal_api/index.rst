@@ -89,7 +89,12 @@ Used to create the fields of a signal.
 
     `occurred_at_time:` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
 
-    `sale_amount:` Money with up to 2 decimal places (period separated).
+    `sale_amount(deprecated):` Money with up to 2 decimal places (period separated).
+    Assumed to be in the same currency as the organization that owns the signal being reported.
+    Defaults to null if not passed. (Recommended to omit parameter if no sale occurred, instead of passing 0).
+    Do not include formatting such as currency symbol or separators (i.e. commas).
+
+    `revenue:` Money with up to 2 decimal places (period separated).
     Assumed to be in the same currency as the organization that owns the signal being reported.
     Defaults to null if not passed. (Recommended to omit parameter if no sale occurred, instead of passing 0).
     Do not include formatting such as currency symbol or separators (i.e. commas).
@@ -195,7 +200,7 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signal": {"name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time": "1440607313","sale_amount": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
+  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signal": {"name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time": "1440607313","sale_amount": "100.00","revenue": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
 
 Errors
 ------

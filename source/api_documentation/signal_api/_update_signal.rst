@@ -23,6 +23,7 @@
         "partner_unique_id": "1",
         "description": "Updated description and sale amount",
         "sale_amount": "200.00"
+        "revenue": "200.00"
       },
       "oauth_token": "<YOUR OAUTH TOKEN>"
     }
@@ -45,6 +46,7 @@
         "occurred_at_time_t": "1440607313",
         "occurred_at_time": "2015-08-26T16:41:53Z",
         "sale_amount": "200.0",
+        "revenue": "200.0",
         "value": "true",
         "custom_parameter_1": "",
         "custom_parameter_2": "",
