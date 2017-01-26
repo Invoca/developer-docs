@@ -21,6 +21,10 @@
     - Advertiser Campaign
     - Name of the campaign.
 
+  * - advertiser_campaign_country
+    - Advertiser Campaign Country
+    - Country of the campaign.
+
   * - advertiser_payin_localized
     - Earned
     - Amount paid in by advertiser
