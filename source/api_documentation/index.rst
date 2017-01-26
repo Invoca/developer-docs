@@ -17,6 +17,9 @@ allocates a dynamic, trackable promo phone number from a RingPool.
 :doc:`bulk_ringpool_api` -
 allocates a dynamic, trackable promo phone number from a RingPool (designed to handle a high volume of requests per second).
 
+:doc:`signal_api/index` -
+used to report signals that occur on a specific call (transaction).
+
 
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
