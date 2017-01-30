@@ -22,6 +22,7 @@
        "timezone": "Pacific Time (US & Canada)",
        "operating_24_7": false,
        "campaign_type": "AffiliateEnabled",
+       "campaign_country": "US",
        "default_creative_id_from_network": "111",
        "hours": {
          "friday_open": 32400,
