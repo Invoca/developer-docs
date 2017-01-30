@@ -30,6 +30,7 @@
            "go_live_date": null,
            "default_creative_id_from_network": "222",
            "campaign_language": "English",
+           "campaign_country": "US",
            "advertiser_payin": {
              "min": 7,
              "currency": "EUR",
@@ -164,6 +165,7 @@
            "go_live_date": null,
            "default_creative_id_from_network": "123",
            "campaign_language": "English",
+           "campaign_country": "US",
            "advertiser_payin": {
              "min": 7,
              "currency": "EUR",
