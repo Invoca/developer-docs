@@ -58,6 +58,9 @@ You are not allowed to delete campaigns.
     - string
     - Supported Campaign Languages: “English", "French", "Spanish".
 
+  * - campaign_country
+    - string
+    - Supported Countries: “US", "CA", "UK", "AU", "CN", "FI", "FR", "DE", "HK", "IT", "JP", "NL", "SG", "SE", "CH".
 
   * - operating_24_7
     - boolean
