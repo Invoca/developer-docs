@@ -32,9 +32,9 @@ Signal Parameters
     - Signal Value
     - True or false as to whether or not the signal was met and null if it is not a signal transaction.
 
-    * - revenue
-      - Revenue (Sale Amount)
-      - The revenue to apply to the call if the Signal is evaluated as true.
+  * - revenue
+    - Revenue (Sale Amount)
+    - The revenue to apply to the call if the Signal is evaluated as true.
 
   * - signal_custom_parameter_1
     - Signal Custom Param 1

@@ -25,6 +25,10 @@
     - Advertiser Campaign
     - Name of the campaign.
 
+  * - advertiser_campaign_country
+    - Advertiser Campaign Country
+    - Country of the campaign.
+
   * - advertiser_id
     - Advertiser ID (Invoca ID)
     - The Invoca identifier of the advertiser
