@@ -110,6 +110,20 @@ When you POST a promo number, we return the promo_number in the response body. T
     - array of strings
     - an array of stringified limiters on the boundaries of where to look for local numbers given as npa or npa nxx pairs (ex. [“805”, “805612”])
 
+  * - promo_type
+    - string (optional)
+    - For international campaigns that support local or mobile numbers. If not passed then promo numbers will default to the organizational default. (US/CA campaigns will continue to use local_center for local numbers)
+
+      "Local"
+
+      "Mobile"
+
+  * - promo_number_looks_like
+    - string (optional)
+    - For international local promo number creation, a string phone number to try to match can be included. The first five digits will be used. (ex. “805”, “80561”)
+
+
+
 Custom Data
 """""""""""""
 Promo numbers may have Custom Data Fields applied to them, which will be applied to calls originating through the promo number.
