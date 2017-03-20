@@ -497,52 +497,6 @@ For the following example, we would apply the value "Offline newspaper" to the C
   }
 
 
-Custom Data Dictionary
-''''''''''''''''''''''''
-The Custom Data Dictionary is a list of all of the fields that can be applied to the advertiser campaign.
-The dictionary is configured by an Invoca representative, and will be returned in each response when viewing or updating an advertiser campaign under the field name ``custom_data_dictionary``.
-The dictionary is read only and will be ignored in any create or update requests.
-
-.. list-table::
-  :widths: 11 8 40
-  :header-rows: 1
-  :class: parameters
-
-  * - Field Value
-    - Type
-    - Value
-
-  * - created_at
-    - date
-    - Date of creation for the particular field.
-
-  * - friendly_name
-    - string
-    - The applied friendly name, used for display purposes.
-
-  * - partner_name
-    - string
-    - The applied partner name, used for reference in APIs.
-
-  * - field_values
-    - array
-    - Pre-configured values that users may choose from. These values are recommendations. The field may have other values applied.
-
-  * - data_type
-    - string
-    - One of:
-
-      * category
-
-      * text_field
-
-      * text_field_long
-
-  * - default_data_mapping
-    - string
-    - The dynamic Invoca value that will be automatically applied to calls through the advertiser campaign. E.g. Transaction ID, Destination Phone Number, etc.
-
-
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``

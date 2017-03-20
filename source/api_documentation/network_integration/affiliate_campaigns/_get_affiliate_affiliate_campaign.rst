@@ -79,17 +79,5 @@
       "object_url": "https://invoca.net/p_campaigns/terms/19/11",
       "custom_data": {
         "channel": "Online lead"
-      },
-      "custom_data_dictionary": {
-        "fields": [
-          {
-            "created_at": "2016-12-01 12:00:00 -0800",
-            "friendly_name": "Channel",
-            "partner_name": "channel",
-            "field_values": [],
-            "data_type": "category",
-            "default_data_mapping": null
-          }
-        ]
       }
     }
