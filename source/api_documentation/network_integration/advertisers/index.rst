@@ -66,7 +66,7 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     - string
     - The network id for this User.
 
-  * - email_address
+  * - email_settings
     - string in RFC 2822 addr-spec format
     - The user’s email address. Unique for this user.
 
