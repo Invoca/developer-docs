@@ -115,6 +115,15 @@ Used to create the fields of a signal.
 
     `oauth_token:` API token for authentication
 
+    `call_in_progress:` True or false as to whether the call may still be in progress.
+    Invoca will immediately return a 201 and empty response body when this is set to true.
+    When the call finishes, Invoca will apply the signal.
+
+    Note: **call_in_progress** can be passed, even when the call has already finished.
+    However, Invoca will only check for required fields and all other errors will not be returned.
+    It is highly recommended to use **transaction_id** in the search parameters.
+    If **call_start_time** is used, please provide the **calling_phone_number**, as well as any other information you can provide, to help avoid matching with an earlier call.
+
 Endpoint:
 
 ``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals``
