@@ -59,7 +59,7 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     - The site name that matches site_id.
 
   * - **users**
-    - json array of hashes
+    - JSON array of hashes
     - 0 or more users for the organization. Each must have first 5 fields below.
 
   * - id_from_network
@@ -67,8 +67,14 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     - The network id for this User.
 
   * - email_settings
-    - string in RFC 2822 addr-spec format
-    - The user’s email address. Unique for this user.
+    - JSON array of hashes
+    - Each hash has two required fields:
+
+      ``email_address``: string in RFC 2822 addr-spec format. The user’s email address. Unique for this user.
+
+      ``use_for_notifications``: boolean used to indicate if notifications should be sent to the email address.
+
+      A user must have at least one email address where ``use_for_notifications`` is true.
 
   * - first_name
     - string (Required)
@@ -89,6 +95,42 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
   * - role
     - One of: Super (default), Manager, Member, Observer
     - This user’s role in this organization. (A user may have different roles in different organizations)
+
+  * - notify_on_budgets
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_campaign_applications
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_campaign_expirations
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_creative_duplication_requests
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_network_announcements
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_performance_notifications
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_monthly_campaign_performance_reports
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_weekly_campaign_performance_reports
+    - boolean, optional, defaults to false
+    - 
+
+  * - notify_on_call_activities
+    - boolean, optional, defaults to false
+    - 
 
 
 Custom Data

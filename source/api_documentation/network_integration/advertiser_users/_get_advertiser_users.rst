@@ -21,7 +21,7 @@
      [
        {
          "email_settings": [
-           { "email_address": "chris@nfltix.com",, "use_for_notifications": true }
+           { "email_address": "chris@nfltix.com", "use_for_notifications": true }
          ],
          "id_from_network": "549494858585Dxlj2uCX0ijqXP4nAW",
          "first_name": "Chris",

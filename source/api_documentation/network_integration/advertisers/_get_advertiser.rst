@@ -38,21 +38,43 @@
        "users": [
          {
            "id_from_network": "549494858585cFUyYnFHyiYA42TrpM",
-           "email_address": "chris@nfltix.com",
+           "email_settings": [
+             { "email_address": "chris@nfltix.com", "use_for_notifications": true }
+           ],
            "first_name": "Chris",
            "phone_number": "888‐603‐3760",
            "last_name": "Dean",
            "role": "Manager",
-           "oauth_refresh_token": "556588585858585858585858858"
+           "oauth_refresh_token": "556588585858585858585858858",
+           "notify_on_budgets": true,
+           "notify_on_campaign_applications": false,
+           "notify_on_campaign_expirations": false,
+           "notify_on_creative_duplication_requests": true,
+           "notify_on_network_announcements": true,
+           "notify_on_performance_notifications": false,
+           "notify_on_monthly_campaign_performance_reports": true,
+           "notify_on_weekly_campaign_performance_reports": false,
+           "notify_on_call_activities": true
          },
          {
            "id_from_network": "694940505055cFUyYnFHyiYA42TrpM",
-           "email_address": "jim@nfltix.com",
+           "email_settings": [
+             { "email_address": "jim@nfltix.com", "use_for_notifications": true }
+           ],
            "first_name": "Jim",
            "phone_number": "888‐603‐3760",
            "last_name": "Williams",
            "role": "Observer",
-           "oauth_refresh_token": "4222424241628298228222"
+           "oauth_refresh_token": "4222424241628298228222",
+           "notify_on_budgets": true,
+           "notify_on_campaign_applications": false,
+           "notify_on_campaign_expirations": false,
+           "notify_on_creative_duplication_requests": true,
+           "notify_on_network_announcements": true,
+           "notify_on_performance_notifications": false,
+           "notify_on_monthly_campaign_performance_reports": true,
+           "notify_on_weekly_campaign_performance_reports": false,
+           "notify_on_call_activities": true
          }
        ],
        "default_creative_id_from_network": "222",

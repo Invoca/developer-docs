@@ -54,9 +54,15 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
     - string
     - The network object_id for this user.
 
-  * - email_address
-    - string in RFC 2822 addr-spec format
-    - The user’s email address. Unique for this user.
+  * - email_settings
+    - JSON array of hashes
+    - Each hash has two required fields:
+
+      ``email_address``: string in RFC 2822 addr-spec format. The user’s email address. Unique for this user.
+
+      ``use_for_notifications``: boolean used to indicate if notifications should be sent to the email address.
+
+      A user must have at least one email address where ``use_for_notifications`` is true.
 
   * - first_name
     - string(must not be blank)
