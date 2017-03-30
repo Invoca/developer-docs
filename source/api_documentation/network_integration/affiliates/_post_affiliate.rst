@@ -27,9 +27,7 @@
           "role": "Super",
           "last_name": "Affiliate",
           "first_name": "User",
-          "email_settings": [
-            { "email_address": "userx@invoca.com", "use_for_notifications": true }
-          ],
+          "email_address": "userx@invoca.com"
         }
       ],
       "sites": [
