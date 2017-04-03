@@ -33,7 +33,7 @@
         "users": [
           {
             "email_settings": [
-              {"email_address": "userx@invoca.com",  "use_for_notifications": true }
+              { "email_address": "userx@invoca.com",  "use_for_notifications": true }
             ],
             "id_from_network": "1231",
             "first_name": "User",
