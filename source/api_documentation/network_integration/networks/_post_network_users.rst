@@ -20,7 +20,9 @@
       "users": [
         {
           "id_from_network": "549494858585cFUyYnFHyiYA42TrpM",
-          "email_address": "chris@nfltix.com",
+          "email_settings": [
+            { "email_address": "chris@nfltix.com", "use_for_notifications": true }
+          ],
           "first_name": "Chris",
           "last_name": "Dean",
           "phone_number": "8004377950",

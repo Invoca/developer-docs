@@ -20,7 +20,9 @@
       "users": [
         {
           "id_from_network": "549494858585cFUyYnFHyiYA42TrpM",
-          "email_address": "chris@",
+          "email_settings" : [
+            { "email_address": "chris@domain.com",  "use_for_notifications": true }
+          ],
           "first_name": "Chris",
           "last_name": "Dean",
           "phone_number": "8004377950",
@@ -39,8 +41,9 @@
       "errors": {
         "users": [
           {
-            "email_address": [
-              "is invalid"
+            "email_settings": [
+              { "email_address": ["is invalid"] }
+              ]
             ]
           }
         ]

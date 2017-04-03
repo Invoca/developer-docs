@@ -25,7 +25,7 @@
          "last_name": "Dean",
          "role": "Manager",
          "oauth_refresh_token": "556588585858585858585858858",
-         "contact_phone_number": "8886033760",
+         "contact_phone_number": "888-603-3760",
          "notify_on_budgets": true,
          "notify_on_campaign_applications": false,
          "notify_on_campaign_expirations": false,

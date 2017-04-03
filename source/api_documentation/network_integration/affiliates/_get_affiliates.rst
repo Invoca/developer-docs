@@ -32,7 +32,9 @@
         "name": "Surf Oz Magazine",
         "users": [
           {
-            "email_address": "userx@invoca.com",
+            "email_settings": [
+              {"email_address": "userx@invoca.com",  "use_for_notifications": true }
+            ],
             "id_from_network": "1231",
             "first_name": "User",
             "phone_number": "805‐708‐9876",
