@@ -43,7 +43,6 @@
           {
             "email_settings": [
               { "email_address": ["is invalid"] }
-              ]
             ]
           }
         ]
