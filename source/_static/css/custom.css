@@ -12,12 +12,12 @@ body {
 }
 
 a, a:visited {
-  color: #54C4EC;
+  color: #00ACF1;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #0088be;
   text-decoration: none;
 }
 
@@ -29,6 +29,10 @@ img.logo {
   width: 232px !important;
   height: 82px !important;
   padding: 0px !important;
+}
+
+.wy-side-nav-search, .wy-side-nav-search>a:hover {
+  background: transparent;
 }
 
 img.info-img {
@@ -170,7 +174,7 @@ code.docutils.literal {
   word-break: break-all;
   word-wrap: break-word !important;
   color: #FFFFFF;
-  background-color: #7FBC0D;
+  background-color: #2CBF58;
   border-radius: 4px;
   padding: 6px 4px 4px 4px !important;
   font-size: 14px !important;
@@ -184,7 +188,7 @@ pre {
 /* applied to <pre> for multi-line preformatted text */
 .literal-block {
   color: #FFFFFF;
-  background-color: #7FBC0D !important;
+  background-color: #2CBF58 !important;
   font-family: Consolas, monospace;
   font-size: 14px !important;
   border: none !important;
@@ -204,7 +208,7 @@ pre {
 
 cite  {
   color: #FFFFFF;
-  background-color: #7FBC0D !important;
+  background-color: #2CBF58 !important;
   font-family: Consolas, monospace;
   font-size: 14px !important;
   border: none !important;
@@ -230,7 +234,6 @@ cite  {
 /*********************LEFT HAND NAV************************/
 /* search box */
 .wy-side-nav-search {
-  background-color: inherit;
   margin-bottom: 10px !important;
   padding-bottom: 0px !important;
 }
@@ -273,20 +276,20 @@ cite  {
 }
 
 .wy-menu-vertical a {
-  color: rgb(132, 188, 13);
+  color: #2CBF58;
 }
 
 .wy-menu-vertical a:hover {
-  color: #84BC0D;
+  color: #2CBF58;
 }
 
 .wy-menu-vertical li.current a:hover {
-  color: #84BC0D;
+  color: #2CBF58;
 }
 
 /* make nav links green */
 .wy-menu-vertical li.current > a {
-  color: rgb(132, 188, 13);
+  color: #2CBF58;
   background-color: rgb(48, 48, 48);
 }
 
@@ -362,6 +365,10 @@ cite  {
 /* rst content lives inside wy-nav-content */
 .rst-content {
   max-width: 1200px;
+}
+
+.rst-content .highlight {
+  background-color: #EBB336;
 }
 
 .rst-content code {
@@ -567,7 +574,7 @@ table.parameters .row-odd {
 }
 
 #welcome-to-the-invoca-developer-portal table.home-page.docutils .rubric {
-  color: #84BC0D;
+  color: #2CBF58;
   font-size: 29px;
 }
 
