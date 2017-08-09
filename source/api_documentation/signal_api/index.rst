@@ -49,6 +49,10 @@ Used to find the call associated with the signal.
 
     or
 
+    `call_record_id:` The ID of the complete call being reported on.
+
+    or
+
     `call_start_time:` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
 
     Note: If using **call_start_time** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
@@ -94,7 +98,7 @@ Used to create the fields of a signal.
     Defaults to null if not passed. (Recommended to omit parameter if no sale occurred, instead of passing 0).
     Do not include formatting such as currency symbol or separators (i.e. commas).
 
-    `value:` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false).
+    `value:` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false), Yes (true), or No (false). These values are not case sensitive.
 
     `custom_parameter_1` Custom parameter. Up to 255 character string.
 
