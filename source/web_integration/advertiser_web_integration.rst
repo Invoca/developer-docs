@@ -11,25 +11,23 @@ Campaign promo numbers can be static or they can be dynamically generated using 
 Installation Instructions
 -------------------------
 
-1. Before beginning, make sure your campaign has a landing page defined in the campaign wizard Creatives step.
-
-2. From the Advertiser Home Page, choose Tools gear, Web Integration.
+1. From the Advertiser Home Page, choose Tools gear, Web Integration.
 
 .. raw:: html
 
    <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fawi_1_zps2c984432.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
 
-3. In the Web Integration, Settings tab, enter the phone number to replace on your website.
+2. In the Web Integration, Settings tab, enter the phone number to replace on your website.
 
 .. raw:: html
 
   <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F55db321e-4b1a-402f-bebd-9f5404f08722_zpsf5d8f61e.png&amp;key=afea23f29e5a4f63bd166897e3dc72df" alt="">
 
-4. Click Update.
+3. Click Update.
 
-5. Click "Get Code" tab to access your custom generated web integration code.
+4. Click "Get Code" tab to access your custom generated web integration code.
 
-6. Place the web integration code on your website (every page where you want to display the promo number) in the footer just above the </body> tag. This step only has to be done once.
+5. Place the web integration code on your website (every page where you want to display the promo number) in the footer just above the </body> tag. This step only has to be done once.
 
 
 Testing the code
