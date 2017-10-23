@@ -1,7 +1,7 @@
 Conversion Reporting Pixel
 ==========================
 
-A conversion pixel is placed on an advertiser's web page to report a conversion event that triggers payouts on the platform.  Typically, the pixel is placed on a shopping cart confirmation page or lead form thank you page.
+A conversion pixel is placed on an advertiser’s web page to report a conversion event that triggers payouts on the platform. Typically, the pixel is placed on a shopping cart confirmation page or lead form thank you page. The conversion pixel is for online traffic only and cannot match to your call data.
 
 To report conversions using a pixel
 -----------------------------------
