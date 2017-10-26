@@ -98,14 +98,6 @@ Client Side Parameters
 
       `{ "888-999-1010": 'campaignIdHere' }`
 
-  * - destinationAsId
-    - Bool
-    - Default `false`
-
-      Strips out any special characters and uses found destination phone number's digits as campaign ID.
-      
-      **Warning! Requires Invoca campaign with explicit ID for each number.**
-
 
 .. list-table::
   :widths: 11 4 40
@@ -115,6 +107,24 @@ Client Side Parameters
   * - Optional parameters:
     -
     -
+
+  * - autoRun
+    - Bool
+    - Default `true`
+
+      determines whether Invoca’s web integration runs when the page loads.
+
+      If you have a single page application and would like to control when Invoca’s web integration runs, set autoRun to false and call `Invoca.PNAPI.run()` whenever you are ready.
+
+      Note: autoRun does not have to be false in order to call `Inovca.PNAPI.run()`.
+
+  * - destinationAsId
+    - Bool
+    - Default `false`
+
+      Strips out any special characters and uses found destination phone number's digits as campaign ID.
+
+      **Warning! Requires Invoca campaign with explicit ID for each number.**
 
   * - campaignIdOverrideParam
     - String
@@ -139,8 +149,8 @@ Client Side Parameters
     - Hash
     - Default: `null`
 
-      A hash of key value pairs that represent query string names and values that are required to run the integration.
-      For example: `{name: value}`
+      A hash of key value pairs that represent query string names and values. For example: `{name: value}`
+      The integration will run if any of these are met.
 
       When a requiredParam's value is `*`, any passed value will considered true.
 
@@ -359,6 +369,23 @@ http://www.example-page.com?ref=test
 When URL #1 is visited, the Invoca web integration will run.
 When URL #2 is visited, the Invoca web integration will not run.
 
+
+Invoca.PNAPI.run()
+""""""""""""""""""
+
+**React**
+
+.. code-block:: html
+
+  componentDidMount() {
+    Invoca.PNAPI.run();
+  }
+
+**AngularJS**
+
+.. code-block:: html
+
+  $scope.$on('$viewContentLoaded', Invoca.PNAPI.run);
 
 
 Migrating from an older version
