@@ -49,6 +49,9 @@ The API takes the following optional query parameters:
   * - force_quotes=
     - [.csv format only] 1 to quote all CSV fields; 0 to only quote fields that contain separators. Default is 0.
 
+  * - transaction_type=
+    - The type of transaction - Call, Reported Conversion or Signal.
+
 In order to ensure that all transactions are returned when using the from= and to= date query parameters,
 you should store the last transaction id you have downloaded and pass it as the start_after_transaction_id to the next request.
 Typical usage on the polling interval is to repeatedly call the API until no rows are returned, meaning you have downloaded all transactions.
