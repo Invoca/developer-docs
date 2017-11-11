@@ -78,7 +78,7 @@ Example 5: Get All Transactions from a specific time period that are of transact
 
 .. code-block:: bash
 
-  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=Call&transaction_type=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type[]=Call&transaction_type[]=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
 
 
 Endpoint:
