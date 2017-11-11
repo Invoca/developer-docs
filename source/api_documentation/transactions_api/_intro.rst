@@ -50,7 +50,7 @@ The API takes the following optional query parameters:
     - [.csv format only] 1 to quote all CSV fields; 0 to only quote fields that contain separators. Default is 0.
 
   * - transaction_type=
-    - The type of transaction - Call, Reported Conversion or Signal.
+    - Filters for the type of transaction. Valid inputs are Call, Sale, or Signal. Sale maps to the Reported Conversion type.
 
 In order to ensure that all transactions are returned when using the from= and to= date query parameters,
 you should store the last transaction id you have downloaded and pass it as the start_after_transaction_id to the next request.
