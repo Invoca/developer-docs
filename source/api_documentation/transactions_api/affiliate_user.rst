@@ -67,6 +67,20 @@ Example 3: Get 50 rows that exclude a few columns such as city and region:
   curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&exclude_columns=city,region&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFH'
 
 
+Example 4: Get All Transactions from a specific time period that are of transaction_type Signal:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+
+
+Example 5: Get All Transactions from a specific time period that are of transaction_type Call and Signal:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type[]=Call&transaction_type[]=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+
+
 Endpoint:
 
 ``https://invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/<affiliate_id>.<format>``

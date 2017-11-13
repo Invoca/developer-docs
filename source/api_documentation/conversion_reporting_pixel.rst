@@ -30,7 +30,7 @@ Pixel URL
 
 For "Publisher Promotion" or Fixed Price "Bundled" Campaigns, the Advertiser_ID is listed on the Campaign Summary, Integration panel.
 
-For all other campaign types, the Advertiser_ID is accessible from the ﻿Advertiser Home Page. ﻿Note the address b in the ar  the browswer in t he rD follows /as/ in the URL.
+For all other campaign types, the Advertiser_ID is accessible from the ﻿Advertiser Home Page. ﻿Note the numbers in the browser URL immediately following the /as/ and before any other punctuation.
 
 .. raw:: html
 
