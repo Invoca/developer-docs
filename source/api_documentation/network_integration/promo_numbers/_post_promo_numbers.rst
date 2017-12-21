@@ -198,7 +198,7 @@
       "media_type": "Google Call Extension",
       "promo_number": "8777657743",
       "description": "Google Call Extension Demo",
-      "object_url": "https://invoca.net/p_campaigns/promo_numbers/14/11",
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
       "custom_data": {
         "channel": "Online lead"
       }
