@@ -122,6 +122,10 @@ When you POST a promo number, we return the promo_number in the response body. T
     - string (optional)
     - For international local promo number creation, a string phone number to try to match can be included. The first five digits will be used. (ex. “805”, “80561”)
 
+  * - adwords_account_id
+    - string (optional)
+    - The ID of the AdWords client account to be associated with this promo number. Requires media type to be set to 'Google Call Extension'. (ex. "627-345-9815")
+
 
 
 Custom Data
