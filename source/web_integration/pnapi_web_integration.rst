@@ -1,8 +1,15 @@
-SolutionsJS Web Integration
-===========================
+SolutionsJS Web Integration (Deprecated)
+========================================
 
-Installation Instructions
--------------------------
+.. raw:: html
+
+  <div style="padding: 15px; background-color: #fff3cd; color: #333;"><p>
+    <b>Notice:</b> Invoca Tags</a> is the supported way for setting up web integration (which internally uses the InvocaJS library, formerly known as SolutionsJS).
+    View the <a href="https://invoca.uservoice.com/knowledgebase/articles/1190743-invoca-javascript-tags">Invoca Tags support article</a> for installation instructions.
+  </p></div>
+
+Installation Instructions (Deprecated)
+--------------------------------------
 
 Install this generalized code just above the closing ``</body>`` tag of your website.
 
@@ -176,7 +183,7 @@ Client Side Parameters
     - Function
     - Default: `null`
 
-      Name of a function to call when Invoca has finished running. Note: Do not call the function, simply pass reference. 
+      Name of a function to call when Invoca has finished running. Note: Do not call the function, simply pass reference.
 
       For example: `functionName` not `functionName()`.
 
@@ -185,8 +192,8 @@ Client Side Parameters
     - Default: `false`
 
       When true, will display debug logs in the developer console.
-  
-  
+
+
 
 Examples
 --------
@@ -391,7 +398,7 @@ Invoca.PNAPI.run()
 Migrating from an older version
 -------------------------------
 If you are migrating from SolutionsJS 1.2 or below, please refer to the following guide.
-  
+
 1. Update your namespaces
 - Change ``Solutions.PNAPI.integration`` to ``Invoca.PNAPI.integration``
 - Change any Toolkit functions, like ``Solutions.PNAPI.readUrl`` to ``Invoca.Tools.readUrl``
@@ -404,14 +411,14 @@ If you are migrating from SolutionsJS 1.2 or below, please refer to the followin
 3. Update your integration scripts from this:
 
 .. code-block:: html
-  
+
   <script type="text/javascript" src="//pnapi0.invoca.net/0/pnapi_integration.js"></script>
   <script type="text/javascript" src="//cdn.invoca.solutions/js/solutions-1.2.min.js">
-  
 
 
-to just this:    
-  
+
+to just this:
+
 .. code-block:: html
 
   <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>

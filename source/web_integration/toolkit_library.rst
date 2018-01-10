@@ -1,7 +1,7 @@
-Toolkit Library
-===============
+InvocaJS Toolkit Library
+========================
 
-The Solutions Toolkit is a library of JavaScript functions to help facilitate advanced implementations.  The following functions can be leveraged only if you have PNAPI JS installed on your site and your Invoca network has been properly configured by an Invoca Customer Success or Implementation Manager.
+The InvocaJS Toolkit is a library of JavaScript functions to help facilitate advanced implementations.  The following functions can be leveraged only if you have InvocaJS installed on your site and your Invoca network has been properly configured by an Invoca Customer Success or Implementation Manager.
 
 *Note:* Any method preceded with an underscore is subject to change and should not be used.
 
@@ -224,7 +224,7 @@ Usage:
 Response:
 """"""""""
 
-``inputFuction`` must be a function, any value returned by this function will be considered true, so return null to try again. 
+``inputFuction`` must be a function, any value returned by this function will be considered true, so return null to try again.
 
 ``callbackFunction`` must be a function, and is called with the found value or default value passed as an argument.
 
