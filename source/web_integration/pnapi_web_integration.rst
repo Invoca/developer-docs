@@ -183,7 +183,19 @@ Client Side Parameters
     - Function
     - Default: `null`
 
+      Arguments: `mapping`
+
       Name of a function to call when Invoca has finished running. Note: Do not call the function, simply pass reference.
+
+      For example: `functionName` not `functionName()`.
+
+  * - onCompleteOverride
+    - Function
+    - Default: `null`
+
+      Arguments: `batchId`, `mapping`
+
+      Name of a function to call when Invoca has finished running.
 
       For example: `functionName` not `functionName()`.
 
@@ -197,6 +209,38 @@ Client Side Parameters
 
 Examples
 --------
+
+campaignIdOverrideParam
+"""""""""""""""""""""""
+To use a query string parameter as the Invoca Campaign ID for all phone numbers found on page, specify the parameter name in this option.
+To use the value of `?utm_source` as the Campaign ID, follow this example:
+
+**URL**
+
+http://www.example-page.com?utm_source=google
+
+
+**CODE**
+
+.. code-block:: html
+
+  <!-- Begin Invoca Integration -->
+  <script type="text/javascript" src="//solutions.invocacdn.com/js/pnapi_integration-latest.min.js"></script>
+  <script type="text/javascript">
+    Invoca.PNAPI.integration({
+      networkId: YOUR_NETWORK_ID,
+      numberSelector: ".YOUR_CLASS_SELECTOR",
+      campaignIdOverrideParam: 'utm_source'
+    });
+  </script>
+  <!-- End Invoca Integration -->
+
+
+**RESULT**
+
+The caller is assigned and delivered to the "google" campaign in Invoca for any phone number found on the page with ``data-invoca-campaign-id``'s and the ``defaultCampaignId`` being overriden.
+
+
 
 campaignIdOverrideParam
 """""""""""""""""""""""
