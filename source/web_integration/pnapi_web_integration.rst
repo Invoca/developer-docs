@@ -185,7 +185,8 @@ Client Side Parameters
 
       Arguments: `mapping`
 
-      Name of a function to call when Invoca has finished running. Note: Do not call the function, simply pass reference.
+      Name of a function to call when Invoca has finished running.
+      This is called after Invoca has run the default number replacement code and swapped out any numbers that were found.
 
       For example: `functionName` not `functionName()`.
 
@@ -195,7 +196,8 @@ Client Side Parameters
 
       Arguments: `batchId`, `mapping`
 
-      Name of a function to call when Invoca has finished running.
+      Name of a function to call when Invoca has finished running. If defined, Invoca will not replace any phone numbers.
+      This function is responsible for updating phone numbers on the web page as the default number replacement code will not be run.
 
       For example: `functionName` not `functionName()`.
 
