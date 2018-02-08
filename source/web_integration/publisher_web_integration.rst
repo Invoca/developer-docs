@@ -352,7 +352,6 @@ The image below is a screenshot of the webpage produced by HTML source code from
 3. The campaign is no longer active.
 
 
-
 Example 7: Dynamically Displaying Tel: link
 -------------------------------------------
 
