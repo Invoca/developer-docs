@@ -14,6 +14,7 @@ To create an API token:
 1. From the Navigation Bar, hover on Integrations and select "Invoca APIs"
 
    .. image:: ../_static/manage_api_credentials.png
+      :scale: 50%
 
 2. On the "Invoca API Credentials" page, click "New API Credential"
 3. Enter Description and click Save.
@@ -29,6 +30,7 @@ To delete or remove an API token from your platform:
 1. From the Navigation Bar, hover on Integrations and select "Invoca APIs"
 
    .. image:: ../_static/manage_api_credentials.png
+      :scale: 50%
 
 2. On the "Invoca API Credentials" page, click the delete icon associated to the API token to delete.
 
