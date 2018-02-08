@@ -11,32 +11,25 @@ Create an API Token
 
 To create an API token:
 
-1. From the Navigation Bar, hover on Integrations and select "Manage Integrations".
-2. Click on Invoca APIs "Manage Settings".
+1. From the Navigation Bar, hover on Integrations and select "Invoca APIs"
 
-   .. raw:: html
+   .. image:: ../_static/manage_api_credentials.png
 
-     <p style="overflow: hidden"><img src="https://invoca.uservoice.com/assets/82302226/2015-06-16_16-44-26.png" style="margin-left: -2px"></p>
-
-3. On the Manage API Credentials page, click ﻿﻿"Create New API Token".
-4. Enter Description and click Save.
+2. On the "Invoca API Credentials" page, click "New API Credential"
+3. Enter Description and click Save.
 
 Note: It is recommended to provide a description that identifies the API type and use.
-
 
 Delete an API Token
 -------------------
 
 To delete or remove an API token from your platform:
 
-1. From the Navigation Bar, hover on Integrations and select "Manage Integrations".
-2. Click on Invoca APIs "Manage Settings".
+1. From the Navigation Bar, hover on Integrations and select "Invoca APIs"
 
-   .. raw:: html
+   .. image:: ../_static/manage_api_credentials.png
 
-     <p style="overflow: hidden"><img src="https://invoca.uservoice.com/assets/82302226/2015-06-16_16-44-26.png" style="margin-left: -2px"></p>
-
-3. On the Manage Credentials page, click the delete icon associated to the API token to delete.
+2. On the "Invoca API Credentials" page, click the delete icon associated to the API token to delete.
 
 
 API Guidelines
