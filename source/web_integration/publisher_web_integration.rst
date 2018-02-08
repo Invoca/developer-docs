@@ -351,9 +351,6 @@ The image below is a screenshot of the webpage produced by HTML source code from
 
 3. The campaign is no longer active.
 
-.. raw:: html
-
-  <p><img src="https://invoca.uservoice.com/assets/79451835/Screen%20Shot%202015-04-23%20at%204.50.34%20PM.png"></p>
 
 
 Example 7: Dynamically Displaying Tel: link
