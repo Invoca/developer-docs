@@ -15,5 +15,5 @@ Installation Instructions
 .. raw:: html
 
   <p>
-    To set up your Invoca Tags, view the following <a href="https://invoca.uservoice.com/knowledgebase/articles/1190743-invoca-javascript-tags">support documentation</a>.
+    To set up your Invoca Tags, view the following <a href="https://invoca.force.com/community/s/article/Invoca-Tag-Wizard">support documentation</a>.
   </p>
