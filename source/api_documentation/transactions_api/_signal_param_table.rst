@@ -8,11 +8,15 @@ Signal Parameters
   :header-rows: 1
   :class: parameters
 
+  * - Field
+    - Name in Reports
+    - Description
+
   * - signal_name
     - Signal Name
     - The name describing the signal event.
 
-  * - signal_description
+  * - signal_description (deprecated)
     - Signal Description
     - Free form text for providing additional details about the signal.
 
@@ -36,15 +40,15 @@ Signal Parameters
     - Revenue (Sale Amount)
     - The revenue to apply to the call if the Signal is evaluated as true.
 
-  * - signal_custom_parameter_1
+  * - signal_custom_parameter_1 (deprecated)
     - Signal Custom Param 1
     - Up to 255 character string.
 
-  * - signal_custom_parameter_2
+  * - signal_custom_parameter_2 (deprecated)
     - Signal Custom Param 2
     - Up to 255 character string.
 
-  * - signal_custom_parameter_3
+  * - signal_custom_parameter_3 (deprecated)
     - Signal Custom Param 3
     - Up to 255 character string.
 

@@ -1,9 +1,11 @@
 Signal API
 =================
 
-The Signal API is used to report signals that occur on a specific call (transaction).
+The Signal API is used to apply Signals and or Custom Data Fields to specific calls (transactions) after the call has occurred.
 
-Signals may be anything an organization would like to track such as sales, quotes, etc.
+This can be very helpful if you need to apply specific data from other systems if that data isn't available during the call.
+
+Signals can be any boolean value (e.g. sale, quote, etc), and Custom Data can be any alpha-numeric value (e.g. account type, customer quality score, etc).
 
 Response Codes
 --------------
@@ -33,6 +35,9 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
 
   * - 404 Not Found
     - Provided a transaction ID that was not found, or if using call start time and other search filters, no matching call found
+
+  * - 410 Gone
+    - Provided an API Version that was not compatible with the route format
 
 Request Parameters
 ------------------
@@ -89,14 +94,7 @@ Used to create the fields of a signal.
     Note: this ID only needs to be unique within the given transaction and **name**, so it can be as simple as “1”, “2”… or
     it can be a globally unique ID if desired. Defaults to empty string if not passed.
 
-    `description:` Free form text for providing additional details about the signal (for example: a sales order ID or a specific product being purchased or inquired about).
-
     `occurred_at_time:` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
-
-    `sale_amount(deprecated):` Money with up to 2 decimal places (period separated).
-    Assumed to be in the same currency as the organization that owns the signal being reported.
-    Defaults to null if not passed. (Recommended to omit parameter if no sale occurred, instead of passing 0).
-    Do not include formatting such as currency symbol or separators (i.e. commas).
 
     `revenue:` Money with up to 2 decimal places (period separated).
     Assumed to be in the same currency as the organization that owns the signal being reported.
@@ -105,11 +103,19 @@ Used to create the fields of a signal.
 
     `value:` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false), Yes (true), or No (false). These values are not case sensitive.
 
-    `custom_parameter_1` Custom parameter. Up to 255 character string.
+------
 
-    `custom_parameter_2` Custom parameter. Up to 255 character string.
+**Custom Data Parameters**
 
-    `custom_parameter_3` Custom parameter. Up to 255 character string.
+Used apply Custom Data values to a call based on your Custom Data configuration.
+
+The Custom Data Fields provided in a request **must** already exist in your configuration.
+
+    **Required**
+
+    `name:` The Partner (API) Name of the Custom Data Field you want to apply a value to. Visit your `Custom Data Management Page <https://www2.invoca.net/customer_data_dictionary/home>`_ to view your available Custom Data Fields.
+
+    `value:` The value you would like to apply to the associated Custom Data Field for this call.
 
 ------
 
@@ -130,36 +136,14 @@ Used to create the fields of a signal.
 
 Endpoint:
 
-``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/signals``
+``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions``
 
 .. api_endpoint::
   :verb: POST
-  :path: /transactions/signals
-  :description: Create a signal
-  :page: create_signal
+  :path: /transactions
+  :description: Apply a signal and/or custom data to a call
+  :page: transaction_events
 
-.. api_endpoint::
-  :verb: PUT
-  :path: /transactions/signals
-  :description: Update a signal
-  :page: update_signal
-
-
-Endpoint:
-
-``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions/<transaction_id>/signals``
-
-.. api_endpoint::
-  :verb: POST
-  :path: /transactions/&lttransaction_id&gt/signals
-  :description: Create a signal
-  :page: create_signal2
-
-.. api_endpoint::
-  :verb: PUT
-  :path: /transactions/&lttransaction_id&gt/signals
-  :description: Update a signal
-  :page: update_signal2
 
 
 Timestamp Formats
@@ -213,16 +197,18 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signal": {"name": "sale","partner_unique_id": "1","description": "1 year contract","occurred_at_time": "1440607313","sale_amount": "100.00","revenue": "100.00","value": "true"},"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
+  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
 
 Errors
 ------
 
 The Signal API clearly identifies errors when a request cannot be processed.
 
-**Validation Errors**
+**Invalid Inputs**
 
-If invalid parameters are passed an error will be returned with a 403 response code. For example, if a **transaction_id** or **call_start_time** are not passed in the request, the following error will be returned.
+If invalid parameters are passed an error will be returned with a 403 response code.
+
+For example, if a **transaction_id** or **call_start_time** are not passed in the request, the following error will be returned.
 
 **Response (403 Forbidden):**
 
@@ -230,8 +216,54 @@ If invalid parameters are passed an error will be returned with a 403 response c
 
   {
     "errors": {
-      "class": "RecordInvalid",
-      "invalid_data": "Validation failed: transaction_id or call_start_time must be present"
+      "class": "InvalidInput",
+      "invalid_data": "transaction_id or call_start_time must be present"
+    }
+  }
+
+If there are multiple issues with the request, we will do our best to package all of issues together in one response message.
+
+**Example Bad Request**
+
+.. code-block:: json
+
+  {
+    "search": {
+      "transaction_id": "0000000-0000000A"
+    },
+    "signals": [
+      {
+        "name": "sale",
+        "custom_parameter_1": "12345"
+      },
+      {
+        "revenue": "1,000",
+        "value": "true"
+      },
+      {
+        "name": "sale",
+        "description": "duplicate"
+      }
+    ],
+    "custom_data": [
+      {
+        "value": "no_name"
+      },
+      {
+        "name": "no_value"
+      }
+    ],
+    "oauth_token": <YOUR OAUTH TOKEN>
+  }
+
+**Response (403 Forbidden):**
+
+.. code-block:: json
+
+  {
+    "errors": {
+      "class": "InvalidInput",
+      "invalid_data": "The following params in 'signals' are not supported in this version: custom_parameter_1, custom_parameter_2; signals[1] 'name' is required; 'name' for signals[0] and signals[2] must be unique; 'name' for custom_data[0] is required; 'value' for custom_data[1] is required"
     }
   }
 
@@ -290,7 +322,9 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
 Updates and Idempotency
 -----------------------
 
-Signal are considered unique by a combination of **name** and **partner_unique_id**.
+**Signals:**
+
+Signals are considered unique by a combination of **name** and **partner_unique_id**.
 For example, if you make two requests with the same **name** and **partner_unique_id**, the other params in the second request will update the original signal’s fields
 
 Therefore, if you make two requests with the same params, the signal will not be updated nor will a new one be made. It is safe then to re-post API requests without fear of duplicate data.
@@ -301,7 +335,7 @@ If you change the **partner_unique_id**, a second signal of the same name will b
 
 Example of creating two signals (on a single call) then updating one
 
-**HTTP POST parameters** - first request (creates first signal):
+**HTTP POST parameters** - first request (creates both signals, which are valid due to non-unique **partner_unique_id**):
 
 .. code-block:: json
 
@@ -309,78 +343,47 @@ Example of creating two signals (on a single call) then updating one
       "search": {
         "transaction_id": "00000000-00000001"
       },
-      "signal": {
+      "signals": [{
         "name": "Quote",
-        "partner_unique_id": "1",
-        "description": "Honda Accord 2015"
-      },
+        "partner_unique_id": "1"
+      }, {
+        "name": "Quote",
+        "partner_unique_id": "2"
+      }],
       "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
-**Response (201 Created):**
+**Response (200 OK):**
 
 .. code-block:: json
 
     {
-      "signal": {
+      "signals": [{
         "transaction_id": "00000000-0000000A",
         "corrects_transaction_id": null,
         "name": "Quote",
         "partner_unique_id": "1",
-        "description": "Honda Accord 2015",
         "occurred_at_time_t": "1440607999",
         "occurred_at_time": "2015-08-26T16:53:19Z",
         "value": "true"
-      },
-      "call": {
-        "transaction_id": "00000000-00000001",
-        "start_time_t": "1435993200",
-        "call_start_time": "2015-07-04T07:00:00Z"
-      }
-    }
-
-**HTTP POST Parameters** - second request (creates another signal):
-
-.. code-block:: json
-
-    {
-      "search": {
-        "transaction_id": "00000000-00000001"
-      },
-      "signal": {
-        "name": "Quote",
-        "partner_unique_id": "2",
-        "description": "Toyota Camry 2015"
-      },
-      "oauth_token": "<YOUR OAUTH TOKEN>"
-    }
-
-**Response (201 Created):**
-
-.. code-block:: json
-
-    {
-      "signal": {
+      }, {
         "transaction_id": "00000000-0000000B",
         "corrects_transaction_id": null,
         "name": "Quote",
         "partner_unique_id": "2",
-        "description": "Toyota Camry 2015",
-        "occurred_at_time_t": "1440607800",
-        "occurred_at_time": "2015-08-26T16:50:00Z",
-        "value": "true",
-        "custom_parameter_1": "",
-        "custom_parameter_2": "",
-        "custom_parameter_3": ""
-      },
+        "occurred_at_time_t": "1440608000",
+        "occurred_at_time": "2015-08-26T16:53:20Z",
+        "value": "true"
+      }],
       "call": {
         "transaction_id": "00000000-00000001",
+        "corrects_transaction_id": null,
         "start_time_t": "1435993200",
         "call_start_time": "2015-07-04T07:00:00Z"
       }
     }
 
-**HTTP POST Parameters** - third request (updates first request):
+**HTTP POST Parameters** - second request (updates first request):
 
 .. code-block:: json
 
@@ -388,11 +391,10 @@ Example of creating two signals (on a single call) then updating one
       "search": {
         "transaction_id": "00000000-00000001"
       },
-      "signal": {
+      "signals": [{
         "name": "Quote",
-        "partner_unique_id": "1",
-        "description": "Honda Civic 2012"
-      },
+        "partner_unique_id": "1"
+      }],
       "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
@@ -401,25 +403,34 @@ Example of creating two signals (on a single call) then updating one
 .. code-block:: json
 
   {
-    "signal": {
+    "signals": [{
       "transaction_id": "00000000-0000000C",
       "corrects_transaction_id": "00000000-0000000A",
       "name": "Quote",
       "partner_unique_id": "1",
-      "description": "Honda Civic 2012",
       "occurred_at_time_t": "1440607999",
       "occurred_at_time": "2015-08-26T16:53:19Z",
-      "value": "true",
-      "custom_parameter_1": "",
-      "custom_parameter_2": "",
-      "custom_parameter_3": ""
-    },
+      "value": "true"
+    }],
     "call": {
       "transaction_id": "00000000-00000001",
+      "corrects_transaction_id": null,
       "start_time_t": "1435993200",
       "call_start_time": "2015-07-04T07:00:00Z"
     }
   }
 
-Note: even though this third request was an update to the first and will appear in reports as updating the first signal, a new signal transaction ID is returned.
+Note: even though this second request was an update to the first and will appear in reports as updating the first signal, a new signal transaction ID is returned.
 This is because a correction has been made to the first signal, and this new transaction ID is what will appear in webhooks and the Transactions API.
+
+-----
+
+**Custom Data:**
+
+Custom Data fields are considered unique by their **name** only.
+
+Each request made will apply a correction to the target call and apply the provided Custom Data Field values.
+
+Therefore, subsequent requests will create corrections and appear as though the original call was updated.
+
+Note: Any signals provided or associated previously with the call with also have these Custom Data values applied.
