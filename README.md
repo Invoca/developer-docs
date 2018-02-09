@@ -50,7 +50,7 @@ bash html
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Login to ReadTheDocs.org (credentials in lastpass)
 8. Click on the Versions button and then the Edit button next to your branch
-9. Click on the Active checkbox and set the Privacy Level to Private
+9. Click on the Active checkbox and set the Privacy Level to Protected
 10. Visit http://developers.invoca.net
 11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
 12. Click on your branch name to view and you should be able to check the changes you made
@@ -63,7 +63,7 @@ bash html
 2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
 3. Login to ReadTheDocs.org (credentials in lastpass)
 4. Navtigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
-5. Set your branch to Active
+5. Set your branch to Active in the Admin settings (This will trigger a build)
 6. Set your version to Private
 7. Click "Submit" to save changes
 8. Build your project by going to the [Project Overview](https://readthedocs.org/projects/invoca-developer-docs/), selecting your branch (version) from the "Build a version" dropdown, and click "Build." 
