@@ -40,7 +40,7 @@ bash html
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Visit http://developers.invoca.net to check your changes
 
-## Making changes to an existing version and keeping them private:
+## Making changes to an existing version and keeping them hidden from the public:
 1. Create a new branch off of the version branch you want to edit, name it however you want
 2. Edit one or more .rst files
 3. Rebuild the docs with this command:
@@ -50,7 +50,7 @@ bash html
 6. ReadTheDocs will automatically pickup your changes and recompile the site
 7. Login to ReadTheDocs.org (credentials in lastpass)
 8. Click on the Versions button and then the Edit button next to your branch
-9. Click on the Active checkbox and set the Privacy Level to Private
+9. Click on the Active checkbox and set the Privacy Level to Protected
 10. Visit http://developers.invoca.net
 11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
 12. Click on your branch name to view and you should be able to check the changes you made
@@ -64,7 +64,7 @@ bash html
 3. Login to ReadTheDocs.org (credentials in lastpass)
 4. Navigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
 5. Set your branch to Active in the Admin settings (This will trigger a build)
-6. Set your version to Private
+6. Set your version to Protected
 7. Click "Submit" to save changes
 8. Build your project by going to the [Project Overview](https://readthedocs.org/projects/invoca-developer-docs/), selecting your branch (version) from the "Build a version" dropdown, and click "Build." 
 You will then be taken to the [Builds page] (https://readthedocs.org/projects/invoca-developer-docs/builds/). Check the status of your build. It should go from "Triggered > Building > Installing > Passed" if all goes well. 
@@ -76,8 +76,8 @@ You will then be taken to the [Builds page] (https://readthedocs.org/projects/in
 14. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
 15. Limit pushing to the branch to members of the Developer Docs Administrators group in [Settings > Branches](https://github.com/Invoca/developer-docs/settings/branches)
 
-## Private Documentation
-The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
+## Protected Documentation
+The "protected" documentation in RTD is not actually protected by a login. When a version is set to protected, it can be viewed by anyone who was the link.
 
 ## Documentation Structure
 * The home page of the site is source/index.rst
