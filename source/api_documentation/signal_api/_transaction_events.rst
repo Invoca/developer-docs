@@ -4,7 +4,7 @@
 
   .. rubric:: Examples
 
-  All of these examples use `POST` requests, but we will also accept `PUT` requests with the same request format.
+  All of these examples use ``POST`` requests, but we will also accept ``PUT`` requests with the same request format.
 
   Examples using **transaction_id** (of the call) and providing a single signal with all available fields populated:
 

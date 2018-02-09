@@ -107,9 +107,9 @@ Used to create the fields of a signal.
 
 **Custom Data Parameters**
 
-Used apply Custom Data values to a call based on your Custom Data configuration.
+Apply Custom Data values to a call based on your Custom Data configuration.
 
-The Custom Data Fields provided in a request **must** already exist in your configuration.
+The Custom Data Fields provided in a request **must** already exist in your `Custom Data Configuration <https://www2.invoca.net/customer_data_dictionary/home>`_
 
     **Required**
 
@@ -125,9 +125,11 @@ The Custom Data Fields provided in a request **must** already exist in your conf
 
     `oauth_token:` API token for authentication
 
+    **Optional**
+
     `call_in_progress:` True or false as to whether the call may still be in progress.
     Invoca will immediately return a 201 and empty response body when this is set to true.
-    When the call finishes, Invoca will apply the signal.
+    When the call finishes, Invoca will apply the signal. Defaults to false.
 
     Note: **call_in_progress** can be passed, even when the call has already finished.
     However, Invoca will only check for required fields and all other errors will not be returned.
@@ -136,7 +138,7 @@ The Custom Data Fields provided in a request **must** already exist in your conf
 
 Endpoint:
 
-``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions``
+``https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json``
 
 .. api_endpoint::
   :verb: POST
@@ -197,7 +199,7 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/<API_VERSION>/transactions/signals.json
+  curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
 
 Errors
 ------
@@ -221,7 +223,7 @@ For example, if a **transaction_id** or **call_start_time** are not passed in th
     }
   }
 
-If there are multiple issues with the request, we will do our best to package all of issues together in one response message.
+If there are multiple issues with the request, we will do our best to package all of the issues together in one response message.
 
 **Example Bad Request**
 
@@ -429,8 +431,21 @@ This is because a correction has been made to the first signal, and this new tra
 
 Custom Data fields are considered unique by their **name** only.
 
-Each request made will apply a correction to the target call and apply the provided Custom Data Field values.
+Each request made will apply a correction to the target call and override any existing Custom Data Field values for the provided fields.
 
 Therefore, subsequent requests will create corrections and appear as though the original call was updated.
 
-Note: Any signals provided or associated previously with the call with also have these Custom Data values applied.
+Note: Any signals provided or associated previously with the call with also reflect these new Custom Data values.
+
+Migration Notes
+-------------------------------
+
+For upgrading from version ``2017-02-01``
+
+* URL path was changed
+* Added **custom_data** key, an array of objects for setting custom data values
+* **signal** key was changed to **signals**, which is now an array of the same objects with the following changes
+
+  * Removed support for **custom_parameter_1**, **custom_parameter_2**, **custom_parameter_3** (use new **custom_data** outer key instead)
+  * Removed support for **sale_amount** (use **revenue** instead)
+  * Removed support for **description** (recommended to use Custom Data Fields instead)
