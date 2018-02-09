@@ -1,7 +1,7 @@
 Signal API
 =================
 
-The Signal API is used to apply Signals and or Custom Data Fields to specific calls (transactions) after the call has occurred.
+The Signal API is used to apply Signals and/or Custom Data Fields to specific calls (transactions) after the call has occurred.
 
 This can be very helpful if you need to apply specific data from other systems if that data isn't available during the call.
 
@@ -50,29 +50,29 @@ Used to find the call associated with the signal.
 
     **Required**
 
-    `transaction_id:` The ID of the transaction (Call leg) being reported on.
+    `transaction_id` The ID of the transaction (Call leg) being reported on.
 
     or
 
-    `call_record_id:` The ID of the complete call being reported on.
+    `call_record_id` The ID of the complete call being reported on.
 
     or
 
-    `call_start_time:` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
+    `call_start_time` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
 
     Note: If using **call_start_time** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
 
     **Optional**
 
-    `calling_phone_number:` ANI in E.164 format +country national_number; example: ‘+1 8885551212’.
+    `calling_phone_number` ANI in E.164 format +country national_number; example: ‘+1 8885551212’.
 
-    `duration_in_seconds:` Length of the call. Used for finding the call that drove the sale. Like start time, duration_in_seconds does not have to be exact, we use it to find the closest match.
+    `duration_in_seconds` Length of the call. Used for finding the call that drove the sale. Like start time, duration_in_seconds does not have to be exact, we use it to find the closest match.
 
-    `advertiser_id_from_network:` ID from network field on advertiser; only calls within this advertiser will be considered (only allowed when reporting as network user, and advertiser must be in same network).
+    `advertiser_id_from_network` ID from network field on advertiser; only calls within this advertiser will be considered (only allowed when reporting as network user, and advertiser must be in same network).
 
-    `advertiser_campaign_id_from_network:` ID from network field on advertiser campaign; only calls within this advertiser campaign will be considered (campaign must be in the organization accessed via API).
+    `advertiser_campaign_id_from_network` ID from network field on advertiser campaign; only calls within this advertiser campaign will be considered (campaign must be in the organization accessed via API).
 
-    `network_id:` ID of the network.
+    `network_id` ID of the network.
 
 -----
 
@@ -82,26 +82,26 @@ Used to create the fields of a signal.
 
     **Required**
 
-    `name:` The name describing the signal event. For reporting a sale happened on a call, “Sale” is recommended.
+    `name` The name describing the signal event. For reporting a sale happened on a call, “Sale” is recommended.
     Other examples include “Free Trial”, “2yr Subscription”, “Cancellation.”
     This can be used elsewhere in the system and should be a small list of values meaningful to your organization.
     Names are matched case-insensitively, but we will preserve and use the casing of the first time the signal name is reported.
 
     **Optional**
 
-    `partner_unique_id:` Unique identifier, to distinguish between updating an existing signal (for example correcting a sale that was reported)
+    `partner_unique_id` Unique identifier, to distinguish between updating an existing signal (for example correcting a sale that was reported)
     versus adding a second sale to the call (for example a reservation made while on the call and then an add on item purchased later).
     Note: this ID only needs to be unique within the given transaction and **name**, so it can be as simple as “1”, “2”… or
     it can be a globally unique ID if desired. Defaults to empty string if not passed.
 
-    `occurred_at_time:` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
+    `occurred_at_time` This allows batching of signal results at a later time and still capture the exact time the signal event happened. See **Timestamp Formats** section below for descriptions of supported timestamps. Defaults to the time of the API request if not provided.
 
-    `revenue:` Money with up to 2 decimal places (period separated).
+    `revenue` Money with up to 2 decimal places (period separated).
     Assumed to be in the same currency as the organization that owns the signal being reported.
     Defaults to null if not passed. (Recommended to omit parameter if no sale occurred, instead of passing 0).
     Do not include formatting such as currency symbol or separators (i.e. commas).
 
-    `value:` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false), Yes (true), or No (false). These values are not case sensitive.
+    `value` True or false as to whether the signal was met or not. Defaults to true if not passed. Can be a string ‘true’ or ‘false’, or 1 (true) or 0 (false), Yes (true), or No (false). These values are not case sensitive.
 
 ------
 
@@ -113,9 +113,9 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
     **Required**
 
-    `name:` The Partner (API) Name of the Custom Data Field you want to apply a value to. Visit your `Custom Data Management Page <https://www2.invoca.net/customer_data_dictionary/home>`_ to view your available Custom Data Fields.
+    `name` The Partner (API) Name of the Custom Data Field you want to apply a value to. Visit your `Custom Data Management Page <https://www2.invoca.net/customer_data_dictionary/home>`_ to view your available Custom Data Fields.
 
-    `value:` The value you would like to apply to the associated Custom Data Field for this call.
+    `value` The value you would like to apply to the associated Custom Data Field for this call.
 
 ------
 
@@ -123,11 +123,11 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
     **Required**
 
-    `oauth_token:` API token for authentication
+    `oauth_token` API token for authentication
 
     **Optional**
 
-    `call_in_progress:` True or false as to whether the call may still be in progress.
+    `call_in_progress` True or false as to whether the call may still be in progress.
     Invoca will immediately return a 201 and empty response body when this is set to true.
     When the call finishes, Invoca will apply the signal. Defaults to false.
 
@@ -208,7 +208,7 @@ The Signal API clearly identifies errors when a request cannot be processed.
 
 **Invalid Inputs**
 
-If invalid parameters are passed an error will be returned with a 403 response code.
+If invalid parameters are passed, an error will be returned with a 403 response code.
 
 For example, if a **transaction_id** or **call_start_time** are not passed in the request, the following error will be returned.
 
@@ -265,7 +265,24 @@ If there are multiple issues with the request, we will do our best to package al
   {
     "errors": {
       "class": "InvalidInput",
-      "invalid_data": "The following params in 'signals' are not supported in this version: custom_parameter_1, custom_parameter_2; signals[1] 'name' is required; 'name' for signals[0] and signals[2] must be unique; 'name' for custom_data[0] is required; 'value' for custom_data[1] is required"
+      "invalid_data": "The following params in 'signals' are not supported in this version: custom_parameter_1, description; signals[1] 'name' is required; 'name' for signals[0] and signals[2] must be unique; 'name' for custom_data[0] is required; 'value' for custom_data[1] is required"
+    }
+  }
+
+-----
+
+**Record Invalid Error**
+
+In the case that we are not able to find all of the issues in the request before processing, we will package up any errors that occur during processing with the following error response:
+
+**Response (403 Forbidden):**
+
+.. code-block:: json
+
+  {
+    "errors": {
+      "class": "RecordInvalid",
+      "invalid_data": "Validation failed: Signals are limited to 100"
     }
   }
 
@@ -273,7 +290,7 @@ If there are multiple issues with the request, we will do our best to package al
 
 **Record Not Found Error**
 
-If no record is found for the search parameters that are passed in the request an error will be returned with a 404 response code. For example, if a call cannot be found for the search parameters passed, the following error will be returned.
+If no record is found for the search parameters that are passed in the request, an error will be returned with a 404 response code. For example, if a call cannot be found for the search parameters passed, the following error will be returned.
 
 **Response (404 Not Found):**
 
@@ -337,7 +354,7 @@ If you change the **partner_unique_id**, a second signal of the same name will b
 
 Example of creating two signals (on a single call) then updating one
 
-**HTTP POST parameters** - first request (creates both signals, which are valid due to non-unique **partner_unique_id**):
+**HTTP POST parameters** - first request (creates both signals, which are valid due to unique **partner_unique_id**):
 
 .. code-block:: json
 
