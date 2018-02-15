@@ -27,6 +27,9 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
   * - 201 Created
     - A new signal was created
 
+  * - 400 Bad Request
+    - Attempted to make a request with an invalid API Version for route. Check the error message for any corrections to make
+
   * - 401 Not Authorized
     - Invalid or missing oauth token
 
