@@ -36,9 +36,6 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
   * - 404 Not Found
     - Provided a transaction ID that was not found, or if using call start time and other search filters, no matching call found
 
-  * - 410 Gone
-    - Provided an API Version that was not compatible with the route format
-
 Request Parameters
 ------------------
 
