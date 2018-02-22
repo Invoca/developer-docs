@@ -22,10 +22,10 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
     - Meaning
 
   * - 200 OK
-    - An existing signal was found and updated
+    - Request was accepted with all Signals and Custom data applied properly
 
   * - 201 Created
-    - A new signal was created
+    - Request was accepted with the **call_in_progress** parameter set to true
 
   * - 400 Bad Request
     - Attempted to make a request with an invalid API Version for route. Check the error message for any corrections to make
@@ -219,7 +219,7 @@ For example, if a **transaction_id** or **call_start_time** are not passed in th
   {
     "errors": {
       "class": "InvalidInput",
-      "invalid_data": "transaction_id or call_start_time must be present"
+      "invalid_data": "transaction_id, call_record_id, or call_start_time must not be empty"
     }
   }
 
