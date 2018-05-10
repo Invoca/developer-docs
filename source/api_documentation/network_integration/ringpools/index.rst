@@ -243,7 +243,7 @@ Content Type: application/json
 
       **"restrict_to_state"**: Boolean. Default is to restrict search to be within state boundaries.
 
-      **"allocation_fallback_strategy"**: "UseTollFree" or "Wait". If we are unable to fill the RingPool using the location information provided, we will use this parameter to either fill it with TollFree ("UseTollFree") or continue to wait until more numbers become available.
+      **"allocation_fallback_strategy"**: "UseTollFree" or "Wait". If we are unable to fill the RingPool using the location information provided, we will use this parameter to either fill it with TollFree ("UseTollFree") or continue to wait until more numbers become available. Default is "UseTollFree".
 
   * - tn_prefix_whitelist
     - array of strings
