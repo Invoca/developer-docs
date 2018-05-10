@@ -227,13 +227,23 @@ Content Type: application/json
 
       A filled field determines the center to start looking for local numbers at.
 
-      **"tn_prefix"**: can be either npa or npa or npa-nxx
+      **"tn_prefix"**: can be either npa or npa or npa-nxx in priority order.
 
       **"zipcode"**: a valid zipcode
 
       **"latitude"**: a valid latitude
 
       **"longitude"**: a valid longitude
+
+  * - local_number_preferences
+    - hash
+    - All are optional
+
+      **"search_radius_miles"**: a number
+
+      **"restrict_to_state"**: Boolean. Default is to restrict search to be within state boundaries.
+
+      **"allocation_fallback_strategy"**: "UseTollFree" or "Wait". If we are unable to fill the RingPool using the location information provided, we will use this parameter to either fill it with TollFree ("UseTollFree") or continue to wait until more numbers become available.
 
   * - tn_prefix_whitelist
     - array of strings

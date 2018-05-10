@@ -98,13 +98,21 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       A filled field determines the center to start looking for local numbers at.
 
-      **“tn_prefix”**: can be either npa or npa or npa-nxx
+      **“tn_prefix”**: can be either npa or npa or npa-nxx in priority order.
 
       **“zipcode”**: a valid zipcode
 
       **“city”**: a valid city
 
       **“state”**: a valid state
+
+  * - local_number_preferences
+    - hash
+    - Both are optional
+
+      **"search_radius_miles"**: a number
+
+      **"restrict_to_state"**: Boolean. Default is to restrict search to be within state boundaries.
 
   * - tn_prefix_whitelist
     - array of strings
