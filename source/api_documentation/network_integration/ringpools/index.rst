@@ -227,7 +227,7 @@ Content Type: application/json
 
       A filled field determines the center to start looking for local numbers at.
 
-      **"tn_prefix"**: can be either npa or npa or npa-nxx in priority order.
+      **"tn_prefix"**: an npa
 
       **"zipcode"**: a valid zipcode
 
@@ -247,7 +247,7 @@ Content Type: application/json
 
   * - tn_prefix_whitelist
     - array of strings
-    - an array of stringified limiters on the boundaries of where to look for local numbers given as npa or npa nxx pairs (ex. ["805", "805612"])
+    - an array of stringified limiters on the boundaries of where to look for local numbers given as npa (ex. ["805", "212"])
 
 Response Code: 200
 
