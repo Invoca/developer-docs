@@ -213,7 +213,7 @@ Content Type: application/json
 
   * - tn_prefix_whitelist
     - array of strings
-    - an array of stringified limiters on the boundaries of where to look for local numbers given as npas)
+    - an array of stringified limiters on the boundaries of where to look for local numbers given as npas (ex. ["805", "212"])
 
 Response Code: 200
 
