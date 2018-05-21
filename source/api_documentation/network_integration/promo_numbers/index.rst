@@ -110,9 +110,9 @@ When you POST a promo number, we return the promo_number in the response body. T
     - hash
     - Both are optional
 
-      **"search_radius_miles"**: An integer, greater than or equal to 0, which represents the number of miles from the location to search. Default: 240
+      **"search_radius_miles"**: An integer, greater than or equal to 0. Default is 240. Represents the number of miles from the location to search.
 
-      **"restrict_to_state"**: Boolean. Default: True. Used to restrict search to be within state boundaries.
+      **"restrict_to_state"**: A boolean. Default: True. Used to restrict search to be within state boundaries.
 
   * - tn_prefix_whitelist
     - array of strings
