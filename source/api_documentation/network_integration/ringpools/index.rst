@@ -239,11 +239,11 @@ Content Type: application/json
     - hash
     - All are optional
 
-      **"search_radius_miles"**: a number
+      **"search_radius_miles"**: A positive number which represents the number of miles from the location to search. Default: 240
 
-      **"restrict_to_state"**: Boolean. Default is to restrict search to be within state boundaries.
+      **"restrict_to_state"**: Boolean. Default is true. Used to restrict search to be within state boundaries.
 
-      **"allocation_fallback_strategy"**: "UseTollFree" or "Wait". If we are unable to fill the RingPool using the location information provided, we will use this parameter to either fill it with TollFree ("UseTollFree") or continue to wait until more numbers become available. Default is "UseTollFree".
+      **"allocation_fallback_strategy"**: "UseTollFree" or "Wait". Default is "UseTollFree". If we are unable to fill the RingPool using the location information provided, we will use this parameter to either fill it with TollFree ("UseTollFree") or continue to wait until more numbers become available.
 
   * - tn_prefix_whitelist
     - array of strings
