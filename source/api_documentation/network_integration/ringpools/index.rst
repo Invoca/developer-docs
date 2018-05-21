@@ -239,7 +239,7 @@ Content Type: application/json
     - hash
     - All are optional
 
-      **"search_radius_miles"**: A positive number which represents the number of miles from the location to search. Default: 240
+      **"search_radius_miles"**: An integer, greater than or equal to 0, which represents the number of miles from the location to search. Default: 240
 
       **"restrict_to_state"**: Boolean. Default is true. Used to restrict search to be within state boundaries.
 
