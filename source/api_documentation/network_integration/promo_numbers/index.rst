@@ -98,7 +98,7 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       A filled field determines the center to start looking for local numbers at.
 
-      **“tn_prefix”**: can be either npa or npa or npa-nxx
+      **“tn_prefix”**: an npa
 
       **“zipcode”**: a valid zipcode
 
@@ -106,9 +106,17 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       **“state”**: a valid state
 
+  * - local_number_preferences
+    - hash
+    - Both are optional
+
+      **"search_radius_miles"**: An integer, greater than or equal to 0. Default is 240. Represents the number of miles from the location to search.
+
+      **"restrict_to_state"**: A boolean. Default: True. Used to restrict search to be within state boundaries.
+
   * - tn_prefix_whitelist
     - array of strings
-    - an array of stringified limiters on the boundaries of where to look for local numbers given as npa or npa nxx pairs (ex. [“805”, “805612”])
+    - an array of stringified limiters on the boundaries of where to look for local numbers given as npas (ex. [“805”, “212”])
 
   * - promo_type
     - string (optional)
