@@ -96,7 +96,7 @@ When you POST a promo number, we return the promo_number in the response body. T
 
   * - tn_prefix_whitelist
     - array of strings
-    - an array of stringified limiters on the boundaries of where to look for local numbers given as npa or npa nxx pairs (ex. [“805”, “805612”])
+    - an array of stringified limiters on the boundaries of where to look for local numbers given as npas (ex. [“805”, “212”])
 
 
 Endpoint:
