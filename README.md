@@ -4,9 +4,15 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 IMPORTANT things to note:
 
 1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
-2. You should no longer update the documentation that is present in the API controllers. This documentation will be removed shortly.
-3. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default, you must go into read the docs admin and point "default" to the new branch. At that point, the old default will become an older version, so **do not** delete old branches of the form YYYY-MM-DD.
-4. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version).
+2. The method of adding comments to API controllers is officially deprecated.
+3. General branching stratagy: Always branch off of the most recent live branch. The most recent live branch is subject to change at any time so be sure you're up to date and resolve any conflicts. If you are contributing to a new overall version (e.g. 2029-09-16) but do not own that branch, be sure to communicate with the owner about individual API versions.
+4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
+ you must go into read the docs admin and point "default" to the new branch. At that point, 
+ the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
+5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, as well as **change the version** to which "latest" points in the RTD admin interface (https://readthedocs.org/dashboard/invoca-developer-docs/advanced/). "Default Version" and "Default Branch (latest) should **always** be equal. Finally, you **MUST** update doc_versions.py to reflect the new changes of your new version. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION`.
+6. Be cautious of errors you see when building. The line number on some error messages is misleading. In particular, directives not followed by 2 new lines may cause silent or misleading errors. Some warnings are meaningless, while not recommended you can dig into the Sphinx source and suppress them. 
+7. Any major changes must be reviewed by MikeW, NickB or your manager.
+8. If you have added documentation to the latest version but also need to add it retroactively to past versions, be mindful of things like recently renamed files that might not be totally obvious in pull requests / cherry-picks.
 
 ## Getting Started
 1. Clone this repo
@@ -193,7 +199,9 @@ bash html
 ```
 
 #### Q: I added/edited a table, but I don't see it in the built docs
-RST does not generate error message for most table errors. Instead, it silently fails. Check your table syntax and try again.
+RST does not generate error message for most table errors. Instead, it silently fails. 
+If you've seen this error a million times, maybe try a git bisect / cherry pick method
+to hone in on the syntax (more than likely table indentation or lack of 2 new lines after a directive)
 
 #### Q: The build is hanging and never completing
 RST makes links that look like this `` `click here <https://example.com>`_ `` so if you put in a link like this `` `https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml` `` It kind of freaks out and never finishes building.

@@ -282,6 +282,10 @@ Node Parameters and Usage
     - prompt
     - Prompt the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.
 
+  * - DynamicRoute (beta - read only)
+    - \*dynamic_route_destination
+    - Forwards the call to a destination that is extracted from a custom data field specified in dynamic_route_destination. The destination must be a phone number or if you are SIP integrated, can be a string that is routable by your SIP infrastructure.
+
 Node Details
 
 .. list-table::
@@ -299,19 +303,22 @@ Node Details
     - May not have any children. The prompt will be read before connecting to the provided phone number.
 
   * - EndCall
-    - May not have any children. The prompt will be read before connecting to the provided phone number.
+    - May not have any children. The prompt will be read before ending the call.
 
   * - SmsPromo
-    - May have exactly 1 child node. After accepting or declining the promotional sms, the child node will be played. To accept the promotional sms, the user must push 9 on the phone (this should be added as part of the prompt). Only numbers recognized as mobile phones will be offered the sms option.
+    - May have exactly 1 child node. After accepting or declining the promotional sms, the child node will be executed. To accept the promotional sms, the user must push 9 on the phone (this should be added as part of the prompt). Only numbers recognized as mobile phones will be offered the sms option.
 
   * - Condition
-    - May have exactly 2 child nodes. If the conditions are met, the first child is played. If they are not met then the second child plays. See the conditions section and examples below for details on valid conditions.
+    - May have exactly 2 child nodes. If the conditions are met, the first child is executed. If they are not met then the second child plays. See the conditions section and examples below for details on valid conditions.
 
   * - NearestBranch
-    - May have exactly 1 child node. The caller will be prompted to verify their location prior to forwarding the call. If no branch is within ‘radius_miles’ of the caller then the child node will be played.
+    - May have exactly 1 child node. The caller will be prompted to verify their location prior to forwarding the call. If no branch is within ‘radius_miles’ of the caller then the child node will be executed.
 
   * - VerifyLocation
-    - May have exactly 1 child node. The prompt will play before verifying the callers location. The child node will be played after verifying the callers location.
+    - May have exactly 1 child node. The prompt will play before verifying the callers location. The child node will be executed after verifying the callers location.
+
+  * - DynamicRoute (beta - read only)
+    - May have exactly 1 child node. We will evaluate the custom data field value specified on this node's dynamic_route_destination. With non-SIP integration, if the extracted value is a valid phone number and the destination phone number is in an allowed region given your settings, we will play the prompt and transfer the call, otherwise the child node will be executed without the prompt. When SIP integrated, we also allow transferring to any string (such as an extension), in which case the destination should be routable by your SIP infrastructure.
 
 Parameter Details
 
@@ -320,13 +327,13 @@ Parameter Details
   :header-rows: 1
   :class: parameters
 
-  * - Node Type
+  * - Property
     - Type
     - Value
 
   * - condition
     - String
-    - The boolean condition that decided if the first or second child will be played in a condition node.
+    - The boolean condition that decided if the first or second child will be executed in a condition node.
 
   * - destination_country_code
     - String
@@ -339,6 +346,10 @@ Parameter Details
   * - destination_extension
     - String
     - Extension keypresses on the destination number. Commas indicate pause (e.g. 1,,,234 means a keypress of "1" is executed followed by a 3 second pause and an extension keypress of "234").
+
+  * - dynamic_route_destination (beta - read only)
+    - Strings
+    - The custom data field partner name you want to use as the destination in a dynamic route node. Typically a phone number in e164 format.
 
   * - prompt
     - String
