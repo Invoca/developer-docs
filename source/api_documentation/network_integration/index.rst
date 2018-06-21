@@ -11,7 +11,7 @@ Advertiser Campaigns
 Campaign Terms
 RingPools
 Promo Numbers
-Advertiser Affiliate Relationships
+Auto-Approve Affiliate to Campaigns
 
 Terminology
 
