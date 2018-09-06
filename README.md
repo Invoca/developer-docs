@@ -1,6 +1,6 @@
 # Developer Portal
 
-The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.org) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language, and built using the [Sphinx Document Generator](http://www.sphinx-doc.org/en/stable/index.html). If you need to make any changes to conf.py please review the [Sphinx Dev Guide](http://www.sphinx-doc.org/en/stable/devguide.html)
+The [developer portal](http://developers.invoca.net) contains public documentation about our APIs. The documentation is hosted by [ReadTheDocs](http://readthedocs.com) (RTD). All the documentation is contained in this repo and is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) markup language, and built using the [Sphinx Document Generator](http://www.sphinx-doc.org/en/stable/index.html). If you need to make any changes to conf.py please review the [Sphinx Dev Guide](http://www.sphinx-doc.org/en/stable/devguide.html)
 
 **IMPORTANT things to note:**
 
@@ -10,7 +10,7 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
  you must go into read the docs admin and point "default" to the new branch. At that point, 
  the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
-5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, as well as **change the version** to which "latest" points in the RTD admin interface (https://readthedocs.org/dashboard/invoca-developer-docs/advanced/). "Default Version" and "Default Branch (latest) should **always** be equal. Finally, you **MUST** update doc_versions.py to reflect the new changes of your new version. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION`.
+5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, as well as **change the version** to which "latest" points in the RTD admin interface (https://readthedocs.com/dashboard/invoca-developer-docs/advanced/). "Default Version" and "Default Branch (latest) should **always** be equal. Finally, you **MUST** update doc_versions.py to reflect the new changes of your new version. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION`.
 6. Be cautious of errors you see when building. The line number on some error messages is misleading. In particular, directives not followed by 2 new lines may cause silent or misleading errors. Some warnings are meaningless, while not recommended you can dig into the Sphinx source and suppress them. 
 7. Any major changes must be reviewed by MikeW, NickB or your manager.
 8. If you have added documentation to the latest version but also need to add it retroactively to past versions, be mindful of things like recently renamed files that might not be totally obvious in pull requests / cherry-picks.
@@ -38,7 +38,7 @@ bash html
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
 6. ReadTheDocs will automatically pickup your changes and recompile the site
-7. Visit http://developers.invoca.net to check your changes
+7. Visit https://developers.invoca.net to check your changes
 
 ## Making changes to an existing version and keeping them private:
 1. Create a new branch off of the version branch you want to edit, name it however you want
@@ -48,10 +48,10 @@ bash html
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub
 6. ReadTheDocs will automatically pickup your changes and recompile the site
-7. Login to ReadTheDocs.org (credentials in lastpass)
+7. Login to ReadTheDocs.com (credentials in lastpass)
 8. Click on the Versions button and then the Edit button next to your branch
 9. Click on the Active checkbox and set the Privacy Level to Private
-10. Visit http://developers.invoca.net
+10. Visit https://developers.invoca.net
 11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
 12. Click on your branch name to view and you should be able to check the changes you made
 13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch. (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
@@ -61,15 +61,15 @@ bash html
 1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-01, so name your new branch '2016-01-01')
 `git checkout -b 2016-01-01 2015-12-10`
 2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
-3. Login to ReadTheDocs.org (credentials in lastpass)
-4. Navigate [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
+3. Login to ReadTheDocs.com (credentials in lastpass)
+4. Navigate [Admin > Versions](https://readthedocs.com/projects/invoca-developer-docs/versions/)
 5. Set your branch to Active in the Admin settings (This will trigger a build)
 6. Set your version to Private
 7. Click "Submit" to save changes
-8. Build your project by going to the [Project Overview](https://readthedocs.org/projects/invoca-developer-docs/), selecting your branch (version) from the "Build a version" dropdown, and click "Build." 
-You will then be taken to the [Builds page] (https://readthedocs.org/projects/invoca-developer-docs/builds/). Check the status of your build. It should go from "Triggered > Building > Installing > Passed" if all goes well. 
-9. Check the changes you made on the [live site](developers.invoca.net) (they will only be visible to logged in users so far). Navigate to your new version using the menu in the bottom left. 
-10. Return to the [Admin > Versions](https://readthedocs.org/dashboard/invoca-developer-docs/versions/)
+8. Build your project by going to the [Project Overview](https://readthedocs.com/projects/invoca-developer-docs/), selecting your branch (version)from the "Build a version" dropdown, and click "Build." 
+You will then be taken to the [Builds page] (https://readthedocs.com/projects/invoca-developer-docs/builds/). Check the status of your build. It should go from "Triggered > Building > Installing > Passed" if all goes well.
+9. Check the changes you made on the [live site](https://developers.invoca.net) (they will only be visible to logged in users so far). Navigate to your new version using the menu in the bottom left.
+10. Return to the [Admin > Versions](https://readthedocs.com/projects/invoca-developer-docs/versions/)
 11. Find your version in the list (e.g. 2016-01-01), set it Public.
 12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
 13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
@@ -93,7 +93,7 @@ The "private" documentation in RTD is not actually protected by a login. When a 
 
 ## reStructuredText reference
 
-[General reStructuredText Reference](http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html)
+[General reStructuredText Reference](https://rest-sphinx-memo.readthedocs.io/en/latest/ReST.html)
 
 ### Common Constructions:
 
@@ -183,7 +183,7 @@ This is the output that would be generated:
 <div class="sample">This is my amazing this has been substituted</div>
 ```
 
-## Differences between local and ReadTheDocs.org
+## Differences between local and ReadTheDocs.com
 
 The sites does not look exactly the same when built locally and on ReadTheDocs. You should always verify that your changes look correct on the live site, a local build is not sufficient for QA. Below is a list of known differences:
 
