@@ -151,7 +151,7 @@ def build_partials(app, env, docnames):
 
 
 INVOCA_CSS = '''<link rel="stylesheet" href="{0}css/sphinx_rtd_theme.css" type="text/css" />
-                <link rel="stylesheet" href="//invoca-developer-docs.readthedocs.org/en/{1}/_static/css/custom.css" type="text/css" />
+                <link rel="stylesheet" href="/en/{1}/_static/css/custom.css" type="text/css" />
                 <link rel="stylesheet" href="{0}css/readthedocs-doc-embed.css" type="text/css" />'''
 
 def update_body(app, pagename, templatename, context, doctree):
