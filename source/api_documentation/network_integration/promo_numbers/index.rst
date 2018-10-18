@@ -173,33 +173,15 @@ The following endpoints are for use when you have your own ID's (id_from_network
 
 .. api_endpoint::
    :verb: POST
-   :path: /promo_numbers_by_id.json
+   :path: /promo_numbers_by_id
    :description: Create an Advertiser/Affiliate Promo Number
    :page: post_promo_numbers_by_id
-
-.. api_endpoint::
-   :verb: POST
-   :path: /promo_numbers_by_id/&lt;id_from_network&gt;
-   :description: Create an Advertiser/Affiliate Promo Number
-   :page: post_promo_numbers_by_id_with_id
-
-.. api_endpoint::
-   :verb: PUT
-   :path: /promo_numbers_by_id.json
-   :description: Update a Campaign Promo Number
-   :page: put_promo_number_by_id
 
  .. api_endpoint::
    :verb: PUT
    :path: /promo_numbers_by_id/&lt;id_from_network&gt;
    :description: Update a Campaign Promo Number
    :page: put_promo_number_by_id_with_id
-
-.. api_endpoint::
-   :verb: DELETE
-   :path: /promo_numbers_by_id
-   :description: Delete a Campaign Promo Number
-   :page: delete_promo_number_by_id
 
 .. api_endpoint::
    :verb: DELETE
