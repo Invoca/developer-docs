@@ -157,7 +157,7 @@ API Endpoints
 """""""""""""
 The following endpoints are for use when you have your own ID's (id_from_network) and wish to use that as the identifier.
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers_by_id/<promo_number>.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers_by_id/<promo_number_id_from_network>.json``
 
 .. api_endpoint::
    :verb: GET
