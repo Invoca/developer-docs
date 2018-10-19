@@ -30,7 +30,7 @@
 
     {
       "id": 12,
-      "id_from_network": "12",
+      "id_from_network": "1234",
       "media_type": "Online: Display",
       "promo_number": "8777657743",
       "description": "Halloween Promo Number 1",
@@ -74,7 +74,7 @@
 
     {
       "id": 12,
-      "id_from_network": "12",
+      "id_from_network": "1234",
       "media_type": "Online: Display",
       "promo_number": "8057657743",
       "description": "Halloween Promo Number 1",
@@ -118,7 +118,7 @@
 
     {
       "id": 12,
-      "id_from_network": "12",
+      "id_from_network": "1234",
       "media_type": "Online: Display",
       "promo_number": "8057657743",
       "description": "Halloween Promo Number 1",
@@ -158,7 +158,7 @@
 
     {
       "id": 12,
-      "id_from_network": "12",
+      "id_from_network": "1234",
       "media_type": "Online: Display",
       "promo_number": "8777657743",
       "description": "Halloween Promo Number 1",
@@ -199,7 +199,7 @@
 
     {
       "id": 12,
-      "id_from_network": "12",
+      "id_from_network": "1234",
       "media_type": "Google Call Extension",
       "promo_number": "8777657743",
       "description": "Google Call Extension Demo",
