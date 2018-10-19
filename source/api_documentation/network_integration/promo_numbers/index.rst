@@ -167,7 +167,7 @@ The following endpoints are for use when you have your own ID's (id_from_network
 
 .. api_endpoint::
    :verb: GET
-   :path: /promo_numbers_by_id/&lt;id_from_network&gt;
+   :path: /promo_numbers_by_id/&lt;promo_number_id&gt;
    :description: Read a Promo Number
    :page: get_promo_number_by_id
 
@@ -179,13 +179,13 @@ The following endpoints are for use when you have your own ID's (id_from_network
 
  .. api_endpoint::
    :verb: PUT
-   :path: /promo_numbers_by_id/&lt;id_from_network&gt;
+   :path: /promo_numbers_by_id/&lt;promo_number_id&gt;
    :description: Update a Campaign Promo Number
    :page: put_promo_number_by_id_with_id
 
 .. api_endpoint::
    :verb: DELETE
-   :path: /promo_numbers_by_id/&lt;promo_number_id_from_network&gt;
+   :path: /promo_numbers_by_id/&lt;promo_number_id&gt;
    :description: Delete a Campaign Promo Number
    :page: delete_promo_number_by_id_with_id
 
