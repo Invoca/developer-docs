@@ -169,7 +169,7 @@ The following endpoints are for use when you have your own ID's (id_from_network
    :verb: GET
    :path: /promo_numbers_by_id/&lt;id_from_network&gt;
    :description: Read a Promo Number
-   :page: get_promo_numbers_by_id
+   :page: get_promo_number_by_id
 
 .. api_endpoint::
    :verb: POST
