@@ -153,7 +153,45 @@ For the following example, we would apply the value "Offline newspaper" to the C
   }
 
 
-Endpoint:
+API Endpoints
+"""""""""""""
+The following endpoints are for use when you have your own ID's (id_from_network) and wish to use that as the identifier.
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers_by_id/<promo_number_id_from_network>.json``
+
+.. api_endpoint::
+   :verb: GET
+   :path: /promo_numbers_by_id
+   :description: Get all Promo Numbers
+   :page: get_promo_numbers_by_id
+
+.. api_endpoint::
+   :verb: GET
+   :path: /promo_numbers_by_id/&lt;promo_number_id&gt;
+   :description: Read a Promo Number
+   :page: get_promo_number_by_id
+
+.. api_endpoint::
+   :verb: POST
+   :path: /promo_numbers_by_id
+   :description: Create an Advertiser/Affiliate Promo Number
+   :page: post_promo_numbers_by_id
+
+ .. api_endpoint::
+   :verb: PUT
+   :path: /promo_numbers_by_id/&lt;promo_number_id&gt;
+   :description: Update a Campaign Promo Number
+   :page: put_promo_number_by_id_with_id
+
+.. api_endpoint::
+   :verb: DELETE
+   :path: /promo_numbers_by_id/&lt;promo_number_id&gt;
+   :description: Delete a Campaign Promo Number
+   :page: delete_promo_number_by_id_with_id
+
+|
+
+The following endpoints are for use when you do **not** have your own ID's (id_from_network) and you treat the phone number as the identifier.
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json``
 

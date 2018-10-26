@@ -255,7 +255,7 @@ If there are multiple issues with the request, we will do our best to package al
         "name": "no_value"
       }
     ],
-    "oauth_token": <YOUR OAUTH TOKEN>
+    "oauth_token": "<YOUR OAUTH TOKEN>"
   }
 
 **Response (403 Forbidden):**
