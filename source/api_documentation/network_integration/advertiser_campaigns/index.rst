@@ -543,34 +543,16 @@ Endpoint:
    :page: get_advertiser_campaign_quick_stats
 
 .. api_endpoint::
-   :verb: GET
-   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live
-   :description: Set Campaign State to Live
-   :page: get_advertiser_campaign_go_live
-
-.. api_endpoint::
    :verb: POST
    :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/go_live
    :description: Set Campaign State to Live
    :page: post_advertiser_campaign_go_live
 
 .. api_endpoint::
-   :verb: GET
-   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive
-   :description: Set Campaign State to Archived
-   :page: get_advertiser_campaign_archive
-
-.. api_endpoint::
    :verb: POST
    :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/archive
    :description: Set Campaign State to Archived
    :page: post_advertiser_campaign_archive
-
-.. api_endpoint::
-   :verb: GET
-   :path: /advertiser_campaigns/&lt;advertiser_campaign_id&gt;/unarchive
-   :description: Unarchive a Campaign
-   :page: get_advertiser_campaign_unarchive
 
 .. api_endpoint::
    :verb: POST
