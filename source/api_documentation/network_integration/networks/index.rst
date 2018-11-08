@@ -95,6 +95,10 @@ Parameters
     - boolean, optional, defaults to false
     -
 
+  * - can_login_via_platform
+    - boolean (read-only)
+    - Indicates if user can directly login with username and password. If false, the user is managed via SSO.
+
 
 Endpoint:
 

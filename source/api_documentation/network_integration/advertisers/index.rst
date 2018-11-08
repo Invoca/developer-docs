@@ -98,39 +98,43 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
 
   * - notify_on_budgets
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_campaign_applications
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_campaign_expirations
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_creative_duplication_requests
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_network_announcements
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_performance_notifications
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_monthly_campaign_performance_reports
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_weekly_campaign_performance_reports
     - boolean, optional, defaults to false
-    - 
+    -
 
   * - notify_on_call_activities
     - boolean, optional, defaults to false
-    - 
+    -
+
+  * - can_login_via_platform
+    - boolean (read-only)
+    - Indicates if user can directly login with username and password. If false, the user is managed via SSO.
 
 
 Custom Data
