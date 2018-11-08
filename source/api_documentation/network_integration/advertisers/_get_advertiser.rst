@@ -54,7 +54,8 @@
            "notify_on_performance_notifications": false,
            "notify_on_monthly_campaign_performance_reports": true,
            "notify_on_weekly_campaign_performance_reports": false,
-           "notify_on_call_activities": true
+           "notify_on_call_activities": true,
+           "can_login_via_platform": false
          },
          {
            "id_from_network": "694940505055cFUyYnFHyiYA42TrpM",
@@ -74,7 +75,8 @@
            "notify_on_performance_notifications": false,
            "notify_on_monthly_campaign_performance_reports": true,
            "notify_on_weekly_campaign_performance_reports": false,
-           "notify_on_call_activities": true
+           "notify_on_call_activities": true,
+           "can_login_via_platform": true
          }
        ],
        "default_creative_id_from_network": "222",

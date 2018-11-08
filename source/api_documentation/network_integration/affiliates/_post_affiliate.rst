@@ -30,6 +30,15 @@
           "email_settings": [
             { "email_address": "userx@invoca.com",  "use_for_notifications": true }
           ],
+          "notify_on_budgets": true,
+          "notify_on_campaign_applications": false,
+          "notify_on_campaign_expirations": false,
+          "notify_on_creative_duplication_requests": true,
+          "notify_on_network_announcements": true,
+          "notify_on_performance_notifications": false,
+          "notify_on_monthly_campaign_performance_reports": true,
+          "notify_on_weekly_campaign_performance_reports": false,
+          "notify_on_call_activities": true
         }
       ],
       "sites": [
