@@ -4,7 +4,7 @@ Advertiser Users
 For convenience, the API provides an interface for performing operations on specific advertiser users. This is useful
 for situations where it is inconvenient to send an array of all existing advertiser users. Actions for this endpoint can
 only be taken on users with value of false for `<can_login_via_platform>` field, indicating that the user's authentication
-is managed by the network (as has access to the Invoca platform using SSO).
+is managed by the network (and has access to the Invoca platform using SSO).
 
 Endpoint:
 
