@@ -31,4 +31,8 @@ Custom Data & Signal fields can be accessed in the response by specifying the sp
 
 
 This is the preferred way to get Signals that are true for a given call (versus relying on the "signal_name" parameter), as in the future it will be possible for multiple Signals to be set true on the same transaction.
-To get all the Signals that are true on a given call, utilize the `complete_call_id` field as the primary ID and for every transaction (regardless of transaction_type), update your complete call row to add any true Signals, and remove any false Signals (a null means not applicable to that transaction, but it could have already been true for the given call on a previous transaction).
+To get the complete Signal view for a given call you can utilize the `complete_call_id` field as the primary ID. For every transaction (regardless of `transaction_type`), update your complete call row as follows:
+
+- add any true Signals
+- remove any false Signals
+- ignore any null Signals (a null value for a Signal means the Signal was not applicable to that transaction but may have already been evaluated as true for the given call on any previous or subsequent transactions)
