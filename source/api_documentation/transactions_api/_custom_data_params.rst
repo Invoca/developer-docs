@@ -46,22 +46,22 @@ Example response:
       "start_time_local": "2019-01-24 06:43:15 -07:00",
       "custom_data": [
         {
-          name: "Quote",
-          data_type: "Signal",
-          source: "Expression",
-          value: 1
+          "name": "Quote",
+          "data_type": "Signal",
+          "source": "Expression",
+          "value": 1
         },
         {
-          name: "utm_medium",
-          data_type: "Category",
-          source: "DynamicAttribution",
-          value: "Search"
+          "name": "utm_medium",
+          "data_type": "Category",
+          "source": "DynamicAttribution",
+          "value": "Search"
         },
         {
-          partner_name: "gclid",
-          data_type: "Short Text",
-          source: "DynamicAttribution",
-          value: "198ab9a93f8c7348"
+          "partner_name": "gclid",
+          "data_type": "Short Text",
+          "source": "DynamicAttribution",
+          "value": "198ab9a93f8c7348"
         }
       ]
     },
@@ -70,16 +70,16 @@ Example response:
       "start_time_local": "2019-01-24 06:43:16 -07:00",
       "custom_data": [
         {
-          name: "Purchase Made",
-          data_type: "Signal",
-          source: "Machine",
-          value: 1
+          "name": "Purchase Made",
+          "data_type": "Signal",
+          "source": "Machine",
+          "value": 1
         },
         {
-          name: "utm_medium",
-          data_type: "Category",
-          source: "VirtualLine",
-          value: "Email"
+          "name": "utm_medium",
+          "data_type": "Category",
+          "source": "VirtualLine",
+          "value": "Email"
         }
       ]
     }
