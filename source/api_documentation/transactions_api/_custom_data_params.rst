@@ -86,8 +86,12 @@ Example response:
   ]
 
 
-2. (All formats) Custom Data & Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
- The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field.
+2. (All formats) Custom Data and Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
+
+The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field.
+
+
+Example response:
 
 .. code-block:: json
 
@@ -142,4 +146,8 @@ To also get the source of each Custom Data & Signal field, specify the special `
   ]
 
 
-To get all the Signals that are true on a given call, utilize the `complete_call_id` field as the primary ID and for every transaction (regardless of transaction_type), update your complete call row to add any true Signals, and remove any false Signals (a null value means not applicable to that transaction, but it could have already been true for the given call on a previous transaction).
+To get the complete Signal view for a given call you can utilize the `complete_call_id` field as the primary ID. For every transaction (regardless of `transaction_type`), update your complete call row as follows:
+
+- add any true Signals
+- remove any false Signals
+- ignore any null Signals (a null value for a Signal means the Signal was not applicable to that transaction but may have already been evaluated as true for the given call on any previous or subsequent transactions)
