@@ -5,7 +5,9 @@ Custom Data & Signal Parameters
 
 Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the custom data parameters specific to your account.
 
-Custom Data & Signal can be accessed in two ways by Transactions API.
+The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field. If any field names have spaces in their name, XML format will not be supported.
+
+**Custom Data & Signal can be accessed in two ways by Transactions API**
 
 1. (JSON & XML formats only) By including `custom_data` as field in the `include_columns` parameter (e.g. `include_columns=transaction_id,start_time_local,custom_data`) a nested structure is returned containing all of the Custom Data and Signals that were specified for the given transaction. Note: null values are not returned.
 
@@ -30,11 +32,11 @@ Array of Custom Data Objects
 
   * - source
     - String
-    - One of: UserOverride, Api, Import, DynamicAttribution, LookupTable, Expression, Ivr, VirtualLine, AffiliateCampaign, AdvertiserCampaign, Affiliate, Advertiser, Network, Machine, Default, Syndicated
+    - One of: UserOverride, Api, Import, DynamicAttribution, LookupTable, Expression, Ivr, VirtualLine, AffiliateCampaign, AdvertiserCampaign, Affiliate, Advertiser, Network, AI, Default, Syndicated
 
   * - value
-    - Integer or String
-    - For data_type = Signal: 1 when true, 0 when false. For all other data types it is the string value of the field. Category and Short Text are up to 255 characters. Long Text can be up to 10,000 characters.
+    - Boolean or String
+    - For data_type = Signal: true, false or null. For all other data types it is the string value of the field. Category and Short Text are up to 255 characters. Long Text can be up to 10,000 characters.
 
 Example response:
 
@@ -49,7 +51,7 @@ Example response:
           "name": "Quote",
           "data_type": "Signal",
           "source": "Expression",
-          "value": 1
+          "value": true
         },
         {
           "name": "utm_medium",
@@ -72,8 +74,8 @@ Example response:
         {
           "name": "Purchase Made",
           "data_type": "Signal",
-          "source": "Machine",
-          "value": 1
+          "source": "AI",
+          "value": true
         },
         {
           "name": "utm_medium",
@@ -87,8 +89,6 @@ Example response:
 
 
 2. (All formats) Custom Data and Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
-
-The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field.
 
 
 Example response:
@@ -137,7 +137,7 @@ To also get the source of each Custom Data & Signal field, specify the special `
       "Quote": null,
       "Quote.source": null,
       "Purchase Made": 1,
-      "Purchase Made.source": "Machine",
+      "Purchase Made.source": "AI",
       "utm_medium": "Email",
       "utm_medium.source": "VirtualLine",
       "gclid": null,
