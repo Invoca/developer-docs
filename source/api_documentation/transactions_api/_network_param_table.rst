@@ -109,6 +109,10 @@
     - Corrects Call
     - [Correction only] Id of the original transaction that this transaction updates. Values in this row are the corrected ones and should replace the original values. Same format as transaction_id. Up-to 32 character string, can contain alphanumeric characters (i.e. 0-9A-Z) and the -.
 
+  * - custom_data
+    - Array of Custom Data Values
+    - JSON and XML formats only. This field is not included in response by default, and must be specified in the "include_columns" parameter. See table below for more information about the structure of this array.
+
   * - destination_phone_number
     - Destination Phone Number
     - The phone number where the call was transferred to (useful if an IVR transfers to multiple destinations). Up-to 20 character string, can contain numeric characters (i.e. 0-9) and the following additional characters: '-', '#', '*', 'x', and ','. '
