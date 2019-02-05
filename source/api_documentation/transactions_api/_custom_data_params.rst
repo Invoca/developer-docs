@@ -5,8 +5,12 @@ Custom Data Parameters
 
 Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the custom data parameters specific to your account.
 
-Custom Data & Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
- The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field.
+Custom Data and Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
+
+The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field.
+
+
+Example response:
 
 .. code-block:: json
 
@@ -30,7 +34,8 @@ Custom Data & Signal fields can be accessed in the response by specifying the sp
   ]
 
 
-This is the preferred way to get Signals that are true for a given call (versus relying on the "signal_name" parameter), as in the future it will be possible for multiple Signals to be set true on the same transaction.
+Note: this is the preferred way to get Signals that are true for a given call (versus relying on the "signal_name" parameter), as in the future it will be possible for multiple Signals to be set true on the same transaction.
+
 To get the complete Signal view for a given call you can utilize the `complete_call_id` field as the primary ID. For every transaction (regardless of `transaction_type`), update your complete call row as follows:
 
 - add any true Signals
