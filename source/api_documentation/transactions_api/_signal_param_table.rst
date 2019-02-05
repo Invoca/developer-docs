@@ -14,7 +14,7 @@ Signal Parameters
 
   * - signal_name
     - Signal Name
-    - The name describing the signal event.
+    - The name describing the signal event. See the Custom Data Parameters section for an updated way of accessing the Signal(s) that are true on a given transaction.
 
   * - signal_description *(deprecated)*
     - Signal Description
