@@ -503,7 +503,7 @@ Response Parameter changes:
         "transaction_id": "00000000-00000001"
       },
       "partner_unique_id": "1",
-      "occurred_at_time": "2019-02-14T13:30:04Z"
+      "occurred_at_time": "2019-02-14T13:30:04Z",
       "revenue": "100.0",
       "signals": [{
         "name": "Quote"
@@ -532,7 +532,7 @@ Response Parameter changes:
         "name": "Quote,Appointment Made",
         "partner_unique_id": "1",
         "occurred_at_time_t": "1550179818",
-        "occurred_at_time": "2019-02-14T13:30:04Z"
+        "occurred_at_time": "2019-02-14T13:30:04Z",
         "revenue": "100.0",
         "value": "true,false"
       }],
