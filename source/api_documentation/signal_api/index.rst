@@ -470,6 +470,68 @@ Note: As signals are applied to the call, the response time of the API will incr
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "Quality Call","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "Appointment Made","partner_unique_id": "1","occurred_at_time": "1440607313","value": "false"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
 
+New Signal Transactions
+-------------------------------
+If you have bseen migrated to the new version of Signal Transactions, there are a some additional options available. In addition, all future signal transactions will have a *transaction_type*
+with value *Post Call Event*.
+
+The fields *partner_unique_id*, *occurred_at_time*, and *revenue* can now be specified at the top-level of a request. This has the effect of bundling all Signals and Custom Data together into a single transaction.
+This is highly recommended as doing so will improve the performance of the request and read times in the Transactions API or reporting.
+
+.. code-block:: json
+
+**Example Request**
+
+    {
+      "search": {
+        "transaction_id": "00000000-00000001"
+      },
+      "partner_unique_id": "1",
+      "occurred_at_time": "2019-02-14T13:30:04Z"
+      "revenue": "100.0",
+      "signals": [{
+        "name": "Quote"
+      }, {
+        "name": "Appointment Made", "value": "false"
+      }],
+      "custom_data": [{
+        "name": "line_of_business",
+        "value": "Great Deals"
+      }, {
+        "name": "utm_source",
+        "value": "google.com"
+      }],
+      "oauth_token": "<YOUR OAUTH TOKEN>"
+    }
+
+
+**Example Response**
+
+    {
+      "signals": [{
+        "transaction_id": "00000000-0000000A",
+        "corrects_transaction_id": null,
+        "name": "Quote,Appointment Made",
+        "partner_unique_id": "1",
+        "occurred_at_time_t": "1550179818",
+        "occurred_at_time": "2019-02-14T13:30:04Z"
+        "revenue": "100.0",
+        "value": "true,false"
+      }],
+      "call": {
+        "transaction_id": "00000000-00000001",
+        "corrects_transaction_id": null,
+        "start_time_t": "1435993200",
+        "call_start_time": "2015-07-04T07:00:00Z"
+      }
+    }
+
+Signals that are grouped are returned as part of one transaction. Custom Data fields are omitted from the response but will be applied. 
+
+The fields *partner_unique_id*, *occurred_at_time*, and *revenue* can still be specified inline with each signal, but signals with different values for *partner_unique_id* will be not be grouped together.
+
+The *revenue* field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application. 
+
 Migration Notes
 -------------------------------
 
