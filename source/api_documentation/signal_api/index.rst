@@ -472,15 +472,31 @@ Note: As signals are applied to the call, the response time of the API will incr
 
 New Signal Transactions
 -------------------------------
-If you have bseen migrated to the new version of Signal Transactions, there are a some additional options available. In addition, all future signal transactions will have a *transaction_type*
-with value *Post Call Event*.
+**Note**: The following only applies if you have already been migrated to the new Signal Transactions system. If you are using the new Signal Transactions, this only applies to calls that occur **after** the date of migration.
+If you're unsure of whether you are using the new Signal Trasactions, please contact Invoca's Customer Success team.
 
-The fields *partner_unique_id*, *occurred_at_time*, and *revenue* can now be specified at the top-level of a request. This has the effect of bundling all Signals and Custom Data together into a single transaction.
-This is highly recommended as doing so will improve the performance of the request and read times in the Transactions API or reporting.
+All Signals and Custom Data within a single request will be grouped together based on the value of the field *partner_unique_id*. There will be a single transaction for each group created.
+These new transactions will have the transaction type *Post Call Event*.
 
-.. code-block:: json
+Request Parameter changes:
+
+* The existing fields *partner_unique_id*, *occurred_at_time*, and *revenue* can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
+* These fields can still be specified inline with each signal, but signals with different values for *partner_unique_id* will be not be grouped together.
+* If specified inline for a specific signal, it will take precedence for that signal over the top-level value.
+* The *revenue* field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application.
+* Custom Data fields will be grouped together into a Post Call Event transaction using the top-level *partner_unique_id* (this may be omitted and will default to the empty string). 
+
+Using the same *partner_unique_id* for all signals is **highly recommended** as doing so will greatly improve the performance of the Signals API, Transactions API, and Reports.
+
+Response Parameter changes:
+
+* The *signals* array will contain an entry for each Post Call Event Transaction created.
+* Since Signals may be grouped, the name and value of each Post Call Event Transaction will be a comma-separated list corresponding to the signals grouped within.
+* Custom Data fields will not be displayed here, but will be applied to the Post Call Event transaction corresponding the the top-level *partner_unique_id* 
 
 **Example Request**
+
+.. code-block:: json
 
     {
       "search": {
@@ -504,8 +520,10 @@ This is highly recommended as doing so will improve the performance of the reque
       "oauth_token": "<YOUR OAUTH TOKEN>"
     }
 
-
 **Example Response**
+
+
+.. code-block:: json
 
     {
       "signals": [{
@@ -525,12 +543,6 @@ This is highly recommended as doing so will improve the performance of the reque
         "call_start_time": "2015-07-04T07:00:00Z"
       }
     }
-
-Signals that are grouped are returned as part of one transaction. Custom Data fields are omitted from the response but will be applied. 
-
-The fields *partner_unique_id*, *occurred_at_time*, and *revenue* can still be specified inline with each signal, but signals with different values for *partner_unique_id* will be not be grouped together.
-
-The *revenue* field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application. 
 
 Migration Notes
 -------------------------------
