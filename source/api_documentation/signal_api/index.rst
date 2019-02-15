@@ -190,8 +190,6 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     **Note:** The file upload user interface includes a timezone dropdown feature, which allows users to select which timezone this format is parsed in. Use the following to format Excel date cells: **yyyy/mm/dd hh:mm:ss.000 AM/PM**.
 
-
-
 Example POST Request Using cURL
 -------------------------------
 
@@ -200,6 +198,82 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 .. code-block:: bash
 
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
+
+New Signal Transactions
+-------------------------------
+**Note**: This specific section only applies if you have already been migrated to the New Signal Transactions system. If you are using the New Signal Transactions, this only applies to calls that occur **after** the date of migration.
+If you're unsure of whether you are using the New Signal Trasactions, please contact Invoca's Customer Success team.
+
+All Signals and Custom Data within a single request will be grouped together based on the value of the field **partner_unique_id**. There will be a single transaction for each group created.
+These new transactions will have the transaction type *Post Call Event*.
+
+Request Parameter changes:
+
+* The existing fields **partner_unique_id**, **occurred_at_time**, and **revenue** can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
+* These fields can still be specified inline with each signal, but signals with different values for **partner_unique_id** will be not be grouped together.
+* If specified inline for a specific signal, it will take precedence for that signal over the top-level value.
+* The **revenue** field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application.
+* Custom Data fields will be grouped together into a Post Call Event transaction using the top-level **partner_unique_id** (this may be omitted and will default to the empty string). 
+
+Using a single **partner_unique_id** at the top level, such that it will be used for all Signals and Custom Data, is **highly recommended**. This will minimize the number of transactions that show up in the Transaction Detail reports and the Transactions API.
+
+Response Parameter changes:
+
+* The **signals** array will contain an entry for each Post Call Event Transaction created.
+* Since Signals may be grouped, the name and value of each Post Call Event Transaction will be a comma-separated list corresponding to the signals grouped within.
+* Custom Data fields will not be displayed here, but will be applied to the Post Call Event transaction corresponding the the top-level **partner_unique_id**
+
+**Example Request**
+
+.. code-block:: json
+
+    {
+      "search": {
+        "transaction_id": "00000000-00000001"
+      },
+      "partner_unique_id": "1",
+      "occurred_at_time": "2019-02-14T13:30:04Z",
+      "revenue": "100.0",
+      "signals": [{
+        "name": "Quote"
+      }, {
+        "name": "Appointment Made", "value": "false"
+      }],
+      "custom_data": [{
+        "name": "line_of_business",
+        "value": "Great Deals"
+      }, {
+        "name": "utm_source",
+        "value": "google.com"
+      }],
+      "oauth_token": "<YOUR OAUTH TOKEN>"
+    }
+
+**Example Response**
+
+
+.. code-block:: json
+
+    {
+      "signals": [{
+        "transaction_id": "00000000-0000000A",
+        "corrects_transaction_id": null,
+        "name": "Quote,Appointment Made",
+        "partner_unique_id": "1",
+        "occurred_at_time_t": "1550179818",
+        "occurred_at_time": "2019-02-14T13:30:04Z",
+        "revenue": "100.0",
+        "value": "true,false"
+      }],
+      "call": {
+        "transaction_id": "00000000-00000001",
+        "corrects_transaction_id": null,
+        "start_time_t": "1435993200",
+        "call_start_time": "2015-07-04T07:00:00Z"
+      }
+    }
+
+
 
 Errors
 ------
@@ -341,6 +415,15 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
 Updates and Idempotency
 -----------------------
 
+**Notice for users of the New Signal Transactions:**
+
+If you have been migrated to the New Signal Transactions system (see section above entitled 'New Signal Transactions'), some of the Updates and Idempotency information below has changed slightly. 
+
+Signals and Custom Data are considered unique by **partner_unique_id** only; name is *not* considered. Signals and Custom data are grouped into transactions according to **partner_unique_id**.
+If a request supplies the same **partner_unique_id** as a previous transaction, the previous transaction will be updated with the content of the new request.
+
+The information below regarding Updates and Idempotency still applies, but with this distinction.
+
 **Signals:**
 
 Signals are considered unique by a combination of **name** and **partner_unique_id**.
@@ -469,80 +552,6 @@ Note: As signals are applied to the call, the response time of the API will incr
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "Quality Call","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "Appointment Made","partner_unique_id": "1","occurred_at_time": "1440607313","value": "false"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
-
-New Signal Transactions
--------------------------------
-**Note**: The following only applies if you have already been migrated to the new Signal Transactions system. If you are using the new Signal Transactions, this only applies to calls that occur **after** the date of migration.
-If you're unsure of whether you are using the new Signal Trasactions, please contact Invoca's Customer Success team.
-
-All Signals and Custom Data within a single request will be grouped together based on the value of the field *partner_unique_id*. There will be a single transaction for each group created.
-These new transactions will have the transaction type *Post Call Event*.
-
-Request Parameter changes:
-
-* The existing fields *partner_unique_id*, *occurred_at_time*, and *revenue* can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
-* These fields can still be specified inline with each signal, but signals with different values for *partner_unique_id* will be not be grouped together.
-* If specified inline for a specific signal, it will take precedence for that signal over the top-level value.
-* The *revenue* field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application.
-* Custom Data fields will be grouped together into a Post Call Event transaction using the top-level *partner_unique_id* (this may be omitted and will default to the empty string). 
-
-Using the same *partner_unique_id* for all signals is **highly recommended** as doing so will greatly improve the performance of the Signals API, Transactions API, and Reports.
-
-Response Parameter changes:
-
-* The *signals* array will contain an entry for each Post Call Event Transaction created.
-* Since Signals may be grouped, the name and value of each Post Call Event Transaction will be a comma-separated list corresponding to the signals grouped within.
-* Custom Data fields will not be displayed here, but will be applied to the Post Call Event transaction corresponding the the top-level *partner_unique_id* 
-
-**Example Request**
-
-.. code-block:: json
-
-    {
-      "search": {
-        "transaction_id": "00000000-00000001"
-      },
-      "partner_unique_id": "1",
-      "occurred_at_time": "2019-02-14T13:30:04Z",
-      "revenue": "100.0",
-      "signals": [{
-        "name": "Quote"
-      }, {
-        "name": "Appointment Made", "value": "false"
-      }],
-      "custom_data": [{
-        "name": "line_of_business",
-        "value": "Great Deals"
-      }, {
-        "name": "utm_source",
-        "value": "google.com"
-      }],
-      "oauth_token": "<YOUR OAUTH TOKEN>"
-    }
-
-**Example Response**
-
-
-.. code-block:: json
-
-    {
-      "signals": [{
-        "transaction_id": "00000000-0000000A",
-        "corrects_transaction_id": null,
-        "name": "Quote,Appointment Made",
-        "partner_unique_id": "1",
-        "occurred_at_time_t": "1550179818",
-        "occurred_at_time": "2019-02-14T13:30:04Z",
-        "revenue": "100.0",
-        "value": "true,false"
-      }],
-      "call": {
-        "transaction_id": "00000000-00000001",
-        "corrects_transaction_id": null,
-        "start_time_t": "1435993200",
-        "call_start_time": "2015-07-04T07:00:00Z"
-      }
-    }
 
 Migration Notes
 -------------------------------
