@@ -190,6 +190,8 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     **Note:** The file upload user interface includes a timezone dropdown feature, which allows users to select which timezone this format is parsed in. Use the following to format Excel date cells: **yyyy/mm/dd hh:mm:ss.000 AM/PM**.
 
+
+
 Example POST Request Using cURL
 -------------------------------
 
@@ -198,7 +200,6 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 .. code-block:: bash
 
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
-
 
 Errors
 ------
