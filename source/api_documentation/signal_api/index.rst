@@ -338,8 +338,109 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
       }
     }
 
+
+Signal Transactions Rollup
+-------------------------------
+**Note**: This specific section only applies if you have begun using the Signal Transactions Rollup feature. This will only apply to calls that occur **after** the date that this feature is enabled.
+If you are unsure about whether you are using this feature, please contact the Invoca Customer Successs team.
+
+All Signals and Custom Data within a single request will be grouped together based on the value of the field **partner_unique_id**. There will be a single transaction for each group created.
+These new transactions will have the transaction type *Post Call Event*.
+
+Request Parameter changes:
+
+* The existing fields **partner_unique_id**, **occurred_at_time**, and **revenue** can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
+* These fields can still be specified inline with each signal, but signals with different values for **partner_unique_id** will be not be grouped together.
+* If specified inline for a specific signal, it will take precedence for that signal over the top-level value.
+* The **revenue** field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application.
+* Custom Data fields will be grouped together into a Post Call Event transaction using the top-level **partner_unique_id** (this may be omitted and will default to the empty string). 
+
+Using a single **partner_unique_id** at the top level, such that it will be used for all Signals and Custom Data, is **highly recommended**. This will minimize the number of transactions that show up in the Transaction Detail reports and the Transactions API.
+
+Response Parameter changes:
+
+* The **signals** array will contain an entry for each Post Call Event Transaction created.
+* Since Signals may be grouped, the name and value of each Post Call Event Transaction will be a comma-separated list corresponding to the signals grouped within.
+* Custom Data fields will not be displayed here, but will be applied to the Post Call Event transaction corresponding the the top-level **partner_unique_id**
+
+**Example Request**
+
+.. code-block:: json
+     {
+      "search": {
+        "transaction_id": "00000000-00000001"
+      },
+      "partner_unique_id": "1",
+      "occurred_at_time": "2019-02-14T13:30:04Z",
+      "revenue": "100.0",
+      "signals": [{
+        "name": "Quote"
+      }, {
+        "name": "Appointment Made", "value": "false"
+      }],
+      "custom_data": [{
+        "name": "line_of_business",
+        "value": "Great Deals"
+      }, {
+        "name": "utm_source",
+        "value": "google.com"
+      }],
+      "oauth_token": "<YOUR OAUTH TOKEN>"
+    }
+**Example Response**
+
+.. code-block:: json
+     {
+      "signals": [{
+        "transaction_id": "00000000-0000000A",
+        "corrects_transaction_id": null,
+        "name": "Quote,Appointment Made",
+        "partner_unique_id": "1",
+        "occurred_at_time_t": "1550179818",
+        "occurred_at_time": "2019-02-14T13:30:04Z",
+        "revenue": "100.0",
+        "value": "true,false"
+      }],
+      "call": {
+        "transaction_id": "00000000-00000001",
+        "corrects_transaction_id": null,
+        "start_time_t": "1435993200",
+        "call_start_time": "2015-07-04T07:00:00Z"
+      }
+    }
+** Additional Errors **
+
+The request cannot include **revenue** at the top level and inline with signals.
+
+.. code-block:: json
+     {
+      "errors": {
+        "class": "RecordInvalid",
+        "invalid_data": "Revenue cannot be declared in both base request and inline Signals."
+      }
+    }
+The request cannot include **revenue** at the top level and different **partner_unique_id** values.
+
+.. code-block:: json
+     {
+      "errors": {
+        "class": "RecordInvalid",
+        "invalid_data": "Revenue must be specified on each Signal instead of at the top level header of the request"
+      }
+    }
+
+
 Updates and Idempotency
 -----------------------
+
+**Notice for users of the Signal Transactions Rollup feature:**
+
+If you are using the Signal Transactions Rollup feature (see section *Signal Transactions Rollup* above), some of the Updates and Idempotency information below has changed slightly. 
+
+Signals and Custom Data are considered unique by **partner_unique_id** only; name is *not* considered. Signals and Custom data are grouped into transactions according to **partner_unique_id**.
+If a request supplies the same **partner_unique_id** as a previous transaction, the previous transaction will be updated with the content of the new request.
+
+The information below regarding Updates and Idempotency still applies, but with this distinction.
 
 **Signals:**
 
@@ -456,6 +557,8 @@ Note: Any signals provided or associated previously with the call with also refl
 
 Best Practices
 -------------------------------
+**Note**: If using the Signal Transactions Rollup feature (see section *Signal Transactions Rollup* above), this section can be ignored.
+
 **Applying Many Signals to a Single Call:** Batching your Signal applications into a single request is the most performant way to apply many signals. You may not include more than 10 signals in a single request. If you need to apply *more* than 10, batch your requests into as few groups of 10 as possible.
 
 Note: As signals are applied to the call, the response time of the API will increase with each signal added. In extreme cases, this can cause the request time to exceed the 120 seconds API timeout resulting in an  504 Gateway Timeout HTTP response.
