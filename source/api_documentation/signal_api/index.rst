@@ -338,6 +338,7 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
       }
     }
 
+
 Signal Transactions Rollup
 -------------------------------
 **Note**: This specific section only applies if you have begun using the Signal Transactions Rollup feature. This will only apply to calls that occur **after** the date that this feature is enabled.
@@ -428,10 +429,9 @@ The request cannot include **revenue** at the top level and different **partner_
       }
     }
 
+
 Updates and Idempotency
 -----------------------
-
-**Signals:**
 
 **Notice for users of the Signal Transactions Rollup feature:**
 
@@ -441,6 +441,8 @@ Signals and Custom Data are considered unique by **partner_unique_id** only; nam
 If a request supplies the same **partner_unique_id** as a previous transaction, the previous transaction will be updated with the content of the new request.
 
 The information below regarding Updates and Idempotency still applies, but with this distinction.
+
+**Signals:**
 
 Signals are considered unique by a combination of **name** and **partner_unique_id**.
 For example, if you make two requests with the same **name** and **partner_unique_id**, the other params in the second request will update the original signal’s fields
