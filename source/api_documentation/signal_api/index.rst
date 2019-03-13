@@ -347,6 +347,8 @@ If you are unsure about whether you are using this feature, please contact the I
 All Signals and Custom Data within a single request will be grouped together based on the value of the field **partner_unique_id**. There will be a single transaction for each group created.
 These new transactions will have the transaction type *Post Call Event*.
 
+A maximum of 10 transactions can be applied for a single request. However, this limit does not apply to the number of Signals or Custom Data included in a single grouping. See the **Best Practices** section for understanding why this limit is enforced.
+
 Request Parameter changes:
 
 * The existing fields **partner_unique_id**, **occurred_at_time**, and **revenue** can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
@@ -412,7 +414,7 @@ Response Parameter changes:
       }
     }
 
-** Additional Errors **
+**Additional Errors**
 
 The request cannot include **revenue** at the top level and inline with signals.
 
