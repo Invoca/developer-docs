@@ -367,7 +367,8 @@ Response Parameter changes:
 **Example Request**
 
 .. code-block:: json
-     {
+
+    {
       "search": {
         "transaction_id": "00000000-00000001"
       },
@@ -392,7 +393,8 @@ Response Parameter changes:
 **Example Response**
 
 .. code-block:: json
-     {
+
+    {
       "signals": [{
         "transaction_id": "00000000-0000000A",
         "corrects_transaction_id": null,
@@ -416,16 +418,19 @@ Response Parameter changes:
 The request cannot include **revenue** at the top level and inline with signals.
 
 .. code-block:: json
-     {
+
+    {
       "errors": {
         "class": "RecordInvalid",
         "invalid_data": "Revenue cannot be declared in both base request and inline Signals."
       }
     }
+
 The request cannot include **revenue** at the top level and different **partner_unique_id** values.
 
 .. code-block:: json
-     {
+
+    {
       "errors": {
         "class": "RecordInvalid",
         "invalid_data": "Revenue must be specified on each Signal instead of at the top level header of the request"
