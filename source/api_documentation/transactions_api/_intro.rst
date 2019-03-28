@@ -32,7 +32,7 @@ The API takes the following optional query parameters:
     - A specific transaction. If transaction_id is specified and no transaction with that ID is found, nothing will be returned. Returns at most 1 transaction.
 
   * - call_record_id=
-    - All transactions belonging to a specific call. If call_record_id is specified and no call with that ID is found, nothing will be returned. Returns all transactions blonging to the call record. **Note:** If transaction_id *and* call_record_id are passed, the specified transaction must belong to the specified call. If it does, the transaction will be returned. If it does not, nothing will be returned.
+    - All transactions belonging to a specific call. If call_record_id is specified and no call with that ID is found, nothing will be returned. Returns all transactions belonging to the call record. **Note:** If transaction_id *and* call_record_id are passed, the specified transaction must belong to the specified call. If it does, the transaction will be returned. If it does not, nothing will be returned.
 
   * - start_after_transaction_id=
     - Transaction_id to start retrieving after. This should be the last value retrieved previously. Default (or empty string) means start at the oldest.
