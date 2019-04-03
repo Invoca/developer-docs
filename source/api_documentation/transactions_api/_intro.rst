@@ -3,7 +3,7 @@
 Authentication
 --------------
 
-The API uses OAuth Authentication to authenticate that access is allowed. Pass the OAuth Token like any other query parameter, however, please note that the OAuth token is a required parameter.
+The API uses OAuth to validate access. The OAuth Token can be passed in two ways, the first being passed like any other query parameter. The second is to pass the OAuth Token in the header of the request. Please note that the OAuth Token is a required parameter.
 OAuth Tokens may be generated from the Manage API Credentials page.
 
 Query Parameters

@@ -123,7 +123,7 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
     **Required**
 
-    `oauth_token` API token for authentication
+    `oauth_token` API token for authentication. Can be specified in the body or header of the request.
 
     **Optional**
 
@@ -200,6 +200,12 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 .. code-block:: bash
 
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
+
+Below is the same example as above with the OAuth Token passed in via the request headers:
+
+.. code-block:: bash
+
+  curl -k -H "Content-Type: application/json" -H "Authorization: <YOUR OAUTH TOKEN>" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}]}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
 
 Errors
 ------
@@ -354,7 +360,7 @@ Request Parameter changes:
 * These fields can still be specified inline with each signal, but signals with different values for **partner_unique_id** will be not be grouped together.
 * If specified inline for a specific signal, it will take precedence for that signal over the top-level value.
 * The **revenue** field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application.
-* Custom Data fields will be grouped together into a Post Call Event transaction using the top-level **partner_unique_id** (this may be omitted and will default to the empty string). 
+* Custom Data fields will be grouped together into a Post Call Event transaction using the top-level **partner_unique_id** (this may be omitted and will default to the empty string).
 
 Using a single **partner_unique_id** at the top level, such that it will be used for all Signals and Custom Data, is **highly recommended**. This will minimize the number of transactions that show up in the Transaction Detail reports and the Transactions API.
 
@@ -441,7 +447,7 @@ Updates and Idempotency
 -----------------------
 **Notice for users of the Signal Transactions Rollup feature:**
 
-If you are using the Signal Transactions Rollup feature (see section *Signal Transactions Rollup* above), some of the Updates and Idempotency information below has changed slightly. 
+If you are using the Signal Transactions Rollup feature (see section *Signal Transactions Rollup* above), some of the Updates and Idempotency information below has changed slightly.
 
 Signals and Custom Data are considered unique by **partner_unique_id** only; name is *not* considered. Signals and Custom data are grouped into transactions according to **partner_unique_id**.
 If a request supplies the same **partner_unique_id** as a previous transaction, the previous transaction will be updated with the content of the new request.
