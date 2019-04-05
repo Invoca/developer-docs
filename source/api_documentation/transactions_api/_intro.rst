@@ -28,6 +28,12 @@ The API takes the following optional query parameters:
   * - limit=
     -  Max number of transactions to return at a time. Defaults to 1000. Limited to at most 4000.
 
+  * - transaction_id=
+    - A specific transaction. If transaction_id is specified and no transaction with that ID is found, nothing will be returned. Returns at most 1 transaction.
+
+  * - call_record_id=
+    - All transactions belonging to a specific call. If call_record_id is specified and no call with that ID is found, nothing will be returned. Returns all transactions belonging to the call record. **Note:** If transaction_id *and* call_record_id are passed, the specified transaction must belong to the specified call. If it does, the transaction will be returned. If it does not, nothing will be returned.
+
   * - start_after_transaction_id=
     - Transaction_id to start retrieving after. This should be the last value retrieved previously. Default (or empty string) means start at the oldest.
 
@@ -64,5 +70,3 @@ We provide two helpful constants that can be used in the include_columns and exc
     `$invoca_custom_source_columns` a dynamic constant that represents the sources for the current list of your Custom Data Fields. Note: If the list of custom columns changes, those changes will be included in future API calls that use "include_columns=$invoca_custom_source_columns", independent of the API version. See Custom Data Parameters section for more details.
 
     `$invoca_default_columns` represents the default set of columns provided by the Transactions API for your requested version
-
-
