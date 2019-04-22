@@ -1,7 +1,7 @@
 Error Handling
 ==============
 
-AdvertiserCampaign RingPools
+Common RingPool errors:
 ----------------------------
 
 
@@ -18,27 +18,6 @@ Not found – 404:
     }
   }
 
-
-Affiliate Campaign RingPools
-----------------------------
-
-
-Not found – 404:
-
-``https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json``
-
-.. code-block:: json
-
-  {
-    "errors": {
-      "invalid_data": "Could not find RingPool 123 for affiliate 300 and advertiser campaign 100",
-      "class": "RecordNotFound"
-    }
-  }
-
-
-Common RingPool errors:
------------------------
 
 Validation failed – 403 – Body contains a json with validation errors for each field:
 
