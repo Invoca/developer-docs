@@ -160,7 +160,7 @@ Content Type: application/json
 
   * - destination_type
     - string (Required)
-    - one of:
+    - One of:
 
       Advertiser,
 
