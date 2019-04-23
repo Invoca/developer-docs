@@ -4,7 +4,7 @@
 
   .. rubric:: Examples
 
-  Delete an Advertiser Campaign RingPool
+  Delete a RingPool
 
   Endpoint:
 

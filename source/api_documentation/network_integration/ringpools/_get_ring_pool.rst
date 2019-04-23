@@ -4,7 +4,7 @@
 
   .. rubric:: Examples
 
-  Read an Advertiser Campaign RingPool
+  Read a RingPool
 
   Endpoint:
 

@@ -4,7 +4,7 @@
 
   .. rubric:: Examples
 
-  Read all Advertiser Campaign RingPools as an array
+  Read all RingPools as an array
 
   Endpoint:
 

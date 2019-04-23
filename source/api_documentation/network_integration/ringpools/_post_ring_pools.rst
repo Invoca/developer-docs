@@ -4,7 +4,7 @@
 
   .. rubric:: Examples
 
-  Create an Advertiser Campaign RingPool
+  Create a RingPool
 
   Endpoint:
 
