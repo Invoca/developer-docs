@@ -3,7 +3,7 @@
 Signal Parameters
 *****************
 
-Most of the fields in this table are now deprecated. See Custom Data & Signal Parameters section for best practices for accessing Signal name, source and value.
+Most of the fields in this table are now deprecated. See Custom Data & Signal Parameters section for best practices for accessing Signal name, source and value. Additionally, some fields will be removed if the Signal Transactions Rollup feature is enabled.
 
 ..  list-table::
   :widths: 30 8 40
@@ -20,7 +20,7 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_description *(deprecated)*
     - Signal Description
-    - Free form text for providing additional details about the signal.
+    - Free form text for providing additional details about the signal. *(Removed for Signal Transactions Rollup)*
 
   * - signal_partner_unique_id
     - Signal Partner ID
@@ -36,7 +36,7 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_value *(deprecated)*
     - Signal Value
-    - True or false as to whether or not the signal was met and null if it is not a signal transaction.
+    - True or false as to whether or not the signal was met and null if it is not a signal transaction. *(Removed for Signal Transactions Rollup)*
 
   * - revenue
     - Revenue (Sale Amount)
@@ -44,13 +44,13 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_custom_parameter_1 *(deprecated)*
     - Signal Custom Param 1
-    - Up to 255 character string.
+    - Up to 255 character string. *(Removed for Signal Transactions Rollup)*
 
   * - signal_custom_parameter_2 *(deprecated)*
     - Signal Custom Param 2
-    - Up to 255 character string.
+    - Up to 255 character string. *(Removed for Signal Transactions Rollup)*
 
   * - signal_custom_parameter_3 *(deprecated)*
     - Signal Custom Param 3
-    - Up to 255 character string.
+    - Up to 255 character string. *(Removed for Signal Transactions Rollup)*
 
