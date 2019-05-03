@@ -193,6 +193,10 @@
     - Recording
     - URL to the call recording, if available
 
+  * - recording_download_url
+    - (Not Present)
+    - Signed URL to download the call recording. Only present if the feature is enabled for the network.
+
   * - region
     - Region
     - Region (state, province or country) where transaction originated
