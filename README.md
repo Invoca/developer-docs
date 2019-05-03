@@ -10,7 +10,7 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
  you must go into read the docs admin and point "default" to the new branch. At that point, 
  the old default will become a legacy version that is still supported, so **do not** delete any old branches of the form YYYY-MM-DD.
-5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, as well as **change the version** to which "latest" points in the RTD admin interface (https://readthedocs.com/dashboard/invoca-developer-docs/advanced/). "Default Version" and "Default Branch (latest) should **always** be equal. Finally, you **MUST** update doc_versions.py to reflect the new changes of your new version. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION`.
+5. There is no master branch for this repo. If you are making a new version, you are responsible for setting the default branch of this repo to point to your new branch (version) in git, as well as **change the version** to which "latest" points in the RTD admin interface (https://readthedocs.com/dashboard/invoca-developer-docs/advanced/). "Default Version" and "Default Branch (latest) should **always** be set to the new version (note, RTD has a bug where after you set "Default Branch" to your new version, if you reload the page the dropdown value will show "latest" -- that is fine). Finally, you **MUST** update doc_versions.py to reflect the new changes of your new version. If the date of your new version is greater than any other version, it now becomes `COMMON_VERSION` as well as `@@<your_version_bump>_VERSION`.
 6. Be cautious of errors you see when building. The line number on some error messages is misleading. In particular, directives not followed by 2 new lines may cause silent or misleading errors. Some warnings are meaningless, while not recommended you can dig into the Sphinx source and suppress them. 
 7. Any major changes must be reviewed by MikeW, NickB or your manager.
 8. If you have added documentation to the latest version but also need to add it retroactively to past versions, be mindful of things like recently renamed files that might not be totally obvious in pull requests / cherry-picks.
@@ -63,7 +63,7 @@ bash html
 ## Making a new version:
 1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-01, so name your new branch '2016-01-01')
 `git checkout -b 2016-01-01 2015-12-10`
-2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu)
+2. Make your changes, commit, and push (**DO NOT FORGET TO UPDATE doc_versions.py to reflect your new version. If your new version is the highest date of any other version, your version is now the "Overall Version" that is automatically displayed in the RTD menu**)
 3. Login to ReadTheDocs.com (credentials in lastpass)
 4. Navigate [Admin > Versions](https://readthedocs.com/projects/invoca-developer-docs/versions/)
 5. Set your branch to Active in the Admin settings (This will trigger a build)
@@ -74,7 +74,7 @@ You will then be taken to the [Builds page] (https://readthedocs.com/projects/in
 9. Check the changes you made on the [live site](https://developers.invoca.net) (they will only be visible to logged in users so far). Navigate to your new version using the menu in the bottom left.
 10. Return to the [Admin > Versions](https://readthedocs.com/projects/invoca-developer-docs/versions/)
 11. Find your version in the list (e.g. 2016-01-01), set it Public.
-12. At the top of the list set the default version to your new version (e.g. 2016-01-01)
+12. Go to [Admin > Advanced Settings](https://readthedocs.com/dashboard/invoca-developer-docs/advanced/), and set the Default Version **and** the Default Branch to your new version (e.g. 2016-01-01)
 13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
 14. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
 15. Limit pushing to the branch to members of the Developer Docs Administrators group in [Settings > Branches](https://github.com/Invoca/developer-docs/settings/branches)
