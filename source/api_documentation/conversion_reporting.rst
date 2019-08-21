@@ -192,8 +192,8 @@ The example below uses cURL to demonstrate a POST that updates a call.
   -d reference_id='2935812450'             \
   -d start_time_t='1273589993'             \
   -d duration_in_seconds=300               \
-  -d called_phone_number='+18773593504'   \
-  -d calling_phone_number='+12143283408'  \
+  -d called_phone_number='+18773593504'    \
+  -d calling_phone_number='+12143283408'   \
   -d reason_code='S'                       \
   -d sku_list[]='DVD'                      \
   -d quantity_list[]=2                     \
@@ -209,7 +209,7 @@ The example below uses cURL to demonstrate a POST that updates a call.
   -d order_city='Chicago'                  \
   -d state_or_province='IL'                \
   -d country='US'                          \
-  -d cell_phone_number='+13125170488'     \
+  -d cell_phone_number='+13125170488'      \
   -d use_http_status='1'</code></pre>
 
 Output:
