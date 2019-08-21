@@ -59,7 +59,7 @@ Used to find the call associated with the signal.
 
     **Optional**
 
-    `calling_phone_number:` ANI in E.164 format +country national_number; example: ‘+1 8885551212’.
+    `calling_phone_number:` ANI in E.164 format +country national_number; example: ‘+18885551212’.
 
     `duration_in_seconds:` Length of the call. Used for finding the call that drove the sale. Like start time, duration_in_seconds does not have to be exact, we use it to find the closest match.
 
