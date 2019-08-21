@@ -50,7 +50,7 @@ Report a sale/conversion on a call
 
     Additionally, one of the following two parameters is highly recommended:
 
-         `calling_phone_number:` ANI in E.164 format +country national_number; example: ‘+1 8885551212’.
+         `calling_phone_number:` ANI in E.164 format +country national_number; example: ‘+18885551212’.
 
          `duration_in_seconds:` Length of the call. Used for finding the call that drove the sale, not used to check against payout conditions. Like start time, duration_in_seconds does not have to be exact, we use it find the closest match.
 
@@ -58,7 +58,7 @@ Report a sale/conversion on a call
 
     `reference_id:` (call_center_call_id): This ID must be unique for each call across a call center’s calls. The ID is set the first time the call result is POSTed for a call. To update the call result, use the same ID.
 
-    `called_phone_number:` DNIS in E.164 format +country national_number; example: ‘+1 8885551212’. UK and Spanish numbers are also supported. Their country codes are +44 and +34 respectively.
+    `called_phone_number:` DNIS in E.164 format +country national_number; example: ‘+18885551212’. UK and Spanish numbers are also supported. Their country codes are +44 and +34 respectively.
 
     `use_http_status:` 1 or blank will use HTTP status corresponding to success/failure. If set to 0, the HTTP status will always be 200 OK and the actual status and error message will be in the response body. See the Status section below.
 
@@ -192,8 +192,8 @@ The example below uses cURL to demonstrate a POST that updates a call.
   -d reference_id='2935812450'             \
   -d start_time_t='1273589993'             \
   -d duration_in_seconds=300               \
-  -d called_phone_number='+1 8773593504'   \
-  -d calling_phone_number='+1 2143283408'  \
+  -d called_phone_number='+18773593504'    \
+  -d calling_phone_number='+12143283408'   \
   -d reason_code='S'                       \
   -d sku_list[]='DVD'                      \
   -d quantity_list[]=2                     \
@@ -209,7 +209,7 @@ The example below uses cURL to demonstrate a POST that updates a call.
   -d order_city='Chicago'                  \
   -d state_or_province='IL'                \
   -d country='US'                          \
-  -d cell_phone_number='+1 3125170488'     \
+  -d cell_phone_number='+13125170488'      \
   -d use_http_status='1'</code></pre>
 
 Output:
@@ -245,10 +245,10 @@ This is a description of some of the parameters in the previous cURL example.
     `-d start_time_t='1273589993'`
     The call start time in UTC.
 
-    `-d called_phone_number='+1 8773593504'`
+    `-d called_phone_number='+18773593504'`
     The phone number the caller dialed.
 
-    `-d calling_phone_number='+1 2143283408'`
+    `-d calling_phone_number='+12143283408'`
     The phone number the caller is calling from.
 
     `-d sku_list[]='DVD'`
