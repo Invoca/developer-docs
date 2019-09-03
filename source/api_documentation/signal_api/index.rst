@@ -356,10 +356,9 @@ A maximum of 10 transactions can be applied for a single request. However, this 
 
 Request Parameter changes:
 
-* The existing fields **partner_unique_id**, **occurred_at_time**, and **revenue** can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
+* The existing fields **partner_unique_id** and **occurred_at_time** can now be specified at the top-level of a request following the same formatting described above. This will be applied to all signals and custom data in the request.
 * These fields can still be specified inline with each signal, but signals with different values for **partner_unique_id** will be not be grouped together.
 * If specified inline for a specific signal, it will take precedence for that signal over the top-level value.
-* The **revenue** field may not be specified at the top-level and inline with signals. If specified inline with signals, it must be the same for all signals with the same partner unique id. This is necessary to prevent ambiguitiy in revenue application.
 * Custom Data fields will be grouped together into a Post Call Event transaction using the top-level **partner_unique_id** (this may be omitted and will default to the empty string).
 
 Using a single **partner_unique_id** at the top level, such that it will be used for all Signals and Custom Data, is **highly recommended**. This will minimize the number of transactions that show up in the Transaction Detail reports and the Transactions API.
@@ -380,9 +379,8 @@ Response Parameter changes:
       },
       "partner_unique_id": "1",
       "occurred_at_time": "2019-02-14T13:30:04Z",
-      "revenue": "100.0",
       "signals": [{
-        "name": "Quote"
+        "name": "Quote", "revenue": "100.0"
       }, {
         "name": "Appointment Made", "value": "false"
       }],
@@ -421,18 +419,7 @@ Response Parameter changes:
 
 **Additional Errors**
 
-The request cannot include **revenue** at the top level and inline with signals.
-
-.. code-block:: json
-
-    {
-      "errors": {
-        "class": "RecordInvalid",
-        "invalid_data": "Revenue cannot be declared in both base request and inline Signals."
-      }
-    }
-
-The request cannot include **revenue** at the top level and different **partner_unique_id** values.
+We no longer support specifying **revenue** at the top level header of the request. Revenue must be specified on each Signal.
 
 .. code-block:: json
 
