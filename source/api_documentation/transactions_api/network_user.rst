@@ -36,7 +36,6 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
 .. include:: _intro_constants.rst
 
 
-
 Response
 --------
 
