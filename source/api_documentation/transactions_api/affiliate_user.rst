@@ -25,7 +25,8 @@ The API follows REST conventions. Perform an HTTPS GET to the URL with the forma
     - Returns a JSON array of transaction objects. ``https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.json``
 
 
-.. include:: _intro_for_affiliates.rst
+.. include:: _intro.rst
+.. include:: _affiliate_intro_constants.rst
 
 
 Response
