@@ -2,6 +2,8 @@
 Advertiser / Merchant
 #####################
 
+.. include:: _rollup_message.rst
+
 URL
 ---
 
