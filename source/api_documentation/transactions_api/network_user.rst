@@ -2,12 +2,7 @@
 Network / Brand
 ################
 
-.. raw:: html
-
-  <p>
-    View the support documentation for <a href="https://invoca.force.com/community/s/article/How-to-access-Invoca-call-data-programmatically-via-API">best practices in accessing Invoca Call Data via the Transactions API</a>.
-  </p>
-
+.. include:: _rollup_message.rst
 
 URL
 ---

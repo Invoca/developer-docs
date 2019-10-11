@@ -53,4 +53,3 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
   * - signal_custom_parameter_3 *(deprecated)*
     - Signal Custom Param 3
     - Up to 255 character string. |rollup_removed_message|
-
