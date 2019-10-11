@@ -2,6 +2,8 @@
 Publisher / Affiliate
 #####################
 
+.. include:: _rollup_message.rst
+
 URL
 ---
 
