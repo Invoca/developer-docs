@@ -14,6 +14,10 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
     - Name in Reports
     - Description
 
+  * - signal_name *(deprecated)*
+    - Signal Name
+    - The name describing the signal event. See the Custom Data Parameters section for an updated way of accessing the Signal(s) that are true on a given transaction.
+
   * - signal_partner_unique_id
     - Signal Partner ID
     - Unique identifier, to distinguish between updating an existing Signal or Post Call Event (for example correcting a sale that was reported) versus adding a second sale or Post call Event to the call (for example a reservation made while on the call and then an add on item purchased later).
@@ -21,6 +25,10 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
   * - signal_occurred_at
     - Signal Occurred At
     - 10 digit time that the signal occurred, in UTC seconds since 1/1/70, also known as Unix time_t.
+
+  * - signal_source *(deprecated)*
+    - Signal Source
+    - The source of the signal.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
 
   * - revenue
     - Revenue (Sale Amount)
