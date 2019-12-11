@@ -1,4 +1,3 @@
-.. TODO: ORabani - rough draft... add "regardless of feature settings"?
 .. raw:: html
 
   <h2>
