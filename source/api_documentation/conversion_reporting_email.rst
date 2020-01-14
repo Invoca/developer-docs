@@ -21,7 +21,7 @@ To report conversions using email
 
              **start_time_t**: 10-digit universal "Unix time_t" format
 
-             **Note:** *start_time_t* has precedence over *start_time* so if you are planning to just use *start_time*, remove the start_time_t column from the file. Best practices encourage using the 10-digit *start_time_t*.
+             **Note:** *start_time_t* has precedence over *start_time* so if you are planning to just use *start_time*, remove the *start_time_t* column from the file. Best practices encourage using the 10-digit *start_time_t*.
 
    d) **Optional, but strongly recommended Search Parameters:**
       Removing un-used columns reduces mistakes, so trim the file to include only the parameters you need.
