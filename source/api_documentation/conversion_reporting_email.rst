@@ -57,9 +57,9 @@ Example response email
 
 .. raw:: html
 
-.. image:: ../_static/CRresponse_email_example.jpg
+.. image:: ../_static/CRerrorMessage.jpg
 
-Idempotency:
+Idempotency
 ------------
 
 Sales are considered unique using a combination of start_time_t + SKU_list + reason code. Reported conversions duplicate keys (same call, sku list, reason code) behave as follows:
