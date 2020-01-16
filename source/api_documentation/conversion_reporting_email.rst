@@ -1,84 +1,70 @@
 Conversion Reporting Email
 ==========================
 
-Conversion events can be reported using an email message with an attached CSV file.
+A legacy performance feature that is only used by customers running pay-per-call campaigns.  It provides the ability to payout on a conversion event that occurs on the call, typically helps advertisers to encourage the highest quality/caller intent calls. Conversion events can be reported using an email message with an attached CSV file.
 
 To report conversions using email
 ---------------------------------
+1. Conversion reporting must be enabled for the Advertiser. :doc:`conversion_reporting`
 
-Verify that you have received the Conversion Reporting credentials email from support, including your Upload Email Address and Conversion Reporting ID.
+#. Verify that you have received the Conversion Reporting credentials email from support, including your Upload Email Address and Conversion Reporting ID. For "Publisher Promotion" or Fixed Price "Bundled" Campaigns, by viewing Conversion Reporting destination email in the Campaign Summary tab, Integration section (bottom of the page). Note: email addresses are specific to the advertiser/call center submitting.
 
-For "Publisher Promotion" or Fixed Price "Bundled" Campaigns, view Conversion Reporting credentials in the Campaign Summary tab, Integration section.
+#. Note or copy the Upload Email Address.
 
-.. raw:: html
+#. Create CSV (comma-separated values) file for upload (must be CSV format)
 
-  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr6_zpsbc607ab1.png&key=afea23f29e5a4f63bd166897e3dc72df">
+   a) Name: "[Advertiser Name-Network Name] - [upload date]"
+   b) `Link to template <https://drive.google.com/file/d/10raP7vn700CMnhVlO8b7adwz5Iid0Ovk/view>`_
+   c) **Required Search Parameter:** In order to match a conversion to a call, you need to provide the following required search parameters: the start time of the call (format types listed below). Any entry missing the start time of the call causes an error and is not processed. The following formats are accepted:
 
-Note or copy the Upload Email Address.
+             **start_time**: human-readable format: YYYY/MM/DD HH:MM:SS (can be copied from Invoca reporting).  If you open the file with Excel, Excel reformats that column to match its preference!  Note that the template files have an example of this format but be sure to look at them in a plain text editor like Notepad.
 
-Conversion Report Message Format:
----------------------------------
+             **start_time_t**: 10-digit universal "Unix time_t" format
 
-Conversion Reporting sent via email must be in a CSV (comma-separated values) file format with the sale reporting parameters as the column headers and each sale transaction on a single row. Attach the CSV file to an empty message and send it to the Upload Email Address.
+             **Note:** *start_time_t* has precedence over *start_time* so if you are planning to just use *start_time*, remove the *start_time_t* column from the file. Best practices encourage using the 10-digit *start_time_t*.
 
-Two example files are shown at the bottom of this article. Feel free to contact your Program Manager or questions@invoca.com for a skeleton file that suits your needs. Removing un-used columns reduces mistakes, so trim the skeleton file to include only the parameters you need.
+   d) **Optional, but strongly recommended Search Parameters:**
+      Removing un-used columns reduces mistakes, so trim the file to include only the parameters you need.
 
-For Call Based Conversions
---------------------------
+             **calling_phone_number**: ANI in E.164 format +country national_number; example: ‘+18885551212’.
 
-Only one parameter is absolutely required: the start time of the call. Any entry missing the start time of the call causes an error and is not processed. Including the calling phone number is also recommended.
+             **duration_in_seconds**: Length of the call. Used for finding the call that drove the sale, not used to check against payout conditions. Does not have to be exact, we use it to find the closest match.
 
-   **Start time**
+             **called_phone_number**: DNIS in E.164 format +country national_number; example: ‘+18885551212’. UK and Spanish numbers are also supported. Their country codes are +44 and +34 respectively.
 
-   Start time is used to associate the sales transaction to a call. There are two types of time parameters: start_time and start_time_t.  Start_time_t is in the universal "Unix time_t" format while start_time is in human-readable format: YYYY/MM/DD HH:MM:SS. Note that skeleton files have an example of this format but be sure to look at them in a plain text editor like Notepad.  If you open the file with Excel, Excel reformats that column to match its preference!
+   e) **Include Reported Conversion Parameters:**
 
-   Start_time_t has precedence over start_time so if you are planning to just use start_time, remove the start_time_t column from the skeleton file.
+             A complete list of parameters that can be included can be found here:  :doc:`conversion_reporting`.
 
-   Best practices encourage using the 10-digit start_time_t.
+             Most common are *reason_code*, *sale_amount*, and *sale_currency*: See Link above for longer description
 
-   If you are using the start_time parameter, contact us to set the time zone of your sale reporting at questions@invoca.com.
+#. Draft an email using the Conversion Report Message Format:
 
-For more information on possible parameters and how the matching call is found, see :doc:`conversion_reporting`.
+   a) To: [Upload Email Address copied in #3 ONLY]
+   b) Subject: [Advertiser Name - Network Name]: Conversion Reporting
+   c) Body: Attach CSV file.  [no message necessary]
 
-For Web Based Conversions
--------------------------
+#. Send Email to Upload Email Address from step #3
 
-The affiliate or publisher ID and advertiser campaign ID are required.
-
-For more information on possible parameters and how the matching call is found, see :doc:`conversion_reporting`.
 
 Reply Message
 -------------
 
 Conversion Reporting emails are processed on a nightly basis and a reply message is sent once the task is completed. The reply message includes the number of conversions processed, the number of conversions that did not match up with a transaction and the number of errors. For each error encountered, the row number, the content of that row and the error it caused is returned. Please note that only up to 10 errors per batch are allowed before processing is stopped.
 
-.. raw:: html
-
-  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2F06c39c20-348a-4fc8-ac8c-36affc228fbe_zps626d230e.jpg&key=afea23f29e5a4f63bd166897e3dc72df">
-
-Examples:
----------
-
-1. Conversions reported include the call Start Time in Human Readable Time Format, the Calling Phone Number and the Reason Code.
+Example response email
+----------------------
 
 .. raw:: html
 
-  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr_email3_zps689c6b82.jpg&key=afea23f29e5a4f63bd166897e3dc72df">
+.. image:: ../_static/CRerrorMessage.jpg
 
-
-2. Conversions reported include the call Start Time in Unix Time Format, the calling phone number and the Sku List.
-
-.. raw:: html
-
-  <img src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi40.photobucket.com%2Falbums%2Fe238%2Fnasteele%2FInvoca%2520screenshots%2Fcr_email2_zpsf3b62472.jpg&key=afea23f29e5a4f63bd166897e3dc72df">
-
-
-Idempotency:
+Idempotency
 ------------
 
 Sales are considered unique using a combination of start_time_t + SKU_list + reason code. Reported conversions duplicate keys (same call, sku list, reason code) behave as follows:
 
 * If the values passed are unchanged, the reported conversion remains unchanged and is not duplicated.
-* If different values are passed, the original conversion is  updated with the new values.
+* If different values are passed, the original conversion is updated with the new values.
 
 Reported conversions with unique keys always create new conversion transactions.
