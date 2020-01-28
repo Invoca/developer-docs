@@ -211,7 +211,7 @@
 
   * - transaction_type
     - Type
-    - The type of transaction - Call, Reported Conversion or Signal.
+    - The type of transaction - Call, Post Call Event, Reported Conversion, or Signal.
 
   * - transfer_from_type
     - Transfer Type
