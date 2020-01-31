@@ -62,6 +62,26 @@ Additional Feature Parameters
 
 The -k option asks curl to not bother checking the SSL certificate authority chain as that requires extra configuration.
 
+Example 4: Get All Transactions from a specific time period that are of transaction_type Signal:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+
+
+Example 5: Get All Transactions from a specific time period that are of transaction_type Post Call Event:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=PostCallEvent&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+
+
+Example 6: Get All Transactions from a specific time period that are of transaction_type Call and Signal:
+
+.. code-block:: bash
+
+  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type[]=Call&transaction_type[]=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+
 Endpoint:
 
 ``https://invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/``
