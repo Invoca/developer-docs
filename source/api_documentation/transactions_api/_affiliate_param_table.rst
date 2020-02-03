@@ -1,4 +1,4 @@
-
+.. include:: _signal_transaction_rollup_replacements.rst
 
 ..  list-table::
   :widths: 30 8 40
@@ -35,11 +35,11 @@
 
   * - affiliate_payout_localized
     - Earnings
-    - Amount paid out to the affiliate
+    - Amount paid out to the affiliate |rollup_summed_total_message|
 
   * - call_result_description_detail
     - Call Result
-    - Status of the transaction
+    - Status of the transaction |rollup_affects_call_message|
 
   * - call_source_description
     - Source

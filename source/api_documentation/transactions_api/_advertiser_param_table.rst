@@ -1,4 +1,4 @@
-
+.. include:: _signal_transaction_rollup_replacements.rst
 
 ..  list-table::
   :widths: 30 8 40
@@ -27,7 +27,7 @@
 
   * - advertiser_payin_localized
     - Earned
-    - Amount paid in by advertiser
+    - Amount paid in by advertiser |rollup_summed_total_message|
 
   * - advertiser_promo_line_description
     - Promo Number Description
@@ -59,7 +59,7 @@
 
   * - call_result_description_detail_managed_advertiser
     - Call Result
-    - Status of the transaction
+    - Status of the transaction |rollup_affects_call_message|
 
   * - call_source_description
     - Source

@@ -11,7 +11,7 @@
 
   * - signal_name
     - Signal Name
-    - The name describing the signal event.
+    - The name describing the signal event. |rollup_merged_message|
 
   * - external_data
     - External Data

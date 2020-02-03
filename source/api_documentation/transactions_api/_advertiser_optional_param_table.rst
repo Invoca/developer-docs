@@ -1,4 +1,4 @@
-
+.. include:: _signal_transaction_rollup_replacements.rst
 
 ..  list-table::
   :widths: 30 8 40
@@ -11,7 +11,7 @@
 
   * - advertiser_call_fee_localized
     - Fees
-    - Advertiser Telecommunications fee associated with transaction
+    - Advertiser Telecommunications fee associated with transaction |rollup_summed_total_message|
 
   * - affiliate_campaign_id_from_network
     - Affiliate Campaign ID

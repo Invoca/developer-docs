@@ -1,4 +1,4 @@
-
+.. include:: _signal_transaction_rollup_replacements.rst
 
 Signal Parameters
 *****************
@@ -16,11 +16,11 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_name *(deprecated)*
     - Signal Name
-    - The name describing the signal event. See the Custom Data Parameters section for an updated way of accessing the Signal(s) that are true on a given transaction.
+    - The name describing the signal event. See the Custom Data Parameters section for an updated way of accessing the Signal(s) that are true on a given transaction. |rollup_merged_message|
 
   * - signal_description *(deprecated)*
     - Signal Description
-    - Free form text for providing additional details about the signal. *(Removed for Signal Transactions Rollup)*
+    - Free form text for providing additional details about the signal. |rollup_removed_message|
 
   * - signal_partner_unique_id
     - Signal Partner ID
@@ -32,11 +32,11 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_source *(deprecated)*
     - Signal Source
-    - The source of the signal.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine
+    - The source of the signal.  Possible values are :UserOverride, :Api, :Import, :Expression, :Ivr, and :Machine. |rollup_removed_message|
 
   * - signal_value *(deprecated)*
     - Signal Value
-    - True or false as to whether or not the signal was met and null if it is not a signal transaction. *(Removed for Signal Transactions Rollup)*
+    - True or false as to whether or not the signal was met and null if it is not a signal transaction. |rollup_removed_message|
 
   * - revenue
     - Revenue (Sale Amount)
@@ -44,13 +44,13 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_custom_parameter_1 *(deprecated)*
     - Signal Custom Param 1
-    - Up to 255 character string. *(Removed for Signal Transactions Rollup)*
+    - Up to 255 character string. |rollup_removed_message|
 
   * - signal_custom_parameter_2 *(deprecated)*
     - Signal Custom Param 2
-    - Up to 255 character string. *(Removed for Signal Transactions Rollup)*
+    - Up to 255 character string. |rollup_removed_message|
 
   * - signal_custom_parameter_3 *(deprecated)*
     - Signal Custom Param 3
-    - Up to 255 character string. *(Removed for Signal Transactions Rollup)*
+    - Up to 255 character string. |rollup_removed_message|
 

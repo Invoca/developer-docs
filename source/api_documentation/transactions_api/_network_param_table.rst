@@ -1,4 +1,4 @@
-
+.. include:: _signal_transaction_rollup_replacements.rst
 
 ..  list-table::
   :widths: 30 8 40
@@ -11,7 +11,7 @@
 
   * - advertiser_call_fee_localized
     - Advertiser Fees
-    - Advertiser Telecommunications fee associated with transaction
+    - Advertiser Telecommunications fee associated with transaction |rollup_summed_total_message|
 
   * - advertiser_campaign_id
     - Advertiser Campaign ID (Invoca ID)
@@ -43,7 +43,7 @@
 
   * - advertiser_payin_localized
     - Earned
-    - Amount paid in by advertiser
+    - Amount paid in by advertiser |rollup_summed_total_message|
 
   * - affiliate_call_volume_ranking
     - Affiliate Volume Ranking
@@ -71,15 +71,15 @@
 
   * - affiliate_payout_localized
     - Paid
-    - Amount paid out to the affiliate
+    - Amount paid out to the affiliate |rollup_summed_total_message|
 
   * - call_fee_localized
     - Fees
-    - Telecommunications fee associated with transaction
+    - Telecommunications fee associated with transaction |rollup_affects_call_message|
 
   * - call_result_description_detail
     - Call Result
-    - Status of the transaction
+    - Status of the transaction |rollup_affects_call_message|
 
   * - call_source_description
     - Source
