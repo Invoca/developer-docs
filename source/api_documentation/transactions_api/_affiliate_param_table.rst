@@ -43,7 +43,7 @@
 
   * - call_source_description
     - Source
-    - Source of the transaction |rollup_affects_call_message|
+    - Source of the transaction
 
   * - city
     - City

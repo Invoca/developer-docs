@@ -83,7 +83,7 @@
 
   * - call_source_description
     - Source
-    - Source of the transaction |rollup_affects_call_message|
+    - Source of the transaction
 
   * - calling_phone_number
     - Caller ID
