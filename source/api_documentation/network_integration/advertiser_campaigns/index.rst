@@ -311,7 +311,7 @@ Node Details
     - Details
 
   * - Menu
-    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons.
+    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter. See example below.
 
   * - Connect
     - May not have any children. The prompt will be read before connecting to the provided phone number.
@@ -380,6 +380,10 @@ Parameter Details
   * - sms_promo_sender
     - String
     - The email address that will be shown in the sms. This defaults to sms@invoca.net.
+
+  * - keypress_failover_type
+    - String
+    - The failover type to use for a child node of a Menu. "Wrong" for when a wrong keypress is pressed by the caller on any attempt for the parent menu (shown in reporting as keypress "W"). "None" for when there is no keypress by the caller for all attempts for the parent menu (shown in reporting as keypress "N"). Omit this parameter for normal keypresses. See example below.
 
 Conditions
 
@@ -560,6 +564,45 @@ Endpoint:
    :description: Unarchive a Campaign
    :page: post_advertiser_campaign_unarchive
 
+Keypress Failover Type
+--------------
+
+**Example IVR Tree utilizing keypress_failover_type**
+
+.. code-block:: json
+
+  "ivr_tree": {
+    "root": {
+      "node_type":"Menu",
+      "prompt":"Press 1 for sales, press 2 for support.",
+      "children": [
+        {
+          "node_type": "Connect",
+          "destination_phone_number": "8004377950",
+          "destination_country_code": "1",
+          "prompt": "Directing you to sales"
+        },
+        {
+          "node_type": "Connect",
+          "destination_phone_number": "8004377951",
+          "destination_country_code": "1",
+          "prompt": "Directing you to support"
+        },
+        {
+          "node_type": "Connect",
+          "destination_phone_number": "8004377952",
+          "destination_country_code": "1",
+          "prompt":"Forwarding you to an operator.",
+          "keypress_failover_type":"Wrong"
+        },
+        {
+          "node_type":"EndCall",
+          "prompt":"No key was selected, goodbye.",
+          "keypress_failover_type":"None"
+        }
+      ]
+    }
+  }
 
 Error Handling
 --------------
