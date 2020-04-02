@@ -1,4 +1,4 @@
-Custom Wrong Keypress Error Prompt and Custom No Keypress Error Prompt
+Custom Wrong/No Keypress Error Prompt
 ========================
 
 Manage custom wrong keypress error prompt and custom no keypress error prompt for campaigns
