@@ -18,17 +18,6 @@
 
     {
       "id_from_network": "12",
-      "param1": "updated",
-      "param2": "test",
-      "param3": "param3",
-      "param4": "param4",
-      "param5": "param5",
-      "param6": "param6",
-      "param7": "param7",
-      "param8": "param8",
-      "param9": "param9",
-      "param10": "param10",
-      "pool_type": "SearchKeyword",
       "preferred": true,
       "name": "Invoca Example RingPool Updated",
       "destination_url": "https://www.invoca.com",

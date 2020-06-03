@@ -18,8 +18,6 @@
 
   .. code-block:: json
 
-    {
-    }
+    {}
 
   .. raw:: html
-
