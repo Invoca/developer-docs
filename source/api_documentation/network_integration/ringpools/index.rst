@@ -27,10 +27,6 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - string
     - Arbitrary string. Names the RingPool.
 
-  * - pool_type
-    - string (Required)
-    - One of: Search, SearchKeyword, Custom, CustomWithSearchTracking, ReferralDomain, ReferralDomainWithSearchTracking.
-
   * - destination_type
     - string (Required)
     - one of: Advertiser, API.
@@ -53,19 +49,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
   * - preferred
     - boolean
-    - true or false. Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specifiy which pool to use.
-
-  * - test_click_url
-    - string
-    - RingPool tracking link.
-
-  * - sample_api_url
-    - string
-    - RingPool API endpoint.
-
-  * - is_first_preference
-    - boolean
-    - Designates the preferred RingPool to be used for general traffic.
+    - true or false. Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specify which pool to use.
 
 Endpoint:
 
@@ -137,22 +121,6 @@ Content Type: application/json
   * - name
     - string
     - Arbitrary string. Names the RingPool.
-
-  * - pool_type
-    - string (Required)
-    - One of:
-
-      Search,
-
-      SearchKeyword,
-
-      Custom,
-
-      CustomWithSearchTracking,
-
-      ReferralDomain,
-
-      ReferralDomainWithSearchTracking
 
   * - destination_type
     - string (Required)
@@ -232,13 +200,10 @@ Response Code: 200
 
   {
    "id_from_network": "395",
-   "pool_type": "Custom",
    "preferred": "true",
    "name": "India DNP",
    "destination_url": "https://www.invoca.com",
-   "tracking_url": "https://www.invoca.com",
    "max_pool_size": "3",
-   "destination_type": "Advertiser",
    "local_center": {"latitude": 45, "longitude": 45},
    "tn_prefix_whitelist": ["455"]
   }
@@ -267,11 +232,9 @@ Response Code: 403
 
   {
     "id_from_network": "395",
-    "pool_type": "Custom",
     "preferred": "true",
     "name": "India DNP",
     "destination_url": "https://www.invoca.com",
-    "tracking_url": "https://www.invoca.com",
     "max_pool_size": "3",
     "destination_type": "Advertiser",
     "local_center": {"bad_key": ""},

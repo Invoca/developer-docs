@@ -20,12 +20,9 @@
       {
         "id": "value",
         "id_from_network": "5432",
-        "is_first_preference": true,
         "destination_url": "",
         "object_url": "https://invoca.net/a_campaigns/ring_pools/11",
         "preferred": true,
-        "sample_api_url": "value",
-        "destination_type": "value",
         "lifetime_seconds": 1800,
         "name": "value",
         "local_center": { "tn_prefix":"",
@@ -36,8 +33,6 @@
                                       "restrict_to_state": true,
                                       "allocation_fallback_strategy": "Wait" },
         "max_pool_size": 15,
-        "tracking_url": "value",
-        "test_click_url": "value",
         "api_key": "value"
       }
     ]

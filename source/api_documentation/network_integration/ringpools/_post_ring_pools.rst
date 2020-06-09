@@ -29,8 +29,6 @@
       "name": "Invoca Example RingPool",
       "destination_url": "https://www.invoca.com",
       "max_pool_size": 15,
-      "tracking_url": "https://www.invoca.com",
-      "destination_type": "Advertiser",
       "lifetime_seconds": 1800
     }
 
