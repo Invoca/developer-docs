@@ -27,10 +27,6 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - string
     - Arbitrary string. Names the RingPool.
 
-  * - destination_type
-    - string (Required)
-    - one of: Advertiser, API.
-
   * - destination_url
     - url
     - like, https://www.invoca.com.
@@ -130,10 +126,6 @@ Content Type: application/json
 
       API
 
-  * - destination_url
-    - url
-    - like, https://www.invoca.com
-
   * - object_url
     - string (read-only)
     - URL for reaching the RingPool in the UI.
@@ -149,18 +141,6 @@ Content Type: application/json
   * - preferred
     - boolean
     - true or false.  Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specifiy which pool to use.
-
-  * - test_click_url
-    - string
-    - RingPool tracking link.
-
-  * - sample_api_url
-    - string
-    - RingPool API endpoint.
-
-  * - is_first_preference
-    - boolean
-    - Designates the preferred RingPool to be used for general traffic.
 
   * - local_center
     - hash
@@ -236,7 +216,6 @@ Response Code: 403
     "name": "India DNP",
     "destination_url": "https://www.invoca.com",
     "max_pool_size": "3",
-    "destination_type": "Advertiser",
     "local_center": {"bad_key": ""},
     "tn_prefix_whitelist": ["455"]
   }
