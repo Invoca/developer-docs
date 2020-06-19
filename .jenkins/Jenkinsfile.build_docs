@@ -32,7 +32,7 @@ pipeline {
       post {
         success { 
           updateGitHubStatus('build-html-docs', 'success', 'Build docs in HTML') 
-          archiveArtifacts artifacts: "build/**/*"
+          archiveArtifacts artifacts: "build/html/*"
         }
         failure { updateGitHubStatus('build-html-docs', 'failure', 'Build docs in HTML') }
       }
