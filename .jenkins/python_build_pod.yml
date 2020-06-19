@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+  jenkins/: 'true'
+  namespace: jenkins
+  name: 
+spec:
+  containers:
+  - name: python
+    image: python:2.7
+    tty: true
+    resources:
+    requests:
+      memory: "100Mi"
+    command:
+      - cat
+

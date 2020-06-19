@@ -1,0 +1,48 @@
+#!/usr/bin/groovy
+@Library('jenkins-pipeline@v0.4.5')
+import com.invoca.docker.*;
+pipeline {
+  agent {
+    kubernetes {
+      defaultContainer "python"
+      yamlFile ".jenkins/python_build_pod.yml"
+    }
+  }
+
+  stages {
+    stage('Setup') {
+      steps {
+        script {
+          updateGitHubStatus('build-html-docs', 'pending', 'Build docs in HTML') 
+          sh 'pip install -r requirements.pip'
+        }
+      }
+    }
+    
+    stage('Build') {
+      steps {
+        script {
+          sh 'html'
+        }
+      }
+      post {
+        success { 
+          updateGitHubStatus('build-html-docs', 'success', 'Build docs in HTML') 
+          archiveArtifacts artifacts: "build/**/*"
+        }
+        failure { updateGitHubStatus('build-html-docs', 'failure', 'Build docs in HTML') }
+      }
+    }
+  }
+}
+void updateGitHubStatus(String context, String status, String description) {
+  gitHubStatus([
+    repoSlug:    'Invoca/developer-docs',
+    sha:         env.GIT_COMMIT,
+    description: description,
+    context:     context,
+    targetURL:   env.RUN_DISPLAY_URL,
+    token:       env.GITHUB_TOKEN,
+    status:      status
+  ])
+}
