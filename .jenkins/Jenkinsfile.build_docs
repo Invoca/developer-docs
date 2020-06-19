@@ -17,7 +17,7 @@ pipeline {
     stage('Setup') {
       steps {
         script {
-          updateGitHubStatus('build-html-docs', 'pending', 'Build docs in HTML') 
+          updateGitHubStatus('build-docs', 'pending', 'HTML generating') 
           sh 'pip install -r requirements.pip'
         }
       }
@@ -31,10 +31,10 @@ pipeline {
       }
       post {
         success { 
-          updateGitHubStatus('build-html-docs', 'success', 'Build docs in HTML') 
+          updateGitHubStatus('build-docs', 'success', 'HTML generated') 
           archiveArtifacts artifacts: "build/html/**/*"
         }
-        failure { updateGitHubStatus('build-html-docs', 'failure', 'Build docs in HTML') }
+        failure { updateGitHubStatus('build-docs', 'failure', 'HTML failed to generate') }
       }
     }
   }
