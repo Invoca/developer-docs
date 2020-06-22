@@ -32,7 +32,8 @@
                                     "restrict_to_state": true,
                                     "allocation_fallback_strategy": "Wait" },
       "max_pool_size": 15,
-      "api_key": "value"
+      "api_key": "value",
+      "destination_phone_number": "888-111-2222"
     }
 
   .. raw:: html

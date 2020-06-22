@@ -47,6 +47,10 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - boolean
     - true or false. Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specify which pool to use.
 
+  * - destination_phone_number
+    - A phone number to be associated with the RingPool.
+    - When using Destinations UI or the forward to destination IVR node, this number will be used.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
@@ -185,7 +189,8 @@ Response Code: 200
    "destination_url": "https://www.invoca.com",
    "max_pool_size": "3",
    "local_center": {"latitude": 45, "longitude": 45},
-   "tn_prefix_whitelist": ["455"]
+   "tn_prefix_whitelist": ["455"],
+   "destination_phone_number": "888-111-2222"
   }
 
 **Response Body**
