@@ -19,7 +19,6 @@
     {
       "id": "value",
       "id_from_network": "5432",
-      "destination_url": "",
       "object_url": "https://invoca.net/a_campaigns/ring_pools/11",
       "preferred": true,
       "lifetime_seconds": 1800,

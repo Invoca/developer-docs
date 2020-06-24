@@ -20,7 +20,6 @@
       "id_from_network": "12",
       "preferred": true,
       "name": "Invoca Example RingPool Updated",
-      "destination_url": "https://www.invoca.com",
       "max_pool_size": 15,
       "lifetime_seconds": 1800
     }

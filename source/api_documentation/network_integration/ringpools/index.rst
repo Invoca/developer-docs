@@ -29,7 +29,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
   * - destination_url
     - url
-    - like, https://www.invoca.com.
+    - Only required if `destination_type` is set to "Affiliate", and is used to generate the click tracking URL that is shown in the UI for this RingPool. Set this to the landing page that is running Invoca JavaScript code for the advertiser associated with this RingPool.
 
   * - object_url
     - string (read-only)
