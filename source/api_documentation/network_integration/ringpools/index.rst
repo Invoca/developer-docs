@@ -27,10 +27,6 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - string
     - Arbitrary string. Names the RingPool.
 
-  * - destination_url
-    - url
-    - Only required if `destination_type` is set to "Affiliate", and is used to generate the click tracking URL that is shown in the UI for this RingPool. Set this to the landing page that is running Invoca JavaScript code for the advertiser associated with this RingPool.
-
   * - object_url
     - string (read-only)
     - URL for reaching the RingPool in the UI.
@@ -186,7 +182,6 @@ Response Code: 200
    "id_from_network": "395",
    "preferred": "true",
    "name": "India DNP",
-   "destination_url": "https://www.invoca.com",
    "max_pool_size": "3",
    "local_center": {"latitude": 45, "longitude": 45},
    "tn_prefix_whitelist": ["455"],
@@ -219,7 +214,6 @@ Response Code: 403
     "id_from_network": "395",
     "preferred": "true",
     "name": "India DNP",
-    "destination_url": "https://www.invoca.com",
     "max_pool_size": "3",
     "local_center": {"bad_key": ""},
     "tn_prefix_whitelist": ["455"]
