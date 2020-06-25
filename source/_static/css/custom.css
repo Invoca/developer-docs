@@ -215,7 +215,7 @@ cite  {
   border-radius: 4px;
   overflow-x: auto;
   display: inline;
-  padding: 6px 4px 4px 4px !important;
+  padding: 0px 2px 2px 2px !important;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;       /* css-3 */

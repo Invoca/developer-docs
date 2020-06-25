@@ -150,7 +150,7 @@ def build_partials(app, env, docnames):
         open('{}{}'.format(source_path, new_docname), 'w').write(partial)
 
 
-INVOCA_CSS = '''<link rel="stylesheet" href="{0}css/sphinx_rtd_theme.css" type="text/css" />
+INVOCA_CSS = '''<!-- link rel="stylesheet" href="{0}css/sphinx_rtd_theme.css" type="text/css" -->
                 <link rel="stylesheet" href="/en/{1}/_static/css/custom.css" type="text/css" />
                 <link rel="stylesheet" href="{0}css/readthedocs-doc-embed.css" type="text/css" />'''
 
