@@ -4,7 +4,7 @@
 
   .. rubric:: Examples
 
-  Read all RingPools as an array
+  Read all RingPools as an array.
 
   Endpoint:
 
@@ -20,25 +20,10 @@
       {
         "id": "value",
         "id_from_network": "5432",
-        "pool_type": "value",
-        "is_first_preference": true,
-        "destination_url": "",
         "object_url": "https://invoca.net/a_campaigns/ring_pools/11",
         "preferred": true,
-        "sample_api_url": "value",
-        "destination_type": "value",
         "lifetime_seconds": 1800,
         "name": "value",
-        "param1": "",
-        "param2": "",
-        "param3": "",
-        "param4": "",
-        "param5": "",
-        "param6": "",
-        "param7": "",
-        "param8": "",
-        "param9": "",
-        "param10": "",
         "local_center": { "tn_prefix":"",
                           "zipcode": "90210",
                           "latitude": 30,
@@ -47,8 +32,6 @@
                                       "restrict_to_state": true,
                                       "allocation_fallback_strategy": "Wait" },
         "max_pool_size": 15,
-        "tracking_url": "value",
-        "test_click_url": "value",
         "api_key": "value"
       }
     ]
