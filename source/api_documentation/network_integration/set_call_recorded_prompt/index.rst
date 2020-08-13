@@ -5,7 +5,7 @@ Set Play Call Recorded Prompt to Better Customize the Call Treatment
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 By default, when you choose to record the call, a prompt "This call may be recorded" will be played at the beginning of each call. This default prompt may be
-redundant if you want to set up other prompts later in the ivr tree.
+redundant if you want to set up other prompts later in the ivr tree. For more information on customized prompts, please refer to Prompt Recordings page.
 
 Important Notice
 ~~~~~~~~~~~~~~~~
@@ -30,7 +30,7 @@ Example Request Body (complete request now shown)
   {
     "ivr_tree": {
       "record_calls": true,
-      "play_call_recorded_prompt":"false",
+      "play_call_recorded_prompt": false,
       "root": {
         "node_type": "Connect",
         "destination_phone_number": "8056173768",
@@ -50,7 +50,7 @@ Example Request Body
   {
     "ivr_tree": {
       "record_calls": true,
-      "play_call_recorded_prompt":"false",
+      "play_call_recorded_prompt": false,
       "root": {
         "node_type": "Connect",
         "destination_phone_number": "8056173768",
