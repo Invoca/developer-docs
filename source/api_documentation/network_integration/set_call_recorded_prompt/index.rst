@@ -14,7 +14,7 @@ By disabling the “This call may be recorded” prompt, you ACCEPT  RESPONSIBIL
 provide your own notification to callers that calls will be recorded in accordance with state and federal laws.
 For questions about this message, please contact help@invoca.com.
 
-Retrieve play call recorded prompt for a campaign
+Retrieve Play Call Recorded Prompt For A Campaign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GET
