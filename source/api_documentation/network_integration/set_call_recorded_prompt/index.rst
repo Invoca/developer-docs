@@ -14,6 +14,35 @@ By disabling the “This call may be recorded” prompt, you ACCEPT  RESPONSIBIL
 provide your own notification to callers that calls will be recorded in accordance with state and federal laws.
 For questions about this message, please contact help@invoca.com.
 
+Retrieve play call recorded prompt for a campaign
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GET
+
+``https://invoca.net/api/@@CAMPAIGN_FEATURES_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``
+
+Example Response Body
+
+.. code-block:: json
+
+  {
+    "name": "Selling Shoes",
+    "status": "Activated",
+    "future_terms": {
+      "ivr_tree": {
+        "record_calls": true,
+        "play_call_recorded_prompt": false,
+        "custom_challenge_prompt_text": "Thank you for calling.",
+        "custom_challenge_prompt_id_from_network": "rec34",
+        "root": {
+          "node_type": "Connect",
+          "destination_phone_number": "8056173768",
+          "destination_country_code": ""
+        }
+      }
+    }
+  }
+
 Set Play Call Recorded Prompt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To better customize the call treatment, set ``"play_call_recorded_prompt"`` to ``true`` or
