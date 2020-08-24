@@ -23,7 +23,7 @@ POST
 
 ``https://invoca.net/api/@@CAMPAIGN_FEATURES_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns.json``
 
-Example Request Body (complete request now shown)
+Example Request Body (complete request not shown)
 
 .. code-block:: json
 
