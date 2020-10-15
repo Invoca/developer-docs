@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: python
-    image: python:2.7
+    image: python:3.8
     tty: true
     resources:
     requests:
