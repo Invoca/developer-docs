@@ -3,7 +3,7 @@
 Marketing Data & Signal Parameters
 **********************
 
-Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the Marketing Data parameters specific to your account.
+Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the marketing data parameters specific to your account.
 
 The Partner (API) Name is used as the field name returned by the Transactions API. Any Marketing Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field. If any field names have spaces in their name, XML format will not be supported.
 

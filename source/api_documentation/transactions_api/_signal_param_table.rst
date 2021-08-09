@@ -3,7 +3,7 @@
 Signal Parameters
 *****************
 
-Most of the fields in this table are now deprecated. See Custom Data & Signal Parameters section for best practices for accessing Signal name, source and value. Additionally, some fields will be removed if the Signal Transactions Rollup feature is enabled.
+Most of the fields in this table are now deprecated. See Marketing Data & Signal Parameters section for best practices for accessing Signal name, source and value. Additionally, some fields will be removed if the Signal Transactions Rollup feature is enabled.
 
 ..  list-table::
   :widths: 30 8 40
@@ -16,7 +16,7 @@ Most of the fields in this table are now deprecated. See Custom Data & Signal Pa
 
   * - signal_name *(deprecated)*
     - Signal Name
-    - The name describing the signal event. See the Custom Data Parameters section for an updated way of accessing the Signal(s) that are true on a given transaction. |rollup_merged_message|
+    - The name describing the signal event. See the Marketing Data Parameters section for an updated way of accessing the Signal(s) that are true on a given transaction. |rollup_merged_message|
 
   * - signal_description *(deprecated)*
     - Signal Description
