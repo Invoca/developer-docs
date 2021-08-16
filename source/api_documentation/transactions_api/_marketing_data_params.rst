@@ -1,17 +1,17 @@
 
 
-Custom Data & Signal Parameters
+Marketing Data & Signal Parameters
 **********************
 
-Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the custom data parameters specific to your account.
+Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the marketing data parameters specific to your account.
 
-The Partner (API) Name is used as the field name returned by the Transactions API. Any Custom Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field. If any field names have spaces in their name, XML format will not be supported.
+The Partner (API) Name is used as the field name returned by the Transactions API. Any Marketing Data or Signal fields named the same as a standard Invoca Transactions API field will be returned by the API rather than the standard field. If any field names have spaces in their name, XML format will not be supported.
 
-**Custom Data & Signal can be accessed in two ways by Transactions API**
+**Marketing Data & Signal can be accessed in two ways by Transactions API**
 
-1. (JSON & XML formats only) By including `custom_data` as field in the `include_columns` parameter (e.g. `include_columns=transaction_id,start_time_local,custom_data`) a nested structure is returned containing all of the Custom Data and Signals that were specified for the given transaction. Note: null values are not returned.
+1. (JSON & XML formats only) By including `custom_data` as field in the `include_columns` parameter (e.g. `include_columns=transaction_id,start_time_local,custom_data`) a nested structure is returned containing all of the Marketing Data and Signals that were specified for the given transaction. Note: null values are not returned.
 
-Array of Custom Data Objects
+Array of Marketing Data Objects
 
 ..  list-table::
   :widths: 30 8 40
@@ -24,7 +24,7 @@ Array of Custom Data Objects
 
   * - name
     - String
-    - Custom Data Partner (API) Name or Signal Name. Up to 255 characters.
+    - Marketing Data Partner (API) Name or Signal Name. Up to 255 characters.
 
   * - data_type
     - String
@@ -88,7 +88,7 @@ Example response:
   ]
 
 
-2. (All formats) Custom Data and Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
+2. (All formats) Marketing Data and Signal fields can be accessed in the response by specifying the special `$invoca_custom_columns` constant in your `include_columns` parameter, or mentioning specific fields that you want to include, e.g. `include_columns=transaction_id,start_time_local,utm_medium,gclid,Quote,Purchase%20Made`.
 
 
 Example response:
@@ -114,7 +114,7 @@ Example response:
     }
   ]
 
-To also get the source of each Custom Data & Signal field, specify the special `$invoca_custom_source_columns` constant in your `include_columns` parameter. Doing that would result in an additional ".source" field for every Custom Data & Signal field:
+To also get the source of each Marketing Data & Signal field, specify the special `$invoca_custom_source_columns` constant in your `include_columns` parameter. Doing that would result in an additional ".source" field for every Marketing Data & Signal field:
 
 .. code-block:: json
 
