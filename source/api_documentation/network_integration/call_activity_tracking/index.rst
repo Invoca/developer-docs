@@ -1,6 +1,8 @@
 Call Activity Tracking
 ======================
 
+For full details on creating and updating campaigns via the API, see <a href="advertiser_campaigns/index.html">Advertiser Campaigns</a>.
+
 Manage call activity tracking for campaigns
 """""""""""""""""""""""""""""""""""""""""""
 
