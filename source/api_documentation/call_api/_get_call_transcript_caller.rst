@@ -15,9 +15,9 @@
   Response Body:
 
   .. code-block:: json
-
-     [
-       {
+  
+    [
+      {
         caller: "Orange, Awesome thank you, Have a good one"
-       }
-     ]
+      }
+    ]

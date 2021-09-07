@@ -15,8 +15,8 @@
   Response Body:
 
   .. code-block:: json
-
-     [
-       { agent: "Which Color?, Okay I will look into that, Goodbye!" },
-       { caller: "Orange, Awesome thank you, Have a good one" }
-     ]
+  
+    [
+      { agent: "Which Color?, Okay I will look into that, Goodbye!" },
+      { caller: "Orange, Awesome thank you, Have a good one" }
+    ]

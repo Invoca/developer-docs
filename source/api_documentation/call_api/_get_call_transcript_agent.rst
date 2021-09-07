@@ -16,8 +16,8 @@
 
   .. code-block:: json
 
-     [
-       {
+    [
+      {
         agent: "Which Color?, Okay I will look into that, Goodbye!"
-       }
-     ]
+      }
+    ]
