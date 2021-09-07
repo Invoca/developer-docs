@@ -7,7 +7,7 @@ Transcripts
 URL
 ---
 
-The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported, where CUID-33 is the advertiser id.
+The API follows REST conventions. Perform an HTTPS GET to the URL with the format in which you’d like to receive data. The following response formats are supported, where CUID-33 is the call record id.
 
 .. list-table::
   :widths: 8 40
