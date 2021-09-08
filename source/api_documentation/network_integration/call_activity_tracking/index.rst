@@ -1,10 +1,7 @@
 Call Activity Tracking
 ======================
 
-.. raw:: html
-  <p>
-    For full details on creating and updating campaigns via the API, see <a href="advertiser_campaigns/index.html">Advertiser Campaigns</a>.
-  </p>
+For full details on creating and updating campaigns via the API, see :doc:`Advertiser Campaigns <../advertiser_campaigns/index>`.
 
 Manage call activity tracking for campaigns
 """""""""""""""""""""""""""""""""""""""""""
@@ -39,7 +36,7 @@ Conditions
 """"""""""
 
 .. list-table::
-  :widths: 10 20 20 30
+  :widths: 10 20
   :header-rows: 1
   :class: parameters
 
