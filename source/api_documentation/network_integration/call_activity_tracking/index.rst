@@ -1,7 +1,10 @@
 Call Activity Tracking
 ======================
 
-For full details on creating and updating campaigns via the API, see <a href="advertiser_campaigns/index.html">Advertiser Campaigns</a>.
+.. raw:: html
+  <p>
+    For full details on creating and updating campaigns via the API, see <a href="advertiser_campaigns/index.html">Advertiser Campaigns</a>.
+  </p>
 
 Manage call activity tracking for campaigns
 """""""""""""""""""""""""""""""""""""""""""
@@ -9,7 +12,7 @@ Manage call activity tracking for campaigns
 Call activity tracking can be set for a campaign to determine whether or not call activity should be tracked. The call activity will be tracked if the full condition is met.
 
 Set Call Activity Tracking
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To conditionally track call activity, set ``"call_activity_tracking"`` to the tracking option you want.
 
@@ -33,10 +36,10 @@ Example Request Body
   }
 
 Conditions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""
 
 .. list-table::
-  :widths: 30 50 30
+  :widths: 10 20 20 30
   :header-rows: 1
   :class: parameters
 
