@@ -20,6 +20,9 @@ allocates a dynamic, trackable promo phone number from a RingPool (designed to h
 :doc:`signal_api/index` -
 used to report signals that occur on a specific call (transaction).
 
+:doc:`call_api/index` -
+used to pull transcript information for a specific call (transcript).
+
 
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
@@ -47,3 +50,4 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    ringpool
    bulk_ringpool_api
    signal_api/index
+   call_api/index
