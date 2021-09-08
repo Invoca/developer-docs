@@ -31,6 +31,7 @@ The API uses the following terms and their aliases:
    advertiser_affiliate_relationships/index
    networks/index
    promo_numbers/index
+   call_activity_tracking/index
    call_recording_condition/index
    prompt_recordings/index
    set_call_recorded_prompt/index
