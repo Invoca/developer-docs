@@ -33,7 +33,7 @@ Example Request Body
   }
 
 Conditions
-""""""""""
+~~~~~~~~~~
 
 .. list-table::
   :widths: 10 20
