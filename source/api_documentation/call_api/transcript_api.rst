@@ -40,7 +40,7 @@ The API takes the following optional query parameters:
     - Description
 
   * - transcript_format= (required)
-    - Dertimines the which format and transcripts are included, see response parameters below for information on each format.
+    - Determines what format the transcripts are returned as, see response parameters below for information on each format.
 
 Response
 --------
