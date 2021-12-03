@@ -269,9 +269,7 @@ Node Parameters and Usage
 
       \*destination_extension
 
-    -
-
-      Forwards the call to a selected phone number after optionally reading a prompt.
+    - Forwards the call to a selected phone number after optionally reading a prompt.
 
   * - EndCall
     - prompt
@@ -294,11 +292,42 @@ Node Parameters and Usage
 
   * - VerifyLocation
     - prompt
-    - Prompt the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.
+    - Prompts the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.
 
   * - DynamicRoute (beta - read only)
     - \*dynamic_route_destination
     - Forwards the call to a destination that is extracted from a custom data field specified in dynamic_route_destination. The destination must be a phone number or if you are SIP integrated, can be a string that is routable by your SIP infrastructure.
+
+  * - AnyKeyPress
+    - \*prompt
+
+    - Allows the caller to make any keypress to continue the call.
+
+  * - NumberQuestion
+    - \*prompt
+
+      \*number_question_type
+
+      confirm_response_enabled
+
+      error_prompt_disabled
+
+      custom_error_prompt_text
+
+      caller_response_custom_data_partner_name
+
+    - Allows the caller to respond to a prompt with numerical data (e.g. Phone Number, Date) and validates it if applicable. The caller's response may be saved to a marketing data field.
+
+  * - YesOrNo
+    - \*prompt
+
+      confirm_response_enabled
+
+      error_prompt_disabled
+
+      custom_error_prompt_text
+
+    - Allows the caller to respond to a prompt that will either have a yes or no answer. The caller's response determines how the call will continue.
 
 Node Details
 
@@ -323,7 +352,7 @@ Node Details
     - May have exactly 1 child node. After accepting or declining the promotional sms, the child node will be executed. To accept the promotional sms, the user must push 9 on the phone (this should be added as part of the prompt). Only numbers recognized as mobile phones will be offered the sms option.
 
   * - Condition
-    - May have exactly 2 child nodes. If the conditions are met, the first child is executed. If they are not met then the second child plays. See the conditions section and examples below for details on valid conditions.
+    - May have exactly 2 child nodes. If the conditions are met, the first child node is executed. If they are not met then the second child node is executed. See the conditions section and examples below for details on valid conditions.
 
   * - NearestBranch
     - May have exactly 1 child node. The caller will be prompted to verify their location prior to forwarding the call. If no branch is within ‘radius_miles’ of the caller then the child node will be executed.
@@ -333,6 +362,15 @@ Node Details
 
   * - DynamicRoute (beta - read only)
     - May have exactly 1 child node. We will evaluate the custom data field value specified on this node's dynamic_route_destination. With non-SIP integration, if the extracted value is a valid phone number and the destination phone number is in an allowed region given your settings, we will play the prompt and transfer the call, otherwise the child node will be executed without the prompt. When SIP integrated, we also allow transferring to any string (such as an extension), in which case the destination should be routable by your SIP infrastructure.
+
+  * - AnyKeyPress
+    - May have exactly 2 child nodes. If any keypress is made, the first child node is executed. If no keypress is made, then the second child node is executed.
+
+  * - NumberQuestion
+    - May have exactly 1 child node. Requires a question type to be selected (e.g. Phone Number, Date). The prompt will play before the caller answers the question. The answer may be saved in a marketing data field.
+
+  * - YesOrNo
+    - May have exactly 2 child nodes. If a keypress of 1 is made, the first child node is executed. If a kepyress of 2 is made, the second child node is executed. If speech recognition is enabled, the caller may also respond verbally with a "yes" or "no", respectively.
 
 Parameter Details
 
@@ -345,9 +383,21 @@ Parameter Details
     - Type
     - Value
 
+  * - caller_response_custom_data_partner_name
+    - String
+    - The partner name of the custom data field that will be used to save the caller's response to the NumberQuestion prompt.
+
   * - condition
     - String
     - The boolean condition that decided if the first or second child will be executed in a condition node.
+
+  * - confirm_response_enabled
+    - Boolean
+    - When enabled, the system will read back the caller's answer to the prompt and ask for confirmation. The caller can press 1 to confirm or 2 refute. If speech recogition is enabled, they may also respond verbally with a "yes" or "no", respectively.
+
+  * - custom_error_prompt_text
+    - String
+    - Custom text that will be played to the caller when they make an invalid keypress.
 
   * - destination_country_code
     - String
@@ -365,6 +415,18 @@ Parameter Details
     - Strings
     - The custom data field partner name you want to use as the destination in a dynamic route node. Typically a phone number in e164 format.
 
+  * - error_prompt_disabled
+    - Boolean
+    - If set to true, no error sound or prompt will play when a caller makes an invalid keypress. If enabled, when a caller makes an invalid keypress, an error sound will play, or you can optionally define a custom error prompt via the parameter custom_error_prompt_text.
+
+  * - keypress_failover_type
+    - String
+    - The failover type to use for a child node of a Menu. "Wrong" for when a wrong keypress is pressed by the caller on any attempt for the parent menu (shown in reporting as keypress "W"). "None" for when there is no keypress by the caller for all attempts for the parent menu (shown in reporting as keypress "N"). Omit this parameter for normal keypresses. See example below.
+
+  * - number_question_type
+    - String
+    - The type of question you want to ask as part of the NumberQuestion node type. This may be "Digits", "Number", "Phone Number" "Date", "Currency", "Time", or Zip Code".
+
   * - prompt
     - String
     - The text that will be read before a nodes action occurs. An empty string will result in no prompt being read, and the following action will occur immediately.
@@ -380,10 +442,6 @@ Parameter Details
   * - sms_promo_sender
     - String
     - The email address that will be shown in the sms. This defaults to sms@invoca.net.
-
-  * - keypress_failover_type
-    - String
-    - The failover type to use for a child node of a Menu. "Wrong" for when a wrong keypress is pressed by the caller on any attempt for the parent menu (shown in reporting as keypress "W"). "None" for when there is no keypress by the caller for all attempts for the parent menu (shown in reporting as keypress "N"). Omit this parameter for normal keypresses. See example below.
 
 Conditions
 
