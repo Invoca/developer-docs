@@ -258,6 +258,9 @@ Node Parameters and Usage
 
   * - Menu
     - \*prompt
+
+      confirm_response_enabled
+
     - Allows the caller to select from up to 9 choices (e.g. choosing a department, selecting a language, etc).
 
   * - Connect
@@ -301,7 +304,7 @@ Node Parameters and Usage
   * - AnyKeyPress
     - \*prompt
 
-    - Allows the caller to make any keypress to continue the call.
+    - Prompts the caller to make any keypress to continue the call.
 
   * - NumberQuestion
     - \*prompt
@@ -316,7 +319,7 @@ Node Parameters and Usage
 
       caller_response_custom_data_partner_name
 
-    - Allows the caller to respond to a prompt with numerical data (e.g. Phone Number, Date) and validates it if applicable. The caller's response may be saved to a marketing data field.
+    - Prompts the caller to respond with a multi-digit number (e.g. Phone Number, Date) and validates it if applicable. The caller's response may be saved to a marketing data field.
 
   * - YesOrNo
     - \*prompt
@@ -327,7 +330,7 @@ Node Parameters and Usage
 
       custom_error_prompt_text
 
-    - Allows the caller to respond to a prompt that will either have a yes or no answer. The caller's response determines how the call will continue.
+    - Prompts the caller to respond with either a yes or no answer. The caller's response determines how the call will continue.
 
 Node Details
 
@@ -340,7 +343,7 @@ Node Details
     - Details
 
   * - Menu
-    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter. See example below.
+    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice by saying the designated phrase.
 
   * - Connect
     - May not have any children. The prompt will be read before connecting to the provided phone number.
@@ -367,10 +370,10 @@ Node Details
     - May have exactly 2 child nodes. If any keypress is made, the first child node is executed. If no keypress is made, then the second child node is executed.
 
   * - NumberQuestion
-    - May have exactly 1 child node. Requires a question type to be selected (e.g. Phone Number, Date). The prompt will play before the caller answers the question. The answer may be saved in a marketing data field.
+    - May have exactly 1 child node. Requires a question type to be selected (e.g. Phone Number, Date). The prompt will play before the caller answers the question. The answer may be saved in a marketing data field. At the end of the child list, this node type can also optionally have failover child nodes, designated by a node with a keypress_failover_type parameter (see example below).
 
   * - YesOrNo
-    - May have exactly 2 child nodes. If a keypress of 1 is made, the first child node is executed. If a kepyress of 2 is made, the second child node is executed. If speech recognition is enabled, the caller may also respond verbally with a "yes" or "no", respectively.
+    - May have exactly 2 child nodes. If a keypress of 1 is made, the first child node is executed. If a kepyress of 2 is made, the second child node is executed. If speech recognition is enabled, the caller can also say "yes" for 1 and "no" for 2. At the end of the child list, this node type can also optionally have failover child nodes, designated by a node with a keypress_failover_type parameter (see example below).
 
 Parameter Details
 
@@ -393,11 +396,11 @@ Parameter Details
 
   * - confirm_response_enabled
     - Boolean
-    - When enabled, the system will read back the caller's answer to the prompt and ask for confirmation. The caller can press 1 to confirm or 2 refute. If speech recogition is enabled, they may also respond verbally with a "yes" or "no", respectively.
+    - When enabled, the system will read back the caller's answer to the prompt and ask for confirmation. The caller can press 1 for "yes" and 2 for "no". If speech recogition is enabled, callers can also confirm their response by saying "yes" or "no".
 
   * - custom_error_prompt_text
     - String
-    - Custom text that will be played to the caller when they make an invalid keypress.
+    - Custom text that will be played to the caller when they provide an invalid response or no response.
 
   * - destination_country_code
     - String
@@ -417,7 +420,7 @@ Parameter Details
 
   * - error_prompt_disabled
     - Boolean
-    - If set to true, no error sound or prompt will play when a caller makes an invalid keypress. If enabled, when a caller makes an invalid keypress, an error sound will play, or you can optionally define a custom error prompt via the parameter custom_error_prompt_text.
+    - If set to true, no error sound or prompt will play when the caller provides an invalid response or no response. If set to false, when the caller provides an invalid response or no response, an error sound will play, or you can optionally define a custom error prompt via the parameter custom_error_prompt_text.
 
   * - keypress_failover_type
     - String
@@ -425,7 +428,7 @@ Parameter Details
 
   * - number_question_type
     - String
-    - The type of question you want to ask as part of the NumberQuestion node type. This may be "Digits", "Number", "Phone Number" "Date", "Currency", "Time", or Zip Code".
+    - The type of question you want to ask as part of the NumberQuestion node type. This may be "Digits", "Number", "PhoneNumber", "Date", "Currency", "Time", or "ZipCode".
 
   * - prompt
     - String
