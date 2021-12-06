@@ -38,4 +38,5 @@ The API uses the following terms and their aliases:
    whisper_prompts/index
    custom_challenge_prompts/index
    custom_ivr_error_prompts/index
+   automated_speech_recognition/index
    ringpools/index
