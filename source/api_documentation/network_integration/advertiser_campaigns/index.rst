@@ -343,7 +343,7 @@ Node Details
     - Details
 
   * - Menu
-    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice by saying the designated phrase.
+    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice (i.e. "one" for 1, and "two" for 2).
 
   * - Connect
     - May not have any children. The prompt will be read before connecting to the provided phone number.
