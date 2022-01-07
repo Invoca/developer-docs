@@ -259,6 +259,8 @@ Node Parameters and Usage
   * - Menu
     - \*prompt
 
+      asr_phrases
+
       confirm_response_enabled
 
     - Allows the caller to select from up to 9 choices (e.g. choosing a department, selecting a language, etc).
@@ -343,7 +345,7 @@ Node Details
     - Details
 
   * - Menu
-    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice (i.e. "one" for 1, and "two" for 2).
+    - Can have 1‐9 child nodes, with each child corresponding to keypresses 1-9. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice, including using the phrases that have been configured in field asr_phrases (e.g. the caller can say "sales" or "one" for 1, and "support" or "two" for 2).
 
   * - Connect
     - May not have any children. The prompt will be read before connecting to the provided phone number.
@@ -385,6 +387,10 @@ Parameter Details
   * - Property
     - Type
     - Value
+
+  * - asr_phrases
+    - Array of strings
+    - A list of phrases, where each phrase correlates to a keypress in the Menu node. Can only be used when speech recognition is enabled. For example, a value of ["sales", "support"] would designate phrase "sales" for keypresses 1 and phrase "support" for keypress 2. Using asr_phrases allows the caller to respond verbally with one of the configured phrases instead of making a keypress.
 
   * - caller_response_custom_data_partner_name
     - String
