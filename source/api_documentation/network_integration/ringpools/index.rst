@@ -49,7 +49,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
   * - fill_immediately
     - boolean
-    - If true, the ringpool will immediately be filled with phone numbers up the the max_pool_size if numbers are available. If false, the pool is initially filled at 10% capacity.
+    - When true, the ringpool will immediately be filled with phone numbers up to the max_pool_size if numbers are available. When false, the pool is initially filled at 10% capacity. Defaults to false.
 
 Endpoint:
 
@@ -148,7 +148,7 @@ Content Type: application/json
 
   * - fill_immediately
     - boolean
-    - If true, the ringpool will immediately be filled with phone numbers up the the max_pool_size if numbers are available. If false, the pool is initially filled at 10% capacity.
+    - When true, the ringpool will immediately be filled with phone numbers up to the max_pool_size if numbers are available. When false, the pool is initially filled at 10% capacity. Defaults to false.
 
   * - local_center
     - hash
