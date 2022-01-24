@@ -47,6 +47,10 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - A phone number to be associated with the RingPool.
     - When using Destinations UI or the forward to destination IVR node, this number will be used.
 
+  * - fill_immediately
+    - boolean
+    - If true, the ringpool will immediately be filled with phone numbers up the the max_pool_size if numbers are available. If false, the pool is initially filled at 10% capacity.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
@@ -141,6 +145,10 @@ Content Type: application/json
   * - preferred
     - boolean
     - true or false.  Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specifiy which pool to use.
+
+  * - fill_immediately
+    - boolean
+    - If true, the ringpool will immediately be filled with phone numbers up the the max_pool_size if numbers are available. If false, the pool is initially filled at 10% capacity.
 
   * - local_center
     - hash
