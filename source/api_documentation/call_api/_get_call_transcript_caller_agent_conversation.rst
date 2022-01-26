@@ -6,7 +6,7 @@
 
   Endpoint:
 
-  ``https://mynetwork.invoca.net/call/transcript/CUID-33?transcript_format=agent_caller_conversation``
+  ``https://mynetwork.invoca.net/call/transcript/CUID-33?transcript_format=caller_agent_conversation``
 
   Format: application/json
 
