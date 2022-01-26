@@ -19,7 +19,8 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 1. Clone this repo
 2. Run the following commands:
 ```
-sudo easy_install pip
+# note that python version used is 2.7
+sudo easy_install pip==20.3.4 # must specify this pip version
 sudo pip install virtualenv
 virtualenv venv
 source venv/bin/activate
