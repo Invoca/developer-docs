@@ -259,6 +259,8 @@ Node Parameters and Usage
   * - Menu
     - \*prompt
 
+      asr_phrases
+
       confirm_response_enabled
 
     - Allows the caller to select from up to 9 choices (e.g. choosing a department, selecting a language, etc).
@@ -272,10 +274,15 @@ Node Parameters and Usage
 
       \*destination_extension
 
+      asr_phrases
+
     - Forwards the call to a selected phone number after optionally reading a prompt.
 
   * - EndCall
     - prompt
+
+      asr_phrases
+
     - Ends the call after optionally reading a prompt.
 
   * - SmsPromo
@@ -287,22 +294,35 @@ Node Parameters and Usage
 
       sms_promo_sender
 
+      asr_phrases
+
     - Provide the option for a user to receive a text message with a special promotion.
 
   * - Condition
     - \*condition
+
+      asr_phrases
+
     - If/else option for a call based on the qualities of the call/caller.
 
   * - VerifyLocation
     - prompt
+
+      asr_phrases
+
     - Prompts the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.
 
   * - DynamicRoute (beta - read only)
     - \*dynamic_route_destination
+
+      asr_phrases
+
     - Forwards the call to a destination that is extracted from a custom data field specified in dynamic_route_destination. The destination must be a phone number or if you are SIP integrated, can be a string that is routable by your SIP infrastructure.
 
   * - AnyKeyPress
     - \*prompt
+
+      asr_phrases
 
     - Prompts the caller to make any keypress to continue the call.
 
@@ -319,6 +339,8 @@ Node Parameters and Usage
 
       caller_response_custom_data_partner_name
 
+      asr_phrases
+
     - Prompts the caller to respond with a multi-digit number (e.g. Phone Number, Date) and validates it if applicable. The caller's response may be saved to a marketing data field.
 
   * - YesOrNo
@@ -329,6 +351,8 @@ Node Parameters and Usage
       error_prompt_disabled
 
       custom_error_prompt_text
+
+      asr_phrases
 
     - Prompts the caller to respond with either a yes or no answer. The caller's response determines how the call will continue.
 
@@ -343,7 +367,7 @@ Node Details
     - Details
 
   * - Menu
-    - Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice (i.e. "one" for 1, and "two" for 2).
+    - Can have 1‐9 child nodes, with each child corresponding to keypresses 1-9. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice, including using the phrases that have been configured in field asr_phrases for each of the child nodes. (e.g. the caller can say "sales" or "one" for 1, and "support" or "two" for 2).
 
   * - Connect
     - May not have any children. The prompt will be read before connecting to the provided phone number.
@@ -385,6 +409,10 @@ Parameter Details
   * - Property
     - Type
     - Value
+
+  * - asr_phrases
+    - Array of hashes
+    - A list of phrases that apply to the child of a Menu node. Can only be used when speech recognition is enabled. Allows the caller to respond verbally with one of the configured phrases instead of making a keypress. For example, the first child of a Menu node may have a value of [{"phrase": "sales"}, {"phrase": "support"}] for "asr_phrases", where the caller may say "sales" or "support" to select the Menu option instead of pressing 1.
 
   * - caller_response_custom_data_partner_name
     - String
