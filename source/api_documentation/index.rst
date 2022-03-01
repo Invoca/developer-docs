@@ -11,11 +11,11 @@ supports the replication and synchronization of advertiser, publisher and campai
 :doc:`conversion_reporting` -
 provides the ability to report completed order information (or other conversion events) from a server back into the platform.
 
-:doc:`ringpool` -
-allocates a dynamic, trackable promo phone number from a RingPool.
-
 :doc:`bulk_ringpool_api` -
 allocates a dynamic, trackable promo phone number from a RingPool (designed to handle a high volume of requests per second).
+
+:doc:`ringpool` -
+allocates a dynamic, trackable promo phone number from a RingPool (no longer recommended).
 
 :doc:`signal_api/index` -
 used to report signals that occur on a specific call (transaction).
@@ -43,11 +43,9 @@ The RingPool wizard includes a section showing the correct API URL for your orga
 
    manage_api_credentials
    network_integration/index
-   conversion_reporting
-   conversion_reporting_pixel
-   conversion_reporting_email
    transactions_api/index
-   ringpool
    bulk_ringpool_api
+   ringpool
    signal_api/index
    call_api/index
+   conversion_reporting

@@ -1,4 +1,4 @@
-Ringpool
+Ringpool API (Legacy)
 ========
 
 The RingPool API allocates a dynamic, trackable promo phone number from a RingPool. A valid call to the RingPool API returns a promo number and a formatted click-through URL.
