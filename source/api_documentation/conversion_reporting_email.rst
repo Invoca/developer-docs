@@ -1,5 +1,14 @@
-Conversion Reporting Email
+Conversion Reporting Email (Deprecated)
 ==========================
+
+.. raw:: html
+
+  <div style="margin-bottom: 20px; padding: 15px; background-color: #fff3cd; color: #333;"><p>
+    <b>Notice:</b>
+    <a href="https://developers.invoca.net/en/latest/api_documentation/signal_api/index.html">Signal API</a> or
+    <a href="https://invoca.force.com/community/s/article/Reporting-Call-Conversions-via-Signal-File-Upload-or-Signal-API">Signal File Upload</a> is now the supported way for reporting that a sale or other post call event occurred on calls.
+    Conversion Reporting API and Email ingestion is deprecated and no longer available for new accounts.
+  </p></div>
 
 A legacy performance feature that is only used by customers running pay-per-call campaigns.  It provides the ability to payout on a conversion event that occurs on the call, typically helps advertisers to encourage the highest quality/caller intent calls. Conversion events can be reported using an email message with an attached CSV file.
 

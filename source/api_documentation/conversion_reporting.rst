@@ -1,11 +1,29 @@
-Conversion Reporting
+Conversion Reporting (Deprecated)
 ====================
+
+.. raw:: html
+
+  <div style="margin-bottom: 20px; padding: 15px; background-color: #fff3cd; color: #333;"><p>
+    <b>Notice:</b>
+    <a href="https://developers.invoca.net/en/latest/api_documentation/signal_api/index.html">Signal API</a> is now the supported way for reporting that a sale or other post call event occurred on calls.
+    The Conversion Reporting API is deprecated and no longer available for new accounts.</p>
+  </div>
 
 The Conversion Reporting API (formerly referred to as the “Call Center” or “Sales Reporting” API) is used to report completed order information (or other conversion events) from a server back into the platform.
 Reporting order information through the API allows advertisers to compensate publishers for sales that convert over the phone (or on the web).
 Additionally, Advertiser Direct campaigns using the Conversion Reporting API with search campaigns can report back revenue generated for each phone call so that search bids can be optimized.
 
-Before using the Conversion Reporting API, request credentials from questions@invoca.com
+For existing customers looking for deprecated documentation on the conversion pixel and email approach to reporting conversions, see these pages:
+
+:doc:`conversion_reporting_email`
+
+:doc:`conversion_reporting_pixel`
+
+Authentication
+-------------------
+
+The Conversion Reporting API requires specific credentials and a conversion reporting ID for the URL. Note: creating new credentials is no longer supported.
+Please use the :doc:`signal_api/index` instead.
 
 Client API Wrappers
 -------------------
