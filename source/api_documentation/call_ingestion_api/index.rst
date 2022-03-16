@@ -109,11 +109,11 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
 Endpoint:
 
-``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/transactions/create.json``
+``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json``
 
 .. api_endpoint::
   :verb: POST
-  :path: /transactions/create
+  :path: /calls
   :description: Create a new call in the Invoca platform.
   :page: create_call
 
@@ -168,13 +168,13 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"call":{"external_call_unique_id":"123ABC","start_time":"2016-08-08 11:03:31 -0700","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":85,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"signals":[{"name":"sale","value":1},{"name":"quote","value":1}],"custom_data":[{"name":"channel","value":"Paid Search"},{"name":"line_of_business","value":"Social"}],"oauth_token":"<YOUR OAUTH TOKEN>"}'  https://invoca.net/api/@@CALL_INGESTION_API_VERSION/transactions/create.json
+  curl -k -H "Content-Type: application/json" -X POST -d '{"call":{"external_call_unique_id":"123ABC","start_time":"2016-08-08 11:03:31 -0700","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":85,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"signals":[{"name":"sale","value":1},{"name":"quote","value":1}],"custom_data":[{"name":"channel","value":"Paid Search"},{"name":"line_of_business","value":"Social"}],"oauth_token":"<YOUR OAUTH TOKEN>"}'  https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json
 
 Below is the same example as above with the OAuth Token passed in via the request headers:
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -H "Authorization: <YOUR OAUTH TOKEN>" -X POST -d '{"call":{"external_call_unique_id":"123ABC","start_time":"2016-08-08 11:03:31 -0700","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":85,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"signals":[{"name":"sale","value":1},{"name":"quote","value":1}],"custom_data":[{"name":"channel","value":"Paid Search"},{"name":"line_of_business","value":"Social"}]}'  https://invoca.net/api/@@CALL_INGESTION_API_VERSION/transactions/create.json
+  curl -k -H "Content-Type: application/json" -H "Authorization: <YOUR OAUTH TOKEN>" -X POST -d '{"call":{"external_call_unique_id":"123ABC","start_time":"2016-08-08 11:03:31 -0700","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":85,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"signals":[{"name":"sale","value":1},{"name":"quote","value":1}],"custom_data":[{"name":"channel","value":"Paid Search"},{"name":"line_of_business","value":"Social"}]}'  https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json
 
 
 

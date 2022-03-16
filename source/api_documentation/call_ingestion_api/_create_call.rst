@@ -10,7 +10,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/transactions/create.json``
+  ``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json``
 
   Request Body:
 
@@ -47,7 +47,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/transactions/create.json``
+  ``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json``
 
   Request Body:
 
