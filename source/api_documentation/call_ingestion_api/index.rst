@@ -236,7 +236,38 @@ For example, if you pass an **advertiser_campaign_id_from_network** that you do 
         "invalid_data": "You do not have access to this advertiser"
       }
     }
+-----
 
+**Campaign Configuration Related Errors**
+
+In order to fully utilize the Call Ingestion API, there are some configuration requirements for the campaign that the call is being submitted under.  Here's a list of those requirements:
+  * Campaigns must be setup with a campaign type of **External**
+  * Campaigns need to be configured with transciption enabled
+  * Campaigns need to have Signal AI enabled at at least one Signal configured
+
+If any of these settings are not configured you'll see error message similar to the example below.  
+*Please contact the Invoca support team at questions@invoca.com for setup assistance.* 
+
+**Response (403 Forbidden):**
+
+.. code-block:: json
+
+    {
+      "errors": {
+        "class": "call.advertiser_campaign_id_from_network",
+        "invalid_data": "campaign must be for external calls only"
+      }
+    }
+
+
+.. code-block:: json
+
+    {
+      "errors": {
+        "class": "call.advertiser_campaign_id_from_network",
+        "invalid_data": "campaign must have transcription enabled"
+      }
+    }
 
 Supported Recording Formats
 ---------------------------
@@ -273,14 +304,6 @@ Call Recording URLs will need to be accessible to the Invoca Audio processing sy
 
 
 If the Invoca Audio Processing system is unable to succesfully download and process the call recording a message will be sent via email notifying you of the issue.  Please see the **Call Processing Error Notifications** section for more details.
-
-
-External Campaign Configuration
--------------------------------
-
-*Details on this process coming soon*
-
------
 
 
 Call Processing Error Notifications
