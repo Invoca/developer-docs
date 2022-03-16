@@ -23,6 +23,8 @@ used to report signals that occur on a specific call (transaction).
 :doc:`call_api/index` -
 used to pull transcript information for a specific call (transcript).
 
+:doc:`call_ingestion_api/index` -
+used to ingest calls from external sources for conversation intelligence processing and inclusion in your reports and dashboards.
 
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
@@ -49,3 +51,4 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    signal_api/index
    call_api/index
    conversion_reporting
+   call_ingestion_api/index
