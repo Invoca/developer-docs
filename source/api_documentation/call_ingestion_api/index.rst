@@ -245,7 +245,7 @@ In order to fully utilize the Call Ingestion API, there are some configuration r
   * Campaigns need to be configured with transciption enabled
   * Campaigns need to have Signal AI enabled at at least one Signal configured
 
-If any of these settings are not configured you'll see error message similar to the example below.  
+If any of these settings are misconfigured you'll see error message similar to the examples below.  
 *Please contact the Invoca support team at questions@invoca.com for setup assistance.* 
 
 **Response (403 Forbidden):**
@@ -259,6 +259,7 @@ If any of these settings are not configured you'll see error message similar to 
       }
     }
 
+**Response (403 Forbidden):**
 
 .. code-block:: json
 
