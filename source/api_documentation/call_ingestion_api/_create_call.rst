@@ -59,7 +59,6 @@
         "start_time": "2016-08-08 11:03:31 -0700",
         "destination_phone_number": 9093900003,
         "calling_phone_number": 8779257383,
-        "duration_in_seconds": 14,
         "advertiser_campaign_id_from_network": 85,
         "call_direction": "inbound",
         "recording_url": "<CALL RECORDING URL>"
@@ -67,13 +66,11 @@
       "signals": [
         {
           "name": "sale",
-          "value": 1,
-          "revenue": 100
+          "value": 1
         },
         {
           "name": "quote",
-          "value": 1,
-          "revenue": 1
+          "value": 1
         }
       ],
       "custom_data": [

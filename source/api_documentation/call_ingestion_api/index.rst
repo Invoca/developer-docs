@@ -168,14 +168,17 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -X POST -d '{"call":{"external_call_unique_id":"123ABC","start_time":"2016-08-08 11:03:31 -0700","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":85,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"signals":[{"name":"sale","value":1},{"name":"quote","value":1}],"custom_data":[{"name":"channel","value":"Paid Search"},{"name":"line_of_business","value":"Social"}],"oauth_token":"<YOUR OAUTH TOKEN>"}'  https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json
+  curl -POST https://invoca.net/api/api/2022-03-01/calls.json?oauth_token=<oauth_token> \
+    -H 'ContentType: application/json' \
+    -d '{"call":{"external_call_unique_id":"10068","start_time":"2022-03-18 09:31:29","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":86,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"}}'
 
 Below is the same example as above with the OAuth Token passed in via the request headers:
 
 .. code-block:: bash
 
-  curl -k -H "Content-Type: application/json" -H "Authorization: <YOUR OAUTH TOKEN>" -X POST -d '{"call":{"external_call_unique_id":"123ABC","start_time":"2016-08-08 11:03:31 -0700","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":85,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"signals":[{"name":"sale","value":1},{"name":"quote","value":1}],"custom_data":[{"name":"channel","value":"Paid Search"},{"name":"line_of_business","value":"Social"}]}'  https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json
-
+  curl -POST https://invoca.net/api/api/2022-03-01/calls.json \
+    -H 'ContentType: application/json' \
+    -d '{"call":{"external_call_unique_id":"10070","start_time":"2022-03-18 09:31:29","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":86,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"oauth_token":"<oauth_token>"}' 
 
 
 Errors
@@ -241,9 +244,10 @@ For example, if you pass an **advertiser_campaign_id_from_network** that you do 
 **Campaign Configuration Related Errors**
 
 In order to fully utilize the Call Ingestion API, there are some configuration requirements for the campaign that the call is being submitted under.  Here's a list of those requirements:
+
   * Campaigns must be setup with a campaign type of **External**
-  * Campaigns need to be configured with transciption enabled
-  * Campaigns need to have Signal AI enabled at at least one Signal configured
+  * Campaigns need to be have the **Signal AI** product feature enabled
+  * Campaigns need to hav at least one Signal configured
 
 If any of these settings are misconfigured you'll see error message similar to the examples below.  
 *Please contact the Invoca support team at questions@invoca.com for setup assistance.* 
@@ -277,7 +281,7 @@ The default call recording format on the Invoca platform is 16-bit PCM encoded `
 The Call Ingestion API supports `WAV <https://en.wikipedia.org/wiki/WAV>`_  and `MP3 <https://en.wikipedia.org/wiki/MP3>`_ file formats.  However, the Invoca Audio Processing system will upsample or downsample accordingly into our default call recording format.
 
 All call recordings are required to be in dual-channel or stereo format.  The call recording of an inbound call on the Invoca platform has the caller channel on channel 0 and the agent audio on channel 1. 
-For all calls submitted via the Call Ingsetion API, we will normalize the channels to match a the Invoca call record channel layout.
+For all calls submitted via the Call Ingestion API, we will normalize the channels to match the Invoca call record channel layout.
 
 The **call_direction** field will determine how the recording is normalized:
 
@@ -286,9 +290,8 @@ The **call_direction** field will determine how the recording is normalized:
     `outbound` The audio processing system will assume that the call recording is the opposite of the Invoca dafault.  The audio procesing system will normalize the call recording by swapping the channels.
 
 
-If the Invoca Audio Processing system finds any call recording format problems then a message will be sent via email notifying you of the issue.  Please see the **Call Processing Error Notifications** section for more details.
-
------
+If the Invoca Audio Processing system finds any call recording format problems then a message will be sent via email notifying you of the issue.  
+Processing error emails will be sent to the email address on the user account that is linked to the API token used for the API request.  Please see the **Call Processing Error Notifications** section for more details.
 
 
 Supported Recording Access Options
