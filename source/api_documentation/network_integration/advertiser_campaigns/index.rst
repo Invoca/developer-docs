@@ -36,7 +36,11 @@ You are not allowed to delete campaigns.
 
   * - campaign_type
     - string
-    - 2 Campaign Types Supported: “AffiliateEnabled” ‐ Advertiser Campaign that allows Affiliates to promote it. Includes Payin and Payouts for qualified Calls. “DirectOnly” ‐ Advertiser Campaign used for internal marketing. No ability to promote via Affiliates or setup Payin and Payouts for Calls.
+    - 3 Campaign Types Supported:
+
+      * **AffiliateEnabled:** Advertiser Campaign that allows Affiliates to promote it. Includes Payin and Payouts for qualified Calls. 
+      * **DirectOnly:** Advertiser Campaign used for internal marketing. No ability to promote via Affiliates or setup Payin and Payouts for Calls.
+      * **ExternalOnly:** Advertiser Campaign used for external calls uploaded via the Call Ingestion API. See :doc:`../../call_ingestion_api/index` for more details.
 
   * - description
     - string
