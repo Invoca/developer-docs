@@ -7,7 +7,7 @@ Calls submitted through this API are available to all post-call processing syste
 
 Invoca post-call processing services are applied to calls based on network and campaign settings.  The campaign for the call is determined by the *advertiser_campaign_id_from_network* parameter in the API.
 
-Additionally, Signals and Custom Data related to the call can be sumbitted during the initial call ingestion step.  Please note that Signals and Custom Data can also be applied in the future using the :doc:`../signal_api/index`.
+Additionally, Signals and Custom Data related to the call can be submitted during the initial call ingestion step.  Please note that Signals and Custom Data can also be applied in the future using the :doc:`../signal_api/index`.
 
 Signals can be any boolean value (e.g. sale, quote, etc), and Custom Data can be any alpha-numeric value (e.g. account type, customer quality score, etc).
 
@@ -29,7 +29,7 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
     - A new call creation request was successfully created.
 
   * - 202 Accepted
-    - The call creation request has already been received and is currently being processed.
+    - The call creation request has already been received.
 
   * - 400 Bad Request
     - Attempted to make a request with an invalid API Version for route. Check the error message for any neccessary corrections
@@ -50,11 +50,11 @@ Passed in “application/json” format.
 
 **Call Parameters**
 
-These are the call datails used when creating the call in the Invoca platform.
+These are the call details used when creating the call in the Invoca platform.
 
     **Required**
 
-    `external_call_unique_id` The unique ID of the call in the system fom the external system.  This field is required to be unique across all calls within a network that are submitted from external sources.
+    `external_call_unique_id` The unique ID of the call from the external system.  This field is required to be unique across all calls within a network that are submitted from external sources.
 
     `start_time` This is the date and time when the call started on the call origination platform.  Please see the **Timestamp Formats** section below for descriptions of supported timestamps.
 
@@ -62,7 +62,7 @@ These are the call datails used when creating the call in the Invoca platform.
 
     `calling_phone_number` ANI in E.164 format +country national_number; example: ‘+18885551212’.
 
-    `advertiser_campaign_id_from_network` ID from network field on advertiser campaign; only calls within this advertiser campaign will be considered (campaign must be in the organization accessed via API).
+    `advertiser_campaign_id_from_network` The ID from network field on the advertiser campaign.  The submitted call will be added to this campaign.  *Please note that this campaign must be of type ExternalOnly*  See :doc:`../network_integration/advertiser_campaigns//index` for more details.
 
     `call_direction` The direction of the call flow.  Accepted values: *inbound* or *outbound*.
 
@@ -79,7 +79,7 @@ Used to create the fields of a signal. The Signal name provided in a request **m
     `name` The name describing the signal event. For reporting a sale happened on a call, “Sale” is recommended.
     Other examples include “Free Trial”, “2yr Subscription”, “Cancellation.”
     This can be used elsewhere in the system and should be a small list of values meaningful to your organization.
-    Names are matched case-insensitively, but we will preserve and use the casing of the first time the signal name is reported.
+    Names are matched case-insensitively.
 
     **Optional**
 
@@ -245,9 +245,8 @@ For example, if you pass an **advertiser_campaign_id_from_network** that you do 
 
 In order to fully utilize the Call Ingestion API, there are some configuration requirements for the campaign that the call is being submitted under.  Here's a list of those requirements:
 
-  * Campaigns must be setup with a campaign type of **External**
-  * Campaigns need to be have the **Signal AI** product feature enabled
-  * Campaigns need to hav at least one Signal configured
+  * Campaigns must be setup with a campaign type of **ExternalOnly**.
+  * Campaigns need to be have either the **Signal AI** product feature or at least one Voice Signal enabled.  This will enable transcription service on the submitted call.
 
 If any of these settings are misconfigured you'll see error message similar to the examples below.  
 *Please contact the Invoca support team at questions@invoca.com for setup assistance.* 
@@ -290,8 +289,7 @@ The **call_direction** field will determine how the recording is normalized:
     `outbound` The audio processing system will assume that the call recording is the opposite of the Invoca dafault.  The audio procesing system will normalize the call recording by swapping the channels.
 
 
-If the Invoca Audio Processing system finds any call recording format problems then a message will be sent via email notifying you of the issue.  
-Processing error emails will be sent to the email address on the user account that is linked to the API token used for the API request.  Please see the **Call Processing Error Notifications** section for more details.
+If the Invoca Audio Processing system finds any call recording format problems then a message will be sent via email notifying your Invoca Customer Success Manager (CSM) who will then reach out to help resolve any issues.  Please see the **Call Processing Error Notifications** section for more details.
 
 
 Supported Recording Access Options
@@ -307,8 +305,7 @@ Call Recording URLs will need to be accessible to the Invoca Audio processing sy
     `Public URL` In this approach, the call recording would be able to be downloaded without requirement of access credentials or API keys. 
 
 
-If the Invoca Audio Processing system is unable to succesfully download and process the call recording a message will be sent via email notifying you of the issue.  Please see the **Call Processing Error Notifications** section for more details.
-
+If the Invoca Audio Processing system is unable to succesfully download and process the call recording then a message will be sent via email notifying your Invoca Customer Success Manager (CSM) who will then reach out to help resolve any issues.  Please see the **Call Processing Error Notifications** section for more details.
 
 Call Processing Error Notifications
 -----------------------------------
