@@ -168,18 +168,41 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl -POST https://invoca.net/api/api/2022-03-01/calls.json?oauth_token=<oauth_token> \
-    -H 'ContentType: application/json' \
-    -d '{"call":{"external_call_unique_id":"10068","start_time":"2022-03-18 09:31:29","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":86,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"}}'
-
+  curl --location --request POST 'https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json?oauth_token=<oauth_token>' \
+  --header 'Content-Type: application/json' \
+  --data-raw '
+  {
+    "call": {
+      "external_call_unique_id": "10002",
+      "start_time": "2022-03-25 09:31:29",
+      "destination_phone_number": 9093900003,
+      "calling_phone_number": 8779257384,
+      "advertiser_campaign_id_from_network": 86,
+      "call_direction": "inbound",
+      "recording_url": "<CALL RECORDING URL>"
+    }
+  }'
+  
 Below is the same example as above with the OAuth Token passed in via the request headers:
 
 .. code-block:: bash
 
-  curl -POST https://invoca.net/api/api/2022-03-01/calls.json \
-    -H 'ContentType: application/json' \
-    -d '{"call":{"external_call_unique_id":"10070","start_time":"2022-03-18 09:31:29","destination_phone_number":9093900003,"calling_phone_number":8779257383,"advertiser_campaign_id_from_network":86,"call_direction":"inbound","recording_url":"<CALL RECORDING URL>"},"oauth_token":"<oauth_token>"}' 
-
+  curl --location --request POST 'https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json' \
+  --header 'Content-Type: application/json' \
+  --data-raw '
+  {
+    "call": {
+      "external_call_unique_id": "10001",
+      "start_time": "2022-03-25 09:31:29",
+      "destination_phone_number": 9093900003,
+      "calling_phone_number": 8779257384,
+      "advertiser_campaign_id_from_network": 86,
+      "call_direction": "inbound",
+      "recording_url": "<CALL RECORDING URL>"
+    },
+    "oauth_token": "<oauth_token>"
+  }'
+  
 
 Errors
 ------
