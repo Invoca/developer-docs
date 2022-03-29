@@ -67,7 +67,11 @@ These are the call details used when creating the call in the Invoca platform.
     `call_direction` The direction of the call flow.  Accepted values: *inbound* or *outbound*.
 
     `recording_url` The URL to the call recording. Please see the **Supported Recording Formats** and **Supported Recording Access Options** sections for more details.
-    
+
+    **Optional**
+
+    `language_code` The IETF language code for the call transcription. The supported codes are: `en-US`, `en-GB`, `es-ES`, `fr-FR`. This parameter can be processed only if `multiple_language_processing` for the network is enabled. The default is the `default_language_code` for the network if it is set, otherwise `en-US`.
+
 -----
 
 **Signal Parameters**
