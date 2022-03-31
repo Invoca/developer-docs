@@ -50,5 +50,5 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    ringpool
    signal_api/index
    call_api/index
-   conversion_reporting
    call_ingestion_api/index
+   conversion_reporting
