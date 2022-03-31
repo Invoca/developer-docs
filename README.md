@@ -76,9 +76,10 @@ You will then be taken to the [Builds page] (https://readthedocs.com/projects/in
 10. Return to the [Admin > Versions](https://readthedocs.com/projects/invoca-developer-docs/versions/)
 11. Find your version in the list (e.g. 2016-01-01), set it Public.
 12. Go to [Admin > Advanced Settings](https://readthedocs.com/dashboard/invoca-developer-docs/advanced/), and set the Default Version **and** the Default Branch to your new version (e.g. 2016-01-01)
-13. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
-14. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
-15. Limit pushing to the branch to members of the Developer Docs Administrators group in [Settings > Branches](https://github.com/Invoca/developer-docs/settings/branches)
+13. Go to [Builds](https://readthedocs.com/projects/invoca-developer-docs/builds/), ensure the dropdwon on the right has the "latset" version seleted and click the "Build Version:" button.  This will rebuild the "latest" version from your new branch.
+14. Save changes, the new version is now default and visible to all users, the previous version is also maintained and can be accessed from the menu at the bottom left of the read-the-docs page.
+15. Back in github, set the default branch of this repo (developer-docs) to your new branch. 
+16. Limit pushing to the branch to members of the Developer Docs Administrators group in [Settings > Branches](https://github.com/Invoca/developer-docs/settings/branches)
 
 ## Private Documentation
 The "private" documentation in RTD is not actually protected by a login. When a version is set to private, it can be viewed by anyone who was the link.
