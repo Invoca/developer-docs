@@ -70,7 +70,7 @@ These are the call details used when creating the call in the Invoca platform.
 
     **Optional**
 
-    `language_code` The IETF language tag for the call transcription. This parameter can be processed only if multiple language processing is enabled for the network. The default is given from the network attribute ("default_language_code") if it is set, otherwise "en-US". The following language codes are supported:
+    `language_code` The IETF language tag for the call transcription. This parameter can be processed only if multiple language processing is enabled for the network or it matches the default language code of the network. The default is given from the network attribute ("default_language_code") if it is set, otherwise "en-US". The following language codes are supported:
 
     .. list-table::
       :widths: 8 40
