@@ -6,7 +6,7 @@ The Transactions API is accessible using the API credentials generated on the pl
 .. raw:: html
 
   <p>
-    View the support documentation for <a href="https://invoca.force.com/community/s/article/How-to-access-Invoca-call-data-programmatically-via-API">best practices in accessing Invoca Call Data via the Transactions API</a>.
+    View the support documentation for <a href="https://community.invoca.com/t5/developer-features/how-to-access-invoca-call-data-programmatically-via-api/ta-p/602">best practices in accessing Invoca Call Data via the Transactions API</a>.
   </p>
 
 
