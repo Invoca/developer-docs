@@ -6,7 +6,7 @@ Conversion Reporting Email (Deprecated)
   <div style="margin-bottom: 20px; padding: 15px; background-color: #fff3cd; color: #333;"><p>
     <b>Notice:</b>
     <a href="https://developers.invoca.net/en/latest/api_documentation/signal_api/index.html">Signal API</a> or
-    <a href="https://invoca.force.com/community/s/article/Reporting-Call-Conversions-via-Signal-File-Upload-or-Signal-API">Signal File Upload</a> is now the supported way for reporting that a sale or other post call event occurred on calls.
+    <a href="https://community.invoca.com/t5/signals-and-call-scoring/importing-call-conversions-via-signal-file-upload/ta-p/484">Signal File Upload</a> is now the supported way for reporting that a sale or other post call event occurred on calls.
     Conversion Reporting API and Email ingestion is deprecated and no longer available for new accounts.
   </p></div>
 
