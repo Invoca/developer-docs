@@ -5,7 +5,7 @@ SolutionsJS Web Integration (Deprecated)
 
   <div style="padding: 15px; background-color: #fff3cd; color: #333;"><p>
     <b>Notice:</b> Invoca Tags</a> is the supported way for setting up web integration (which internally uses the InvocaJS library, formerly known as SolutionsJS).
-    View the <a href="https://invoca.force.com/community/s/article/Invoca-Tag-Wizard">Invoca Tags support article</a> for installation instructions.
+    View the <a href="https://community.invoca.com/t5/call-attribution/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465">Invoca Tags support article</a> for installation instructions.
   </p></div>
 
 Installation Instructions (Deprecated)

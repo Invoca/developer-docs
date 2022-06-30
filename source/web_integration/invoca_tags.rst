@@ -15,5 +15,5 @@ Installation Instructions
 .. raw:: html
 
   <p>
-    To set up your Invoca Tags, view the following <a href="https://invoca.force.com/community/s/article/Invoca-Tag-Wizard">support documentation</a>.
+    To set up your Invoca Tags, view the following <a href="https://community.invoca.com/t5/call-attribution/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465">support documentation</a>.
   </p>
