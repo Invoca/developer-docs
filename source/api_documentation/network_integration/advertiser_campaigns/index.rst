@@ -38,7 +38,7 @@ You are not allowed to delete campaigns.
     - string
     - 3 Campaign Types Supported:
 
-      * **AffiliateEnabled:** Advertiser Campaign that allows Affiliates to promote it. Includes Payin and Payouts for qualified Calls. 
+      * **AffiliateEnabled:** Advertiser Campaign that allows Affiliates to promote it. Includes Payin and Payouts for qualified Calls.
       * **DirectOnly:** Advertiser Campaign used for internal marketing. No ability to promote via Affiliates or setup Payin and Payouts for Calls.
       * **ExternalOnly:** Advertiser Campaign used for external calls uploaded via the Call Ingestion API. See :doc:`../../call_ingestion_api/index` for more details.
 
@@ -280,7 +280,14 @@ Node Parameters and Usage
 
       asr_phrases
 
-    - Forwards the call to a selected phone number after optionally reading a prompt.
+      connect_timeout
+
+    - Forwards the call to a selected phone number after optionally reading a prompt. If ringing_rollover is enabled for the network, a connect_timeout value can be configured along with a "Failover" child node.
+
+  * - Failover
+    - \*destination_phone_number
+
+    - Forwards the call to a fallback destination number if the original destination configured on the parent "Connect" node returns a busy signal OR if the configured connect_timeout value on the parent "Connect" node is exceeded. This node type can only be configured as a child of "Connect" nodes.
 
   * - EndCall
     - prompt
@@ -316,12 +323,26 @@ Node Parameters and Usage
 
     - Prompts the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.
 
-  * - DynamicRoute (beta - read only)
-    - \*dynamic_route_destination
+  * - DynamicRoute
+    - prompt
+
+      \*dynamic_route_destination
 
       asr_phrases
 
-    - Forwards the call to a destination that is extracted from a custom data field specified in dynamic_route_destination. The destination must be a phone number or if you are SIP integrated, can be a string that is routable by your SIP infrastructure.
+      behave_like_ring_group
+
+      ring_group_connect_timeout
+
+      distribution_method
+
+      call_acceptance
+
+      ring_group_destination_total_limit
+
+      max_simultaneous_calls
+
+    - Forwards the call to a destination that is extracted from a marketing data field specified in dynamic_route_destination. The destination must be a phone number or if you are SIP integrated, can be a string that is routable by your SIP infrastructure. If behave_like_ring_group is enabled, then the marketing data field selected as the dynamic_route_destination may contain a comma-separated string of values, where each value represents a phone number that will be dialed as part of a RingGroup. RingGroup settings, such as ring_group_connect_timeout, distribution_method, call_acceptance, ring_group_destination_total_limit, and max_simultaneous_calls will also be made available.
 
   * - AnyKeyPress
     - \*prompt
@@ -360,6 +381,23 @@ Node Parameters and Usage
 
     - Prompts the caller to respond with either a yes or no answer. The caller's response determines how the call will continue.
 
+  * - RingGroup
+    - prompt
+
+      \*ring_group_destinations
+
+      \*ring_group_connect_timeout
+
+      distribution_method
+
+      call_acceptance
+
+      ring_group_destination_total_limit
+
+      max_simultaneous_calls
+
+    - Forwards the call to a group of numbers defined in the ring_group_destinations array of hashes. The destinations will be in the order determined by the distribution_method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered, the next destination will be dialed. When call_acceptance is enabled, the call must be expressly accepted instead of answered. The ring_group_destination_total_limit may only be configured when the distribution_type is set to Random. This node type also allows for the configuration of max_simultaneous_calls when simultaneous calling is enabled for the network.
+
 Node Details
 
 .. list-table::
@@ -371,10 +409,13 @@ Node Details
     - Details
 
   * - Menu
-    - Can have 1‐9 child nodes, with each child corresponding to keypresses 1-9. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice, including using the phrases that have been configured in field asr_phrases for each of the child nodes. (e.g. the caller can say "sales" or "one" for 1, and "support" or "two" for 2).
+    - Can have 1-9 child nodes, with each child corresponding to keypresses 1-9. At the end of the child list, it can also optionally have failover child nodes designated by a node with a keypress_failover_type parameter (see example below). If speech recognition is enabled, the caller may also respond verbally with their menu choice, including using the phrases that have been configured in field asr_phrases for each of the child nodes. (e.g. the caller can say "sales" or "one" for 1, and "support" or "two" for 2).
 
   * - Connect
-    - May not have any children. The prompt will be read before connecting to the provided phone number.
+    - May not have any children unless ringing_rollover is enabled for the network. The prompt will be read before connecting to the provided phone number. If ringing_rollover is enabled for the network, a connect_timeout value can be configured along with a "Failover" child node.
+
+  * - Failover
+    - May not have any children. The provided phone number will be dialed if the destination configured on the parent "Connect" node returns a busy signal when dialed OR if the connect_timeout value configured on the parent "Connect" node is exceeded. This node type can only be configured as a child of "Connect" nodes.
 
   * - EndCall
     - May not have any children. The prompt will be read before ending the call.
@@ -391,8 +432,8 @@ Node Details
   * - VerifyLocation
     - May have exactly 1 child node. The prompt will play before verifying the callers location. The child node will be executed after verifying the callers location.
 
-  * - DynamicRoute (beta - read only)
-    - May have exactly 1 child node. We will evaluate the custom data field value specified on this node's dynamic_route_destination. With non-SIP integration, if the extracted value is a valid phone number and the destination phone number is in an allowed region given your settings, we will play the prompt and transfer the call, otherwise the child node will be executed without the prompt. When SIP integrated, we also allow transferring to any string (such as an extension), in which case the destination should be routable by your SIP infrastructure.
+  * - DynamicRoute
+    - May have exactly 1 child node. We will evaluate the marketing data field value specified on this node's dynamic_route_destination. With non-SIP integration, if the extracted value is a valid phone number and the destination phone number is in an allowed region given your settings, we will play the prompt and transfer the call, otherwise the child node will be executed without the prompt. When SIP integrated, we also allow transferring to any string (such as an extension), in which case the destination should be routable by your SIP infrastructure.  If the node is enabled to behave like a RingGroup, then the marketing data field selected as the dynamic_route_destination may contain a comma-separated string of values, where each value represents a phone number that will be dialed as part of a RingGroup.
 
   * - AnyKeyPress
     - May have exactly 2 child nodes. If any keypress is made, the first child node is executed. If no keypress is made, then the second child node is executed.
@@ -402,6 +443,9 @@ Node Details
 
   * - YesOrNo
     - May have exactly 2 child nodes. If a keypress of 1 is made, the first child node is executed. If a kepyress of 2 is made, the second child node is executed. If speech recognition is enabled, the caller can also say "yes" for 1 and "no" for 2. At the end of the child list, this node type can also optionally have failover child nodes, designated by a node with a keypress_failover_type parameter (see example below).
+
+  * - RingGroup
+    - May not have any children. Forwards the call to a group of numbers that will be dialed in the order determined by the distribution method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered (or accepted), the next destination will be dialed. This node type also allows for simultaneous calling when it is enabled.
 
 Parameter Details
 
@@ -418,6 +462,14 @@ Parameter Details
     - Array of hashes
     - A list of phrases that apply to the child of a Menu node. Can only be used when speech recognition is enabled. Allows the caller to respond verbally with one of the configured phrases instead of making a keypress. For example, the first child of a Menu node may have a value of [{"phrase": "sales"}, {"phrase": "support"}] for "asr_phrases", where the caller may say "sales" or "support" to select the Menu option instead of pressing 1.
 
+  * - behave_like_ring_group
+    - Boolean
+    - When enabled, the given node will behave like a RingGroup node and additional settings may become available. See the "Node Parameters and Usage" and "Node Details" tables for more details.
+
+  * - call_acceptance
+    - Boolean
+    - When enabled, the agent / call recipient must press 1 on their keypad to accept the call or can press 2 to decline. If speech recognition is also enabled, the agent can also say 'yes' to accept or 'no' to decline the call. This is only available for RingGroup nodes or nodes that have the behave_like_ring_group setting enabled.
+
   * - caller_response_custom_data_partner_name
     - String
     - The partner name of the custom data field that will be used to save the caller's response to the NumberQuestion prompt.
@@ -429,6 +481,10 @@ Parameter Details
   * - confirm_response_enabled
     - Boolean
     - When enabled, the system will read back the caller's answer to the prompt and ask for confirmation. The caller can press 1 for "yes" and 2 for "no". If speech recogition is enabled, callers can also confirm their response by saying "yes" or "no".
+
+  * - connect_timeout
+    - Integer
+    - The number of seconds we will wait before dialing the fallback number configured in the "Failover" node if the call is not answered or a busy signal is detected.
 
   * - custom_error_prompt_text
     - String
@@ -446,7 +502,11 @@ Parameter Details
     - String
     - Extension keypresses on the destination number. Commas indicate pause (e.g. 1,,,234 means a keypress of "1" is executed followed by a 3 second pause and an extension keypress of "234").
 
-  * - dynamic_route_destination (beta - read only)
+  * - distribution_method
+    - String
+    - The method used to determine which order the numbers in a RingGroup are dialed. Default is "InOrder". For RingGroup nodes, the available methods are "InOrder", "Random" and "Weighted". For nodes that have the behave_like_ring_group setting enabled, only methods "InOrder" and "Random" are available. When set to "Random", all enabled numbers are equally likely to be near the top of the list. When set to "Weighted", numbers with a higher distribution weight are more likely to be near the top of the list. (See the ring_group_destinations parameter details for how to configure "distriubiton_weight").
+
+  * - dynamic_route_destination
     - Strings
     - The custom data field partner name you want to use as the destination in a dynamic route node. Typically a phone number in e164 format.
 
@@ -458,6 +518,10 @@ Parameter Details
     - String
     - The failover type to use for a child node of a Menu. "Wrong" for when a wrong keypress is pressed by the caller on any attempt for the parent menu (shown in reporting as keypress "W"). "None" for when there is no keypress by the caller for all attempts for the parent menu (shown in reporting as keypress "N"). Omit this parameter for normal keypresses. See example below.
 
+  * - max_simultaneous_calls
+    - Integer
+    - The maximum amount of ring group numbers that we will attempt to dial at one time. Default is 1.
+
   * - number_question_type
     - String
     - The type of question you want to ask as part of the NumberQuestion node type. This may be "Digits", "Number", "PhoneNumber", "Date", "Currency", "Time", or "ZipCode".
@@ -465,6 +529,18 @@ Parameter Details
   * - prompt
     - String
     - The text that will be read before a nodes action occurs. An empty string will result in no prompt being read, and the following action will occur immediately.
+
+  * - ring_group_connect_timeout
+    - Integer
+    - The number of seconds we will wait before dialing the next number in a RingGroup if the call is not answered or a busy signal is detected. When call_acceptance is enabled, this will represent the amount of time we will wait for the call to be accepted instead of answered.
+
+  * - ring_group_destinations
+    - Array of hashes
+    - A list of destination hashes for the RingGroup node. Each hash must contain a "ring_group_number" parameter at minimum. Other optional parameters are "description" (string), "destination_disabled" (boolean, default: false), and "distribution_weight" (integer, default: 1). "destination_disabled" when set to true, will prohibit the destination from being dialed as part of the RingGroup. "distribution_weight" may only be used when the distribution_method of the RingGroup node is set to "Weighted". For example, ring_group_destinations may have a value of [{"ring_group_number": "800-444-1111", "description": "Call Center 1", "distribution_weight": 2 }, {"ring_group_number": "800-444-2222", "description": "Call Center 2", "distribution_weight": 1 }].
+
+  * - ring_group_destination_total_limit
+    - Integer
+    - The total amount of phone numbers in the RingGroup that we will try dialing before giving up. For example, if you have configured 10 ring group numbers and the limit is set to 4, we will only dial the first 4 dynamically chosen numbers.
 
   * - sms_promo_copy
     - String
