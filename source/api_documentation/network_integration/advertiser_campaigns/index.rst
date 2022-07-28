@@ -287,7 +287,7 @@ Node Parameters and Usage
   * - Failover
     - \*destination_phone_number
 
-    - Forwards the call to a fallback destination number if the original destination configured on the parent "Connect" node returns a busy signal OR if the configured connect_timeout value on the parent "Connect" node is exceeded. This node type can only be configured as a child of "Connect" nodes.
+    - Forwards the call to a fallback destination number if the original destination configured on the parent node returns a busy signal OR if the configured connect_timeout value on the parent node is exceeded. Can only be configured as the child of another node, and not as a standalone node.
 
   * - EndCall
     - prompt
@@ -415,7 +415,7 @@ Node Details
     - May not have any children unless ringing_rollover is enabled for the network. The prompt will be read before connecting to the provided phone number. If ringing_rollover is enabled for the network, a connect_timeout value can be configured along with a "Failover" child node.
 
   * - Failover
-    - May not have any children. The provided phone number will be dialed if the destination configured on the parent "Connect" node returns a busy signal when dialed OR if the connect_timeout value configured on the parent "Connect" node is exceeded. This node type can only be configured as a child of "Connect" nodes.
+    - May not have any children. The provided phone number will be dialed if the destination configured on the parent node returns a busy signal when dialed OR if the connect_timeout value configured on the parent node is exceeded. Can only be configured as the child of another node, and not as a standalone node.
 
   * - EndCall
     - May not have any children. The prompt will be read before ending the call.
@@ -445,7 +445,7 @@ Node Details
     - May have exactly 2 child nodes. If a keypress of 1 is made, the first child node is executed. If a kepyress of 2 is made, the second child node is executed. If speech recognition is enabled, the caller can also say "yes" for 1 and "no" for 2. At the end of the child list, this node type can also optionally have failover child nodes, designated by a node with a keypress_failover_type parameter (see example below).
 
   * - RingGroup
-    - May not have any children. Forwards the call to a group of numbers that will be dialed in the order determined by the distribution method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered (or accepted), the next destination will be dialed. This node type also allows for simultaneous calling when it is enabled.
+    - Forwards the call to a group of numbers that will be dialed in the order determined by the distribution method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered (or accepted), the next destination will be dialed. This node type also allows for simultaneous calling when it is enabled.
 
 Parameter Details
 
