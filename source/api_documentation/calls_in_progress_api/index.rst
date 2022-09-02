@@ -3,7 +3,7 @@ Calls In Progress API
 
 The Calls In Progress API is accessible using the API credentials generated on the platform.
 
-calls_in_progress/current_calls
+Find Calls in Progress
 ------------------
 Query current calls in progress for a given organization.
 
@@ -79,7 +79,7 @@ Examples
    :description: Get calls in progress by external uuid of a call
    :page: get_calls_by_external_uuid
 
-calls_in_progress
+Update a Call in Progress
 -----------------
 Update certain aspects of a Call that is currently in progress
 
