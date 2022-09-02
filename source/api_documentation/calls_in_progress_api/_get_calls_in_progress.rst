@@ -39,7 +39,10 @@
     {
       "partial_data": true,
       "errors": [
-        {"error": "CallsInProgressAPI::UnreachableRegion", "error_description": "Not all regions were able to be queried. calls_in_progress may be incomplete"}
+        {
+           "error": "CallsInProgressAPI::UnreachableRegion",
+           "error_description": "Not all regions were able to be queried. calls_in_progress may be incomplete"
+        }
       ],
       "calls_in_progress": [
         {
