@@ -2,7 +2,7 @@
 
   .. rubric:: Example
 
-  Get calls in progress for the given External UUID of a Call `0ea32dd2-fed2-43fb-be8e-e56674c33900`.
+  Get calls in progress for the given External Unique ID of a Call `0ea32dd2-fed2-43fb-be8e-e56674c33900`.
 
   Endpoint:
 

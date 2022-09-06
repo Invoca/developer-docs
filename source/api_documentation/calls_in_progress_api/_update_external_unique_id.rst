@@ -6,7 +6,7 @@
 
   This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
 
-  Example of updating a call's external uuid:
+  Example of updating a call's external unique id:
 
   Endpoint:
 
@@ -21,7 +21,7 @@
 
     {
       "call_in_progress": {
-        "external_call_uuid": "0ea32dd2-fed2-43fb-be8e-e56674c33900"
+        "external_unique_id": "0ea32dd2-fed2-43fb-be8e-e56674c33900"
       }
     }
 
