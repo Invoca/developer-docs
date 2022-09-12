@@ -1,6 +1,14 @@
 Calls In Progress API
 =================
 
+.. raw:: html
+
+  <div class="alert alert-warning">
+    <b>Notice:</b>
+    The CallsInProgress API is in beta. Please contact your CSM or the support team to request access.
+  </div>
+
+
 The Calls In Progress API is accessible using the API credentials generated on the platform.
 
 Find Calls in Progress
