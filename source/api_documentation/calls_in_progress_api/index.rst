@@ -53,13 +53,13 @@ Query Parameters
 
   * - calling_phone_number
     - The caller's caller ID
-    - E.164
-    - With destination_phone_number
+    - We support most phone number formats, for example: 800-555-1234, 8005551234, +18005551234, or 18005551234
+    - Yes, if request includes destination_phone_number
 
   * - destination_phone_number
     - The phone number the call was transferred to
-    - E.164
-    - With calling_phone_number
+    - We support most phone number formats, for example: 800-555-1234, 8005551234, +18005551234, or 18005551234
+    - Yes, if request includes calling_phone_number
 
 Examples
 --------
