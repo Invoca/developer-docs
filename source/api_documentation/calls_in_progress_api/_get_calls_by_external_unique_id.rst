@@ -17,7 +17,7 @@
   .. code-block:: json
 
     {
-      "calls_in_progress": [
+      "current_calls": [
         {
           "transaction_id": "01FMTK644Z9D-3FPEY1REX8JSZB",
           "call_status": "bridged",
