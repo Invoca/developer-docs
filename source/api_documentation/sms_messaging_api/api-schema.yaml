@@ -1,0 +1,1467 @@
+---
+openapi: 3.0.3
+info:
+  title: "${{ values.title }} API"
+  version: '2022-05-01'
+  description: "${{ values.description }}"
+servers: []
+paths:
+  "/halt_with_400_bad_request":
+    get:
+      summary: GET /halt_with_400_bad_request
+      parameters:
+      - name: error
+        in: query
+        schema:
+          type: string
+        example: json_parser
+      responses:
+        '400':
+          description: returns a 400
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Problems parsing JSON"}'
+  "/halt_with_401_authorization_required":
+    get:
+      summary: GET /halt_with_401_authorization_required
+      responses:
+        '401':
+          description: returns a 401
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Unauthorized — Missing or malformed authorization
+                request header for any SMS Messaging API contract."}'
+  "/halt_with_403_forbidden_error":
+    get:
+      summary: GET /halt_with_403_forbidden_error
+      responses:
+        '403':
+          description: returns a 403
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Forbidden"}'
+  "/blah":
+    get:
+      summary: GET /blah
+      responses:
+        '404':
+          description: returns a 404
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+  "/halt_with_422_unprocessible_entity":
+    get:
+      summary: GET /halt_with_422_unprocessible_entity
+      responses:
+        '422':
+          description: returns a 422
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Validation failed","errors":[{"resource":"Message","field":"virtual_line_id","code":"invalid"}]}'
+  "/halt_with_500_internal_server_error":
+    get:
+      summary: GET /halt_with_500_internal_server_error
+      responses:
+        '500':
+          description: returns a 500 with the error
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"divided by 0"}'
+  "/sms/2022-05-01/*":
+    get:
+      summary: GET /sms/2022-05-01/*
+      responses:
+        '404':
+          description: responds with halt_with_404_not_found output
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+    post:
+      summary: POST /sms/2022-05-01/*
+      responses:
+        '404':
+          description: responds with halt_with_404_not_found output
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+    put:
+      summary: PUT /sms/2022-05-01/*
+      responses:
+        '404':
+          description: responds with halt_with_404_not_found output
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+    patch:
+      summary: PATCH /sms/2022-05-01/*
+      responses:
+        '404':
+          description: responds with halt_with_404_not_found output
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+    delete:
+      summary: DELETE /sms/2022-05-01/*
+      responses:
+        '404':
+          description: responds with halt_with_404_not_found output
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+  "/parsed_request_body.json":
+    post:
+      summary: POST /parsed_request_body.json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                '"bar"':
+                  nullable: true
+                '{"foo":"bar"}':
+                  nullable: true
+            example:
+              '"bar"':
+              '{"foo":"bar"}':
+      responses:
+        '400':
+          description: halts with a 400
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"The request body you provide must be a JSON hash"}'
+        '200':
+          description: continues execution
+          content:
+            text/html:
+              schema:
+                type: string
+              example: ok
+  "/no-version/blah":
+    get:
+      summary: GET /no-version/blah
+      responses:
+        '404':
+          description: returns a 404 (with a helpful message)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: 'Not Found - the request ''/no-version/blah'' did not include
+                  a valid version. The request path must start with ''/sms/YYYY-MM-DD''.
+                  Available versions are: 2022-05-01.'
+  "/version_in_the_wrong_place/sms/2022-05-01":
+    get:
+      summary: GET /version_in_the_wrong_place/sms/2022-05-01
+      responses:
+        '404':
+          description: returns a 404 (with a helpful message)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: 'Not Found - the request ''/version_in_the_wrong_place/sms/2022-05-01''
+                  did not include a valid version. The request path must start with
+                  ''/sms/YYYY-MM-DD''. Available versions are: 2022-05-01.'
+  "/2022-05-01/sms":
+    get:
+      summary: GET /2022-05-01/sms
+      responses:
+        '404':
+          description: returns a 404 (with a helpful message)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: 'Not Found - the request ''/2022-05-01/sms'' did not include
+                  a valid version. The request path must start with ''/sms/YYYY-MM-DD''.
+                  Available versions are: 2022-05-01.'
+  "/na":
+    get:
+      summary: GET /na
+      responses:
+        '404':
+          description: does not require a version
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: 'Not Found - the request ''/na'' did not include a valid
+                  version. The request path must start with ''/sms/YYYY-MM-DD''. Available
+                  versions are: 2022-05-01.'
+  "/sms/2022-05-01/blah":
+    get:
+      summary: GET /sms/2022-05-01/blah
+      responses:
+        '404':
+          description: returns the default 404
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+  "/sms/is_alive":
+    get:
+      summary: GET /sms/is_alive
+      responses:
+        '200':
+          description: gets the status
+  "/sms/2022-05-01/delivery_reports.json":
+    post:
+      summary: POST /sms/2022-05-01/delivery_reports.json
+      responses:
+        '200':
+          description: handles pushing DeliveryReportKafkaMessage
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example: {}
+        '202':
+          description: is expected to be accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  delivery_reports:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        time:
+                          type: string
+                        type:
+                          type: string
+                        to:
+                          type: string
+                        description:
+                          type: string
+                        message:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            owner:
+                              type: string
+                            applicationId:
+                              type: string
+                            time:
+                              type: string
+                            segmentCount:
+                              type: integer
+                            direction:
+                              type: string
+                            to:
+                              type: array
+                              items:
+                                type: string
+                            from:
+                              type: string
+                            text:
+                              type: string
+                            tag:
+                              type: string
+                        uuid:
+                          type: string
+              example:
+                status: success
+                delivery_reports:
+                - time: '2022-05-19T14:42:45.636420Z'
+                  type: message-delivered
+                  to: "+12197935020"
+                  description: Message delivered to carrier.
+                  message:
+                    id: 1652971362747hpukaruuffg3fbih
+                    owner: "+18446501767"
+                    applicationId: c2b3f444-636b-48b7-8d05-e21539d10cbf
+                    time: '2022-05-19T14:42:43.045Z'
+                    segmentCount: 1
+                    direction: out
+                    to:
+                    - "+12197935020"
+                    from: "+18446501767"
+                    text: ''
+                    tag: 79af47b5-5b8a-43b1-9955-6eba2294c54c
+                  uuid: b28ac393-a9de-433f-8d74-3fa5252d063f
+        '404':
+          description: is expected to be not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: Not Found — The request could not be completed due the requested
+                  object identifier being unknown to SMS Messaging.
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"Not Found — The request could not be completed
+                due the requested object identifier being unknown to SMS Messaging."}'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                ? '{"time": "2022-05-19T14:42:45.636420Z","type": "message-delivered","to":
+                  " 12197935020","description": "Message delivered to carrier.","message":
+                  {"id": "1652971362747hpukaruuffg3fbih","owner": " 18446501767","applicationId":
+                  "c2b3f444-636b-48b7-8d05-e21539d10cbf","time": "2022-05-19T14:42:43.045Z","segmentCount":
+                  1,"direction": "out","to": '
+                : type: object
+                  properties:
+                    '" 12197935020"':
+                      type: object
+                      properties:
+                        ',"from": " 18446501767","text": "","tag": "79af47b5-5b8a-43b1-9955-6eba2294c54c"}}':
+                          nullable: true
+            example:
+              ? '{"time": "2022-05-19T14:42:45.636420Z","type": "message-delivered","to":
+                " 12197935020","description": "Message delivered to carrier.","message":
+                {"id": "1652971362747hpukaruuffg3fbih","owner": " 18446501767","applicationId":
+                "c2b3f444-636b-48b7-8d05-e21539d10cbf","time": "2022-05-19T14:42:43.045Z","segmentCount":
+                1,"direction": "out","to": '
+              : '" 12197935020"':
+                  ',"from": " 18446501767","text": "","tag": "79af47b5-5b8a-43b1-9955-6eba2294c54c"}}':
+  "/sms/2022-05-01/messages.json":
+    post:
+      summary: POST /sms/2022-05-01/messages.json
+      responses:
+        '200':
+          description: handles pushing OutgoingSmsKafkaMessage
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example: {}
+        '202':
+          description: creates a message and forwards to kafka
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        uuid:
+                          type: string
+                        virtual_line_id:
+                          type: integer
+                        from:
+                          type: string
+                        to:
+                          type: string
+                        direction:
+                          type: string
+                        created_at:
+                          type: string
+                        deleted_at:
+                          nullable: true
+                        delivered_at:
+                          type: string
+                          nullable: true
+                        delivery_reports:
+                          type: array
+                          items: {}
+                  page:
+                    type: object
+                    properties:
+                      scaffold_url:
+                        type: string
+                      first_url:
+                        type: string
+                      prev_url:
+                        type: string
+                      page_url:
+                        type: string
+                      next_url:
+                        type: string
+                      last_url:
+                        type: string
+                      count:
+                        type: integer
+                      page:
+                        type: integer
+                      items:
+                        type: integer
+                      vars:
+                        type: object
+                        properties:
+                          page:
+                            type: integer
+                          items:
+                            type: integer
+                          outset:
+                            type: integer
+                          size:
+                            type: array
+                            items:
+                              type: integer
+                          page_param:
+                            type: string
+                          params:
+                            type: object
+                            properties: {}
+                          fragment:
+                            type: string
+                          link_extra:
+                            type: string
+                          i18n_key:
+                            type: string
+                          cycle:
+                            type: boolean
+                          metadata:
+                            type: array
+                            items:
+                              type: string
+                          count:
+                            type: integer
+                      pages:
+                        type: integer
+                      last:
+                        type: integer
+                      in:
+                        type: integer
+                      from:
+                        type: integer
+                      to:
+                        type: integer
+                      prev:
+                        nullable: true
+                      next:
+                        nullable: true
+                      series:
+                        type: array
+                        items:
+                          type: string
+              example:
+                messages:
+                - uuid: 7b0c57f7-5402-4194-8ab7-4d4b59ff26ce
+                  virtual_line_id: 172
+                  from: "+18446501767"
+                  to: "+12197935020"
+                  direction: in
+                  created_at: '2022-01-31T23:50:00Z'
+                  deleted_at:
+                  delivered_at:
+                  delivery_reports: []
+                page:
+                  scaffold_url: "/sms/2022-05-01/messages.json?page=__pagy_page__"
+                  first_url: "/sms/2022-05-01/messages.json?page=1"
+                  prev_url: "/sms/2022-05-01/messages.json?page="
+                  page_url: "/sms/2022-05-01/messages.json?page=1"
+                  next_url: "/sms/2022-05-01/messages.json?page="
+                  last_url: "/sms/2022-05-01/messages.json?page=1"
+                  count: 1
+                  page: 1
+                  items: 10
+                  vars:
+                    page: 1
+                    items: 10
+                    outset: 0
+                    size:
+                    - 1
+                    - 4
+                    - 4
+                    - 1
+                    page_param: page
+                    params: {}
+                    fragment: ''
+                    link_extra: ''
+                    i18n_key: pagy.item_name
+                    cycle: false
+                    metadata:
+                    - scaffold_url
+                    - first_url
+                    - prev_url
+                    - page_url
+                    - next_url
+                    - last_url
+                    - count
+                    - page
+                    - items
+                    - vars
+                    - pages
+                    - last
+                    - in
+                    - from
+                    - to
+                    - prev
+                    - next
+                    - series
+                    count: 1
+                  pages: 1
+                  last: 1
+                  in: 1
+                  from: 1
+                  to: 1
+                  prev:
+                  next:
+                  series:
+                  - '1'
+        '404':
+          description: does not create a message and responds with a 404
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: Not Found — The request could not be completed due the requested
+                  object identifier being unknown to SMS Messaging.
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                ? '{"time": "2022-05-19T14:39:27.880Z","type": "message-received","to":
+                  " 18446501767","description": "Incoming message received","message":
+                  {"id": "218f1a51-3a86-4533-94cd-e3f3eaaa07df","owner": " 18446501767","applicationId":
+                  "c2b3f444-636b-48b7-8d05-e21539d10cbf","time": "2022-05-19T14:39:27.829Z","segmentCount":
+                  1,"direction": "in","to": '
+                : type: object
+                  properties:
+                    '" 18446501767"':
+                      type: object
+                      properties:
+                        ',"from": " 12197935020","text": "Test #3"}}':
+                          nullable: true
+                '{"from":" 18446501767","to":':
+                  type: object
+                  properties:
+                    '" 12197935020"':
+                      type: object
+                      properties:
+                        ',"text":"Test #6","direction": "in"}':
+                          nullable: true
+            example:
+              ? '{"time": "2022-05-19T14:39:27.880Z","type": "message-received","to":
+                " 18446501767","description": "Incoming message received","message":
+                {"id": "218f1a51-3a86-4533-94cd-e3f3eaaa07df","owner": " 18446501767","applicationId":
+                "c2b3f444-636b-48b7-8d05-e21539d10cbf","time": "2022-05-19T14:39:27.829Z","segmentCount":
+                1,"direction": "in","to": '
+              : '" 18446501767"':
+                  ',"from": " 12197935020","text": "Test #3"}}':
+              '{"from":" 18446501767","to":':
+                '" 12197935020"':
+                  ',"text":"Test #6","direction": "in"}':
+  "/sms/2022-05-01/phone_numbers.json":
+    get:
+      summary: Get all SMS-enabled Phone Numbers
+      responses:
+        '200':
+          description: get the first page of paginated phone numbers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  phone_numbers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        virtual_line_id:
+                          type: integer
+                        phone_number:
+                          type: string
+                        network_id:
+                          type: integer
+                        carrier_interface:
+                          type: string
+                        created_at:
+                          type: string
+                        enabled_at:
+                          nullable: true
+                        deleted_at:
+                          nullable: true
+                  page:
+                    type: object
+                    properties:
+                      scaffold_url:
+                        type: string
+                      first_url:
+                        type: string
+                      prev_url:
+                        type: string
+                      page_url:
+                        type: string
+                      next_url:
+                        type: string
+                      last_url:
+                        type: string
+                      count:
+                        type: integer
+                      page:
+                        type: integer
+                      items:
+                        type: integer
+                      vars:
+                        type: object
+                        properties:
+                          page:
+                            type: integer
+                          items:
+                            type: integer
+                          outset:
+                            type: integer
+                          size:
+                            type: array
+                            items:
+                              type: integer
+                          page_param:
+                            type: string
+                          params:
+                            type: object
+                            properties: {}
+                          fragment:
+                            type: string
+                          link_extra:
+                            type: string
+                          i18n_key:
+                            type: string
+                          cycle:
+                            type: boolean
+                          metadata:
+                            type: array
+                            items:
+                              type: string
+                          count:
+                            type: integer
+                      pages:
+                        type: integer
+                      last:
+                        type: integer
+                      in:
+                        type: integer
+                      from:
+                        type: integer
+                      to:
+                        type: integer
+                      prev:
+                        nullable: true
+                      next:
+                        type: integer
+                        nullable: true
+                      series:
+                        type: array
+                        items:
+                          type: string
+              example:
+                phone_numbers:
+                - id: 495
+                  virtual_line_id: 261
+                  phone_number: "+14072086327"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:02Z'
+                  enabled_at:
+                  deleted_at:
+                - id: 496
+                  virtual_line_id: 262
+                  phone_number: "+16197574105"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:03Z'
+                  enabled_at:
+                  deleted_at:
+                - id: 497
+                  virtual_line_id: 263
+                  phone_number: "+13173471318"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:04Z'
+                  enabled_at:
+                  deleted_at:
+                - id: 498
+                  virtual_line_id: 264
+                  phone_number: "+13129161109"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:05Z'
+                  enabled_at:
+                  deleted_at:
+                - id: 499
+                  virtual_line_id: 265
+                  phone_number: "+19252191570"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:06Z'
+                  enabled_at:
+                  deleted_at:
+                page:
+                  scaffold_url: "/sms/2022-05-01/phone_numbers.json?created_at[lte]=2022-01-31+23%3A49%3A06+UTC&page=__pagy_page__"
+                  first_url: "/sms/2022-05-01/phone_numbers.json?created_at[lte]=2022-01-31+23%3A49%3A06+UTC&page=1"
+                  prev_url: "/sms/2022-05-01/phone_numbers.json?created_at[lte]=2022-01-31+23%3A49%3A06+UTC&page="
+                  page_url: "/sms/2022-05-01/phone_numbers.json?created_at[lte]=2022-01-31+23%3A49%3A06+UTC&page=1"
+                  next_url: "/sms/2022-05-01/phone_numbers.json?created_at[lte]=2022-01-31+23%3A49%3A06+UTC&page="
+                  last_url: "/sms/2022-05-01/phone_numbers.json?created_at[lte]=2022-01-31+23%3A49%3A06+UTC&page=1"
+                  count: 5
+                  page: 1
+                  items: 20
+                  vars:
+                    page: 1
+                    items: 20
+                    outset: 0
+                    size:
+                    - 1
+                    - 4
+                    - 4
+                    - 1
+                    page_param: page
+                    params: {}
+                    fragment: ''
+                    link_extra: ''
+                    i18n_key: pagy.item_name
+                    cycle: false
+                    metadata:
+                    - scaffold_url
+                    - first_url
+                    - prev_url
+                    - page_url
+                    - next_url
+                    - last_url
+                    - count
+                    - page
+                    - items
+                    - vars
+                    - pages
+                    - last
+                    - in
+                    - from
+                    - to
+                    - prev
+                    - next
+                    - series
+                    count: 5
+                  pages: 1
+                  last: 1
+                  in: 5
+                  from: 1
+                  to: 5
+                  prev:
+                  next:
+                  series:
+                  - '1'
+      parameters:
+      - name: created_at[lte]
+        in: query
+        schema:
+          type: object
+          properties:
+            lte:
+              type: string
+        example:
+          lte: 2022-01-31 23:49:06 UTC
+      - name: sort
+        in: query
+        schema:
+          type: string
+        example: created_at:desc
+    post:
+      summary: Create SMS-enabled Phone Numbers
+      responses:
+        '200':
+          description: returns ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example: {}
+        '409':
+          description: is expected to be conflict
+        '403':
+          description: is expected to be forbidden
+        '204':
+          description: is expected to be no content
+          content:
+            '':
+              schema:
+                type: string
+              example: ''
+        '201':
+          description: 'returns HTTP 201: created'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  phone_number:
+                    type: object
+                    properties:
+                      virtual_line_id:
+                        type: integer
+                      phone_number:
+                        type: string
+                      network_id:
+                        type: integer
+                      carrier_interface:
+                        type: string
+                      created_at:
+                        type: string
+                      enabled_at:
+                        type: string
+                      deleted_at:
+                        nullable: true
+              example:
+                phone_number:
+                  virtual_line_id: 12345
+                  phone_number: "+12047147205"
+                  network_id: 67890
+                  carrier_interface: bandwidth
+                  created_at: '2022-03-14T20:30:12Z'
+                  enabled_at: '2022-03-14T20:30:12Z'
+                  deleted_at:
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                phone_number:
+                  type: string
+            example:
+              phone_number: "+12047147205"
+  "/filtered_messages":
+    get:
+      summary: GET /filtered_messages
+      parameters:
+      - name: created_at[gte]
+        in: query
+        schema:
+          type: object
+          properties:
+            gte:
+              type: string
+        example:
+          gte: '2022-01-01'
+      - name: created_at[lte]
+        in: query
+        schema:
+          type: object
+          properties:
+            lte:
+              type: string
+        example:
+          lte: 2022-01-31 00:00:00 UTC
+      - name: deleted_at[empty]
+        in: query
+        schema:
+          type: object
+          properties:
+            empty:
+              nullable: true
+        example:
+          empty:
+      - name: delivered_at[lte]
+        in: query
+        schema:
+          type: object
+          properties:
+            lte:
+              type: string
+        example:
+          lte: '2022-01-02'
+      - name: direction[eq]
+        in: query
+        schema:
+          type: object
+          properties:
+            eq:
+              type: string
+        example:
+          eq: inbound
+      - name: direction[gte]
+        in: query
+        schema:
+          type: object
+          properties:
+            gte:
+              type: string
+        example:
+          gte: JamesBIsKing
+      - name: gibberish[eq]
+        in: query
+        schema:
+          type: object
+          properties:
+            eq:
+              type: string
+        example:
+          eq: IggyIsKing
+      - name: uuid[eq]
+        in: query
+        schema:
+          type: object
+          properties:
+            eq:
+              type: string
+        example:
+          eq: JamesBIsKing
+      responses:
+        '200':
+          description: defaults to the chronological order in which the requested
+            data is inserted (created_at), covering the current day from midnight
+            (UTC) until now.
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"messages":[{"uuid":"ac1cd6bc-1437-4bfa-8626-93c14edf55b5","virtual_line_id":129,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-01-31T00:00:01Z","deleted_at":null,"delivered_at":null,"delivery_reports":[]},{"uuid":"88ce37cc-ddd5-464f-a869-085285d8d578","virtual_line_id":129,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-01-31T23:59:50Z","deleted_at":null,"delivered_at":null,"delivery_reports":[]},{"uuid":"d1b5c8dd-3412-4bd4-9f81-0406f6e8024f","virtual_line_id":129,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-01-31T22:00:00Z","deleted_at":null,"delivered_at":null,"delivery_reports":[]}]}'
+        '422':
+          description: returns a 422
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"The request contains unsupported filter operators:
+                ''direction gte''. Supported operators: eq"}'
+  "/validate_request_columns":
+    get:
+      summary: GET /validate_request_columns
+      responses:
+        '422':
+          description: returns a 422
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"The request contains unsupported sort columns:
+                ''gibberish''. Supported columns: created_at''"}'
+  "/paginated_messages":
+    get:
+      summary: GET /paginated_messages
+      responses:
+        '200':
+          description: replies only with the default columns
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"messages":[{"uuid":"bb3e1e50-1838-4bca-b178-19b03f1c366d","virtual_line_id":160,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-02-01T00:00:00Z","deleted_at":null,"delivered_at":null,"delivery_reports":[{"uuid":"6a4c9749-c294-4664-a7b9-d9b33d29b0f2","created_at":"2022-02-01T00:00:00Z","progress_bit":1}]}],"page":{"scaffold_url":"/paginated_messages?page=__pagy_page__","first_url":"/paginated_messages?page=1","prev_url":"/paginated_messages?page=","page_url":"/paginated_messages?page=1","next_url":"/paginated_messages?page=","last_url":"/paginated_messages?page=1","count":1,"page":1,"items":10,"vars":{"page":1,"items":10,"outset":0,"size":[1,4,4,1],"page_param":"page","params":{},"fragment":"","link_extra":"","i18n_key":"pagy.item_name","cycle":false,"metadata":["scaffold_url","first_url","prev_url","page_url","next_url","last_url","count","page","items","vars","pages","last","in","from","to","prev","next","series"],"count":1},"pages":1,"last":1,"in":1,"from":1,"to":1,"prev":null,"next":null,"series":["1"]}}'
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+        example: 2
+  "/sorted_messages":
+    get:
+      summary: GET /sorted_messages
+      responses:
+        '200':
+          description: returns a list of records sorted in asc order, by the requested
+            column
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"messages":[{"uuid":"4d9c12d8-f14e-48e3-a9dd-f19d0b93784a","virtual_line_id":163,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-02-01T00:00:00Z","deleted_at":null,"delivered_at":"2022-02-01T00:00:00Z","delivery_reports":[]},{"uuid":"58ab5739-4249-4af5-8a1b-c607adbd4aca","virtual_line_id":163,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-02-01T00:00:00Z","deleted_at":null,"delivered_at":"2022-02-01T00:00:01Z","delivery_reports":[]},{"uuid":"b302ca0b-2d5d-455f-8405-44daed4f4663","virtual_line_id":163,"from":"+18472525700","to":"+12024561111","direction":"outbound","created_at":"2022-02-01T00:00:00Z","deleted_at":null,"delivered_at":"2022-02-01T00:00:02Z","delivery_reports":[]}]}'
+        '422':
+          description: returns a useful error message
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"message":"The requested sort is invalid: created_at inwards"}'
+      parameters:
+      - name: sort
+        in: query
+        schema:
+          type: string
+        example: created_at:inwards
+  "/sorted_filtered_messages":
+    get:
+      summary: GET /sorted_filtered_messages
+      parameters:
+      - name: direction[eq]
+        in: query
+        schema:
+          type: object
+          properties:
+            eq:
+              type: string
+        example:
+          eq: inbound
+      - name: sort
+        in: query
+        schema:
+          type: string
+        example: created_at:desc
+      responses:
+        '200':
+          description: returns a list of records sorted in desc created_at order
+          content:
+            text/html:
+              schema:
+                type: string
+              example: '{"messages":[{"uuid":"c826b498-040f-42c1-89f1-7a565daa8258","virtual_line_id":164,"from":"+18472525700","to":"+12024561111","direction":"inbound","created_at":"2022-01-31T00:00:03Z","deleted_at":null,"delivered_at":null,"delivery_reports":[]},{"uuid":"dccb4ba7-4779-4435-924d-a976ec9bcc2c","virtual_line_id":164,"from":"+18472525700","to":"+12024561111","direction":"inbound","created_at":"2022-01-31T00:00:02Z","deleted_at":null,"delivered_at":null,"delivery_reports":[]},{"uuid":"21c03844-ba26-453c-8f58-8a701539c006","virtual_line_id":164,"from":"+18472525700","to":"+12024561111","direction":"inbound","created_at":"2022-01-31T00:00:01Z","deleted_at":null,"delivered_at":null,"delivery_reports":[]}]}'
+  "/sms/2022-05-01/messages":
+    get:
+      summary: GET /sms/2022-05-01/messages
+      responses:
+        '200':
+          description: returns the second page of filtered, sorted created_at:desc,
+            paginated records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        uuid:
+                          type: string
+                        virtual_line_id:
+                          type: integer
+                        from:
+                          type: string
+                        to:
+                          type: string
+                        direction:
+                          type: string
+                        created_at:
+                          type: string
+                        deleted_at:
+                          nullable: true
+                        delivered_at:
+                          nullable: true
+                        delivery_reports:
+                          type: array
+                          items: {}
+                  page:
+                    type: object
+                    properties:
+                      scaffold_url:
+                        type: string
+                      first_url:
+                        type: string
+                      prev_url:
+                        type: string
+                      page_url:
+                        type: string
+                      next_url:
+                        type: string
+                      last_url:
+                        type: string
+                      count:
+                        type: integer
+                      page:
+                        type: integer
+                      items:
+                        type: integer
+                      vars:
+                        type: object
+                        properties:
+                          page:
+                            type: string
+                          items:
+                            type: integer
+                          outset:
+                            type: integer
+                          size:
+                            type: array
+                            items:
+                              type: integer
+                          page_param:
+                            type: string
+                          params:
+                            type: object
+                            properties: {}
+                          fragment:
+                            type: string
+                          link_extra:
+                            type: string
+                          i18n_key:
+                            type: string
+                          cycle:
+                            type: boolean
+                          metadata:
+                            type: array
+                            items:
+                              type: string
+                          count:
+                            type: integer
+                      pages:
+                        type: integer
+                      last:
+                        type: integer
+                      in:
+                        type: integer
+                      from:
+                        type: integer
+                      to:
+                        type: integer
+                      prev:
+                        nullable: true
+                        type: integer
+                      next:
+                        type: integer
+                        nullable: true
+                      series:
+                        type: array
+                        items:
+                          type: integer
+              example:
+                messages:
+                - uuid: de773ee3-f73a-4df1-af71-3f4fa2f10eea
+                  virtual_line_id: 170
+                  from: "+18472525700"
+                  to: "+12024561111"
+                  direction: outbound
+                  created_at: '2022-01-31T23:50:00Z'
+                  deleted_at:
+                  delivered_at:
+                  delivery_reports: []
+                - uuid: d9629494-dc2b-4ec8-9ac5-b49e8f7c4789
+                  virtual_line_id: 170
+                  from: "+18472525700"
+                  to: "+12024561111"
+                  direction: outbound
+                  created_at: '2022-01-31T23:39:00Z'
+                  deleted_at:
+                  delivered_at:
+                  delivery_reports: []
+                page:
+                  scaffold_url: "/sms/2022-05-01/messages?sort=created_at%3Adesc&direction[eq]=outbound&page=__pagy_page__"
+                  first_url: "/sms/2022-05-01/messages?sort=created_at%3Adesc&direction[eq]=outbound&page=1"
+                  prev_url: "/sms/2022-05-01/messages?sort=created_at%3Adesc&direction[eq]=outbound&page=1"
+                  page_url: "/sms/2022-05-01/messages?sort=created_at%3Adesc&direction[eq]=outbound&page=2"
+                  next_url: "/sms/2022-05-01/messages?sort=created_at%3Adesc&direction[eq]=outbound&page="
+                  last_url: "/sms/2022-05-01/messages?sort=created_at%3Adesc&direction[eq]=outbound&page=2"
+                  count: 12
+                  page: 2
+                  items: 10
+                  vars:
+                    page: '2'
+                    items: 10
+                    outset: 0
+                    size:
+                    - 1
+                    - 4
+                    - 4
+                    - 1
+                    page_param: page
+                    params: {}
+                    fragment: ''
+                    link_extra: ''
+                    i18n_key: pagy.item_name
+                    cycle: false
+                    metadata:
+                    - scaffold_url
+                    - first_url
+                    - prev_url
+                    - page_url
+                    - next_url
+                    - last_url
+                    - count
+                    - page
+                    - items
+                    - vars
+                    - pages
+                    - last
+                    - in
+                    - from
+                    - to
+                    - prev
+                    - next
+                    - series
+                    count: 12
+                  pages: 2
+                  last: 2
+                  in: 2
+                  from: 11
+                  to: 12
+                  prev: 1
+                  next:
+                  series:
+                  - 1
+                  - '2'
+        '422':
+          description: returns a useful error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: 'The requested sort is invalid: created_at inwards'
+        '500':
+          description: gets the second page of paginated mesage
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example: {}
+      parameters:
+      - name: direction[eq]
+        in: query
+        schema:
+          type: object
+          properties:
+            eq:
+              type: string
+        example:
+          eq: outbound
+      - name: page
+        in: query
+        schema:
+          type: integer
+        example: 2
+      - name: sort
+        in: query
+        schema:
+          type: string
+        example: created_at:desc
+  "/sms/2022-05-01/phone_numbers":
+    get:
+      summary: Get all SMS-enabled Phone Numbers
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+        example: 2
+      responses:
+        '200':
+          description: gets the second page of paginated phone numbers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  phone_numbers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        virtual_line_id:
+                          type: integer
+                        phone_number:
+                          type: string
+                        network_id:
+                          type: integer
+                        carrier_interface:
+                          type: string
+                        created_at:
+                          type: string
+                        enabled_at:
+                          nullable: true
+                        deleted_at:
+                          nullable: true
+                  page:
+                    type: object
+                    properties:
+                      scaffold_url:
+                        type: string
+                      first_url:
+                        type: string
+                      prev_url:
+                        type: string
+                      page_url:
+                        type: string
+                      next_url:
+                        type: string
+                      last_url:
+                        type: string
+                      count:
+                        type: integer
+                      page:
+                        type: integer
+                      items:
+                        type: integer
+                      vars:
+                        type: object
+                        properties:
+                          page:
+                            type: string
+                          items:
+                            type: integer
+                          outset:
+                            type: integer
+                          size:
+                            type: array
+                            items:
+                              type: integer
+                          page_param:
+                            type: string
+                          params:
+                            type: object
+                            properties: {}
+                          fragment:
+                            type: string
+                          link_extra:
+                            type: string
+                          i18n_key:
+                            type: string
+                          cycle:
+                            type: boolean
+                          metadata:
+                            type: array
+                            items:
+                              type: string
+                          count:
+                            type: integer
+                      pages:
+                        type: integer
+                      last:
+                        type: integer
+                      in:
+                        type: integer
+                      from:
+                        type: integer
+                      to:
+                        type: integer
+                      prev:
+                        type: integer
+                      next:
+                        nullable: true
+                      series:
+                        type: array
+                        items:
+                          type: integer
+              example:
+                phone_numbers:
+                - id: 449
+                  virtual_line_id: 215
+                  phone_number: "+13479139792"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:21Z'
+                  enabled_at:
+                  deleted_at:
+                - id: 450
+                  virtual_line_id: 216
+                  phone_number: "+18645626685"
+                  network_id: 1
+                  carrier_interface: bandwidth
+                  created_at: '2022-01-31T23:49:22Z'
+                  enabled_at:
+                  deleted_at:
+                page:
+                  scaffold_url: "/sms/2022-05-01/phone_numbers?page=__pagy_page__"
+                  first_url: "/sms/2022-05-01/phone_numbers?page=1"
+                  prev_url: "/sms/2022-05-01/phone_numbers?page=1"
+                  page_url: "/sms/2022-05-01/phone_numbers?page=2"
+                  next_url: "/sms/2022-05-01/phone_numbers?page="
+                  last_url: "/sms/2022-05-01/phone_numbers?page=2"
+                  count: 22
+                  page: 2
+                  items: 20
+                  vars:
+                    page: '2'
+                    items: 20
+                    outset: 0
+                    size:
+                    - 1
+                    - 4
+                    - 4
+                    - 1
+                    page_param: page
+                    params: {}
+                    fragment: ''
+                    link_extra: ''
+                    i18n_key: pagy.item_name
+                    cycle: false
+                    metadata:
+                    - scaffold_url
+                    - first_url
+                    - prev_url
+                    - page_url
+                    - next_url
+                    - last_url
+                    - count
+                    - page
+                    - items
+                    - vars
+                    - pages
+                    - last
+                    - in
+                    - from
+                    - to
+                    - prev
+                    - next
+                    - series
+                    count: 22
+                  pages: 2
+                  last: 2
+                  in: 2
+                  from: 21
+                  to: 22
+                  prev: 1
+                  next:
+                  series:
+                  - 1
+                  - '2'
