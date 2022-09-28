@@ -29,6 +29,9 @@ used to ingest calls from external sources for conversation intelligence process
 :doc:`calls_in_progress_api/index` -
 used to query/update calls that are currently in progress within the Invoca platform
 
+:doc:`sms_messaging_api/index` -
+used to enable/disable promo numbers for SMS, as well as send SMS messages
+
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
 The Conversion Reporting API is accessible using credentials provided by Invoca. Contact questions@invoca.com to request Conversion Reporting API credentials.
@@ -55,4 +58,5 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    call_api/index
    call_ingestion_api/index
    calls_in_progress_api/index
+   sms_messaging_api/index
    conversion_reporting
