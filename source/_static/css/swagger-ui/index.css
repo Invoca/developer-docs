@@ -103,12 +103,25 @@ body {
 }
 
 .swagger-ui select {
-  border-color: #2CBF58 !important;
+  border-color: #636060 !important;
 }
 
 .swagger-ui small {
-  color: #2CBF58 !important;
+  color: #636060 !important;
 }
+
+.swagger-ui .info .title small {
+    background-color: #2CBF58 !important;
+}
+
+  .swagger-ui .info .title small pre {
+    background-color: #2CBF58 !important;
+    border: 1px solid #2CBF58!important;
+}
+
+.swagger-ui .opblock-tag a {
+    background-color: #2CBF58 !important;
+  }
 
 .swagger-ui a {
   display: block !important;
@@ -198,7 +211,7 @@ body {
 }
 
 .swagger-ui .opblock-get .opblock-summary-method {
-  color: #1DF0D0;
+  color: #1DF0D0 !important;
 }
 
 /* PUT Request Coloring */
