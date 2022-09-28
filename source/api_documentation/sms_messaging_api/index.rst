@@ -120,17 +120,6 @@ Common Filterable Fields
     - False
 
 ------------------------------------
-SMS Messaging Operations
-------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   phone_numbers_endpoints
-   messages_endpoints
-   delivery_reports_endpoints
-
-------------------------------------
 SMS Messaging API Example Requests
 ------------------------------------
 .. raw:: html
