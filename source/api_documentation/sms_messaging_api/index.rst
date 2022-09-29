@@ -6,118 +6,131 @@ SMS Messaging API
 
   <div class="alert alert-warning">
     <b>Notice:</b>
-    The SMS Messaging API is in ALPHA. Please contact your CSM or the support team for more information.
+    The SMS Messaging API is in Alpha. Please contact your CSM or the support team for more information.
   </div>
 
 ------------------------------------
 Overview
 ------------------------------------
-Lorem ipsum - this is an overview of the SMS Messaging API.
+The SMS Messaging API provides the following functionality:
+
+- manage SMS-enabled phone numbers
+- send SMS messages
+- retrieve SMS messages and their associated Delivery Reports
 
 ------------------------------------
-Authentication
+Authentication and Authorization
 ------------------------------------
-The SMS Messaging API uses Invoca's standard OAuth Token method for authentication.
+The SMS Messaging API uses OAuth2 Tokens for authentication and authorization.
 Please see
 :doc:`../../basics/design_principles`
-for more information about generating and using an Oauth Token in the Invoca platform.
+for more information about generating and using an OAuth2 Token in the Invoca platform.
 
 ------------------------------------
-Query Parameters
+Pagination
 ------------------------------------
+The following URL parameters are used to control pagination and are common to all `GET` requests.
 
-Common Query Parametes
+
+Pagination URL Parameters
 ------------------------------------
 
 .. list-table::
-  :widths: 30 50 30 30
+  :widths: 30 50 30 30 30
   :header-rows: 1
   :class: parameters
 
   * - Parameter
     - Description
     - Default Value
+    - Max Value
     - Required
 
-  * - sort
-    - See Sorting
-    - created_at:asc
-    - False
-
   * - limit
-    - The maximum number of records to be returned when fulfilling paginated R operations.
+    - The maximum number of records returned per page
     - 100
+    - 500
     - False
 
   * - cursor
-    - See Pagination
-    - created_at:asc
+    - The next or previous cursor as taken directly from the response body payload of a previous API request for the previous page of the same read operation
+    - *N/A* (assumed to be the first page)
+    - *N/A*
     - False
+
 
 ------------------------------------
 Sorting
 ------------------------------------
-Lorem ipsum - sorting and filtering options germane to all requests
+The records returned by `GET` requests can be sorted using the `sort` URL parameter.
+The value of the `sort` parameter is comprised of:
 
-Common Sortable Fields
-------------------------------------
+- a valid sortable field
+- an optional sort direction separated from the sortable field by a colon (`:`)
 
-.. list-table::
-  :widths: 30 50 30 30
-  :header-rows: 1
-  :class: parameters
+For example: `https://example.com?sort=created_at:asc`
 
-  * - Parameter
-    - Description
-    - Default Value
-    - Required
+Each `GET` request denotes the valid sortable fields in its response body. Please see the API examples below for more information.
 
-  * - sort
-    - See Sorting
-    - created_at:asc
-    - False
+At this time, responses may be sorted by *one field only*.
 
-  * - limit
-    - The maximum number of records to be returned when fulfilling paginated R operations.
-    - 100
-    - False
-
-  * - cursor
-    - See Pagination
-    - created_at:asc
-    - False
+**By default, responses are sorted in ascending order according to their default sortable field.**
 
 ------------------------------------
 Filtering
 ------------------------------------
+The records returned by `GET` requests can be filtered using URL parameters.
+Filters are comprised of:
 
-Common Filterable Fields
+- a valid filterable field
+- a bracketed operator appended to the filterable field
+- a filter value separated from the filterable field and its associated operator by an equal sign (`=`)
+
+For example: `https://example.com?created_at[lte]=2022-01-31` returns all records with a `created_at` value less than or equal to 2022-01-31.
+
+The following operators are supported:
+
+Supported Filter Operators
 ------------------------------------
-
 .. list-table::
-  :widths: 30 50 30 30
+  :widths: 5 50 30
   :header-rows: 1
   :class: parameters
 
-  * - Parameter
+  * - Operator
     - Description
-    - Default Value
-    - Required
+    - Example
 
-  * - sort
-    - See Sorting
-    - created_at:asc
-    - False
+  * - eq
+    - Return only those records where the filtered field is equal to the value found on the right-hand side of the = in this parameter
+    - direction[eq]=incoming
 
-  * - limit
-    - The maximum number of records to be returned when fulfilling paginated R operations.
-    - 100
-    - False
+  * - lte
+    - Return only those records where the filtered field is less than or equal to the value found on the right-hand side of the = in this parameter
+    - created_at[lte]=2022-01-31
 
-  * - cursor
-    - See Pagination
-    - created_at:asc
-    - False
+  * - gte
+    - Return only those records where the filtered field is greater than or equal to the value found on the right-hand side of the = in this parameter
+    - created_at[gte]=2022-01-01
+
+  * - empty
+    - Return only those records where the filtered field has an empty value such as integer 0, MySQL NULL/null, or an empty string
+    - deleted_at[empty]
+
+
+Each `GET` request denotes the valid filterable fields in its response body. Please see the API examples below for more information.
+
+If a filterable field is defined with a value but does not otherwise include a bracketed operator,
+it is assumed that the `[eq]` operator was intended.
+For example, `direction=incoming` means the same as `direction[eq]=incoming`.
+
+For ranges of filtered data, such as dates, the `lte` and `gte` operators may be combined for the same filterable field. For example:
+
+`created_at[gte]=2022-01-01&created_at[lte]=2022-01-31`.
+
+Any combination of filters assumes `AND` operations between members of the completed set of filters.
+
+**By default, responses are filtered by created_at for the current date.**
 
 ------------------------------------
 SMS Messaging API Example Requests
@@ -138,5 +151,3 @@ SMS Messaging API Example Requests
      </div>
    </div>
    </div>
-
-
