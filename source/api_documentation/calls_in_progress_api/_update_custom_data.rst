@@ -41,9 +41,6 @@
         "destination_phone_number": "+18555595599",
         "call_start_time_utc": "2022-12-10T13:45:00.000Z",
         "transfer_start_time_utc": "2022-12-10T13:49:00.000Z",
-        "call_status": "bridged",
-        "custom_data": [
-            {"source": "CallsInProgressAPI", "name": "Call Disposition", "value": "CUSTOMER_HANGUP", "data_type": "Short Text"}
-        ]
+        "call_status": "bridged"
       }
     }

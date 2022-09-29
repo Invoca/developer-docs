@@ -37,7 +37,7 @@ Query Parameters
     - True
 
   * - organization_type
-    - The type of organization to be used in the request. Available types: [network, advertiser]
+    - The type of organization to be used in the request. Available types: [Network, Advertiser]. Capitalization is required for this param.
     - String
     - True
 
@@ -114,7 +114,7 @@ Query Parameters
     - True
 
   * - organization_type
-    - The type of organization to be used in the request. Available types: [network, advertiser]
+    - The type of organization to be used in the request. Available types: [Network, Advertiser]. Capitalization is required for this param.
     - String
     - True
 
