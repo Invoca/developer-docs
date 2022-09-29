@@ -225,7 +225,7 @@ body {
 }
 
 .swagger-ui .opblock-put .opblock-summary-method {
-  color: #F8C204;
+  color: #F8C204 !important;
 }
 
 /* POST Request Coloring */
@@ -239,7 +239,7 @@ body {
 }
 
 .swagger-ui .opblock-post .opblock-summary-method {
-  color: #15DBF6;
+  color: #15DBF6 !important;
 }
 
 /* PATCH Request Coloring */
@@ -253,7 +253,7 @@ body {
 }
 
 .swagger-ui .opblock-patch .opblock-summary-method {
-  color: #B4781E;
+  color: #B4781E !important;
 }
 
 /* DELETE Request Coloring */
@@ -267,7 +267,7 @@ body {
 }
 
 .swagger-ui .opblock-delete .opblock-summary-method {
-  color: #FF9E52;
+  color: #FF9E52 !important;
 }
 
 .swagger-ui a div.action {

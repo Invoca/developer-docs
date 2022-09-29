@@ -135,19 +135,7 @@ Any combination of filters assumes `AND` operations between members of the compl
 ------------------------------------
 SMS Messaging API Example Requests
 ------------------------------------
-.. raw:: html
 
-   <div class="panel-group">
-   <div class="panel panel-default">
-     <div class="panel-body">
+.. swagger_ui::
+   :id: swagger-ui
 
-
-.. raw:: html
-   :file: ../../_static/html/swagger-ui/swagger-index.html
-
-
-.. raw:: html
-
-     </div>
-   </div>
-   </div>

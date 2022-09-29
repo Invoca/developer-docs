@@ -124,6 +124,9 @@ def find_and_replace_templates(source, directive_name, template_file_name):
 def build_api_endpoint_template(source):
   return find_and_replace_templates(source, "api_endpoint", "_api_endpoint.txt")
 
+def build_swagger_ui_template(source):
+  return find_and_replace_templates(source, "swagger_ui", "_swagger_ui.txt")
+
 # ==================
 # Callback function:
 # ==================
@@ -131,6 +134,7 @@ def build_api_endpoint_template(source):
 def source_handler(app, docname, source):
   # Build templates in custom_templates/
   source[0] = build_api_endpoint_template(source[0])
+  source[0] = build_swagger_ui_template(source[0])
 
   # Replace @@API_VERSION in templates with strings from doc_versions.py
   for symbol_string, version_string in VERSIONS.iteritems():
@@ -204,12 +208,7 @@ def setup(app):
   app.add_javascript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
   app.add_javascript('js/swagger-ui/swagger-initializer.js')
   app.add_javascript('js/swagger-ui/swagger-ui-bundle.js')
-  app.add_javascript('js/swagger-ui/swagger-ui-es-bundle-core.js')
-  app.add_javascript('js/swagger-ui/swagger-ui-es-bundle-core.js.map')
-  app.add_javascript('js/swagger-ui/swagger-ui-es-bundle.js')
-  app.add_javascript('js/swagger-ui/swagger-ui-es-bundle.js.map')
-  app.add_javascript('js/swagger-ui/swagger-ui.js')
-  app.add_javascript('js/swagger-ui/swagger-ui.js.map')
+  app.add_javascript('js/swagger-ui/swagger-ui-bundle.js.map')
 
   # This CSS is added BEFORE the RTD CSS, so it doesn't allow us to override their CSS
   # We re-add our CSS AFTER the RTD CSS using the update_body method. We have left this

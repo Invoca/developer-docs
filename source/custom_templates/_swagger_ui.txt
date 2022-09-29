@@ -1,0 +1,9 @@
+.. raw:: html
+
+  <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id=:id:></div>
+    </div>
+  </div>
+  </div>
