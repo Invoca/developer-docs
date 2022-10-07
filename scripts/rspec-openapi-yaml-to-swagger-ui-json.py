@@ -30,6 +30,7 @@ yaml_paths = glob.glob('{cwd}/{path}/.backstage/*.yaml'.format(cwd=cwd, path=pat
 print(yaml_paths)
 warnings_multiple_responses = {}
 warnings_undefined_path_parameter = []
+warnings_filter_sort_page_parameters = []
 for yaml_path in yaml_paths:
     with open(yaml_path, 'r') as yaml_file:
         json_dict = yaml.load(yaml_file.read().rstrip(), Loader=yaml.FullLoader)
@@ -47,6 +48,11 @@ for yaml_path in yaml_paths:
                     # ipdb.set_trace()
                     if 'parameters' not in current_path[verb]:
                         current_path[verb]['parameters'] = []
+                    else:
+                        if [item['name'] for item in current_path[verb]['parameters'] if
+                            re.search(r'(\[\w+\])', item['name']) or item['name'] in ['sort', 'page']]:
+                            warnings_filter_sort_page_parameters.append(summary)
+
                     for parameter in re.findall(r"\{(\w+)\}", summary_path):
                         if parameter not in parameter_references + warnings_undefined_path_parameter:
                             warnings_undefined_path_parameter.append(parameter)
@@ -84,6 +90,12 @@ for yaml_path in yaml_paths:
                 "{}WARNING:{} Path parameters found without parameter definitions.\n  Please add definitions for the following parameters:".format(
                     bcolors.WARNING, bcolors.ENDC))
             print("  {}".format(bcolors.OKCYAN + ', '.join(warnings_undefined_path_parameter) + bcolors.ENDC))
+
+        if warnings_filter_sort_page_parameters:
+            print(
+                "{}WARNING:{} Filter/sort/pagination parameters found.  Please add `openapi: false` to those examples, and choose/create an example without filter/sorting/pagination for the documentation:".format(
+                    bcolors.WARNING, bcolors.ENDC))
+            print("  {}".format(bcolors.OKCYAN + '\n  '.join(warnings_filter_sort_page_parameters) + bcolors.ENDC))
 
         print ("{}COMPLETE:{} Output JSON written to {}".format(bcolors.OKGREEN, bcolors.ENDC, json_path))
 
