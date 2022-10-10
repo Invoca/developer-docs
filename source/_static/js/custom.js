@@ -7,13 +7,3 @@ window.onload =
             });
         });
     };
-
-window.addEventListener('load', function () {
-    document.querySelectorAll(".opblock-summary-description").forEach(function (el) {
-        el.textContent = "";
-    });
-
-    document.querySelectorAll(".opblock-summary-path").forEach(function (el) {
-        el.style.width = '100%';
-    });
-}, false);
