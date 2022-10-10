@@ -77,6 +77,11 @@ for yaml_path in yaml_paths:
                         current_path[verb]['responses']
                     )
 
+        for path in json_dict['paths'].keys():
+            for verb in json_dict['paths'][path].keys():
+                json_dict['paths'][path][verb]['summary'] = json_dict['paths'][path][verb]['summary'].split(' ', 2)[-1]
+
+
         if warnings_multiple_responses:
             print(
                 "{}WARNING:{} Multiple responses found for the same Route + Status Code, but only the last response for each combination will be displayed.\n  Please add `openapi: false` to all but one of those examples in order to control which response is provided to the documentation.".format(
