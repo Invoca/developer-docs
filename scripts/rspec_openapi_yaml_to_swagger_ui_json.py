@@ -1,6 +1,6 @@
 # instructions:
 #   cd path/to/developer-docs
-#   python ./scripts/rspec-openapi-yaml-to-swagger-ui-json.py
+#   python ./scripts/rspec_openapi_yaml_to_swagger_ui_json.py
 #   bash html
 
 import glob
