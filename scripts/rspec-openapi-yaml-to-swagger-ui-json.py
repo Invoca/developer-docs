@@ -71,7 +71,7 @@ for yaml_path in yaml_paths:
             for verb in current_path.keys():
                 print "verb: {}".format(verb)
                 try:
-                    summary = current_path[verb].get('summary')
+                    summary = current_path[verb]['summary']
                 except KeyError:
                     warnings_missing_summary.append("{} {}".format(verb, path))
                     continue
