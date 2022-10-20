@@ -77,11 +77,11 @@ for yaml_path in yaml_paths:
                     continue
 
                 summary_path = summary.split(' ')[1]
-                if summary_path not in json_dict['paths'].keys():
+                if summary_path not in json_dict['paths']:
                     json_dict['paths'][summary_path] = current_path
                     process_parameters()
 
-                elif verb not in json_dict['paths'][summary_path].keys():
+                elif verb not in json_dict['paths'][summary_path]:
                     json_dict['paths'][summary_path][verb] = current_path[verb]
                     process_parameters()
 
@@ -91,7 +91,7 @@ for yaml_path in yaml_paths:
                         # since we'll only show information for the last one processed.
                         if k in json_dict['paths'][summary_path][verb]['responses']:
                             if json_dict['paths'][summary_path][verb]['responses'][k] != v:
-                                if summary not in warnings_multiple_responses.keys():
+                                if summary not in warnings_multiple_responses:
                                     warnings_multiple_responses[summary] = []
                                 if k not in warnings_multiple_responses[summary]:
                                     warnings_multiple_responses[summary].append(k)
