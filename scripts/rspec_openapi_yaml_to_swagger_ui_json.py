@@ -148,7 +148,7 @@ def main():
             # write the generated yaml to a file, to facilitate review of this intermediate form of the data to be
             # processed by the swagger-initializer.js
             with open('./prepped.yaml', 'w') as prepped_yaml_path:
-                documents = yaml.dump(json_dict, prepped_yaml_path)
+                yaml.dump(json_dict, prepped_yaml_path)
 
             # write the json of the polished yaml to a file, to facilitate review of the json that will be provided to
             # swagger-initializer.js for processing
