@@ -14,7 +14,7 @@ import yaml
 import ipdb
 
 
-class ConsolePrinter:
+class ConsolePrinter(object):
     """Provides stylized printing to the console/terminal."""
     # https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal
     HEADER = '\033[95m'
