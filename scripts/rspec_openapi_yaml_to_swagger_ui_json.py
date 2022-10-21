@@ -1,3 +1,4 @@
+"""Script to massage sms-messaging rspec-openapi output into json for swagger-ui."""
 # instructions:
 #   cd path/to/developer-docs
 #   python ./scripts/rspec_openapi_yaml_to_swagger_ui_json.py
@@ -13,8 +14,9 @@ import yaml
 import ipdb
 
 
-# https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal
 class ConsolePrinter:
+    """Provides stylized printing to the console/terminal."""
+    # https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
@@ -30,10 +32,12 @@ class ConsolePrinter:
 
     @classmethod
     def format_text_string(cls, text, styles):
+        """Applies styling to text for display."""
         return "{}{}{}".format(styles, text, cls.ENDC)
 
     @classmethod
     def print_warnings(cls, warning_message, offenses):
+        """Prints a stylized 'warning' message.  Separate styles for lists vs dicts of offenses."""
         print "{} {}".format(cls.format_text_string('WARNING', cls.WARNING), warning_message)
         if isinstance(offenses, dict):
             for offense_key, offense_list in offenses.items():
@@ -44,11 +48,15 @@ class ConsolePrinter:
 
     @classmethod
     def print_success(cls, message):
+        """Prints a stylized 'success' message.  Separate styles for lists vs dicts of offenses."""
         print "{} {}".format(cls.format_text_string('COMPLETE', cls.OKGREEN), message)
 
 
 def main():
+    """Entry point to the entire yaml-to-json conversion"""
+
     def process_parameters():
+        """Processes the parameters found for an endpoint."""
         # warn if we find any filter/sort/pagination parameters, since they won't serve the documentation well at the
         # level of individual endpoints
         if current_path[verb].get('parameters') and \
@@ -70,9 +78,11 @@ def main():
                 current_path[verb]['parameters'].append({"$ref": parameter_reference})
 
     def print_warnings(message, offenses):
+        """Print warning string to the console."""
         ConsolePrinter.print_warnings(message, offenses)
 
     def print_success(message):
+        """Print success string to the console."""
         ConsolePrinter.print_success(message)
 
     cwd = os.getcwd()
