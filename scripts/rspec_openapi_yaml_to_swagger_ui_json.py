@@ -87,13 +87,10 @@ def main():
                     else:
                         for k, v in current_path[verb]['responses'].items():
                             # warn if we have more than one unique example of a given status code for this path + verb,
-                            # since we'll only show information for the last one processed.
+                            # since we'll only show information for the first one processed.
                             if k in json_dict['paths'][summary_path][verb]['responses']:
                                 if json_dict['paths'][summary_path][verb]['responses'][k] != v:
-                                    if summary not in warnings_multiple_responses:
-                                        warnings_multiple_responses[summary] = []
-                                    if k not in warnings_multiple_responses[summary]:
-                                        warnings_multiple_responses[summary].append(k)
+                                    warnings_multiple_responses.setdefault(summary, []).append(k)
 
                             # otherwise, just add the non-repeated response
                             else:
