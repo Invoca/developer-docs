@@ -90,6 +90,7 @@ def main():
             json_dict = yaml.load(yaml_file.read().rstrip(), Loader=yaml.FullLoader)
             parameter_references = json_dict.get('components', {}).get('parameters', {}).keys()
 
+            # process the endpoints
             for path in json_dict['paths'].keys():
                 print "path: {}".format(path)
                 current_path = json_dict['paths'].pop(path)
@@ -129,14 +130,14 @@ def main():
                 # sort the verbs
                 json_dict['paths'][path] = OrderedDict(sorted(json_dict['paths'][path].items()))
 
-                # remove the verb and path that precede the summary, leaving only the humanized description of the endpoint
+                # remove the verb and path from the summary, leaving only the humanized description of the endpoint
                 for verb in json_dict['paths'][path].keys():
-                    json_dict['paths'][path][verb]['summary'] = json_dict['paths'][path][verb]['summary'].split(' ', 2)[
-                        -1]
+                    summary_description = json_dict['paths'][path][verb]['summary'].split(' ', 2)[-1]
+                    json_dict['paths'][path][verb]['summary'] = summary_description
 
-            # print whatever warnings we've collected along the way, to guide the developer on any additional rspec moves
-            # they may want to take to improve the documentation.  existence of a warning does not require action, only
-            # consideration for *potential* improvement.
+            # print whatever warnings we've collected along the way, to guide the developer on any additional rspec
+            # moves they may want to take to improve the documentation.  existence of a warning does not require action,
+            # only consideration for *potential* improvement.
             if warnings_missing_summary:
                 print_warnings("Routes were found without summary tags.  Please add a summary to the following routes:",
                                warnings_missing_summary)
@@ -148,8 +149,8 @@ def main():
                                warnings_multiple_responses)
 
             if warnings_undefined_path_parameter:
-                print_warnings("Path parameters found without parameter definitions."
-                               "  Please add definitions for the following parameters:",
+                print_warnings("Path parameters found without parameter definitions.  Please add definitions for the"
+                               " following parameters:",
                                warnings_undefined_path_parameter)
 
             if warnings_filter_sort_page_parameters:
@@ -163,15 +164,16 @@ def main():
             with open('./prepped.yaml', 'w') as prepped_yaml_path:
                 yaml.dump(json_dict, prepped_yaml_path)
 
-            # write the json of the polished yaml to a file, to facilitate review of the json that will be provided to
-            # swagger-initializer.js for processing
+            # write the json of the polished yaml to a file, to facilitate review of the json that will be provided
+            # to swagger-initializer.js for processing
             json_path = os.path.splitext(yaml_path)[0] + '.json'
             with open(json_path, 'w') as json_file:
                 json_file.write(json.dumps(json_dict))
             print_success("Output JSON written to {}".format(json_path))
 
-            # we expect each API version will be generated as its own yaml and json.  for now, we only bother processing
-            # in the case that we've got exactly one version of endpoints to document.  we'll support more when required.
+            # we expect each API version will be generated as its own yaml and json.  for now, we only bother
+            # processing in the case that we've got exactly one version of endpoints to document.  we'll support
+            # more when required.
             if len(yaml_paths) == 1:
                 # Read in the file
                 with open(path_to_destination, 'r') as destination_file:
