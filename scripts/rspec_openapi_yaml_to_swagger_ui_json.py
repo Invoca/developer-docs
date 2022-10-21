@@ -14,7 +14,7 @@ import ipdb
 
 
 # https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal
-class bcolors:
+class ConsolePrinter:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
@@ -24,6 +24,27 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def format_text_string(cls, text, styles):
+        return "{}{}{}".format(styles, text, cls.ENDC)
+
+    @classmethod
+    def print_warnings(cls, warning_message, offenses):
+        print "{} {}".format(cls.format_text_string('WARNING', cls.WARNING), warning_message)
+        if isinstance(offenses, dict):
+            for offense_key, offense_list in offenses.items():
+                print "  {}: {}".format(cls.format_text_string(offense_key, cls.OKCYAN),
+                                        cls.format_text_string(', '.join(offense_list), cls.OKBLUE))
+        else:
+            print "  {}".format(cls.format_text_string(', '.join(offenses), cls.OKCYAN))
+
+    @classmethod
+    def print_success(cls, message):
+        print "{} {}".format(cls.format_text_string('COMPLETE', cls.OKGREEN), message)
 
 
 def main():
@@ -48,11 +69,17 @@ def main():
             if parameter_reference not in [pr.items()[0][1] for pr in current_path[verb].setdefault('parameters', [])]:
                 current_path[verb]['parameters'].append({"$ref": parameter_reference})
 
+    def print_warnings(message, offenses):
+        ConsolePrinter.print_warnings(message, offenses)
+
+    def print_success(message):
+        ConsolePrinter.print_success(message)
+
     cwd = os.getcwd()
     path_to_subject_repo = '../sms-messaging'
     path_to_destination = './source/_static/js/swagger-ui/swagger-initializer.js'
     yaml_paths = glob.glob('{cwd}/{path}/.backstage/*.yaml'.format(cwd=cwd, path=path_to_subject_repo))
-    print(yaml_paths)
+    print "Processing the following yaml_paths: {}".format(', '.join(yaml_paths))
     warnings_multiple_responses = {}
     warnings_undefined_path_parameter = []
     warnings_filter_sort_page_parameters = []
@@ -111,35 +138,25 @@ def main():
             # they may want to take to improve the documentation.  existence of a warning does not require action, only
             # consideration for *potential* improvement.
             if warnings_missing_summary:
-                print(
-                    "{}WARNING:{} Routes were found without summary tags."
-                    "\n  Please add a summary to the following routes:".format(
-                        bcolors.WARNING, bcolors.ENDC))
-                print("  {}".format(bcolors.OKCYAN + ', '.join(warnings_missing_summary) + bcolors.ENDC))
+                print_warnings("Routes were found without summary tags.  Please add a summary to the following routes:",
+                               warnings_missing_summary)
 
             if warnings_multiple_responses:
-                print(
-                    "{}WARNING:{} Multiple responses found for the same Route + Status Code, but only the last response for"
-                    " each combination will be displayed.\n  Please add `openapi: false` to all but one of those examples"
-                    " in order to control which response is provided to the documentation.".format(
-                        bcolors.WARNING, bcolors.ENDC))
-                for summary, key_collisions in warnings_multiple_responses.items():
-                    print("  {}: {}".format(bcolors.OKCYAN + summary + bcolors.ENDC,
-                                            bcolors.OKBLUE + ', '.join(key_collisions) + bcolors.ENDC))
+                print_warnings("Multiple responses found for the same Route + Status Code, but only the first response"
+                               " for each combination will be displayed.  Please add `openapi: false` to all but one of"
+                               " those examples in order to control which response is provided in the documentation.",
+                               warnings_multiple_responses)
 
             if warnings_undefined_path_parameter:
-                print(
-                    "{}WARNING:{} Path parameters found without parameter definitions.\n  Please add definitions for the"
-                    " following parameters:".format(
-                        bcolors.WARNING, bcolors.ENDC))
-                print("  {}".format(bcolors.OKCYAN + ', '.join(warnings_undefined_path_parameter) + bcolors.ENDC))
+                print_warnings("Path parameters found without parameter definitions."
+                               "  Please add definitions for the following parameters:",
+                               warnings_undefined_path_parameter)
 
             if warnings_filter_sort_page_parameters:
-                print(
-                    "{}WARNING:{} Filter/sort/pagination parameters found.  Please add `openapi: false` to those examples,"
-                    " and choose/create an example without filter/sorting/pagination for the documentation:".format(
-                        bcolors.WARNING, bcolors.ENDC))
-                print("  {}".format(bcolors.OKCYAN + '\n  '.join(warnings_filter_sort_page_parameters) + bcolors.ENDC))
+                print_warnings("Filter/sort/pagination parameters found.  Please add `openapi: false` to those"
+                               " examples, and choose/create an example without filter/sorting/pagination for the"
+                               " documentation:",
+                               warnings_filter_sort_page_parameters)
 
             # write the generated yaml to a file, to facilitate review of this intermediate form of the data to be
             # processed by the swagger-initializer.js
@@ -151,7 +168,7 @@ def main():
             json_path = os.path.splitext(yaml_path)[0] + '.json'
             with open(json_path, 'w') as json_file:
                 json_file.write(json.dumps(json_dict))
-            print ("{}COMPLETE:{} Output JSON written to {}".format(bcolors.OKGREEN, bcolors.ENDC, json_path))
+            print_success("Output JSON written to {}".format(json_path))
 
             # we expect each API version will be generated as its own yaml and json.  for now, we only bother processing
             # in the case that we've got exactly one version of endpoints to document.  we'll support more when required.
