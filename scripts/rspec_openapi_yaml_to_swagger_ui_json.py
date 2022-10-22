@@ -61,8 +61,8 @@ def main():
 
     def process_paths():
         """Process the rspec-openapi example routes for teh current yaml."""
-        for path in json_dict['paths'].keys():
-            current_path = json_dict['paths'].pop(path)
+        for path in yaml_dict['paths'].keys():
+            current_path = yaml_dict['paths'].pop(path)
             print "  path: {}, verbs: [{}]".format(path, ', '.join(current_path.keys()))
 
             for verb in current_path.keys():
@@ -73,23 +73,23 @@ def main():
                     continue
 
                 summary_path = summary.split(' ')[1]
-                if summary_path not in json_dict['paths']:
-                    json_dict['paths'][summary_path] = current_path
+                if summary_path not in yaml_dict['paths']:
+                    yaml_dict['paths'][summary_path] = current_path
                     process_parameters(current_path, verb)
 
-                elif verb not in json_dict['paths'][summary_path]:
-                    json_dict['paths'][summary_path][verb] = current_path[verb]
+                elif verb not in yaml_dict['paths'][summary_path]:
+                    yaml_dict['paths'][summary_path][verb] = current_path[verb]
                     process_parameters(current_path, verb)
 
                 else:
                     for status_code, response_body in current_path[verb]['responses'].items():
                         # add the first path + verb + status code we find
-                        if status_code not in json_dict['paths'][summary_path][verb]['responses']:
-                            json_dict['paths'][summary_path][verb]['responses'][status_code] = response_body
+                        if status_code not in yaml_dict['paths'][summary_path][verb]['responses']:
+                            yaml_dict['paths'][summary_path][verb]['responses'][status_code] = response_body
 
                         # otherwise warn if we have more than one unique example of that combination since we'll only
                         # show information for the first one processed
-                        elif json_dict['paths'][summary_path][verb]['responses'][status_code] != response_body:
+                        elif yaml_dict['paths'][summary_path][verb]['responses'][status_code] != response_body:
                             warnings['multiple_responses'].setdefault(summary, []).append(status_code)
 
     def process_parameters(path, verb):
@@ -152,23 +152,23 @@ def main():
 
     for yaml_path in yaml_paths:
         with open(yaml_path, 'r') as yaml_file:
-            json_dict = yaml.load(yaml_file.read().rstrip(), Loader=yaml.FullLoader)
-            parameter_references = json_dict.get('components', {}).get('parameters', {}).keys()
+            yaml_dict = yaml.load(yaml_file.read().rstrip(), Loader=yaml.FullLoader)
+            parameter_references = yaml_dict.get('components', {}).get('parameters', {}).keys()
 
             process_paths()
 
-            reorder_json_dict(json_dict)
+            reorder_yaml_dict(yaml_dict)
 
             print_processing_warnings()
 
             # write the generated yaml to a file, to facilitate review of this intermediate form of the data to be
             # processed by the swagger-initializer.js
             with open('./prepped.yaml', 'w') as prepped_yaml_path:
-                yaml.dump(json_dict, prepped_yaml_path)
+                yaml.dump(yaml_dict, prepped_yaml_path)
 
-            write_json_file_to_source_directory(json_dict, yaml_path)
+            write_json_file_to_source_directory(yaml_dict, yaml_path)
 
-    write_json_string_to_swagger_initializer(json_dict, path_to_destination, yaml_paths)
+    write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths)
 
 
 def get_file_paths():
@@ -180,18 +180,18 @@ def get_file_paths():
     return path_to_destination, yaml_paths
 
 
-def reorder_json_dict(json_dict):
+def reorder_yaml_dict(yaml_dict):
     """Sort the json dictionary to the ordering desired for documentation."""
     # sort the paths
-    json_dict['paths'] = OrderedDict(sorted(json_dict['paths'].items()))
-    for path in json_dict['paths'].keys():
+    yaml_dict['paths'] = OrderedDict(sorted(yaml_dict['paths'].items()))
+    for path in yaml_dict['paths'].keys():
         # sort the verbs
-        json_dict['paths'][path] = OrderedDict(sorted(json_dict['paths'][path].items()))
+        yaml_dict['paths'][path] = OrderedDict(sorted(yaml_dict['paths'][path].items()))
 
         # remove the verb and path from the summary, leaving only the humanized description of the endpoint
-        for verb in json_dict['paths'][path].keys():
-            summary_description = json_dict['paths'][path][verb]['summary'].split(' ', 2)[-1]
-            json_dict['paths'][path][verb]['summary'] = summary_description
+        for verb in yaml_dict['paths'][path].keys():
+            summary_description = yaml_dict['paths'][path][verb]['summary'].split(' ', 2)[-1]
+            yaml_dict['paths'][path][verb]['summary'] = summary_description
 
 
 def print_warnings(message, offenses=None):
@@ -204,17 +204,17 @@ def print_success(message):
     ConsolePrinter.print_success(message)
 
 
-def write_json_file_to_source_directory(json_dict, yaml_path):
+def write_json_file_to_source_directory(yaml_dict, yaml_path):
     """Write the yaml content to a json file in the yaml source directory.  Maybe worthless at this point."""
     # write the json of the polished yaml to a file, to facilitate review of the json that will be provided to
     # swagger-initializer.js for processing
     json_path = os.path.splitext(yaml_path)[0] + '.json'
     with open(json_path, 'w') as json_file:
-        json_file.write(json.dumps(json_dict))
+        json_file.write(json.dumps(yaml_dict))
     print_success("Output JSON written to {}".format(json_path))
 
 
-def write_json_string_to_swagger_initializer(json_dict, path_to_destination, yaml_paths):
+def write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths):
     """Write the yaml content to the swagger-ui initializer, for documentation generation."""
     # we expect each API version will be generated as its own yaml and json.  for now, we only bother processing in the
     # case that we've got exactly one version of endpoints to document.  we'll support more when required.
@@ -224,7 +224,7 @@ def write_json_string_to_swagger_initializer(json_dict, path_to_destination, yam
             filedata = destination_file.read()
 
         # Replace the target string
-        filedata = re.sub(r'(\n\s+spec: ).*(,?)', '\\1' + json.dumps(json_dict) + '\\2', filedata)
+        filedata = re.sub(r'(\n\s+spec: ).*(,?)', '\\1' + json.dumps(yaml_dict) + '\\2', filedata)
 
         # Write the file out again
         with open(path_to_destination, 'w') as destination_file:
