@@ -168,7 +168,7 @@ def main():
 
             write_json_file_to_source_directory(yaml_dict, yaml_path)
 
-    write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths)
+        write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths)
 
 
 def get_file_paths():
