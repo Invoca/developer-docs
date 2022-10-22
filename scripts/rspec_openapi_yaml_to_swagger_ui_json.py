@@ -38,7 +38,7 @@ class ConsolePrinter(object):
         return "{}{}{}".format(styles, text, cls.ENDC)
 
     @classmethod
-    def print_warnings(cls, warning_message, offenses=None):
+    def print_warning(cls, warning_message, offenses=None):
         """Prints a stylized 'warning' message.  Separate styles for lists vs dicts of offenses."""
         print "{} {}".format(cls.format_text_string('WARNING', cls.WARNING), warning_message)
         if offenses is None:
@@ -124,21 +124,21 @@ def main():
         # they may want to take to improve the documentation.  existence of a warning does not require action, only
         # consideration for *potential* improvement.
         if warnings['missing_summary']:
-            print_warnings("Routes were found without summary tags.  Please add a summary to the following routes:",
-                           warnings['missing_summary'])
+            print_warning("Routes were found without summary tags.  Please add a summary to the following routes:",
+                          warnings['missing_summary'])
         if warnings['multiple_responses']:
-            print_warnings("Multiple responses found for the same Route + Status Code, but only the first response for"
-                           " each combination will be displayed.  Please add `openapi: false` to all but one of those"
-                           " examples in order to control which response is provided in the documentation.",
-                           warnings['multiple_responses'])
+            print_warning("Multiple responses found for the same Route + Status Code, but only the first response for"
+                          " each combination will be displayed.  Please add `openapi: false` to all but one of those"
+                          " examples in order to control which response is provided in the documentation.",
+                          warnings['multiple_responses'])
         if warnings['undefined_path_parameter']:
-            print_warnings("Path parameters found without parameter definitions.  Please add definitions for the"
-                           " following parameters:",
-                           warnings['undefined_path_parameter'])
+            print_warning("Path parameters found without parameter definitions.  Please add definitions for the"
+                          " following parameters:",
+                          warnings['undefined_path_parameter'])
         if warnings['filter_sort_page_parameters']:
-            print_warnings("Filter/sort/pagination parameters found.  Please add `openapi: false` to those examples,"
-                           " and choose/create an example without filter/sorting/pagination for the documentation:",
-                           warnings['filter_sort_page_parameters'])
+            print_warning("Filter/sort/pagination parameters found.  Please add `openapi: false` to those examples,"
+                          " and choose/create an example without filter/sorting/pagination for the documentation:",
+                          warnings['filter_sort_page_parameters'])
 
     path_to_destination, yaml_paths = get_file_paths()
     print "Processing the following yaml_paths: {}".format(', '.join(yaml_paths))
@@ -194,9 +194,9 @@ def reorder_yaml_dict(yaml_dict):
             yaml_dict['paths'][path][verb]['summary'] = summary_description
 
 
-def print_warnings(message, offenses=None):
+def print_warning(message, offenses=None):
     """Print warning string to the console."""
-    ConsolePrinter.print_warnings(message, offenses)
+    ConsolePrinter.print_warning(message, offenses)
 
 
 def print_success(message):
@@ -221,17 +221,17 @@ def write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yam
     if len(yaml_paths) == 1:
         # Read in the file
         with open(path_to_destination, 'r') as destination_file:
-            filedata = destination_file.read()
+            file_data = destination_file.read()
 
         # Replace the target string
-        filedata = re.sub(r'(\n\s+spec: ).*(,?)', '\\1' + json.dumps(yaml_dict) + '\\2', filedata)
+        file_data = re.sub(r'(\n\s+spec: ).*(,?)', '\\1' + json.dumps(yaml_dict) + '\\2', file_data)
 
         # Write the file out again
         with open(path_to_destination, 'w') as destination_file:
-            destination_file.write(filedata)
+            destination_file.write(file_data)
     else:
-        print_warnings("Script does not currently support providing multiple yaml to swagger-ui.  Perhaps it's time to"
-                       " implement that, or we've accidentally got more than one yaml in the source directory.")
+        print_warning("Script does not currently support providing multiple yaml to swagger-ui.  Perhaps it's time to"
+                      " implement that, or we've accidentally got more than one yaml in the source directory.")
 
 
 if __name__ == '__main__':
