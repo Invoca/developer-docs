@@ -161,10 +161,7 @@ def main():
 
             print_processing_warnings()
 
-            # write the generated yaml to a file, to facilitate review of this intermediate form of the data to be
-            # processed by the swagger-initializer.js
-            with open('./prepped.yaml', 'w') as prepped_yaml_path:
-                yaml.dump(yaml_dict, prepped_yaml_path)
+            write_prepped_yaml_to_file(yaml_dict, yaml_path)
 
         write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths)
 
@@ -200,6 +197,18 @@ def print_warning(message, offenses=None):
 def print_success(message):
     """Print success string to the console."""
     ConsolePrinter.print_success(message)
+
+
+def write_prepped_yaml_to_file(yaml_dict, yaml_path):
+    """Write the prepared yaml content to an intermediate file, to facilitate review."""
+    # write the generated yaml to a file, to facilitate review of this intermediate form of the data to be
+    # processed by the swagger-initializer.js
+    source_yaml_basename_split = os.path.splitext(os.path.basename(yaml_path))
+    prepped_yaml_path = "{}-prepped-for-swagger-ui{}".format(source_yaml_basename_split[0],
+                                                             source_yaml_basename_split[1])
+    with open(prepped_yaml_path, 'w') as prepped_yaml_file:
+        yaml.dump(yaml_dict, prepped_yaml_file)
+    print_success("Prepped yaml written to '{}'".format(prepped_yaml_path))
 
 
 def write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths):
