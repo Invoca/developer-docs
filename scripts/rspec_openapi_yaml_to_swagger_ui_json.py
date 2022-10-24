@@ -35,25 +35,27 @@ class ConsolePrinter(object):
     @classmethod
     def format_text_string(cls, text, styles):
         """Applies styling to text for display."""
-        return "{}{}{}".format(styles, text, cls.ENDC)
+
+        return "{style_start}{text}{style_end}".format(style_start=''.join(list(styles)), text=text, style_end=cls.ENDC)
 
     @classmethod
     def print_warning(cls, warning_message, offenses=None):
         """Prints a stylized 'warning' message.  Separate styles for lists vs dicts of offenses."""
-        print "{} {}".format(cls.format_text_string('WARNING', cls.WARNING), warning_message)
+        print "{label} {message}".format(label=cls.format_text_string('WARNING', cls.WARNING), message=warning_message)
         if offenses is None:
             return
         if isinstance(offenses, dict):
             for offense_key, offense_list in offenses.items():
-                print "  {}: {}".format(cls.format_text_string(offense_key, cls.OKCYAN),
-                                        cls.format_text_string(', '.join(offense_list), cls.OKBLUE))
+                print "  {key}: {list}".format(key=cls.format_text_string(offense_key, cls.OKCYAN),
+                                               list=cls.format_text_string(', '.join(offense_list),
+                                                                           [cls.OKBLUE, cls.BOLD]))
         else:
-            print "  {}".format(cls.format_text_string(', '.join(offenses), cls.OKCYAN))
+            print "  {list}".format(list=cls.format_text_string(', '.join(offenses), cls.OKCYAN))
 
     @classmethod
     def print_success(cls, message):
         """Prints a stylized 'success' message.  Separate styles for lists vs dicts of offenses."""
-        print "{} {}".format(cls.format_text_string('COMPLETE', cls.OKGREEN), message)
+        print "{label} {message}".format(label=cls.format_text_string('COMPLETE', cls.OKGREEN), message=message)
 
 
 def main():
@@ -63,13 +65,13 @@ def main():
         """Process the rspec-openapi example routes for teh current yaml."""
         for path in yaml_dict['paths'].keys():
             current_path = yaml_dict['paths'].pop(path)
-            print "  path: {}, verbs: [{}]".format(path, ', '.join(current_path.keys()))
+            print "  path: {path}, verbs: [{verbs}]".format(path=path, verbs=', '.join(current_path.keys()))
 
             for verb in current_path.keys():
                 try:
                     summary = current_path[verb]['summary']
                 except KeyError:
-                    warnings['missing_summary'].append("{} {}".format(verb, path))
+                    warnings['missing_summary'].append("{verb} {path}".format(verb=verb, path=path))
                     continue
 
                 summary_path = summary.split(' ')[1]
@@ -113,7 +115,7 @@ def main():
                 warnings['undefined_path_parameter'].append(parameter)
 
             # add the reference to the shared parameter definition
-            parameter_reference = "#/components/parameters/{}".format(parameter)
+            parameter_reference = "#/components/parameters/{parameter}".format(parameter=parameter)
             if parameter_reference not in [pr.items()[0][1] for pr in
                                            path[verb].setdefault('parameters', [])]:
                 path[verb]['parameters'].append({"$ref": parameter_reference})
@@ -141,7 +143,7 @@ def main():
                           warnings['filter_sort_page_parameters'])
 
     path_to_destination, yaml_paths = get_file_paths()
-    print "Processing the following yaml_paths: {}".format(', '.join(yaml_paths))
+    print "Processing the following yaml_paths: {paths}".format(paths=', '.join(yaml_paths))
 
     warnings = {
         'multiple_responses': {},
@@ -204,11 +206,11 @@ def write_prepped_yaml_to_file(yaml_dict, yaml_path):
     # write the generated yaml to a file, to facilitate review of this intermediate form of the data to be
     # processed by the swagger-initializer.js
     source_yaml_basename_split = os.path.splitext(os.path.basename(yaml_path))
-    prepped_yaml_path = "{}-prepped-for-swagger-ui{}".format(source_yaml_basename_split[0],
-                                                             source_yaml_basename_split[1])
+    prepped_yaml_path = "{basename}-prepped-for-swagger-ui{extension}".format(basename=source_yaml_basename_split[0],
+                                                                              extension=source_yaml_basename_split[1])
     with open(prepped_yaml_path, 'w') as prepped_yaml_file:
         yaml.dump(yaml_dict, prepped_yaml_file)
-    print_success("Prepped yaml written to '{}'".format(prepped_yaml_path))
+    print_success("Prepped yaml written to '{path}'".format(path=prepped_yaml_path))
 
 
 def write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths):
