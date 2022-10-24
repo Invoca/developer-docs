@@ -166,8 +166,6 @@ def main():
             with open('./prepped.yaml', 'w') as prepped_yaml_path:
                 yaml.dump(yaml_dict, prepped_yaml_path)
 
-            write_json_file_to_source_directory(yaml_dict, yaml_path)
-
         write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths)
 
 
@@ -202,16 +200,6 @@ def print_warning(message, offenses=None):
 def print_success(message):
     """Print success string to the console."""
     ConsolePrinter.print_success(message)
-
-
-def write_json_file_to_source_directory(yaml_dict, yaml_path):
-    """Write the yaml content to a json file in the yaml source directory.  Maybe worthless at this point."""
-    # write the json of the polished yaml to a file, to facilitate review of the json that will be provided to
-    # swagger-initializer.js for processing
-    json_path = os.path.splitext(yaml_path)[0] + '.json'
-    with open(json_path, 'w') as json_file:
-        json_file.write(json.dumps(yaml_dict))
-    print_success("Output JSON written to {}".format(json_path))
 
 
 def write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths):
