@@ -65,16 +65,20 @@ Sorting
 The records returned by `GET` requests can be sorted using the `sort` URL parameter.
 The value of the `sort` parameter is comprised of:
 
-- a valid sortable field
-- an optional sort direction separated from the sortable field by a colon (`:`)
+- an optional valid sortable field
+- an optional sort direction (`asc` or `desc`) separated from the sortable field by a colon (`:`)
 
 For example: `https://example.com?sort=created_at:asc`
+
+If only a sort direction is provided, the response body will be sorted in the provided direction according to the default sortable field.
+
+If only a sortable field is provided, the default sort direction (`asc`) will be assumed.
 
 Each `GET` request denotes the valid sortable fields in its response body. Please see the API examples below for more information.
 
 At this time, responses may be sorted by *one field only*.
 
-**By default, responses are sorted in ascending order according to their default sortable field.**
+**By default, responses are sorted in ascending order according to their created_at field.**
 
 ------------------------------------
 Filtering
@@ -103,7 +107,7 @@ Supported Filter Operators
 
   * - eq
     - Return only those records where the filtered field is equal to the value found on the right-hand side of the = in this parameter
-    - direction[eq]=incoming
+    - direction[eq]=in
 
   * - lte
     - Return only those records where the filtered field is less than or equal to the value found on the right-hand side of the = in this parameter
