@@ -31,7 +31,6 @@ Pagination
 ------------------------------------
 The following URL parameters are used to control pagination and are common to all `GET` requests.
 
-
 Pagination URL Parameters
 ------------------------------------
 
@@ -52,8 +51,8 @@ Pagination URL Parameters
     - 500
     - False
 
-  * - cursor
-    - The next or previous cursor as taken directly from the response body payload of a previous API request for the previous page of the same read operation
+  * - page
+    - The next or previous page as taken directly from the response body payload of a previous API request for the previous page of the same read operation
     - *N/A* (assumed to be the first page)
     - *N/A*
     - False
