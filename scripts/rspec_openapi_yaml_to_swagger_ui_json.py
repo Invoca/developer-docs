@@ -1,8 +1,15 @@
 """Script to massage sms-messaging rspec-openapi output into json for swagger-ui."""
 # instructions:
-#   cd path/to/developer-docs
-#   python ./scripts/rspec_openapi_yaml_to_swagger_ui_json.py
-#   bash html
+#   ### run the specs to generate the source yaml
+#   > cd path/to/sms-messaging
+#   > OPENAPI=1 bundle exec rspec spec/sms/routes/*_spec.rb
+#
+#   ### run the script to generate and insert the json from the yaml
+#   > cd path/to/developer-docs
+#   > python ./scripts/rspec_openapi_yaml_to_swagger_ui_json.py
+#
+#   ### execute the html generation script
+#   > bash html
 
 import glob
 from collections import OrderedDict
@@ -223,7 +230,7 @@ def write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yam
             file_data = destination_file.read()
 
         # Replace the target string
-        file_data = re.sub(r'(\n\s+spec: ).*(,?)', '\\1' + json.dumps(yaml_dict) + '\\2', file_data)
+        file_data = re.sub(r'(\n\s+spec: ).*(,?)', '\\1' + json.dumps(yaml_dict, default=str) + '\\2', file_data)
 
         # Write the file out again
         with open(path_to_destination, 'w') as destination_file:
