@@ -64,12 +64,21 @@ class ConsolePrinter(object):
         """Prints a stylized 'success' message.  Separate styles for lists vs dicts of offenses."""
         print "{label} {message}".format(label=cls.format_text_string('COMPLETE', cls.OKGREEN), message=message)
 
+    @classmethod
+    def print_failure(cls, message):
+        """Prints a stylized 'success' message.  Separate styles for lists vs dicts of offenses."""
+        print "{label} {message}".format(label=cls.format_text_string('ERROR', cls.FAIL), message=message)
+
 
 def main():
     """Entry point to the entire yaml-to-json conversion"""
 
     def process_paths():
         """Process the rspec-openapi example routes for teh current yaml."""
+        if 'paths' not in yaml_dict:
+            print_failure("Did not find any paths in the yaml ... did you run rspec with OPENAPI=1?")
+            exit()
+
         for path in yaml_dict['paths'].keys():
             current_path = yaml_dict['paths'].pop(path)
             print "  path: {path}, verbs: [{verbs}]".format(path=path, verbs=', '.join(current_path.keys()))
@@ -82,13 +91,12 @@ def main():
                     continue
 
                 summary_path = summary.split(' ')[1]
+
                 if summary_path not in yaml_dict['paths']:
                     yaml_dict['paths'][summary_path] = current_path
-                    process_parameters(current_path, verb)
 
                 elif verb not in yaml_dict['paths'][summary_path]:
                     yaml_dict['paths'][summary_path][verb] = current_path[verb]
-                    process_parameters(current_path, verb)
 
                 else:
                     for status_code, response_body in current_path[verb]['responses'].items():
@@ -100,6 +108,8 @@ def main():
                         # show information for the first one processed
                         elif yaml_dict['paths'][summary_path][verb]['responses'][status_code] != response_body:
                             warnings['multiple_responses'].setdefault(summary, []).append(status_code)
+
+                process_parameters(current_path, verb)
 
     def process_parameters(path, verb):
         """Processes the parameters found for an endpoint."""
@@ -206,6 +216,11 @@ def print_warning(message, offenses=None):
 def print_success(message):
     """Print success string to the console."""
     ConsolePrinter.print_success(message)
+
+
+def print_failure(message):
+    """Print failure string to the console."""
+    ConsolePrinter.print_failure(message)
 
 
 def write_prepped_yaml_to_file(yaml_dict, yaml_path):
