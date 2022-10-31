@@ -30,7 +30,7 @@ used to ingest calls from external sources for conversation intelligence process
 used to query/update calls that are currently in progress within the Invoca platform
 
 :doc:`sms_messaging_api/index` -
-used to enable/disable promo numbers for SMS, as well as send SMS messages
+used for SMS number management, as well as handling incoming/outgoing SMS messages within the Invoca platform
 
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
