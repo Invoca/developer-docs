@@ -72,18 +72,6 @@ body {
   font-size: 10pt !important;
 }
 
-/*
-.swagger-ui tr:nth-child(even) {
-  color: #636060 !important;
-  background-color: #FFF !important;
-}
-
-.swagger-ui tr:nth-child(odd) {
-  color: #4A4A4A !important;
-  background-color: #FFF !important;
-}
-*/
-
 .swagger-ui td {
   color: #4A4A4A !important;
   background-color: #FFF !important;
