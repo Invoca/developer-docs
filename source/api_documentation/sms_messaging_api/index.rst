@@ -83,7 +83,7 @@ At this time, responses may be sorted by *one field only*.
 Filtering
 ------------------------------------
 The records returned by `GET` requests can be filtered using URL parameters.
-Filters are comprised of:
+Filters are comprised of the following required components:
 
 - a valid filterable field
 - a bracketed operator appended to the filterable field
@@ -122,10 +122,6 @@ Supported Filter Operators
 
 
 Each `GET` request denotes the valid filterable fields in its response body. Please see the API examples below for more information.
-
-If a filterable field is defined with a value but does not otherwise include a bracketed operator,
-it is assumed that the `[eq]` operator was intended.
-For example, `direction=incoming` means the same as `direction[eq]=incoming`.
 
 For ranges of filtered data, such as dates, the `lte` and `gte` operators may be combined for the same filterable field. For example:
 
