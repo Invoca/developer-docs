@@ -89,7 +89,7 @@ Filters are comprised of the following required components:
 - a bracketed operator appended to the filterable field
 - a filter value separated from the filterable field and its associated operator by an equal sign (`=`)
 
-For example: `https://example.com?created_at[lte]=2022-01-31` returns all records with a `created_at` value less than or equal to 2022-01-31.
+For example: `https://example.com?created_at[lte]=2022-11-03T23:59:00.000Z`.
 
 The following operators are supported:
 
@@ -110,11 +110,11 @@ Supported Filter Operators
 
   * - lte
     - Return only those records where the filtered field is less than or equal to the value found on the right-hand side of the = in this parameter
-    - created_at[lte]=2022-01-31
+    - created_at[lte]=2022-11-03T23:59:00.000Z
 
   * - gte
     - Return only those records where the filtered field is greater than or equal to the value found on the right-hand side of the = in this parameter
-    - created_at[gte]=2022-01-01
+    - created_at[gte]=2022-11-03T23:59:00.000Z
 
   * - empty
     - Return only those records where the filtered field has an empty value such as integer 0, MySQL NULL/null, or an empty string
@@ -125,7 +125,7 @@ Each `GET` request denotes the valid filterable fields in its response body. Ple
 
 For ranges of filtered data, such as dates, the `lte` and `gte` operators may be combined for the same filterable field. For example:
 
-`created_at[gte]=2022-01-01&created_at[lte]=2022-01-31`.
+`created_at[gte]=2022-11-01T23:59:00.000Z&created_at[lte]=2022-11-03T23:59:00.000Z`.
 
 Any combination of filters assumes `AND` operations between members of the completed set of filters.
 
