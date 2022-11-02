@@ -24,7 +24,10 @@ Authentication and Authorization
 The SMS Messaging API uses OAuth2 Tokens for authentication and authorization.
 Please see
 :doc:`../../basics/design_principles`
-for more information about generating and using an OAuth2 Token in the Invoca platform.
+for more information about generating an OAuth2 Token in the Invoca platform.
+Unlike other Invoca APIs, the SMS Messaging API uses the Bearer authentication scheme, and this must be indicated in the
+Authorization header of requests.
+For example: `Authorization: Bearer <token>`
 
 ------------------------------------
 Pagination
