@@ -19,12 +19,19 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 1. Clone this repo
 2. Run the following commands:
 ```
-# note that python version used is 2.7
-sudo easy_install pip==20.3.4 # must specify this pip version
+# Install python version 2.7.18 with pyenv
+brew install pyenv
+pyenv install 2.7.18
+pyenv global 2.7.18
+PATH=$(pyenv root)/shims:$PATH
+
+# Activate virtual env
 sudo pip install virtualenv
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.pip
+
+# Build documentation
 bash html
 ```
 3. Browse to the local html files in build/
