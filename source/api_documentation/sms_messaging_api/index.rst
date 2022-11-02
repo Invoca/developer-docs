@@ -129,6 +129,10 @@ For ranges of filtered data, such as dates, the `lte` and `gte` operators may be
 
 Any combination of filters assumes `AND` operations between members of the completed set of filters.
 
+If an E.164-formatted phone number is provided as a query parameter value, the leading `+` must be url-encoded as `%2B`.
+
+For example: `https://example.com?from[eq]=%2B1234567890`
+
 **By default, responses are filtered by created_at for the current date.**
 
 ------------------------------------
