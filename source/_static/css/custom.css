@@ -610,9 +610,9 @@ div.endpoint-list div.panel-body .container {
   padding: 0;
 }
 
-.response-col_description__inner,
-.response-control-media-type,
-.response-col_links
+.swagger-ui .response-col_description__inner,
+.swagger-ui .response-control-media-type,
+.swagger-ui .response-col_links
 {
   display: none;
 }
