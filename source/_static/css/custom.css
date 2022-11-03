@@ -610,4 +610,10 @@ div.endpoint-list div.panel-body .container {
   padding: 0;
 }
 
+.swagger-ui .response-col_description__inner,
+.swagger-ui .response-control-media-type,
+.swagger-ui .response-col_links
+{
+  display: none;
+}
 /*********************FOR BOOTSTRAP INTERACTIONS************************/

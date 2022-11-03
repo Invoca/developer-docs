@@ -29,7 +29,7 @@ PATH=$(pyenv root)/shims:$PATH
 sudo pip install virtualenv
 virtualenv venv
 source venv/bin/activate
-pip install -r requirements.pip
+pip install -r requirements.txt
 
 # Build documentation
 bash html
