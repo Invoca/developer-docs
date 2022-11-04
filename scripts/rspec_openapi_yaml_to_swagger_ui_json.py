@@ -111,6 +111,28 @@ def main():
 
                 process_parameters(current_path, verb)
 
+        process_request_body_arrays()
+
+    def process_request_body_arrays():
+        """Adjusts a surprising way that openapi/swagger seem to describe request body json arrays"""
+        for path in yaml_dict['paths']:
+            try:
+                request_body_json = yaml_dict['paths'][path]['post']['requestBody']['content']['application/json']
+                request_body_json['schema']['type'] = 'array'
+                request_body_json['schema'].pop('properties')
+                if re.match(r"^\/delivery_reports$", path):
+                    request_body_json['schema']['items'] = {"$ref": "#/components/schemas/DeliveryReportRequest"}
+                elif re.match(r"^\/messages$", path):
+                    request_body_json['schema']['items'] = {"$ref": "#/components/schemas/MessageRequest"}
+            except KeyError:
+                pass
+
+            try:
+                request_body_json = yaml_dict['paths'][path]['post']['requestBody']['content']['application/json']
+                request_body_json['example'] = request_body_json['example'].pop('_json')
+            except KeyError:
+                pass
+
     def process_parameters(path, verb):
         """Processes the parameters found for an endpoint."""
         # warn if we find any filter/sort/pagination parameters, since they won't serve the documentation well at the
@@ -171,7 +193,10 @@ def main():
 
     for yaml_path in yaml_paths:
         with open(yaml_path, 'r') as yaml_file:
-            yaml_dict = yaml.load(yaml_file.read().rstrip(), Loader=yaml.FullLoader)
+            yaml_str = yaml_file.read().rstrip()
+            yaml_str = apply_openapi_template(yaml_path, yaml_str)
+            yaml_dict = yaml.load(yaml_str, Loader=yaml.FullLoader)
+
             parameter_references = yaml_dict.get('components', {}).get('parameters', {}).keys()
 
             process_paths()
@@ -185,12 +210,24 @@ def main():
         write_json_string_to_swagger_initializer(yaml_dict, path_to_destination, yaml_paths)
 
 
+def apply_openapi_template(yaml_path, yaml_str):
+    """Replace undesirable interpretations from the openapi-rspec execution"""
+    template_path = re.sub('.yaml', '-template.yaml', yaml_path)
+    if os.path.exists(template_path):
+        with open(template_path, 'r') as template_file:
+            template_str = template_file.read().rstrip()
+            yaml_str = re.sub(r".*\nopenapi:", "#{template_str}\nopenapi:".format(template_str=template_str),
+                              yaml_str, flags=re.DOTALL)
+    return yaml_str
+
+
 def get_file_paths():
     """Get the paths to input and output files."""
     cwd = os.getcwd()
     path_to_subject_repo = '../sms-messaging'
     path_to_destination = './source/_static/js/swagger-ui/swagger-initializer.js'
     yaml_paths = glob.glob('{cwd}/{path}/.backstage/*.yaml'.format(cwd=cwd, path=path_to_subject_repo))
+    yaml_paths = [path for path in yaml_paths if 'template' not in path]
     return path_to_destination, yaml_paths
 
 
