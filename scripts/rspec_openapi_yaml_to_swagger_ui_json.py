@@ -120,9 +120,9 @@ def main():
                 request_body_json = yaml_dict['paths'][path]['post']['requestBody']['content']['application/json']
                 request_body_json['schema']['type'] = 'array'
                 request_body_json['schema'].pop('properties')
-                if re.match(r"^\/delivery_reports$", path):
+                if path == "/delivery_reports":
                     request_body_json['schema']['items'] = {"$ref": "#/components/schemas/DeliveryReportRequest"}
-                elif re.match(r"^\/messages$", path):
+                elif path == "/messages":
                     request_body_json['schema']['items'] = {"$ref": "#/components/schemas/MessageRequest"}
             except KeyError:
                 pass
