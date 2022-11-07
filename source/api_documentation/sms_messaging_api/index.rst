@@ -139,7 +139,7 @@ For example: `https://example.com?from[eq]=%2B1234567890`
 **By default, responses are filtered by created_at for the current date.**
 
 ------------------------------------
-SMS Messaging API Example Requests
+Example Requests
 ------------------------------------
 
 .. swagger_ui::
