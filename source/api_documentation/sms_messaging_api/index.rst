@@ -70,7 +70,7 @@ The value of the `sort` parameter is comprised of:
 - an optional valid sortable field
 - an optional sort direction (`asc` or `desc`) separated from the sortable field by a colon (`:`)
 
-For example: `https://example.com?sort=created_at:asc`
+For example: `https://messaging.invoca.net/sms/@@SMS_MESSAGING_API_VERSION/messages?sort=created_at:asc`
 
 If only a sort direction is provided, the response body will be sorted in the provided direction according to the default sortable field.
 
@@ -92,7 +92,7 @@ Filters are comprised of the following required components:
 - a bracketed operator appended to the filterable field
 - a filter value separated from the filterable field and its associated operator by an equal sign (`=`)
 
-For example: `https://example.com?created_at[lte]=2022-11-03T23:59:00.000Z`.
+For example: `https://messaging.invoca.net/sms/@@SMS_MESSAGING_API_VERSION/messages?created_at[lte]=2022-11-03T23:59:00.000Z`.
 
 The following operators are supported:
 
@@ -134,13 +134,15 @@ Any combination of filters assumes `AND` operations between members of the compl
 
 If an E.164-formatted phone number is provided as a query parameter value, the leading `+` must be url-encoded as `%2B`.
 
-For example: `https://example.com?from[eq]=%2B1234567890`
+For example: `https://messaging.invoca.net/sms/@@SMS_MESSAGING_API_VERSION/messages?from[eq]=%2B1234567890`
 
 **By default, responses are filtered by created_at for the current date.**
 
 ------------------------------------
 Example Requests
 ------------------------------------
+
+Base endpoint: `https://messaging.invoca.net/sms/<version>`
 
 .. swagger_ui::
    :id: swagger-ui
