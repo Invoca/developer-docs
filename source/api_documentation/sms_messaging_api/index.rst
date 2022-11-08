@@ -142,7 +142,7 @@ For example: `https://messaging.invoca.net/sms/@@SMS_MESSAGING_API_VERSION/messa
 Example Requests
 ------------------------------------
 
-Base endpoint: `https://messaging.invoca.net/sms/<version>`
+Base endpoint: `https://messaging.invoca.net/sms/@@SMS_MESSAGING_API_VERSION`
 
 .. swagger_ui::
    :id: swagger-ui
