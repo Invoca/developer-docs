@@ -92,7 +92,7 @@ These are the call details used when creating the call in the Invoca platform.
       * - fr-FR
         - French (France)
 
-    `recording_auth_config_id` The ID from the Auth Configuration object. This parameter can be processed only if you have setup an Auth Configuration object. Passing this parameter enables you to use the supported secure recording access options.
+    `recording_auth_config_id` The ID from the Auth Configuration setup step. Please see the **Supported Recording Access Options** section for more details.
 
 
 -----
@@ -354,7 +354,7 @@ Call Recording URLs will need to be accessible to the Invoca Audio processing sy
 
     `Public URL` In this approach, the call recording would be able to be downloaded without requirement of access credentials or API keys.
 
-    `Secure Recording` In this approach, some additional setup is required. If accessing your call recordings requires making a request with a secure token, you will need to setup an Auth Configuration object with Invoca prod support. Prod support will provide you with a 'recording_auth_config_id', which when passed as a parameter in your API request, will enable the Invoca Audio Processing system to download the secured recording. Currently, the following authentication methods are supported:
+    `Secure Recording URL` If accessing your call recordings requires an access token, you will need to setup an Auth Configuration with Invoca prod support, who will provide you with the corresponding Auth Configuration ID. When passed as a parameter in your API request, the *recording_auth_config_id* will enable the Invoca Audio Processing system to access the recording. Currently, the following authentication methods are supported:
 
     .. list-table::
       :widths: 8 40
