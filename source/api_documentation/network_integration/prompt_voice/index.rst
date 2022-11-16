@@ -6,12 +6,12 @@ For full details on creating and updating campaigns via the API, see :doc:`Adver
 Manage Prompt Voice for Campaigns
 """""""""""""""""""""""""""""""""""""""""""
 
-A prompt voice can be set on the campaign's IVR to configure the accent used for a campaign's prompts.
+A prompt voice can be set on a campaign's IVR to configure the accent used for the campaign's prompts.
 
 Set Prompt Voice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To use a particular prompt voice for your campaign, set ``"tts_voice_talent_id"`` on the IVR. See the tables in the **Conditions** section below to determine which prompt voice to use. (Make sure to reference *only* the table corresponds to the language of your campaign.)
+To use a particular prompt voice for your campaign, set ``"tts_voice_talent_id"`` on the IVR. See the tables in the **Conditions** section below to determine which prompt voice to use. (Make sure to reference *only* the table that corresponds to the language of your campaign.)
 
 POST
 
