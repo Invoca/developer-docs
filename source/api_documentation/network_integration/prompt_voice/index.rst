@@ -1,17 +1,17 @@
-TTS Prompt Voice
+Prompt Voice
 ======================
 
 For full details on creating and updating campaigns via the API, see :doc:`Advertiser Campaigns <../advertiser_campaigns/index>`.
 
-Manage TTS Prompt Voice for Campaigns
+Manage Prompt Voice for Campaigns
 """""""""""""""""""""""""""""""""""""""""""
 
-TTS prompt voice can be sent for a campaign to use different accents for TTS prompts on a call.
+A prompt voice can be set on the campaign's IVR to configure the accent used for a campaign's prompts.
 
-Set TTS Prompt Voice
+Set Prompt Voice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate voice prompts using a certain prompt voice for a given campaign, set ``"tts_voice_talent_id"`` on the IVR you want.
+To use a particular prompt voice for your campaign, set ``"tts_voice_talent_id"`` on the IVR. See the tables in the **Conditions** section below to determine which prompt voice to use. (Make sure to reference *only* the table corresponds to the language of your campaign.)
 
 POST
 
@@ -26,6 +26,7 @@ Example Request Body
       "tts_voice_talent_id": 3,
       "root": {
         "node_type": "Connect",
+        "prompt_text": "Please hold while we connect your call",
         "destination_phone_number": "8056173768",
         "destination_country_code": ""
       }
@@ -43,7 +44,7 @@ English voice options
   :header-rows: 1
   :class: parameters
 
-  * - Option
+  * - Id
     - Voice Name
     - Gender
     - Language code (Country)
@@ -137,7 +138,7 @@ French voice options
   :header-rows: 1
   :class: parameters
 
-  * - Option
+  * - Id
     - Voice Name
     - Gender
     - Language code (Country)
@@ -171,7 +172,7 @@ Spanish voice options
   :header-rows: 1
   :class: parameters
 
-  * - Option
+  * - Id
     - Voice Name
     - Gender
     - Language code (Country)
