@@ -34,8 +34,8 @@ The API uses the following terms and their aliases:
    call_activity_tracking/index
    call_recording_condition/index
    prompt_recordings/index
+   prompt_voice/index
    set_call_recorded_prompt/index
-   tts_prompt_voice/index
    whisper_prompts/index
    custom_challenge_prompts/index
    custom_ivr_error_prompts/index
