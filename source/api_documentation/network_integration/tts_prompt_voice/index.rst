@@ -1,17 +1,17 @@
-TTS Voice Talent
+TTS Prompt Voice
 ======================
 
 For full details on creating and updating campaigns via the API, see :doc:`Advertiser Campaigns <../advertiser_campaigns/index>`.
 
-Manage TTS voice talent for campaigns
+Manage TTS Prompt Voice for Campaigns
 """""""""""""""""""""""""""""""""""""""""""
 
-TTS voice talent can be sent for a campaign to use different accents for TTS prompts on a call.
+TTS prompt voice can be sent for a campaign to use different accents for TTS prompts on a call.
 
-Set TTS Voice Talent
+Set TTS Prompt Voice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate voice prompts using a certain voice talent for a given campaign, set ``"tts_voice_talent_id"`` on the IVR you want.
+To generate voice prompts using a certain prompt voice for a given campaign, set ``"tts_voice_talent_id"`` on the IVR you want.
 
 POST
 
