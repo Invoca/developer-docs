@@ -354,7 +354,7 @@ Call Recording URLs will need to be accessible to the Invoca Audio processing sy
 
     `Public URL` In this approach, the call recording would be able to be downloaded without requirement of access credentials or API keys.
 
-    `Secure Recording URL` If accessing your call recordings requires an access token, you will need to setup an Auth Configuration with Invoca prod support, who will provide you with the corresponding Auth Configuration ID. When passed as a parameter in your API request, the *recording_auth_config_id* will enable the Invoca Audio Processing system to access the recording. Currently, the following authentication methods are supported:
+    `Secure Recording URL` If accessing your call recordings requires an access token, you will need to setup an Auth Configuration with Invoca support. After setup, Invoca will provide you with the corresponding Auth Configuration ID. When passed as a parameter in your API request, the *recording_auth_config_id* will enable the Invoca Audio Processing system to access the recording. Currently, the following authentication methods are supported:
 
     .. list-table::
       :widths: 8 40
