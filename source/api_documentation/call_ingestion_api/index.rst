@@ -92,6 +92,9 @@ These are the call details used when creating the call in the Invoca platform.
       * - fr-FR
         - French (France)
 
+    `recording_auth_config_id` The ID from the Auth Configuration setup step. Please see the **Supported Recording Access Options** section for more details.
+
+
 -----
 
 **Signal Parameters**
@@ -349,7 +352,26 @@ Call Recording URLs will need to be accessible to the Invoca Audio processing sy
 
     `Presigned URL` If the call recording is hosted in `AWS S3 <https://docs.aws.amazon.com/s3/index.html>`_ you can use `presigned URLs <https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html>`_.  In this approach, a unique token is created and appended to the URL that grants access for a predefined period of time to the system in which you provide the URL.
 
-    `Public URL` In this approach, the call recording would be able to be downloaded without requirement of access credentials or API keys. 
+    `Public URL` In this approach, the call recording would be able to be downloaded without requirement of access credentials or API keys.
+
+    `Secure Recording URL` If accessing your call recordings requires an access token, you will need to setup an Auth Configuration with Invoca support. After setup, Invoca will provide you with the corresponding Auth Configuration ID. When passed as a parameter in your API request, the *recording_auth_config_id* will enable the Invoca Audio Processing system to access the recording. Currently, the following authentication methods are supported:
+
+    .. list-table::
+      :widths: 8 40
+      :header-rows: 1
+      :class: parameters
+
+      * - Authentication Method
+        - Description
+
+      * - HTTP Authentication Header
+        - Sends a header with the format `Authorization: Bearer <Token>`
+
+      * - Query String Parameter
+        - Appends a new query string param to the recording_url parameter with the format `?<Query String>=<Token>`.
+
+      * - Custom Header
+        - Sends a header with the format `<Custom Header>: <Token>`
 
 
 If the Invoca Audio Processing system is unable to succesfully download and process the call recording then a message will be sent via email notifying your Invoca Customer Success Manager (CSM) who will then reach out to help resolve any issues.  Please see the **Call Processing Error Notifications** section for more details.
