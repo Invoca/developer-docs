@@ -332,7 +332,7 @@ The Call Ingestion API supports the following file formats:
 
     * Note: MP4s should be audio-only
 
-The default call recording format on the Invoca platform is 16-bit PCM encoded `WAV <https://en.wikipedia.org/wiki/WAV>`_ files with an 8 kHz sample rate. Please note that the Invoca Audio Processing system will upsample or downsample accordingly into our default call recording format.
+Please note that after ingestion, the Invoca Audio Processing system will upsample or downsample accordingly into our default call recording format, which is: `MP3 <https://en.wikipedia.org/wiki/MP3>`_ with an 8 kHz sample rate.
 
 All call recordings are required to be in dual-channel or stereo format.  The call recording of an inbound call on the Invoca platform has the caller channel on channel 0 and the agent audio on channel 1.
 For all calls submitted via the Call Ingestion API, we will normalize the channels to match the Invoca call record channel layout.
