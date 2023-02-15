@@ -19,17 +19,17 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 1. Clone this repo
 2. Run the following commands:
 ```
-# Install python version 2.7.18 with pyenv
+# Install python version 3.8.13 with pyenv
 brew install pyenv
-pyenv install 2.7.18
-pyenv global 2.7.18
+pyenv install 3.8.13
+pyenv global 3.8.13
 PATH=$(pyenv root)/shims:$PATH
 
 # Activate virtual env
-sudo pip install virtualenv
+sudo pip3 install virtualenv
 virtualenv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Build documentation
 bash html
