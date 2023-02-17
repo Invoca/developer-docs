@@ -44,7 +44,7 @@ bash html
 3. Rebuild the docs with this command:
 `bash html`
 4. Check your changes locally by opening `build/html/index.html`
-5. Commit your changes and push to GitHub (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
+5. Commit your changes and push to GitHub (Only members of the Developer Docs Administrators group can push to a publically available version of the docs.)
 6. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
 **An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
 7. Visit https://developers.invoca.net to check your changes
@@ -64,7 +64,7 @@ bash html
 10. Visit https://developers.invoca.net
 11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
 12. Click on your branch name to view and you should be able to check the changes you made
-13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch. (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
+13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch. (Only members of the Developer Docs Administrators group can push to a publically available version of the docs.)
 14. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
 **An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
 
