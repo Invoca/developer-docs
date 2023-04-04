@@ -4,17 +4,18 @@
 
   .. rubric:: Example
 
-  Update the call currently in progress whose transaction ID is `ABCD1234-ABCD1234`. Set the external unique ID to `mycalls00001`.
+  Update the value of a custom data field for the call whose external unique ID is `mycalls00001`.
+  Note: You will not see the new custom data field value in the response or in subsequent queries using this API
 
   This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
   Be sure to use your own oauth_token, organization_type and id.
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&transaction_id=ABCD1234-ABCD1234``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&external_unique_id=mycalls00001``
 
   Parameters:
-  `transaction_id` is required for this request
+  `external_unique_id` is required for this request
 
   Request Body:
 
@@ -22,7 +23,9 @@
 
     {
       "call_in_progress": {
-        "external_unique_id": "mycalls00001"
+        "custom_data": [
+            {"name": "<custom_data_field_name>", "value": "<desired_value>"}
+        ]
       }
     }
 

@@ -4,16 +4,18 @@
 
   .. rubric:: Example
 
-  This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
+  Update the value of a custom data field for the call whose transaction ID is `ABCD1234-ABCD1234`.
+  Note: You will not see the new custom data field value in the response or in subsequent queries using this API
 
-  Example of updating a call's Custom Data:
+  This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
+  Be sure to use your own oauth_token, organization_type and id.
 
   Endpoint:
 
-  ``https://mynetwork.invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress.json?oauth_token=wXB4Dpwtyvduy1HRKn-WfD5FSUh9P1hx&id=25&organization_type=network&transaction_id=01FMTK644Z9D-3FPEY1REX8JSZB``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&transaction_id=ABCD1234-ABCD1234``
 
   Parameters:
-  `transaction_id` OR `external_unique_id` is required for this request
+  `transaction_id` is required for this request
 
   Request Body:
 
@@ -22,7 +24,7 @@
     {
       "call_in_progress": {
         "custom_data": [
-            {"name": "Call Disposition", "value": "CUSTOMER_HANGUP"}
+            {"name": "<custom_data_field_name>", "value": "<desired_value>"}
         ]
       }
     }
@@ -34,13 +36,23 @@
   .. code-block:: json
 
     {
-      "current_call": {
-        "transaction_id": "01FMTK644Z9D-3FPEY1REX8JSZB",
-        "external_unique_id": "0ea32dd2-fed2-43fb-be8e-e56674c33900",
-        "calling_phone_number": "+15309999999",
-        "destination_phone_number": "+18555595599",
-        "call_start_time_utc": "2022-12-10T13:45:00.000Z",
-        "transfer_start_time_utc": "2022-12-10T13:49:00.000Z",
-        "call_status": "bridged"
-      }
+      "current_calls": [
+        {
+          "transaction_id": "ABCD1234-ABCD1234",
+          "call_status": "bridged",
+          "external_unique_id": null,
+          "calling_phone_number": "+15559999999",
+          "destination_phone_number": "+18555595599",
+          "called_phone_number": "+18557174046",
+          "bridge_start_time": "2023-04-03T16:02:36-07:00",
+          "phone_type": "Mobile",
+          "custom_data": {
+                "utm_source": {
+                    "value": "google.com",
+                    "source": "VirtualLine"
+                },
+                "demographics_data": {}
+            }
+        }
+      ]
     }
