@@ -71,11 +71,13 @@ Examples
    :description: Get all available calls in progress for the specified organization
    :page: get_calls_in_progress
 
+
 .. api_endpoint::
    :verb: GET
    :path: /calls_in_progress/current_calls
    :description: Get calls in progress by transaction id
    :page: get_calls_by_transaction_id
+
 
 .. api_endpoint::
    :verb: GET
@@ -83,11 +85,13 @@ Examples
    :description: Get calls in progress by calling and destination phone numbers
    :page: get_calls_by_phone_number
 
+
 .. api_endpoint::
    :verb: GET
    :path: /calls_in_progress/current_calls
    :description: Get calls in progress by external unique id
    :page: get_calls_by_external_unique_id
+
 
 Update a Call in Progress
 --------------------------
@@ -143,17 +147,20 @@ Examples
    :description: Update a call's external unique id
    :page: update_external_unique_id
 
+
 .. api_endpoint::
    :verb: PUT
    :path: /calls_in_progress
    :description: Update a call's custom data via transaction ID
    :page: update_custom_data
 
+
 .. api_endpoint::
   :verb: PUT
   :path: /calls_in_progress
   :description: Update a call's custom data via external unique ID
   :page: update_custom_data_ext
+
 
 Response Codes
 --------------
