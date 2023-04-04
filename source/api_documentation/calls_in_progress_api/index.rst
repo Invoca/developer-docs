@@ -9,7 +9,10 @@ Calls In Progress API
   </div>
 
 
-The Calls In Progress API is accessible using the API credentials generated on the platform.
+| The Calls In Progress API is used for getting information and setting custom data values during a call. Calls become available
+ via the api as soon as they are transferred to the campaign's destination. Once the call is complete, it is no longer available
+ via the API.
+| This API is accessible using the API credentials generated on the platform.
 
 Find Calls in Progress
 ------------------------
@@ -130,7 +133,7 @@ Fields Available for Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `external_unique_id`
 
-`custom_data` (additions/updates only, no removal)
+`custom_data`
 
 
 Examples
