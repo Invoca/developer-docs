@@ -29,7 +29,7 @@ Query Parameters
     - Format
     - Required
 
-* - organization_type
+  * - organization_type
     - The type of organization to be used in the request, either **Network** or **Advertiser**
     - String
     - True
