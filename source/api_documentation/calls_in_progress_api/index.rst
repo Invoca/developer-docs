@@ -16,7 +16,8 @@ Calls In Progress API
 
 Find Calls in Progress
 ------------------------
-Perform a `GET` request to query calls currently in progress for the specified organization. Sending only the required parameters will return all current calls.
+| Perform a `GET` request to query calls currently in progress for the specified organization. Sending only the required
+ parameters will return all current calls.
 
 Query Parameters
 ~~~~~~~~~~~~~~~~~
@@ -94,6 +95,11 @@ Update certain values for a Call that is currently in progress.
 
 Supported types of requests: `PUT` and `POST`
 
+Fields Available for Update
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`external_unique_id` - add a unique ID to the call, usually from another system
+
+`custom_data` - populate Marketing Data Fields (aka Custom Data Fields) in the Invoca platform
 
 Query Parameters
 ~~~~~~~~~~~~~~~~~~
@@ -129,13 +135,6 @@ Query Parameters
     - String
     - Optional, if using transaction_id
 
-Fields Available for Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`external_unique_id`
-
-`custom_data`
-
-
 Examples
 ~~~~~~~~~~~
 .. api_endpoint::
@@ -155,7 +154,6 @@ Examples
   :path: /calls_in_progress
   :description: Update a call's custom data via external unique ID
   :page: update_custom_data_ext
-
 
 Response Codes
 --------------
