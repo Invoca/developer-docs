@@ -12,5 +12,4 @@ See the following technical documentation for details on how to setup Web Integr
    toolkit_library
    pnapi_web_integration
    advertiser_web_integration
-   publisher_web_integration
 
