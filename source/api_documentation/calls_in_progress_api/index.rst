@@ -9,15 +9,20 @@ Calls In Progress API
   </div>
 
 
-| The Calls In Progress API is used for getting information and setting custom data values during a call. Calls become available
- via the api as soon as they are transferred to the campaign's destination. Once the call is complete, it is no longer available
- via the API.
-| This API is accessible using the API credentials generated on the platform.
+The Calls In Progress API is used for interacting with pre-call insights for live calls as part of PreSense. It can retrieve
+information and set custom data values during a call. Calls become available via the api as soon as they are transferred to
+the campaign's destination. Once the call is complete, it is no longer available via the API.
 
 Find Calls in Progress
 ------------------------
-| Perform a `GET` request to query calls currently in progress for the specified organization. Sending only the required
- parameters will return all current calls.
+Perform a `GET` request to query calls currently in progress for the specified organization. Sending only the required
+parameters will return all current calls.
+
+The custom_data field contains the Marketing Data Fields (aka Custom Data Fields) that have values when the call is received.
+Each custom data field will include the current value and the source of that value. These values can come from your Invoca Tag,
+values applied to Networks/Advertisers/Campaigns/Promo Numbers, or from data returned by a Real-Time Routing Webhook.
+If you have Enhanced Caller
+Profiles (ECP) enabled, the demographics_data field will contain any ECP data that is available for the caller.
 
 Query Parameters
 ~~~~~~~~~~~~~~~~~
