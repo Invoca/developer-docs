@@ -1,4 +1,4 @@
-
+.. include:: _signal_transaction_rollup_replacements.rst
 
 ..  list-table::
   :widths: 30 8 40
