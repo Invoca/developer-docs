@@ -1,5 +1,5 @@
 Conversion Reporting Email (Deprecated)
-==========================
+=======================================
 
 .. raw:: html
 
@@ -63,8 +63,6 @@ Conversion Reporting emails are processed on a nightly basis and a reply message
 
 Example response email
 ----------------------
-
-.. raw:: html
 
 .. image:: ../_static/CRerrorMessage.jpg
 

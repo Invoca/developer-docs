@@ -1,5 +1,5 @@
 Auto-Approve Affiliate to Campaigns
-==================================
+====================================
 
 Changes to the Relationship between Advertiser and Affiliate on the network platform are replicated to the Invoca platform using this API.
 The operations on Advertiser‐Affiliate Relationships are similar to Network, in that the interface is fully idempotent, and the create and update commands will act as “create or update”.

@@ -18,6 +18,6 @@
 
     [
       {
-        agent: "Which Color?, Okay I will look into that, Goodbye!"
+        "agent": "Which Color?, Okay I will look into that, Goodbye!"
       }
     ]

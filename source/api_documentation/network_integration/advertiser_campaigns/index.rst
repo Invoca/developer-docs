@@ -733,8 +733,9 @@ Endpoint:
    :description: Unarchive a Campaign
    :page: post_advertiser_campaign_unarchive
 
+
 Keypress Failover Type
---------------
+-----------------------
 
 **Example IVR Tree utilizing keypress_failover_type**
 

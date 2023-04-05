@@ -2,7 +2,7 @@ Call Recording Condition
 ========================
 
 Manage call recording conditions for campaigns
-""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 A call recording condition can be set for a campaign to determine whether or not the call should be recorded. The call will be recorded if the full condition is met.
 

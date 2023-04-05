@@ -35,4 +35,3 @@
       "destination_phone_number": "888-111-2222"
     }
 
-  .. raw:: html

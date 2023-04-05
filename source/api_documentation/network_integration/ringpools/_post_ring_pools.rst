@@ -38,4 +38,3 @@
 
   Same as a GET response, includes all the RingPool properties.
 
-  .. raw:: html
