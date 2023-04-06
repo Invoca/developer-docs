@@ -33,6 +33,23 @@
                 },
                 "demographics_data": {}
             }
+        },
+        {
+          "transaction_id": "ABCD5678-ABCD5678",
+          "call_status": "bridged",
+          "external_unique_id": null,
+          "calling_phone_number": "+15559998888",
+          "destination_phone_number": "+18555595599",
+          "called_phone_number": "+18557174046",
+          "bridge_start_time": "2023-04-03T16:05:42-07:00",
+          "phone_type": "Mobile",
+          "custom_data": {
+                "utm_source": {
+                    "value": "google.com",
+                    "source": "VirtualLine"
+                },
+                "demographics_data": {}
+            }
         }
       ]
     }

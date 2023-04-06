@@ -3,7 +3,8 @@
   .. rubric:: Example
 
   Update the value of a custom data field for the call whose transaction ID is `ABCD1234-ABCD1234`.
-  Note: You will not see the new custom data field value in the response or in subsequent queries using this API
+
+  **Note:** You will not see the new custom data field value in the response or in subsequent queries using this API.
 
   This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
   Be sure to use your own oauth_token, organization_type and id.

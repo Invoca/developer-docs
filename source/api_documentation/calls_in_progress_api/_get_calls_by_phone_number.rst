@@ -5,6 +5,8 @@
   Get calls in progress for the calling phone number `530-999-9999` and destination phone number `855-559-5599`.
   Be sure to use your own oauth_token, organization_type and id.
 
+  This example is for an organization with Enhanced Caller Profiles enabled, so the demographics data is included in the response.
+
   Endpoint:
 
   ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&calling_phone_number=5309999999&destination_phone_number=8555595599``
@@ -33,7 +35,33 @@
                     "value": "google.com",
                     "source": "VirtualLine"
                 },
-                "demographics_data": {}
+                "demographics_data": {
+                    "display_name_data_append": "Stan Bobman",
+                    "first_name_data_append": "Stan",
+                    "last_name_data_append": "Bobman",
+                    "age_range_data_append": "",
+                    "gender_data_append": "Male",
+                    "address_type_data_append": "Street or Residential Address",
+                    "address_full_street_data_append": "2238 N Maple Ave",
+                    "address_city_data_append": "Fresno",
+                    "address_state_data_append": "CA",
+                    "address_zip_data_append": "93703",
+                    "address_country_data_append": "",
+                    "carrier_data_append": "New Cingular Wireless Pcs, Llc",
+                    "line_type_data_append": "Mobile",
+                    "is_prepaid_data_append": false,
+                    "primary_email_address_data_append": "",
+                    "linked_email_addresses_data_append": "",
+                    "household_income_data_append": "30k-40k",
+                    "marital_status_data_append": "",
+                    "home_owner_status_data_append": "",
+                    "home_market_value_data_append": "",
+                    "length_of_residence_years_data_append": "6 years",
+                    "occupation_data_append": "",
+                    "education_data_append": "",
+                    "has_children_data_append": true,
+                    "high_net_worth_data_append": null
+                }
             }
         }
       ]

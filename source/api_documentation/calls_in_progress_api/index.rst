@@ -21,8 +21,8 @@ parameters will return all current calls.
 The custom_data field contains the Marketing Data Fields (aka Custom Data Fields) that have values when the call is received.
 Each custom data field will include the current value and the source of that value. These values can come from your Invoca Tag,
 values applied to Networks/Advertisers/Campaigns/Promo Numbers, or from data returned by a Real-Time Routing Webhook.
-If you have Enhanced Caller
-Profiles (ECP) enabled, the demographics_data field will contain any ECP data that is available for the caller.
+If you have Enhanced Caller Profiles (ECP) enabled, the demographics_data field will contain any ECP data that is available
+for the caller.
 
 Query Parameters
 ~~~~~~~~~~~~~~~~~
@@ -100,9 +100,12 @@ Examples
 
 Update a Call in Progress
 --------------------------
-Update certain values for a Call that is currently in progress.
+Update custom data values and set an external identifier to be used for subsequent API requests for a Call
+that is currently in progress.
 
 Supported types of requests: `PUT` and `POST`
+
+Request body should be JSON formatted.
 
 Fields Available for Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,25 +127,26 @@ Query Parameters
     - Format
     - Required
 
+  * - organization_type
+    - The type of organization to be used in the request, either **Network** or **Advertiser**
+    - String
+    - True
+
   * - id
     - The ID of the organization to be used in the request
     - Number
     - True
 
-  * - organization_type
-    - The type of organization to be used in the request. Available types: [Network, Advertiser]. Capitalization is required for this param.
-    - String
-    - True
-
   * - transaction_id
-    - Unique transaction ID
+    - The transaction id for the desired call
     - String
-    - Optional, if using external_unique_id
+    - Optional if using **external_unique_id**
 
   * - external_unique_id
-    - Unique ID for call from external system
+    - The unique id previously applied to the desired call - can only be set via the Calls In Progress API
     - String
-    - Optional, if using transaction_id
+    - Optional if using **transaction_id**
+
 
 Examples
 ~~~~~~~~~~~
