@@ -123,7 +123,7 @@ Content Type: application/json
     - Arbitrary string. Names the RingPool.
 
   * - destination_type
-    - string (Required)
+    - string
     - One of:
 
       Advertiser,
