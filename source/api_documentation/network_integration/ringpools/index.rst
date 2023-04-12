@@ -37,7 +37,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
   * - max_pool_size
     - integer
-    - The maximum amount of phone numbers to be allotted at one time.
+    - The maximum amount of phone numbers to be allotted at one time. The default value is 2.
 
   * - preferred
     - boolean
@@ -123,7 +123,7 @@ Content Type: application/json
     - Arbitrary string. Names the RingPool.
 
   * - destination_type
-    - string (Required)
+    - string
     - One of:
 
       Advertiser,
@@ -140,7 +140,7 @@ Content Type: application/json
 
   * - max_pool_size
     - integer
-    - The maximum amount of phone numbers to be allotted at one time
+    - The maximum amount of phone numbers to be allotted at one time. The default value is 2.
 
   * - preferred
     - boolean
