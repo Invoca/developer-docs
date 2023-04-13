@@ -17,10 +17,10 @@
   .. code-block:: json
   
     [
-      { agent: "Which Color?" },
-      { caller: "Orange" },
-      { agent: "Okay I will look into that" },
-      { caller: "Awesome thank you" },
-      { agent: "Goodbye!" },
-      { caller: "Have a good one" }
+      { "agent": "Which Color?" },
+      { "caller": "Orange" },
+      { "agent": "Okay I will look into that" },
+      { "caller": "Awesome thank you" },
+      { "agent": "Goodbye!" },
+      { "caller": "Have a good one" }
     ]

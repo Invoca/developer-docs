@@ -1,7 +1,7 @@
 
 
 Marketing Data & Signal Parameters
-**********************
+***********************************
 
 Please click  `this link <https://www2.invoca.net/customer_data_dictionary/home>`_ to access the marketing data parameters specific to your account.
 

@@ -15,7 +15,7 @@ provide your own notification to callers that calls will be recorded in accordan
 For questions about this message, please contact help@invoca.com.
 
 Retrieve Play Call Recorded Prompt For A Campaign
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GET
 

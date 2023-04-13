@@ -2,7 +2,7 @@
 
   .. rubric:: Example
 
-  Update the value of a custom data field for the call whose transaction ID is `ABCD1234-ABCD1234`.
+  Update the value of a custom data field for the call whose external unique ID is `mycalls00001`.
 
   **Note:** You will not see the new custom data field value in the response or in subsequent queries using this API.
 
@@ -11,10 +11,10 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&transaction_id=ABCD1234-ABCD1234``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&external_unique_id=mycalls00001``
 
   Parameters:
-  `transaction_id` is required for this request
+  `external_unique_id` is required for this request
 
   Request Body:
 
@@ -39,7 +39,7 @@
         {
           "transaction_id": "ABCD1234-ABCD1234",
           "call_status": "bridged",
-          "external_unique_id": null,
+          "external_unique_id": "mycalls00001",
           "calling_phone_number": "+15559999999",
           "destination_phone_number": "+18555595599",
           "called_phone_number": "+18557174046",

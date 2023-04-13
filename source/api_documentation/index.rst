@@ -27,7 +27,7 @@ used to pull transcript information for a specific call (transcript).
 used to ingest calls from external sources for conversation intelligence processing and inclusion in your reports and dashboards.
 
 :doc:`calls_in_progress_api/index` -
-used to query/update calls that are currently in progress within the Invoca platform
+used to interact with pre-call insights for live calls as part of PreSense
 
 :doc:`sms_messaging_api/index` -
 used for SMS number management, as well as handling incoming/outgoing SMS messages within the Invoca platform

@@ -1,8 +1,8 @@
 Custom Wrong/No Keypress Error Prompt
-========================
+======================================
 
 Manage custom wrong keypress error prompt and custom no keypress error prompt for campaigns
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 A custom wrong keypress error prompt and custom no keypress error prompt can be created from provided text. A professional prompt recording can also be assigned to either.
 

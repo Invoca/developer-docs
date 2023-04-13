@@ -1,5 +1,5 @@
 Conversion Reporting Pixel (Deprecated)
-==========================
+=======================================
 
 .. raw:: html
 
