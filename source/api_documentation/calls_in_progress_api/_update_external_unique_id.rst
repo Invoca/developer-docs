@@ -40,6 +40,7 @@
           "destination_phone_number": "+18555595599",
           "called_phone_number": "+18557174046",
           "bridge_start_time": "2023-04-03T16:02:36-07:00",
+          "call_record_id": "Z6E5-C7397356976E",
           "phone_type": "Mobile",
           "custom_data": {
                 "utm_source": {
