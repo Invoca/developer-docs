@@ -86,34 +86,28 @@ test an API URL simply by logging in to the platform first as a Network Role of 
 Using OAuth token to Access Invoca APIs
 ---------------------------------------
 
-
-Requests are authenticated using HTTPS basic authentication with an Invoca API Token, which can be created and managed on the Manage API Credentials page in the platform.
-
-
+By default, requests are authenticated using an Invoca API Token, which can be created and managed on the "Integrations" \> "Invoca API Credentials" page in the platform.
 
 
 Step by step guide using API token to access APIs
--------------------------------------------------
+*************************************************
 
-1. Obtain OAuth 2.0 credentials from the Manage API Credentials.
-
-   Visit your API Credentials page to obtain OAuth 2.0 credentials for your Network Integration API.
+1. Obtain an OAuth 2.0 token from the Manage API Credentials.
 
 2. Send the access token to an API.
 
 
+You can send the access token in a variety of ways:
 
-After you obtain a token, include it in the HTTP header of your request, as a URL string parameter, or as a key/value pair in the JSON body.
-
-Example using API token as URL parameter:
-
-``https://<vanity>.invoca.net/api/@@NETWORK_API_VERSION/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU``
+* **Recommended**: As an Authorization header of your request, of format `"Authorization: <token>"`
+* As a URL string parameter (for GET requests), of format `?oauth_token=<token>`
+* As a key/value pair in the JSON body (for POST requests of type JSON), of format `{ "oauth_token": "<token>", ... }`
 
 Example using Curl to make an API call with token-based authentication:
 
 .. code-block:: bash
 
-  curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" 'https://\<vanity\>.invoca.net/api/@@NETWORK_API_VERSION/advertisers/1111.json' -d '{"oauth_token":"YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU"}'
+  curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU" 'https://\<vanity\>.invoca.net/api/@@NETWORK_API_VERSION/advertisers/1111.json'
 
 **Guidelines**
 * Users should generate their own API tokens. Tokens should be treated like passwords and not be emailed or transmitted over other insecure mediums, nor should they be stored in a source code repository.
