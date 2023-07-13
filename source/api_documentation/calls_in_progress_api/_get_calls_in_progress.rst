@@ -3,11 +3,11 @@
   .. rubric:: Example
 
   Get all available calls in progress for the specified organization.
-  Be sure to use your own oauth_token, organization_type and id.
+  Be sure to include your API token (see :doc:`manage_api_credentials`) and use your own organization_type and id.
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?id=<organization_id>&organization_type=<organization_type>``
 
   Response Code: 200
 

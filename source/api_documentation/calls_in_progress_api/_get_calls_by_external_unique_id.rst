@@ -4,11 +4,11 @@
 
   Get calls in progress for the External Unique ID `mycalls00001`.
   Note: External Unique ID must be set by using the Update function of this API before you can use it to look up a call.
-  Be sure to use your own oauth_token, organization_type and id.
+  Be sure to include your API token (see :doc:`manage_api_credentials`) and use your own organization_type and id.
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&external_unique_id=mycalls00001``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?id=<organization_id>&organization_type=<organization_type>&external_unique_id=mycalls00001``
 
   Parameters: `external_unique_id` is required for this request
 

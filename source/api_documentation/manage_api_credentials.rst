@@ -11,7 +11,7 @@ Create an API Token
 
 To create an API token:
 
-1. From the Navigation Bar, hover on Integrations and select "Invoca APIs"
+1. From the Main Navigation, go to Integrations and select "Invoca APIs"
 
    .. image:: ../_static/manage_api_credentials.png
       :scale: 50%
@@ -22,21 +22,24 @@ To create an API token:
 Note: It is recommended to provide a description that identifies the API type and use.
 
 
-Delete an API Token
--------------------
+Using API Token to Access Invoca APIs
+---------------------------------------
 
-To delete or remove an API token from your platform:
+You can send the access token in a variety of ways:
 
-1. From the Navigation Bar, hover on Integrations and select "Invoca APIs"
+* **Recommended**: As an Authorization header of your request, of format `"Authorization: <token>"`
+* As a URL string parameter (for GET requests), of format `?oauth_token=<token>`
+* As a key/value pair in the JSON body (for POST requests of type JSON), of format `{ "oauth_token": "<token>", ... }`
 
-   .. image:: ../_static/manage_api_credentials.png
-      :scale: 50%
+Example using Curl to make an API call with token-based authentication:
 
-2. On the "Invoca API Credentials" page, click the delete icon associated to the API token to delete.
+.. code-block:: bash
+
+  curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU" 'https://\<vanity\>.invoca.net/api/@@NETWORK_API_VERSION/advertisers/1111.json'
 
 
 API Guidelines
---------------
+**************
 
 - Users should generate their own API tokens. Tokens should be treated like passwords and not be emailed or transmitted over other insecure mediums, nor should they be stored in a customer's source code repository.
 

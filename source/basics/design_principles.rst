@@ -76,44 +76,12 @@ HTTPS is required for all API requests.
 
 Authentication is performed using one of several approaches.
 
-The preferred approach is to use Invoca API tokens, which are created and managed on the Manage API Credentials page of the platform.
+The preferred approach is to use Invoca API tokens. See :doc:`manage_api_credentials` for more information.
 
 Some API endpoints will accept HTTP(S) Basic Authentication, which authenticates using a username and password in the request header.
 
 Additionally, session login authentication is sufficient as an alternative. This is so that you can
 test an API URL simply by logging in to the platform first as a Network Role of ‘Super’ (full access user) and then pasting the URL into the browser.
-
-Using OAuth token to Access Invoca APIs
----------------------------------------
-
-By default, requests are authenticated using an Invoca API Token, which can be created and managed on the "Integrations" \> "Invoca API Credentials" page in the platform.
-
-
-Step by step guide using API token to access APIs
-*************************************************
-
-1. Obtain an OAuth 2.0 token from the Manage API Credentials.
-
-2. Send the access token to an API.
-
-
-You can send the access token in a variety of ways:
-
-* **Recommended**: As an Authorization header of your request, of format `"Authorization: <token>"`
-* As a URL string parameter (for GET requests), of format `?oauth_token=<token>`
-* As a key/value pair in the JSON body (for POST requests of type JSON), of format `{ "oauth_token": "<token>", ... }`
-
-Example using Curl to make an API call with token-based authentication:
-
-.. code-block:: bash
-
-  curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU" 'https://\<vanity\>.invoca.net/api/@@NETWORK_API_VERSION/advertisers/1111.json'
-
-**Guidelines**
-* Users should generate their own API tokens. Tokens should be treated like passwords and not be emailed or transmitted over other insecure mediums, nor should they be stored in a source code repository.
-* As a network user, you should not generate a token on behalf of Advertisers or Publishers because tokens inherit the privileges of the user generating it.
-* Invoca does not use OAuth refresh tokens.
-
 
 
 Idempotency

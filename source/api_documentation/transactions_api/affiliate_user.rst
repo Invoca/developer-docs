@@ -53,48 +53,42 @@ Example 1: Get the next 20 transactions that occurred after transaction id C624D
 
 .. code-block:: bash
 
-  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFH'
+  curl -k -H 'Authorization: <token>' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=20&start_after_transaction_id=C624DA2C-CF3367C3'
 
 
 Example 2: Get 50 rows from a specific time period with only the transaction_id and duration columns:
 
 .. code-block:: bash
 
-  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&include_columns=transaction_id,duration&from=2015-03-26&to=2015-03-27&oauth_token=YbcFH'
+  curl -k -H 'Authorization: <token>' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&include_columns=transaction_id,duration&from=2015-03-26&to=2015-03-27'
 
 
 Example 3: Get 50 rows that exclude a few columns such as city and region:
 
 .. code-block:: bash
 
-  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&exclude_columns=city,region&start_after_transaction_id=C624DA2C-CF3367C3&oauth_token=YbcFH'
+  curl -k -H 'Authorization: <token>' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?limit=50&exclude_columns=city,region&start_after_transaction_id=C624DA2C-CF3367C3'
 
 
 Example 4: Get All Transactions from a specific time period that are of transaction_type Signal:
 
 .. code-block:: bash
 
-  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+  curl -k -H 'Authorization: <token>' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=Signal&from=2015-03-24&to=2015-03-27'
 
 
 Example 5: Get All Transactions from a specific time period that are of transaction_type Post Call Event:
 
  .. code-block:: bash
 
-   curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=PostCallEvent&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
+   curl -k -H 'Authorization: <token>' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type=PostCallEvent&from=2015-03-24&to=2015-03-27'
 
 
 Example 6: Get All Transactions from a specific time period that are of transaction_type Call and Signal:
 
 .. code-block:: bash
 
-  curl -k 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type[]=Call&transaction_type[]=Signal&from=2015-03-24&to=2015-03-27&oauth_token=YbcFH'
-
-Example 7: Get All Transactions from a specific time period with oauth token in the request header:
-
-.. code-block:: bash
-
-  curl -k -H 'Authorization: YbcFH' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type[]=Call&transaction_type[]=Signal&transaction_type[]=PostCallEVent&from=2015-03-24&to=2015-03-27'
+  curl -k -H 'Authorization: <token>' 'https://mynetwork.invoca.net/api/@@TRANSACTION_API_VERSION/affiliates/transactions/33.csv?transaction_type[]=Call&transaction_type[]=Signal&from=2015-03-24&to=2015-03-27'
 
 
 Endpoint:
