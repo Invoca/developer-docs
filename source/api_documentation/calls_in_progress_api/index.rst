@@ -13,6 +13,8 @@ The Calls In Progress API is used for interacting with pre-call insights for liv
 information and set custom data values during a call. Calls become available via the api as soon as they are transferred to
 the campaign's destination. Once the call is complete, it is no longer available via the API.
 
+For authentication, use an API token. See :doc:`../manage_api_credentials` for details.
+
 Find Calls in Progress
 ------------------------
 Perform a `GET` request to query calls currently in progress for the specified organization. Sending only the required

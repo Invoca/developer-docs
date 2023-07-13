@@ -5,7 +5,7 @@
   Update the call currently in progress whose transaction ID is `ABCD1234-ABCD1234`. Set the external unique ID to `mycalls00001`.
 
   This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
-  Be sure to include your API token (see :doc:`../manage_api_credentials`) and use your own organization_type and id.
+  Be sure to use your own organization_type and id.
 
   Endpoint:
 

@@ -3,7 +3,7 @@
   .. rubric:: Example
 
   Get calls in progress for transaction id `ABCD1234-ABCD1234`.
-  Be sure to include your API token (see :doc:`../manage_api_credentials`) and use your own organization_type and id.
+  Be sure to use your own organization_type and id.
 
   `current_calls` will be ordered by `bridge_start_time`, most recent first.
 

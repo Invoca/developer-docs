@@ -3,7 +3,7 @@
   .. rubric:: Example
 
   Get all available calls in progress for the specified organization.
-  Be sure to include your API token (see :doc:`../manage_api_credentials`) and use your own organization_type and id.
+  Be sure to use your own organization_type and id.
 
   Endpoint:
 

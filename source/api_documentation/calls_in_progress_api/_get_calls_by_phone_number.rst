@@ -3,7 +3,7 @@
   .. rubric:: Example
 
   Get calls in progress for the calling phone number `530-999-9999` and destination phone number `855-559-5599`.
-  Be sure to include your API token (see :doc:`../manage_api_credentials`) and use your own organization_type and id.
+  Be sure to use your own organization_type and id.
 
   This example is for an organization with Enhanced Caller Profiles enabled, so the demographics data is included in the response.
 
