@@ -76,7 +76,7 @@ HTTPS is required for all API requests.
 
 Authentication is performed using one of several approaches.
 
-The preferred approach is to use Invoca API tokens. See :doc:`manage_api_credentials` for more information.
+The preferred approach is to use Invoca API tokens. See :doc:`api_documentation/manage_api_credentials` for more information.
 
 Some API endpoints will accept HTTP(S) Basic Authentication, which authenticates using a username and password in the request header.
 

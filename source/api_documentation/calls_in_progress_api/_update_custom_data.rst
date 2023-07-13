@@ -7,7 +7,7 @@
   **Note:** You will not see the new custom data field value in the response or in subsequent queries using this API.
 
   This example uses ``PUT`` requests, but we will also accept ``POST`` requests with the same request format (JSON).
-  Be sure to include your API token (see :doc:`manage_api_credentials`) and use your own organization_type and id.
+  Be sure to include your API token (see :doc:`../manage_api_credentials`) and use your own organization_type and id.
 
   Endpoint:
 

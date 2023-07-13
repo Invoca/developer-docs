@@ -132,7 +132,7 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
     **Required**
 
-    `oauth_token` API token for authentication. Can be specified in the header or body of the request (See :doc:`manage_api_credentials`)
+    `oauth_token` API token for authentication. Can be specified in the header or body of the request (See :doc:`../manage_api_credentials`)
 
 Endpoint:
 
