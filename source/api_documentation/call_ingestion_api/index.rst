@@ -132,7 +132,7 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
     **Required**
 
-    `oauth_token` API token for authentication. Can be specified in the body or header of the request.
+    `oauth_token` API token for authentication. Can be specified in the header or body of the request (See :doc:`../manage_api_credentials`)
 
 Endpoint:
 
@@ -195,8 +195,9 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
 
 .. code-block:: bash
 
-  curl --location --request POST 'https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json?oauth_token=<oauth_token>' \
+  curl --location --request POST 'https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json' \
   --header 'Content-Type: application/json' \
+  --header 'Authorization: <token>' \
   --data-raw '
   {
     "call": {
@@ -216,6 +217,7 @@ Below is the same example as above with the OAuth Token passed in via the reques
 
   curl --location --request POST 'https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json' \
   --header 'Content-Type: application/json' \
+  --header 'Authorization: <token>' \
   --data-raw '
   {
     "call": {
@@ -226,8 +228,7 @@ Below is the same example as above with the OAuth Token passed in via the reques
       "advertiser_campaign_id_from_network": 86,
       "call_direction": "inbound",
       "recording_url": "<CALL RECORDING URL>"
-    },
-    "oauth_token": "<oauth_token>"
+    }
   }'
   
 

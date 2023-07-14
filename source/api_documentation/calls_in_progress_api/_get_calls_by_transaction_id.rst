@@ -3,13 +3,13 @@
   .. rubric:: Example
 
   Get calls in progress for transaction id `ABCD1234-ABCD1234`.
-  Be sure to use your own oauth_token, organization_type and id.
+  Be sure to use your own organization_type and id.
 
   `current_calls` will be ordered by `bridge_start_time`, most recent first.
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?oauth_token=<oauth_token>&id=<organization_id>&organization_type=<organization_type>&transaction_id=ABCD1234-ABCD1234``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?id=<organization_id>&organization_type=<organization_type>&transaction_id=ABCD1234-ABCD1234``
 
   Parameters: `transaction_id` is required for this request
 
