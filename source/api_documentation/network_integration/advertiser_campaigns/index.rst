@@ -222,9 +222,13 @@ You are not allowed to delete campaigns.
     - string
     - One of: All, None, Approved_Affiliates Default: All This controls the level of visibility publishers have when applying to campaigns.
 
+  * - pause_date
+    - string
+    - date string (ex. ‘2015-01-01 15:59:00 -0700’).
+
   * - expiration_date
     - string
-    - date string (ex. ‘2015‐01‐01’). Read only.
+    - date string. Read only. Alias of "pause_date".
 
   * - default_creative_id_from_network
     - integer
