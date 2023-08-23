@@ -9,6 +9,8 @@ Invoca post-call processing services are applied to calls based on network and c
 
 Additionally, Signals and Custom Data related to the call can be submitted during the initial call ingestion step.  Please note that Signals and Custom Data can also be applied in the future using the :doc:`../signal_api/index`.
 
+Requests may take up to 24 hours to process into the Invoca system.
+
 
 Requirements
 --------------
