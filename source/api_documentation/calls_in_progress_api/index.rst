@@ -5,7 +5,7 @@ Calls In Progress API
 
   <div class="alert alert-warning">
     <b>Notice:</b>
-    The CallsInProgress API is in beta. Please contact your CSM or the support team to request access.
+    Please contact your CSM or the support team to request access.
   </div>
 
 
@@ -102,6 +102,15 @@ Examples
 
 Update a Call in Progress
 --------------------------
+
+
+.. raw:: html
+
+  <div class="alert alert-warning">
+    <b>Notice:</b>
+    The UPDATE endpoint is in beta.
+  </div>
+
 Update custom data values and set an external identifier to be used for subsequent API requests for a Call
 that is currently in progress.
 
