@@ -3,45 +3,27 @@ Call Ingestion API
 
 The Call Ingestion API is used to submit call details along with a recording URL for calls that were not live-connected and routed through the Invoca Telephony platform.
 
-Calls submitted through this API are available to all post-call processing systems. This includes the Invoca transcription engine, Signal AI, as well as the Dashboard and Reporting system. 
+Calls submitted through this API are available to all Invoca systems. This includes the Invoca transcription engine, Signal AI, as well as the Dashboard and Reporting system.
 
 Invoca post-call processing services are applied to calls based on network and campaign settings.  The campaign for the call is determined by the *advertiser_campaign_id_from_network* parameter in the API.
 
 Additionally, Signals and Custom Data related to the call can be submitted during the initial call ingestion step.  Please note that Signals and Custom Data can also be applied in the future using the :doc:`../signal_api/index`.
 
-Signals can be any boolean value (e.g. sale, quote, etc), and Custom Data can be any alpha-numeric value (e.g. account type, customer quality score, etc).
 
-Response Codes
+Requirements
 --------------
 
-Remember to check the HTTP status code returned. This helps greatly when debugging.
+In order to use the Call Ingestion API:
+- The Call Ingestion feature must be enabled for your network. Your Invoca Customer Success Manager (CSM) can enable this for you.
+- A specific "External" campaign must be created on your network. This campaign ID is what you'll use in the API request.
+- Call recordings must be dual-channel/stereo recordings. They must also be in a file format that we support. Invoca cannot process single-channel/mono recordings or unsupported file types. See the **Supported Recording Formats** section for more details.
+- Call recordings must be accessible by Invoca. See **Supported Recording Access Options** for more details.
 
-.. list-table::
-  :widths: 8 40
-  :header-rows: 1
-  :class: parameters
 
+Endpoint
+--------
+``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json``
 
-  * - Status Code
-    - Meaning
-
-  * - 201 Created
-    - A new call creation request was successfully created.
-
-  * - 202 Accepted
-    - The call creation request has already been received.
-
-  * - 400 Bad Request
-    - Attempted to make a request with an invalid API Version for route. Check the error message for any neccessary corrections
-
-  * - 401 Not Authorized
-    - Invalid or missing oauth token.
-
-  * - 403 Forbidden
-    - Attempted to access an invalid resource or provided invalid data. Check the errors object in the response.
-
-  * - 409 Conflict
-    - The **external_call_unique_id** in the request has already been used.  Please contact the Invoca support team at questions@invoca.com for further assistance.
 
 Request Parameters
 ------------------
@@ -66,7 +48,7 @@ These are the call details used when creating the call in the Invoca platform.
 
     `call_direction` The direction of the call flow.  Accepted values: *inbound* or *outbound*.
 
-    `recording_url` The URL to the call recording. Please see the **Supported Recording Formats** and **Supported Recording Access Options** sections for more details.
+    `recording_url` OR `recording_filepath`. Either the URL to the call recording, or if you are using the Direct Access to S3/Azure/SFTP feature, the filepath to the recording. Please see the **Supported Recording Formats** and **Supported Recording Access Options** sections for more details.
 
     **Optional**
 
@@ -116,7 +98,7 @@ Used to create the fields of a signal. The Signal name provided in a request **m
 
 **Custom Data Parameters**
 
-Apply Custom Data values to a call based on your Custom Data configuration.
+Apply Custom Data values to a call based on your Custom Data configuration. Custom Data can be any alpha-numeric value (e.g. account type, customer quality score, etc).
 
 The Custom Data Fields provided in a request **must** already exist in your `Custom Data Configuration <https://www2.invoca.net/customer_data_dictionary/home>`_
 
@@ -134,9 +116,11 @@ The Custom Data Fields provided in a request **must** already exist in your `Cus
 
     `oauth_token` API token for authentication. Can be specified in the header or body of the request (See :doc:`../manage_api_credentials`)
 
-Endpoint:
 
-``https://invoca.net/api/@@CALL_INGESTION_API_VERSION/calls.json``
+Examples
+------------------
+
+All of these examples use ``POST`` requests, but we will also accept ``PUT`` requests with the same request format.
 
 .. api_endpoint::
   :verb: POST
@@ -144,6 +128,44 @@ Endpoint:
   :description: Create a new call in the Invoca platform.
   :page: create_call
 
+.. api_endpoint::
+  :verb: POST
+  :path: /calls
+  :description: Create a new call in the Invoca platform with signals and custom data fields.
+  :page: create_call_with_signals_custom_data
+
+
+Response Codes
+--------------
+
+Remember to check the HTTP status code returned. This helps greatly when debugging.
+
+.. list-table::
+  :widths: 8 40
+  :header-rows: 1
+  :class: parameters
+
+
+  * - Status Code
+    - Meaning
+
+  * - 201 Created
+    - A new call creation request was successfully created.
+
+  * - 202 Accepted
+    - The call creation request has already been received.
+
+  * - 400 Bad Request
+    - Attempted to make a request with an invalid API Version for route. Check the error message for any neccessary corrections
+
+  * - 401 Not Authorized
+    - Invalid or missing oauth token.
+
+  * - 403 Forbidden
+    - Attempted to access an invalid resource or provided invalid data. Check the errors object in the response.
+
+  * - 409 Conflict
+    - The **external_call_unique_id** in the request has already been used.  Please contact the Invoca support team at questions@invoca.com for further assistance.
 
 
 Timestamp Formats
@@ -210,7 +232,7 @@ You can send call results to Invoca servers in the form of an HTTP POST or PUT. 
       "recording_url": "<CALL RECORDING URL>"
     }
   }'
-  
+
 Below is the same example as above with the OAuth Token passed in via the request headers:
 
 .. code-block:: bash
@@ -230,7 +252,7 @@ Below is the same example as above with the OAuth Token passed in via the reques
       "recording_url": "<CALL RECORDING URL>"
     }
   }'
-  
+
 
 Errors
 ------
@@ -241,7 +263,7 @@ The Call Ingestion API clearly identifies errors when a request cannot be proces
 
 If invalid parameters are passed, an error will be returned with a 403 response code.
 
-For example, if a **call** or parameters within the call are not passed in the request, the following error will be returned.  
+For example, if a **call** or parameters within the call are not passed in the request, the following error will be returned.
 If there are multiple issues with the request, we will do our best to package all of the issues together in one response message.
 
 **Response (403 Forbidden):**
@@ -259,7 +281,7 @@ If there are multiple issues with the request, we will do our best to package al
 
 **Permission Errors**
 
-If you do not have access to the Call Ingestion API, the following error will be returned with a 403 response code.  
+If you do not have access to the Call Ingestion API, the following error will be returned with a 403 response code.
 *Please note that the Call Ingestion API is enabled per network.  Please contact the Invoca support team at questions@invoca.com for setup assistance.*
 
 **Response (403 Forbidden):**
@@ -300,8 +322,8 @@ In order to fully utilize the Call Ingestion API, there are some configuration r
   * Campaigns must be setup with a campaign type of **ExternalOnly**.
   * Campaigns need to be have either the **Signal AI** product feature or at least one Voice Signal enabled.  This will enable transcription service on the submitted call.
 
-If any of these settings are misconfigured you'll see error message similar to the examples below.  
-*Please contact the Invoca support team at questions@invoca.com for setup assistance.* 
+If any of these settings are misconfigured you'll see error message similar to the examples below.
+*Please contact the Invoca support team at questions@invoca.com for setup assistance.*
 
 **Response (403 Forbidden):**
 
@@ -355,16 +377,15 @@ If the Invoca Audio Processing system finds any call recording format problems t
 Supported Recording Access Options
 ----------------------------------
 
-After a new call is successfully submitted via the API, a message is sent to notify the Invoca Audio Processing system to download the recording and begin processing.
-The audio processing system attempts to download the recording via a standard network request using **wget** or **curl**.  
+Call Recordings must be accessible to the Invoca system. There are a couple of ways to configure your recordings to support this requirement:
 
-Call Recording URLs will need to be accessible to the Invoca Audio processing system. There are a couple of ways to configure your recordings to support this requirement:
+    `Public URL` In this approach, you can provide a `recording_url` for the call recording that is able to be downloaded without requirement of access credentials or API keys. Requesting this URL should directly download the recording.
 
-    `Presigned URL` If the call recording is hosted in `AWS S3 <https://docs.aws.amazon.com/s3/index.html>`_ you can use `presigned URLs <https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html>`_.  In this approach, a unique token is created and appended to the URL that grants access for a predefined period of time to the system in which you provide the URL.
+    `Presigned URL` If the call recording is hosted in `AWS S3 <https://docs.aws.amazon.com/s3/index.html>`_ you can use `presigned URLs <https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html>`_. In this approach, you can provide a `recording_url` with a presigned URL that grants access for a predefined period of time. The presigned URL must be live for more than 24 hours to give Invoca enough time to process the recording.
 
-    `Public URL` In this approach, the call recording would be able to be downloaded without requirement of access credentials or API keys.
+    `Direct Recording Access to S3/Azure/SFTP` In this approach, you can provide Invoca with credentials to access recordings in Amazon S3, Microsoft Azure Blob Storage, or via SFTP. Then, you can provide a `recording_filename` with a path to the recording. If your recording filename exactly matches the `external_call_unique_id`, you can omit this field entirely. Your Invoca Customer Success Manager (CSM) can assist with setting this up.
 
-    `Secure Recording URL` If accessing your call recordings requires an access token, you will need to setup an Auth Configuration with Invoca support. After setup, Invoca will provide you with the corresponding Auth Configuration ID. When passed as a parameter in your API request, the *recording_auth_config_id* will enable the Invoca Audio Processing system to access the recording. Currently, the following authentication methods are supported:
+    `Secure Recording URL` If accessing your call recordings requires an API token, you can set an Auth Configuration with Invoca support. After setup, Invoca will provide you with the corresponding Auth Configuration ID. When passed as a parameter in your API request, the *recording_auth_config_id* will enable the Invoca Audio Processing system to access the recording. Currently, the following authentication methods are supported:
 
     .. list-table::
       :widths: 8 40
@@ -383,6 +404,8 @@ Call Recording URLs will need to be accessible to the Invoca Audio processing sy
       * - Custom Header
         - Sends a header with the format `<Custom Header>: <Token>`
 
+
+After a new call is successfully submitted via the API, a message is sent to notify the Invoca Audio Processing system to download the recording and begin processing. The audio processing system attempts to download the recording via a standard network request using **wget** or **curl**.
 
 If the Invoca Audio Processing system is unable to succesfully download and process the call recording then a message will be sent via email notifying your Invoca Customer Success Manager (CSM) who will then reach out to help resolve any issues.  Please see the **Call Processing Error Notifications** section for more details.
 
