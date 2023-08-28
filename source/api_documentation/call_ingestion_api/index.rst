@@ -16,10 +16,14 @@ Requirements
 --------------
 
 In order to use the Call Ingestion API:
-- The Call Ingestion feature must be enabled for your network. Your Invoca Customer Success Manager (CSM) can enable this for you.
-- A specific "External" campaign must be created on your network. This campaign ID is what you'll use in the API request.
-- Call recordings must be dual-channel/stereo recordings. They must also be in a file format that we support. Invoca cannot process single-channel/mono recordings or unsupported file types. See the **Supported Recording Formats** section for more details.
-- Call recordings must be accessible by Invoca. See **Supported Recording Access Options** for more details.
+
+  The Call Ingestion feature must be enabled for your network. Your Invoca Customer Success Manager (CSM) can enable this for you.
+
+  A specific "External" campaign must be created on your network. This campaign ID is what you'll use in the API request.
+
+  Call recordings must be dual-channel/stereo recordings. They must also be in a file format that we support. Invoca cannot process single-channel/mono recordings or unsupported file types. See the **Supported Recording Formats** section for more details.
+
+  Call recordings must be accessible by Invoca. See **Supported Recording Access Options** for more details.
 
 
 Endpoint
