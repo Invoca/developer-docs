@@ -54,7 +54,7 @@ These are the call details used when creating the call in the Invoca platform.
 
     `call_direction` The direction of the call flow.  Accepted values: *inbound* or *outbound*.
 
-    `recording_url` OR `recording_filepath`. Either the URL to the call recording, or if you are using the Direct Access to S3/Azure/SFTP feature, the filepath to the recording. Please see the **Supported Recording Formats** and **Supported Recording Access Options** sections for more details.
+    `recording_url` OR `recording_filename`. Either the URL to the call recording, or if you are using the Direct Access to S3/Azure/SFTP feature, the filepath to the recording. Please see the **Supported Recording Formats** and **Supported Recording Access Options** sections for more details.
 
     **Optional**
 
