@@ -226,3 +226,5 @@ to hone in on the syntax (more than likely table indentation or lack of 2 new li
 RST makes links that look like this `` `click here <https://example.com>`_ `` so if you put in a link like this `` `https://invoca.net/api/@@PNAPI_VERSION/calls/<converstion_reporting_id>.xml` `` It kind of freaks out and never finishes building.
 If you have a backtick block with a `<something` in the link you should encase it in double backticks.
 
+#### Q: My build is failing on an older version branch with an error about a missing .readthedocs.yaml file
+In September 2023, ReadTheDocs began enforcing a new required config file, .readthedocs.yaml. Grab the latest copy from the most recent branch and merge it into the older version branch to get the build working again.
