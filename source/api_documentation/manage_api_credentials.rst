@@ -9,15 +9,21 @@ Create an API Token
 
 To create an API token:
 
-1. From the Main Navigation, go to Integrations and select "Invoca APIs"
+1. From the Main Navigation select 'Integrations' on the left-side panel, and then choose 'Manage Integrations'.
 
    .. image:: ../_static/manage_api_credentials.png
-      :scale: 50%
+      :scale: 90%
 
-2. On the "Invoca API Credentials" page, click "New API Credential"
-3. Enter Description and click Save.
+2. Once you're on the 'Integrations' page, locate and click on the 'Invoca APIs' app.
 
-Note: It is recommended to provide a description that identifies the API type and use.
+   .. image:: ../_static/invoca_api_app.png
+      :scale: 70%
+
+3. Go to the upper-right corner and click on the '+ New API Credential' option.
+
+4. Enter the Description and click Save.
+
+Please note that it is strongly recommended to include a descriptive label that identifies the API type and its intended use.
 
 
 Using API Tokens to Access Invoca APIs
