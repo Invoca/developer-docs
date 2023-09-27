@@ -181,6 +181,28 @@ Examples
   :description: Update a call's custom data via external unique ID
   :page: update_custom_data_ext
 
+Using the API for Attribution
+--------------------------
+For customers looking to enhance attribution accuracy, the API offers a streamlined payload with Invoca call identifiers, including the Transaction Id and Call Record Id for Exact Match Attribution. By utilizing these identifiers, customers can avoid the need for fuzzy matching of calls when attributing data via Invoca APIs.
+This is particularly advantageous for those who often deal with repeat callers.
+
+
+.. raw:: html
+
+  <div class="alert alert-warning">
+    <b>Notice:</b>
+    When leveraging the API for this attribution-focused use case, customers will not receive any pre-call data and will not be obligated to purchase PreSense.
+
+    Both use cases utilize the same endpoint, and the API accepts the same query parameters, irrespective of whether pre-call data is present.
+  </div>
+
+Examples
+~~~~~~~~~~~
+.. api_endpoint::
+   :verb: GET
+   :path: /calls_in_progress
+   :description: Retrieve a specific call by Transaction ID
+   :page: get_calls_by_transaction_id_for_attribution
 
 Response Codes
 --------------
