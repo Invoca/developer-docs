@@ -70,6 +70,13 @@ Query Parameters
     - We support most phone number formats, for example: 800-555-1234, 8005551234, +18005551234, or 18005551234
     - Yes, if request includes **calling_phone_number**
 
+General Fields
+~~~~~~~~~~~~~~~~~
+Below is a general list of data points that are available
+via the API; some fields may not be available depending on their organization type and/or configuration.
+
+.. include:: _network_param_table.rst
+
 Examples
 ~~~~~~~~~~
 .. api_endpoint::
