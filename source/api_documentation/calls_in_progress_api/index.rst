@@ -74,7 +74,6 @@ General Fields
 ~~~~~~~~~~~~~~~~~
 Below is a general list of data points that are available
 via the API; some fields may not be available depending on their organization type and/or configuration.
-It's important to note that the API will omit fields with null values.
 
 .. include:: _network_param_table.rst
 
