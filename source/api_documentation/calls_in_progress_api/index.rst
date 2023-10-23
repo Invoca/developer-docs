@@ -26,6 +26,8 @@ values applied to Networks/Advertisers/Campaigns/Promo Numbers, or from data ret
 If you have Enhanced Caller Profiles (ECP) enabled, the demographics_data field will contain any ECP data that is available
 for the caller.
 
+It's important to note that the API will omit fields with null values.
+
 Query Parameters
 ~~~~~~~~~~~~~~~~~
 
