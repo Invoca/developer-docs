@@ -32,6 +32,22 @@
                     "value": "google.com",
                     "source": "VirtualLine"
                 },
+                "calling_page": {
+                    "value": "https://www.doggydaycare.com/boarding",
+                    "source": "DynamicAttribution"
+                },
+                "g_cid": {
+                    "value": "asdf-1234-zxcv-5678",
+                    "source": "DynamicAttribution"
+                },
+                "channel": {
+                    "value": "SEM",
+                    "source": "DynamicAttribution"
+                },
+                "lead_type": {
+                    "value": "StoreCall",
+                    "source": "VirtualLine"
+                },
                 "demographics_data": {}
             }
         },
