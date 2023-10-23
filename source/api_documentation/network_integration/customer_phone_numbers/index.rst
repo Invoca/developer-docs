@@ -4,7 +4,7 @@ Destinations
 Manage destinations (aka Customer Phone Numbers)
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-Destinations are alternate way of managing :doc:`customer_phone_numberss <../ringpools/index>`.
+Destinations are alternate way of managing :doc:`customer_phone_numbers <../ringpools/index>`.
 
 `Learn more about RingPools here <https://community.invoca.com/t5/call-attribution/basic-knowledge-ringpools/ta-p/530>`_.
 
@@ -17,24 +17,9 @@ Destinations are alternate way of managing :doc:`customer_phone_numberss <../rin
     - Type
     - Value
 
-    id
-    country_code
-    phone_number
-    primary_url
-    requested_destination_name
-    acknowledged_at
-    created_at
-    updated_at
-    ignored_at
-    notified_at
-
   * - id
     - integer (read-only)
     - The internal Invoca id of the Destination.
-
-  * - country_code
-    - string
-    - Country code of the phone number of the Destination.
 
   * - phone_number
     - string
@@ -47,6 +32,66 @@ Destinations are alternate way of managing :doc:`customer_phone_numberss <../rin
   * - requested_destination_name
     - integer
     - ToDo
+
+  * - **advertiser_campaign**
+    -
+    -
+
+  * - id_from_network
+    - string
+    - The network object_id for this Advertiser Campaign. Unique within network. Not required when auto-generation is enabled at network level.
+
+  * - name
+    - string
+    - Campaign name.
+
+  * - status
+    - string
+    - Current campaign state.
+
+  * - **dynamic_number_pool**
+    -
+    -
+
+  * - id
+    - integer (read-only)
+    - The internal Invoca id of the RingPool.
+
+  * - id_from_network
+    - string (required)
+    - Network specific id of the RingPool. Unique within network. Not required when auto-generation is enabled at network level.
+
+  * - name
+    - string
+    - Arbitrary string. Names the RingPool.
+
+  * - object_url
+    - string (read-only)
+    - URL for reaching the RingPool in the UI.
+
+  * - lifetime_seconds
+    - integer
+    - The guaranteed minimum time that the number will be allocated for this RingPool.
+
+  * - max_pool_size
+    - integer
+    - The maximum amount of phone numbers to be allotted at one time.
+
+  * - preferred
+    - boolean
+    - true or false. Selects this RingPool if the advertiser has multiple RingPools for the campaign and the web integration code does not specify which pool to use.
+
+  * - destination_phone_number
+    - A phone number to be associated with the RingPool.
+    - When using Destinations UI or the forward to destination IVR node, this number will be used.
+
+  * - fill_immediately
+    - boolean
+    - When true, the ringpool will immediately be filled with phone numbers up to the max_pool_size, if numbers are available. When false, the pool will initially fill at 10% capacity to conserve phone number usage. The ringpool will increase phone numbers based on ringpool autoscaling settings and traffic volume.
+
+  * - include_inactive
+    - boolean (Default true)
+    - Only applicable for GET `/customer_phone_numbers.json` API endpoint. When true, fetches all destinations. When false, fetches only destinations that have an active ring pool.
 
 Endpoint:
 
