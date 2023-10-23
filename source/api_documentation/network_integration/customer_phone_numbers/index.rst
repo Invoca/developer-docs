@@ -4,7 +4,7 @@ Destinations
 Manage destinations (aka Customer Phone Numbers)
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-Destinations are alternate way of managing :doc:`customer_phone_numbers <../ringpools/index>`.
+Destinations are alternate way of managing :doc:`RingPools <../ringpools/index>`.
 
 `Learn more about RingPools here <https://community.invoca.com/t5/call-attribution/basic-knowledge-ringpools/ta-p/530>`_.
 
@@ -21,17 +21,21 @@ Destinations are alternate way of managing :doc:`customer_phone_numbers <../ring
     - integer (read-only)
     - The internal Invoca id of the Destination.
 
+  * - country_code
+    - string
+    - Country code of the phone number.
+
   * - phone_number
     - string
     - Phone number of the Destination.
 
   * - primary_url
     - string
-    - ToDo
+    - Website or page URL on which the destination is applied.
 
   * - requested_destination_name
-    - integer
-    - ToDo
+    - string (read-only)
+    - Alias for the destination. Auto-generated names.
 
   * - **advertiser_campaign**
     -
@@ -91,7 +95,7 @@ Destinations are alternate way of managing :doc:`customer_phone_numbers <../ring
 
   * - include_inactive
     - boolean (Default true)
-    - Only applicable for GET `/customer_phone_numbers.json` API endpoint. When true, fetches all destinations. When false, fetches only destinations that have an active ring pool.
+    - Only applicable for `GET /customer_phone_numbers.json` API endpoint. When true, fetches all destinations. When false, fetches only destinations that have a ringpool associated with it.
 
 Endpoint:
 
