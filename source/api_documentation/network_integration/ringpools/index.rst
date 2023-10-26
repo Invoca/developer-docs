@@ -89,6 +89,12 @@ Endpoint:
    :description: Delete a RingPool
    :page: delete_ring_pool
 
+.. api_endpoint::
+   :verb: DELETE
+   :path: /ring_pools/&lt;customer_phone_number&gt;
+   :description: Delete a CustomerPhoneNumber
+   :page: customer_phone_number
+
 
 Local RingPool API
 ------------------
