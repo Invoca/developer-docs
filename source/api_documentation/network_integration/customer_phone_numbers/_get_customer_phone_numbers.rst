@@ -13,10 +13,6 @@
       - Type
       - Value
 
-    * - include_inactive
-      - boolean (Default true)
-      - When true, fetches all destinations. When false, fetches only destinations that have a ringpool associated with it.
-
     * - limit
       - integer (optional) (Default 100)
       - Number of objects to be returned in a single request. If not provided, first 100 objects will be returned.
@@ -29,9 +25,19 @@
       - string (optional)
       - Search string to search by phone number.
 
+        If not provided, all objects will be returned given no other filters are included.
+
     * - status
       - string (optional)
-      - To filter results by a specific type. Possible values include `ignored`, `tracked` and `discovered`.
+      - To filter results by a specific type.
+
+        If not provided, all objects will be returned given no other filters are included.
+
+        Possible values include:
+
+        * **ignored**: Fetches only destinations that were ignored.
+        * **tracked**: Fetches only destinations that have a ringpool associated with them.
+        * **discovered**: Fetches only destinations that were neither ignored nor have a ringpool associated with them.
 
     * - sort_by
       - string (optional) (Default id)
