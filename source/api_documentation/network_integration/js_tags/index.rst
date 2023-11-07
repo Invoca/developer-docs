@@ -51,7 +51,7 @@ The Invoca Tag is a snippet of code that connects Invoca to your landing pages. 
 
   * - **live_revision**
     - object
-    - Currently live revision.
+    - Current live revision.
 
   * - **draft_revision**
     - object
@@ -252,25 +252,25 @@ Endpoint:
 
 .. api_endpoint::
    :verb: POST
-   :path: /js_tags/pause
+   :path: /js_tags/&lt;js_tag_id&gt;/pause
    :description: Pause an Invoca Tag
    :page: post_js_tags_pause
 
 .. api_endpoint::
    :verb: POST
-   :path: /js_tags/unpause
+   :path: /js_tags/&lt;js_tag_id&gt;/unpause
    :description: Unpause an Invoca Tag
    :page: post_js_tags_unpause
 
 .. api_endpoint::
    :verb: POST
-   :path: /js_tags/go_live
+   :path: /js_tags/&lt;js_tag_id&gt;/go_live
    :description: Make an Invoca Tag revision live
    :page: post_js_tags_live
 
 .. api_endpoint::
    :verb: POST
-   :path: /js_tags/revert
+   :path: /js_tags/&lt;js_tag_id&gt;/revert
    :description: Revert an Invoca Tag to it's previous revision
    :page: post_js_tags_revert
 
