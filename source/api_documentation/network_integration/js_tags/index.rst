@@ -6,6 +6,8 @@ Manage Invoca Tags (aka JS Tags)
 
 The Invoca Tag is a snippet of code that connects Invoca to your landing pages. This API documentation helps provide necessary features to create and manage an Invoca Tag and it's revisions.
 
+More details on the Invoca Tags can be found <a href="https://community.invoca.com/t5/call-tracking/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465#U465">here</a> and <a href="https://community.invoca.com/t5/developer-features/invoca-tag-wizard-custom-code-settings/ta-p/691">here</a>.
+
 .. list-table::
   :widths: 15 15 50
   :header-rows: 1
@@ -57,7 +59,7 @@ JS Tag Revision
 Revision for the JS Tag
 
 .. warning::
-    TODO: STORY-16629 See if it makes to move the whole table to JS Tag Revision documentation and add a link here.
+    The provided documentation and JSON response for JS Tag Revision documentation might change in the next release.
 
 .. list-table::
   :widths: 15 15 50
@@ -219,3 +221,57 @@ Revision for the JS Tag
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags.json``
+
+.. api_endpoint::
+   :verb: GET
+   :path: /js_tags
+   :description: Get all Invoca Tags
+   :page: get_js_tags
+
+.. api_endpoint::
+   :verb: GET
+   :path: /js_tags/&lt;js_tag_id&gt;
+   :description: Get a Invoca Tag
+   :page: get_js_tag
+
+.. api_endpoint::
+   :verb: POST
+   :path: /js_tags
+   :description: Create an Invoca Tag
+   :page: post_js_tags
+
+.. api_endpoint::
+   :verb: PUT
+   :path: /js_tags/&lt;js_tag_id&gt;
+   :description: Update an Invoca Tag
+   :page: put_js_tag
+
+.. api_endpoint::
+   :verb: POST
+   :path: /js_tags/pause
+   :description: Pause an Invoca Tag
+   :page: post_js_tags_pause
+
+.. api_endpoint::
+   :verb: POST
+   :path: /js_tags/unpause
+   :description: Unpause an Invoca Tag
+   :page: post_js_tags_unpause
+
+.. api_endpoint::
+   :verb: POST
+   :path: /js_tags/go_live
+   :description: Make an Invoca Tag revision live
+   :page: post_js_tags_live
+
+.. api_endpoint::
+   :verb: POST
+   :path: /js_tags/revert
+   :description: Revert an Invoca Tag to it's previous revision
+   :page: post_js_tags_revert
+
+.. api_endpoint::
+   :verb: DELETE
+   :path: /js_tags/&lt;js_tag_id&gt;
+   :description: Delete an Invoca Tag
+   :page: delete_js_tag
