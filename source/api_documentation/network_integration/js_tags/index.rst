@@ -6,7 +6,11 @@ Manage Invoca Tags (aka JS Tags)
 
 The Invoca Tag is a snippet of code that connects Invoca to your landing pages. This API documentation helps provide necessary features to create and manage an Invoca Tag and it's revisions.
 
-More details on the Invoca Tags can be found <a href="https://community.invoca.com/t5/call-tracking/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465#U465">here</a> and <a href="https://community.invoca.com/t5/developer-features/invoca-tag-wizard-custom-code-settings/ta-p/691">here</a>.
+.. raw:: html
+
+    <p>
+    More details on the Invoca Tags can be found <a href="https://community.invoca.com/t5/call-tracking/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465#U465">here</a> and <a href="https://community.invoca.com/t5/developer-features/invoca-tag-wizard-custom-code-settings/ta-p/691">here</a>.
+    </p>
 
 .. list-table::
   :widths: 15 15 50
@@ -275,3 +279,62 @@ Endpoint:
    :path: /js_tags/&lt;js_tag_id&gt;
    :description: Delete an Invoca Tag
    :page: delete_js_tag
+
+
+Error Handling
+""""""""""""""
+
+Forbidden – 403:
+
+POST
+----
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags.json``
+
+Content Type: application/json
+
+Response Code: 403
+
+**Request Body**
+
+.. code-block:: json
+
+  {
+    "name": "test for example.com",
+    "description": "An example to show how it works"
+  }
+
+**Response Body**
+
+.. code-block:: json
+
+  {
+    "errors": {
+      "name": [
+        "has already been taken"
+      ]
+    }
+  }
+
+
+Not Found – 404:
+
+GET
+----
+
+``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>.json``
+
+Content Type: application/json
+
+Response Code: 404
+
+**Response Body**
+
+.. code-block:: json
+
+  {
+    "errors": {
+      "class": "RecordNotFound",
+      "invalid_data": "Invoca Tag not found with id: '00548112'"
+    }
+  }
