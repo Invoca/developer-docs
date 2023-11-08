@@ -7,6 +7,10 @@
   :header-rows: 1
   :class: parameters
 
+  * - Property
+    - Type
+    - Value
+
   * - external_revision_id
     - string (read-only)
     - The current recent revision id if live or nil if draft.
