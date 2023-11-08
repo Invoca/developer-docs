@@ -51,6 +51,10 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - boolean
     - When true, the ringpool will immediately be filled with phone numbers up to the max_pool_size, if numbers are available. When false, the pool will initially fill at 10% capacity to conserve phone number usage. The ringpool will increase phone numbers based on ringpool autoscaling settings and traffic volume.
 
+  * - delete_detected_phone_number
+    - boolean (Default false)
+    - Only applicable for `DELETE /ring_pools/<ring_pool_id>` API endpoint. When true, it deletes the linked :doc:`destinations <../customer_phone_numbers/index>` as well. When false, the destinations are kept as is.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``

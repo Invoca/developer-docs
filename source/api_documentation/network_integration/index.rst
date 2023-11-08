@@ -40,4 +40,5 @@ The API uses the following terms and their aliases:
    custom_challenge_prompts/index
    custom_ivr_error_prompts/index
    automated_speech_recognition/index
+   customer_phone_numbers/index
    ringpools/index
