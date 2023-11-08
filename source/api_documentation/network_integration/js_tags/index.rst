@@ -8,9 +8,20 @@ The Invoca Tag is a snippet of code that connects Invoca to your landing pages. 
 
 .. raw:: html
 
-    <p>
-    More details on the Invoca Tags can be found <a href="https://community.invoca.com/t5/call-tracking/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465#U465">here</a> and <a href="https://community.invoca.com/t5/developer-features/invoca-tag-wizard-custom-code-settings/ta-p/691">here</a>.
-    </p>
+    <p>More details on the Invoca Tags can be found:</p>
+
+    <ul>
+      <li>
+        <a href="https://community.invoca.com/t5/call-tracking/how-to-configure-and-deploy-your-invoca-tag-with-the-invoca-tag/ta-p/465#U465">
+          How to configure and deploy your Invoca Tag with the Invoca Tag Wizard
+        </a>
+      </li>
+      <li>
+        <a href="https://community.invoca.com/t5/developer-features/invoca-tag-wizard-custom-code-settings/ta-p/691">
+          Invoca Tag Wizard - Custom Code Settings
+        </a>
+      </li>
+    </ul>
 
 .. list-table::
   :widths: 15 15 50
