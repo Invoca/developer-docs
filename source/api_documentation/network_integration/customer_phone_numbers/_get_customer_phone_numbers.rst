@@ -2,6 +2,51 @@
 
 .. container:: endpoint-long-description
 
+  Possible options that can be provided in the API request.
+
+  .. list-table::
+    :widths: 11 34 40
+    :header-rows: 1
+    :class: parameters
+
+    * - Property
+      - Type
+      - Value
+
+    * - limit
+      - integer (optional) (Default 100)
+      - Number of objects to be returned in a single request. If not provided, first 100 objects will be returned.
+
+    * - start
+      - integer (optional) (Default 0)
+      - First `x` number of objects to skip in the response. If not provided, the response will start from the first available object.
+
+    * - query
+      - string (optional)
+      - Search string to search by phone number.
+
+        If not provided, all objects will be returned given no other filters are included.
+
+    * - status
+      - string (optional)
+      - To filter results by a specific type.
+
+        If not provided, all objects will be returned given no other filters are included.
+
+        Possible values include:
+
+        * **ignored**: Fetches only destinations that were ignored.
+        * **tracked**: Fetches only destinations that have a ringpool associated with them.
+        * **discovered**: Fetches only destinations that were neither ignored nor have a ringpool associated with them.
+
+    * - sort_by
+      - string (optional) (Default id)
+      - Sort the result by a specific column.
+
+    * - sort_dir
+      - string (optional) (Default asc)
+      - Sorting direction for the objects being returned. Possible values include `asc` and `desc`.
+
   .. rubric:: Examples
 
   Read all Destinations as an array.
