@@ -14,9 +14,6 @@
 
   Response Body:
 
-  .. warning::
-      The provided documentation and JSON response for JS Tag Revision documentation might change in the next release.
-
   .. code-block:: json
 
     {
