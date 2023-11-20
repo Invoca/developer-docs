@@ -112,3 +112,9 @@ Endpoint:
    :path: /customer_phone_numbers/&lt;customer_phone_number_id&gt;
    :description: Get a Destination
    :page: get_customer_phone_number
+
+.. api_endpoint::
+   :verb: DELETE
+   :path: /customer_phone_numbers/&lt;customer_phone_number_id&gt;
+   :description: Delete a Destination
+   :page: delete_customer_phone_number
