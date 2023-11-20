@@ -42,4 +42,5 @@ The API uses the following terms and their aliases:
    automated_speech_recognition/index
    customer_phone_numbers/index
    js_tags/index
+   tag_revisions/index
    ringpools/index

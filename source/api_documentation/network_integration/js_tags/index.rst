@@ -73,7 +73,13 @@ JS Tag Revision
 
 Revision for the JS Tag
 
-.. include:: js_revision_parameters.rst
+.. raw:: html
+
+    <a href="../tag_revisions/index.html">
+      Invoca Tag Revision API Documentation
+    </a>
+
+.. include:: ../tag_revisions/js_revision_parameters.rst
 
 Endpoint:
 

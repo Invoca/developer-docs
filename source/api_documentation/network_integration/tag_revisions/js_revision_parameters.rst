@@ -1,7 +1,4 @@
 
-.. warning::
-    The provided documentation and JSON response for JS Tag Revision documentation might change in the next release.
-
 .. list-table::
   :widths: 15 15 50
   :header-rows: 1

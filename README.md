@@ -19,10 +19,10 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 1. Clone this repo
 2. Run the following commands:
 ```
-# Install python version 3.8.13 with pyenv
+# Install python version 3.8.18 with pyenv
 brew install pyenv
-pyenv install 3.8.13
-pyenv global 3.8.13
+pyenv install 3.8.18
+pyenv global 3.8.18
 PATH=$(pyenv root)/shims:$PATH
 
 # Activate virtual env
