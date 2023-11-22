@@ -45,6 +45,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
   * - destination_phone_number
     - A phone number to be associated with the RingPool.
+    - Only applicable for `POST` & `PUT /ring_pools/<ring_pool_id>` API endpoint.  When using Destinations UI or the forward to destination IVR node, this number will be used.
 
   * - obfuscated_tag_id
     - string (required if the network is using Tag Destinations and a destination_phone_number is passed in)

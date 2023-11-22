@@ -93,10 +93,6 @@ Destinations are alternate way of managing :doc:`RingPools <../ringpools/index>`
     - boolean
     - When true, the ringpool will immediately be filled with phone numbers up to the max_pool_size, if numbers are available. When false, the pool will initially fill at 10% capacity to conserve phone number usage. The ringpool will increase phone numbers based on ringpool autoscaling settings and traffic volume.
 
-  * - include_inactive
-    - boolean (Default true)
-    - Only applicable for `GET /customer_phone_numbers.json` API endpoint. When true, fetches all destinations. When false, fetches only destinations that have a ringpool associated with it.
-
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/customer_phone_numbers.json``
