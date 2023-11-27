@@ -68,22 +68,24 @@ The Invoca Tag is a snippet of code that connects Invoca to your landing pages. 
     - object
     - Current draft revision.
 
+.. raw:: html
+
+  <div class="alert alert-warning">
+    <b>Note:</b>
+    When viewing JS Tags, you will also be viewing their associated revisions.  Below is a reference for the revision and its attributes.
+    If you are looking to edit the revision itself, use the <a href="../tag_revisions/index.html"> Tag Revision API</a> instead.
+  </div>
+
 JS Tag Revision
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 Revision for the JS Tag
 
-.. raw:: html
-
-    <a href="../tag_revisions/index.html">
-      Invoca Tag Revision API Documentation
-    </a>
-
 .. include:: ../tag_revisions/js_revision_parameters.rst
 
 Endpoint:
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags.json``
 
 .. api_endpoint::
    :verb: GET
@@ -148,7 +150,7 @@ Forbidden – 403:
 POST
 ----
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags.json``
 
 Content Type: application/json
 
@@ -181,7 +183,7 @@ Not Found – 404:
 GET
 ----
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>.json``
 
 Content Type: application/json
 
