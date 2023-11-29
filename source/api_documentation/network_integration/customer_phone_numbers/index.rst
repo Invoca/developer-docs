@@ -121,7 +121,7 @@ Endpoint:
   <br/>
   <div class="alert alert-info">
     <b>NOTE: Creating & Deleting Destinations</b></br>
-    Creating a Destination via this endpoint isn't possible.  One can be made alongside a RingPool that it'll be associated with via the RingPool endpoint (<a href="https://developers.invoca.net/en/2022-08-01/api_documentation/network_integration/ringpools/index.html"><b>Documentation</b></a>).<br/>
+    Creating a Destination via this endpoint isn't possible. A Destination can be made alongside a RingPool that it'll be associated with via the RingPool endpoint (<a href="https://developers.invoca.net/en/latest/api_documentation/network_integration/ringpools/index.html"><b>Documentation</b></a>).<br/>
     <br/>
     The Destination can be deleted via this endpoint, but if the associated RingPool is going to be deleted as well, you can save a request by utilizing the delete_detected_phone_number parameter in the RingPool endpoint.
   </div>

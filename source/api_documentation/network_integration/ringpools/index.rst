@@ -100,7 +100,7 @@ Endpoint:
   <br/>
   <div class="alert alert-info">
     <b>NOTE: Creating Destinations</b></br>
-    If a valid phone number is given for destination_phone_number is given as part of the POST request, a Destination, aka Customer Phone Number, will be generated and associated with the created RingPool.<br/>
+    If a valid phone number is given for destination_phone_number as part of the POST request, a Destination, aka Customer Phone Number, will be generated and associated with the created RingPool.<br/>
     <br/>
     Additionally, if the network is configured to use Tag Destinations, the obfuscated_tag_id for a JsTag must be given as well.
   </div>
