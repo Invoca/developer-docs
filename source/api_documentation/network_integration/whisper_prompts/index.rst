@@ -92,7 +92,7 @@ Set Whisper Prompt Condition
 
 A whisper prompt condition can be set for a campaign to determine whether or not to play the whisper prompt in a call. The prompt will only be played if the full condition is met.
 
-To conditionally play whisper prompts during calls, set a ``"whisper_prompt_text"`` and set ``"whisper_prompt_condition"`` to the expression you want to evaluate.
+To conditionally play whisper prompts during calls, set a whisper prompt using ``"whisper_prompt_text"`` or ``"whisper_prompt_id_from_network"`` field and set ``"whisper_prompt_condition"`` to the expression you want to evaluate.
 
 POST
 
