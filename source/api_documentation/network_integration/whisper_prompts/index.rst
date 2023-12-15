@@ -142,4 +142,4 @@ Example Request Body
     }
   }
 
-.. include:: ../call_recording_and_whisper_prompt_conditions.rst
+.. include:: ../ivr_tree_conditions.rst
