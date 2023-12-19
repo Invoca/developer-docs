@@ -100,7 +100,7 @@ def build_template(match, template_file_name):
 
   # open the template and find/replace the keys with the values
   template = open('{}{}'.format(custom_template_path, template_file_name), 'r').read()
-  for search, replacement in template_vars.iteritems():
+  for search, replacement in template_vars.items():
     if re.search(search, template):
       template = template.replace(search, replacement)
     else:
@@ -133,7 +133,7 @@ def source_handler(app, docname, source):
   source[0] = build_api_endpoint_template(source[0])
 
   # Replace @@API_VERSION in templates with strings from doc_versions.py
-  for symbol_string, version_string in VERSIONS.iteritems():
+  for symbol_string, version_string in VERSIONS.items():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
 # Replace all occurences of @@ variables in partials (.rst files beginning w/ an underscore)
@@ -143,7 +143,7 @@ def build_partials(app, env, docnames):
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
       # Replace @@API_VERSION with strings in doc_versions.py
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
-      for symbol_string, version_string in VERSIONS.iteritems():
+      for symbol_string, version_string in VERSIONS.items():
         partial = re.sub(symbol_string, version_string, partial)
         new_docname = docname + '.tmp'
         tmp_files.append('{}{}'.format(source_path, new_docname))

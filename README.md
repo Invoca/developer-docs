@@ -19,12 +19,11 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 1. Clone this repo
 2. Run the following commands:
 ```
-# note that python version used is 2.7
-sudo easy_install pip==20.3.4 # must specify this pip version
+sudo easy_install pip==22.0.4 # must specify this pip version
 sudo pip install virtualenv
 virtualenv venv
 source venv/bin/activate
-pip install -r requirements.pip
+pip install -r requirements.txt
 bash html
 ```
 3. Browse to the local html files in build/
