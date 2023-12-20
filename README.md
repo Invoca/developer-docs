@@ -65,16 +65,7 @@ bash html
 11. Click on the "latest" link in the lower left, your new branch should appear in the list of version
 12. Click on your branch name to view and you should be able to check the changes you made
 13. Once you decide to make your changes public, merge your branch into an existing version branch, then delete your branch. (Only members of the Developer Docs Administrators group can push to a publically available version of the docs.)
-14. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
-**[An open issue with Read the Docs prevents changes to older API version branches from being picked up automatically](https://github.com/rtfd/readthedocs.org/issues/4450).** There is a workaround: After merging your other version branch, you can trigger a build of the "latest" API version Github branch which will synchronize the versions and your new branches will appear as versions on Read the Docs. To find the "latest" API version go to https://developers.invoca.net/ and then click the version switcher at the bottom left. The latest version will be the version right after "Latest" and the version should have a matching named branch in Github.
-To trigger a build, create a new branch for the latest API version branch and then make an empty PR to merge:
-    ```
-    git switch <LATEST_API_VERSION_BRANCH_NAME>
-    git switch -c <TICKET_NUMBER>_trigger_readthedocs_build
-    git commit --allow-empty -m "Trigger ReadTheDocs Build"
-    git push
-    ```
-    Open your PR for this new branch with the empty commit and have it merged to trigger the ReadTheDocs build.
+14. ReadTheDocs will automatically pickup your changes and recompile the site. (Check build status at https://readthedocs.com/projects/invoca-developer-docs/builds/)
 
 ## Making a new version:
 1. Checkout the most recent branch (default) and branch off of it. E.g. Default is: 2015-12-10, branch off this, you want to bump Network integration to 2016-01-01, so name your new branch '2016-01-01')
