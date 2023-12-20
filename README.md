@@ -4,7 +4,7 @@ The [developer portal](http://developers.invoca.net) contains public documentati
 
 **IMPORTANT things to note:**
 
-1. ~~Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.~~ **An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
+1. Changes made to this repo are AUTOMATICALLY picked up by RTD and published to the site.
 2. The method of adding comments to API controllers is officially deprecated.
 3. General branching stratagy: Always branch off of the most recent live branch. The most recent live branch is subject to change at any time so be sure you're up to date and resolve any conflicts. If you are contributing to a new overall version (e.g. 2029-09-16) but do not own that branch, be sure to communicate with the owner about individual API versions.
 4. A branch on git maps to a "version" on read-the-docs. To create a new version (branch) and have it displayed as default,
@@ -45,8 +45,7 @@ bash html
 `bash html`
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub (Only members of the Developer Docs Administrators group can push to a publically available version of the docs.)
-6. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
-**An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
+6. ReadTheDocs will automatically pickup your changes and recompile the site.(Check build status at https://readthedocs.com/projects/invoca-developer-docs/builds/)
 7. Visit https://developers.invoca.net to check your changes
 
 ## Making changes to an existing version and keeping them private:
@@ -56,8 +55,7 @@ bash html
 `bash html`
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub
-6. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
-**An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
+6. ReadTheDocs will automatically pickup your changes and recompile the site.(Check build status at https://readthedocs.com/projects/invoca-developer-docs/builds/)
 7. Login to ReadTheDocs.com (credentials in lastpass)
 8. Click on the Versions button and then the Edit button next to your branch
 9. Click on the Active checkbox and set the Privacy Level to Private
