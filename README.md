@@ -46,7 +46,6 @@ bash html
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub (Only members of the Developer Docs Administrators group can push to a publically version of the docs.)
 6. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
-**An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
 7. Visit https://developers.invoca.net to check your changes
 
 ## Making changes to an existing version and keeping them private:
