@@ -56,8 +56,7 @@ bash html
 `bash html`
 4. Check your changes locally by opening `build/html/index.html`
 5. Commit your changes and push to GitHub
-6. ~~ReadTheDocs will automatically pickup your changes and recompile the site.~~
-**An open issue with Read the Docs prevents this** (https://github.com/rtfd/readthedocs.org/issues/4450). There is a workaround: After creating a new branch that you want to test the documentation for, you can trigger a build of `latest` which will synchronize the versions and your new branches will appear as versions on Read the Docs.
+6. ReadTheDocs will automatically pickup your changes and recompile the site. (Check build status at https://readthedocs.com/projects/invoca-developer-docs/builds/)
 7. Login to ReadTheDocs.com (credentials in lastpass)
 8. Click on the Versions button and then the Edit button next to your branch
 9. Click on the Active checkbox and set the Privacy Level to Private
