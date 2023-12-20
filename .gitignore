@@ -8,4 +8,3 @@ html/
 *.tmp
 src/
 .vscode/settings.json
-.python-version
