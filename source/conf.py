@@ -201,6 +201,7 @@ def setup(app):
   app.connect('source-read', source_handler)
   app.connect('html-page-context', update_body)
   app.add_js_file('js/custom.js')
+  app.add_js_file('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
   app.add_js_file('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
 
   # This CSS is added BEFORE the RTD CSS, so it doesn't allow us to override their CSS
