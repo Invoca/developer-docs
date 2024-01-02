@@ -139,6 +139,10 @@
     - Region
     - Region (state, province or country) where transaction originated.
 
+  * - repeat_calling_phone_number
+    - Repeat Caller
+    - Whether the call was a repeat call. Repeat call detection is not applied to shared or unavailable caller IDs.
+
   * - source
     - Source
     - Source of the call.
