@@ -8,7 +8,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags.json``
 
   Format: application/json
 

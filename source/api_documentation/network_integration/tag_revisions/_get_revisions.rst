@@ -7,7 +7,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>/revisions.json``
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>/revisions.json``
 
   Response Code: 200
 
