@@ -8,7 +8,7 @@
 
   Endpoint:
 
-  ``https://invoca.net/api/2022-08-01/<network_id>/js_tags/<js_tag_id>/revisions.json``
+  ``https://invoca.net/api/2022-08-01/networks/<network_id>/js_tags/<js_tag_id>/revisions.json``
 
   Format: application/json
 

@@ -12,7 +12,7 @@ This API documentation helps provide necessary features to create and manage Inv
 
 Endpoint:
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>/revisions.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>/revisions.json``
 
 Note: when working with a Draft Revision, the <external_revision_id> should be set to `draft` in the URL.
 
@@ -55,7 +55,7 @@ Forbidden – 403:
 POST
 ----
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>/revisions.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>/revisions.json``
 
 Content Type: application/json
 
@@ -107,7 +107,7 @@ Response Code: 403
 PUT
 ----
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>/revisions/1.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>/revisions/1.json``
 
 Content Type: application/json
 
@@ -156,7 +156,7 @@ Response Code: 403
 DELETE
 ----
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>/revisions/1.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>/revisions/1.json``
 
 Content Type: application/json
 
@@ -178,7 +178,7 @@ Not Found – 404:
 GET
 ----
 
-``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/js_tags/<js_tag_id>/revisions/<external_revision_id>.json``
+``https://invoca.net/api/@@NETWORK_API_VERSION/networks/<network_id>/js_tags/<js_tag_id>/revisions/<external_revision_id>.json``
 
 Content Type: application/json
 
