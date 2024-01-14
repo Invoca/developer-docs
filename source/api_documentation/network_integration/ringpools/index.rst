@@ -51,6 +51,14 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
     - boolean
     - When true, the ringpool will immediately be filled with phone numbers up to the max_pool_size, if numbers are available. When false, the pool will initially fill at 10% capacity to conserve phone number usage. The ringpool will increase phone numbers based on ringpool autoscaling settings and traffic volume.
 
+  * - allow_overflow
+    - boolean
+    - Determines what should happen if visitor traffic exceeds the pool size.  When true, the RingPool will reserve one phone number for "overflow" and apply it to any additional visitors.  When false, the destination phone number will not be replaced on the website.
+
+      This field can be passed with a value of true or false when creating a RingPool. If updating a RingPool, the field may be only be provided if the value is the same as when it was created (i.e. no change). If trying to change the value on an update request, the request will fail.
+
+      If not passed when creating a new RingPool, the RingPool will be created using the default setting of true.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
@@ -180,6 +188,12 @@ Content Type: application/json
     - array of strings
     - an array of stringified limiters on the boundaries of where to look for local numbers given as npa (ex. ["805", "212"])
 
+  * - allow_overflow
+    - boolean
+    - Determines what should happen if visitor traffic exceeds the pool size.  When true, the RingPool will reserve one phone number for "overflow" and apply it to any additional visitors.  When false, the destination phone number will not be replaced on the website.
+
+      If not passed, the RingPool will be created using the default setting of true.
+
 Response Code: 200
 
 **Request Body**
@@ -193,7 +207,8 @@ Response Code: 200
    "max_pool_size": "3",
    "local_center": {"latitude": 45, "longitude": 45},
    "tn_prefix_whitelist": ["455"],
-   "destination_phone_number": "888-111-2222"
+   "destination_phone_number": "888-111-2222",
+   "allow_overflow": false
   }
 
 **Response Body**
