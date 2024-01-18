@@ -112,7 +112,7 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       **"search_radius_miles"**: An integer, greater than or equal to 0. Default is 240. Represents the number of miles from the location to search.
 
-      **"restrict_to_state"**: A boolean. Default: True. Used to restrict search to be within state boundaries.
+      **"restrict_search_to_state"**: A boolean. Default: True. Used to restrict search to be within state boundaries.
 
   * - tn_prefix_whitelist
     - array of strings
@@ -225,5 +225,3 @@ The following endpoints are for use when you do **not** have your own ID's (id_f
    :path: /promo_numbers/&lt;promo_number&gt;
    :description: Delete a Campaign Promo Number
    :page: delete_promo_number
-
-

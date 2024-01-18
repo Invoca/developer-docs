@@ -23,7 +23,7 @@
                         "latitude": 30,
                         "longitude": -130 },
       "local_number_preferences": { "search_radius_miles": 20,
-                                    "restrict_to_state": true,
+                                    "restrict_search_to_state": true,
                                     "allocation_fallback_strategy": "Wait" },
       "preferred": true,
       "name": "Invoca Example RingPool",
@@ -38,4 +38,3 @@
   Response Body:
 
   Same as a GET response, includes all the RingPool properties.
-

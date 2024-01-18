@@ -29,11 +29,10 @@
                           "latitude": 30,
                           "longitude": -130 },
         "local_number_preferences": { "search_radius_miles": 20,
-                                      "restrict_to_state": true,
+                                      "restrict_search_to_state": true,
                                       "allocation_fallback_strategy": "Wait" },
         "max_pool_size": 15,
         "api_key": "value",
         "allow_overflow": true
       }
     ]
-
