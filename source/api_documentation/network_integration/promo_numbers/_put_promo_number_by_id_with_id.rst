@@ -60,7 +60,7 @@
 
   Moving an Advertiser Campaign Promo Number
 
-  .. **Note:** When a promo number is moved, its id_from_network will be adjusted as part of the move.
+  **Note:** When a promo number is moved, its **id_from_network** will be automatically adjusted.
 
   Endpoint:
 
