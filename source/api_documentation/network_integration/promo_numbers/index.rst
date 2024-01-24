@@ -136,17 +136,21 @@ When you POST a promo number, we return the promo_number in the response body. T
 
   * - destination_advertiser_id_from_network
     - string (optional)
-    - The ID of the advertiser in which the promo number is intended to be moved to.
+    - The ID of the advertiser in which the promo number is intended to be moved to.  If this field is used, **destination_advertiser_campaign_id_from_network** also must be included.
+
+      * Do not include this field if you do not intend to move the promo number.
 
   * - destination_advertiser_campaign_id_from_network
     - string (optional)
-    - The ID of the advertiser campaign in which the promo number is intended to be moved to.
+    - The ID of the advertiser campaign in which the promo number is intended to be moved to.  If this field is used, **destination_advertiser_id_from_network** also must be included.
+
+      * Do not include this field if you do not intend to move the promo number.
 
   * - destination_affiliate_id_from_network
     - string (optional)
-    - The ID of the affiliate in which the promo number is intended to be moved to. Only to be used when moving promo numbers between affiliate campaigns.
+    - The ID of the affiliate in which the promo number is intended to be moved to. Only to be used when moving promo numbers between affiliate campaigns. If this field is used, both **destination_advertiser_campaign_id_from_network** and **destination_advertiser_id_from_network** also must be included.
 
-
+      * Do not include this field if you do not intend to move the promo number.
 
 Custom Data
 """""""""""""
