@@ -60,8 +60,6 @@
 
   Moving an Advertiser Campaign Promo Number
 
-  **Note:** When a promo number is moved, its **id_from_network** will be automatically adjusted.
-
   Endpoint:
 
   ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers_by_id/4531.json``
@@ -90,8 +88,6 @@
     <hr>
 
   Moving an Affiliate Campaign Promo Number
-
-  **Note:** When a promo number is moved, its **id_from_network** will be automatically adjusted.
 
   Endpoint:
 
