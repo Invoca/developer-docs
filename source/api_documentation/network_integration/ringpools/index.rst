@@ -220,6 +220,18 @@ Content Type: application/json
     - array of strings
     - an array of stringified limiters on the boundaries of where to look for local numbers given as npa (ex. ["805", "212"])
 
+  * - destination_phone_number
+    - A phone number to be associated with the RingPool.
+    - Only applicable for `POST` & `PUT /ring_pools/<ring_pool_id>` API endpoint.
+
+      When using Destinations UI or the forward to destination IVR node, this number will be used.
+
+  * - obfuscated_tag_id
+    - string (required if the network is using Tag Destinations and a destination_phone_number is passed in)
+    - Only applicable for `POST` & `PUT /ring_pools/<ring_pool_id>` API endpoint.
+
+      The Tag that will be associated with the Destination.
+
   * - allow_overflow
     - boolean
     - Determines what should happen if visitor traffic exceeds the pool size.  When true, the RingPool will reserve one phone number for "overflow" and apply it to any additional visitors.  When false, the destination phone number will not be replaced on the website.
