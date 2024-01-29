@@ -67,6 +67,18 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
       If not passed when creating a new RingPool, the RingPool will be created using the default setting of true.
 
+  * - customer_phone_numbers
+    - Array of hashes
+    - Only applicable for `GET /ring_pools/<ring_pool_id>` API endpoint.
+
+      Returns a list of all Destinations (aka Customer Phone Numbers) along with the respective `obfuscated_tag_id` for the destinations that are linked to the RingPool.
+
+  * - default_customer_phone_number
+    - Hash
+    - Only applicable for `GET /ring_pools/<ring_pool_id>` API endpoint.
+
+      Returns the default Destination (aka Customer Phone Number) along with the respective `obfuscated_tag_id` for the destination that is linked to the RingPool.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
