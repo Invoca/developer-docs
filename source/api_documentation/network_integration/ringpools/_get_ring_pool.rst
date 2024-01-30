@@ -32,6 +32,20 @@
                                     "allocation_fallback_strategy": "Wait" },
       "max_pool_size": 15,
       "api_key": "value",
-      "destination_phone_number": "888-111-2222",
-      "allow_overflow": true
+      "fill_immediately": false,
+      "allow_overflow": true,
+      "customer_phone_numbers": [
+        {
+          "destination_phone_number": "8005551216",
+          "js_tag": {
+            "obfuscated_tag_id": "0054811245"
+          }
+        }
+      ],
+      "default_customer_phone_number": {
+        "destination_phone_number": "8005551216",
+        "js_tag": {
+          "obfuscated_tag_id": "0054811245"
+        }
+      }
     }

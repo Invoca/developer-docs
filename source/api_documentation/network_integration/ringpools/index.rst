@@ -67,6 +67,18 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
       If not passed when creating a new RingPool, the RingPool will be created using the default setting of true.
 
+  * - customer_phone_numbers
+    - Array of hashes
+    - Only applicable for `GET /ring_pools/<ring_pool_id>` API endpoint.
+
+      Returns a list of all Destinations (aka Customer Phone Numbers) along with the respective `obfuscated_tag_id` for the destinations that are linked to the RingPool.
+
+  * - default_customer_phone_number
+    - Hash
+    - Only applicable for `GET /ring_pools/<ring_pool_id>` API endpoint.
+
+      Returns the default Destination (aka Customer Phone Number) along with the respective `obfuscated_tag_id` for the destination that is linked to the RingPool.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
@@ -207,6 +219,18 @@ Content Type: application/json
   * - tn_prefix_whitelist
     - array of strings
     - an array of stringified limiters on the boundaries of where to look for local numbers given as npa (ex. ["805", "212"])
+
+  * - destination_phone_number
+    - A phone number to be associated with the RingPool.
+    - Only applicable for `POST` & `PUT /ring_pools/<ring_pool_id>` API endpoint.
+
+      When using Destinations UI or the forward to destination IVR node, this number will be used.
+
+  * - obfuscated_tag_id
+    - string (required if the network is using Tag Destinations and a destination_phone_number is passed in)
+    - Only applicable for `POST` & `PUT /ring_pools/<ring_pool_id>` API endpoint.
+
+      The Tag that will be associated with the Destination.
 
   * - allow_overflow
     - boolean

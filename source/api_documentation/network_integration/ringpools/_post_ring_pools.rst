@@ -29,8 +29,9 @@
       "name": "Invoca Example RingPool",
       "max_pool_size": 15,
       "lifetime_seconds": 1800,
-      "destination_phone_number": "888-111-2222",
-      "allow_overflow": true
+      "fill_immediately": false,
+      "allow_overflow": true,
+      "destination_phone_number": "888-111-2222"
     }
 
   Response Code: 201
