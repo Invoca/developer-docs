@@ -134,7 +134,23 @@ When you POST a promo number, we return the promo_number in the response body. T
     - string (optional)
     - The ID of the AdWords client account to be associated with this promo number. Requires media type to be set to 'Google Call Extension'. (ex. "627-345-9815")
 
+  * - destination_advertiser_id_from_network
+    - string (optional)
+    - The ID of the advertiser in which the promo number is intended to be moved to.  If this field is used, **destination_advertiser_campaign_id_from_network** also must be included.
 
+      * Do not include this field if you do not intend to move the promo number.
+
+  * - destination_advertiser_campaign_id_from_network
+    - string (optional)
+    - The ID of the advertiser campaign in which the promo number is intended to be moved to.  If this field is used, **destination_advertiser_id_from_network** also must be included.
+
+      * Do not include this field if you do not intend to move the promo number.
+
+  * - destination_affiliate_id_from_network
+    - string (optional)
+    - The ID of the affiliate in which the promo number is intended to be moved to. Only to be used when moving promo numbers between affiliate campaigns. If this field is used, both **destination_advertiser_campaign_id_from_network** and **destination_advertiser_id_from_network** also must be included.
+
+      * Do not include this field if you do not intend to move the promo number.
 
 Custom Data
 """""""""""""
