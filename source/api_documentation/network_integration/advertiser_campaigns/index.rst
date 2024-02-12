@@ -540,7 +540,7 @@ Parameter Details
 
   * - ring_group_destinations
     - Array of hashes
-    - A list of destination hashes for the RingGroup node. Each hash must contain a "ring_group_number" parameter at minimum. Other optional parameters are "description" (string), "destination_disabled" (boolean, default: false), and "distribution_weight" (integer, default: 1). "destination_disabled" when set to true, will prohibit the destination from being dialed as part of the RingGroup. "distribution_weight" may only be used when the distribution_method of the RingGroup node is set to "Weighted". For example, ring_group_destinations may have a value of [{"ring_group_number": "800-444-1111", "description": "Call Center 1", "distribution_weight": 2 }, {"ring_group_number": "800-444-2222", "description": "Call Center 2", "distribution_weight": 1 }].
+    - A list of destination hashes for the RingGroup node. Each hash must contain a "ring_group_number" parameter at minimum. Other optional parameters are "description" (string), "destination_disabled" (boolean, default: false), and "distribution_weight" (integer, default: 1). "destination_disabled" when set to true, will prohibit the destination from being dialed as part of the RingGroup. "distribution_weight" may only be used when the distribution_method of the RingGroup node is set to "Weighted". For example, ring_group_destinations may have a value of [{"ring_group_number": "8004441111", "description": "Call Center 1", "distribution_weight": 2 }, {"ring_group_number": "8004442222", "description": "Call Center 2", "distribution_weight": 1 }].
 
   * - ring_group_destination_total_limit
     - Integer
