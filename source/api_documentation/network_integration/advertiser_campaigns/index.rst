@@ -392,6 +392,8 @@ Node Parameters and Usage
 
       \*ring_group_connect_timeout
 
+      ring_group_country_code
+
       distribution_method
 
       call_acceptance
