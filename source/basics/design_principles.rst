@@ -118,5 +118,7 @@ Request Parameter Format & Response Body Format
 Previous versions of the API accepted form‐encoded style parameters in the request and used
 XML as the output format. As of @@NETWORK_API_VERSION, all new feature development has switched to
 JSON format for both request and response. Previous XML functionality will continue to be
-supported via the 2013‐03‐22 version of the API (please contact
-questions@invoca.com for more information on previous versions).
+supported via the 2013‐03‐22 version of the API (please submit a case via the `Community Case Portal`_
+for more information on previous versions).
+
+.. _`Community Case Portal`: https://community.invoca.com/t5/crmsupport/page

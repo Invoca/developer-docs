@@ -171,8 +171,9 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
     - Attempted to access an invalid resource or provided invalid data. Check the errors object in the response.
 
   * - 409 Conflict
-    - The **external_call_unique_id** in the request has already been used.  Please contact the Invoca support team at questions@invoca.com for further assistance.
+    - The **external_call_unique_id** in the request has already been used.  Please submit a case via the `Community Case Portal`_ for further assistance.
 
+.. _`Community Case Portal`: https://community.invoca.com/t5/crmsupport/page
 
 Timestamp Formats
 -------------------------------
@@ -287,8 +288,12 @@ If there are multiple issues with the request, we will do our best to package al
 
 **Permission Errors**
 
-If you do not have access to the Call Ingestion API, the following error will be returned with a 403 response code.
-*Please note that the Call Ingestion API is enabled per network.  Please contact the Invoca support team at questions@invoca.com for setup assistance.*
+.. raw:: html
+
+    If you do not have access to the Call Ingestion API, the following error will be returned with a 403 response code.
+    <i>Please note that the Call Ingestion API is enabled per network.  Please submit a case via the
+    <a href="https://community.invoca.com/t5/crmsupport/page">Community Case Portal</a> for setup assistance.</i>
+    <br /><br />
 
 **Response (403 Forbidden):**
 
@@ -328,8 +333,12 @@ In order to fully utilize the Call Ingestion API, there are some configuration r
   * Campaigns must be setup with a campaign type of **ExternalOnly**.
   * Campaigns need to be have either the **Signal AI** product feature or at least one Voice Signal enabled.  This will enable transcription service on the submitted call.
 
-If any of these settings are misconfigured you'll see error message similar to the examples below.
-*Please contact the Invoca support team at questions@invoca.com for setup assistance.*
+.. raw:: html
+
+    If any of these settings are misconfigured you'll see error message similar to the examples below.
+    <i>Please submit a case via the
+    <a href="https://community.invoca.com/t5/crmsupport/page">Community Case Portal</a> for setup assistance.</i>
+    <br /><br />
 
 **Response (403 Forbidden):**
 

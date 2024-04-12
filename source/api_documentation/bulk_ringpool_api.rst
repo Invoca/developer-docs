@@ -1,7 +1,7 @@
 Bulk Ringpool API
 =================
 
-Before using the Bulk RingPool API, contact questions@invoca.com to enable the Bulk RingPool API feature. It is recommended that before you enable the feature on your production platform, testing occurs on a demo or test platform.
+Before using the Bulk RingPool API, submit a case via the `Community Case Portal`_ to enable the Bulk RingPool API feature. It is recommended that before you enable the feature on your production platform, testing occurs on a demo or test platform.
 
 Overview
 --------
@@ -94,4 +94,6 @@ As another example, the following exception occurs when attempting to allocate a
 
 If a system error occurs, an InternalServiceError will be returned with an integer error handle.
 
-Contact questions@invoca.com to determine the root cause of such an error.
+Submit a case via the `Community Case Portal`_ to determine the root cause of such an error.
+
+.. _`Community Case Portal`: https://community.invoca.com/t5/crmsupport/page
