@@ -77,7 +77,9 @@ Or for json or csv, the following text is returned:
 
 `InvalidKey: API Key 'A329F4DC002168' is not valid for resource '1'`
 
-If a system error occurs, an InternalServiceError is returned in XML (or simple text for json or csv) with an integer error handle. Contact questions@invoca.com to determine the root cause of the error.
+If a system error occurs, an InternalServiceError is returned in XML (or simple text for json or csv) with an integer error handle. Submit a case via the `Community Case Portal`_ to determine the root cause of the error.
+
+.. _`Community Case Portal`: https://community.invoca.com/t5/crmsupport/page
 
 RingPool Types
 --------------
