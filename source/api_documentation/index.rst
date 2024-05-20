@@ -40,9 +40,6 @@ The RingPool wizard includes a section showing the correct API URL for your orga
 
    manage_api_credentials
    network_integration/index
-   conversion_reporting
-   conversion_reporting_pixel
-   conversion_reporting_email
    transactions_api/index
    ringpool
    bulk_ringpool_api
