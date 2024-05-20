@@ -8,9 +8,6 @@ The platform provides the following APIs:
 :doc:`network_integration/index` -
 supports the replication and synchronization of advertiser, publisher and campaign data between partner platforms.
 
-:doc:`conversion_reporting` -
-provides the ability to report completed order information (or other conversion events) from a server back into the platform.
-
 :doc:`bulk_ringpool_api` -
 allocates a dynamic, trackable promo phone number from a RingPool (designed to handle a high volume of requests per second).
 
@@ -61,4 +58,3 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    call_ingestion_api/index
    calls_in_progress_api/index
    sms_messaging_api/index
-   conversion_reporting
