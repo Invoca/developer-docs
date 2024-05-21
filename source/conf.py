@@ -131,7 +131,7 @@ def build_api_endpoint_template(source):
 def source_handler(app, docname, source):
   source[0] = build_api_endpoint_template(source[0])
 
-  for symbol_string, version_string in VERSIONS.iteritems():
+  for symbol_string, version_string in VERSIONS.items():
     source[0] = re.sub(symbol_string, version_string, source[0])
 
 # Replace all occurences of @@ variables in partials (.rst files beginning w/ an underscore)
