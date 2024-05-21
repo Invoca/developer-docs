@@ -31,8 +31,6 @@ used for SMS number management, as well as handling incoming/outgoing SMS messag
 
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
-The Conversion Reporting API is accessible using credentials provided by Invoca. Submit a case via the `Community Case Portal`_ to request Conversion Reporting API credentials.
-
 The RingPool and Bulk RingPool APIs are accessible using the API keys provided in the RingPool wizard. (Note: the Bulk RingPool API is only available after being enabled by Customer Success. Submit a case via the `Community Case Portal`_ to request the Bulk RingPool API.)
 
 .. _`Community Case Portal`: https://community.invoca.com/t5/crmsupport/page
