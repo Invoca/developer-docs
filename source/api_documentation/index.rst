@@ -23,8 +23,6 @@ used to report signals that occur on a specific call (transaction).
 
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
-The Conversion Reporting API is accessible using credentials provided by Invoca. Contact questions@invoca.com to request Conversion Reporting API credentials.
-
 The RingPool and Bulk RingPool APIs are accessible using the API keys provided in the RingPool wizard. (Note: the Bulk RingPool API is only available after being enabled by Customer Success. Contact questions@invoca.com to request the Bulk RingPool API.)
 
 The RingPool wizard includes a section showing the correct API URL for your organization:
