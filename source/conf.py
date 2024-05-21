@@ -100,7 +100,7 @@ def build_template(match, template_file_name):
 
   # open the template and find/replace the keys with the values
   template = open('{}{}'.format(custom_template_path, template_file_name), 'r').read()
-  for search, replacement in template_vars.iteritems():
+  for search, replacement in template_vars.items():
     if re.search(search, template):
       template = template.replace(search, replacement)
     else:
@@ -139,7 +139,7 @@ def build_partials(app, env, docnames):
   for docname in env.found_docs:
     if re.search(r"/_[^/]+$", docname) and not re.search('custom_template', docname):
       partial = open('{}{}{}'.format(source_path, docname, '.rst'), 'r').read()
-      for symbol_string, version_string in VERSIONS.iteritems():
+      for symbol_string, version_string in VERSIONS.items():
         partial = re.sub(symbol_string, version_string, partial)
         new_docname = docname + '.tmp'
         open('{}{}'.format(source_path, new_docname), 'w').write(partial)
