@@ -4,15 +4,15 @@
 
     <!-- This is a total hack, I copied the minified CSS from the old site-->
     <link rel="stylesheet" href="_static/css/homepage.css">
-    <style>
-    .panel .index {
-        background-color:#505050;
-    }
-    </style>
+
     <div id="central-column" class="container-fluid">
         <div id="search-results" class="row"></div>
         <div id="content">
-          <div><div class="title-text index"><p class="title index">Welcome to the Invoca Developer Portal</p><p class="sub-title">Leverage the power of Invoca in your app or website. Browse the portal sections for all your documentation needs.</p></div><div class="row main-text"><div class="col-md-12"><div>
+          <div>
+            <h1>Welcome to the Invoca Developer Portal</h1>
+            <p class="sub-title">Leverage the power of Invoca in your app or website. Browse the portal sections for all your documentation needs.</p>
+          </div>
+          <div class="row main-text"><div class="col-md-12"><div>
     <a href="basics/index.html">
       <div class="panel index">
         <div class="panel-body index">
@@ -31,7 +31,7 @@
       </div>
     </a>
     <a href="api_documentation/index.html">
-      <div class="panel index middle-panel">
+      <div class="panel index">
         <div class="panel-body index">
           <div class="row">
             <div class="col-md-2 icon-col vertically-center">
