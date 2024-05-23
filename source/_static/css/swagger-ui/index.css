@@ -29,10 +29,9 @@ body {
 }
 
 .swagger-ui th {
-  background-color: #6A6A6A !important;
   padding: 8px !important;
   font-size: 10pt !important;
-  color: #E4E4E4 !important;
+  color: #fff !important;
   border-color: #595959 !important;
   border-top-width: 0 !important;
   border-bottom-width: 0 !important;
@@ -43,7 +42,7 @@ body {
 }
 
 .swagger-ui .responses-header td {
-  background-color: #6A6A6A !important;
+  background-color: #016454 !important;
   padding: 8px !important;
   font-size: 10pt !important;
   color: #E4E4E4 !important;
@@ -99,27 +98,22 @@ body {
 }
 
 .swagger-ui .info .title small {
-    background-color: #2CBF58 !important;
+    background-color: #02B388 !important;
 }
 
-  .swagger-ui .info .title small pre {
-    background-color: #2CBF58 !important;
-    border: 1px solid #2CBF58!important;
+.swagger-ui .info .title small pre {
+    background-color: #02B388 !important;
+    border: 1px solid #02B388 !important;
 }
 
 .swagger-ui .opblock-tag a {
-    background-color: #2CBF58 !important;
-  }
+    background-color: #CCF0E7 !important;
+    border-radius: 5px;
+    padding: 10px;
+}
 
 .swagger-ui a {
-  display: block !important;
-  border-radius: 4px !important;
-  color: white !important;
-  font-weight: 500 !important;
   font-size: 14px !important;
-  background-color: #6A6A6A !important;
-  padding: 14px !important;
-  margin: 5px 0 0 0 !important;
 }
 
 .swagger-ui a div {
@@ -141,13 +135,7 @@ body {
   font-weight: 500 !important;
   line-height: 1.1 !important;
   color: inherit !important;
-  border-bottom: 1px solid black !important;
   padding-bottom: 4px !important;
-}
-
-.swagger-ui .opblock-section-header {
-  background-color: #EFEFEF !important;
-  box-shadow: none !important;
 }
 
 .swagger-ui .opblock-body pre.microlight {
@@ -156,50 +144,49 @@ body {
 }
 
 .swagger-ui .opblock-summary {
-  color: #6A6A6A !important;
-  border-color: #6A6A6A !important;
-  outline-color: #6A6A6A !important;
-
+  color: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.03) !important;
+  outline-color: rgba(0, 0, 0, 0.03) !important;
 }
 
 .swagger-ui .opblock-summary-control {
-  outline-color: #6A6A6A !important;
+  outline-color: rgba(0, 0, 0, 0) !important;
 }
 
 .swagger-ui .opblock .opblock-summary-method {
-  background-color: #6A6A6A !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .swagger-ui .opblock .opblock-summary-path {
-  background-color: #6A6A6A !important;
-  color: #ffffff !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: #1F2121 !important;
   width: 50% !important;
 }
 
 .swagger-ui .opblock .opblock-summary-description {
-  background-color: #6A6A6A !important;
-  color: #ffffff !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: #1F2121 !important;
   width: 30% !important;
 }
 
 .swagger-ui .opblock {
-  background-color: #6A6A6A !important;
-  color: #6A6A6A !important;
-  border-color: #6A6A6A !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  color: #1F2121 !important;
+  border-color: rgba(0, 0, 0, 0.03) !important;
 }
 
 /* GET Request Coloring */
 
 .swagger-ui .opblock-get .tab-header .tab-item.active h4 span:after {
-  background: #1DF0D0 !important;
+  background: #02B388 !important;
 }
 
 .swagger-ui .opblock-get svg {
-  fill: #1DF0D0 !important;
+  fill: #02B388 !important;
 }
 
 .swagger-ui .opblock-get .opblock-summary-method {
-  color: #1DF0D0 !important;
+  color: #02B388 !important;
 }
 
 /* PUT Request Coloring */
@@ -219,15 +206,15 @@ body {
 /* POST Request Coloring */
 
 .swagger-ui .opblock-post .tab-header .tab-item.active h4 span:after {
-  background: #15DBF6 !important;
+  background: #02B388 !important;
 }
 
 .swagger-ui .opblock-post svg {
-  fill: #15DBF6 !important;
+  fill: #02B388 !important;
 }
 
 .swagger-ui .opblock-post .opblock-summary-method {
-  color: #15DBF6 !important;
+  color: #02B388 !important;
 }
 
 /* PATCH Request Coloring */
@@ -260,7 +247,7 @@ body {
 
 .swagger-ui a div.action {
   width: 10% !important;
-  color: #1DF0D0 !important;
+  color: #02B388 !important;
 }
 
 .toctree-l3 ul {
@@ -270,8 +257,8 @@ body {
 .swagger-ui .opblock-body {
   cursor: text !important;
   padding: 25px !important;
-  background-color: #efefef !important;
-  color: #4A4A4A !important;
+  background-color: #fff !important;
+  color: #1F2121 !important;
   border-top-right-radius: 0px !important;
   border-top-left-radius: 0px !important;
   border-bottom-right-radius: 4px !important;

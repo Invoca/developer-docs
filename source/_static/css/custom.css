@@ -6,18 +6,17 @@ body {
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
-  background-color: #363636;
-  color: #D5D5D5;
+  color: #1F2121;
   letter-spacing: 0px;
 }
 
 a, a:visited {
-  color: #00ACF1;
+  color: #02B388;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #0088be;
+  color: #016454;
   text-decoration: none;
 }
 
@@ -27,8 +26,9 @@ a:focus {
 
 img.logo {
   width: 232px !important;
-  height: 82px !important;
+  height: 57px !important;
   padding: 0px !important;
+  margin-bottom: 10px !important;
 }
 
 .wy-side-nav-search, .wy-side-nav-search>a:hover {
@@ -49,7 +49,7 @@ h1 {
   font-style: normal;
   font-weight: 300;
   font-size: 36pt;
-  color: #D5D5D5;
+  color: #1F2121;
   padding-bottom: 60px;
   padding-top: 5px;
   line-height: 48px;
@@ -62,7 +62,7 @@ h2 {
   line-height: 1.1;
   padding-top: 5px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #5f5f5f;
+  border-bottom: 1px solid #eaeaea;
   margin-bottom: 20px;
 }
 
@@ -76,13 +76,13 @@ h3 {
 }
 
 hr {
-  border-top: 1px solid #5f5f5f;
+  border-top: 1px solid #eaeaea;
   margin-bottom: 10px;
   margin-top: 0;
 }
 
 .document {
-  color: #D5D5D5;
+  color: #1F2121;
 }
 
 div.section h1 {
@@ -163,18 +163,13 @@ code.docutils {
   border: none;
 }
 
-code.docutils.literal {
-  background-color: #3F3F3F;
-  padding: 0px !important;
-}
-
 /* applied to <span> for one-liner preformatted text */
 .pre {
   font-family: Consolas, monospace;
   word-break: break-all;
   word-wrap: break-word !important;
-  color: #FFFFFF;
-  background-color: #2CBF58;
+  color: #1F2121;
+  background-color: #CCF0E7;
   border-radius: 4px;
   padding: 6px 4px 4px 4px !important;
   font-size: 14px !important;
@@ -187,8 +182,8 @@ pre {
 
 /* applied to <pre> for multi-line preformatted text */
 .literal-block {
-  color: #FFFFFF;
-  background-color: #2CBF58 !important;
+  color: #000000;
+  background-color: #CCF0E7 !important;
   font-family: Consolas, monospace;
   font-size: 14px !important;
   border: none !important;
@@ -207,15 +202,15 @@ pre {
 }
 
 cite  {
-  color: #FFFFFF;
-  background-color: #2CBF58 !important;
+  color: #000000;
+  background-color: #eeeeee !important;
   font-family: Consolas, monospace;
   font-size: 14px !important;
   border: none !important;
   border-radius: 4px;
   overflow-x: auto;
   display: inline;
-  padding: 0px 2px 2px 2px !important;
+  padding: 2px 4px !important;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;       /* css-3 */
@@ -224,11 +219,6 @@ cite  {
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
   line-height: 25px;
-}
-
-/* applied to body, almost everyone lives in here! */
-.wy-body-for-nav {
-  background: #363636 none repeat scroll 0 0;
 }
 
 /*********************LEFT HAND NAV************************/
@@ -256,9 +246,9 @@ cite  {
 
 /* nav menu side bar */
 .wy-nav-side {
-  background: #333 none repeat scroll 0 0;
   height: 100%;
   padding-bottom: 0;
+  background: #fff;
 }
 
 /* menu scroll bar */
@@ -267,7 +257,6 @@ cite  {
     overflow-x: hidden;
     overflow-y: scroll;
     position: relative;
-    background-color: #333;
 }
 
 .wy-menu-vertical {
@@ -276,33 +265,33 @@ cite  {
 }
 
 .wy-menu-vertical a {
-  color: #2CBF58;
+  color: #02B388;
 }
 
 .wy-menu-vertical a:hover {
-  color: #2CBF58;
+  color: #016454;
+  background: #fff;
+}
+
+.wy-menu-vertical li.current,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background: #fff;
 }
 
 .wy-menu-vertical li.current a:hover {
-  color: #2CBF58;
+  color: #02B388 !important;
+  background: #fff;
 }
 
 /* make nav links green */
 .wy-menu-vertical li.current > a {
-  color: #2CBF58;
-  background-color: rgb(48, 48, 48);
-}
-
-.wy-menu-vertical li.current {
-  background: #333 none repeat scroll 0 0;
+  color: #016454;
 }
 
 .wy-menu-vertical li.current a {
   border: 0px;
-}
-
-.wy-menu.wy-menu-vertical a {
-  background-color: #333 !important;
+  padding-right: 0px;
 }
 
 .wy-menu-vertical .toctree-l1 {
@@ -312,21 +301,16 @@ cite  {
 .wy-menu-vertical .toctree-l1 > a {
   font-weight: 500;
   font-size: 110%;
-  color: #9B9B9B !important;
+  color: #3B3B3B;
   margin: 10px 0;
 }
 
-.wy-menu-vertical .toctree-l1.current > a {
-  color: white !important;
-}
-
 .wy-menu-vertical .toctree-l1 > a:hover {
-  color: white !important;
+  color: #02B388;
 }
 
-.wy-menu-vertical .toctree-l1 > a .toctree-expand {
-  position: relative;
-  left: -34px;
+.wy-menu-vertical a .toctree-expand {
+  display: none
 }
 
 .wy-menu-vertical .toctree-l1 > a:before {
@@ -352,13 +336,12 @@ cite  {
 /*********************RIGHT HAND CONTENT************************/
 /* wraps up .wy-nav-content and its subordinates */
 .wy-nav-content-wrap {
-  background-color: #3F3F3F !important;
   font-size: 12pt;
+  background: #fafafa;
 }
 
 /* Content in middle (lives inside .wy-nav-content-wrap) */
 .wy-nav-content {
-  background-color: #3F3F3F;
   max-width: 1200px;
 }
 
@@ -394,10 +377,10 @@ cite  {
 .endpoint-list a {
   display: block;
   border-radius: 4px;
-  color: white;
+  color: #1F2121;
   font-weight: 500;
   font-size: 14px;
-  background-color: #6A6A6A;
+  background-color: rgba(0, 0, 0, 0.03);
   padding: 14px;
   margin: 5px 0 0 0;
 }
@@ -410,17 +393,17 @@ cite  {
 
 .endpoint-list a div.GET {
   width: 10%;
-  color: #1DF0D0;
+  color: #02B388;
 }
 
 .endpoint-list a div.action {
   width: 10%;
-  color: #1DF0D0;
+  color: #02B388;
 }
 
 .endpoint-list a div.POST {
   width: 10%;
-  color: #15DBF6;
+  color: #02B388;
 }
 
 .toctree-l3 ul {
@@ -458,8 +441,7 @@ cite  {
 .endpoint-long-description {
   cursor: text;
   padding: 25px;
-  background-color: #efefef;
-  color: #4A4A4A;
+  background-color: #fff;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   border-bottom-right-radius: 4px;
@@ -526,16 +508,17 @@ div[role=navigation][aria-label~=breadcrumbs] {
 .highlight-json .kc, .kd, .kn, .kp, .kr, .kt, .mf, .mh, .mi, .mo {
   color: #445588;
 }
-table.parameters, table.multiline-table {
-  border: 0 !important;
-}
 
 .wy-table-responsive table td {
   white-space: normal !important;
 }
 
+.rst-content table.docutils {
+  border-top-color: #016454;
+}
+
 table.parameters th {
-  background-color: #6A6A6A;
+  background-color: #016454;
   color: #E4E4E4;
 }
 
@@ -606,14 +589,9 @@ div.endpoint-list div.panel-body .container {
   margin-bottom: 0;
 }
 
-.panel-body {
-  padding: 0;
-}
-
 .swagger-ui .response-col_description__inner,
 .swagger-ui .response-control-media-type,
 .swagger-ui .response-col_links
 {
   display: none;
 }
-/*********************FOR BOOTSTRAP INTERACTIONS************************/
