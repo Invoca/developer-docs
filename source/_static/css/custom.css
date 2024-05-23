@@ -595,3 +595,23 @@ div.endpoint-list div.panel-body .container {
 {
   display: none;
 }
+
+/******** RTD Versions panel ******/
+.rst-versions {
+  color: #1F2121;
+  background: #eee;
+  border-top: solid 10px #aaa;
+}
+
+.rst-versions .rst-current-version {
+  background-color: #ddd;
+}
+
+.rst-versions .rst-other-versions dd a {
+  color: #02B388;
+}
+
+.rst-versions .rst-current-version .fa {
+  color: #1F2121;
+  padding-top: 5px;
+}
