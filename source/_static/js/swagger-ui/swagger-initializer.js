@@ -6,7 +6,7 @@ window.onload = function() {
     // url: "https://petstore.swagger.io/v2/swagger.json", // TODO: replace with real schema when versioning is in-place
     dom_id: '#swagger-ui',
     deepLinking: true,
-    syntaxHighlight: { theme: 'arta'},
+    syntaxHighlight: { theme: 'nord' },
     presets: [
       SwaggerUIBundle.presets.apis
     ],
