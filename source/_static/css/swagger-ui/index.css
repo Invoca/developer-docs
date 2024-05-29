@@ -139,8 +139,13 @@ body {
 }
 
 .swagger-ui .opblock-body pre.microlight {
-  background-color: #f5f5f5 !important;
-  color: #3b4151 !important;
+  background-color: #fafafa !important;
+}
+
+.swagger-ui .opblock-body pre.microlight code {
+  /* undo some theme.css styles that conflict with swagger */
+  background: none;
+  border: none;
 }
 
 .swagger-ui .opblock-summary {
@@ -178,15 +183,15 @@ body {
 /* GET Request Coloring */
 
 .swagger-ui .opblock-get .tab-header .tab-item.active h4 span:after {
-  background: #02B388 !important;
+  background: #4daac9 !important;
 }
 
 .swagger-ui .opblock-get svg {
-  fill: #02B388 !important;
+  fill: #4daac9 !important;
 }
 
 .swagger-ui .opblock-get .opblock-summary-method {
-  color: #02B388 !important;
+  color: #4daac9 !important;
 }
 
 /* PUT Request Coloring */
@@ -255,12 +260,6 @@ body {
 }
 
 .swagger-ui .opblock-body {
-  cursor: text !important;
-  padding: 25px !important;
   background-color: #fff !important;
   color: #1F2121 !important;
-  border-top-right-radius: 0px !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-right-radius: 4px !important;
-  border-bottom-left-radius: 4px !important;
 }
