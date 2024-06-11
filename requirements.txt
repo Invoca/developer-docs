@@ -2,3 +2,5 @@ sphinx
 sphinx-rtd-theme
 sphinxcontrib-httpdomain
 -e git+https://github.com/rtfd/recommonmark.git#egg=recommonmark
+PyYAML
+ipdb
