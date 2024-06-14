@@ -250,9 +250,10 @@ pygments_style = 'sphinx'
 
 # The theme is not automatically imported by RTD, so we have to import manually
 
-  import sphinx_rtd_theme
-  html_theme = 'sphinx_rtd_theme'
-  html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
 html_context = {}
 
 # Theme options are theme-specific and customize the look and feel of a theme
