@@ -10,8 +10,8 @@ Calls In Progress API
 
 
 The Calls In Progress API is used for interacting with pre-call insights for live calls as part of PreSense. It can retrieve
-information and set custom data values during a call. Calls become available via the api as soon as they are transferred to
-the campaign's destination. Once the call is complete, it is no longer available via the API.
+information during a call. Calls become available via the api as soon as they are transferred to the campaign's destination. 
+Once the call is complete, it is no longer available via the API.
 
 For authentication, use an API token. See :doc:`../manage_api_credentials` for details.
 
@@ -106,87 +106,6 @@ Examples
    :description: Get calls in progress by external unique id
    :page: get_calls_by_external_unique_id
 
-
-Update a Call in Progress
---------------------------
-
-
-.. raw:: html
-
-  <div class="alert alert-warning">
-    <b>Notice:</b>
-    The UPDATE endpoint is in beta.
-  </div>
-
-Update custom data values and set an external identifier to be used for subsequent API requests for a Call
-that is currently in progress.
-
-Supported types of requests: `PUT` and `POST`
-
-Request body should be JSON formatted.
-
-Fields Available for Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`external_unique_id` - add a unique ID to the call, usually from another system
-
-`custom_data` - populate Marketing Data Fields (aka Custom Data Fields) in the Invoca platform
-
-Query Parameters
-~~~~~~~~~~~~~~~~~~
-
-.. list-table::
-  :widths: 10 20 20 30
-  :header-rows: 1
-  :class: parameters
-
-
-  * - Param
-    - Description
-    - Format
-    - Required
-
-  * - organization_type
-    - The type of organization to be used in the request, either **Network** or **Advertiser**
-    - String
-    - True
-
-  * - id
-    - The ID of the organization to be used in the request
-    - Number
-    - True
-
-  * - transaction_id
-    - The transaction id for the desired call
-    - String
-    - Optional if using **external_unique_id**
-
-  * - external_unique_id
-    - The unique id previously applied to the desired call - can only be set via the Calls In Progress API
-    - String
-    - Optional if using **transaction_id**
-
-
-Examples
-~~~~~~~~~~~
-.. api_endpoint::
-   :verb: PUT
-   :path: /calls_in_progress
-   :description: Update a call's external unique id
-   :page: update_external_unique_id
-
-
-.. api_endpoint::
-   :verb: PUT
-   :path: /calls_in_progress
-   :description: Update a call's custom data via transaction ID
-   :page: update_custom_data
-
-
-.. api_endpoint::
-  :verb: PUT
-  :path: /calls_in_progress
-  :description: Update a call's custom data via external unique ID
-  :page: update_custom_data_ext
 
 Using the API for Attribution
 --------------------------
