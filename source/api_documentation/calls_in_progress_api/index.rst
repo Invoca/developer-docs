@@ -10,8 +10,8 @@ Calls In Progress API
 
 
 The Calls In Progress API is used for interacting with pre-call insights for live calls as part of PreSense. It can retrieve
-information and set custom data values during a call. Calls become available via the api as soon as they are transferred to
-the campaign's destination. Once the call is complete, it is no longer available via the API.
+information during a call. Calls become available via the api as soon as they are transferred to the campaign's destination. 
+Once the call is complete, it is no longer available via the API.
 
 For authentication, use an API token. See :doc:`../manage_api_credentials` for details.
 
