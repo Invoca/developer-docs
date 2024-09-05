@@ -118,7 +118,7 @@
       "numbers_to_replace": [],
       "organic_sources": true,
       "re_run_attribution_after": null,
-      "required_params": "",
+      "required_params": "gclid,fbclid,utm_medium=programmatic-audio",
       "reset_cache_on": [
         "gclid",
         "utm_source",
@@ -238,7 +238,7 @@
       "numbers_to_replace": [],
       "organic_sources": true,
       "re_run_attribution_after": null,
-      "required_params": "",
+      "required_params": "gclid,fbclid,utm_medium=programmatic-audio",
       "reset_cache_on": [
           "gclid",
           "utm_source",
