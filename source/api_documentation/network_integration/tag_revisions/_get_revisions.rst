@@ -18,15 +18,15 @@
     {
       "data": [
         {
-          "author": "Oauth API User",
-          "allow_overflow": true,
+          "allow_overflow": false,
           "auto_create_local_ringpools": false,
           "auto_create_toll_free_ringpools": false,
           "auto_swap": false,
-          "body": "(function(networkId) {\nvar cacheLifetimeDays = 30;\n\nvar customDataWaitForConfig = [];\n\nvar defaultCampaignId = null;\n\nvar destinationSettings = {\n  paramName: null\n};\n\nvar numbersToReplace = null;\n\nvar organicSources = true;\n\nvar reRunAfter = null;\n\nvar requiredParams = null;\n\nvar resetCacheOn = ['gclid', 'utm_source', 'utm_medium'];\n\nvar waitFor = 0;\n\nvar customCodeIsSet = (function() {\n  Invoca.Client.customCode = function(options) {\n    // *** Auto generated code generated for convenience when testing on staging below ***\nInvoca.PNAPI.config.URL= '//abhishek-master-d6a37c81-pnapi.invocadev.com/PARTITION/api/VERSION_KEY/map_number.jsonp';\n// *** Auto generated code generated for convenience when testing on staging above ***\n\n  };\n\n  return true;\n})();\n\nvar generatedOptions = {\n  active:              true,\n  autoSwap:            false,\n  cookieDays:          cacheLifetimeDays,\n  country:             null,\n  dataSilo:            \"us\",\n  defaultCampaignId:   defaultCampaignId,\n  destinationSettings: destinationSettings,\n  disableUrlParams:    [],\n  doNotSwap:           [],\n  maxWaitFor:          waitFor,\n  networkId:           networkId || null,\n  numberToReplace:     numbersToReplace,\n  organicSources:      organicSources,\n  poolParams:          {},\n  reRunAfter:          reRunAfter,\n  requiredParams:      requiredParams,\n  resetCacheOn:        resetCacheOn,\n  waitForData:         customDataWaitForConfig\n};\n\nInvoca.Client.startFromWizard(generatedOptions);\n\n})(26);\n",
+          "body": "(function(networkId) {\nvar automaticIntegrations = {};\n\nvar cacheLifetimeDays = 30;\n\nvar customDataWaitForConfig = [];\n\nvar customDataWaitForConfigAnonymousFunctions = [];\n\nvar defaultCampaignId = null;\n\nvar destinationSettings = {\n  paramName: null\n};\n\nvar numbersToReplace = null;\n\nvar organicSources = true;\n\nvar reRunAfter = null;\n\nvar requiredParams = null;\n\nvar resetCacheOn = ['gclid', 'utm_source', 'utm_medium'];\n\nvar waitFor = 0;\n\nvar customCodeIsSet = (function() {\n  Invoca.Client.customCode = function(options) {\n    console.log('Invoca Tag paused at 11/06/23   8:26 AM');\n  };\n\n  return true;\n})();\n\nvar generatedOptions = {\n  active:              true,\n  autoSwap:            false,\n  cookieDays:          cacheLifetimeDays,\n  country:             null,\n  dataSilo:            \"us\",\n  defaultCampaignId:   defaultCampaignId,\n  destinationSettings: destinationSettings,\n  disableUrlParams:    [],\n  doNotSwap:           [],\n  maxWaitFor:          waitFor,\n  networkId:           networkId || null,\n  numberToReplace:     numbersToReplace,\n  organicSources:      organicSources,\n  poolParams:          {},\n  reRunAfter:          reRunAfter,\n  requiredParams:      requiredParams,\n  resetCacheOn:        resetCacheOn,\n  waitForData:         customDataWaitForConfig,\n  waitForDataAnonymousFunctions:  customDataWaitForConfigAnonymousFunctions\n};\n\nInvoca.Client.startFromWizard(generatedOptions);\n\n})(26);\n",
           "cache_lifetime_days": 30,
+          "cache_lifetime_warning": null,
           "created_at": "2023-11-06T04:10:51-08:00",
-          "custom_code": "// *** Auto generated code generated for convenience when testing on staging below ***\nInvoca.PNAPI.config.URL= '//abhishek-master-d6a37c81-pnapi.invocadev.com/PARTITION/api/VERSION_KEY/map_number.jsonp';\n// *** Auto generated code generated for convenience when testing on staging above ***\n",
+          "custom_code": "console.log('Invoca Tag paused at 11/06/23   8:26 AM');",
           "custom_data_fields": [],
           "default_campaign": {},
           "destination_param": null,
@@ -35,8 +35,8 @@
           "is_live_revision": true,
           "js_tag_id": "0054811245",
           "message": "Auto-generated initial revision",
-          "numbers_to_replace": [],
           "numbers_to_not_replace": [],
+          "numbers_to_replace": [],
           "organic_sources": true,
           "re_run_attribution_after": null,
           "required_params": "",
@@ -45,21 +45,20 @@
             "utm_source",
             "utm_medium"
           ],
-          "cache_lifetime_warning": null,
           "updated_at": "2023-11-06T08:55:11-08:00",
           "wait_for_in_seconds": 0,
           "warning": null
         },
         {
-          "author": "John Doe",
           "allow_overflow": false,
           "auto_create_local_ringpools": false,
           "auto_create_toll_free_ringpools": false,
           "auto_swap": true,
-          "body": "(function(networkId) {\nvar cacheLifetimeDays = 7;\n\nvar customDataWaitForConfig = [\n  { on: function() { return Invoca.Client.parseCustomDataField(\"landing_page\", \"Unique\", \"URLParam\", \"\"); }, paramName: \"landing_page\", fallbackValue: null },\n  { on: function() { return Invoca.Client.parseCustomDataField(\"line_of_business\", \"Unique\", \"URLParam\", \"\"); }, paramName: \"line_of_business\", fallbackValue: null },\n  { on: function() { return Invoca.Client.parseCustomDataField(\"offer\", \"Unique\", \"URLParam\", \"\"); }, paramName: \"offer\", fallbackValue: null }\n];\n\nvar defaultCampaignId = \"84\";\n\nvar destinationSettings = {\n  paramName: null\n};\n\nvar numbersToReplace = {\n  \"44454545557\": \"83\"\n};\n\nvar organicSources = true;\n\nvar reRunAfter = 5000;\n\nvar requiredParams = {\"gclid\":\"*\",\"utm_medium\":\"*\"};\n\nvar resetCacheOn = ['gclid', 'utm_source', 'utm_medium'];\n\nvar waitFor = 0;\n\nvar customCodeIsSet = (function() {\n  Invoca.Client.customCode = function(options) {\n    // *** Auto generated code generated for convenience when testing on staging below ***\nInvoca.PNAPI.config.URL= '//abhishek-master-d6a37c81-pnapi.invocadev.com/PARTITION/api/VERSION_KEY/map_number.jsonp';\n// *** Auto generated code generated for convenience when testing on staging above ***\n  };\n\n  return true;\n})();\n\nvar generatedOptions = {\n  active:              true,\n  autoSwap:            true,\n  cookieDays:          cacheLifetimeDays,\n  country:             \"US\",\n  dataSilo:            \"us\",\n  defaultCampaignId:   defaultCampaignId,\n  destinationSettings: destinationSettings,\n  disableUrlParams:    [],\n  doNotSwap:           [\"888-676-5565\"],\n  maxWaitFor:          waitFor,\n  networkId:           networkId || null,\n  numberToReplace:     numbersToReplace,\n  organicSources:      organicSources,\n  poolParams:          {},\n  reRunAfter:          reRunAfter,\n  requiredParams:      requiredParams,\n  resetCacheOn:        resetCacheOn,\n  waitForData:         customDataWaitForConfig\n};\n\nInvoca.Client.startFromWizard(generatedOptions);\n\n})(26);\n",
+          "body": "(function(networkId) {\nvar cacheLifetimeDays = 7;\n\nvar customDataWaitForConfig = [\n  { on: function() { return Invoca.Client.parseCustomDataField(\"landing_page\", \"Unique\", \"URLParam\", \"\"); }, paramName: \"landing_page\", fallbackValue: null },\n  { on: function() { return Invoca.Client.parseCustomDataField(\"line_of_business\", \"Unique\", \"URLParam\", \"\"); }, paramName: \"line_of_business\", fallbackValue: null },\n  { on: function() { return Invoca.Client.parseCustomDataField(\"offer\", \"Unique\", \"URLParam\", \"\"); }, paramName: \"offer\", fallbackValue: null }\n];\n\nvar customDataWaitForConfigAnonymousFunctions = [];\n\nvar defaultCampaignId = \"84\";\n\nvar destinationSettings = {\n  paramName: null\n};\n\nvar numbersToReplace = {\n  \"44454545557\": \"83\"\n};\n\nvar organicSources = true;\n\nvar reRunAfter = 5000;\n\nvar requiredParams = {\"gclid\":\"*\",\"utm_medium\":\"*\",\"utm_source\"=\"organic\"};\n\nvar resetCacheOn = ['gclid', 'utm_source', 'utm_medium'];\n\nvar waitFor = 0;\n\nvar customCodeIsSet = (function() {\n  Invoca.Client.customCode = function(options) {\n    return options;\n  };\n\n  return true;\n})();\n\nvar generatedOptions = {\n  active:              true,\n  autoSwap:            true,\n  cookieDays:          cacheLifetimeDays,\n  country:             \"US\",\n  dataSilo:            \"us\",\n  defaultCampaignId:   defaultCampaignId,\n  destinationSettings: destinationSettings,\n  disableUrlParams:    [],\n  doNotSwap:           [\"888-676-5565\"],\n  maxWaitFor:          waitFor,\n  networkId:           networkId || null,\n  numberToReplace:     numbersToReplace,\n  organicSources:      organicSources,\n  poolParams:          {},\n  reRunAfter:          reRunAfter,\n  requiredParams:      requiredParams,\n  resetCacheOn:        resetCacheOn,\n  waitForData:         customDataWaitForConfig,\n  waitForDataAnonymousFunctions:  customDataWaitForConfigAnonymousFunctions\n};\n\nInvoca.Client.startFromWizard(generatedOptions);\n\n})(26);\n",
           "cache_lifetime_days": 7,
+          "cache_lifetime_warning": null,
           "created_at": "2023-11-06T04:10:51-08:00",
-          "custom_code": "// *** Auto generated code generated for convenience when testing on staging below ***\nInvoca.PNAPI.config.URL= '//abhishek-master-d6a37c81-pnapi.invocadev.com/PARTITION/api/VERSION_KEY/map_number.jsonp';\n// *** Auto generated code generated for convenience when testing on staging above ***",
+          "custom_code": "",
           "custom_data_fields": [
             {
               "enabled": true,
@@ -96,6 +95,13 @@
           "is_live_revision": false,
           "js_tag_id": "0054811245",
           "message": "updated note",
+          "numbers_to_not_replace": [
+            {
+              "phone_number": "888-676-5565",
+              "phone_number_e164": "+18886765565",
+              "destinations_enabled": false
+            }
+          ],
           "numbers_to_replace": [
             {
               "phone_number": "44454545557",
@@ -106,22 +112,14 @@
               "destinations_enabled": false
             }
           ],
-          "numbers_to_not_replace": [
-            {
-              "phone_number": "888-676-5565",
-              "phone_number_e164": "+18886765565",
-              "destinations_enabled": false
-            }
-          ],
           "organic_sources": true,
           "re_run_attribution_after": 5,
-          "required_params": "gclid,utm_medium",
+          "required_params": "gclid,utm_medium,utm_source=organic",
           "reset_cache_on": [
             "gclid",
             "utm_source",
             "utm_medium"
           ],
-          "cache_lifetime_warning": null,
           "updated_at": "2023-11-07T02:41:33-08:00",
           "wait_for_in_seconds": 0,
           "warning": null
