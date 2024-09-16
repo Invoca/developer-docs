@@ -146,7 +146,7 @@
 
   * - required_params
     - string
-    - Comma-separated list of parameters required to trigger Invoca Tag. Invoca will look for these parameter names in your visitor's browser session and will only run your tag if these parameters are present.
+    - Comma-separated list of parameters required to trigger Invoca Tag. Invoca will look for these parameter names in your visitor's browser session and will only run your tag if these parameters are present or if there is an exact match for a URL parameter in the format 'parameter=value'.
 
   * - reset_cache_on
     - string
