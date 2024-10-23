@@ -3,7 +3,6 @@
   .. rubric:: Example
 
   Get calls in progress for the External Unique ID `mycalls00001`.
-  Note: External Unique ID must be set by using the Update function of this API before you can use it to look up a call.
   Be sure to use your own organization_type and id.
 
   Endpoint:

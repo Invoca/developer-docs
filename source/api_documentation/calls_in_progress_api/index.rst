@@ -56,7 +56,7 @@ Query Parameters
     - Optional
 
   * - external_unique_id
-    - The unique id previously applied to the desired call - can only be set via the Calls In Progress API
+    - The unique id previously applied to the desired call
     - String
     - Optional
 
@@ -147,11 +147,5 @@ Remember to check the HTTP status code returned. This helps greatly when debuggi
   * - 200 OK
     - Query was successful. Results, if any, will be returned.
 
-  * - 202 Accepted
-    - Only applicable for update requests. The update was successful.
-
   * - 401 Unauthorized
     - Invalid or missing oauth token.
-
-  * - 404 Not Found
-    - Only applicable for update requests. The call specified via `transaction_id` or `external_unique_id` was not found.
