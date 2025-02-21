@@ -12,3 +12,11 @@ The data returned depends on the request and query paramaters. To see which fiel
    :hidden:
 
    transcript_api
+
+:doc:`transcript_analysis_api`
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   transcript_analysis_api
