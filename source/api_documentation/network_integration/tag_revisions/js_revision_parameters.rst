@@ -36,6 +36,14 @@
     - integer (default 30)
     - This setting determines how long Invoca identifies a visitor to your landing page as a unique visitor. By default, your Tag's attribution window is set to 30 days.
 
+  * - collect_ip
+    - boolean (default false)
+    - If the IP address of the visiting user should be collected.
+
+  * - collect_user_agent
+    - boolean (default false)
+    - If data like browser type, operating system, device model, and software versions of the visiting user should be collected.
+
   * - custom_code
     - string
     - The custom code is a scoped function to insert any custom JavaScript to manipulate the options config that will be passed into the Invoca Integration.
