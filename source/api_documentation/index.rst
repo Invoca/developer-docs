@@ -55,4 +55,3 @@ The RingPool wizard includes a section showing the correct API URL for your orga
    call_api/index
    call_ingestion_api/index
    calls_in_progress_api/index
-   sms_messaging_api/index
