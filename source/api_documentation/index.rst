@@ -26,9 +26,6 @@ used to ingest calls from external sources for conversation intelligence process
 :doc:`calls_in_progress_api/index` -
 used to interact with pre-call insights for live calls as part of PreSense
 
-:doc:`sms_messaging_api/index` -
-used for SMS number management, as well as handling incoming/outgoing SMS messages within the Invoca platform
-
 The Transactions API and Network Integration API are accessible using the API credentials generated on the platform. See :doc:`manage_api_credentials` for more information.
 
 The RingPool and Bulk RingPool APIs are accessible using the API keys provided in the RingPool wizard. (Note: the Bulk RingPool API is only available after being enabled by Customer Success. Submit a case via the `Community Case Portal`_ to request the Bulk RingPool API.)
