@@ -101,8 +101,8 @@ Examples
 .. api_endpoint::
    :verb: GET
    :path: /calls_in_progress/current_calls
-   :description: Get calls in progress by calling and destination phone numbers
-   :page: get_calls_by_phone_number
+   :description: Get calls in progress by call record id
+   :page: get_calls_by_call_record_id
 
 
 .. api_endpoint::
@@ -115,8 +115,8 @@ Examples
 .. api_endpoint::
    :verb: GET
    :path: /calls_in_progress/current_calls
-   :description: Get calls in progress by call record id
-   :page: get_calls_by_call_record_id
+   :description: Get calls in progress by calling and destination phone numbers
+   :page: get_calls_by_phone_number
 
 
 Using the API for Attribution
