@@ -55,6 +55,11 @@ Query Parameters
     - String
     - Optional
 
+  * - call_record_id
+    - The call record id for the desired call
+    - String
+    - Optional
+
   * - external_unique_id
     - The unique id previously applied to the desired call
     - String
@@ -96,8 +101,8 @@ Examples
 .. api_endpoint::
    :verb: GET
    :path: /calls_in_progress/current_calls
-   :description: Get calls in progress by calling and destination phone numbers
-   :page: get_calls_by_phone_number
+   :description: Get calls in progress by call record id
+   :page: get_calls_by_call_record_id
 
 
 .. api_endpoint::
@@ -105,6 +110,13 @@ Examples
    :path: /calls_in_progress/current_calls
    :description: Get calls in progress by external unique id
    :page: get_calls_by_external_unique_id
+
+
+.. api_endpoint::
+   :verb: GET
+   :path: /calls_in_progress/current_calls
+   :description: Get calls in progress by calling and destination phone numbers
+   :page: get_calls_by_phone_number
 
 
 Using the API for Attribution
@@ -129,6 +141,12 @@ Examples
    :path: /calls_in_progress
    :description: Retrieve a specific call by Transaction ID
    :page: get_calls_by_transaction_id_for_attribution
+
+.. api_endpoint::
+   :verb: GET
+   :path: /calls_in_progress
+   :description: Retrieve a specific call by Call Record ID
+   :page: get_calls_by_call_record_id_for_attribution
 
 Response Codes
 --------------

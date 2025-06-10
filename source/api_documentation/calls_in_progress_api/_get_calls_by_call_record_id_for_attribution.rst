@@ -2,16 +2,18 @@
 
   .. rubric:: Example
 
-  Get calls in progress for transaction id `ABCD1234-ABCD1234`.
+  Get calls in progress for call record id `Z6E5-C7397356976E`.
   Be sure to use your own organization_type and id.
+
+  This can return multiple results if there are multiple transactions for the call in progress.
 
   `current_calls` will be ordered by `bridge_start_time`, most recent first.
 
   Endpoint:
 
-  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?id=<organization_id>&organization_type=<organization_type>&transaction_id=ABCD1234-ABCD1234``
+  ``https://invoca.net/api/@@CALLS_IN_PROGRESS_API_VERSION/calls_in_progress/current_calls.json?id=<organization_id>&organization_type=<organization_type>&call_record_id=Z6E5-C7397356976E``
 
-  Parameters: `transaction_id` is required for this request
+  Parameters: `call_record_id` is required for this request
 
   Response Code: 200
 
