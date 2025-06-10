@@ -142,6 +142,12 @@ Examples
    :description: Retrieve a specific call by Transaction ID
    :page: get_calls_by_transaction_id_for_attribution
 
+.. api_endpoint::
+   :verb: GET
+   :path: /calls_in_progress
+   :description: Retrieve a specific call by Call Record ID
+   :page: get_calls_by_call_record_id_for_attribution
+
 Response Codes
 --------------
 
