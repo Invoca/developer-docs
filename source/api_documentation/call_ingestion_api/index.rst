@@ -46,9 +46,9 @@ These are the call details used when creating the call in the Invoca platform.
 
     `start_time` This is the date and time when the call started on the call origination platform.  Please see the **Timestamp Formats** section below for descriptions of supported timestamps.
 
-    `destination_phone_number` DNIS in E.164 format +country national_number; example: ‘+18885551212’. UK and Spanish numbers are also supported. Their country codes are +44 and +34 respectively.
+    `destination_phone_number` DNIS in E.164 format +country national_number; example: ‘+18885551212’. UK and Spanish numbers are also supported. Their country codes are +44 and +34 respectively. Recommended to always be set to the business's phone number. Please see **Recommendations on Phone Number Fields** section below for more details.
 
-    `calling_phone_number` ANI in E.164 format +country national_number; example: ‘+18885551212’.
+    `calling_phone_number` ANI in E.164 format +country national_number; example: ‘+18885551212’. Recommended to always be set to the customer's phone number. Please see **Recommendations on Phone Number Fields** section below for more details.
 
     `advertiser_campaign_id_from_network` The ID from network field on the advertiser campaign.  The submitted call will be added to this campaign.  *Please note that this campaign must be of type ExternalOnly*  See :doc:`../network_integration/advertiser_campaigns//index` for more details.
 
@@ -215,7 +215,18 @@ All examples below correspond to a date time of **11 April 2016** at **1 PM Paci
 
     Example (no milliseconds): **2016/04/11 13:00:00 PM**
 
+Recommendations on Phone Number Fields
+-------------------------------
 
+For all calls submitted via the Call Ingestion API, regardless of whether the call is inbound or outbound, we recommend the customer's phone number is always set as the **calling_phone_number**, and the business or agent's phone number should always be set as the **destination_phone_number**.
+
+This normalization ensures that all calls match the Invoca recording channel layout and enables consistency across reporting and features in the Invoca platform.
+
+For example:
+
+  * If a customer calls a business (inbound), the customer's number is the **calling_phone_number** and the business's number is the **destination_phone_number**.
+
+  * If a business calls a customer (outbound), the customer's number is still the **calling_phone_number** and the business's number is still the **destination_phone_number**.
 
 Example POST Request Using cURL
 -------------------------------
