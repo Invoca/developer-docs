@@ -220,7 +220,7 @@ Recommendations on Phone Number Fields
 
 For all calls submitted via the Call Ingestion API, regardless of whether the call is inbound or outbound, we recommend the customer's phone number is always set as the **calling_phone_number**, and the business or agent's phone number should always be set as the **destination_phone_number**.
 
-This normalization ensures that all calls match the Invoca recording channel layout and enables consistency across reporting and features in the Invoca platform.
+This standardization ensures that all calls match the Invoca recording channel layout and enables consistency across reporting and features in the Invoca platform.
 
 For example:
 
