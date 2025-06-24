@@ -10,7 +10,7 @@ Calls In Progress API
 
 
 The Calls In Progress API is used for interacting with pre-call insights for live calls as part of PreSense. It can retrieve
-information during a call. Calls become available via the api as soon as they are transferred to the campaign's destination. 
+information during a call. Calls become available via the api as soon as they are transferred to the campaign's destination.
 Once the call is complete, it is no longer available via the API.
 
 For authentication, use an API token. See :doc:`../manage_api_credentials` for details.
@@ -138,13 +138,13 @@ Examples
 ~~~~~~~~~~~
 .. api_endpoint::
    :verb: GET
-   :path: /calls_in_progress
+   :path: /calls_in_progress/current_calls
    :description: Retrieve a specific call by Transaction ID
    :page: get_calls_by_transaction_id_for_attribution
 
 .. api_endpoint::
    :verb: GET
-   :path: /calls_in_progress
+   :path: /calls_in_progress/current_calls
    :description: Retrieve a specific call by Call Record ID
    :page: get_calls_by_call_record_id_for_attribution
 
