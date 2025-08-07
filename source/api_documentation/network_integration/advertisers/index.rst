@@ -117,15 +117,15 @@ You are not allowed to delete an advertiser if it has one or more campaigns.
     -
 
   * - notify_on_performance_notifications
-    - boolean, optional, defaults to false
+    - Deprecated, always returns false
     -
 
   * - notify_on_monthly_campaign_performance_reports
-    - boolean, optional, defaults to false
+    - Deprecated, always returns false
     -
 
   * - notify_on_weekly_campaign_performance_reports
-    - boolean, optional, defaults to false
+    - Deprecated, always returns false
     -
 
   * - notify_on_call_activities
