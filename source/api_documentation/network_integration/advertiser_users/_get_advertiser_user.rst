@@ -35,7 +35,7 @@
        "notify_on_creative_duplication_requests": true,
        "notify_on_network_announcements": true,
        "notify_on_performance_notifications": false,
-       "notify_on_monthly_campaign_performance_reports": true,
+       "notify_on_monthly_campaign_performance_reports": false,
        "notify_on_weekly_campaign_performance_reports": false,
        "notify_on_call_activities": true,
        "can_login_via_platform": false

@@ -105,15 +105,15 @@ Similar to advertisers, you are not allowed to delete if one or more campaigns e
     -
 
   * - notify_on_performance_notifications
-    - boolean, optional, defaults to false
+    - Deprecated, always returns false
     -
 
   * - notify_on_monthly_campaign_performance_reports
-    - boolean, optional, defaults to false
+    - Deprecated, always returns false
     -
 
   * - notify_on_weekly_campaign_performance_reports
-    - boolean, optional, defaults to false
+    - Deprecated, always returns false
     -
 
   * - notify_on_call_activities
