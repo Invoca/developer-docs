@@ -58,6 +58,10 @@ Used to find the call associated with the signal.
 
     or
 
+    `external_call_unique_id` The unique ID of the call from an external system.
+
+    or
+
     `call_start_time` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
 
     Note: If using **call_start_time** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
@@ -225,7 +229,7 @@ For example, if a **transaction_id** or **call_start_time** are not passed in th
   {
     "errors": {
       "class": "InvalidInput",
-      "invalid_data": "transaction_id, call_record_id, or call_start_time must not be empty"
+      "invalid_data": "transaction_id, call_record_id, external_call_unique_id, or call_start_time must not be empty"
     }
   }
 
