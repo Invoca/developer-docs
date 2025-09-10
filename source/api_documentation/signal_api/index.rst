@@ -58,6 +58,10 @@ Used to find the call associated with the signal.
 
     or
 
+    `external_call_unique_id` The unique ID of the call from an external system.
+
+    or
+
     `call_start_time` The start time does not have to be exact since clocks will not be perfectly synchronized. We will find the closest match (in combination with **duration_in_seconds**, if provided). See **Timestamp Formats** section below for descriptions of supported timestamps.
 
     Note: If using **call_start_time** to match, instead of **transaction_id**, one or more of the following optional parameters is highly recommended. The optional parameters are ignored when using the **transaction_id**:
@@ -225,13 +229,13 @@ For example, if a **transaction_id** or **call_start_time** are not passed in th
   {
     "errors": {
       "class": "InvalidInput",
-      "invalid_data": "transaction_id, call_record_id, or call_start_time must not be empty"
+      "invalid_data": "transaction_id, call_record_id, external_call_unique_id, or call_start_time must not be empty"
     }
   }
 
 If there are multiple issues with the request, we will do our best to package all of the issues together in one response message.
 
-**Example Bad Request**
+**Example Bad Signal Request**
 
 .. code-block:: json
 
@@ -272,6 +276,31 @@ If there are multiple issues with the request, we will do our best to package al
     "errors": {
       "class": "InvalidInput",
       "invalid_data": "The following params in 'signals' are not supported in this version: custom_parameter_1, description; signals[1] 'name' is required; 'name' for signals[0] and signals[2] must be unique; 'name' for custom_data[0] is required; 'value' for custom_data[1] is required"
+    }
+  }
+
+**Example Bad Custom Data Request**
+
+.. code-block:: json
+
+  {
+    "search": {
+      "transaction_id": "0000000-0000000A"
+    },
+    "custom_data": {
+      "agent": "James Bond"
+    },
+    "oauth_token": "<YOUR OAUTH TOKEN>"
+  }
+
+**Response (403 Forbidden):**
+
+.. code-block:: json
+
+  {
+    "errors": {
+      "class": "InvalidInput",
+      "invalid_data": "'custom_data' must be an array of hashes"
     }
   }
 
