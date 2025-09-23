@@ -375,9 +375,6 @@ For example, if you pass an **advertiser_id_from_network** that you do not have 
 
 Signal Transactions Rollup
 -------------------------------
-**Note**: This specific section only applies if you have begun using the Signal Transactions Rollup feature. This will only apply to calls that occur **after** the date that this feature is enabled.
-If you are unsure about whether you are using this feature, please contact the Invoca Customer Successs team.
-
 All Signals and Custom Data within a single request will be grouped together based on the value of the field **partner_unique_id**. There will be a single transaction for each group created.
 These new transactions will have the transaction type *Post Call Event*.
 
@@ -461,10 +458,6 @@ We no longer support specifying **revenue** at the top level header of the reque
 
 Updates and Idempotency
 -----------------------
-**Notice for users of the Signal Transactions Rollup feature:**
-
-If you are using the Signal Transactions Rollup feature (see section *Signal Transactions Rollup* above), some of the Updates and Idempotency information below has changed slightly.
-
 Signals and Custom Data are considered unique by **partner_unique_id** only; name is *not* considered. Signals and Custom data are grouped into transactions according to **partner_unique_id**.
 If a request supplies the same **partner_unique_id** as a previous transaction, the previous transaction will be updated with the content of the new request.
 
@@ -598,17 +591,3 @@ Note: As signals are applied to the call, the response time of the API will incr
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "sale","partner_unique_id": "1","occurred_at_time": "1440607313","revenue": "100.00","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "Quality Call","value": "true"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
   curl -k -H "Content-Type: application/json" -X POST -d '{"search": {"transaction_id": "00000000-00000001"},"signals": [{"name": "Appointment Made","partner_unique_id": "1","occurred_at_time": "1440607313","value": "false"}], "custom_data": [{"name": "channel", "value": "Paid Search"}],"oauth_token": <YOUR OAUTH TOKEN>}'  https://invoca.net/api/@@SIGNAL_API_VERSION/transactions.json
-
-Migration Notes
--------------------------------
-**Note**: If using the Signal Transactions Rollup feature (see section *Signal Transactions Rollup* above), this section can be ignored.
-
-For upgrading from version ``2017-02-01``
-
-* URL path was changed
-* Added **custom_data** key, an array of objects for setting custom data values
-* **signal** key was changed to **signals**, which is now an array of the same objects with the following changes
-
-  * Removed support for **custom_parameter_1**, **custom_parameter_2**, **custom_parameter_3** (use new **custom_data** outer key instead)
-  * Removed support for **sale_amount** (use **revenue** instead)
-  * Removed support for **description** (recommended to use Custom Data Fields instead)
