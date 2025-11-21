@@ -13,6 +13,8 @@ Set Prompt Voice
 
 To use a particular prompt voice for your campaign, set ``"tts_voice_talent_id"`` on the IVR. See the tables in the **Conditions** section below to determine which prompt voice to use. (Make sure to reference *only* the table that corresponds to the language of your campaign.)
 
+If no voice is provided, a default voice will be selected based on the Campaign Country.
+
 POST
 
 ``https://invoca.net/api/@@CAMPAIGN_FEATURES_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``
@@ -48,16 +50,6 @@ English voice options
     - Voice Name
     - Gender
     - Language code (Country)
-
-  * - 3 (Default)
-    - Julie
-    - Female
-    - en-US (United States)
-
-  * - 7
-    - Bridget
-    - Female
-    - en-UK (United Kingdom)
 
   * - 8
     - Nicole
