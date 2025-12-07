@@ -49,16 +49,6 @@ English voice options
     - Gender
     - Language code (Country)
 
-  * - 3 (Default)
-    - Julie
-    - Female
-    - en-US (United States)
-
-  * - 7
-    - Bridget
-    - Female
-    - en-UK (United Kingdom)
-
   * - 8
     - Nicole
     - Female
