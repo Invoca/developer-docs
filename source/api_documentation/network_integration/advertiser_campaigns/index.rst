@@ -403,13 +403,13 @@ Node Parameters and Usage
     - Forwards the call to a group of numbers defined in the ring_group_destinations array of hashes. The destinations will be in the order determined by the distribution_method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered, the next destination will be dialed. When call_acceptance is enabled, the call must be expressly accepted instead of answered. The ring_group_destination_total_limit may only be configured when the distribution_type is set to Random. This node type also allows for the configuration of max_simultaneous_calls when simultaneous calling is enabled for the network.
 
   * - MessagingAi
-    - prompt
+    - \*prompt
 
-      messaging_ai_agent_id
+      \*messaging_ai_agent_id
 
-      messaging_ai_first_message
+      \*messaging_ai_first_message
 
-      messaging_ai_promo_number_id
+      \*messaging_ai_promo_number_id
 
     - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
 
