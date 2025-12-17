@@ -356,6 +356,17 @@ Node Parameters and Usage
 
     - Prompts the caller to respond with either a yes or no answer. The caller's response determines how the call will continue.
 
+  * - MessagingAi
+    - \*prompt
+
+      \*messaging_ai_agent_id
+
+      \*messaging_ai_first_message
+
+      \*messaging_ai_promo_number_id
+
+    - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
+
 Node Details
 
 .. list-table::
@@ -398,6 +409,9 @@ Node Details
 
   * - YesOrNo
     - May have exactly 2 child nodes. If a keypress of 1 is made, the first child node is executed. If a kepyress of 2 is made, the second child node is executed. If speech recognition is enabled, the caller can also say "yes" for 1 and "no" for 2. At the end of the child list, this node type can also optionally have failover child nodes, designated by a node with a keypress_failover_type parameter (see example below).
+
+  * - MessagingAi
+    - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
 
 Parameter Details
 
@@ -453,6 +467,18 @@ Parameter Details
   * - keypress_failover_type
     - String
     - The failover type to use for a child node of a Menu. "Wrong" for when a wrong keypress is pressed by the caller on any attempt for the parent menu (shown in reporting as keypress "W"). "None" for when there is no keypress by the caller for all attempts for the parent menu (shown in reporting as keypress "N"). Omit this parameter for normal keypresses. See example below.
+
+  * - messaging_ai_agent_id
+    - Integer
+    - The id associated with the Messaging AI agent you want to use.
+
+  * - messaging_ai_first_message
+    - String
+    - The initial message that the AI Agent will send to the customer when they opt in to receive messages.
+
+  * - messaging_ai_promo_number_id
+    - Integer
+    - The ID of a static promo number that is enabled for SMS messaging to be used by the agent to send messages.
 
   * - number_question_type
     - String
