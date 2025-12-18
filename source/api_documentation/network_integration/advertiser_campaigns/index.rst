@@ -309,6 +309,8 @@ Node Parameters and Usage
 
       \*messaging_ai_promo_number_id
 
+      \*messaging_ai_ring_pool_id
+
     - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
 
 Node Details
@@ -394,6 +396,10 @@ Parameter Details
   * - messaging_ai_promo_number_id
     - Integer
     - The ID of a static promo number that is enabled for SMS messaging to be used by the agent to send messages.
+
+  * - messaging_ai_ring_pool_id
+    - Integer
+    - The ID of the ring pool that the AI Agent will use to provide a callback phone number
 
   * - sms_promo_copy
     - String
