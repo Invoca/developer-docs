@@ -286,6 +286,19 @@ Node Parameters and Usage
     - \*dynamic_route_destination
     - Forwards the call to a destination that is extracted from a custom data field specified in dynamic_route_destination. The destination must be a phone number or if you are SIP integrated, can be a string that is routable by your SIP infrastructure.
 
+  * - MessagingAi
+    - \*prompt
+
+      \*messaging_ai_agent_id
+
+      \*messaging_ai_first_message
+
+      \*messaging_ai_promo_number_id
+
+      \*messaging_ai_ring_pool_id
+
+    - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
+
 Node Details
 
 .. list-table::
@@ -319,6 +332,9 @@ Node Details
 
   * - DynamicRoute (beta - read only)
     - May have exactly 1 child node. We will evaluate the custom data field value specified on this node's dynamic_route_destination. With non-SIP integration, if the extracted value is a valid phone number and the destination phone number is in an allowed region given your settings, we will play the prompt and transfer the call, otherwise the child node will be executed without the prompt. When SIP integrated, we also allow transferring to any string (such as an extension), in which case the destination should be routable by your SIP infrastructure.
+
+  * - MessagingAi
+    - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
 
 Parameter Details
 
@@ -354,6 +370,23 @@ Parameter Details
   * - prompt
     - String
     - The text that will be read before a nodes action occurs. An empty string will result in no prompt being read, and the following action will occur immediately.
+
+  * - messaging_ai_agent_id
+    - Integer
+    - The id associated with the Messaging AI agent you want to use.
+
+  * - messaging_ai_first_message
+    - String
+    - The initial message that the AI Agent will send to the customer when they opt in to receive messages.
+
+  * - messaging_ai_promo_number_id
+    - Integer
+    - The ID of a static promo number that is enabled for SMS messaging to be used by the agent to send messages.
+
+
+  * - messaging_ai_ring_pool_id
+    - Integer
+    - The ID of the ring pool that the AI Agent will use to provide a callback phone number
 
   * - sms_promo_copy
     - String
