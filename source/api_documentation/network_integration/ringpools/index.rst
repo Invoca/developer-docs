@@ -81,9 +81,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
   * - hours_of_operation
     - hash (optional)
-    - Only applicable for `POST /ring_pools`, `PUT /ring_pools/<ring_pool_id>`, and `GET /ring_pools/<ring_pool_id>` API endpoints.
-
-      Configures when the destination is available to receive calls. If not provided, the destination will be available 24/7.
+    - Configures when the destination is available to receive calls. If not provided, the campaign's hours of operation settings will apply.
 
       **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
 
@@ -93,7 +91,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
       **"schedules"**: array of hashes (required when open_24_7 is false). Each schedule contains:
 
-      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday". In GET responses, day names are returned capitalized (e.g., "Monday").
+      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday".
       - **"open_time"**: string. Opening time in HH:MM format (15-minute increments, e.g., "09:00").
       - **"close_time"**: string. Closing time in HH:MM format (15-minute increments, e.g., "17:00").
 
@@ -260,7 +258,7 @@ Content Type: application/json
 
   * - hours_of_operation
     - hash (optional)
-    - Only applicable for `POST /ring_pools` and `PUT /ring_pools/<ring_pool_id>` API endpoints. Configures when the destination is available to receive calls. If not provided, the destination will be available 24/7.
+    - Configures when the destination is available to receive calls. If not provided, the campaign's hours of operation settings will apply.
 
       **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
 
