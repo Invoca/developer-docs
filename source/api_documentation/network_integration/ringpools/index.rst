@@ -79,6 +79,26 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
       Returns the default Destination (aka Customer Phone Number) along with the respective `obfuscated_tag_id` for the destination that is linked to the RingPool.
 
+  * - hours_of_operation
+    - hash (optional)
+    - Only applicable for `POST /ring_pools`, `PUT /ring_pools/<ring_pool_id>`, and `GET /ring_pools/<ring_pool_id>` API endpoints.
+
+      Configures when the destination is available to receive calls. If not provided, the destination will be available 24/7.
+
+      **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
+
+      **"open_24_7"**: boolean. When true, the destination is always available. When false, schedules must be provided.
+
+      **"time_zone"**: string (required). Rails ActiveSupport timezone name (e.g., "Pacific Time (US & Canada)", "Eastern Time (US & Canada)", "Central Time (US & Canada)", "Mountain Time (US & Canada)", "Arizona"). See http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html for full list.
+
+      **"schedules"**: array of hashes (required when open_24_7 is false). Each schedule contains:
+
+      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday". In GET responses, day names are returned capitalized (e.g., "Monday").
+      - **"open_time"**: string. Opening time in HH:MM format (15-minute increments, e.g., "09:00").
+      - **"close_time"**: string. Closing time in HH:MM format (15-minute increments, e.g., "17:00").
+
+      Schedules cannot overlap. To remove hours of operation, pass null, empty string, empty array, or empty hash.
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
@@ -238,6 +258,24 @@ Content Type: application/json
 
       If not passed, the RingPool will be created using the default setting of true.
 
+  * - hours_of_operation
+    - hash (optional)
+    - Only applicable for `POST /ring_pools` and `PUT /ring_pools/<ring_pool_id>` API endpoints. Configures when the destination is available to receive calls. If not provided, the destination will be available 24/7.
+
+      **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
+
+      **"open_24_7"**: boolean. When true, the destination is always available. When false, schedules must be provided.
+
+      **"time_zone"**: string (required). Rails ActiveSupport timezone name (e.g., "Pacific Time (US & Canada)", "Eastern Time (US & Canada)", "Central Time (US & Canada)", "Mountain Time (US & Canada)", "Arizona"). See http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html for full list.
+
+      **"schedules"**: array of hashes (required when open_24_7 is false). Each schedule contains:
+
+      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday". In GET responses, day names are returned capitalized (e.g., "Monday").
+      - **"open_time"**: string. Opening time in HH:MM format (15-minute increments, e.g., "09:00").
+      - **"close_time"**: string. Closing time in HH:MM format (15-minute increments, e.g., "17:00").
+
+      Schedules cannot overlap. To remove hours of operation, pass null, empty string, empty array, or empty hash.
+
 Response Code: 200
 
 **Request Body**
@@ -252,7 +290,38 @@ Response Code: 200
    "local_center": {"latitude": 45, "longitude": 45},
    "tn_prefix_whitelist": ["455"],
    "destination_phone_number": "888-111-2222",
-   "allow_overflow": false
+   "allow_overflow": false,
+   "hours_of_operation": {
+     "open_24_7": false,
+     "time_zone": "Pacific Time (US & Canada)",
+     "schedules": [
+       {
+         "day_of_week": "monday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "tuesday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "wednesday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "thursday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "friday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       }
+     ]
+   }
   }
 
 **Response Body**
