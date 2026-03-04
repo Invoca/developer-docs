@@ -154,9 +154,7 @@ When you POST a promo number, we return the promo_number in the response body. T
 
   * - hours_of_operation
     - hash (optional)
-    - Only applicable for `POST /promo_numbers`, `PUT /promo_numbers/<promo_number>`, and `GET /promo_numbers/<promo_number>` API endpoints.
-
-      Configures when the destination is available to receive calls. If not provided, the destination will be available 24/7.
+    - Configures when the destination is available to receive calls. If not provided, the campaign's hours of operation settings will apply.
 
       **Requirements:** This field is only available for promo numbers that belong to an advertiser campaign (not affiliate campaigns).
 
@@ -166,51 +164,11 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       **"schedules"**: array of hashes (required when open_24_7 is false). Each schedule contains:
 
-      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday". In GET responses, day names are returned capitalized (e.g., "Monday").
+      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday".
       - **"open_time"**: string. Opening time in HH:MM format (15-minute increments, e.g., "09:00").
       - **"close_time"**: string. Closing time in HH:MM format (15-minute increments, e.g., "17:00").
 
       Schedules cannot overlap. To remove hours of operation, pass null, empty string, empty array, or empty hash.
-
-      **Example:**
-
-      .. code-block:: json
-
-        {
-          "description": "My Promo Number",
-          "media_type": "Online: Email",
-          "hours_of_operation": {
-            "open_24_7": false,
-            "time_zone": "Pacific Time (US & Canada)",
-            "schedules": [
-              {
-                "day_of_week": "monday",
-                "open_time": "09:00",
-                "close_time": "17:00"
-              },
-              {
-                "day_of_week": "tuesday",
-                "open_time": "09:00",
-                "close_time": "17:00"
-              },
-              {
-                "day_of_week": "wednesday",
-                "open_time": "09:00",
-                "close_time": "17:00"
-              },
-              {
-                "day_of_week": "thursday",
-                "open_time": "09:00",
-                "close_time": "17:00"
-              },
-              {
-                "day_of_week": "friday",
-                "open_time": "09:00",
-                "close_time": "17:00"
-              }
-            ]
-          }
-        }
 
 Custom Data
 """""""""""""
