@@ -274,27 +274,27 @@ Response Code: 200
      "time_zone": "Pacific Time (US & Canada)",
      "schedules": [
        {
-         "day_of_week": "monday",
+         "day_of_week": "Monday",
          "open_time": "09:00",
          "close_time": "17:00"
        },
        {
-         "day_of_week": "tuesday",
+         "day_of_week": "Tuesday",
          "open_time": "09:00",
          "close_time": "17:00"
        },
        {
-         "day_of_week": "wednesday",
+         "day_of_week": "Wednesday",
          "open_time": "09:00",
          "close_time": "17:00"
        },
        {
-         "day_of_week": "thursday",
+         "day_of_week": "Thursday",
          "open_time": "09:00",
          "close_time": "17:00"
        },
        {
-         "day_of_week": "friday",
+         "day_of_week": "Friday",
          "open_time": "09:00",
          "close_time": "17:00"
        }
