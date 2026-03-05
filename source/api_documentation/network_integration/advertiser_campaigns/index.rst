@@ -56,7 +56,7 @@ You are not allowed to delete campaigns.
 
   * - timezone
     - string
-    - Supported Time Zones: http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
+    - Supported Time Zones: https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
 
   * - campaign_language
     - string
