@@ -85,17 +85,7 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
       **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
 
-      **"open_24_7"**: boolean. When true, the destination is always available. When false, schedules must be provided.
-
-      **"time_zone"**: string (required). Rails ActiveSupport timezone name (e.g., "Pacific Time (US & Canada)", "Eastern Time (US & Canada)", "Central Time (US & Canada)", "Mountain Time (US & Canada)", "Arizona"). See http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html for full list.
-
-      **"schedules"**: array of hashes (required when open_24_7 is false). Each schedule contains:
-
-      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday".
-      - **"open_time"**: string. Opening time in HH:MM format (15-minute increments, e.g., "09:00").
-      - **"close_time"**: string. Closing time in HH:MM format (15-minute increments, e.g., "17:00").
-
-      Schedules cannot overlap. To remove hours of operation, pass null, empty string, empty array, or empty hash.
+      .. include:: ../_hours_of_operation_field.rst
 
 Endpoint:
 
@@ -262,17 +252,7 @@ Content Type: application/json
 
       **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
 
-      **"open_24_7"**: boolean. When true, the destination is always available. When false, schedules must be provided.
-
-      **"time_zone"**: string (required). Rails ActiveSupport timezone name (e.g., "Pacific Time (US & Canada)", "Eastern Time (US & Canada)", "Central Time (US & Canada)", "Mountain Time (US & Canada)", "Arizona"). See http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html for full list.
-
-      **"schedules"**: array of hashes (required when open_24_7 is false). Each schedule contains:
-
-      - **"day_of_week"**: string. Day of the week: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", or "saturday". In GET responses, day names are returned capitalized (e.g., "Monday").
-      - **"open_time"**: string. Opening time in HH:MM format (15-minute increments, e.g., "09:00").
-      - **"close_time"**: string. Closing time in HH:MM format (15-minute increments, e.g., "17:00").
-
-      Schedules cannot overlap. To remove hours of operation, pass null, empty string, empty array, or empty hash.
+      .. include:: ../_hours_of_operation_field.rst
 
 Response Code: 200
 
