@@ -203,3 +203,101 @@
         "channel": "Online lead"
       }
     }
+
+  .. raw:: html
+
+    <hr>
+
+  Create an Advertiser Campaign Promo Number with Hours of Operation
+
+  Endpoint:
+
+  ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers.json``
+
+  Format: application/json
+
+  Request Body:
+
+  .. code-block:: json
+
+    {
+      "description": "My Promo Number",
+      "media_type": "Online: Email",
+      "hours_of_operation": {
+        "open_24_7": false,
+        "time_zone": "Pacific Time (US & Canada)",
+        "schedules": [
+          {
+            "day_of_week": "Monday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Tuesday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Wednesday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Thursday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Friday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          }
+        ]
+      }
+    }
+
+  Response Code: 201
+
+  Response Body:
+
+  .. code-block:: json
+
+    {
+      "id": 12,
+      "id_from_network": "12",
+      "media_type": "Online: Email",
+      "promo_number": "8777657743",
+      "description": "My Promo Number",
+      "object_url": "https://invoca.net/a_campaigns/promo_numbers/12",
+      "hours_of_operation": {
+        "open_24_7": false,
+        "time_zone": "Pacific Time (US & Canada)",
+        "schedules": [
+          {
+            "day_of_week": "Monday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Tuesday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Wednesday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Thursday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          },
+          {
+            "day_of_week": "Friday",
+            "open_time": "09:00",
+            "close_time": "17:00"
+          }
+        ]
+      }
+    }

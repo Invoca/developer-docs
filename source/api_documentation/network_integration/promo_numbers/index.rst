@@ -152,6 +152,14 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       * Do not include this field if you do not intend to move the promo number.
 
+  * - hours_of_operation
+    - hash (optional)
+    - Configures when the destination is available to receive calls. If not provided, the campaign's hours of operation settings will apply.
+
+      **Requirements:** This field is only available for promo numbers that belong to an advertiser campaign (not affiliate campaigns).
+
+      .. include:: ../_hours_of_operation_field.rst
+
 Custom Data
 """""""""""""
 Promo numbers may have Custom Data Fields applied to them, which will be applied to calls originating through the promo number.

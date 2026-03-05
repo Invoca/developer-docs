@@ -79,6 +79,14 @@ By default, RingPools will capture params based on your Marketing Data Dictionar
 
       Returns the default Destination (aka Customer Phone Number) along with the respective `obfuscated_tag_id` for the destination that is linked to the RingPool.
 
+  * - hours_of_operation
+    - hash (optional)
+    - Configures when the destination is available to receive calls. If not provided, the campaign's hours of operation settings will apply.
+
+      **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
+
+      .. include:: ../_hours_of_operation_field.rst
+
 Endpoint:
 
 ``https://invoca.net/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/ring_pools/<ring_pool_id_from_network>.json``
@@ -238,6 +246,14 @@ Content Type: application/json
 
       If not passed, the RingPool will be created using the default setting of true.
 
+  * - hours_of_operation
+    - hash (optional)
+    - Configures when the destination is available to receive calls. If not provided, the campaign's hours of operation settings will apply.
+
+      **Requirements:** This field is only available for ring pools that have at least one customer phone number (destination) associated with an advertiser campaign. Ring pools without destinations or with destinations linked only to JS tags cannot use this field.
+
+      .. include:: ../_hours_of_operation_field.rst
+
 Response Code: 200
 
 **Request Body**
@@ -252,7 +268,38 @@ Response Code: 200
    "local_center": {"latitude": 45, "longitude": 45},
    "tn_prefix_whitelist": ["455"],
    "destination_phone_number": "888-111-2222",
-   "allow_overflow": false
+   "allow_overflow": false,
+   "hours_of_operation": {
+     "open_24_7": false,
+     "time_zone": "Pacific Time (US & Canada)",
+     "schedules": [
+       {
+         "day_of_week": "Monday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "Tuesday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "Wednesday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "Thursday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       },
+       {
+         "day_of_week": "Friday",
+         "open_time": "09:00",
+         "close_time": "17:00"
+       }
+     ]
+   }
   }
 
 **Response Body**
