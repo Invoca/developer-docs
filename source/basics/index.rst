@@ -7,5 +7,3 @@ The following API articles provide an understanding for high level API methodolo
 
    design_principles
    error_handling
-   ppc_platform_authentication_access_tokens
-
