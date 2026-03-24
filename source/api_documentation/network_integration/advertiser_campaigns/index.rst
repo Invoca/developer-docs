@@ -474,7 +474,7 @@ Node Details
     - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
 
   * - RealTime
-    - Must have exactly one child node as a fallback. The configured Real-Time Routing webhook is called in real time during the call; the response determines the routing destination. If the webhook does not respond within 4 seconds, the else child node is executed.
+    - Must have exactly one child node as a fallback. The configured Real-Time Routing webhook is called in real time during the call; the response determines the routing destination. If the webhook does not respond within 4 seconds, the fallback child node is executed.
 
 Parameter Details
 
