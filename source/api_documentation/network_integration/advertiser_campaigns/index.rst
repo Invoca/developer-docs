@@ -418,7 +418,7 @@ Node Parameters and Usage
 
       prompt
 
-    - Routes the call in real time by firing a configured Real-Time Routing webhook and using the response to determine the call destination. Requires real time routing to be enabled for the network. The webhook must be owned by the campaign, the advertiser, or the network.
+    - Routes the call in real time by firing a configured Real-Time Routing webhook and using the response to determine the call destination. Requires real time routing to be enabled for the network. The webhook must be owned by the advertiser or the network.
 
 
 Node Details
@@ -474,7 +474,7 @@ Node Details
     - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
 
   * - RealTime
-    - Must have exactly one "else" child node as a fallback. The configured Real-Time Routing webhook is called in real time during the call; the response determines the routing destination. If the webhook does not respond within 4 seconds, the else child node is executed.
+    - Must have exactly one child node as a fallback. The configured Real-Time Routing webhook is called in real time during the call; the response determines the routing destination. If the webhook does not respond within 4 seconds, the else child node is executed.
 
 Parameter Details
 
