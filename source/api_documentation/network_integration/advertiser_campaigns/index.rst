@@ -413,6 +413,13 @@ Node Parameters and Usage
 
     - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
 
+  * - RealTime
+    - \*webhook_id
+
+      prompt
+
+    - Routes the call in real time by firing a configured Real-Time Routing webhook and using the response to determine the call destination. Requires real time routing to be enabled for the network. The webhook must be owned by the campaign, the advertiser, or the network.
+
 
 Node Details
 
@@ -465,6 +472,9 @@ Node Details
 
   * - MessagingAi
     - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
+
+  * - RealTime
+    - Must have exactly one "else" child node as a fallback. The configured Real-Time Routing webhook is called in real time during the call; the response determines the routing destination. If the webhook does not respond within 2 seconds, the else child node is executed.
 
 Parameter Details
 
@@ -584,6 +594,10 @@ Parameter Details
   * - sms_promo_sender
     - String
     - The email address that will be shown in the sms. This defaults to sms@invoca.net.
+
+  * - webhook_id
+    - Integer
+    - The ID of the Real-Time Routing webhook to use for a RealTime node. The webhook must be owned by the advertiser or the network.
 
 Conditions
 
