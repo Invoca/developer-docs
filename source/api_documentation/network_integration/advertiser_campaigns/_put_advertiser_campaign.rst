@@ -83,4 +83,26 @@
         "record_calls":true}}' -v
 
 
+  4) Use a Real-Time Routing webhook to dynamically determine the call destination at runtime, with a fallback if the webhook does not respond in time.
+
+  .. code-block:: bash
+
+     curl -XPUT -H "Content-Type: application/json" -u 'login:pass'
+     'https://vanity.invoca.net/api/@@NETWORK_API_VERSION/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+     -d '
+     {"ivr_tree":{
+        "record_calls":true,
+        "root":{
+          "node_type":"RealTime",
+          "webhook_id":123,
+          "prompt":"Please wait for your call to be connected.",
+          "children":[
+            {
+              "node_type":"EndCall",
+              "prompt":"We are unable to route your call at this time. Goodbye."
+            }
+          ]
+        }
+      }}' -v
+
   Each of the above requests will have a response body similar to a GET request, including all the advertiser campaign properties.
