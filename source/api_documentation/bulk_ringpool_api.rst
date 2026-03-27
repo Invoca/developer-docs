@@ -57,7 +57,7 @@ Below is an example request that passes a Signal named ``SMS Callback`` alongsid
 
   {
    "requests":[
-    {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=autos&SMS+Callback=true","request_id":"193C5F"}
+    {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=autos&SMS%20Callback=true","request_id":"193C5F"}
    ]
   }
 
