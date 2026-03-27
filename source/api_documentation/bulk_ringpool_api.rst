@@ -47,7 +47,7 @@ Below is an example of the JSON request body:
 Signals
 -------
 
-The Bulk RingPool API supports passing Signals as part of the attribution data collected at number allocation time. Signals are boolean Custom Data Fields — distinct from standard alphanumeric Marketing Data Fields — and must be pre-configured in your network's `Custom Data Configuration <https://www2.invoca.net/customer_data_dictionary/home>`_ before use.
+The Bulk RingPool API supports passing Signals as part of the attribution data collected at number allocation time. Signals must be pre-configured in your network's `Custom Data Configuration <https://community.invoca.com/s/article/jhdcp92865-572>`_ before use.
 
 Signals are passed as query parameters in the ``api_suffix`` string, using the same URL parameter syntax as marketing data parameters. The parameter name must match the Signal's configured name (matching is case-insensitive). Signal values are interpreted as booleans. Any value other than ``false`` or ``0`` (case-insensitive) is treated as **true**. A value of ``false`` or ``0`` is treated as **false**.
 
@@ -63,7 +63,7 @@ Below is an example request that passes a Signal named ``SMS Callback`` alongsid
 
 Signals stored in the attribution data are available to Invoca's IVR routing logic (condition nodes) when the associated call arrives, enabling use cases such as priority routing based on pre-call attribution.
 
-If a Signal parameter is passed but the Signal name is not found in the Custom Data Configuration at the time of the call (for example, because it was renamed or deleted), the Signal is silently ignored and does not produce an error.
+If a Signal parameter is passed but the Signal name is not found at the time of the call (for example, because it was renamed or deleted), the Signal is silently ignored and does not produce an error.
 
 
 Response Body
