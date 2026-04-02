@@ -118,10 +118,6 @@ When you POST a promo number, we return the promo_number in the response body. T
 
       "Mobile"
 
-  * - promo_number_looks_like
-    - string (optional)
-    - For international local promo number creation, a string phone number to try to match can be included. The first five digits will be used. (ex. “805”, “80561”)
-
 
 
 Custom Data
