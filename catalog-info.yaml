@@ -14,4 +14,4 @@ spec:
   type: service
   lifecycle: production
   owner: octothorpe
-  # system: TODO — see https://github.com/Invoca/backstage-catalog
+  system: developer-tooling
