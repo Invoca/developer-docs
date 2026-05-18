@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: developer-docs
+  title: developer-docs
+  description: "Read The Docs repository for Invoca developer documentation"
+  tags:
+    - python
+  annotations:
+    backstage.io/source-location: url:https://github.com/Invoca/developer-docs/
+    github.com/project-slug: Invoca/developer-docs
+    buildkite.com/project-slug: invoca/developer-docs
+spec:
+  type: service
+  lifecycle: production
+  owner: production-support
+  system: developer-tooling
