@@ -420,6 +420,13 @@ Node Parameters and Usage
 
     - Routes the call in real time by firing a configured Real-Time Routing webhook and using the response to determine the call destination. Requires real time routing to be enabled for the network. The webhook must be owned by the advertiser or the network.
 
+  * - AbTesting
+    - \*ab_testing_config
+
+      prompt
+
+    - Splits incoming calls between two child branches ("A" and "B") according to a configurable weight. Requires A/B testing to be enabled for the network. The test_a_value and test_b_value labels are saved to the A-B Test Path marketing data field for reporting.
+
 
 Node Details
 
@@ -476,6 +483,9 @@ Node Details
   * - RealTime
     - Must have exactly one child node as a fallback. The configured Real-Time Routing webhook is called in real time during the call; the response determines the routing destination. If the webhook does not respond within 4 seconds, the fallback child node is executed.
 
+  * - AbTesting
+    - Must have exactly 2 child nodes. Incoming calls are split between the two branches according to test_a_value_weight: the first ("A") child receives that percentage of calls and the second ("B") child receives the remainder. Requires A/B testing to be enabled for the network.
+
 Parameter Details
 
 .. list-table::
@@ -486,6 +496,10 @@ Parameter Details
   * - Property
     - Type
     - Value
+
+  * - ab_testing_config
+    - Hash
+    - Configuration for an AbTesting node. A hash containing test_a_value (string, the reporting label for the first / "A" branch), test_b_value (string, the reporting label for the second / "B" branch), and test_a_value_weight (integer 0-100, the percentage of calls routed to the "A" branch; the "B" branch receives the remainder). The test_a_value and test_b_value labels are saved to the A-B Test Path marketing data field.
 
   * - asr_phrases
     - Array of hashes
