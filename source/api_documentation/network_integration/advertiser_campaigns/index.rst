@@ -409,6 +409,14 @@ Node Parameters and Usage
 
     - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
 
+  * - AbTesting
+    - \*ab_testing_config
+
+      prompt
+
+    - Splits incoming calls between two child branches ("A" and "B") according to a configurable weight. Requires A/B testing to be enabled for the network. The test_a_value and test_b_value labels are saved to the A-B Test Path marketing data field for reporting.
+
+
 Node Details
 
 .. list-table::
@@ -461,6 +469,9 @@ Node Details
   * - MessagingAi
     - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
 
+  * - AbTesting
+    - Must have exactly 2 child nodes. Incoming calls are split between the two branches according to test_a_value_weight: the first ("A") child receives that percentage of calls and the second ("B") child receives the remainder. Requires A/B testing to be enabled for the network.
+
 Parameter Details
 
 .. list-table::
@@ -471,6 +482,10 @@ Parameter Details
   * - Property
     - Type
     - Value
+
+  * - ab_testing_config
+    - Hash
+    - Configuration for an AbTesting node. A hash containing test_a_value (string, the reporting label for the first / "A" branch), test_b_value (string, the reporting label for the second / "B" branch), and test_a_value_weight (integer 0-100, the percentage of calls routed to the "A" branch; the "B" branch receives the remainder). The test_a_value and test_b_value labels are saved to the A-B Test Path marketing data field.
 
   * - asr_phrases
     - Array of hashes
