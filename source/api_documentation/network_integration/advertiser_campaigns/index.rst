@@ -741,6 +741,33 @@ For the following example, we would apply the value "Offline newspaper" to the C
     }
   }
 
+**Value types**
+
+Every value in ``custom_data`` must be sent as a JSON **string**, or ``null`` to clear the field — including values that are conceptually true/false or numeric. Quote them:
+
+* ``"is_member": "true"`` — not ``"is_member": true``
+* ``"order_count": "5"`` — not ``"order_count": 5``
+
+A non-string value (such as an unquoted boolean or number) is rejected with an error of the form:
+
+.. code-block:: json
+
+  {
+    "error": {
+      "invalid_data": "custom_data field '<partner_name>' value must be a string or null"
+    }
+  }
+
+Only Custom Data Fields whose type is ``string`` (Short Text), ``url`` (Long Text), or ``business_object`` (Category) can be set via ``custom_data``. Targeting a field of any other type — for example a Boolean or Score field — is rejected with an error of the form:
+
+.. code-block:: json
+
+  {
+    "error": {
+      "invalid_data": "custom_data field '<partner_name>' has unsupported type '<type>'; supported types are 'string', 'url', and 'business_object'"
+    }
+  }
+
 
 Endpoint:
 
