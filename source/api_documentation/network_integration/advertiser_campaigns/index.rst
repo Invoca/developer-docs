@@ -7,6 +7,8 @@ Note that the `<advertiser_id_from_network>` and `<advertiser_campaign_id_from_n
 
 ``/api/@@NETWORK_API_VERSION/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json``
 
+The ``<advertiser_campaign_id_from_network>`` in the URL — shown as ``<advertiser_campaign_id>`` in the endpoint paths below — is the **lookup key** used to find an existing advertiser campaign; it is matched against the campaign's ``id_from_network``. A **PUT** to this URL is an "upsert": if a campaign with that id already exists for the advertiser it is updated; if it does not exist, a new campaign is created. Because a new campaign requires a ``name``, a PUT to an id that does not yet exist must include a ``name``. See the POST and PUT endpoint sections below for details.
+
 We support passing back current_terms and future_terms on campaigns. The current properties of the campaign are reflected in current_terms. All changes to the campaign are staged in future_terms. Once the campaign goes live, future_terms transition over to current_terms.
 
 You can set budgets on your campaign. There are three budget types, budget_cap_alert which is based on commissions, periodic_call_cap_alert, which is based on the number of calls in a given period, and concurrent_call_cap_alert, which is based on the number of simultaneous calls. These budget activities are only applicable for AffiliateEnabled campaigns (Known in the platform as a “Publisher Promotion” Campaign Type.)
@@ -27,12 +29,12 @@ You are not allowed to delete campaigns.
     - The internal Invoca id for this Advertiser Campaign.
 
   * - id_from_network
-    - string
-    - The network object_id for this Advertiser Campaign. Unique within network. Not required when auto-generation is enabled at network level.
+    - string (required)
+    - The network object_id for this Advertiser Campaign. Unique within network. Used as the lookup key to find an existing campaign (see above). Not required when auto-generation is enabled at network level.
 
   * - name
-    - string
-    - Campaign name.
+    - string (required on create)
+    - Campaign name. Required when creating a new campaign. Optional on update, where it defaults to the existing name.
 
   * - campaign_type
     - string
