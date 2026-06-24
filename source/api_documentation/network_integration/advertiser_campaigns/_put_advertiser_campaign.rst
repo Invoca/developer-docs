@@ -2,6 +2,10 @@
 
 .. container:: endpoint-long-description
 
+  .. rubric:: Behavior
+
+  The campaign to update is identified by the ``<advertiser_campaign_id_from_network>`` in the URL, which is matched against the campaign's ``id_from_network``. If a campaign with that id exists for the advertiser, it is updated. **If no campaign with that id exists, a new campaign is created** ("upsert"). Because creating a campaign requires a ``name``, a PUT against a non-existent id will fail unless ``name`` is included in the request body. To update an existing campaign, omit ``name`` (or send its current value) and the campaign's name is left unchanged.
+
   .. rubric:: Examples
 
   Example IVR Tree updates:

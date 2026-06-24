@@ -2,6 +2,10 @@
 
 .. container:: endpoint-long-description
 
+  .. rubric:: Behavior
+
+  Creating a campaign requires a ``name`` (and an ``id_from_network``, unless the network is configured to auto-generate ids).
+
   .. rubric:: Examples
 
   Create Campaign fJauFbSEGHKw8ADEGv for Advertiser cFUyYnFHyiYA42TrpM
