@@ -13,5 +13,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: production-support
-  system: developer-tooling
+  owner: integrations
+  system: developer-portal
