@@ -398,17 +398,6 @@ Node Parameters and Usage
 
     - Forwards the call to a group of numbers defined in the ring_group_destinations array of hashes. The destinations will be in the order determined by the distribution_method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered, the next destination will be dialed. When call_acceptance is enabled, the call must be expressly accepted instead of answered. The ring_group_destination_total_limit may only be configured when the distribution_type is set to Random. This node type also allows for the configuration of max_simultaneous_calls when simultaneous calling is enabled for the network.
 
-  * - MessagingAi
-    - \*prompt
-
-      \*messaging_ai_agent_id
-
-      \*messaging_ai_first_message
-
-      \*messaging_ai_promo_number_id
-
-    - Allows the caller to opt in to a conversation with an AI agent. If the customer opts in, they will receive a message from the AI agent. You can configure any child nodes for both the case where the caller opts in, and when they opt out.
-
 Node Details
 
 .. list-table::
@@ -457,9 +446,6 @@ Node Details
 
   * - RingGroup
     - Forwards the call to a group of numbers that will be dialed in the order determined by the distribution method. If a destination plays a busy signal OR the ring_group_connect_timeout value is exceeded before the call is answered (or accepted), the next destination will be dialed. This node type also allows for simultaneous calling when it is enabled.
-
-  * - MessagingAi
-    - May have exactly 2 child nodes. If the caller opts in to receive a message the first node is executed. If the caller does not opt in, or they are calling from a land line, the second node will be executed.
 
 Parameter Details
 
@@ -535,18 +521,6 @@ Parameter Details
   * - max_simultaneous_calls
     - Integer
     - The maximum amount of ring group numbers that we will attempt to dial at one time. Default is 1.
-
-  * - messaging_ai_agent_id
-    - Integer
-    - The id associated with the Messaging AI agent you want to use.
-
-  * - messaging_ai_first_message
-    - String
-    - The initial message that the AI Agent will send to the customer when they opt in to receive messages.
-
-  * - messaging_ai_promo_number_id
-    - Integer
-    - The ID of a static promo number that is enabled for SMS messaging to be used by the agent to send messages.
 
   * - number_question_type
     - String
